@@ -25,8 +25,8 @@ const Products = () => {
 
       {/* TOP CENTER SECTION */}
       <div className="top-center">
-        <div className="tag">
-          <div className="tag-icon">
+        <div className="tagg">
+          <div className="tagg-icon">
             <img src={tagicon} alt="icon" className="boxicon" />
           </div>
           Our Products

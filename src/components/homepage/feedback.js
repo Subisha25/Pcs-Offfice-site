@@ -99,7 +99,7 @@ useEffect(() => {
       {/* TOP CENTER */}
       <div className="feedback-header">
         <div className="feedback-tag">
-          <div className="tag-icon">
+          <div className="tagg-icon">
             <img src={tagicon} alt="icon" className="tag-img" />
           </div>
           Feedback
