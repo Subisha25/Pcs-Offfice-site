@@ -1,0 +1,174 @@
+:root {
+  --main-bg: #f4f7fb;
+  --main-text: #222222;
+  --primary-color: #007bff;
+  --secondary-color: #555555;
+  --button-primary: #101166;
+  --button-secondary: #D9D9D9;
+  --playfair-fonts: "Playfair Display", serif;
+  --heading-font-size: 32px;
+  --subheading-font-size: 24px;
+  --title-font-size: 20px;
+  --description-font-size: 16px;
+  --small-text-font-size: 14px;
+}
+
+/* smooth scroll feel */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "WF Visual Sans" !important;
+  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #03045e, #ff006e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+/* ✅ Hero wrapper – just acts as space in document */
+.hero-wrapper {
+  position: relative;
+  height: 100vh; /* 1 screen height space in flow */
+}
+
+/* 🎥 Banner – FULL SCREEN + FIXED */
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+
+/* 🎥 Background video full screen */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Text content above video (inside banner) */
+.banner-content {
+  max-width: 900px;
+  position: relative;
+  z-index: 1; /* above video */
+  padding: 0 20px;
+  padding-top: 80px; /* header overlap avoid */
+}
+
+.banner-title {
+  font-family: "WF Visual Sans", sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 70px;
+  color: black;
+}
+
+.blue {
+  color: var(--button-primary);
+}
+
+.pink {
+  color: #c52bb7;
+  font-family: var(--playfair-fonts);
+}
+
+/* 🔤 Typewriter word style (build/learn) */
+.typing-word {
+  display: inline-block;
+  color: var(--button-primary);
+  border-right: 2px solid var(--button-primary); /* cursor */
+  padding-right: 4px;
+  animation: blinkCursor 0.7s steps(1) infinite;
+}
+
+/* blinking cursor */
+@keyframes blinkCursor {
+  0% {
+    border-color: var(--button-primary);
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: var(--button-primary);
+  }
+}
+
+/* Buttons */
+.banner-buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  background: var(--button-secondary);
+  color: black;
+  border: none;
+  padding: 4px 23px 4px 4px;
+  font-size: 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.icon-circle {
+  width: 37px;
+  height: 37px;
+  background: var(--button-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-circle img {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: black;
+}
+
+/* 🔽 Next sections – MUST be above fixed banner */
+/* 🔽 Next sections – MUST be above fixed banner */
+.next-section,
+section.next-section {
+  position: relative;
+  z-index: 2;         
+background-color: white;
+}
+
