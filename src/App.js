@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import Products from "./components/homepage/products";
 
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white text-2xl font-bold">
-      Pcs office site
+    <div className="App">
+      <Products />
     </div>
   );
 }
