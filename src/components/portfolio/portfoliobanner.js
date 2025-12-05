@@ -3,7 +3,7 @@ import "./portfoliobanner.css";
 import rightarrow from "../assets/rightarrow.svg";
 import LhomeBanner from "./lhome";
 
-const portfoliobanner= () => {
+const Portfoliobanner= () => {
   return (
     <>
     <div className="banner-section">
@@ -36,9 +36,9 @@ const portfoliobanner= () => {
         </button>
       </div>
     </div>
-    <LhomeBanner/>
+    {/* <LhomeBanner/> */}
     </>
   );
 };
 
-export default portfoliobanner;
+export default Portfoliobanner;

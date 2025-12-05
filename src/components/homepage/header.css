@@ -32,7 +32,7 @@
   position: fixed;
   top: 20px;
   left: 0;
-  z-index: 100;
+  z-index: 9999;
   padding: 0 15px;
   box-sizing: border-box;
 }
@@ -54,6 +54,7 @@
 
 /* SCROLLED STATE - WHITE BACKGROUND */
 .header.scrolled .header-container {
+  gap: 20px;
   background: white;
   border: none;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
@@ -61,6 +62,7 @@
 
 /* LOGO */
 .header-logo {
+  cursor: pointer;
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -122,7 +124,9 @@
   gap: 15px;
   flex-shrink: 0;
 }
-
+.menu-togglemobile-btn{
+  display: none;
+}
 /* MENU TOGGLE BUTTON */
 .menu-toggle-btn {
   background: black;
@@ -215,6 +219,22 @@
 
 /* SMALL TABLETS & LARGE PHONES (max-width: 768px) */
 @media screen and (max-width: 768px) {
+
+  .menu-togglemobile-btn{
+
+  display: block;
+    background: black;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'WF Visual Sans', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
   .header {
     top: 10px;
     padding: 0 10px;
@@ -254,7 +274,7 @@
 }
   /* Always show menu toggle on mobile */
   .menu-toggle-btn {
-    display: block;
+    display: none;
     padding: 7px 16px;
     font-size: 13px;
   }
