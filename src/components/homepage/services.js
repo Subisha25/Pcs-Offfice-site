@@ -1,8 +1,8 @@
 import React from 'react';
-import Second from "../../assets/2.png";
-import Third from "../../assets/3.png";
-import Four from "../../assets/4.png";
-import BackgroundImg from "../../assets/backgroundImgae.webp";
+import Second from "../assets/services/2.png";
+import Third from "../assets/services/3.png";
+import Four from "../assets/services/4.png";
+import BackgroundImg from "../assets/services/backgroundImgae.webp";
 
 const ServicesSection = () => {
     const services = [
