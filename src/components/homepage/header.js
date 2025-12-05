@@ -117,7 +117,9 @@ function Header() {
           {!isMobile && (!isScrolled || menuOpen) && (
             <button className="header-btn">Let's Discuss</button>
           )}
-
+<button className="menu-togglemobile-btn" onClick={handleMenuClick}>
+              Menu
+            </button>
        {/* Small header → show Menu button */}
           {isScrolled && !menuOpen && (
             <button className="menu-toggle-btn" onClick={handleMenuClick}>
