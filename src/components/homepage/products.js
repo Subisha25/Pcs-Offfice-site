@@ -24,7 +24,7 @@ const Products = () => {
     <div className="products-section">
 
       {/* TOP CENTER SECTION */}
-      <div className="top-center">
+      <div className="top-centers">
         <div className="tagg">
           <div className="tagg-icon">
             <img src={tagicon} alt="icon" className="boxicon" />
@@ -32,7 +32,7 @@ const Products = () => {
           Our Products
         </div>
 
-        <h2 className="title">
+        <h2 className="titles">
           Proud wins from <span>passion</span> <br /> products
         </h2>
       </div>
@@ -60,7 +60,7 @@ const Products = () => {
         
         {/* Arrow ONLY for active product */}
         {activeProduct.name === item.name && (
-          <span className="arrow"> <img src={arrow} alt="arrow"/></span>
+          <span className="arrows"> <img src={arrow} alt="arrows"/></span>
         )}
         {/* View always visible */}
         <a href={item.link} className="view-link">

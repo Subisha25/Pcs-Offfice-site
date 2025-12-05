@@ -1,9 +1,12 @@
 import React from "react";
 import "./lhome.css";
 import bannerImg from "../assets/Mask group (1).png"; // Change to your image path
+import Portfoliobanner from "./portfoliobanner";
 
 const LhomeBanner = () => {
   return (
+    <>
+    <Portfoliobanner/>
     <div className="home-container">
       
       {/* TOP FULL IMAGE */}
@@ -23,6 +26,7 @@ const LhomeBanner = () => {
       </div>
 
     </div>
+    </>
   );
 };
 

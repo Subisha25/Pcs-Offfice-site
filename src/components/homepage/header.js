@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from "react";
 import "./header.css";
 import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
+const navigate = useNavigate();
   // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
@@ -82,18 +83,18 @@ function Header() {
     >
       <div className="header-container">
         {/* Logo */}
-        <div className="header-logo">
+        <div className="header-logo" onClick={() => navigate("/")}>
           <img src={logo} alt="PCS Logo" />
         </div>
 
         {/* Desktop Menu - show when NOT scrolled OR when menu is open */}
         {!isMobile && (!isScrolled || menuOpen) && (
           <nav className={`header-menu ${menuOpen ? "show-menu" : ""}`}>
-            <a href="#about" onClick={handleLinkClick}>About</a>
-            <a href="#services" onClick={handleLinkClick}>Services</a>
-            <a href="#works" onClick={handleLinkClick}>Works</a>
-            <a href="#products" onClick={handleLinkClick}>Products</a>
-            <a href="#blog" onClick={handleLinkClick}>Blog</a>
+            <a href="/aboutbanner" onClick={handleLinkClick}>About</a>
+            <a href="/servicespage" onClick={handleLinkClick}>Services</a>
+            <a href="/works" onClick={handleLinkClick}>Works</a>
+            <a href="/products" onClick={handleLinkClick}>Products</a>
+            <a href="/blog" onClick={handleLinkClick}>Blog</a>
           </nav>
         )}
 
@@ -117,7 +118,9 @@ function Header() {
           {!isMobile && (!isScrolled || menuOpen) && (
             <button className="header-btn">Let's Discuss</button>
           )}
-
+<button className="menu-togglemobile-btn" onClick={handleMenuClick}>
+              Menu
+            </button>
        {/* Small header → show Menu button */}
           {isScrolled && !menuOpen && (
             <button className="menu-toggle-btn" onClick={handleMenuClick}>
