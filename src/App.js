@@ -1,13 +1,18 @@
 import React from "react";
-import Products from "./components/homepage/products";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Banner from "./components/homepage/banner";
+import Portfoliobanner from "./components/portfolio/portfoliobanner";
 
 function App() {
   return (
-    <div className="App">
-      <Banner/>
-      {/* <Products /> */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Banner />} />
+        <Route path="/portfoliobanner" element={<Portfoliobanner />} />
+       
+      </Routes>
+    </Router>
   );
 }
 
