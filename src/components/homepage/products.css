@@ -139,12 +139,12 @@
   gap: 8px;
 }
 
-.arrow {
+.arrows {
   font-size: 22px;
   opacity: 1;
   transition: 0.3s;
 }
-.arrow img {
+.arrows img {
   width: 18px;
   height: 16px;
 }

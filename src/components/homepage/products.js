@@ -60,7 +60,7 @@ const Products = () => {
         
         {/* Arrow ONLY for active product */}
         {activeProduct.name === item.name && (
-          <span className="arrow"> <img src={arrow} alt="arrow"/></span>
+          <span className="arrows"> <img src={arrow} alt="arrows"/></span>
         )}
         {/* View always visible */}
         <a href={item.link} className="view-link">
