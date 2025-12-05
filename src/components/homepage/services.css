@@ -1,0 +1,115 @@
+/* Glass Effect Card CSS */
+.service-card {
+  position: relative;
+  border-radius: 30px;
+  padding: 40px;
+  min-height: 360px;
+  cursor: pointer;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  color: #1a1a2e;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  color: white !important;
+}
+
+/* Glass Effect Layers */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 0, 110, 0.7) -64.58%, 
+    rgba(3, 4, 94, 0.7) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 1;
+  border-radius: 30px;
+}
+
+.service-card:hover::before {
+  opacity: 0.8;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 2;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+/* Background Image Expansion */
+.service-card .image-expand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: blur(10px);
+  transform: scale(1.1);
+  transition: opacity 0.8s ease;
+  z-index: 0;
+}
+
+.service-card:hover .image-expand {
+  opacity: 0.5;
+}
+
+/* Text Color Change on Hover */
+.service-card:hover .card-title,
+.service-card:hover .card-subtitle,
+.service-card:hover .card-description {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Hide Small Image on Hover */
+.service-card:hover .card-image {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Arrow Icon Change */
+.service-card:hover .card-arrow img {
+  filter: invert(1);
+  transform: translateX(5px);
+}
+
+.service-card:hover .card-arrow {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
