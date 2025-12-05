@@ -1,0 +1,329 @@
+/* ==================== GLOBAL / ROOT ==================== */
+:root {
+  --main-bg: #f4f7fb;
+  --main-text: #222222;
+  --primary-color: #007bff;
+  --secondary-color: #555555;
+  --button-primary: #101166;
+  --button-secondary: #D9D9D9;
+  --playfair-fonts: "Playfair Display", serif;
+  --heading-font-size: 32px;
+  --subheading-font-size: 24px;
+  --title-font-size: 20px;
+  --description-font-size: 16px;
+  --small-text-font-size: 14px;
+}
+
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.benefit-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: #D9D9D9;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.benefit-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #101166;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-boxicon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+.benefits {
+  margin: 0 auto;
+  padding: 80px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", sans-serif;
+  background-color: #ffffff;
+}
+
+/* ---------- TOP SECTION LEFT ---------- */
+
+.benefits-top-section {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left */
+  gap: 16px;
+}
+
+.benefits-badge-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.benefits-badge-bg {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.benefits-badge-icon-wrapper {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-badge-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.benefits-badge-text {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.benefits-heading-wrapper {
+  max-width: 720px;
+}
+
+.benefits-main-heading {
+  font-family: "WF Visual Sans";
+  text-align: left;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+}
+
+/* highlighted word inside heading */
+.benefits-main-heading span {
+  font-family: var(--playfair-fonts);
+  color: #000000;
+  font-style: italic;
+}
+
+.benefits-highlight-text {
+  font-family: var(--playfair-fonts);
+  font-style: italic;
+}
+
+.benefits-amazing-text {
+  color: #111827;
+}
+
+/* ---------- SCROLL AREA + STICKY CARDS ---------- */
+
+.benefits-scroll-area {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  height: 260vh; /* scroll space for step animation */
+  position: relative;
+}
+
+/* sticky card layer */
+.benefits-cards-grid {
+  position: sticky;
+  top: 120px;
+  height: 420px;
+}
+
+/* base card style – stacked in center */
+.benefits-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 280px;
+  min-height: 360px;
+  background: #fcfcfd;
+  border-radius: 20px;
+  padding: 32px;
+  transform: translateX(-50%);
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.7s ease, opacity 0.7s ease, box-shadow 0.3s ease;
+}
+
+/* optional hover – no transform override to keep layout */
+.benefits-card:hover {
+  /* box-shadow: 0 20px 60px rgba(124, 58, 237, 0.2); */
+}
+
+/* step-0: fanned stack like the screenshot */
+.benefits-cards-grid.step-0 .benefits-card:nth-child(1) {
+  z-index: 1;
+  transform: translateX(calc(-50% - 90px)) rotate(-10deg);
+}
+
+.benefits-cards-grid.step-0 .benefits-card:nth-child(2) {
+  z-index: 2;
+  transform: translateX(calc(-50% - 30px)) rotate(-4deg);
+}
+
+.benefits-cards-grid.step-0 .benefits-card:nth-child(3) {
+  z-index: 3;
+  transform: translateX(calc(-50% + 30px)) rotate(4deg);
+}
+
+.benefits-cards-grid.step-0 .benefits-card:nth-child(4) {
+  z-index: 4;
+  transform: translateX(calc(-50% + 90px)) rotate(10deg);
+}
+
+/* ---------- POSITIONS PER STEP (DESKTOP) ---------- */
+
+/* STEP 1: only first card moves left (with gap) */
+.benefits-cards-grid.step-1 .benefits-card:nth-child(1) {
+  transform: translateX(calc(-50% - 480px));
+}
+
+/* STEP 2: first + second placed with gap */
+.benefits-cards-grid.step-2 .benefits-card:nth-child(1) {
+  transform: translateX(calc(-50% - 480px));
+}
+.benefits-cards-grid.step-2 .benefits-card:nth-child(2) {
+  transform: translateX(calc(-50% - 160px));
+}
+
+/* STEP 3: first three placed with equal gaps */
+.benefits-cards-grid.step-3 .benefits-card:nth-child(1) {
+  transform: translateX(calc(-50% - 480px));
+}
+.benefits-cards-grid.step-3 .benefits-card:nth-child(2) {
+  transform: translateX(calc(-50% - 160px));
+}
+.benefits-cards-grid.step-3 .benefits-card:nth-child(3) {
+  transform: translateX(calc(-50% + 160px));
+}
+
+/* STEP 4: all four in final layout with nice gaps */
+.benefits-cards-grid.step-4 .benefits-card:nth-child(1) {
+  transform: translateX(calc(-50% - 480px));
+}
+.benefits-cards-grid.step-4 .benefits-card:nth-child(2) {
+  transform: translateX(calc(-50% - 160px));
+}
+.benefits-cards-grid.step-4 .benefits-card:nth-child(3) {
+  transform: translateX(calc(-50% + 160px));
+}
+.benefits-cards-grid.step-4 .benefits-card:nth-child(4) {
+  transform: translateX(calc(-50% + 480px));
+}
+
+/* icon + text */
+.benefits-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+}
+.benefits-icon-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
+
+.benefits-card-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #000000;
+}
+
+.benefits-card-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666666;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1024px) {
+  .benefits-main-heading {
+    font-size: 32px;
+  }
+
+  .benefits-scroll-area {
+    height: auto;
+  }
+
+  .benefits-cards-grid {
+    position: static;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .benefits-card {
+    position: relative;
+    left: auto;
+    transform: none !important;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits {
+    padding: 60px 16px;
+  }
+
+  .benefits-top-section {
+    margin-bottom: 40px;
+  }
+
+  .benefits-main-heading {
+    font-size: 26px;
+  }
+
+  .benefits-badge-bg {
+    height: 32px;
+  }
+
+  .benefits-card {
+    max-width: 340px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-main-heading {
+    font-size: 22px;
+  }
+
+  .benefits-card-title {
+    font-size: 20px;
+  }
+
+  .benefits-card-description {
+    font-size: 14px;
+  }
+}

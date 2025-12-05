@@ -12,6 +12,7 @@ import OfficechatBanner from "./components/portfolio/officechat";
 import MsloneBanner from "./components/portfolio/msloan";
 import ServicesWebsite from "./components/servicespage/servicebanner";
 import Header from "./components/homepage/header";
+import AboutBanner from "./components/aboutpage/aboutbanner";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Banner />} />
+        <Route path="/aboutbanner" element={<AboutBanner />} />
+
        <Route path="/servicespage" element={<ServicesWebsite/>} />
 
         <Route path="/portfoliobanner" element={<Portfoliobanner />} />
