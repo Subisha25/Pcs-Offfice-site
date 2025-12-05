@@ -93,6 +93,7 @@ import "./banner.css";
 import Header from "./header";
 import Arrow from "../assets/arrow.png";
 import About from "./aboutus";
+import Products from "./products";
 
 const words = ["build", "learn"]; // 🔁 cycle panna words
 
@@ -172,6 +173,7 @@ function Banner() {
       {/* 🔽 Next sections */}
       <section id="about" className="next-section">
         <About />
+        <Products/>
       </section>
     </>
   );
