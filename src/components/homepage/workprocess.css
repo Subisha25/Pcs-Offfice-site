@@ -1,0 +1,174 @@
+
+/* Container Styles */
+.explore-container {
+  min-height: 60vh;
+  background-color: white;
+  font-family: 'WF Visual Sans', sans-serif;
+}
+
+/* Top Section */
+.explore-top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+/* Our Works Button Wrapper */
+.our-works-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 3rem;
+  border-radius: 9999px;
+  position: relative;
+  width: 180px;
+  height: 38px;
+}
+
+.our-works-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+
+/* Our Works Icon */
+.our-works-icon {
+  width: 1.9rem;
+  height: 1.9rem;
+  background-color: #312e81;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  left: 0.4rem;   /* icon right edge-ku seranum */
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 10;
+}
+
+
+.icon-svg {
+  width: 1.0rem;
+  height: 1.0rem;
+  color: white;
+}
+
+/* Our Works Text */
+.our-works-text {
+  font-family: 'WF Visual Sans',  sans-serif;
+  font-weight: 510;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: black;
+  position: relative;
+  z-index: 10;
+   padding-left: 40px; 
+}
+
+/* Main Heading */
+.main-heading {
+  /* பழைய styles அப்படியே இருக்கட்டும் */
+  font-family: 'WF Visual Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  margin: 0;
+  color: #000;
+  /* இது புதிய CSS */
+  position: relative; /* ::after-ஐ சரியாக வைக்க */
+  display: inline-block; /* ::after-ஐ text உடன் ஒட்டவைக்க */
+  overflow: hidden; /* cursor-ஐ டெக்ஸ்ட்-ன் முடிவில் வைக்க */
+}
+
+
+
+/* Bottom Section */
+.explore-bottom-section {
+  padding: 10rem 0;
+}
+
+.scroll-text {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+.heading-image {
+  width: 120%;
+  max-width: 900px;   /* adjust as needed */
+  display: block;
+  margin: 0 auto;
+}
+.cursor {
+  animation: blink 1s infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.main-heading::after {
+  /* content: '|'; */
+  /* terminal-industries.com-ல் இருப்பது போல் ஒரு கிராடியன்ட் நிறம் */
+  background: linear-gradient(90deg, #4B0082 0%, #FF1493 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  color: #000; 
+  font-weight: 500;
+  animation: blink 1s step-end infinite;
+}
+.main-heading {
+  font-family: 'WF Visual Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  margin: 0;
+  color: #000;
+}
+
+.something-text {
+  font-family: 'Playfair Display';
+  font-weight: 600;
+  font-style: italic;
+  font-size: 54px;
+  line-height: 60px;
+  letter-spacing: 1%;
+  background: linear-gradient(90deg, #4B0082 0%, #8B008B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+}
+
+.amazing-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 54px;
+  line-height: 60px;
+  letter-spacing: 0.01em;
+  background: linear-gradient(90deg, #C71585 0%, #FF1493 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
