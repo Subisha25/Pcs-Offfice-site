@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from "react";
 import "./header.css";
 import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
+const navigate = useNavigate();
   // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
@@ -82,7 +83,7 @@ function Header() {
     >
       <div className="header-container">
         {/* Logo */}
-        <div className="header-logo">
+        <div className="header-logo" onClick={() => navigate("/")}>
           <img src={logo} alt="PCS Logo" />
         </div>
 

@@ -137,18 +137,18 @@ const titleTranslateY = -120 * titleMoveProgress; // 🔥 softer move
   const titleScale = 1 - (0.2 * titleMoveProgress);
 
   // Cards visibility (60-100% scroll)
-  const cardsStartProgress = 0.6;
-  const getCardOpacity = (index) => {
-    const cardProgress = (scrollProgress - cardsStartProgress - (index * 0.08)) / 0.08;
-    return Math.min(Math.max(cardProgress, 0), 1);
-  };
+    const cardsStartProgress = 0.6;
+    const getCardOpacity = (index) => {
+        const cardProgress = (scrollProgress - cardsStartProgress - (index * 0.08)) / 0.08;
+        return Math.min(Math.max(cardProgress, 0), 1);
+    };
 
-  const getCardTransform = (index) => {
-    const opacity = getCardOpacity(index);
-    const translateY = 50 * (1 - opacity);
-    const scale = 0.9 + (0.1 * opacity);
-    return { opacity, translateY, scale };
-  };
+    const getCardTransform = (index) => {
+        const opacity = getCardOpacity(index);
+        const translateY = 50 * (1 - opacity);
+        const scale = 0.9 + (0.1 * opacity);
+        return { opacity, translateY, scale };
+    };
 
   return (
     <div className="purpose-scroll-wrapper" ref={wrapperRef}>
