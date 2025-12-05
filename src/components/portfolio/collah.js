@@ -1,7 +1,7 @@
 import React from "react";
 import "./lhome.css";
 import Portfoliobanner from "./portfoliobanner";
-import collahbannerImg from "../assets/coollah.jpg";
+import collahbannerImg from "../assets/coollah.png";
 const CollahBanner = () => {
   return (
     <>
