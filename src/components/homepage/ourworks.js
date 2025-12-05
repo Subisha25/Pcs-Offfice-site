@@ -1,50 +1,114 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ourWorksBg from '../assets/ourworks/Rectangle.png';
 import './ourworks.css';
-import ServicesSection from './services';
-
-const TypedText = ({ text, typingSpeed = 50 }) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (index < text.length) {
-      const timeoutId = setTimeout(() => {
-        setDisplayedText((prev) => prev + text.charAt(index));
-        setIndex((prev) => prev + 1);
-      }, typingSpeed);
-
-      return () => clearTimeout(timeoutId); 
-    }
-  }, [index, text, typingSpeed]);
-
-  return <>{displayedText}</>;
-};
 
 const OurWorkExplore = () => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [typedText, setTypedText] = useState('');
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const headingRef = useRef(null);
+  const containerRef = useRef(null);
+  const animationFrameRef = useRef(null);
+
   const fullText = 'Explore our work where we played, experimented, and built something amazing.';
+  const totalCharacters = fullText.length;
 
+  // Scroll progress calculate pannum
   useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setDisplayedText(fullText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 50); // 50ms per character - speed adjust pannikonga
+    const calculateScrollProgress = () => {
+      if (!containerRef.current || !headingRef.current) return;
 
-    return () => clearInterval(timer);
-  }, []);
+      const container = containerRef.current;
+      const heading = headingRef.current;
+      
+      // Get viewport dimensions
+      const viewportHeight = window.innerHeight;
+      const containerRect = container.getBoundingClientRect();
+      const headingRect = heading.getBoundingClientRect();
+      
+      // When heading starts entering viewport
+      const headingTop = headingRect.top;
+      const headingBottom = headingRect.bottom;
+      
+      // Calculate progress based on heading position
+      let progress = 0;
+      
+      // Heading viewport la fullah enter aana
+      if (headingTop <= viewportHeight * 0.7 && headingTop >= 0) {
+        // 0% to 100% based on scroll position
+        const visibleHeight = viewportHeight * 0.7 - headingTop;
+        const totalTravel = viewportHeight * 0.7;
+        progress = Math.min(Math.max(visibleHeight / totalTravel, 0), 1);
+      } else if (headingTop < 0) {
+        // Already scrolled past
+        progress = 1;
+      }
+      
+      setScrollProgress(progress);
+      
+      // Calculate how many characters to show based on scroll progress
+      const charsToShow = Math.floor(progress * totalCharacters);
+      setTypedText(fullText.substring(0, charsToShow));
+    };
+
+    const handleScroll = () => {
+      // Smooth animation with requestAnimationFrame
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      animationFrameRef.current = requestAnimationFrame(calculateScrollProgress);
+    };
+
+    // Initial calculation
+    calculateScrollProgress();
+    
+    // Add event listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', calculateScrollProgress);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', calculateScrollProgress);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [fullText, totalCharacters]);
+
+  // Highlight special words in the typed text
+  const renderTextWithHighlights = (text) => {
+    const words = text.split(' ');
+    const result = [];
+    
+    words.forEach((word, index) => {
+      const space = index < words.length - 1 ? ' ' : '';
+      
+      if (word.includes('something')) {
+        result.push(
+          <span key={index} className="ourwork-something-text">
+            {word + space}
+          </span>
+        );
+      } else if (word.includes('amazing')) {
+        result.push(
+          <span key={index} className="ourwork-amazing-text">
+            {word + space}
+          </span>
+        );
+      } else {
+        result.push(
+          <span key={index}>
+            {word + space}
+          </span>
+        );
+      }
+    });
+    
+    return result;
+  };
 
   return (
-    <div className="ourwork-explore-container">
-      {/* Top Section */}
+    <div className="ourwork-explore-container" ref={containerRef}>
       <div className="ourwork-explore-top-section">
-        {/* Our Works Button with Icon */}
         <div className="our-works-wrapper">
           <img
             src={ourWorksBg}
@@ -70,19 +134,16 @@ const OurWorkExplore = () => {
           </span>
         </div>
 
-        {/* Main Text */}
-        <div className="ourwork-header-wrapper">
+        <div className="ourwork-header-wrapper" ref={headingRef}>
           <h1 className="ourwork-main-heading">
-            {displayedText.split(' ').map((word, index) => {
-              if (word === 'something') {
-                return <span key={index} className="ourwork-something-text">{word} </span>;
-              } else if (word === 'amazing.') {
-                return <span key={index} className="ourwork-amazing-text">{word}</span>;
-              }
-              return word + ' ';
-            })}
-            {/* <span className="cursor">|</span> */}
+            {renderTextWithHighlights(typedText)}
+            
+            {/* Blinking cursor */}
+            {scrollProgress > 0 && scrollProgress < 1 && (
+              <span className="ourwork-cursor"></span>
+            )}
           </h1>
+     
         </div>
       </div>
     </div>
