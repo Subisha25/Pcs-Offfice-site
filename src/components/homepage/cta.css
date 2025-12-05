@@ -1,0 +1,171 @@
+/* MAIN WRAPPER */
+.cta_section_wrapper {
+  width: 100%;
+  min-height: 100vh;      /* FULL SCREEN HEIGHT */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* CENTER VERTICALLY */
+  align-items: center;       /* CENTER HORIZONTALLY */
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #fff;
+}
+
+
+/* HEADING CONTAINER */
+.cta_section_heading {
+  margin-bottom: 40px;
+}
+
+/* MAIN TITLE — Figma accurate */
+.cta_title_line1,
+.cta_title_line2 {
+  font-family: "Inter", sans-serif;
+  font-size: 48px;
+  font-weight: 550;
+  line-height: 60px;
+  letter-spacing: 1%;
+  color: #000;
+}
+
+.cta_title_line2 {
+  margin-top: 5px;
+}
+
+/* Highlight word 'create' */
+.cta_highlight {
+  font-family: "Playfair Display", serif;
+  font-size: 54px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 60px;
+  letter-spacing: 1%;
+  color: #00008B;
+}
+
+/* ============================= */
+/* CTA BUTTON — UPDATED VERSION */
+/* ============================= */
+
+/* CENTER BUTTON */
+.cta_btn_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* BUTTON CONTAINER */
+.cta_btn {
+  position: relative;
+  width: 260px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* BACKGROUND IMAGE */
+.cta_btn_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* CIRCLE HOLDING AREA */
+.cta_btn_circle {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  margin-left: 14px;
+  z-index: 5;
+}
+
+/* CIRCLE IMAGE */
+.cta_circle_img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: contain;
+}
+
+/* ARROW */
+.cta_arrow_icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* BUTTON TEXT */
+.cta_btn_text {
+  margin-left: 12px;
+  white-space: nowrap;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+  z-index: 10;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .cta_title_line1,
+  .cta_title_line2 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+
+  .cta_highlight {
+    font-size: 42px;
+  }
+
+  .cta_btn {
+    width: 220px;
+    height: 65px;
+  }
+
+  .cta_btn_circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cta_btn_text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta_title_line1,
+  .cta_title_line2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .cta_highlight {
+    font-size: 34px;
+  }
+
+  .cta_btn {
+    width: 200px;
+    height: 60px;
+  }
+
+  .cta_btn_circle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .cta_btn_text {
+    font-size: 16px;
+  }
+}
