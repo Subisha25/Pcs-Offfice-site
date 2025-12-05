@@ -38,7 +38,7 @@
 
 .top-banner img {
   width: 100%;
-  height: 450px;
+  height: 550px;
   object-fit: cover;
   display: block;
   border-radius: 50px; /* 🔹 Border radius */
@@ -142,4 +142,40 @@
     max-width: 900px;
     font-size: 19px;
   }
+}
+
+/* 🔥 Animation Keyframes */
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ⭐ Applying animations to Image + Content */
+.top-banner img {
+  opacity: 0;
+  animation: fadeZoom 1.1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.content-section {
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.8s;
 }
