@@ -94,6 +94,13 @@ import Header from "./header";
 import Arrow from "../assets/arrow.png";
 import About from "./aboutus";
 import Products from "./products";
+import ServicesSection from "./services";
+import OurWorkExplore from "./ourworks";
+import Portfoliobanner from "../portfolio/portfoliobanner";
+import WorkProcess from "./workprocess";
+import CTASection from "./cta";
+import Footer from "./footer";
+import WordAnimation from "./explore";
 
 const words = ["build", "learn"]; // 🔁 cycle panna words
 
@@ -146,7 +153,7 @@ function Banner() {
 
           {/* Content on top of video */}
           <div className="banner-content">
-            <h1 className="banner-title">
+            <h1 className="homebanner-title">
               Let’s{" "}
               <span className="blue typing-word">
                 {displayText}
@@ -173,7 +180,14 @@ function Banner() {
       {/* 🔽 Next sections */}
       <section id="about" className="next-section">
         <About />
+        <ServicesSection />
+        <OurWorkExplore />
+        <WordAnimation />
+        {/* <Portfoliobanner /> */}
+        <WorkProcess />
         <Products/>
+        <CTASection />
+        <Footer />
       </section>
     </>
   );

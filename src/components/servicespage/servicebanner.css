@@ -27,6 +27,7 @@
 }
 
 .sw-container {
+    
   width: 100%;
   font-family: "Poppins", sans-serif;
   color: #000;
@@ -44,7 +45,7 @@
 .sw-header {
   margin: 0 auto;
   text-align: center;
-  padding: 80px 20px 200px; 
+  padding: 80px 20px  200px; 
   background-image: url("../assets/Maskgroup.png");
   background-size: cover;
   background-position: center top;
@@ -53,6 +54,8 @@
 }
 
 .sw-small-title {
+font-family: "WF Visual Sans";
+padding-top: 50px;
   font-size: 14px;
   text-transform: uppercase;
   color: #555;
@@ -61,6 +64,8 @@
 }
 
 .sw-main-title {
+      font-family: "WF Visual Sans";
+
   font-size: 34px;
   font-weight: 700;
   line-height: 1.3;
@@ -100,6 +105,8 @@
 
 /* ================== DESCRIPTION ================== */
 .sw-description {
+          font-family: "WF Visual Sans";
+
   max-width: 645px;
   font-weight: 600;
   margin: 60px auto 0;
@@ -111,6 +118,8 @@
 }
 
 .sw-type-word {
+          font-family: "WF Visual Sans";
+
   display: inline-block;
   opacity: 0;
   transform: translateY(8px);
@@ -126,6 +135,8 @@
 
 /* ================== WHAT WE OFFER ================== */
 .sw-offer-section {
+          font-family: "WF Visual Sans";
+
   max-width: 1150px;
   margin: 140px auto 0;
   padding: 0 20px;
@@ -147,31 +158,41 @@
 }
 
 .sw-offer-content {
+          font-family: "WF Visual Sans";
+
   flex: 1 1 320px;
   text-align: left;
 }
 
 .sw-offer-title {
+          font-family: "WF Visual Sans";
+
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .sw-offer-list {
+          font-family: "WF Visual Sans";
+
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .sw-offer-list li {
+          font-family: "WF Visual Sans";
+font-weight: 500;
   margin-bottom: 10px;
   font-size: 16px;
-  color: #444;
+  color: #000000;
   line-height: 1.5;
 }
 
 /* ================== RESULT SECTION ================== */
 .sw-result {
+          font-family: "WF Visual Sans";
+
   max-width: 1150px;
   margin: 140px auto 0;
   padding: 0 20px 40px;
@@ -183,32 +204,41 @@
 
 .sw-result-title,
 .sw-result-text {
+          font-family: "WF Visual Sans";
+
   grid-column: 1 / 2;
   text-align: left;
 }
 
 .sw-result-title {
+          font-family: "WF Visual Sans";
+
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .sw-result-text {
+          font-family: "WF Visual Sans";
+
   margin-top: 10px;
   max-width: 700px;
-  color: #333;
+  color: #000000;
   line-height: 1.6;
   padding: 0;
   list-style: none;
 }
 
 .sw-result-text li {
+          font-family: "WF Visual Sans";
+font-weight: 500;
   margin-bottom: 10px;
   font-size: 16px;
-  color: #444;
+  color: #000000;
 }
 
 .sw-result-img-box {
+
   grid-column: 2 / 3;
 }
 

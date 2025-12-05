@@ -328,6 +328,7 @@ import Mockup from "../assets/servicebanner.png";
 import Team from "../assets/service1.png";
 import Result from "../assets/service2.png";
 import Purpose from "./purpose";
+import CTASection from "../homepage/cta";
 
 export default function ServicesWebsite() {
   useEffect(() => {
@@ -498,11 +499,9 @@ export default function ServicesWebsite() {
         {/* STEP 1: Description with typewriter words */}
         <p
           className="sw-description"
-          data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs. From concept to deployment, our team ensures every website is optimized for performance, usability, and conversions."
+          data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
         >
-          We craft responsive, visually stunning websites tailored to your
-          brand’s needs. From concept to deployment, our team ensures every
-          website is optimized for performance, usability, and conversions.
+          We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt.
         </p>
 
         {/* STEP 2: What We Offer Section */}
@@ -557,6 +556,7 @@ export default function ServicesWebsite() {
       </div>
 
       <Purpose />
+      <CTASection />
     </>
   );
 }
