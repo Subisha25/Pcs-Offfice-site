@@ -1,300 +1,348 @@
-import React from 'react';
+import React, { useState } from 'react';
+// These imports are assumed to be correctly linked to your asset files
 import Second from "../assets/services/2.png";
 import Third from "../assets/services/3.png";
 import Four from "../assets/services/4.png";
 import BackgroundImg from "../assets/services/backgroundImgae.webp";
-
+import ArrowImg from "../assets/services/arrow.png";
+// import ServiceBtnImg from "../assets/services/servicebtn.png";
+import ServiceBtnImg from "../assets/services/tool.png";
 const ServicesSection = () => {
-    const services = [
-        {
-            title: 'Web Design',
-            subtitle: '& Development',
-            description: 'Your website is the soul digital handshake—so the first thing people notice about you online. Our Web Design & Development services help shape brand experiences that translate into loyal, long-term clients.',
-            gradient: 'linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%)',
-            image: Second,
-            light: true
-        },
-        {
-            title: 'App Design',
-            subtitle: '& Development',
-            description: 'Got a brilliant app idea? Let\'s craft it together! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll turn something both stylish, sleek, and downright addictive.',
-            gradient: 'linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%)',
-            image: Second,
-            light: true
-        },
-        {
-            title: 'Branding &',
-            subtitle: 'Creative Services',
-            description: 'Your website is the soul digital handshake—so the first thing people notice about you online. Our Web Design & Development services help shape brand experiences that translate into loyal, long-term clients.',
-            gradient: 'linear-gradient(135deg, #e8d4f2 0%, #f0e4f7 100%)',
-            image: Third,
-            light: true
-        },
-        {
-            title: 'Digital',
-            subtitle: 'Marketing',
-            description: 'Got a brilliant app idea? Let\'s craft it together! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll turn something both stylish, sleek, and downright addictive.',
-            gradient: 'linear-gradient(135deg, #f0e4f7 0%, #fef0ff 100%)',
-            image: Four,
-            light: true
-        }
-    ];
+  // State to track which card is currently being hovered over (active)
+  const [activeCard, setActiveCard] = useState(null);
 
-    return (
-        <div className="services-container" style={{
-            backgroundImage: `url(${BackgroundImg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-        }}>
-            <div className="services-header">
-                <div className="services-badge">
-                    <span className="badge-icon">⚙️</span>
-                    <span className="badge-text">Services</span>
+  // Service data array - All cards now use the light gradient by default
+  const services = [
+    {
+      title: 'Web Design',
+      subtitle: '& Development',
+      description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
+      // UPDATED: Changed the gradient to match the light cards
+      gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
+      image: Second,
+      light: true // Set to true for light background
+    },
+    {
+      title: 'App Design',
+      subtitle: '& Development',
+      description: 'Got a brilliant app idea? Let\'s make it a reality! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll build something that\'s smooth, sleek, and downright addictive.',
+      gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
+      image: Second,
+      light: true
+    },
+    {
+      title: 'Branding &',
+      subtitle: 'Creative Services',
+      description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
+      gradient: 'radial-gradient(circle at 100% 0%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
+      image: Third,
+      light: true
+    },
+    {
+      title: 'Digital',
+      subtitle: 'Marketing',
+      description: 'Got a brilliant app idea? Let\'s make it a reality! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll build something that\'s smooth, sleek, and downright addictive.',
+      gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
+      image: Four,
+      light: true
+    }
+  ];
+
+  // Helper function to get the hover background style
+  const getHoverBackgroundStyle = (image) => ({
+    background: `linear-gradient(135deg, rgba(255, 0, 110, 0.4) 0%, rgba(3, 4, 94, 0.4) 100%), url(${image})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)',
+  });
+
+  return (
+    <div className="services-container" style={{
+      backgroundImage: `url(${BackgroundImg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      position: 'relative',
+      minHeight: '100vh',
+      padding: '60px 40px',
+      backgroundAttachment: 'fixed'
+    }}>
+      {/* Background overlay - adjusted for a softer look */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'rgba(240, 240, 245, 0.7)',
+        pointerEvents: 'none',
+        zIndex: 0
+      }}></div>
+
+      <div className="services-header" style={{
+        textAlign: 'center',
+        marginBottom: '60px',
+        position: 'relative',
+        zIndex: 1
+      }}>
+
+        <button
+          className="btn-primary"
+          style={{ marginLeft: "500px" ,width:"180px",height:"50px",fontSize: "17px"}}
+        >
+          <div className="icon-circle">
+            <img
+              alt="arrow"
+              src={ServiceBtnImg}
+              style={{ width: "20px", height: "20px" }} // 👈 size increase here
+            />
+          </div>
+          Services
+        </button>
+
+
+        <h1
+          className="services-title"
+          style={{
+            fontFamily: "WF Visual Sans",
+            fontSize: '48px',
+            fontWeight: '500',
+            fontStyle: 'Medium',
+            color: '#1a1a2e',
+            lineHeight: '60px',
+            letterSpacing: "1%",
+            maxWidth: '900px',
+            margin: '0 auto',
+            textAlign: "center"
+          }}
+        >
+          From idea to{" "}
+          <span
+            style={{
+              fontFamily: "Playfair Display",
+              fontWeight: '600',
+              fontStyle: 'italic',
+              fontSize: '54px',
+              lineHeight: '60px',
+              letterSpacing: "1%",
+              background: "linear-gradient(90deg, #03045E 0%, #FF006E 100%)",
+              WebkitBackgroundClip: "text",
+              color: "transparent"
+            }}
+          >
+            execution
+          </span>{" "}
+          we’ve
+          <br />
+          got you covered
+        </h1>
+
+
+
+      </div>
+
+
+
+      <div className="services-grid" style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gap: '70px',
+        maxWidth: '1500px',
+        margin: '0 auto',
+        position: 'relative',
+        zIndex: 1
+      }}>
+        {services.map((service, index) => {
+          const isHovered = activeCard === index;
+
+          const cardStyle = isHovered
+            ? getHoverBackgroundStyle(service.image)
+            : { background: service.gradient, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)' };
+
+          const textColor = isHovered ? 'white' : '#1a1a2e';
+
+          return (
+            <div
+              key={index}
+              className={`service-card ${isHovered ? 'active' : ''}`}
+              onMouseEnter={() => setActiveCard(index)}
+              onMouseLeave={() => setActiveCard(null)}
+              style={{
+                width: '100%',
+                borderRadius: '30px',
+                padding: '40px',
+                position: 'relative',
+                overflow: 'visible',
+                cursor: 'pointer',
+                boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.15)',
+                minHeight: '400px',
+                display: 'flex',
+                flexDirection: 'column',
+                ...cardStyle,
+                color: textColor,
+                transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                isolation: 'isolate',
+                transform: isHovered ? 'translateY(-10px)' : 'translateY(0)'
+              }}
+            >
+              <div className="card-content" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                position: 'relative',
+                zIndex: 2,
+                color: 'inherit',
+                transition: 'color 0.4s ease',
+                alignItems: 'flex-start',
+                // Keep this for bottom positioning on hover
+                justifyContent: 'space-between'
+              }}>
+                <div className="card-top-content">
+                  <div className="card-header" style={{ marginBottom: '20px' }}>
+                    <h3 className="card-title" style={{
+                      fontSize: '38px',
+                      fontWeight: '400',
+                      marginBottom: '4px',
+                      fontFamily: '"WF Visual Sans", sans-serif',
+                      color: 'inherit',
+                      transition: 'color 0.4s ease'
+                    }}>
+                      {service.title}
+                    </h3>
+                    <h4 className="card-subtitle" style={{
+                      fontFamily: '"WF Visual Sans", sans-serif',
+                      fontSize: '38px',
+                      fontWeight: '400',
+                      opacity: '1',
+                      color: 'inherit',
+                      transition: 'all 0.4s ease'
+                    }}>
+                      {service.subtitle}
+                    </h4>
+                  </div>
+
+                  {/* The small image is now visible on ALL non-hovered cards, and hidden on hover */}
+                  <div className="card-image" style={{
+                    marginBottom: isHovered ? '0' : '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
+                    transition: 'all 0.4s ease',
+                    opacity: isHovered ? '0' : '1',
+                    height: isHovered ? '0' : '80px',
+                    transform: isHovered ? 'translateY(-20px)' : 'translateY(0)',
+                    overflow: 'hidden'
+                  }}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="service-image"
+                      style={{
+                        width: '150px',
+                        height: '80px',
+                        objectFit: 'cover',
+                        borderRadius: '100px',
+                        transition: 'all 0.5s ease'
+                      }}
+                    />
+                  </div>
                 </div>
-                <h1 className="services-title">
-                    From idea to <span className="execution-text">execution</span> we've got you covered
-                </h1>
+
+                {/* KEY CHANGE: Removed the opacity condition for non-hovered state.
+                                   Now, the description is visible in both states.
+                                   It stays at the bottom due to `justifyContent: 'space-between'`.
+                                */}
+                <p className="card-description" style={{
+                  fontFamily: '"WF Visual Sans"',
+                  fontWeight: '500',
+                  fontSize: '16px',
+                  lineHeight: '1.4',
+                  letterSpacing: '1%',
+                  color: isHovered ? 'white' : '#7D7D7D'
+                  // background: #7D7D7D;
+
+                  // *** REMOVED: opacity: isHovered ? '1' : '0' ***
+                  // Use a fixed opacity for better readability on light/dark.
+                  // opacity: isHovered ? '1' : '0.9',
+                  // transition: 'opacity 0.5s ease',
+                  // color: 'inherit',
+                  // maxWidth: '90%'
+                }}>
+                  {service.description}
+                </p>
+
+                <button className="card-arrow" style={{
+                  position: 'absolute',
+                  right: '30px',
+                  top: '30px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '10px',
+                  borderRadius: '50%',
+                  transition: 'all 0.4s ease'
+                }}>
+                  <img
+                    src={ArrowImg}
+                    alt="arrow"
+                    style={{
+                      width: '24px',
+                      height: '24px',
+                      // Arrow is always dark on light background, and white on hover (dark background)
+                      filter: isHovered ? 'invert(1)' : 'invert(0)',
+                      transition: 'all 0.4s ease',
+                      transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
+                    }}
+                  />
+                </button>
+              </div>
             </div>
+          );
+        })}
+      </div>
 
-            <div className="services-grid">
-                {services.map((service, index) => (
-                    <div
-                        key={index}
-                        className={`service-card ${service.light ? 'light' : 'dark'}`}
-                        style={{ background: service.gradient }}
-                    >
-                        <div className="card-content">
-                            <div className="card-header">
-                                <h3 className="card-title">{service.title}</h3>
-                                <h4 className="card-subtitle">{service.subtitle}</h4>
-                            </div>
+      {/* Media Queries (CSS-in-JS style block) */}
+      <style jsx>{`
+                @media (max-width: 968px) {
+                    .services-grid {
+                        grid-template-columns: 1fr !important;
+                        max-width: 600px !important;
+                    }
 
-                            <div className="card-image">
-                                <img src={service.image} alt={service.title} className="service-image" />
-                            </div>
+                    .services-title {
+                        font-size: 36px !important;
+                    }
 
-                            <p className="card-description">{service.description}</p>
+                    .services-container {
+                        padding: 40px 20px !important;
+                    }
+                }
 
-                            <button className="card-arrow">→</button>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+                @media (max-width: 640px) {
+                    .services-title {
+                        font-size: 28px !important;
+                    }
+
+                    .card-title,
+                    .card-subtitle {
+                        font-size: 28px !important;
+                    }
+
+                    .service-card {
+                        padding: 30px !important;
+                        min-height: 320px !important;
+                        border-radius: 25px !important;
+                    }
+
+                    .card-arrow {
+                        right: 20px !important;
+                        top: 20px !important;
+                    }
+                }
+            `}</style>
+    </div>
+  );
 };
-
-// CSS Styles
-const styles = `
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.services-container {
-  min-height: 100vh;
-  padding: 60px 40px;
-  position: relative;
-}
-
-.services-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.3);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.services-header {
-  text-align: center;
-  margin-bottom: 60px;
-  position: relative;
-  z-index: 1;
-}
-
-.services-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #1a1a2e;
-  color: white;
-  padding: 8px 20px;
-  border-radius: 25px;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-
-.badge-icon {
-  font-size: 16px;
-}
-
-.services-title {
-  font-size: 48px;
-  font-weight: 400;
-  color: #1a1a2e;
-  line-height: 1.3;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.execution-text {
-  font-style: italic;
-  font-weight: 500;
-  color: #6b4c9a;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.service-card {
-  border-radius: 20px;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  min-height: 350px;
-  display: flex;
-  flex-direction: column;
-  backdrop-filter: blur(10px);
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.service-card.dark {
-  color: white;
-}
-
-.service-card.light {
-  color: #1a1a2e;
-}
-
-.card-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
-}
-
-.card-header {
-  margin-bottom: 20px;
-}
-
-.card-title {
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.card-subtitle {
-  font-size: 28px;
-  font-weight: 500;
-  opacity: 0.95;
-}
-
-.card-image {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.service-image {
-  width: 150px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 100px;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
-}
-
-.card-description {
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.9;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.card-arrow {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  color: inherit;
-}
-
-.service-card:hover .card-arrow {
-  transform: translateX(5px);
-}
-
-@media (max-width: 968px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .services-title {
-    font-size: 36px;
-  }
-  
-  .services-container {
-    padding: 40px 20px;
-  }
-}
-
-@media (max-width: 640px) {
-  .services-title {
-    font-size: 28px;
-  }
-  
-  .card-title,
-  .card-subtitle {
-    font-size: 24px;
-  }
-  
-  .service-card {
-    padding: 30px;
-    min-height: 300px;
-  }
-  
-  .service-image {
-    width: 120px;
-    height: 80px;
-  }
-}
-`;
-
-// Inject styles
-const styleSheet = document.createElement("style");
-styleSheet.innerText = styles;
-document.head.appendChild(styleSheet);
 
 export default ServicesSection;
