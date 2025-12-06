@@ -13,6 +13,7 @@ import MsloneBanner from "./components/portfolio/msloan";
 import ServicesWebsite from "./components/servicespage/servicebanner";
 import Header from "./components/homepage/header";
 import AboutBanner from "./components/aboutpage/aboutbanner";
+import Footer from "./components/homepage/footer";
 
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
 
        
       </Routes>
+
+      <Footer />
     </Router>
   );
 }

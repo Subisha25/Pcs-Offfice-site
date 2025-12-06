@@ -11,6 +11,7 @@ import WorkProcess from "./workprocess";
 import CTASection from "./cta";
 import Footer from "./footer";
 import WordAnimation from "./explore";
+import Benefits from "../aboutpage/benefits";
 
 const words = ["build", "learn"]; // 🔁 cycle panna words
 
@@ -74,7 +75,7 @@ function Banner() {
             </h1>
 
             <div className="banner-buttons">
-              <button className="btn-primary">
+              <button className="btn-primaryhome">
                 <div className="icon-circle">
                   <img alt="arrow" src={Arrow} />
                 </div>
@@ -95,9 +96,10 @@ function Banner() {
         <WordAnimation />
         {/* <Portfoliobanner /> */}
         <WorkProcess />
+        <Benefits />
         <Products/>
         <CTASection />
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   );

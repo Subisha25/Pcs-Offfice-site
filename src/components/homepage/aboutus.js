@@ -36,7 +36,7 @@
 
 //           <div className="cta-section">
 //             <a href="#" className="link">Know More About Us</a>
-//            <button className="btn-primary">
+//            <button className="btn-primaryabout">
 //                 <div className="icon-circle">
 //                   <img alt="arrow" src={Arrow} />
 //                 </div>
@@ -158,7 +158,7 @@
 
 //           <div className="cta-section">
 //             <a href="#" className="link">Know More About Us</a>
-//             <button className="btn-primary">
+//             <button className="btn-primaryabout">
 //               <div className="icon-circle">
 //                 <img alt="arrow" src={Arrow} />
 //               </div>
@@ -407,7 +407,7 @@ useEffect(() => {
 
           <div className="cta-section">
             <a href="#" className="link">Know More About Us</a>
-            <button className="btn-primary">
+            <button className="btn-primaryhome">
               <div className="icon-circle">
                 <img alt="arrow" src={Arrow} />
               </div>
