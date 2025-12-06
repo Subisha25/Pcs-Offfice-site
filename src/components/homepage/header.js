@@ -94,18 +94,18 @@ const navigate = useNavigate();
             <a href="/servicespage" onClick={handleLinkClick}>Services</a>
             <a href="/works" onClick={handleLinkClick}>Works</a>
             <a href="/products" onClick={handleLinkClick}>Products</a>
-            <a href="/blog" onClick={handleLinkClick}>Blog</a>
+            <a href="/pcstrainingsite" onClick={handleLinkClick}>Training</a>
           </nav>
         )}
 
         {/* Mobile Menu - separate positioning */}
         {isMobile && menuOpen && (
           <nav className="header-menu show-menu">
-            <a href="#about" onClick={handleLinkClick}>About</a>
-            <a href="#services" onClick={handleLinkClick}>Services</a>
-            <a href="#works" onClick={handleLinkClick}>Works</a>
-            <a href="#products" onClick={handleLinkClick}>Products</a>
-            <a href="#blog" onClick={handleLinkClick}>Blog</a>
+            <a href="/aboutbanner" onClick={handleLinkClick}>About</a>
+            <a href="/servicespage" onClick={handleLinkClick}>Services</a>
+            <a href="/works" onClick={handleLinkClick}>Works</a>
+            <a href="/products" onClick={handleLinkClick}>Products</a>
+            <a href="/pcstraningsite" onClick={handleLinkClick}>Training</a>
             <button className="header-btn" onClick={handleLinkClick}>
               Let's Discuss
             </button>
