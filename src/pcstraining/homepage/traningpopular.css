@@ -1,0 +1,258 @@
+.traningpopular {
+  padding: 64px 24px 72px;
+  background: radial-gradient(circle at 0% 0%, #e0f2fe 0%, #f5e9ff 40%, #fdfbff 100%);
+  font-family: "WF Visual Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.traningpopular-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Header */
+.traningpopular-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.traningpopular-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.traningpopular-eyebrow {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0;
+}
+
+.traningpopular-title {
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #020617;
+  margin: 0;
+}
+
+.traningpopular-title-highlight {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(90deg, #3b82f6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* CTA Button */
+.traningpopular-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #111827 0%, #4f46e5 50%, #f97316 100%);
+  color: #f9fafb;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+}
+
+.traningpopular-cta-text {
+  position: relative;
+  z-index: 1;
+}
+
+.traningpopular-cta-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #f9fafb;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Cards Grid */
+.traningpopular-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Card */
+.traningpopular-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.traningpopular-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 50px rgba(15, 23, 42, 0.18);
+}
+
+.traningpopular-card-imageWrapper {
+  padding: 14px 14px 0 14px;
+}
+
+.traningpopular-card-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 18px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card Body */
+.traningpopular-card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.traningpopular-card-category {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.traningpopular-card-title {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* Meta row */
+.traningpopular-card-meta {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.traningpopular-card-mode {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.traningpopular-card-modeDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #9ca3af;
+}
+
+.traningpopular-card-lessons {
+  font-weight: 500;
+}
+
+/* Buttons row */
+.traningpopular-card-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.traningpopular-card-btn {
+  flex: 1;
+  height: 38px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.traningpopular-card-btn-secondary {
+  border: 1px solid #111827;
+  background: #ffffff;
+  color: #111827;
+}
+
+.traningpopular-card-btn-secondary:hover {
+  background: #111827;
+  color: #f9fafb;
+}
+
+.traningpopular-card-btn-primary {
+  border: none;
+  background: #111827;
+  color: #f9fafb;
+}
+
+.traningpopular-card-btn-primary:hover {
+  background: #4b5563;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .traningpopular-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .traningpopular {
+    padding: 40px 16px 52px;
+  }
+
+  .traningpopular-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .traningpopular-title {
+    font-size: 28px;
+  }
+
+  .traningpopular-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .traningpopular-cta {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .traningpopular-header {
+    align-items: stretch;
+  }
+
+  .traningpopular-title {
+    font-size: 24px;
+  }
+
+  .traningpopular-cta {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

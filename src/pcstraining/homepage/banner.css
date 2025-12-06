@@ -1,0 +1,342 @@
+/* TrainingHomeBanner.css */
+
+.train-home-ban-container {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 680px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Header Navigation */
+.train-home-ban-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 16px;
+  padding:100px 0 0 0px;
+  position: relative;
+  z-index: 10;
+}
+
+.train-home-ban-back,
+.train-home-ban-home {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.train-home-ban-back:hover,
+.train-home-ban-home:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.1);
+}
+
+.train-home-ban-breadcrumb {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Main Content */
+.train-home-ban-content {
+  position: relative;
+  text-align: center;
+  padding:80px;
+  z-index: 5;
+}
+
+.train-home-ban-text {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.train-home-ban-title {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #000;
+  margin: 0 0 24px 0;
+  letter-spacing: -2px;
+}
+
+.train-home-ban-highlight {
+  color: #e91e63;
+  font-style: italic;
+  position: relative;
+}
+
+.train-home-ban-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.train-home-ban-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.train-home-ban-btn {
+  padding: 16px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+}
+
+.train-home-ban-btn-primary {
+  background: #001f5c;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 31, 92, 0.3);
+}
+
+.train-home-ban-btn-primary:hover {
+  background: #00153d;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 31, 92, 0.4);
+}
+
+.train-home-ban-btn-secondary {
+  background: #fff;
+  color: #001f5c;
+  border: 2px solid #001f5c;
+}
+
+.train-home-ban-btn-secondary:hover {
+  background: #001f5c;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 31, 92, 0.3);
+}
+
+.train-home-ban-btn-icon {
+  display: inline-block;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.train-home-ban-btn-primary:hover .train-home-ban-btn-icon {
+  transform: translateX(4px);
+}
+
+/* Avatar Decorations */
+.train-home-ban-avatar {
+  position: absolute;
+  /* border-radius: 50%; */
+  /* overflow: hidden; */
+  /* box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); */
+  /* transition: transform 0.3s ease; */
+}
+
+.train-home-ban-avatar:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.train-home-ban-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.train-home-ban-avatar-1 {
+  width: 130px;
+  height: 130px;
+  top: 10px;
+  /* left: 80px; */
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  /* padding: 4px; */
+  animation: train-home-ban-float 3s ease-in-out infinite;
+}
+
+.train-home-ban-avatar-2 {
+  width: 130px;
+  height: 130px;
+  top: 320px;
+  left: 180px;
+  /* background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); */
+  padding: 4px;
+  animation: train-home-ban-float 3.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.train-home-ban-avatar-3 {
+  width: 150px;
+  height: 150px;
+  top: 280px;
+  right: 200px;
+  /* background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); */
+  padding: 4px;
+  animation: train-home-ban-float 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.train-home-ban-avatar-4 {
+  width: 130px;
+  height: 130px;
+ top: 10px;
+  right: 140px;
+  /* background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); */
+  padding: 4px;
+  animation: train-home-ban-float 3.2s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Dimension Badge */
+.train-home-ban-dimension {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #00a8ff;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 168, 255, 0.3);
+}
+
+/* Footer Categories */
+.train-home-ban-footer {
+  background: #001f5c;
+  color: #fff;
+  padding: 28px 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 10;
+}
+
+.train-home-ban-category {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.train-home-ban-category::after {
+  content: '•';
+  position: absolute;
+  right: -32px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.train-home-ban-category:last-child::after {
+  content: none;
+}
+
+.train-home-ban-category:hover {
+  color: #00a8ff;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes train-home-ban-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .train-home-ban-title {
+    font-size: 56px;
+  }
+  
+  .train-home-ban-avatar {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .train-home-ban-footer {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .train-home-ban-title {
+    font-size: 42px;
+  }
+  
+  .train-home-ban-buttons {
+    flex-direction: column;
+  }
+  
+  .train-home-ban-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .train-home-ban-avatar {
+    display: none;
+  }
+  
+  .train-home-ban-footer {
+    gap: 24px;
+    font-size: 13px;
+  }
+  
+  .train-home-ban-category::after {
+    right: -16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .train-home-ban-header {
+    padding: 24px;
+  }
+  
+  .train-home-ban-content {
+    padding: 40px 24px 80px;
+  }
+  
+  .train-home-ban-title {
+    font-size: 32px;
+  }
+  
+  .train-home-ban-subtitle {
+    font-size: 16px;
+  }
+  
+  .train-home-ban-footer {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .train-home-ban-category::after {
+    content: none;
+  }
+}

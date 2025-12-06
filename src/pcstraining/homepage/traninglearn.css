@@ -1,0 +1,197 @@
+.traninglearn {
+  padding: 64px 24px 80px;
+  background-color: #ffffff;
+  font-family: "WF Visual Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.traninglearn-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Tag */
+.traninglearn-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #020617;
+  color: #f9fafb;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.traninglearn-tag-icon {
+  font-size: 14px;
+}
+
+.traninglearn-tag-text {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Heading */
+.traninglearn-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #020617;
+  margin: 0;
+}
+
+.traninglearn-title-highlight {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(90deg, #3b82f6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Carousel base */
+.traninglearn-carousel {
+  margin-top: 40px;
+}
+
+.traninglearn-carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.traninglearn-carousel-track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Card */
+.traninglearn-card {
+  padding: 24px 26px;
+  margin: 0 12px;
+  background: #f9fafb;
+  border-radius: 24px;
+  text-align: left;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+
+.traninglearn-card-quoteMark {
+  font-size: 32px;
+  color: #1d4ed8;
+  margin-bottom: 8px;
+}
+
+.traninglearn-card-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+/* Card footer */
+.traninglearn-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.traninglearn-card-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.traninglearn-card-person {
+  display: flex;
+  flex-direction: column;
+}
+
+.traninglearn-card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.traninglearn-card-role {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Nav buttons */
+.traninglearn-nav {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.traninglearn-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: none;
+  background: #020617;
+  color: #f9fafb;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease, opacity 0.15s ease;
+}
+
+.traninglearn-nav-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.4);
+  background: #1d1b7a;
+}
+
+.traninglearn-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .traninglearn-title {
+    font-size: 28px;
+  }
+
+  .traninglearn-card {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .traninglearn {
+    padding: 48px 16px 64px;
+  }
+
+  .traninglearn-title {
+    font-size: 26px;
+  }
+
+  .traninglearn-card {
+    margin: 0 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .traninglearn-title {
+    font-size: 22px;
+  }
+
+  .traninglearn-card {
+    padding: 20px 18px;
+    border-radius: 18px;
+  }
+}

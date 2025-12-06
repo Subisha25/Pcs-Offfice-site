@@ -14,6 +14,7 @@ import ServicesWebsite from "./components/servicespage/servicebanner";
 import Header from "./components/homepage/header";
 import AboutBanner from "./components/aboutpage/aboutbanner";
 import Footer from "./components/homepage/footer";
+import TrainingHomeBanner from "./pcstraining/homepage/banner";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/wts" element={<WtsBanner />} />
         <Route path="/officechat" element={<OfficechatBanner />} />
         <Route path="/msloan" element={<MsloneBanner/>} />
+        <Route path="/pcstrainingsite" element={<TrainingHomeBanner/>} />
 
 
 

@@ -1,0 +1,137 @@
+/* TrainingJourney.css */
+
+.trainingjourney-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 48px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.trainingjourney-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Title Styling */
+.trainingjourney-title {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000;
+  margin: 0 0 24px 0;
+  letter-spacing: -1px;
+}
+
+.trainingjourney-highlight-learning {
+  color: #e91e63;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.trainingjourney-highlight-journey {
+  color: #001f5c;
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Description */
+.trainingjourney-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 36px 0;
+  font-weight: 400;
+}
+
+/* Button */
+.trainingjourney-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #001f5c;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 31, 92, 0.3);
+  font-family: inherit;
+}
+
+.trainingjourney-button:hover {
+  background: #00153d;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 31, 92, 0.4);
+}
+
+.trainingjourney-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 31, 92, 0.3);
+}
+
+.trainingjourney-button-icon {
+  display: inline-block;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  font-weight: 700;
+}
+
+.trainingjourney-button:hover .trainingjourney-button-icon {
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .trainingjourney-title {
+    font-size: 48px;
+  }
+  
+  .trainingjourney-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trainingjourney-container {
+    padding: 60px 32px;
+  }
+  
+  .trainingjourney-title {
+    font-size: 38px;
+  }
+  
+  .trainingjourney-description {
+    font-size: 14px;
+  }
+  
+  .trainingjourney-description br {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .trainingjourney-container {
+    padding: 48px 24px;
+  }
+  
+  .trainingjourney-title {
+    font-size: 32px;
+  }
+  
+  .trainingjourney-description {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  
+  .trainingjourney-button {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 32px;
+  }
+}
