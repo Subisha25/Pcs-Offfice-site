@@ -94,9 +94,7 @@ function Banner() {
         <ServicesSection />
         <OurWorkExplore />
         <WordAnimation />
-        {/* <Portfoliobanner /> */}
         <WorkProcess />
-        <Benefits />
         <Products/>
         <CTASection />
         {/* <Footer /> */}

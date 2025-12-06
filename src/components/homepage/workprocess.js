@@ -25,13 +25,13 @@ const TypedText = ({ text, typingSpeed = 50 }) => {
   return <>{displayedText}</>;
 };
 
-export default function Benefits() {
+export default function WorkProcess() {
   const [displayedText, setDisplayedText] = useState("");
   const [step, setStep] = useState(0); // 0–4 steps for scroll animation
   const scrollAreaRef = useRef(null);
 
-  const fullText =
-    "See why partnering with us isthe smartest move.";
+  const fullText = 'From idea to impact—our process makes it easy, exciting, and effective !';
+
 
   // Typing text effect
   useEffect(() => {
@@ -99,7 +99,7 @@ export default function Benefits() {
   }, []);
 
   return (
-    <div className="benefits">
+    <div className="workprocess">
       {/* TOP SECTION - LEFT SIDE */}
       <div className="ourwork-explore-top-section">
         {/* Our Works badge */}
@@ -123,14 +123,14 @@ export default function Benefits() {
               <rect x="14" y="14" width="7" height="7" />
             </svg>
           </div>
-          <span className="our-works-text">Benefits</span>
+          <span className="our-works-text">workprocess</span>
         </div>
 
         {/* Typed main heading */}
         <div className="ourwork-header-wrapper">
           <h1 className="ourwork-main-heading">
             {displayedText.split(" ").map((word, index) => {
-              if (word === "smartest") {
+              if (word === "effective") {
                 return (
                   <span key={index} className="ourwork-something-text">
                     {word}{" "}
@@ -150,64 +150,71 @@ export default function Benefits() {
       </div>
 
       {/* SCROLL AREA + STICKY CARDS */}
-      <div className="benefits-scroll-area" ref={scrollAreaRef}>
-        <div className={`benefits-cards-grid step-${step}`}>
-          <div className="benefits-card">
-            <div className="benefits-icon-wrapper">
+      <div className="workprocess-scroll-area" ref={scrollAreaRef}>
+        <div className={`workprocess-cards-grid step-${step}`}>
+          <div className="workprocess-card">
+            <div className="workprocess-icon-wrapper">
               <img src={Globe} alt="Discover & Strategize Icon" />
             </div>
-            <h3 className="benefits-card-title">
+            <h3 className="workprocess-card-title">
               Discover &
               <br />
               Strategize
             </h3>
-            <p className="benefits-card-description">
+            <p className="workprocess-card-description">
               We dive deep into understanding your brand, goals, and audience.
               Through collaborative discussions and research, we craft a
               strategic roadmap tailored to your needs.
             </p>
           </div>
 
-          <div className="benefits-card">
-            <div className="benefits-icon-wrapper">
+          <div className="workprocess-card">
+            <div className="workprocess-icon-wrapper">
               <img src={Server} alt="Conversion & Focused Icon" />
             </div>
-            <h3 className="benefits-card-title">
+            <h3 className="workprocess-card-title">
               Conversion &
               <br />
               Focused
             </h3>
-            <p className="benefits-card-description">
-              Our layouts are built to perform, guiding every element from copy
-              to design visuals...
+            <p className="workprocess-card-description">
+            Our layouts are built to performguiding users toward action
+to design visuals, content, and
+assets that resonate with your
+brand
             </p>
           </div>
 
-          <div className="benefits-card">
-            <div className="benefits-icon-wrapper">
+          <div className="workprocess-card">
+            <div className="workprocess-icon-wrapper">
               <img src={BookOpen} alt="Build & Launch Icon" />
             </div>
-            <h3 className="benefits-card-title">
+            <h3 className="workprocess-card-title">
               Build &
               <br />
               Launch
             </h3>
-            <p className="benefits-card-description">
-              Our creative team gets to work...
+            <p className="workprocess-card-description">
+              Our creative team gets to work,
+blending innovation with strategy
+to design visuals, content, and
+assets that resonate with your
+brand. Every detail is refined to
+perfection.
             </p>
           </div>
 
-          <div className="benefits-card">
-            <div className="benefits-icon-wrapper">
+          <div className="workprocess-card">
+            <div className="workprocess-icon-wrapper">
               <img src={TrendingUp} alt="Refine & Grow Icon" />
             </div>
-            <h3 className="benefits-card-title">
+            <h3 className="workprocess-card-title">
               Refine &
               <br />
               Grow
             </h3>
-            <p className="benefits-card-description">
-              We don't stop at the launch...
+            <p className="workprocess-card-description">
+              We don't stop at the launch. Weanalyze performance, gatherfeedback, and fine-tune to ensureyour brand keeps evolving andthriving in the digital landscape.
             </p>
           </div>
         </div>

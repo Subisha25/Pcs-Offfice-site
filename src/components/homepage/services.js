@@ -303,44 +303,113 @@ const ServicesSection = () => {
       </div>
 
       {/* Media Queries (CSS-in-JS style block) */}
-      <style jsx>{`
-                @media (max-width: 968px) {
-                    .services-grid {
-                        grid-template-columns: 1fr !important;
-                        max-width: 600px !important;
-                    }
+ <style jsx>{`
+  /* --- 0px – 768px : Mobile & Small Tablet --- */
+  @media (max-width: 768px) {
+    /* Section container */
+    .services-container {
+      padding: 32px 16px !important;
+      min-height: auto !important;
+      background-attachment: scroll !important; /* mobile background fixed issue fix */
+    }
 
-                    .services-title {
-                        font-size: 36px !important;
-                    }
+    /* Header & title */
+    .services-header {
+      margin-bottom: 32px !important;
+    }
 
-                    .services-container {
-                        padding: 40px 20px !important;
-                    }
-                }
+    .services-title {
+      font-size: 24px !important;
+      line-height: 32px !important;
+      max-width: 100% !important;
+      padding: 0 8px !important;
+      text-align: center !important;
+    }
 
-                @media (max-width: 640px) {
-                    .services-title {
-                        font-size: 28px !important;
-                    }
+    /* "Services" button – center it */
+    .btn-primary {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto !important;
+      width: 150px !important;
+      height: 42px !important;
+      font-size: 14px !important;
+    }
 
-                    .card-title,
-                    .card-subtitle {
-                        font-size: 28px !important;
-                    }
+    /* Grid -> single column */
+    .services-grid {
+      grid-template-columns: 1fr !important;
+      max-width: 100% !important;
+      gap: 24px !important;
+    }
 
-                    .service-card {
-                        padding: 30px !important;
-                        min-height: 320px !important;
-                        border-radius: 25px !important;
-                    }
+    /* Card */
+    .service-card {
+      padding: 22px !important;
+      min-height: auto !important;
+      border-radius: 22px !important;
+    }
 
-                    .card-arrow {
-                        right: 20px !important;
-                        top: 20px !important;
-                    }
-                }
-            `}</style>
+    .card-title,
+    .card-subtitle {
+      font-size: 22px !important;
+      line-height: 28px !important;
+    }
+
+    .card-description {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+    }
+
+    .card-image {
+      margin-bottom: 12px !important;
+    }
+
+    .card-image img {
+      width: 120px !important;
+      height: 60px !important;
+      border-radius: 999px !important;
+    }
+
+    .card-arrow {
+      right: 16px !important;
+      top: 16px !important;
+    }
+  }
+
+  /* --- Extra small phones 300px – 480px --- */
+  @media (max-width: 480px) {
+    .services-container {
+      padding: 24px 12px !important;
+    }
+
+    .services-title {
+      font-size: 20px !important;
+      line-height: 28px !important;
+    }
+
+    .service-card {
+      padding: 18px !important;
+      border-radius: 18px !important;
+    }
+
+    .card-title,
+    .card-subtitle {
+      font-size: 20px !important;
+    }
+
+    .card-description {
+      font-size: 13px !important;
+    }
+
+    .card-arrow {
+      right: 12px !important;
+      top: 12px !important;
+    }
+  }
+`}</style>
+
     </div>
   );
 };
