@@ -118,9 +118,46 @@ const navigate = useNavigate();
           {!isMobile && (!isScrolled || menuOpen) && (
             <button className="header-btn">Let's Discuss</button>
           )}
-<button className="menu-togglemobile-btn" onClick={handleMenuClick}>
-              Menu
-            </button>
+<button
+  className={`menu-togglemobile-btn ${menuOpen ? "close" : ""}`}
+  onClick={handleMenuClick}
+>
+  {menuOpen ? (
+    // Close Icon
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      width="24"
+      height="24"
+    >
+      <path
+        fillRule="evenodd"
+        d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 11-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+        clipRule="evenodd"
+      />
+    </svg>
+  ) : (
+    // Menu Icon (Hamburger)
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+    >
+      <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )}
+</button>
+
+
+              {/* <button
+      className={`menu-togglemobile-btn ${menuOpen ? "close" : ""}`}
+      onClick={handleMenuClick}
+    >
+      {menuOpen ? "Close" : "Menu"}
+    </button> */}
        {/* Small header → show Menu button */}
           {isScrolled && !menuOpen && (
             <button className="menu-toggle-btn" onClick={handleMenuClick}>
@@ -129,7 +166,7 @@ const navigate = useNavigate();
           )}
 
           {/* Full header opened while scrolled → show Close button (optional) */}
-          {menuOpen && isScrolled && (
+          {/* {menuOpen && isScrolled && (
             <button
               className="menu-toggleclose-btn"
               onClick={handleMenuClick}
@@ -137,7 +174,7 @@ const navigate = useNavigate();
             >
               Close
             </button>
-          )}
+          )} */}
         </div>
       </div>
     </header>
