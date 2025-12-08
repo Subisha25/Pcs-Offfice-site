@@ -50,14 +50,14 @@ function Footer() {
   </div>
 
   {/* RIGHT BLOCK → MENU */}
-  <div className="menu-columns">
-    <div className="menu-col">
+  <div className="footer-menu-columns">
+    <div className="footer-menu-col">
       <a href="#">About</a>
       <a href="#">Services</a>
       <a href="#">Works</a>
       <a href="#">Products</a>
     </div>
-    <div className="menu-col">
+    <div className="footer-menu-col">
       <a href="#">Blog</a>
       <a href="#">Contact</a>
       <a href="#">Privacy Policy</a>
