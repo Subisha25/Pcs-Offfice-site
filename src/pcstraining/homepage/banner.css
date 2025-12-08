@@ -1,3 +1,26 @@
+:root {
+  --main-bg: #f4f7fb;
+  --main-text: #222222;
+  --primary-color: #007bff;
+  --secondary-color: #555555;
+  --button-primary: #101166;
+  --button-secondary: #D9D9D9;
+  --playfair-fonts: "Playfair Display", serif;
+  --heading-font-size: 32px;
+  --subheading-font-size: 24px;
+  --title-font-size: 20px;
+  --description-font-size: 16px;
+  --small-text-font-size: 14px;
+}
+
+@font-face {
+  font-family: "WF Visual Sans" !important;
+  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* TrainingHomeBanner.css */
 
 .train-home-ban-container {
@@ -18,7 +41,7 @@
   text-align: center;
   justify-content: center;
   gap: 16px;
-  padding:100px 0 0 0px;
+  padding:130px 0 0 0px;
   position: relative;
   z-index: 10;
 }
@@ -45,8 +68,9 @@
 }
 
 .train-home-ban-breadcrumb {
-  font-size: 16px;
-  color: #666;
+ font-family: "WF Visual Sans" !important;
+   font-size: 16px;
+  color: #03045E;
   font-weight: 500;
 }
 
@@ -64,8 +88,10 @@
 }
 
 .train-home-ban-title {
+   font-family: "WF Visual Sans" !important;
+
   font-size: 72px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   color: #000;
   margin: 0 0 24px 0;
@@ -73,14 +99,20 @@
 }
 
 .train-home-ban-highlight {
+    background: linear-gradient(90deg, #03045E, #FF006E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--playfair-fonts);
   color: #e91e63;
   font-style: italic;
   position: relative;
 }
 
 .train-home-ban-subtitle {
+font-family: "WF Visual Sans" !important;
   font-size: 18px;
-  color: #666;
+  color: black;
   margin: 0 0 40px 0;
   font-weight: 400;
   line-height: 1.6;
@@ -95,7 +127,8 @@
 }
 
 .train-home-ban-btn {
-  padding: 16px 36px;
+  font-family: "WF Visual Sans";
+  padding: 12px 36px;
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -121,16 +154,15 @@
 }
 
 .train-home-ban-btn-secondary {
-  background: #fff;
-  color: #001f5c;
-  border: 2px solid #001f5c;
+  /* background: #000000; */
+  color: #000000;
+  border: 2px solid #000000;
 }
 
 .train-home-ban-btn-secondary:hover {
-  background: #001f5c;
-  color: #fff;
+  background: #e5e5e6;
+  /* color: #fff; */
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 31, 92, 0.3);
 }
 
 .train-home-ban-btn-icon {
@@ -259,6 +291,49 @@
   transform: translateY(-2px);
 }
 
+.services-strip2 {
+  width: 100%;
+  background: #03045E;
+  border-top: 1px solid #7D7D7D;
+  border-bottom: 1px solid #7D7D7D;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 20px;
+}
+
+.strip-track2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  animation: scroll-left 22s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Dots style */
+.services-strip2 .dot {
+  font-size: 25px;
+  margin: 0 10px;
+}
+
+/* Hover Stop Scroll */
+.services-strip2:hover .strip-track2 {
+  animation-play-state: paused;
+}
+
+
+
+
 /* Animations */
 @keyframes train-home-ban-float {
   0%, 100% {
@@ -280,6 +355,10 @@
     height: 100px !important;
   }
   
+    .services-strip2 .dot {
+    font-size: 22px;
+    margin: 0 8px;
+  }
   .train-home-ban-footer {
     gap: 40px;
     flex-wrap: wrap;
@@ -291,6 +370,20 @@
     font-size: 42px;
   }
   
+  .services-strip2 {
+    padding: 8px;
+  }
+
+  .strip-track2 {
+    gap: 25px;
+    font-size: 14px;
+    animation: scroll-left 18s linear infinite;
+  }
+
+  .services-strip2 .dot {
+    font-size: 20px;
+    margin: 0 6px;
+  }
   .train-home-ban-buttons {
     flex-direction: column;
   }
@@ -318,7 +411,20 @@
   .train-home-ban-header {
     padding: 24px;
   }
-  
+      .services-strip2 {
+    padding: 6px;
+  }
+
+  .strip-track2 {
+    gap: 20px;
+    font-size: 12px;
+    animation: scroll-left 16s linear infinite;
+  }
+
+  .services-strip2 .dot {
+    font-size: 18px;
+    margin: 0 5px;
+  }
   .train-home-ban-content {
     padding: 40px 24px 80px;
   }

@@ -5,6 +5,8 @@ import "./traningpopular.css";
 import CourseImg1 from "../assets/popular1.png";
 import CourseImg2 from "../assets/popular2.png";
 import CourseImg3 from "../assets/popular3.png";
+import CommonButton from "../../components/common/button";
+import { Link } from "react-router-dom";
 
 const courses = [
   {
@@ -48,10 +50,7 @@ const TraningPopular = () => {
             </h2>
           </div>
 
-          <button className="traningpopular-cta">
-            <span className="traningpopular-cta-text">Explore all Course</span>
-            <span className="traningpopular-cta-icon">→</span>
-          </button>
+        <CommonButton text="Explore all Course"/>
         </div>
 
         {/* Cards */}
@@ -84,9 +83,9 @@ const TraningPopular = () => {
                 </div>
 
                 <div className="traningpopular-card-actions">
-                  <button className="traningpopular-card-btn traningpopular-card-btn-secondary">
+                  <Link className="traningpopular-card-btn-secondary">
                     More Details
-                  </button>
+                  </Link>
                   <button className="traningpopular-card-btn traningpopular-card-btn-primary">
                     Enroll Now
                   </button>

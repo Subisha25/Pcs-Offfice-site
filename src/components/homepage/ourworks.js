@@ -155,11 +155,11 @@
 
 
 import React, { useEffect, useRef, useState } from "react";
-import "./aboutus.css";
 import tagicon from "../assets/Union.png";
 import Arrow from "../assets/arrow.png";
+import CommonTopTag from "../common/toptag";
 
-export default function About() {
+export default function OurWorkExplore() {
   const sectionRef = useRef(null);
   const statsRef = useRef(null);
 
@@ -274,14 +274,7 @@ useEffect(() => {
       <div className="container">
 
         {/* TOP TAG */}
-        <div className="top-center">
-          <div className="tag">
-            <div className="tag-icon">
-              <img src={tagicon} alt="icon" className="boxicon" />
-            </div>
-            Our Works
-          </div>
-        </div>
+       <CommonTopTag  text="Our Works" icon={tagicon}/>
 
         {/* WORD BY WORD FILL */}
         <p className="animated-text">

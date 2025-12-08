@@ -1342,6 +1342,7 @@ import Image2 from '../assets/coollah.png';
 import Image3 from '../assets/bjmm.jpeg';
 import Image4 from '../assets/wts.png';
 import { useNavigate } from "react-router-dom";
+import CommonButton from '../common/button';
 
 const projectsData = [
   {
@@ -1795,24 +1796,8 @@ export default function WordAnimation() {
               className="wordanimation-our-works-wrapper"
               onClick={() => navigate(currentProject.link)}
             >
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background:
-                    "linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)",
-                  borderRadius: "9999px"
-                }}
-              ></div>
+             <CommonButton text='View' />
 
-              <div className="wordanimation-our-works-icon">
-                <span style={{ fontSize: "24px", color: "white" }}>→</span>
-              </div>
-
-              <span className="wordanimation-our-works-text">View</span>
             </div>
 
             <div className="wordanimation-view-all">→ View All Works</div>
