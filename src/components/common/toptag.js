@@ -4,8 +4,8 @@ import '../homepage/aboutus.css';
 export default function CommonTopTag({ text = "About", icon }) {
   return (
     <div className="top-center">
-      <div className="tag">
-        <div className="tag-icon">
+      <div className="commontag">
+        <div className="commontag-icon">
           <img
             src={icon || tagicon}
             alt="tag icon"

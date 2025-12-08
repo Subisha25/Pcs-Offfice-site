@@ -1,8 +1,850 @@
+// // // import React, { useState, useEffect, useRef } from 'react';
+// // // import Image1 from '../assets/ourworks/Mask group (1).png';
+// // // import Image2 from '../assets/ourworks/Mask group (1).png';
+// // // import Image3 from '../assets/ourworks/Mask group (1).png';
+// // // import Image4 from '../assets/ourworks/Mask group (1).png';
+
+// // // const projectsData = [
+// // //   {
+// // //     id: 1,
+// // //     image: Image1,
+// // //     overlayText: "Featuring curators from around the world",
+// // //     title: "Lhome",
+// // //     tags: ["Web Design", "UI/UX Design"]
+// // //   },
+// // //   {
+// // //     id: 2,
+// // //     image: Image2,
+// // //     overlayText: "Modern kitchen designs",
+// // //     title: "Kitchen Pro",
+// // //     tags: ["Interior Design", "3D Modeling"]
+// // //   },
+// // //   {
+// // //     id: 3,
+// // //     image: Image3,
+// // //     overlayText: "Luxury bedroom collections",
+// // //     title: "Dream Spaces",
+// // //     tags: ["Bedroom Design", "Furniture"]
+// // //   },
+// // //   {
+// // //     id: 4,
+// // //     image: Image4,
+// // //     overlayText: "Smart living solutions",
+// // //     title: "Smart Home",
+// // //     tags: ["Technology", "Automation"]
+// // //   }
+// // // ];
+
+// // // export default function WordAnimation() {
+// // //   const [scrollProgress, setScrollProgress] = useState(0);
+// // //   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+// // //   const containerRef = useRef(null);
+
+// // //   useEffect(() => {
+// // //     const handleScroll = () => {
+// // //       if (!containerRef.current) return;
+
+// // //       const container = containerRef.current;
+// // //       const rect = container.getBoundingClientRect();
+// // //       const containerTop = rect.top;
+// // //       const containerHeight = container.offsetHeight;
+// // //       const windowHeight = window.innerHeight;
+
+// // //       if (containerTop <= windowHeight && containerTop + containerHeight >= 0) {
+// // //         const sectionScrolled = windowHeight - containerTop;
+// // //         const totalProgress = Math.min(Math.max(sectionScrolled / containerHeight, 0), 1);
+// // //         setScrollProgress(totalProgress);
+        
+// // //         // Calculate which project should be shown based on scroll
+// // //         const projectCount = projectsData.length;
+// // //         const progressPerProject = 1 / projectCount;
+// // //         const index = Math.min(Math.floor(totalProgress / progressPerProject), projectCount - 1);
+// // //         setCurrentProjectIndex(index);
+// // //       } else if (containerTop > windowHeight) {
+// // //         setScrollProgress(0);
+// // //         setCurrentProjectIndex(0);
+// // //       } else {
+// // //         setScrollProgress(1);
+// // //         setCurrentProjectIndex(projectsData.length - 1);
+// // //       }
+// // //     };
+
+// // //     window.addEventListener('scroll', handleScroll);
+// // //     handleScroll();
+
+// // //     return () => window.removeEventListener('scroll', handleScroll);
+// // //   }, []);
+
+// // //   const getWordStyle = (isLeft) => {
+// // //     const projectCount = projectsData.length;
+// // //     const progressPerProject = 1 / projectCount;
+// // //     const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
+    
+// // //     const wordStart = 0.30;
+// // //     const wordEnd = 0.4;
+// // //     const wordProgress = Math.max(0, Math.min((localProgress - wordStart) / (wordEnd - wordStart), 1));
+    
+// // //     const imageProgress = Math.max(0, Math.min((localProgress - 0.15) / (0.85 - 0.15), 1));
+// // //     const easedImageProgress = imageProgress * imageProgress;
+// // //     const currentImageScale = easedImageProgress;
+    
+// // //     const baseGap = 50;
+// // //     const imageWidth = window.innerWidth * 0.5;
+// // //     const moveDistance = baseGap + (imageWidth * currentImageScale);
+    
+// // //     // Only show words for the first project
+// // //     if (currentProjectIndex > 0) {
+// // //       return {
+// // //         transform: `translateX(${isLeft ? -moveDistance : moveDistance}px)`,
+// // //         opacity: 0
+// // //       };
+// // //     }
+    
+// // //     return {
+// // //       transform: `translateX(${wordProgress * (isLeft ? -moveDistance : moveDistance)}px)`,
+// // //       opacity: 1 - (wordProgress * 0.3)
+// // //     };
+// // //   };
+
+// // //   const getImageStyle = () => {
+// // //     const projectCount = projectsData.length;
+// // //     const progressPerProject = 1 / projectCount;
+// // //     const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
+    
+// // //     const imageStart = 0.15;
+// // //     const imageEnd = 0.85;
+// // //     const imageProgress = Math.max(0, Math.min((localProgress - imageStart) / (imageEnd - imageStart), 1));
+    
+// // //     const easedProgress = imageProgress * imageProgress;
+// // //     const scale = easedProgress;
+// // //     const opacity = imageProgress;
+
+// // //     return {
+// // //       transform: `scale(${scale})`,
+// // //       opacity: opacity
+// // //     };
+// // //   };
+
+// // //   const getBottomContentStyle = () => {
+// // //     const projectCount = projectsData.length;
+// // //     const progressPerProject = 1 / projectCount;
+// // //     const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
+    
+// // //     const contentStart = 0.7;
+// // //     const contentProgress = Math.max(0, (localProgress - contentStart) / 0.3);
+// // //     const translateY = 100 - (contentProgress * 100);
+// // //     const opacity = contentProgress;
+
+// // //     return {
+// // //       transform: `translateY(${translateY}%)`,
+// // //       opacity: opacity
+// // //     };
+// // //   };
+
+// // //   const currentProject = projectsData[currentProjectIndex];
+
+// // //   return (
+// // //     <>
+// // //       <style>{`
+// // //         @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+// // //         * {
+// // //           margin: 0;
+// // //           padding: 0;
+// // //           box-sizing: border-box;
+// // //         }
+
+// // //         body {
+// // //           min-height: 100vh;
+// // //           overflow-x: hidden;
+// // //           font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+// // //         }
+
+// // //         .wordanimation-scroll-container {
+// // //           height: 400vh;
+// // //           background: #E4E4FF;
+// // //         }
+
+// // //         .wordanimation-animation-container {
+// // //           position: sticky;
+// // //           top: 0;
+// // //           height: 100vh;
+// // //           display: flex;
+// // //           align-items: center;
+// // //           justify-content: center;
+// // //           padding: 20px;
+// // //           overflow: hidden;
+// // //         }
+
+// // //         .wordanimation-content-wrapper {
+// // //           position: relative;
+// // //           display: flex;
+// // //           align-items: center;
+// // //           justify-content: center;
+// // //           width: 100%;
+// // //         }
+
+// // //         .wordanimation-words-wrapper {
+// // //           display: flex;
+// // //           gap: 15px;
+// // //           align-items: center;
+// // //           justify-content: center;
+// // //           position: relative;
+// // //           z-index: 2;
+// // //         }
+
+// // //         .wordanimation-word {
+// // //           font-size: 64px;
+// // //           font-weight: 300;
+// // //           letter-spacing: 2px;
+// // //           transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+// // //           will-change: transform, opacity;
+// // //           color: #1a1a1a;
+// // //         }
+
+// // //         .wordanimation-center-image {
+// // //           position: absolute;
+// // //           width: 100vw;
+// // //           height: 100vh;
+// // //           display: flex;
+// // //           align-items: center;
+// // //           justify-content: center;
+// // //           background: #f0f0f0;
+// // //           z-index: 1;
+// // //           transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+// // //           will-change: transform, opacity;
+// // //           overflow: hidden;
+// // //         }
+
+// // //         .wordanimation-center-image img {
+// // //           width: 100%;
+// // //           height: 100%;
+// // //           object-fit: cover;
+// // //         }
+
+// // //         .wordanimation-image-overlay-text {
+// // //           position: absolute;
+// // //           color: white;
+// // //           font-size: 32px;
+// // //           font-weight: 500;
+// // //           text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+// // //         }
+
+// // //         .wordanimation-bottom-content {
+// // //           position: absolute;
+// // //           bottom: 0;
+// // //           left: 0;
+// // //           right: 0;
+// // //           background: white;
+// // //           padding: 30px 90px;
+// // //           display: flex;
+// // //           align-items: center;
+// // //           justify-content: space-between;
+// // //           z-index: 10;
+// // //           transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+// // //           will-change: transform, opacity;
+// // //         }
+
+// // //         .wordanimation-bottom-left h2 {
+// // //           font-size: 32px;
+// // //           font-weight: 600;
+// // //           margin: 0 0 10px 0;
+// // //         }
+
+// // //         .wordanimation-bottom-links {
+// // //           display: flex;
+// // //           gap: 30px;
+// // //           font-size: 14px;
+// // //           color: #666;
+// // //         }
+
+// // //         .wordanimation-view-all {
+// // //           color: #666;
+// // //           font-size: 16px;
+// // //           cursor: pointer;
+// // //         }
+
+// // //         .wordanimation-our-works-wrapper {
+// // //           position: relative;
+// // //           width: 220px;
+// // //           height: 70px;
+// // //           cursor: pointer;
+// // //         }
+
+// // //         .wordanimation-our-works-bg-image {
+// // //           position: absolute;
+// // //           top: 0;
+// // //           left: 0;
+// // //           width: 100%;
+// // //           height: 100%;
+// // //           object-fit: cover;
+// // //           border-radius: 9999px;
+// // //         }
+
+// // //         .wordanimation-our-works-icon {
+// // //           width: 3.9rem;
+// // //           height: 3.9rem;
+// // //           background-color: #312e81;
+// // //           border-radius: 50%;
+// // //           display: flex;
+// // //           align-items: center;
+// // //           justify-content: center;
+// // //           position: absolute;
+// // //           left: 0.4rem;
+// // //           top: 50%;
+// // //           transform: translateY(-50%);
+// // //           z-index: 10;
+// // //         }
+
+// // //         .wordanimation-arrow {
+// // //           width: 24px;
+// // //           height: 24px;
+// // //           filter: brightness(0) invert(1);
+// // //         }
+
+// // //         .wordanimation-our-works-text {
+// // //           font-family: 'SF Pro Display', sans-serif;
+// // //           font-weight: 520;
+// // //           font-size: 24px;
+// // //           color: black;
+// // //           position: absolute;
+// // //           right: 40px;
+// // //           top: 50%;
+// // //           transform: translateY(-50%);
+// // //           z-index: 10;
+// // //         }
+
+// // //         @media (max-width: 768px) {
+// // //           .wordanimation-word {
+// // //             font-size: 32px;
+// // //           }
+
+// // //           .wordanimation-words-wrapper {
+// // //             gap: 20px;
+// // //           }
+
+// // //           .wordanimation-center-image {
+// // //             width: 80vw;
+// // //           }
+
+// // //           .wordanimation-bottom-content {
+// // //             padding: 20px;
+// // //             flex-direction: column;
+// // //             gap: 20px;
+// // //           }
+
+// // //           .wordanimation-our-works-text {
+// // //             font-size: 20px;
+// // //           }
+// // //         }
+// // //       `}</style>
+
+// // //       <div className="wordanimation-scroll-container" ref={containerRef}>
+// // //         <div className="wordanimation-animation-container">
+// // //           <div className="wordanimation-content-wrapper">
+// // //             <div className="wordanimation-words-wrapper">
+// // //               <h1 className="wordanimation-word" style={getWordStyle(true)}>
+// // //                 Scroll to
+// // //               </h1>
+// // //               <h1 className="wordanimation-word" style={getWordStyle(false)}>
+// // //                 Explore
+// // //               </h1>
+// // //             </div>
+// // //             <div className="wordanimation-center-image" style={getImageStyle()}>
+// // //               <img 
+// // //                 src={currentProject.image} 
+// // //                 alt={currentProject.title} 
+// // //               />
+// // //               <div className="wordanimation-image-overlay-text">
+// // //                 {currentProject.overlayText}
+// // //               </div>
+// // //             </div>
+// // //           </div>
+// // //           {/* BottomContent section*/}
+// // //           <div className="wordanimation-bottom-content" style={getBottomContentStyle()}>
+// // //             <div className="wordanimation-bottom-left">
+// // //               <h2>{currentProject.title}</h2>
+// // //               <div className="wordanimation-bottom-links">
+// // //                 {currentProject.tags.map((tag, index) => (
+// // //                   <span key={index}>{tag}</span>
+// // //                 ))}
+// // //               </div>
+// // //             </div>
+// // //             <div className="wordanimation-our-works-wrapper">
+// // //               <div style={{
+// // //                 position: 'absolute',
+// // //                 top: 0,
+// // //                 left: 0,
+// // //                 right: 0,
+// // //                 bottom: 0,
+// // //                 background: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)',
+// // //                 borderRadius: '9999px'
+// // //               }}></div>
+// // //               <div className="wordanimation-our-works-icon">
+// // //                 <span style={{fontSize: '24px', color: 'white'}}>→</span>
+// // //               </div>
+// // //               <span className="wordanimation-our-works-text">
+// // //                 View
+// // //               </span>
+// // //             </div>
+// // //             <div className="wordanimation-view-all">→ View All Works</div>
+// // //           </div>
+// // //         </div>
+// // //       </div>
+// // //     </>
+// // //   );
+// // // }
+
+// // import React, { useState, useEffect, useRef } from 'react';
+// // import Image1 from '../assets/ourworks/Mask group (1).png';
+// // import Image2 from '../assets/coollah.png';
+// // import Image3 from '../assets/bjmm.jpeg';
+// // import Image4 from '../assets/wts.png';
+// // import { useNavigate } from "react-router-dom";
+
+
+// // const projectsData = [
+// //   {
+// //     id: 1,
+// //     image: Image1,
+// //     overlayText: "Featuring curators from around the world",
+// //     title: "Lhome",
+// //     link: "/lhome",
+// //     tags: ["Web Design", "UI/UX Design"]
+// //   },
+// //   {
+// //     id: 2,
+// //     image: Image2,
+// //     overlayText: "Modern kitchen designs",
+// //     title: "Coollah",
+// //     link: "/collah",
+// //     tags: ["Web Design", "UI/UX Design"]
+// //   },
+// //   {
+// //     id: 3,
+// //     image: Image3,
+// //     overlayText: "Luxury bedroom collections",
+// //     title: "BJMM",
+// //     link: "/bjmm",
+// //     tags: ["Web Design", "UI/UX Design"]
+// //   },
+// //   {
+// //     id: 4,
+// //     image: Image4,
+// //     overlayText: "Smart living solutions",
+// //     title: "WorldTmil Siragam",
+// //     link: "/wts",
+// //     tags: ["Web Design", "UI/UX Design"]
+// //   }
+// // ];
+
+// // export default function WordAnimation() {
+// //   const [scrollProgress, setScrollProgress] = useState(0);
+// //   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+// //   const containerRef = useRef(null);
+// // const navigate = useNavigate();
+
+// //   useEffect(() => {
+// //     const handleScroll = () => {
+// //       if (!containerRef.current) return;
+
+// //       const container = containerRef.current;
+// //       const rect = container.getBoundingClientRect();
+// //       const containerTop = rect.top;
+// //       const containerHeight = container.offsetHeight;
+// //       const windowHeight = window.innerHeight;
+
+// //       // 1) BEFORE section hits top → no animation
+// //       //    Section top > 0 means it is still below the top of viewport.
+// //       if (containerTop > 0) {
+// //         setScrollProgress(0);
+// //         setCurrentProjectIndex(0);
+// //         return;
+// //       }
+
+// //       // 2) MAIN ANIMATION RANGE: when section is sticky and scrolling
+// //       //    When top <= 0 and bottom is still below viewport bottom.
+// //       const maxScroll = containerHeight - windowHeight; // total distance while sticky
+// //       const scrolled = Math.min(Math.max(-containerTop, 0), maxScroll); // clamp
+// //       const totalProgress = maxScroll > 0 ? scrolled / maxScroll : 0;
+
+// //       setScrollProgress(totalProgress);
+
+// //       // Project index based on progress (0 → 1)
+// //       const projectCount = projectsData.length;
+// //       const progressPerProject = 1 / projectCount;
+// //       const index = Math.min(
+// //         Math.floor(totalProgress / progressPerProject),
+// //         projectCount - 1
+// //       );
+// //       setCurrentProjectIndex(index);
+// //     };
+
+// //     window.addEventListener('scroll', handleScroll);
+// //     handleScroll(); // initial
+
+// //     return () => window.removeEventListener('scroll', handleScroll);
+// //   }, []);
+
+// //   const getWordStyle = (isLeft) => {
+// //     const projectCount = projectsData.length;
+// //     const progressPerProject = 1 / projectCount;
+// //     const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
+
+// //     const wordStart = 0.30;
+// //     const wordEnd = 0.4;
+// //     const wordProgress = Math.max(
+// //       0,
+// //       Math.min((localProgress - wordStart) / (wordEnd - wordStart), 1)
+// //     );
+
+// //     const imageProgress = Math.max(
+// //       0,
+// //       Math.min((localProgress - 0.15) / (0.85 - 0.15), 1)
+// //     );
+// //     const easedImageProgress = imageProgress * imageProgress;
+// //     const currentImageScale = easedImageProgress;
+
+// //     const baseGap = 50;
+// //     const imageWidth = typeof window !== 'undefined' ? window.innerWidth * 0.5 : 0;
+// //     const moveDistance = baseGap + (imageWidth * currentImageScale);
+
+// //     // Only show words for the first project
+// //     if (currentProjectIndex > 0) {
+// //       return {
+// //         transform: `translateX(${isLeft ? -moveDistance : moveDistance}px)`,
+// //         opacity: 0
+// //       };
+// //     }
+
+// //     return {
+// //       transform: `translateX(${wordProgress * (isLeft ? -moveDistance : moveDistance)}px)`,
+// //       opacity: 1 - (wordProgress * 0.3)
+// //     };
+// //   };
+
+// //   const getImageStyle = () => {
+// //     const projectCount = projectsData.length;
+// //     const progressPerProject = 1 / projectCount;
+// //     const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
+
+// //     const imageStart = 0.15;
+// //     const imageEnd = 0.85;
+// //     const imageProgress = Math.max(
+// //       0,
+// //       Math.min((localProgress - imageStart) / (imageEnd - imageStart), 1)
+// //     );
+
+// //     const easedProgress = imageProgress * imageProgress;
+// //     const scale = easedProgress;
+// //     const opacity = imageProgress;
+
+// //     return {
+// //       transform: `scale(${scale})`,
+// //       opacity: opacity
+// //     };
+// //   };
+
+// //   const getBottomContentStyle = () => {
+// //     const projectCount = projectsData.length;
+// //     const progressPerProject = 1 / projectCount;
+// //     const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
+
+// //     const contentStart = 0.7;
+// //     const contentProgress = Math.max(0, (localProgress - contentStart) / 0.3);
+// //     const translateY = 100 - (contentProgress * 100);
+// //     const opacity = contentProgress;
+
+// //     return {
+// //       transform: `translateY(${translateY}%)`,
+// //       opacity: opacity
+// //     };
+// //   };
+
+// //   const currentProject = projectsData[currentProjectIndex];
+
+// //   return (
+// //     <>
+// //       <style>{`
+// //         @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+// //         * {
+// //           margin: 0;
+// //           padding: 0;
+// //           box-sizing: border-box;
+// //         }
+
+// //         body {
+// //           min-height: 100vh;
+// //           overflow-x: hidden;
+// //           font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+// //         }
+
+// //         .wordanimation-scroll-container {
+// //           height: 400vh;
+// //           background: #E4E4FF;
+// //         }
+
+// //         .wordanimation-animation-container {
+// //           position: sticky;
+// //           top: 0;
+// //           height: 100vh;
+// //           display: flex;
+// //           align-items: center;
+// //           justify-content: center;
+// //           padding: 20px;
+// //           overflow: hidden;
+// //         }
+
+// //         .wordanimation-content-wrapper {
+// //           position: relative;
+// //           display: flex;
+// //           align-items: center;
+// //           justify-content: center;
+// //           width: 100%;
+// //         }
+
+// //         .wordanimation-words-wrapper {
+// //           display: flex;
+// //           gap: 15px;
+// //           align-items: center;
+// //           justify-content: center;
+// //           position: relative;
+// //           z-index: 2;
+// //         }
+
+// //         .wordanimation-word {
+// //           font-size: 64px;
+// //           font-weight: 300;
+// //           letter-spacing: 2px;
+// //           transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+// //           will-change: transform, opacity;
+// //           color: #1a1a1a;
+// //         }
+
+// //         .wordanimation-center-image {
+// //           position: absolute;
+// //           width: 100vw;
+// //           height: 100vh;
+// //           display: flex;
+// //           align-items: center;
+// //           justify-content: center;
+// //           background: #f0f0f0;
+// //           z-index: 1;
+// //           transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+// //           will-change: transform, opacity;
+// //           overflow: hidden;
+// //         }
+
+// //         .wordanimation-center-image img {
+// //           width: 100%;
+// //           height: 100%;
+// //           object-fit: cover;
+// //         }
+
+// //         .wordanimation-image-overlay-text {
+// //           position: absolute;
+// //           color: white;
+// //           font-size: 32px;
+// //           font-weight: 500;
+// //           text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+// //         }
+
+// //         .wordanimation-bottom-content {
+// //           position: absolute;
+// //           bottom: 0;
+// //           left: 0;
+// //           right: 0;
+// //           background: white;
+// //           padding: 30px 90px;
+// //           display: flex;
+// //           align-items: center;
+// //           justify-content: space-between;
+// //           z-index: 10;
+// //           transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+// //           will-change: transform, opacity;
+// //         }
+
+// //         .wordanimation-bottom-left h2 {
+// //           font-size: 32px;
+// //           font-weight: 600;
+// //           margin: 0 0 10px 0;
+// //         }
+
+// //         .wordanimation-bottom-links {
+// //           display: flex;
+// //           gap: 30px;
+// //           font-size: 14px;
+// //           color: #666;
+// //         }
+
+// //         .wordanimation-view-all {
+// //           color: #666;
+// //           font-size: 16px;
+// //           cursor: pointer;
+// //         }
+
+// //         .wordanimation-our-works-wrapper {
+// //           position: relative;
+// //           width: 220px;
+// //           height: 70px;
+// //           cursor: pointer;
+// //         }
+
+// //         .wordanimation-our-works-bg-image {
+// //           position: absolute;
+// //           top: 0;
+// //           left: 0;
+// //           width: 100%;
+// //           height: 100%;
+// //           object-fit: cover;
+// //           border-radius: 9999px;
+// //         }
+
+// //         .wordanimation-our-works-icon {
+// //           width: 3.9rem;
+// //           height: 3.9rem;
+// //           background-color: #312e81;
+// //           border-radius: 50%;
+// //           display: flex;
+// //           align-items: center;
+// //           justify-content: center;
+// //           position: absolute;
+// //           left: 0.4rem;
+// //           top: 50%;
+// //           transform: translateY(-50%);
+// //           z-index: 10;
+// //         }
+
+// //         .wordanimation-arrow {
+// //           width: 24px;
+// //           height: 24px;
+// //           filter: brightness(0) invert(1);
+// //         }
+
+// //         .wordanimation-our-works-text {
+// //           font-family: 'SF Pro Display', sans-serif;
+// //           font-weight: 520;
+// //           font-size: 24px;
+// //           color: black;
+// //           position: absolute;
+// //           right: 40px;
+// //           top: 50%;
+// //           transform: translateY(-50%);
+// //           z-index: 10;
+// //         }
+
+// //         @media (max-width: 768px) {
+// //           .wordanimation-word {
+// //             font-size: 32px;
+// //           }
+
+// //           .wordanimation-words-wrapper {
+// //             gap: 20px;
+// //           }
+
+// //           .wordanimation-center-image {
+// //             width: 90vw;
+// //           }
+
+// //           .wordanimation-bottom-content {
+// //             padding: 20px;
+// //             flex-direction: column;
+// //             gap: 20px;
+// //           }
+
+// //           .wordanimation-our-works-text {
+// //             font-size: 20px;
+// //           }
+// //         }
+// //       `}</style>
+
+// //       <div className="wordanimation-scroll-container" ref={containerRef}>
+// //         <div className="wordanimation-animation-container">
+// //           <div className="wordanimation-content-wrapper">
+// //             <div className="wordanimation-words-wrapper">
+// //               <h1 className="wordanimation-word" style={getWordStyle(true)}>
+// //                 Scroll to
+// //               </h1>
+// //               <h1 className="wordanimation-word" style={getWordStyle(false)}>
+// //                 Explore
+// //               </h1>
+// //             </div>
+// //             <div className="wordanimation-center-image" style={getImageStyle()}>
+// //               <img 
+// //                 src={currentProject.image} 
+// //                 alt={currentProject.title} 
+// //               />
+// //               {/* <div className="wordanimation-image-overlay-text">
+// //                 {currentProject.overlayText}
+// //               </div> */}
+// //             </div>
+// //           </div>
+// //           {/* BottomContent section*/}
+// //           <div className="wordanimation-bottom-content" style={getBottomContentStyle()}>
+// //             <div className="wordanimation-bottom-left">
+// //               <h2>{currentProject.title}</h2>
+// //               <div className="wordanimation-bottom-links">
+// //                 {currentProject.tags.map((tag, index) => (
+// //                   <span key={index}>{tag}</span>
+// //                 ))}
+// //               </div>
+// //             </div>
+// //             <div 
+// //   className="wordanimation-our-works-wrapper"
+// //   onClick={() => navigate(currentProject.link)}
+// //   style={{ cursor: "pointer" }}
+// // >
+// //   <div style={{
+// //     position: 'absolute',
+// //     top: 0,
+// //     left: 0,
+// //     right: 0,
+// //     bottom: 0,
+// //     background: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)',
+// //     borderRadius: '9999px'
+// //   }}></div>
+
+// //   <div className="wordanimation-our-works-icon">
+// //     <span style={{fontSize: '24px', color: 'white'}}>→</span>
+// //   </div>
+
+// //   <span className="wordanimation-our-works-text">
+// //     View
+// //   </span>
+// // </div>
+
+// //             {/* <div className="wordanimation-our-works-wrapper">
+// //               <div style={{
+// //                 position: 'absolute',
+// //                 top: 0,
+// //                 left: 0,
+// //                 right: 0,
+// //                 bottom: 0,
+// //                 background: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)',
+// //                 borderRadius: '9999px'
+// //               }}></div>
+// //               <div className="wordanimation-our-works-icon">
+// //                 <span style={{fontSize: '24px', color: 'white'}}>→</span>
+// //               </div>
+// //               <span className="wordanimation-our-works-text">
+// //                 View
+// //               </span>
+// //             </div> */}
+// //             <div className="wordanimation-view-all">→ View All Works</div>
+// //           </div>
+// //         </div>
+// //       </div>
+// //     </>
+// //   );
+// // }
+
 // import React, { useState, useEffect, useRef } from 'react';
 // import Image1 from '../assets/ourworks/Mask group (1).png';
-// import Image2 from '../assets/ourworks/Mask group (1).png';
-// import Image3 from '../assets/ourworks/Mask group (1).png';
-// import Image4 from '../assets/ourworks/Mask group (1).png';
+// import Image2 from '../assets/coollah.png';
+// import Image3 from '../assets/bjmm.jpeg';
+// import Image4 from '../assets/wts.png';
+// import { useNavigate } from "react-router-dom";
 
 // const projectsData = [
 //   {
@@ -10,36 +852,44 @@
 //     image: Image1,
 //     overlayText: "Featuring curators from around the world",
 //     title: "Lhome",
+//     link: "/lhome",
 //     tags: ["Web Design", "UI/UX Design"]
 //   },
 //   {
 //     id: 2,
 //     image: Image2,
 //     overlayText: "Modern kitchen designs",
-//     title: "Kitchen Pro",
-//     tags: ["Interior Design", "3D Modeling"]
+//     title: "Coollah",
+//     link: "/collah",
+//     tags: ["Web Design", "UI/UX Design"]
 //   },
 //   {
 //     id: 3,
 //     image: Image3,
 //     overlayText: "Luxury bedroom collections",
-//     title: "Dream Spaces",
-//     tags: ["Bedroom Design", "Furniture"]
+//     title: "BJMM",
+//     link: "/bjmm",
+//     tags: ["Web Design", "UI/UX Design"]
 //   },
 //   {
 //     id: 4,
 //     image: Image4,
 //     overlayText: "Smart living solutions",
-//     title: "Smart Home",
-//     tags: ["Technology", "Automation"]
+//     title: "WorldTmil Siragam",
+//     link: "/wts",
+//     tags: ["Web Design", "UI/UX Design"]
 //   }
 // ];
 
 // export default function WordAnimation() {
-//   const [scrollProgress, setScrollProgress] = useState(0);
-//   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+//   const [scrollProgress, setScrollProgress] = useState(0); // 0 → 1
 //   const containerRef = useRef(null);
+//   const navigate = useNavigate();
 
+//   const projectCount = projectsData.length;
+//   const INTRO_END = 0.25; // first 25% scroll = intro (1st image zoom)
+
+//   // ========= SCROLL LISTENER =========
 //   useEffect(() => {
 //     const handleScroll = () => {
 //       if (!containerRef.current) return;
@@ -50,98 +900,187 @@
 //       const containerHeight = container.offsetHeight;
 //       const windowHeight = window.innerHeight;
 
-//       if (containerTop <= windowHeight && containerTop + containerHeight >= 0) {
-//         const sectionScrolled = windowHeight - containerTop;
-//         const totalProgress = Math.min(Math.max(sectionScrolled / containerHeight, 0), 1);
-//         setScrollProgress(totalProgress);
-        
-//         // Calculate which project should be shown based on scroll
-//         const projectCount = projectsData.length;
-//         const progressPerProject = 1 / projectCount;
-//         const index = Math.min(Math.floor(totalProgress / progressPerProject), projectCount - 1);
-//         setCurrentProjectIndex(index);
-//       } else if (containerTop > windowHeight) {
+//       if (containerTop > 0) {
 //         setScrollProgress(0);
-//         setCurrentProjectIndex(0);
-//       } else {
-//         setScrollProgress(1);
-//         setCurrentProjectIndex(projectsData.length - 1);
+//         return;
 //       }
+
+//       const maxScroll = containerHeight - windowHeight;
+//       const scrolled = Math.min(Math.max(-containerTop, 0), maxScroll);
+//       const totalProgress = maxScroll > 0 ? scrolled / maxScroll : 0;
+
+//       setScrollProgress(totalProgress);
 //     };
 
 //     window.addEventListener('scroll', handleScroll);
 //     handleScroll();
-
 //     return () => window.removeEventListener('scroll', handleScroll);
 //   }, []);
 
-//   const getWordStyle = (isLeft) => {
-//     const projectCount = projectsData.length;
-//     const progressPerProject = 1 / projectCount;
-//     const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
-    
-//     const wordStart = 0.30;
-//     const wordEnd = 0.4;
-//     const wordProgress = Math.max(0, Math.min((localProgress - wordStart) / (wordEnd - wordStart), 1));
-    
-//     const imageProgress = Math.max(0, Math.min((localProgress - 0.15) / (0.85 - 0.15), 1));
-//     const easedImageProgress = imageProgress * imageProgress;
-//     const currentImageScale = easedImageProgress;
-    
-//     const baseGap = 50;
-//     const imageWidth = window.innerWidth * 0.5;
-//     const moveDistance = baseGap + (imageWidth * currentImageScale);
-    
-//     // Only show words for the first project
-//     if (currentProjectIndex > 0) {
+//   // ========= PHASE CALCULATION =========
+//   function getPhase() {
+//     const t = Math.min(Math.max(scrollProgress, 0), 1); // 0–1
+
+//     if (t <= INTRO_END) {
+//       // Intro phase: only first project
 //       return {
-//         transform: `translateX(${isLeft ? -moveDistance : moveDistance}px)`,
-//         opacity: 0
+//         mode: 'intro',
+//         introT: t / INTRO_END // 0–1 inside intro
 //       };
 //     }
-    
-//     return {
-//       transform: `translateX(${wordProgress * (isLeft ? -moveDistance : moveDistance)}px)`,
-//       opacity: 1 - (wordProgress * 0.3)
-//     };
-//   };
 
-//   const getImageStyle = () => {
-//     const projectCount = projectsData.length;
-//     const progressPerProject = 1 / projectCount;
-//     const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
-    
+//     // Slider phase (projects 1 → 2 → 3 → 4)
+//     const SLIDER_START = INTRO_END;
+//     let sliderT = (t - SLIDER_START) / (1 - SLIDER_START); // 0–1
+//     sliderT = Math.min(Math.max(sliderT, 0), 1);
+
+//     const transitions = projectCount - 1; // e.g. 3 transitions for 4 projects
+//     const segLen = 1 / transitions;      // each transition slice
+
+//     let segIndex = Math.floor(sliderT / segLen);
+//     if (segIndex < 0) segIndex = 0;
+//     if (segIndex > transitions - 1) segIndex = transitions - 1;
+
+//     const segStart = segIndex * segLen;
+//     let segLocal = (sliderT - segStart) / segLen; // 0–1 inside current transition
+//     if (segLocal < 0) segLocal = 0;
+//     if (segLocal > 1) segLocal = 1;
+
+//     return {
+//       mode: 'slider',
+//       baseIndex: segIndex,          // background image index
+//       overlayIndex: segIndex + 1,   // sliding-from-bottom image index
+//       segProgress: segLocal         // 0–1 progression of this slide
+//     };
+//   }
+
+//   const phase = getPhase();
+
+//   // ========= WORDS ("Scroll to / Explore") =========
+//   const getWordStyle = (isLeft) => {
+//     if (phase.mode !== 'intro') {
+//       // hide completely once slider starts
+//       return {
+//         opacity: 0,
+//         transform: `translateX(${isLeft ? -200 : 200}px)`
+//       };
+//     }
+
+//     const local = phase.introT; // 0–1 inside intro
+
+//     const wordStart = 0.30;
+//     const wordEnd = 0.40;
+//     const wRaw = (local - wordStart) / (wordEnd - wordStart);
+//     const wordProgress = Math.max(0, Math.min(wRaw, 1));
+
 //     const imageStart = 0.15;
 //     const imageEnd = 0.85;
-//     const imageProgress = Math.max(0, Math.min((localProgress - imageStart) / (imageEnd - imageStart), 1));
-    
-//     const easedProgress = imageProgress * imageProgress;
-//     const scale = easedProgress;
-//     const opacity = imageProgress;
+//     const iRaw = (local - imageStart) / (imageEnd - imageStart);
+//     const imageProgress = Math.max(0, Math.min(iRaw, 1));
+//     const easedImageProgress = imageProgress * imageProgress;
+
+//     const baseGap = 50;
+//     const imageWidth =
+//       typeof window !== 'undefined' ? window.innerWidth * 0.5 : 0;
+//     const moveDistance = baseGap + imageWidth * easedImageProgress;
 
 //     return {
-//       transform: `scale(${scale})`,
-//       opacity: opacity
+//       transform: `translateX(${wordProgress * (isLeft ? -moveDistance : moveDistance)}px)`,
+//       opacity: 1 - wordProgress * 0.3
 //     };
 //   };
 
+//   // ========= IMAGES (BG + SLIDE) =========
+
+//   let bgImage = projectsData[0].image;
+//   let bgStyle = {};
+//   let slideImage = null;
+//   let slideStyle = {};
+
+//   if (phase.mode === 'intro') {
+//     // First image zoom from center
+//     const local = phase.introT;
+//     const imageStart = 0.15;
+//     const imageEnd = 0.85;
+//     const raw = (local - imageStart) / (imageEnd - imageStart);
+//     const p = Math.max(0, Math.min(raw, 1));
+//     const eased = p * p;
+//     const scale = eased || 0.001;
+//     const opacity = p;
+
+//     bgImage = projectsData[0].image;
+//     bgStyle = {
+//       transform: `scale(${scale})`,
+//       opacity
+//     };
+//     slideImage = null; // nothing sliding in intro
+// } else {
+//   // Slider phase
+//   const { baseIndex, overlayIndex, segProgress } = phase;
+
+//   // Background (previous project) – fixed center
+//   bgImage = projectsData[baseIndex].image;
+//   bgStyle = {
+//     transform: 'scale(1)',
+//     opacity: 1
+//   };
+
+//   // Sliding image (next project) – from bottom to center
+//   slideImage = projectsData[overlayIndex].image;
+
+//   // 🔥 Different starting depth for 2nd, 3rd, 4th images
+//   // overlayIndex: 1 => 2nd project, 2 => 3rd, 3 => 4th
+//   let baseOffset;
+//   if (overlayIndex === 1) {
+//     baseOffset = 100;   // 2nd image: as it is now
+//   } else if (overlayIndex === 2) {
+//     baseOffset = 135;   // 3rd image: more bottom
+//   } else {
+//     baseOffset = 170;   // 4th image: even more bottom
+//   }
+
+//   const translateY = baseOffset - segProgress * baseOffset; // baseOffset → 0
+//   slideStyle = {
+//     transform: `translateY(${translateY}%)`,
+//     opacity: 1
+//   };
+// }
+
+
+//   // ========= BOTTOM CONTENT (title, tags, button) =========
 //   const getBottomContentStyle = () => {
-//     const projectCount = projectsData.length;
-//     const progressPerProject = 1 / projectCount;
-//     const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
-    
-//     const contentStart = 0.7;
-//     const contentProgress = Math.max(0, (localProgress - contentStart) / 0.3);
-//     const translateY = 100 - (contentProgress * 100);
-//     const opacity = contentProgress;
+//     if (phase.mode === 'intro') {
+//       const local = phase.introT;
+//       const contentStart = 0.7;
+//       const raw = (local - contentStart) / 0.3;
+//       const p = Math.max(0, Math.min(raw, 1));
+//       const translateY = 100 - p * 100;
+//       const opacity = p;
+//       return {
+//         transform: `translateY(${translateY}%)`,
+//         opacity
+//       };
+//     }
+
+//     // slider → sync with sliding image (overlay project)
+//     const p = phase.segProgress;
+//     const start = 0.2;
+//     const raw = (p - start) / (1 - start);
+//     const contentP = Math.max(0, Math.min(raw, 1));
+//     const translateY = 100 - contentP * 100;
+//     const opacity = contentP;
 
 //     return {
 //       transform: `translateY(${translateY}%)`,
-//       opacity: opacity
+//       opacity
 //     };
 //   };
 
-//   const currentProject = projectsData[currentProjectIndex];
+//   // Current project meta: 
+//   // intro → project[0], slider → overlay project
+//   const currentIndex =
+//     phase.mode === 'intro' ? 0 : phase.overlayIndex;
+//   const currentProject = projectsData[currentIndex];
 
 //   return (
 //     <>
@@ -190,7 +1129,7 @@
 //           align-items: center;
 //           justify-content: center;
 //           position: relative;
-//           z-index: 2;
+//           z-index: 3;
 //         }
 
 //         .wordanimation-word {
@@ -210,8 +1149,7 @@
 //           align-items: center;
 //           justify-content: center;
 //           background: #f0f0f0;
-//           z-index: 1;
-//           transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+//           transition: transform 0.25s ease-out, opacity 0.25s ease-out;
 //           will-change: transform, opacity;
 //           overflow: hidden;
 //         }
@@ -222,12 +1160,12 @@
 //           object-fit: cover;
 //         }
 
-//         .wordanimation-image-overlay-text {
-//           position: absolute;
-//           color: white;
-//           font-size: 32px;
-//           font-weight: 500;
-//           text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+//         .wordanimation-center-image.bg-layer {
+//           z-index: 1;
+//         }
+
+//         .wordanimation-center-image.slide-layer {
+//           z-index: 2;
 //         }
 
 //         .wordanimation-bottom-content {
@@ -241,7 +1179,7 @@
 //           align-items: center;
 //           justify-content: space-between;
 //           z-index: 10;
-//           transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+//           transition: transform 0.25s ease-out, opacity 0.25s ease-out;
 //           will-change: transform, opacity;
 //         }
 
@@ -271,16 +1209,6 @@
 //           cursor: pointer;
 //         }
 
-//         .wordanimation-our-works-bg-image {
-//           position: absolute;
-//           top: 0;
-//           left: 0;
-//           width: 100%;
-//           height: 100%;
-//           object-fit: cover;
-//           border-radius: 9999px;
-//         }
-
 //         .wordanimation-our-works-icon {
 //           width: 3.9rem;
 //           height: 3.9rem;
@@ -294,12 +1222,6 @@
 //           top: 50%;
 //           transform: translateY(-50%);
 //           z-index: 10;
-//         }
-
-//         .wordanimation-arrow {
-//           width: 24px;
-//           height: 24px;
-//           filter: brightness(0) invert(1);
 //         }
 
 //         .wordanimation-our-works-text {
@@ -324,7 +1246,7 @@
 //           }
 
 //           .wordanimation-center-image {
-//             width: 80vw;
+//             width: 90vw;
 //           }
 
 //           .wordanimation-bottom-content {
@@ -342,6 +1264,7 @@
 //       <div className="wordanimation-scroll-container" ref={containerRef}>
 //         <div className="wordanimation-animation-container">
 //           <div className="wordanimation-content-wrapper">
+//             {/* Top words */}
 //             <div className="wordanimation-words-wrapper">
 //               <h1 className="wordanimation-word" style={getWordStyle(true)}>
 //                 Scroll to
@@ -350,18 +1273,28 @@
 //                 Explore
 //               </h1>
 //             </div>
-//             <div className="wordanimation-center-image" style={getImageStyle()}>
-//               <img 
-//                 src={currentProject.image} 
-//                 alt={currentProject.title} 
-//               />
-//               <div className="wordanimation-image-overlay-text">
-//                 {currentProject.overlayText}
-//               </div>
+
+//             {/* Background image (previous / fixed) */}
+//             <div className="wordanimation-center-image bg-layer" style={bgStyle}>
+//               <img src={bgImage} alt="background project" />
 //             </div>
+
+//             {/* Sliding image (next from bottom) */}
+//             {slideImage && (
+//               <div
+//                 className="wordanimation-center-image slide-layer"
+//                 style={slideStyle}
+//               >
+//                 <img src={slideImage} alt="sliding project" />
+//               </div>
+//             )}
 //           </div>
-//           {/* BottomContent section*/}
-//           <div className="wordanimation-bottom-content" style={getBottomContentStyle()}>
+
+//           {/* Bottom content (title, tags, button) */}
+//           <div
+//             className="wordanimation-bottom-content"
+//             style={getBottomContentStyle()}
+//           >
 //             <div className="wordanimation-bottom-left">
 //               <h2>{currentProject.title}</h2>
 //               <div className="wordanimation-bottom-links">
@@ -370,23 +1303,31 @@
 //                 ))}
 //               </div>
 //             </div>
-//             <div className="wordanimation-our-works-wrapper">
-//               <div style={{
-//                 position: 'absolute',
-//                 top: 0,
-//                 left: 0,
-//                 right: 0,
-//                 bottom: 0,
-//                 background: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)',
-//                 borderRadius: '9999px'
-//               }}></div>
+
+//             <div
+//               className="wordanimation-our-works-wrapper"
+//               onClick={() => navigate(currentProject.link)}
+//             >
+//               <div
+//                 style={{
+//                   position: "absolute",
+//                   top: 0,
+//                   left: 0,
+//                   right: 0,
+//                   bottom: 0,
+//                   background:
+//                     "linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)",
+//                   borderRadius: "9999px"
+//                 }}
+//               ></div>
+
 //               <div className="wordanimation-our-works-icon">
-//                 <span style={{fontSize: '24px', color: 'white'}}>→</span>
+//                 <span style={{ fontSize: "24px", color: "white" }}>→</span>
 //               </div>
-//               <span className="wordanimation-our-works-text">
-//                 View
-//               </span>
+
+//               <span className="wordanimation-our-works-text">View</span>
 //             </div>
+
 //             <div className="wordanimation-view-all">→ View All Works</div>
 //           </div>
 //         </div>
@@ -401,35 +1342,6 @@ import Image2 from '../assets/coollah.png';
 import Image3 from '../assets/bjmm.jpeg';
 import Image4 from '../assets/wts.png';
 import { useNavigate } from "react-router-dom";
-
-// const projectsData = [
-//   {
-//     id: 1,
-//     image: Image1,
-//     overlayText: "Featuring curators from around the world",
-//     title: "Lhome",
-//     tags: ["Web Design", "UI/UX Design"]
-//   },
-//   {
-//     id: 2,
-//     image: Image2,
-//     overlayText: "Modern kitchen designs",
-//     title: "Coollah",
-//  tags: ["Web Design", "UI/UX Design"]  },
-//   {
-//     id: 3,
-//     image: Image3,
-//     overlayText: "Luxury bedroom collections",
-//     title: "BJMM",
-//  tags: ["Web Design", "UI/UX Design"]  },
-//   {
-//     id: 4,
-//     image: Image4,
-//     overlayText: "Smart living solutions",
-//     title: "WorldTmil Siragam",
-//  tags: ["Web Design", "UI/UX Design"]  }
-// ];
-
 
 const projectsData = [
   {
@@ -467,11 +1379,14 @@ const projectsData = [
 ];
 
 export default function WordAnimation() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0); // 0 → 1
   const containerRef = useRef(null);
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
+  const projectCount = projectsData.length;
+  const INTRO_END = 0.25; // first 25% scroll = intro
+
+  // ========= SCROLL LISTENER =========
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current) return;
@@ -482,114 +1397,177 @@ const navigate = useNavigate();
       const containerHeight = container.offsetHeight;
       const windowHeight = window.innerHeight;
 
-      // 1) BEFORE section hits top → no animation
-      //    Section top > 0 means it is still below the top of viewport.
       if (containerTop > 0) {
         setScrollProgress(0);
-        setCurrentProjectIndex(0);
         return;
       }
 
-      // 2) MAIN ANIMATION RANGE: when section is sticky and scrolling
-      //    When top <= 0 and bottom is still below viewport bottom.
-      const maxScroll = containerHeight - windowHeight; // total distance while sticky
-      const scrolled = Math.min(Math.max(-containerTop, 0), maxScroll); // clamp
+      const maxScroll = containerHeight - windowHeight;
+      const scrolled = Math.min(Math.max(-containerTop, 0), maxScroll);
       const totalProgress = maxScroll > 0 ? scrolled / maxScroll : 0;
 
       setScrollProgress(totalProgress);
-
-      // Project index based on progress (0 → 1)
-      const projectCount = projectsData.length;
-      const progressPerProject = 1 / projectCount;
-      const index = Math.min(
-        Math.floor(totalProgress / progressPerProject),
-        projectCount - 1
-      );
-      setCurrentProjectIndex(index);
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // initial
-
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const getWordStyle = (isLeft) => {
-    const projectCount = projectsData.length;
-    const progressPerProject = 1 / projectCount;
-    const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
+  // ========= PHASE CALCULATION =========
+  function getPhase() {
+    const t = Math.min(Math.max(scrollProgress, 0), 1); // 0–1
 
-    const wordStart = 0.30;
-    const wordEnd = 0.4;
-    const wordProgress = Math.max(
-      0,
-      Math.min((localProgress - wordStart) / (wordEnd - wordStart), 1)
-    );
-
-    const imageProgress = Math.max(
-      0,
-      Math.min((localProgress - 0.15) / (0.85 - 0.15), 1)
-    );
-    const easedImageProgress = imageProgress * imageProgress;
-    const currentImageScale = easedImageProgress;
-
-    const baseGap = 50;
-    const imageWidth = typeof window !== 'undefined' ? window.innerWidth * 0.5 : 0;
-    const moveDistance = baseGap + (imageWidth * currentImageScale);
-
-    // Only show words for the first project
-    if (currentProjectIndex > 0) {
+    if (t <= INTRO_END) {
+      // Intro phase: only first project
       return {
-        transform: `translateX(${isLeft ? -moveDistance : moveDistance}px)`,
-        opacity: 0
+        mode: 'intro',
+        introT: t / INTRO_END // 0–1 inside intro
       };
     }
 
-    return {
-      transform: `translateX(${wordProgress * (isLeft ? -moveDistance : moveDistance)}px)`,
-      opacity: 1 - (wordProgress * 0.3)
-    };
-  };
+    // Slider phase
+    const SLIDER_START = INTRO_END;
+    let sliderT = (t - SLIDER_START) / (1 - SLIDER_START); // 0–1
+    sliderT = Math.min(Math.max(sliderT, 0), 1);
 
-  const getImageStyle = () => {
-    const projectCount = projectsData.length;
-    const progressPerProject = 1 / projectCount;
-    const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
+    const transitions = projectCount - 1; // 3 transitions for 4 projects
+    const segLen = 1 / transitions;
+
+    let segIndex = Math.floor(sliderT / segLen);
+    if (segIndex < 0) segIndex = 0;
+    if (segIndex > transitions - 1) segIndex = transitions - 1;
+
+    const segStart = segIndex * segLen;
+    let segLocal = (sliderT - segStart) / segLen; // 0–1 inside current slide
+    if (segLocal < 0) segLocal = 0;
+    if (segLocal > 1) segLocal = 1;
+
+    return {
+      mode: 'slider',
+      baseIndex: segIndex,        // background (previous fixed image)
+      overlayIndex: segIndex + 1, // sliding image
+      segProgress: segLocal       // 0–1 for this transition
+    };
+  }
+
+  const phase = getPhase();
+
+  // ========= WORDS ("Scroll to / Explore") =========
+  const getWordStyle = (isLeft) => {
+    if (phase.mode !== 'intro') {
+      // hide completely once slider starts
+      return {
+        opacity: 0,
+        transform: `translateX(${isLeft ? -200 : 200}px)`
+      };
+    }
+
+    const local = phase.introT; // 0–1 inside intro
+
+    const wordStart = 0.30;
+    const wordEnd = 0.40;
+    const wRaw = (local - wordStart) / (wordEnd - wordStart);
+    const wordProgress = Math.max(0, Math.min(wRaw, 1));
 
     const imageStart = 0.15;
     const imageEnd = 0.85;
-    const imageProgress = Math.max(
-      0,
-      Math.min((localProgress - imageStart) / (imageEnd - imageStart), 1)
-    );
+    const iRaw = (local - imageStart) / (imageEnd - imageStart);
+    const imageProgress = Math.max(0, Math.min(iRaw, 1));
+    const easedImageProgress = imageProgress * imageProgress;
 
-    const easedProgress = imageProgress * imageProgress;
-    const scale = easedProgress;
-    const opacity = imageProgress;
+    const baseGap = 50;
+    const imageWidth =
+      typeof window !== 'undefined' ? window.innerWidth * 0.5 : 0;
+    const moveDistance = baseGap + imageWidth * easedImageProgress;
 
     return {
+      transform: `translateX(${wordProgress * (isLeft ? -moveDistance : moveDistance)}px)`,
+      opacity: 1 - wordProgress * 0.3
+    };
+  };
+
+  // ========= IMAGES (BG + SLIDE) =========
+  let bgImage = projectsData[0].image;
+  let bgStyle = {};
+  let slideImage = null;
+  let slideStyle = {};
+
+  if (phase.mode === 'intro') {
+    // First image zoom from center
+    const local = phase.introT;
+    const imageStart = 0.15;
+    const imageEnd = 0.85;
+    const raw = (local - imageStart) / (imageEnd - imageStart);
+    const p = Math.max(0, Math.min(raw, 1));
+    const eased = p * p;
+    const scale = eased || 0.001;
+    const opacity = p;
+
+    bgImage = projectsData[0].image;
+    bgStyle = {
       transform: `scale(${scale})`,
-      opacity: opacity
+      opacity
     };
-  };
+    slideImage = null;
+  } else {
+    // Slider phase
+    const { baseIndex, overlayIndex, segProgress } = phase;
 
-  const getBottomContentStyle = () => {
-    const projectCount = projectsData.length;
-    const progressPerProject = 1 / projectCount;
-    const localProgress = (scrollProgress % progressPerProject) / progressPerProject;
+    // Background: previous image fixed
+    bgImage = projectsData[baseIndex].image;
+    bgStyle = {
+      transform: 'scale(1)',
+      opacity: 1
+    };
 
-    const contentStart = 0.7;
-    const contentProgress = Math.max(0, (localProgress - contentStart) / 0.3);
-    const translateY = 100 - (contentProgress * 100);
-    const opacity = contentProgress;
+    // Sliding image: next one from deeper bottom depending on which it is
+    slideImage = projectsData[overlayIndex].image;
 
-    return {
+    let baseOffset;
+    if (overlayIndex === 1) {
+      baseOffset = 100;   // 2nd image – normal bottom
+    } else if (overlayIndex === 2) {
+      baseOffset = 135;   // 3rd image – deeper bottom
+    } else {
+      baseOffset = 170;   // 4th image – even more bottom
+    }
+
+    const translateY = baseOffset - segProgress * baseOffset; // baseOffset → 0
+    slideStyle = {
       transform: `translateY(${translateY}%)`,
-      opacity: opacity
+      opacity: 1
+    };
+  }
+
+  // ========= BOTTOM CONTENT (TITLE + TAGS + BUTTON) =========
+  const getBottomContentStyle = () => {
+    if (phase.mode === 'intro') {
+      const local = phase.introT;
+      const contentStart = 0.7;
+      const raw = (local - contentStart) / 0.3;
+      const p = Math.max(0, Math.min(raw, 1));
+      const translateY = 100 - p * 100;
+      const opacity = p;
+      return {
+        transform: `translateY(${translateY}%)`,
+        opacity
+      };
+    }
+
+    // Slider mode: content should be fixed with previous (bg) project
+    return {
+      transform: 'translateY(0%)',
+      opacity: 1
     };
   };
 
-  const currentProject = projectsData[currentProjectIndex];
+  // 👉 Current content project:
+  // intro -> project 0
+  // slider -> always background project (previous image)
+  const currentIndex =
+    phase.mode === 'intro' ? 0 : phase.baseIndex;
+  const currentProject = projectsData[currentIndex];
 
   return (
     <>
@@ -638,7 +1616,7 @@ const navigate = useNavigate();
           align-items: center;
           justify-content: center;
           position: relative;
-          z-index: 2;
+          z-index: 3;
         }
 
         .wordanimation-word {
@@ -658,8 +1636,7 @@ const navigate = useNavigate();
           align-items: center;
           justify-content: center;
           background: #f0f0f0;
-          z-index: 1;
-          transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+          transition: transform 0.25s ease-out, opacity 0.25s ease-out;
           will-change: transform, opacity;
           overflow: hidden;
         }
@@ -670,12 +1647,12 @@ const navigate = useNavigate();
           object-fit: cover;
         }
 
-        .wordanimation-image-overlay-text {
-          position: absolute;
-          color: white;
-          font-size: 32px;
-          font-weight: 500;
-          text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        .wordanimation-center-image.bg-layer {
+          z-index: 1;
+        }
+
+        .wordanimation-center-image.slide-layer {
+          z-index: 2;
         }
 
         .wordanimation-bottom-content {
@@ -689,7 +1666,7 @@ const navigate = useNavigate();
           align-items: center;
           justify-content: space-between;
           z-index: 10;
-          transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+          transition: transform 0.25s ease-out, opacity 0.25s ease-out;
           will-change: transform, opacity;
         }
 
@@ -719,16 +1696,6 @@ const navigate = useNavigate();
           cursor: pointer;
         }
 
-        .wordanimation-our-works-bg-image {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 9999px;
-        }
-
         .wordanimation-our-works-icon {
           width: 3.9rem;
           height: 3.9rem;
@@ -742,12 +1709,6 @@ const navigate = useNavigate();
           top: 50%;
           transform: translateY(-50%);
           z-index: 10;
-        }
-
-        .wordanimation-arrow {
-          width: 24px;
-          height: 24px;
-          filter: brightness(0) invert(1);
         }
 
         .wordanimation-our-works-text {
@@ -790,6 +1751,7 @@ const navigate = useNavigate();
       <div className="wordanimation-scroll-container" ref={containerRef}>
         <div className="wordanimation-animation-container">
           <div className="wordanimation-content-wrapper">
+            {/* Top words */}
             <div className="wordanimation-words-wrapper">
               <h1 className="wordanimation-word" style={getWordStyle(true)}>
                 Scroll to
@@ -798,18 +1760,28 @@ const navigate = useNavigate();
                 Explore
               </h1>
             </div>
-            <div className="wordanimation-center-image" style={getImageStyle()}>
-              <img 
-                src={currentProject.image} 
-                alt={currentProject.title} 
-              />
-              {/* <div className="wordanimation-image-overlay-text">
-                {currentProject.overlayText}
-              </div> */}
+
+            {/* Background (fixed) image */}
+            <div className="wordanimation-center-image bg-layer" style={bgStyle}>
+              <img src={bgImage} alt="background project" />
             </div>
+
+            {/* Sliding image from bottom */}
+            {slideImage && (
+              <div
+                className="wordanimation-center-image slide-layer"
+                style={slideStyle}
+              >
+                <img src={slideImage} alt="sliding project" />
+              </div>
+            )}
           </div>
-          {/* BottomContent section*/}
-          <div className="wordanimation-bottom-content" style={getBottomContentStyle()}>
+
+          {/* Bottom content fixed with previous image */}
+          <div
+            className="wordanimation-bottom-content"
+            style={getBottomContentStyle()}
+          >
             <div className="wordanimation-bottom-left">
               <h2>{currentProject.title}</h2>
               <div className="wordanimation-bottom-links">
@@ -818,47 +1790,31 @@ const navigate = useNavigate();
                 ))}
               </div>
             </div>
-            <div 
-  className="wordanimation-our-works-wrapper"
-  onClick={() => navigate(currentProject.link)}
-  style={{ cursor: "pointer" }}
->
-  <div style={{
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)',
-    borderRadius: '9999px'
-  }}></div>
 
-  <div className="wordanimation-our-works-icon">
-    <span style={{fontSize: '24px', color: 'white'}}>→</span>
-  </div>
+            <div
+              className="wordanimation-our-works-wrapper"
+              onClick={() => navigate(currentProject.link)}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background:
+                    "linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)",
+                  borderRadius: "9999px"
+                }}
+              ></div>
 
-  <span className="wordanimation-our-works-text">
-    View
-  </span>
-</div>
-
-            {/* <div className="wordanimation-our-works-wrapper">
-              <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)',
-                borderRadius: '9999px'
-              }}></div>
               <div className="wordanimation-our-works-icon">
-                <span style={{fontSize: '24px', color: 'white'}}>→</span>
+                <span style={{ fontSize: "24px", color: "white" }}>→</span>
               </div>
-              <span className="wordanimation-our-works-text">
-                View
-              </span>
-            </div> */}
+
+              <span className="wordanimation-our-works-text">View</span>
+            </div>
+
             <div className="wordanimation-view-all">→ View All Works</div>
           </div>
         </div>
