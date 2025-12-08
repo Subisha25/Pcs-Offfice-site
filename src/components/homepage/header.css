@@ -38,7 +38,36 @@
 }
 
 /* MAIN CONTAINER */
+
 .header-container {
+  cursor: pointer;
+  width: 70%;
+  max-width: 1300px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: 1px solid #151416;
+  /* 🔥 SUPER SLOW OPEN / CLOSE */
+    /* 👉 scale animation from center */
+  transform-origin: center;
+  transform: scale(1);
+  transition:
+    width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+    padding 1.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+    background 0.5s ease,
+    box-shadow 0.4s ease,
+    border 0.4s ease,
+    border-radius 0.4s ease;
+
+  box-sizing: border-box;
+}
+
+
+/* .header-container {
+  cursor: pointer;
   width: 70%;
   max-width: 1300px;
   padding: 12px 30px;
@@ -50,7 +79,7 @@
   border: 1px solid #151416;
   transition: all 0.3s ease-in-out;
   box-sizing: border-box;
-}
+} */
 
 /* SCROLLED STATE - WHITE BACKGROUND */
 .header.scrolled .header-container {
@@ -164,8 +193,9 @@
 }
 /* SMALL/COMPACT MODE WHEN SCROLLED */
 .header.small .header-container {
-  width: auto;
+  width: 360px;
   min-width: 200px;
+  
   padding: 10px 20px;
   background: white;
   border: none;
