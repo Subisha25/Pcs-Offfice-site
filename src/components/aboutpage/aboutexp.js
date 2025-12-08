@@ -1,19 +1,57 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./aboutexp.css";
 import imageicon from "../assets/Union.svg";
+
 const AboutExperience = () => {
+  const [count, setCount] = useState(0);
+  const counterRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          let start = 0;
+          const end = 6; // Final number
+
+          const duration = 1500; // 1.5 sec
+          const incrementTime = 50;
+          const step = Math.ceil((end - start) / (duration / incrementTime));
+
+          const interval = setInterval(() => {
+            start += step;
+            if (start >= end) {
+              start = end;
+              clearInterval(interval);
+            }
+            setCount(start);
+          }, incrementTime);
+
+          observer.unobserve(counterRef.current);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+  }, []);
+
   return (
     <div className="about-exp-section">
 
       {/* Left content */}
       <div className="left-box">
-<div className="about-badge">
-  <span className="badge-icon">
-    <img src={imageicon} alt="icon" />
-  </span>
-  <span>About</span>
-</div>
-        <h2 className="years">6+</h2>
+        <div className="about-badge">
+          <span className="badge-icon">
+            <img src={imageicon} alt="icon" />
+          </span>
+          <span>About</span>
+        </div>
+
+        <h2 className="years" ref={counterRef}>
+          {count}+
+        </h2>
         <p className="exp-text">Years of Experience</p>
       </div>
 
@@ -27,8 +65,7 @@ const AboutExperience = () => {
         </h1>
 
         <p className="sub-text">
-          We are a collective of passionate creatives and forward-thinking 
-          technologists.
+          We are a collective of passionate creatives and forward-thinking technologists.
         </p>
 
         <p className="sub-text">
