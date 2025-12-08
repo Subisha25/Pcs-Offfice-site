@@ -45,28 +45,46 @@
 
 }
 
-/* Bottom Services Section */
 .services-strip {
   width: 100%;
   background: #fff;
-  padding: 18px 0;
-  display: flex;
-  justify-content: center;
+  border-top: 1px solid #7D7D7D;
+  border-bottom: 1px solid #7D7D7D;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.strip-track {
+  display: inline-flex;
   align-items: center;
   gap: 35px;
   font-size: 18px;
   font-weight: 400;
   color: #000;
-  border-top: 1px solid #7D7D7D;
-  border-bottom: 1px solid #7D7D7D;
-    font-family: "WF Visual Sans" !important;
-
+  animation: scroll-left 22s linear infinite;
 }
 
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Dots style */
 .services-strip .dot {
   font-size: 25px;
   margin: 0 10px;
 }
+
+/* Hover Stop Scroll */
+.services-strip:hover .strip-track {
+  animation-play-state: paused;
+}
+
 
 
 /* Tablet Styles (768px - 1024px) */
@@ -81,14 +99,15 @@
     padding-top: 60px;
   }
 
-  .services-strip {
-    gap: 25px;
+  .strip-track {
+    gap: 30px;
     font-size: 16px;
-    padding: 16px 20px;
+    animation: scroll-left 20s linear infinite;
   }
 
   .services-strip .dot {
     font-size: 22px;
+    margin: 0 8px;
   }
 }
 
@@ -105,17 +124,19 @@
     padding-top: 50px;
   }
 
-  .services-strip {
-    flex-wrap: wrap;
-    gap: 20px;
-    font-size: 15px;
-    padding: 15px 20px;
-    justify-content: center;
+ .services-strip {
+    padding: 8px;
+  }
+
+  .strip-track {
+    gap: 25px;
+    font-size: 14px;
+    animation: scroll-left 18s linear infinite;
   }
 
   .services-strip .dot {
     font-size: 20px;
-    margin: 0 5px;
+    margin: 0 6px;
   }
 }
 
@@ -134,21 +155,19 @@
     padding-right: 15px;
   }
 
-  .services-strip {
-    flex-direction: column;
-    gap: 12px;
-    font-size: 14px;
-    padding: 20px 15px;
-    white-space: normal;
+    .services-strip {
+    padding: 6px;
+  }
+
+  .strip-track {
+    gap: 20px;
+    font-size: 12px;
+    animation: scroll-left 16s linear infinite;
   }
 
   .services-strip .dot {
-    display: none;
-  }
-
-  .services-strip span:not(.dot) {
-    display: block;
-    text-align: center;
+    font-size: 18px;
+    margin: 0 5px;
   }
 }
 
@@ -165,9 +184,13 @@
     padding-top: 30px;
   }
 
-  .services-strip {
-    font-size: 13px;
-    padding: 18px 10px;
-    gap: 10px;
+  .strip-track {
+    gap: 15px;
+    font-size: 11px;
+  }
+
+  .services-strip .dot {
+    font-size: 16px;
+    margin: 0 4px;
   }
 }

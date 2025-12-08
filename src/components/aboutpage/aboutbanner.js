@@ -17,17 +17,34 @@ const Aboutbanner = () => {
       </div>
 
       {/* Bottom Services Strip */}
-      <div className="services-strip">
-        <span>APP DESIGN</span>
-        <span className="dot">•</span>
-        <span>DIGITAL MARKETING</span>
-        <span className="dot">•</span>
-        <span>BRANDING</span>
-        <span className="dot">•</span>
-        <span>WEB DEVELOPMENT</span>
-        <span className="dot">•</span>
-        <span>WEB DESIGN</span>
-      </div>
+    {/* Bottom Services Strip - Carousel */}
+<div className="services-strip">
+  <div className="strip-track">
+    <span>APP DESIGN</span>
+    <span className="dot">•</span>
+    <span>DIGITAL MARKETING</span>
+    <span className="dot">•</span>
+    <span>BRANDING</span>
+    <span className="dot">•</span>
+    <span>WEB DEVELOPMENT</span>
+    <span className="dot">•</span>
+    <span>WEB DESIGN</span>
+
+    {/* Duplicate again for infinite loop */}
+    <span className="dot">•</span>
+
+    <span>APP DESIGN</span>
+    <span className="dot">•</span>
+    <span>DIGITAL MARKETING</span>
+    <span className="dot">•</span>
+    <span>BRANDING</span>
+    <span className="dot">•</span>
+    <span>WEB DEVELOPMENT</span>
+    <span className="dot">•</span>
+    <span>WEB DESIGN</span>
+  </div>
+</div>
+
       <AboutExperience/>
       <StatsSection/>
       <Benefits/>
