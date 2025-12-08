@@ -49,12 +49,13 @@ const Products = () => {
     <div className="product-row" key={index}>
       
       {/* Click name to change image */}
-      <p
-        style={{ cursor: "pointer" }}
-        onClick={() => setActiveProduct(item)}
-      >
-        {item.name}
-      </p>
+    <p
+  style={{ cursor: "pointer" }}
+  onMouseEnter={() => setActiveProduct(item)}  // <- CHANGE HERE
+>
+  {item.name}
+</p>
+
 
       <div className="view-container">
         

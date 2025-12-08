@@ -12,8 +12,14 @@
   width: 100%;
   background-size: cover;
   background-position: center;
+  padding: 18px 40px;       /* REDUCED HEIGHT VERY SMALL */   
   color: #fff;
-  padding: 60px 64px 40px;
+
+  /* HEIGHT REDUCED (NEE REQUEST) */
+min-height: auto;
+padding-bottom: 40px;
+ padding-top: 30px;   /* increased space on top */
+  padding-bottom: 14px; /* reduced bottom space */
 }
 
 .footer-inner {
@@ -26,8 +32,8 @@
 .footer-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+  align-items: center;
+ margin-bottom: 25px;     /* 🔥 reduced */
 }
 
 .footer-left {
@@ -36,10 +42,10 @@
 
 .footer-title {
   font-family: "WF Visual Sans", sans-serif;
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 60px;
-  letter-spacing: 1%;
+  font-weight: 300;        /* Medium weight */
+  font-size: 48px;         /* Figma exact */
+  line-height: 60px;       /* Figma exact */
+  letter-spacing: 1%;      /* Figma exact */
   color: #fff;
 }
 
@@ -61,10 +67,16 @@
   align-items: center;
 }
 
-.footer-center-logo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 6px;
+.footer-menu-col a {
+  font-family: "WF Visual Sans", sans-serif;
+  font-weight: 400;           /* Medium */
+  font-size: 16px;            /* Figma size */
+  line-height: 36px;          /* Figma line height */
+  letter-spacing: 0.18px;     /* 1% in CSS */
+  color: #FFFFFF;
+  opacity: 1;
+  text-decoration: none;
+  display: block;             /* ensures perfect spacing */
 }
 
 .footer-center-logo .pcs-logo {
@@ -92,18 +104,18 @@
 
 /* RIGHT MENU */
 
-.menu-columns {
+.footer-menu-columns {
   display: flex;
   gap: 60px;
 }
 
-.menu-col {
+.footer-menu-col {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.menu-col a {
+.footer-menu-col a {
   font-family: "WF Visual Sans", sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -114,28 +126,32 @@
   display: block;
 }
 
-.menu-col a:hover {
+.footer-menu-col a:hover {
   opacity: 0.85;
 }
 
 /* DIVIDER + COPYRIGHT */
 
 .footer-divider {
-  margin: 32px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin: 20px 0;  
 }
 
 .footer-copy {
   width: 100%;
   text-align: center;
   font-family: "WF Visual Sans", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1;
-  letter-spacing: 0.18px;
-  color: #ffffff;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-weight: 500;                       /* Medium */
+  font-size: 18px;                        /* Figma size */
+  line-height: 100%;                      /* line height */
+  letter-spacing: 0.18px;                 /* 1% of 18px */
+  
+  color: #FFFFFF;                         /* white */
+  opacity: 1;                             /* clear white */
+
+  margin-top: 10px;        /* was 20px */
+  margin-bottom: 5px;      /* was 10px */
+                   /* spacing bottom */
 }
 
 /* MIDDLE CONTACT ROW */
@@ -143,16 +159,12 @@
 .footer-middle {
   display: flex;
   justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap; /* allow wrapping on smaller widths */
+  gap: 12px;               /* smaller gap */
+  margin-bottom: 20px;      /* reduce height */
 }
-
-.info-block {
-  font-size: 13px;
-  flex: 1 1 220px;
-  min-width: 220px;
+.info-block.enroll-block{
+  padding-right: 30px;
 }
-
 .info-title {
   display: flex;
   align-items: center;
@@ -246,120 +258,138 @@
 
 /* ---------- TABLET (≤1024px) ---------- */
 
-/* ---------- TABLET & SMALL LAPTOP (≤1024px) ---------- */
-@media (max-width: 1024px) {
-  .footer-wrapper {
-    padding: 50px 40px 36px;
-  }
-
-  /* TOP SECTION → center */
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 32px;
-  }
-
-  .footer-left {
-    max-width: 100%;
-  }
-
-  .footer-title {
-    font-size: 40px;
-    line-height: 52px;
-  }
-
-  .footer-center-logo .pcs-logo {
-    width: 200px;
-  }
-
-  .menu-columns {
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    gap: 40px;
-  }
-
-  /* CONTACT SECTION → center (CALL, MAIL, ADDRESS, LET'S LEARN) */
-  .footer-middle {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-  }
-
-  .info-block {
-    width: 100%;
-    text-align: center;
-    flex: 0 0 auto;
-    min-width: 0;
-  }
-
-  /* Enroll button center */
-  .enroll-btn {
-    margin: 8px auto 0;
-  }
-
-  .footer-copy {
-    font-size: 16px;
-  }
+.footer-center-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 30px !important;
 }
 
 
-/* ---------- MOBILE LANDSCAPE / SMALL TABLET (≤768px) ---------- */
 
-@media (max-width: 768px) {
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-block p {
+  font-family: "WF Visual Sans", sans-serif;
+  font-weight: 400;         /* Medium */
+  font-size: 16px;
+  line-height: 28px;        /* Figma exact */
+  letter-spacing: 0.9px;    /* 5% converted */
+  color: #FFFFFF;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+
+@media (max-width: 425px) {
+ .info-block p {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+  }
   .footer-wrapper {
-    padding: 40px 24px 32px;
+    padding: 24px 20px;
   }
 
+  /* LOGO FIRST */
   .footer-top {
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-
-  .footer-left {
-    max-width: 100%;
+    gap: 20px;
   }
 
   .footer-center {
-    order: 2;
+    order: -1;     /* LOGO FIRST */
   }
 
-  .menu-columns {
-    order: 3;
-    flex-direction: column;
-    align-items: center;
+  .footer-center-logo .pcs-logo {
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  /* MENU → 2 COLUMNS */
+  .footer-menu-columns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* TWO COLUMNS */
+    gap: 10px 20px;
     text-align: center;
-    gap: 16px;
+    margin-top: 10px;
   }
 
-  .menu-col {
-    align-items: center;
+  .footer-menu-col {
+    gap: 5px;
   }
 
+  .footer-menu-col a {
+    line-height: 26px;
+    font-size: 15px;
+  }
+
+  /* CONTACT BLOCKS CENTER + STACKED */
   .footer-middle {
     flex-direction: column;
-    align-items: center;
     text-align: center;
+    gap: 22px;
+    margin-top: 12px;
   }
 
   .info-block {
-    width: 100%;
+    width:100%;
+    text-align: center;
   }
 
+  .info-title {
+    justify-content: center;
+  }
+
+ /* ADDRESS → FULL VISIBLE BUT MAX 3 LINES */
+.info-block:nth-child(3) p {
+  font-size: 15px;          /* smaller for mobile */
+  line-height: 22px;        /* compact spacing */
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;    /* EXACTLY 3 LINES */
+  -webkit-box-orient: vertical;
+}
+
+
+  /* SMALL ENROLL BUTTON */
   .enroll-btn {
-    margin: 8px auto 0;
+    width: 180px;
+    height: 55px;
+    margin: 10px auto;
+  }
+
+  .enroll-inner-circle {
+    width: 45px;
+    height: 45px;
+  }
+
+  .enroll-text {
+    font-size: 15px;
+  }
+
+  /* MAKE ARROW SMALLER TOO */
+  .arrow-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    margin-top: 10px;
   }
 }
 
-/* ---------- SMALL MOBILE (≤480px) ---------- */
 
-@media (max-width: 480px) {
-  .footer-wrapper {
-    padding: 32px 20px 28px;
-  }
+@media (max-width: 350px) {
 
   .footer-title {
     font-size: 32px;
@@ -396,25 +426,221 @@
 
 /* ---------- EXTRA SMALL (≤350px) ---------- */
 
-@media (max-width: 350px) {
-  .footer-middle{
-    justify-content: center;
-  }
-  .footer-title {
-    font-size: 28px;
-    line-height: 36px;
+/* ------------- TABLET VIEW 600px–1024px ------------- */
+@media (min-width: 600px) and (max-width: 1024px) {
+
+  .footer-wrapper {
+    padding: 40px 32px;
   }
 
+  /* SAME LAYOUT AS LAPTOP */
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    gap: 24px;
+  }
+
+  /* LEFT HEADING AREA */
+  .footer-title {
+    font-size: 30px;     /* slightly smaller */
+    line-height: 50px;
+  }
+
+  .footer-sub {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* LOGO SIZE */
   .footer-center-logo .pcs-logo {
     width: 130px;
   }
 
+  /* MENU SAME AS LAPTOP */
+  .footer-menu-columns {
+    flex-direction: row;
+    text-align: left;
+    gap: 40px;
+  }
+
+  .footer-menu-col a {
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  /* CONTACT SECTION - SAME 3 COLUMN STRUCTURE */
+  .footer-middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .info-block p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  /* TABLET BUTTON SIZE */
   .enroll-btn {
-    width: 190px;
-    height: 56px;
+    width: 210px;
+    height: 65px;
+  }
+
+  .enroll-inner-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .enroll-text {
+    font-size: 17px;
+  }
+
+  /* COPYRIGHT */
+  .footer-copy {
+    font-size: 15px;
+  }
+   /* MAIN HEADING SMALLER */
+  .footer-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  /* SUBTEXT SMALLER */
+  .footer-sub {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  /* MENU TEXT SMALLER */
+  .footer-menu-col a {
+    font-size: 14px;
+    line-height: 26px;
+    white-space: nowrap;     /* Terms of service → single line */
+  }
+
+  /* MAKE RIGHT MENU CLOSER */
+  .footer-menu-columns {
+    gap: 30px;
+  }
+
+  /* PHONE NUMBERS FIT PROPERLY */
+  .info-block p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  /* ADDRESS TIGHTER */
+  .info-block:nth-child(3) p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* ICON TITLE (CALL, MAIL, ADDRESS) */
+  .info-title span {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  /* PCS LOGO – SAME SIZE OR SLIGHT REDUCE */
+  .footer-center-logo .pcs-logo {
+    width: 180px;
+  }
+
+  /* BUTTON SMALL ADJUST */
+  .enroll-btn {
+    width: 200px;
+    height: 60px;
+  }
+
+  .enroll-inner-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .enroll-text {
+    font-size: 16px;
+  }
+}
+
+  .footer-wrapper {
+    padding: 40px 32px;
+  }
+
+  /* LEFT HEADING */
+  .footer-title {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  .footer-sub {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  /* LOGO SIZE */
+  .footer-center-logo .pcs-logo {
+    width: 170px;
+  }
+
+  /* MENU TEXT SMALL */
+  .footer-menu-col a {
+    font-size: 14px;
+    line-height: 28px;
+    white-space: nowrap;
+  }
+  .footer-menu-columns {
+    gap: 32px;
+  }
+
+  /* PHONE NUMBER BLOCK EXACT LAPTOP STYLE */
+  .info-block p {
+    font-size: 15px;
+    line-height: 22px;
+    white-space: nowrap;   /* STOP LINE BREAK */
+  }
+
+  /* ADDRESS BLOCK – allow 3 lines max if needed */
+  .info-block:nth-child(3) p {
+    font-size: 15px;
+    line-height: 22px;
+    white-space: normal;
+  }
+
+  /* ICON TITLE SIZE */
+  .info-title span {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  /* 🔥 SMALLER CTA BUTTON FOR TABLET */
+  .enroll-btn {
+    width: 180px;   /* smaller */
+    height: 58px;
+  }
+
+  .enroll-inner-circle {
+    width: 42px;
+    height: 42px;
   }
 
   .enroll-text {
     font-size: 15px;
   }
-}
+
+  .arrow-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* COPYRIGHT */
+  .footer-copy {
+    font-size: 14px;
+  }
+
+
+
+
+

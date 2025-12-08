@@ -1,187 +1,9 @@
-// import React from 'react';
-// import './aboutus.css';
-// import tagicon from '../assets/Union.png';
-// import Arrow from "../assets/arrow.png";
-
-// export default function About() {
-//   return (
-//     <div className="about-section">
-//       <div className="container">
-//            <div className="top-center">
-//         <div className="tag">
-//             <div  className="tag-icon">
-//   <img src={tagicon} alt="icon" className="boxicon" />
-//   </div>
-//  About
-// </div>
-// </div>
-
-//         <h1 className="main-heading">
-//           We're a <span className="gradient-text1">passionate</span> <span className="gradient-text">creatives</span> and<br/>
-//           experts who believe in delivering results.<br/>
-//           Experience in Web Dev, Digital Marketing<br/>
-//           and UI/UX design, we help brands stand<br/>
-//           out in the crowded digital space.<br/>
-//         </h1>
-
-//         <p className="subtext">
-//           We are a collective of passionate creatives and forward-thinking technologists
-//         </p>
-
-//         <div className="stats-container">
-//           <div className="stat-item">
-//             <div className="stat-number">6+</div>
-//             <div className="stat-label">Years of Experience</div>
-//           </div>
-
-//           <div className="cta-section">
-//             <a href="#" className="link">Know More About Us</a>
-//            <button className="btn-primaryabout">
-//                 <div className="icon-circle">
-//                   <img alt="arrow" src={Arrow} />
-//                 </div>
-//                 Let’s Discuss
-//               </button>
-//           </div>
-
-//           <div className="stat-item">
-//             <div className="stat-number">50+</div>
-//             <div className="stat-label">Successful Projects</div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// import React, { useEffect, useRef, useState } from "react";
-// import "./aboutus.css";
-// import tagicon from "../assets/Union.png";
-// import Arrow from "../assets/arrow.png";
-
-// export default function About() {
-//   const sectionRef = useRef(null);
-//   const statsRef = useRef(null);
-
-//   const [startWordFill, setStartWordFill] = useState(false);
-//   const [countStarted, setCountStarted] = useState(false);
-//   const [filledWords, setFilledWords] = useState(0);
-
-//   const paragraph = `We're a passionate creatives and experts who believe in delivering results. Experience in Web Dev, Digital Marketing and UI/UX design, we help brands stand out in the crowded digital space.`.split(
-//     " "
-//   );
-
-//   // START WORD FILL when section comes into view
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         if (entries[0].isIntersecting) setStartWordFill(true);
-//       },
-//       { threshold: 0.5 }
-//     );
-
-//     observer.observe(sectionRef.current);
-//   }, []);
-
-//   // WORD-BY-WORD COLOR FILL ANIMATION
-//   useEffect(() => {
-//     if (!startWordFill) return;
-
-//     let index = 0;
-//     const interval = setInterval(() => {
-//       setFilledWords((prev) => {
-//         if (prev === paragraph.length) {
-//           clearInterval(interval);
-//           return prev;
-//         }
-//         return prev + 1;
-//       });
-//     }, 120); // speed of word fill
-
-//     return () => clearInterval(interval);
-//   }, [startWordFill]);
-
-//   // COUNTER ANIMATION
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         if (entries[0].isIntersecting && !countStarted) {
-//           setCountStarted(true);
-//         }
-//       },
-//       { threshold: 0.5 }
-//     );
-
-//     observer.observe(statsRef.current);
-//   }, []);
-
-//   return (
-//     <div className="about-section" ref={sectionRef}>
-//       <div className="container">
-
-//         {/* TOP TAG */}
-//         <div className="top-center">
-//           <div className="tag">
-//             <div className="tag-icon">
-//               <img src={tagicon} alt="icon" className="boxicon" />
-//             </div>
-//             About
-//           </div>
-//         </div>
-
-       
-//         {/* DESCRIPTION WORD BY WORD */}
-//         <p className="animated-text">
-//           {paragraph.map((word, index) => (
-//     <span
-//   key={index}
-//   className={`word 
-//      ${index < filledWords ? "filled" : ""} 
-//      ${word === "passionate" || word === "creatives" ? "gradient-word" : ""}
-//   `}
-// >
-//   {word}{" "}
-// </span>
-
-
-//           ))}
-//         </p>
-
-//         {/* COUNT SECTION */}
-//         <div className="stats-container" ref={statsRef}>
-//           <div className="stat-item">
-//             <div className="stat-number">
-//               {countStarted ? "6+" : "0"}
-//             </div>
-//             <div className="stat-label">Years of Experience</div>
-//           </div>
-
-//           <div className="cta-section">
-//             <a href="#" className="link">Know More About Us</a>
-//             <button className="btn-primaryabout">
-//               <div className="icon-circle">
-//                 <img alt="arrow" src={Arrow} />
-//               </div>
-//               Let’s Discuss
-//             </button>
-//           </div>
-
-//           <div className="stat-item">
-//             <div className="stat-number">
-//               {countStarted ? "50+" : "0"}
-//             </div>
-//             <div className="stat-label">Successful Projects</div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 
 import React, { useEffect, useRef, useState } from "react";
 import "./aboutus.css";
 import tagicon from "../assets/Union.png";
 import Arrow from "../assets/arrow.png";
+import CommonTopTag from "../common/toptag";
 
 export default function About() {
   const sectionRef = useRef(null);
@@ -371,14 +193,16 @@ useEffect(() => {
       <div className="container">
 
         {/* TOP TAG */}
-        <div className="top-center">
+
+        <CommonTopTag />
+        {/* <div className="top-center">
           <div className="tag">
             <div className="tag-icon">
               <img src={tagicon} alt="icon" className="boxicon" />
             </div>
             About
           </div>
-        </div>
+        </div> */}
 
         {/* WORD BY WORD FILL */}
         <p className="animated-text">
