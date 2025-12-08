@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
 
-import Mockup from "../assets/servicebanner.png";
-import Team from "../assets/service1.png";
-import Result from "../assets/service2.png";
+import Mockup from "../assets/appdevelop.jpg";
+import Team from "../assets/mobileapp.webp";
+import Result from "../assets/mobile-app.png";
 
 import Whychoose from "../assets/whychoose.png";
 import Discover from "../assets/discovers.png";
@@ -90,23 +90,23 @@ function PurposeSection() {
   const cardsData = [
     {
       img: Discover,
-      title: "Discover",
-      text: "We start by listening and learning—diving deep into your brand, audience, and goals to uncover insights that shape every decision.",
+      title: "Business needs & user research",
+      text: "We listen, analyze, and identify what delivers maximum value for your users and your business.",
     },
     {
       img: Create,
-      title: "Create",
-      text: "With clarity in hand, we craft bold ideas and transform them into designs, stories, and experiences that resonate.",
+      title: "UI/UX Design & Prototyping",
+      text: "We bring your idea to life with stunning visuals, seamless navigation & interactive mockups.",
     },
     {
       img: Deliver,
-      title: "Deliver",
-      text: "From concept to launch, we ensure every detail is polished, impactful, and aligned with your vision for lasting results.",
+      title: "App Engineering",
+      text: "We build high-performance apps with clean architecture — ready to scale and perform.",
     },
     {
       img: Grow,
-      title: "Grow",
-      text: "We don't stop at the launch. We analyze performance, gather feedback, and fine-tune to ensure your brand thrives in the digital world.",
+      title: "Launch & Optimization",
+      text: "We continually monitor performance, improve features, and help you grow digitally.",
     },
   ];
 
@@ -336,11 +336,11 @@ export default function Appdesign() {
             data-animate="fade-up"
             style={{ "--delay": "0s" }}
           >
-            <p className="sw-small-title">Website Design &amp; Development</p>
+            <p className="sw-small-title">App Design &amp; Development</p>
             <h1 className="sw-main-title">
               Launch a seamless,
               <br />
-              conversion-focused website
+              conversion-focused mobile app
             </h1>
           </div>
 
@@ -361,11 +361,7 @@ export default function Appdesign() {
           className="sw-description"
           data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
         >
-          We craft responsive, visually stunning websites tailored to your
-          brand’s needs.From concept to deployment, our team ensures every
-          website is optimized forperformance, usability, and conversions for a
-          website—like the text content thatappears on a single service page in
-          a CMS. Here’s a clean, professional exampleyou can use or adapt.
+        We craft intuitive and visually stunning mobile applications tailored to your brand’s mission and user needs. From concept to deployment, our team ensures every app is built to deliver performance, usability, and conversions — whether it’s a startup idea or an enterprise solution. We ensure a clean, scalable build that is easy to maintain and enhance.
         </p>
 
         {/* STEP 2: What We Offer Section */}
@@ -386,11 +382,12 @@ export default function Appdesign() {
             <h2 className="sw-offer-title">What We Offer:</h2>
 
             <ul className="sw-offer-list">
-              <li>Custom website design</li>
-              <li>Mobile-friendly responsive layouts</li>
-              <li>E-commerce and CMS integration</li>
-              <li>SEO-optimized structure</li>
-              <li>Ongoing maintenance and support</li>
+              <li>Custom native / cross-platform app design</li>
+              <li>User-friendly navigation & smart layouts</li>
+              <li>High-performance mobile app development</li>
+              <li>API integration & secure database setup</li>
+              <li>Conversion-driven UI/UX strategy</li>
+              <li>App redesign, maintenance & support</li>
             </ul>
           </div>
         </div>
@@ -403,10 +400,10 @@ export default function Appdesign() {
             style={{ "--delay": "0s" }}
           >
             <h2 className="sw-result-title">Result:</h2>
-            <li>We combine user research, wireframing,</li>
-            <li>prototyping, and visual design to deliver</li>
-            <li>solutions that not only look great but also</li>
-            <li>solve real user problems.</li>
+            <li>Built with usability,</li>
+            <li>built with performance,</li>
+            <li>built with results</li>
+            {/* <li>solve real user problems.</li> */}
           </ul>
 
           <div

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
 
-import Mockup from "../assets/servicebanner.png";
-import Team from "../assets/service1.png";
-import Result from "../assets/service2.png";
+import Mockup from "../assets/digital1.jpg";
+import Team from "../assets/digital.jpg";
+import Result from "../assets/digital2.jpg";
 
 import Whychoose from "../assets/whychoose.png";
 import Discover from "../assets/discovers.png";
@@ -336,11 +336,11 @@ export default function DigitalMarketing() {
             data-animate="fade-up"
             style={{ "--delay": "0s" }}
           >
-            <p className="sw-small-title">Website Design &amp; Development</p>
+            <p className="sw-small-title">Digital Marketing </p>
             <h1 className="sw-main-title">
-              Launch a seamless,
+              Drive traffic, boost conversions &
               <br />
-              conversion-focused website
+              grow your brand online
             </h1>
           </div>
 
@@ -361,11 +361,7 @@ export default function DigitalMarketing() {
           className="sw-description"
           data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
         >
-          We craft responsive, visually stunning websites tailored to your
-          brand’s needs.From concept to deployment, our team ensures every
-          website is optimized forperformance, usability, and conversions for a
-          website—like the text content thatappears on a single service page in
-          a CMS. Here’s a clean, professional exampleyou can use or adapt.
+        We help businesses build a strong digital presence and attract the right audience with creative campaigns and result-driven marketing strategies. Our approach blends creativity, performance insights, and smart automation to deliver measurable growth.
         </p>
 
         {/* STEP 2: What We Offer Section */}
@@ -386,11 +382,12 @@ export default function DigitalMarketing() {
             <h2 className="sw-offer-title">What We Offer:</h2>
 
             <ul className="sw-offer-list">
-              <li>Custom website design</li>
-              <li>Mobile-friendly responsive layouts</li>
-              <li>E-commerce and CMS integration</li>
-              <li>SEO-optimized structure</li>
-              <li>Ongoing maintenance and support</li>
+              <li>Search Engine Optimization (SEO)</li>
+              <li>Social Media Marketing (SMM)</li>
+              <li>Performance Marketing</li>
+              <li>Content Strategy & Copywriting</li>
+              <li>Email & Automation Marketing</li>
+              <li>Analytics & Reporting</li>
             </ul>
           </div>
         </div>
