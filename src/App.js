@@ -15,6 +15,11 @@ import Header from "./components/homepage/header";
 import AboutBanner from "./components/aboutpage/aboutbanner";
 import Footer from "./components/homepage/footer";
 import TrainingHomeBanner from "./pcstraining/homepage/banner";
+import Webdesign from "./components/servicespage/webdesign";
+import Services from "./components/servicespage/services";
+import Appdesign from "./components/servicespage/appdesign";
+import DigitalMarketing from "./components/servicespage/digitalmarketing";
+import Branding from "./components/servicespage/branding";
 
 
 function App() {
@@ -26,7 +31,11 @@ function App() {
         <Route path="/" element={<Banner />} />
         <Route path="/aboutbanner" element={<AboutBanner />} />
 
-       <Route path="/servicespage" element={<ServicesWebsite/>} />
+       <Route path="/servicespage" element={<Services/>} />
+       <Route path="/webdesign" element={<Webdesign/>} />
+       <Route path="/appdesign" element={<Appdesign/>} />
+       <Route path="/digitalmarketing" element={<DigitalMarketing/>} />
+       <Route path="/branding" element={<Branding/>} />
 
         <Route path="/portfoliobanner" element={<Portfoliobanner />} />
         <Route path="/lhome" element={<LhomeBanner />} />

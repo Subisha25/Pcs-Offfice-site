@@ -81,7 +81,7 @@ const navigate = useNavigate();
         isScrolled && !menuOpen ? "small" : ""
       }`}
     >
-      <div className="header-container">
+      <div className="header-container"  onClick={handleMenuClick}>
         {/* Logo */}
         <div className="header-logo" onClick={() => navigate("/")}>
           <img src={logo} alt="PCS Logo" />
@@ -160,7 +160,7 @@ const navigate = useNavigate();
     </button> */}
        {/* Small header → show Menu button */}
           {isScrolled && !menuOpen && (
-            <button className="menu-toggle-btn" onClick={handleMenuClick}>
+            <button className="menu-toggle-btn">
               Menu
             </button>
           )}

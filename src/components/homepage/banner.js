@@ -12,6 +12,7 @@ import CTASection from "./cta";
 import Footer from "./footer";
 import WordAnimation from "./explore";
 import Benefits from "../aboutpage/benefits";
+import CommonButton from "../common/button";
 
 const words = ["build", "learn"]; // 🔁 cycle panna words
 
@@ -75,12 +76,14 @@ function Banner() {
             </h1>
 
             <div className="banner-buttons">
-              <button className="btn-primaryhome">
+
+              <CommonButton />
+              {/* <button className="btn-primaryhome">
                 <div className="icon-circle">
                   <img alt="arrow" src={Arrow} />
                 </div>
                 Let’s Discuss
-              </button>
+              </button> */}
 
               <button className="btn-link">Learn Something</button>
             </div>
