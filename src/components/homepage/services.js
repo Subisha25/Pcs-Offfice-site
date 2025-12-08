@@ -6,16 +6,19 @@ import Four from "../assets/services/4.png";
 import BackgroundImg from "../assets/services/backgroundImgae.webp";
 import ArrowImg from "../assets/services/arrow.png";
 import ServiceBtnImg from "../assets/services/tool.png";
+import { useNavigate } from "react-router-dom";
 
 const ServicesSection = () => {
   // State to track which card is currently being hovered over (active)
   const [activeCard, setActiveCard] = useState(null);
+const navigate = useNavigate();
 
   // Service data array - All cards now use the light gradient by default
   const services = [
     {
       title: 'Web Design',
       subtitle: '& Development',
+      path: '/webdesign',
       description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Second,
@@ -24,6 +27,7 @@ const ServicesSection = () => {
     {
       title: 'App Design',
       subtitle: '& Development',
+      path: '/appdesign',
       description: 'Got a brilliant app idea? Let\'s make it a reality! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll build something that\'s smooth, sleek, and downright addictive.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Second,
@@ -32,6 +36,7 @@ const ServicesSection = () => {
     {
       title: 'Branding &',
       subtitle: 'Creative Services',
+      path: '/branding',
       description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
       gradient: 'radial-gradient(circle at 100% 0%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Third,
@@ -40,6 +45,7 @@ const ServicesSection = () => {
     {
       title: 'Digital',
       subtitle: 'Marketing',
+      path: '/digitalmarketing',
       description: 'Got a brilliant app idea? Let\'s make it a reality! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll build something that\'s smooth, sleek, and downright addictive.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Four,
@@ -277,29 +283,37 @@ const ServicesSection = () => {
                   {service.description}
                 </p>
 
-                <button className="card-arrow" style={{
-                  position: 'absolute',
-                  right: '30px',
-                  top: '30px',
-                  background: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: '10px',
-                  borderRadius: '50%',
-                  transition: 'all 0.4s ease'
-                }}>
-                  <img
-                    src={ArrowImg}
-                    alt="arrow"
-                    style={{
-                      width: '24px',
-                      height: '24px',
-                      filter: isHovered ? 'invert(1)' : 'invert(0)',
-                      transition: 'all 0.4s ease',
-                      transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
-                    }}
-                  />
-                </button>
+             <button
+  className="card-arrow"
+  onClick={(e) => {
+    e.stopPropagation(); 
+    navigate(service.path);
+  }}
+  style={{
+    position: 'absolute',
+    right: '30px',
+    top: '30px',
+    background: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+    padding: '10px',
+    borderRadius: '50%',
+    transition: 'all 0.4s ease'
+  }}
+>
+  <img
+    src={ArrowImg}
+    alt="arrow"
+    style={{
+      width: '24px',
+      height: '24px',
+      filter: isHovered ? 'invert(1)' : 'invert(0)',
+      transition: 'all 0.4s ease',
+      transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
+    }}
+  />
+</button>
+
               </div>
             </div>
           );
