@@ -36,7 +36,7 @@
           /* color: #000; */
           margin-bottom: 30px;
   color: #bbbbbb;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.1s ease-in-out;
 }
 
 /* WORD COLOR FILLED */
@@ -77,25 +77,18 @@
   opacity: 1;
 }
 
-.about-wrapper {
-  position: relative;
-  height: 250vh;        /* more height = slower animation */
-}
 
 
 .about-section {
   
     font-family: "WF Visual Sans" !important;
 background-color: white;
-
           /* background: linear-gradient(to bottom, #03045E80, #FFFFFF00); */
           min-height: 100vh;
           padding: 80px 20px;
           display: flex;
           align-items: center;
           justify-content: center;
-            position: sticky;  /* PIN IT */
-  top: 0; 
         }
 
         .container {
