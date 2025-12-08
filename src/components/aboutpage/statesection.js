@@ -10,6 +10,25 @@ const StatsSection = () => {
   });
 
   const sectionRef = useRef(null);
+useEffect(() => {
+  const img = document.querySelector(".banner-img");
+  
+  function handleScroll() {
+    const rect = img.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Progress based on scroll visibility
+    const progress = Math.min(Math.max((windowHeight - rect.top) / windowHeight, 0), 1);
+
+    const scaleValue = 0.8 + progress * 0.2; 
+    img.style.transform = `scale(${scaleValue})`;
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
 useEffect(() => {
   const observer = new IntersectionObserver(
@@ -21,7 +40,7 @@ useEffect(() => {
           clients: 52,
         };
 
-        const duration = 1500;
+        const duration = 2000;
         const intervalTime = 50;
 
         const animateCount = (key, endVal) => {
