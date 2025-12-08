@@ -1,224 +1,144 @@
-
 import React, { useState, useEffect, useRef } from "react";
-import ourWorksBg from "../assets/ourworks/Rectangle.png";
 import "./workprocess.css";
+import "./aboutus.css";
+
 import Globe from "../assets/workprocess/Group 1.png";
 import Server from "../assets/workprocess/Group 2.png";
 import BookOpen from "../assets/workprocess/Group 3.png";
 import TrendingUp from "../assets/workprocess/Group 4.png";
-
-const TypedText = ({ text, typingSpeed = 50 }) => {
-  const [displayedText, setDisplayedText] = useState("");
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (index < text.length) {
-      const timeoutId = setTimeout(() => {
-        setDisplayedText((prev) => prev + text.charAt(index));
-        setIndex((prev) => prev + 1);
-      }, typingSpeed);
-
-      return () => clearTimeout(timeoutId);
-    }
-  }, [index, text, typingSpeed]);
-
-  return <>{displayedText}</>;
-};
+import tagicon from "../assets/Union.png";
 
 export default function WorkProcess() {
-  const [displayedText, setDisplayedText] = useState("");
-  const [step, setStep] = useState(0); // 0–4 steps for scroll animation
-  const scrollAreaRef = useRef(null);
+  const cardsRef = useRef(null);
+  const sectionRef = useRef(null);
 
-  const fullText = 'From idea to impact—our process makes it easy, exciting, and effective !';
+  const [filledWords, setFilledWords] = useState(0);
+  const [animate, setAnimate] = useState(false);
 
+  const paragraph = [
+    "From idea to impact—our process makes it",
+    "easy, exciting, and effective!"
+  ].join(" ").split(" ");
 
-  // Typing text effect
+  const maxWords = paragraph.length;
+  const lastScrollY = useRef(window.scrollY);
+
+  /* ================= TEXT SCROLL FILL ================= */
   useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setDisplayedText(fullText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 50);
+    function onScroll() {
+      if (!sectionRef.current) return;
 
-    return () => clearInterval(timer);
-  }, []);
-
-  // Scroll-driven steps
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!scrollAreaRef.current) return;
-
-      const isDesktop = window.innerWidth >= 1024;
-      if (!isDesktop) {
-        // mobile/tablet – no fancy scroll steps
-        setStep(4);
-        return;
-      }
-
-      const rect = scrollAreaRef.current.getBoundingClientRect();
+      const rect = sectionRef.current.getBoundingClientRect();
       const viewportH = window.innerHeight;
+      const centerY = viewportH / 2;
 
-      // If completely out of view, keep final state
-      if (rect.bottom <= 0) {
-        setStep(4);
-        return;
+      const currentScroll = window.scrollY;
+      const scrollingDown = currentScroll > lastScrollY.current;
+      const scrollingUp = currentScroll < lastScrollY.current;
+      lastScrollY.current = currentScroll;
+
+      const distanceFromCenter = centerY - rect.top;
+const fillWindow = viewportH * 0.35;
+
+      let progress = distanceFromCenter / fillWindow;
+      progress = Math.max(0, Math.min(1, progress));
+
+      const targetWords = Math.floor(progress * maxWords);
+
+      if (scrollingDown && targetWords > filledWords) {
+        setFilledWords(targetWords);
       }
-      if (rect.top >= viewportH) {
-        setStep(0);
-        return;
+
+      if (scrollingUp && targetWords < filledWords) {
+        setFilledWords(targetWords);
       }
+    }
 
-      const totalScrollable = rect.height - viewportH;
-      if (totalScrollable <= 0) {
-        setStep(4);
-        return;
-      }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
-      const scrolled = Math.min(Math.max(-rect.top, 0), totalScrollable);
-      const progress = scrolled / totalScrollable;
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [filledWords, maxWords]);
 
-      let newStep = 0;
-      if (progress > 0.8) newStep = 4;
-      else if (progress > 0.6) newStep = 3;
-      else if (progress > 0.4) newStep = 2;
-      else if (progress > 0.2) newStep = 1;
-      else newStep = 0;
+  /* ================= CARD FLOWER EFFECT ================= */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setAnimate(true), 400);
+        } else {
+          setAnimate(false);
+        }
+      },
+      { threshold: 0.4 }
+    );
 
-      setStep(newStep);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (cardsRef.current) observer.observe(cardsRef.current);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className="workprocess">
-      {/* TOP SECTION - LEFT SIDE */}
-      <div className="ourwork-explore-top-section">
-        {/* Our Works badge */}
-        <div className="our-works-wrapper">
-          <img
-            src={ourWorksBg}
-            alt="Our Works Background"
-            className="our-works-bg-image"
-          />
-          <div className="our-works-icon">
-            <svg
-              className="ourwork-icon-svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <rect x="3" y="3" width="7" height="7" />
-              <rect x="14" y="3" width="7" height="7" />
-              <rect x="3" y="14" width="7" height="7" />
-              <rect x="14" y="14" width="7" height="7" />
-            </svg>
-          </div>
-          <span className="our-works-text">workprocess</span>
-        </div>
+      {/* ===== ABOUT ===== */}
+      <div className="workprocess-section" ref={sectionRef}>
+        <div className="container">
 
-        {/* Typed main heading */}
-        <div className="ourwork-header-wrapper">
-          <h1 className="ourwork-main-heading">
-            {displayedText.split(" ").map((word, index) => {
-              if (word === "effective") {
-                return (
-                  <span key={index} className="ourwork-something-text">
-                    {word}{" "}
-                  </span>
-                );
-              } else if (word === "!") {
-                return (
-                  <span key={index} className="ourwork-amazing-text">
-                    {word}
-                  </span>
-                );
-              }
-              return word + " ";
-            })}
-          </h1>
+          <div className="top-center">
+            <div className="tag">
+              <div className="tag-icon">
+                <img src={tagicon} alt="icon" className="boxicon" />
+              </div>
+              About
+            </div>
+          </div>
+
+          <p className="animated-text">
+            {paragraph.map((word, index) => (
+              <span
+                key={index}
+                className={`word ${
+                  index < filledWords ? "filled" : ""
+                } ${word === "effective!" ? "gradient-word" : ""}`}
+              >
+                {word + " "}
+              </span>
+            ))}
+          </p>
+
         </div>
       </div>
 
-      {/* SCROLL AREA + STICKY CARDS */}
-      <div className="workprocess-scroll-area" ref={scrollAreaRef}>
-        <div className={`workprocess-cards-grid step-${step}`}>
-          <div className="workprocess-card">
-            <div className="workprocess-icon-wrapper">
-              <img src={Globe} alt="Discover & Strategize Icon" />
-            </div>
-            <h3 className="workprocess-card-title">
-              Discover &
-              <br />
-              Strategize
-            </h3>
-            <p className="workprocess-card-description">
-              We dive deep into understanding your brand, goals, and audience.
-              Through collaborative discussions and research, we craft a
-              strategic roadmap tailored to your needs.
-            </p>
-          </div>
-
-          <div className="workprocess-card">
-            <div className="workprocess-icon-wrapper">
-              <img src={Server} alt="Conversion & Focused Icon" />
-            </div>
-            <h3 className="workprocess-card-title">
-              Conversion &
-              <br />
-              Focused
-            </h3>
-            <p className="workprocess-card-description">
-            Our layouts are built to performguiding users toward action
-to design visuals, content, and
-assets that resonate with your
-brand
-            </p>
-          </div>
-
-          <div className="workprocess-card">
-            <div className="workprocess-icon-wrapper">
-              <img src={BookOpen} alt="Build & Launch Icon" />
-            </div>
-            <h3 className="workprocess-card-title">
-              Build &
-              <br />
-              Launch
-            </h3>
-            <p className="workprocess-card-description">
-              Our creative team gets to work,
-blending innovation with strategy
-to design visuals, content, and
-assets that resonate with your
-brand. Every detail is refined to
-perfection.
-            </p>
-          </div>
-
-          <div className="workprocess-card">
-            <div className="workprocess-icon-wrapper">
-              <img src={TrendingUp} alt="Refine & Grow Icon" />
-            </div>
-            <h3 className="workprocess-card-title">
-              Refine &
-              <br />
-              Grow
-            </h3>
-            <p className="workprocess-card-description">
-              We don't stop at the launch. Weanalyze performance, gatherfeedback, and fine-tune to ensureyour brand keeps evolving andthriving in the digital landscape.
-            </p>
-          </div>
+      {/* ===== CARDS ===== */}
+      <div className="workprocess-scroll-area">
+        <div
+          ref={cardsRef}
+          className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
+        >
+          <Card img={Globe} title="Discover" sub="Strategize"
+            text="We dive deep into understanding your brand, goals, and audience." />
+          <Card img={Server} title="Conversion" sub="Focused"
+            text="Our layouts are performance-driven and guide users clearly." />
+          <Card img={BookOpen} title="Build" sub="Launch"
+            text="We design and build with precision and clarity." />
+          <Card img={TrendingUp} title="Refine" sub="Grow"
+            text="We analyze performance and continuously refine your growth." />
         </div>
       </div>
+    </div>
+  );
+}
+
+/* ===== SMALL CARD COMPONENT ===== */
+function Card({ img, title, sub, text }) {
+  return (
+    <div className="workprocess-card">
+      <div className="workprocess-icon-wrapper">
+        <img src={img} alt="" />
+      </div>
+      <h3 className="workprocess-card-title">
+        {title} <br /> {sub}
+      </h3>
+      <p className="workprocess-card-description">{text}</p>
     </div>
   );
 }
