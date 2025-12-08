@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
 
-import Mockup from "../assets/servicebanner.png";
-import Team from "../assets/service1.png";
-import Result from "../assets/service2.png";
+import Mockup from "../assets/brand.jpg";
+import Team from "../assets/brand3.avif";
+import Result from "../assets/brand2.avif";
 
 import Whychoose from "../assets/whychoose.png";
 import Discover from "../assets/discovers.png";
@@ -336,11 +336,11 @@ export default function Branding() {
             data-animate="fade-up"
             style={{ "--delay": "0s" }}
           >
-            <p className="sw-small-title">Website Design &amp; Development</p>
+            <p className="sw-small-title">Branding &amp; Identity Design</p>
             <h1 className="sw-main-title">
-              Launch a seamless,
+             Build a brand
               <br />
-              conversion-focused website
+              that people remember
             </h1>
           </div>
 
@@ -361,11 +361,7 @@ export default function Branding() {
           className="sw-description"
           data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
         >
-          We craft responsive, visually stunning websites tailored to your
-          brand’s needs.From concept to deployment, our team ensures every
-          website is optimized forperformance, usability, and conversions for a
-          website—like the text content thatappears on a single service page in
-          a CMS. Here’s a clean, professional exampleyou can use or adapt.
+       We help brands discover their voice, define their identity, and create a strong visual presence. Through strategy-led design, we ensure your brand stands out, connects emotionally with your audience, and builds long-term trust.
         </p>
 
         {/* STEP 2: What We Offer Section */}
@@ -386,11 +382,12 @@ export default function Branding() {
             <h2 className="sw-offer-title">What We Offer:</h2>
 
             <ul className="sw-offer-list">
-              <li>Custom website design</li>
-              <li>Mobile-friendly responsive layouts</li>
-              <li>E-commerce and CMS integration</li>
-              <li>SEO-optimized structure</li>
-              <li>Ongoing maintenance and support</li>
+              <li>Brand strategy & positioning</li>
+              <li>Logo design & brand identity creation</li>
+              <li>Color palette & typography system</li>
+              <li>Brand storytelling & messaging</li>
+              <li>Packaging & marketing collateral design</li>
+             <li> Complete brand guidelines & asset kit</li>
             </ul>
           </div>
         </div>
