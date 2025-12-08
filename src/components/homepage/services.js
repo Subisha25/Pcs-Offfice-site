@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// These imports are assumed to be correctly linked to your asset files
 import Second from "../assets/services/2.png";
 import Third from "../assets/services/3.png";
 import Four from "../assets/services/4.png";
@@ -161,7 +160,7 @@ const navigate = useNavigate();
                 position: 'relative',
                 overflow: 'hidden',
                 cursor: 'pointer',
-                boxShadow: isHovered ? '0 10px 40px rgba(0, 0, 0, 0.3)' : '0px 8px 20px rgba(0, 0, 0, 0.15)',
+                boxShadow: isHovered ? 'none' : 'none',
                 minHeight: '400px',
                 display: 'flex',
                 flexDirection: 'column',
