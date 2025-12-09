@@ -65,10 +65,10 @@ const navigate = useNavigate();
   }, [menuOpen, isMobile]);
 
   // Toggle menu
-  const handleMenuClick = (e) => {
-    e.stopPropagation();
-    setMenuOpen((prev) => !prev);
-  };
+const handleMenuClick = () => {
+  setMenuOpen(true);   // Always open only
+};
+
 
   // Close menu when link is clicked
   const handleLinkClick = () => {

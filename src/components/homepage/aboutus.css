@@ -20,7 +20,7 @@
   font-style: normal;
   font-display: swap;
 }
-.animated-text {
+.animated-text2 {
   max-width: 900px;
   margin: auto;
   line-height: 1.4;
@@ -28,7 +28,7 @@
 }
 
 /* WORDS GREY BEFORE FILL */
-.animated-text .word {
+.animated-text2 .word {
    font-family: "WF Visual Sans" !important;
           font-size: 48px;
           font-weight: 600;
@@ -40,7 +40,7 @@
 }
 
 /* WORD COLOR FILLED */
-.animated-text .word.filled {
+.animated-text2 .word.filled {
   color: #000;
 }
 
@@ -100,7 +100,7 @@ background-color: white;
      /*  TOP CENTER */
 .top-center {
   text-align: center;
-  margin-bottom: 60px;
+  /* margin-bottom: 40px; */
 }
 .commontag {
     font-family: "WF Visual Sans" !important;
@@ -246,7 +246,7 @@ background-color: white;
             font-size: 22px;
           }
 
-          .animated-text .word{
+          .animated-text2 .word{
             font-size: 22px;
           }
           .stat-number {
