@@ -5,6 +5,7 @@ import quote from "../assets/quote.svg";
 import leftarrow from "../assets/leftarrow.svg";
 import rightarrow from "../assets/rightarrow.svg";
 import  {  useEffect, useRef } from "react";
+import CommonTopTag from "../common/toptag";
 
 const reviewsData = [
   {
@@ -98,12 +99,7 @@ useEffect(() => {
       
       {/* TOP CENTER */}
       <div className="feedback-header">
-        <div className="feedback-tag">
-          <div className="tagg-icon">
-            <img src={tagicon} alt="icon" className="tag-img" />
-          </div>
-          Feedback
-        </div>
+        <CommonTopTag text="Feed Back" icon={tagicon}/>
 
         <h2>
           Real reviews <br />

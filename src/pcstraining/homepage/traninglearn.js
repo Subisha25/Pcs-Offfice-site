@@ -3,6 +3,7 @@ import "./traninglearn.css";
 
 // Replace with your real avatar image path
 import Avatar1 from "../assets/learn.png";
+import CommonTopTag from "../../components/common/toptag";
 
 const testimonials = [
   {
@@ -75,16 +76,14 @@ const TraningLearn = () => {
     <section className="traninglearn">
       <div className="traninglearn-inner">
         {/* Top tag */}
-        <div className="traninglearn-tag">
-          <span className="traninglearn-tag-icon">💬</span>
-          <span className="traninglearn-tag-text">Feedback</span>
-        </div>
+       <CommonTopTag text="Feed Back" />
 
         {/* Heading */}
         <h2 className="traninglearn-title">
           Success stories from{" "}
-          <span className="traninglearn-title-highlight">learners</span>
         </h2>
+
+          <span className="traninglearn-title-highlight">learners</span>
 
         {/* Carousel */}
         <div className="traninglearn-carousel">
