@@ -30,10 +30,11 @@ body {
   color: var(--main-text);
 }
 
+
 /* Custom font */
 @font-face {
   font-family: "WF Visual Sans";
-  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
+  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Bold.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -153,6 +154,8 @@ body {
 
 /* Primary CTA */
 .btn-primaryhome {
+  font-family: "WF Visual Sans",  !important;
+
   background: var(--button-secondary);
   color: #000;
   border: none;

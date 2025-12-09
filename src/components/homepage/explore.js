@@ -206,6 +206,31 @@ export default function WordAnimation() {
           padding: 0;
           box-sizing: border-box;
         }
+          :root {
+  --main-bg: #f4f7fb;
+  --main-text: #222222;
+  --primary-color: #007bff;
+  --secondary-color: #555555;
+  --button-primary: #101166;
+  --button-secondary: #D9D9D9;
+  --playfair-fonts: "Playfair Display", serif;
+  --heading-font-size: 32px;
+  --subheading-font-size: 24px;
+  --title-font-size: 20px;
+  --description-font-size: 16px;
+  --small-text-font-size: 14px;
+}
+
+
+
+/* Custom font */
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
         body {
           min-height: 100vh;
@@ -248,6 +273,7 @@ export default function WordAnimation() {
         }
 
         .wordanimation-word {
+         font-family: "WF Visual Sans";
           font-size: 80px;
           font-weight: 500;
           letter-spacing: 2px;
