@@ -6,7 +6,8 @@ import Globe from "../assets/workprocess/Group 1.png";
 import Server from "../assets/workprocess/Group 2.png";
 import BookOpen from "../assets/workprocess/Group 3.png";
 import TrendingUp from "../assets/workprocess/Group 4.png";
-import tagicon from "../assets/Union.png";
+import tagicon from "../assets/whychoose.png";
+import CommonTopTag from "../common/toptag";
 
 export default function WorkProcess() {
   const cardsRef = useRef(null);
@@ -83,14 +84,7 @@ const fillWindow = viewportH * 0.35;
       <div className="workprocess-section" ref={sectionRef}>
         <div className="container">
 
-          <div className="top-center">
-            <div className="tag">
-              <div className="tag-icon">
-                <img src={tagicon} alt="icon" className="boxicon" />
-              </div>
-              About
-            </div>
-          </div>
+        <CommonTopTag text="Our Works Process" icon={tagicon} />
 
           <p className="animated-text">
             {paragraph.map((word, index) => (

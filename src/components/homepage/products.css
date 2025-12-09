@@ -58,12 +58,6 @@
   padding: 0;           /* remove padding, center via flex */
 }
 
-.boxicon {
-  width: 40%;          /* smaller than circle for "kutty" look */
-  height: 40%;
-  object-fit: contain;
-  border-radius: 50%;
-}
 
 
 .titles {

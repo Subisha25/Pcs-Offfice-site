@@ -1,4 +1,3 @@
-/* ==================== GLOBAL / ROOT ==================== */
 :root {
   --main-bg: #f4f7fb;
   --main-text: #222222;
@@ -15,53 +14,270 @@
 }
 
 @font-face {
-  font-family: "WF Visual Sans";
+  font-family: "WF Visual Sans" !important;
   src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
-
-.workprocess {
-  margin: 0 auto;
-  padding: 80px 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", sans-serif;
-  background-color: #ffffff;
+.animated-text {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.4;
+  
 }
 
-/* ---------- TOP SECTION LEFT ---------- */
+/* WORDS GREY BEFORE FILL */
+.animated-text .word {
+   font-family: "WF Visual Sans" !important;
+          font-size: 48px;
+          font-weight: 600;
+          line-height: 1.3;
+          /* color: #000; */
+          margin-bottom: 30px;
+  color: #bbbbbb;
+  transition: color 0.1s ease-in-out;
+}
 
+/* WORD COLOR FILLED */
+.animated-text .word.filled {
+  color: #000;
+}
+
+/* Default gradient words: white + Playfair */
+.gradient-word {
+  color: #bbbbbb !important;
+  font-family: var(--playfair-fonts) !important;
+  font-style: italic;
+}
+
+/* When filled → gradient + Playfair */
+.gradient-word.filled {
+  background: linear-gradient(100deg, #03045E, #FF006E);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+
+  font-family: var(--playfair-fonts) !important;
+  font-style: italic;
+}
+
+
+/* Text grey initially */
+.text-block {
+  filter: grayscale(100%);
+  opacity: 0.2;
+  transition: all 1.5s ease-in-out;
+}
+
+/* When visible */
+.text-block.text-animate {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+
+
+.about-section {
+  
+    font-family: "WF Visual Sans" !important;
+background-color: white;
+          /* background: linear-gradient(to bottom, #03045E80, #FFFFFF00); */
+          min-height: 100vh;
+          padding: 80px 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .container {
+          max-width: 1000px;
+          width: 100%;
+          text-align: center;
+        }
+
+     /*  TOP CENTER */
+.top-center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.commontag {
+    font-family: "WF Visual Sans" !important;
+
+  background: #D9D9D9;
+  border-radius: 30px;
+  padding: 4px 30px 4px 8px;
+  font-size: 18px;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 500;
+}
+
+.commontag-icon {
+    font-family: "WF Visual Sans" !important;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #000c5a; /* circle background */
+  display: flex;        /* make it flex to center image */
+  align-items: center;  /* vertically center */
+  justify-content: center; /* horizontally center */
+  padding: 0;           /* remove padding, center via flex */
+}
+
+.boxicon {
+  width: 30%;          /* smaller than circle for "kutty" look */
+  height: 420%;
+  /* object-fit: contain; */
+}
+        .main-heading {
+           font-family: "WF Visual Sans" !important;
+          font-size: 48px;
+          font-weight: 600;
+          line-height: 1.3;
+          color: #000;
+          margin-bottom: 30px;
+        }
+
+           .gradient-text1 {
+
+         color:  #03045E;
+         font-family: var(--playfair-fonts);
+          -webkit-background-clip: text;
+          /* -webkit-text-fill-color: transparent; */
+          background-clip: text;
+          /* font-style: italic; */
+        }
+        .gradient-text {
+          background: linear-gradient(100deg, #03045E, #FF006E);    
+               font-family: var(--playfair-fonts);
+
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          font-style: italic;
+        }
+
+        .subtext {
+           font-family: "WF Visual Sans" !important;
+          font-size: 16px;
+          color: #666;
+          margin-bottom: 60px;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .stats-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 40px;
+          flex-wrap: wrap;
+        }
+
+        .stat-item {
+          flex: 1;
+          min-width: 150px;
+        }
+
+        .stat-number {
+          font-size: 72px;
+          font-weight: 400;
+          color: #000;
+          margin-bottom: 10px;
+        }
+
+        .stat-label {
+          font-size: 14px;
+          color: #333;
+          font-weight: 500;
+        }
+
+        .cta-section {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+        }
+
+        .link {
+          color: #000;
+          text-decoration: underline;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+        }
+
+        .cta-button {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          background: linear-gradient(90deg, #e0e0e0 0%, #f5f5f5 100%);
+          border: none;
+          padding: 16px 30px;
+          border-radius: 50px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-button svg {
+          background: #03045E;
+          border-radius: 50%;
+          padding: 8px;
+          width: 36px;
+          height: 36px;
+          stroke: white;
+        }
+
+        :root {
+  --playfair-fonts: "Playfair Display", serif;
+}
+
+/* ================= SECTION ================= */
+.workprocess {
+  padding: 70px 20px;
+  background: #ffffff;
+}
+.workprocess-section {
+  font-family: "WF Visual Sans" !important;
+  padding: 60px 20px;   /* ✅ control space manually */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ================= TOP SECTION ================= */
 .ourwork-explore-top-section {
   max-width: 1200px;
   margin: 0 auto 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  gap: 16px;
+  text-align: center;
 }
 
 .our-works-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .our-works-bg-image {
   height: 40px;
-  width: auto;
-  display: block;
 }
 
 .our-works-icon {
   position: absolute;
   left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .ourwork-icon-svg {
@@ -71,242 +287,130 @@
 
 .our-works-text {
   position: absolute;
-  /* left: 40px; */
-  top: 50%;
-  transform: translateY(-50%);
+  left: 40px;
   font-size: 14px;
   font-weight: 500;
-  color: #111827;
-}
-
-.ourwork-header-wrapper {
-  max-width: 720px;
 }
 
 .ourwork-main-heading {
-      font-family: "WF Visual Sans";
-
-    text-align: center;
+  font-family: "WF Visual Sans", sans-serif;
   font-size: 40px;
   font-weight: 700;
-  line-height: 1.3;
-  color: #000000;
-  margin: 0;
 }
 
-.workprocess .ourwork-main-heading span {
-      font-family:var(--playfair-fonts);
-
-  color: #000000;
+.ourwork-main-heading span {
+  font-family: var(--playfair-fonts);
   font-style: italic;
 }
 
-.ourwork-amazing-text {
-  color: #111827;
-}
-
-/* ---------- SCROLL AREA + STICKY CARDS ---------- */
-
+/* ================= CARDS AREA ================= */
 .workprocess-scroll-area {
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 40px;
-  height: 260vh; /* scroll space for step animation */
-  position: relative;
 }
 
-/* sticky card layer */
 .workprocess-cards-grid {
-  position: sticky;
-  top: 120px;
+  position: relative;
   height: 420px;
-  /* cards are absolutely positioned inside */
 }
 
-/* base card style – stacked in center */
+/* ================= CARD BASE ================= */
 .workprocess-card {
   position: absolute;
   top: 0;
   left: 50%;
   width: 280px;
   min-height: 360px;
-  background: #FCFCFD;
-  border-radius: 20px;
-  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); */
   padding: 32px;
-  transform: translateX(-50%);
+  background: #FCFCFD;
+  border-radius: 18px;
+  /* box-shadow: 0 20px 40px rgba(0,0,0,0.06); */
   opacity: 1;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.7s ease, opacity 0.7s ease, box-shadow 0.3s ease;
+  transition: transform 2.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.workprocess-card:hover {
-  /* box-shadow: 0 20px 60px rgba(124, 58, 237, 0.2); */
-  transform: translateX(-50%) translateY(-8px);
-}
-
-/* stacked z-index when first entering section */
-/* step-0: fanned stack like the screenshot */
-/* leftmost card, bottom-most */
-.workprocess-cards-grid.step-0 .workprocess-card:nth-child(1) {
+/* ===== INITIAL (CENTER STACK) ===== */
+.workprocess-card:nth-child(1){
+  transform: translateX(calc(-50% - 90px));
   z-index: 1;
-  transform: translateX(calc(-70% - 90px)) rotate(-10deg);
 }
-
-/* 2nd card */
-.workprocess-cards-grid.step-0 .workprocess-card:nth-child(2) {
+.workprocess-card:nth-child(2){
+  transform: translateX(calc(-50% - 30px));
   z-index: 2;
-  transform: translateX(calc(-55% - 30px)) rotate(-4deg);
 }
-
-/* 3rd card */
-.workprocess-cards-grid.step-0 .workprocess-card:nth-child(3) {
+.workprocess-card:nth-child(3){
+  transform: translateX(calc(-50% + 30px));
   z-index: 3;
-  transform: translateX(calc(-35% + 30px)) rotate(4deg);
 }
-
-/* right-most card on top – like your example */
-.workprocess-cards-grid.step-0 .workprocess-card:nth-child(4) {
+.workprocess-card:nth-child(4){
+  transform: translateX(calc(-50% + 90px));
   z-index: 4;
-  transform: translateX(calc(-15% + 90px)) rotate(10deg);
 }
 
-
-/* ---------- POSITIONS PER STEP (DESKTOP) ---------- */
-/* adjust translateX values to fit your design spacing */
-
-/* STEP 1: only first card moves left (with gap) */
-.workprocess-cards-grid.step-1 .workprocess-card:nth-child(1) {
-  transform: translateX(calc(-50% - 480px)); /* more left = more gap */
+/* ===== FLOWER OPEN (ALL SAME TIME) ===== */
+.cards-open .workprocess-card:nth-child(1){
+  transform: translateX(calc(-60% - 420px));
+}
+.cards-open .workprocess-card:nth-child(2){
+  transform: translateX(calc(-53% - 140px));
+}
+.cards-open .workprocess-card:nth-child(3){
+  transform: translateX(calc(-46% + 140px));
+}
+.cards-open .workprocess-card:nth-child(4){
+  transform: translateX(calc(-40% + 420px));
 }
 
-/* STEP 2: first + second placed with gap */
-.workprocess-cards-grid.step-2 .workprocess-card:nth-child(1) {
-  transform: translateX(calc(-50% - 480px));
-}
-.workprocess-cards-grid.step-2 .workprocess-card:nth-child(2) {
-  transform: translateX(calc(-50% - 160px)); /* 320px between centers */
-}
-
-/* STEP 3: first three placed with equal gaps */
-.workprocess-cards-grid.step-3 .workprocess-card:nth-child(1) {
-  transform: translateX(calc(-50% - 480px));
-}
-.workprocess-cards-grid.step-3 .workprocess-card:nth-child(2) {
-  transform: translateX(calc(-50% - 160px));
-}
-.workprocess-cards-grid.step-3 .workprocess-card:nth-child(3) {
-  transform: translateX(calc(-50% + 160px));
-}
-
-/* STEP 4: all four in final layout with nice gaps */
-.workprocess-cards-grid.step-4 .workprocess-card:nth-child(1) {
-  transform: translateX(calc(-50% - 480px));
-}
-.workprocess-cards-grid.step-4 .workprocess-card:nth-child(2) {
-  transform: translateX(calc(-50% - 160px));
-}
-.workprocess-cards-grid.step-4 .workprocess-card:nth-child(3) {
-  transform: translateX(calc(-50% + 160px));
-}
-.workprocess-cards-grid.step-4 .workprocess-card:nth-child(4) {
-  transform: translateX(calc(-50% + 480px));
-}
-
-
-/* icon + text */
+/* ================= CARD CONTENT ================= */
 .workprocess-icon-wrapper {
   width: 48px;
   height: 48px;
   margin-bottom: 24px;
 }
-.workprocess-icon-wrapper img {
-  max-width: 100%;
-  height: auto;
-}
 
 .workprocess-card-title {
-
   font-size: 22px;
-  font-weight: 600;
-  margin: 0 0 12px 0;
-  color: #000000;
+  margin-bottom: 12px;
 }
 
 .workprocess-card-description {
   font-size: 15px;
   line-height: 1.6;
-  color: #666666;
+  color: #666;
 }
 
-/* ---------- RESPONSIVE ---------- */
-
+/* ================= MOBILE ================= */
 @media (max-width: 1024px) {
-  .ourwork-main-heading {
-    font-size: 32px;
-  }
-
-  .workprocess .ourwork-main-heading span {
-    font-size: 32px;
-  }
-  .workprocess-scroll-area {
-    height: auto;
-  }
-
   .workprocess-cards-grid {
     position: static;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-top: 24px;
   }
 
   .workprocess-card {
     position: relative;
-    left: auto;
     transform: none !important;
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
     opacity: 1;
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 768px) {
-  .workprocess {
-    padding: 60px 16px;
-  }
+        @media (max-width: 768px) {
+          .main-heading {
+            font-size: 22px;
+          }
 
-  .ourwork-explore-top-section {
-    margin-bottom: 40px;
-  }
+          .animated-text .word{
+            font-size: 22px;
+          }
+          .stat-number {
+            font-size: 48px;
+          }
 
-  .ourwork-main-heading {
-    font-size: 26px;
-  }
+          .stats-container {
+            flex-direction: column;
+          }
+        }
 
-  .our-works-bg-image {
-    height: 32px;
-  }
-
-  .workprocess-card {
-    max-width: 340px;
-    padding: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .ourwork-main-heading {
-    font-size: 22px;
-  }
-
-  .workprocess-card-title {
-    font-size: 20px;
-  }
-
-  .workprocess-card-description {
-    font-size: 14px;
-  }
-}

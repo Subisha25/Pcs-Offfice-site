@@ -79,10 +79,9 @@
   width: 280px;
   min-height: 360px;
   padding: 32px;
-  background: #fcfcfd;
+  background: #FCFCFD;
   border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-
+  /* box-shadow: 0 20px 40px rgba(0,0,0,0.06); */
   opacity: 1;
   transition: transform 2.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -107,16 +106,16 @@
 
 /* ===== FLOWER OPEN (ALL SAME TIME) ===== */
 .cards-open .workprocess-card:nth-child(1){
-  transform: translateX(calc(-50% - 420px));
+  transform: translateX(calc(-60% - 420px));
 }
 .cards-open .workprocess-card:nth-child(2){
-  transform: translateX(calc(-50% - 140px));
+  transform: translateX(calc(-53% - 140px));
 }
 .cards-open .workprocess-card:nth-child(3){
-  transform: translateX(calc(-50% + 140px));
+  transform: translateX(calc(-46% + 140px));
 }
 .cards-open .workprocess-card:nth-child(4){
-  transform: translateX(calc(-50% + 420px));
+  transform: translateX(calc(-40% + 420px));
 }
 
 /* ================= CARD CONTENT ================= */
