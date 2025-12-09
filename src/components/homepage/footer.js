@@ -13,7 +13,6 @@ import iconPin from "../assets/footer/learn-icon.png";
 import enrollBg from "../assets/footer/enroll-bg.png";       // big button shape
 import arrowIcon from "../assets/footer/arrow.png";          // arrow
 import enrollCircle from "../assets/footer/enroll-circle.png"; // if circle is an image
-import CommonButton from "../common/button";
 
 function Footer() {
   return (
@@ -108,7 +107,16 @@ function Footer() {
               <img src={iconPin} alt="" />
               <span>LET&apos;S LEARN FROM PCS</span>
             </div>
-   <CommonButton text="Enroll Now" />
+           <div className="enroll-btn">
+  <img src={enrollBg} className="enroll-bg" alt="background" />
+  
+  <div className="enroll-inner-circle">
+    <img src={enrollCircle} className="circle-img" alt="circle" />
+    <img src={arrowIcon} className="arrow-icon" alt="arrow" />
+  </div>
+
+  <span className="enroll-text">Enroll Now</span>
+</div>
 
           </div>
         </div>
