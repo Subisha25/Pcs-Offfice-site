@@ -171,6 +171,56 @@ const ServicesSection = () => {
                 transform: isHovered ? 'translateY(-10px)' : 'translateY(0)'
               }}
             >
+
+                  <div className="card-header" style={{ marginBottom: '15px' }}>
+                    <h3 className="card-title" style={{
+                      fontSize: '32px',
+                      fontWeight: '400',
+                      marginBottom: '2px',
+                      fontFamily: '"WF Visual Sans", sans-serif',
+                      color: titleColor,
+                      transition: 'color 0.4s ease'
+                    }}>
+                        {service.title}
+                    </h3>
+                    <h4 className="card-subtitle" style={{
+                      fontFamily: '"WF Visual Sans", sans-serif',
+                      fontSize: '32px',
+                      fontWeight: '400',
+                      opacity: '1',
+                      color: subtitleColor,
+                      transition: 'all 0.4s ease',
+                      marginBottom: '20px'
+                    }}>
+                      {service.subtitle}
+                    </h4>
+
+                    
+                <button className="card-arrow" style={{
+                  position: 'absolute',
+                  right: '25px',
+                  top: '25px',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '10px',
+                  borderRadius: '50%',
+                  transition: 'all 0.4s ease',
+                  zIndex: 3
+                }}>
+                  <img
+                    src={ArrowImg}
+                    alt="arrow"
+                    style={{
+                      width: '22px',
+                      height: '22px',
+                      filter: isHovered ? 'invert(1)' : 'invert(0)', // White arrow on hover
+                      transition: 'all 0.4s ease',
+                      transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
+                    }}
+                  />
+                </button>
+                  </div>
               {/* Image section */}
               <div className="card-image" style={{
                 position: isHovered ? 'absolute' : 'relative',
@@ -207,36 +257,14 @@ const ServicesSection = () => {
                 flexDirection: 'column',
                 height: '100%',
                 position: 'relative',
-                zIndex: 2,
+                zIndex: 5,
                 color: isHovered ? '#ffffff' : '#1a1a2e',
                 transition: 'color 0.4s ease',
                 alignItems: 'flex-start',
                 justifyContent: 'space-between'
               }}>
                <div className="card-top-content">
-                  <div className="card-header" style={{ marginBottom: '15px' }}>
-                    <h3 className="card-title" style={{
-                      fontSize: '32px',
-                      fontWeight: '400',
-                      marginBottom: '2px',
-                      fontFamily: '"WF Visual Sans", sans-serif',
-                      color: titleColor,
-                      transition: 'color 0.4s ease'
-                    }}>
-                        {service.title}
-                    </h3>
-                    <h4 className="card-subtitle" style={{
-                      fontFamily: '"WF Visual Sans", sans-serif',
-                      fontSize: '32px',
-                      fontWeight: '400',
-                      opacity: '1',
-                      color: subtitleColor,
-                      transition: 'all 0.4s ease',
-                      marginBottom: '20px'
-                    }}>
-                      {service.subtitle}
-                    </h4>
-                  </div>
+              
                   
                 </div>
 
@@ -255,30 +283,6 @@ const ServicesSection = () => {
                   {service.description}
                 </p>
 
-                <button className="card-arrow" style={{
-                  position: 'absolute',
-                  right: '25px',
-                  top: '25px',
-                  background: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: '10px',
-                  borderRadius: '50%',
-                  transition: 'all 0.4s ease',
-                  zIndex: 3
-                }}>
-                  <img
-                    src={ArrowImg}
-                    alt="arrow"
-                    style={{
-                      width: '22px',
-                      height: '22px',
-                      filter: isHovered ? 'invert(1)' : 'invert(0)', // White arrow on hover
-                      transition: 'all 0.4s ease',
-                      transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
-                    }}
-                  />
-                </button>
               </div>
             </div>
           );
