@@ -408,9 +408,9 @@ font-family: "WF Visual Sans" !important;
 }
 
 @media (max-width: 480px) {
-  .train-home-ban-header {
+  /* .train-home-ban-header {
     padding: 24px;
-  }
+  } */
       .services-strip2 {
     padding: 6px;
   }

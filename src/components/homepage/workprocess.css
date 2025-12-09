@@ -153,3 +153,157 @@
     margin: 0 auto;
   }
 }
+
+/* ================= TABLET (769px - 1024px) ================= */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .workprocess {
+    padding: 50px 20px;
+  }
+
+  .workprocess-section {
+    padding: 40px 20px;
+  }
+
+  .animated-text {
+    font-size: 36px;
+    max-width: 700px;
+  }
+
+  .ourwork-main-heading {
+    font-size: 32px;
+  }
+
+  /* 2x2 Grid layout for tablet */
+  .workprocess-cards-grid {
+    position: static;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .workprocess-card {
+    position: relative !important;
+    transform: none !important;
+    left: auto !important;
+    opacity: 1;
+    width: 100%;
+    min-height: 320px;
+    padding: 28px;
+    transition: none;
+  }
+
+  .workprocess-card-title {
+    font-size: 20px;
+  }
+
+  .workprocess-card-description {
+    font-size: 14px;
+  }
+}
+
+/* ================= MOBILE (up to 768px) ================= */
+@media (max-width: 768px) {
+  .workprocess {
+    padding: 40px 16px;
+  }
+
+  .workprocess-section {
+    padding: 30px 16px;
+  }
+
+  .animated-text {
+    font-size: 28px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .ourwork-main-heading {
+    font-size: 28px;
+  }
+
+  .our-works-bg-image {
+    height: 32px;
+  }
+
+  .ourwork-icon-svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .our-works-text {
+    font-size: 12px;
+    left: 32px;
+  }
+
+  /* Stack cards vertically on mobile */
+  .workprocess-scroll-area {
+    padding: 0 16px;
+  }
+
+  .workprocess-cards-grid {
+    position: static;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .workprocess-card {
+    position: relative !important;
+    transform: none !important;
+    left: auto !important;
+    opacity: 1;
+    width: 100%;
+    max-width: 340px;
+    min-height: auto;
+    padding: 28px 24px;
+  }
+
+  .workprocess-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .workprocess-card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .workprocess-card-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* ================= SMALL MOBILE (up to 480px) ================= */
+@media (max-width: 480px) {
+  .workprocess {
+    padding: 30px 12px;
+  }
+
+  .animated-text {
+    font-size: 24px;
+  }
+
+  .ourwork-main-heading {
+    font-size: 24px;
+  }
+
+  .workprocess-card {
+    max-width: 100%;
+    padding: 24px 20px;
+  }
+
+  .workprocess-card-title {
+    font-size: 18px;
+  }
+
+  .workprocess-card-description {
+    font-size: 13px;
+  }
+}
