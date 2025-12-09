@@ -8,6 +8,7 @@ import lmsImage from "../assets/lms.jpg";
 import ecommerceImage from "../assets/ecommerce.jpg";
 import tailoringImage from "../assets/tailoring.jpg";
 import FeedbackSection from "./feedback.js";
+import CommonTopTag from "../common/toptag.js";
 
 const products = [
   { name: "Billing Software", image: billingImage, link: "/billing" },
@@ -25,12 +26,7 @@ const Products = () => {
 
       {/* TOP CENTER SECTION */}
       <div className="top-centers">
-        <div className="tagg">
-          <div className="tagg-icon">
-            <img src={tagicon} alt="icon" className="boxicon" />
-          </div>
-          Our Products
-        </div>
+      <CommonTopTag text="Our Products" icon={tagicon} />
 
         <h2 className="titles">
           Proud wins from <span>passion</span> <br /> products

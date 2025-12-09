@@ -1,6 +1,9 @@
 import React from "react";
 import "./traningwhychoose.css";
-
+import journey1 from '../assets/journey1.png';
+import journey2 from '../assets/journey2.png';
+import journey3 from '../assets/journey3.png';
+import journey4 from '../assets/journey4.png';
 // Change this import to your actual image path
 import LearnImg from "../assets/journey.png";
 
@@ -8,22 +11,22 @@ const features = [
   {
     title: "Expert-Led Courses",
     text: "Learn from industry leaders and professionals who bring real-world experience to every lesson.",
-    icon: "🎓",
+    icon: journey1,
   },
   {
     title: "Comprehensive Learning Paths",
     text: "Access structured and detailed course roadmaps tailored to your skill level and career goals.",
-    icon: "🧭",
+    icon: journey2,
   },
   {
     title: "Hands-On Projects",
     text: "Apply your knowledge in practical projects designed to solidify your learning and build a strong portfolio.",
-    icon: "🧩",
+    icon: journey3,
   },
   {
     title: "Certification Upon Completion",
     text: "Receive recognized certificates to showcase your skills and boost your career opportunities.",
-    icon: "📜",
+    icon: journey4,
   },
 ];
 
@@ -51,11 +54,11 @@ const TraningWhyChoose = () => {
 
         {/* Right content */}
         <div className="traningwhychoose-right">
-          <p className="traningwhychoose-eyebrow">Why Choose Us</p>
+          {/* <p className="traningwhychoose-eyebrow">Why Choose Us</p> */}
 
           <h2 className="traningwhychoose-title">
-            Why Choose Us for Your{" "}
-            <span className="traningwhychoose-title-highlight">Learning journey</span>
+            Why Choose Us for Your Learning {" "}
+            <span className="traningwhychoose-title-highlight">journey</span>
           </h2>
 
           <p className="traningwhychoose-description">
@@ -69,7 +72,7 @@ const TraningWhyChoose = () => {
             {features.map((item, idx) => (
               <div className="traningwhychoose-feature" key={idx}>
                 <div className="traningwhychoose-feature-icon">
-                  <span>{item.icon}</span>
+                  <span><img alt="" src={item.icon} /></span>
                 </div>
                 <div className="traningwhychoose-feature-text">
                   <h3 className="traningwhychoose-feature-title">{item.title}</h3>
@@ -93,6 +96,8 @@ const TraningWhyChoose = () => {
         ))}
       </div>
     </section>
+
+    
   );
 };
 

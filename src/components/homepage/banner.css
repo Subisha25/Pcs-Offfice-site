@@ -123,9 +123,9 @@ body {
 .typing-word {
   display: inline-block;
   color: var(--button-primary);
-  border-right: 2px solid var(--button-primary); /* cursor */
+  /* border-right: 2px solid var(--button-primary); */
   padding-right: 4px;
-  animation: blinkCursor 0.7s steps(1) infinite;
+  /* animation: blinkCursor 0.7s steps(1) infinite; */
 }
 
 /* blinking cursor */

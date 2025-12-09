@@ -1,3 +1,26 @@
+
+:root {
+  --main-bg: #f4f7fb;
+  --main-text: #222222;
+  --primary-color: #007bff;
+  --secondary-color: #555555;
+  --button-primary: #101166;
+  --button-secondary: #D9D9D9;
+  --playfair-fonts: "Playfair Display", serif;
+  --heading-font-size: 32px;
+  --subheading-font-size: 24px;
+  --title-font-size: 20px;
+  --description-font-size: 16px;
+  --small-text-font-size: 14px;
+}
+
+@font-face {
+  font-family: "WF Visual Sans" !important;
+  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 /* TrainingJourney.css */
 
 .trainingjourney-container {
@@ -17,8 +40,10 @@
 
 /* Title Styling */
 .trainingjourney-title {
-  font-size: 56px;
-  font-weight: 700;
+    font-family: "WF Visual Sans" !important;
+
+  font-size: 48px;
+  font-weight: 500;
   line-height: 1.2;
   color: #000;
   margin: 0 0 24px 0;
@@ -26,13 +51,19 @@
 }
 
 .trainingjourney-highlight-learning {
-  color: #e91e63;
+    font-family: var(--playfair-fonts);
+ background: linear-gradient(90deg, #03045E 30%, #FF006E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* color: #e91e63;\ */
   font-style: italic;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .trainingjourney-highlight-journey {
-  color: #001f5c;
+  color:#03045E ;
+    font-family: var(--playfair-fonts);
   font-style: italic;
   font-weight: 700;
 }
