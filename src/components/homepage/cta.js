@@ -4,6 +4,7 @@ import "./cta.css";
 import enrollBg from "../assets/footer/enroll-bg.png";       // button bg
 import arrowIcon from "../assets/footer/arrow.png";          // arrow
 import enrollCircle from "../assets/cta/ctaCircle.png"; // circle
+import CommonButton from "../common/button";
 
 const CTASection = () => {
   return (
@@ -20,18 +21,7 @@ const CTASection = () => {
       </div>
 
       {/* UPDATED CTA BUTTON */}
-      <div className="cta_btn_wrapper">
-        <div className="cta_btn">
-          <img src={enrollBg} className="cta_btn_bg" alt="button background" />
-
-          <div className="cta_btn_circle">
-            <img src={enrollCircle} className="cta_circle_img" alt="circle" />
-            <img src={arrowIcon} className="cta_arrow_icon" alt="arrow" />
-          </div>
-
-          <span className="cta_btn_text">Let’s Discuss</span>
-        </div>
-      </div>
+     <CommonButton />
 
     </div>
   );

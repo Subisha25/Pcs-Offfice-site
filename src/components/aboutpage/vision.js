@@ -4,6 +4,8 @@ import "./vision.css";
 import Arrow from "../assets/arrow.png";
 import tagicon from "../assets/Vector (3).svg";
 import Image from "../assets/aboutimg.jpeg";
+import CommonTopTag from "../common/toptag";
+import CommonButton from "../common/button";
 
 const VisionMission = () => {
   const [activeTab, setActiveTab] = useState("mission");
@@ -19,14 +21,7 @@ const VisionMission = () => {
     <section className="abt-sec-container">
       <div className="abt-sec-inner">
         {/* TOP TAG */}
-        <div className="top-center">
-          <div className="tag">
-            <div className="tag-icon">
-              <img src={tagicon} alt="icon" className="boxicon" />
-            </div>
-            Services
-          </div>
-        </div>
+       <CommonTopTag text="Services" icon={tagicon} />
 
         <h1 className="abt-sec-title">
           Our product and vision for the digital
@@ -67,12 +62,8 @@ const VisionMission = () => {
               <p>{content[activeTab]}</p>
             </div>
 
-            <button className="btn-primary-abt">
-              <div className="icon-circle-abt">
-                <img alt="arrow" src={Arrow} />
-              </div>
-              Let’s Discuss
-            </button>
+            <CommonButton />
+            
           </div>
         </div>
       </div>

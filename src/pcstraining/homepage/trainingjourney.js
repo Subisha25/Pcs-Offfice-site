@@ -1,5 +1,7 @@
 import React from 'react';
-import './TrainingJourney.css';
+import './trainingjourney.css';
+import CommonButton from '../../components/common/button';
+
 
 const TrainingJourney = () => {
   return (
@@ -17,10 +19,7 @@ const TrainingJourney = () => {
           advancing their careers through our expertly.
         </p>
         
-        <button className="trainingjourney-button">
-          <span className="trainingjourney-button-icon">→</span>
-          Get Started
-        </button>
+       <CommonButton text='Get Started'/>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./aboutexp.css";
 import imageicon from "../assets/Union.svg";
+import CommonTopTag from "../common/toptag";
 
 const AboutExperience = () => {
   const [count, setCount] = useState(0);
@@ -100,12 +101,7 @@ const AboutExperience = () => {
     <div className="about-exp-section">
       {/* Left content */}
       <div className="left-box">
-        <div className="about-badge">
-          <span className="badge-icon">
-            <img src={imageicon} alt="icon" />
-          </span>
-          <span>About</span>
-        </div>
+       <CommonTopTag />
 
         <h2 className="years" ref={counterRef}>
           {count}+
