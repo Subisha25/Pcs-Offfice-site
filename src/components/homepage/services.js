@@ -6,6 +6,7 @@ import Four from "../assets/services/4.png";
 import BackgroundImg from "../assets/services/backgroundImgae.webp";
 import ArrowImg from "../assets/services/arrow.png";
 import ServiceBtnImg from "../assets/services/tool.png";
+import CommonTopTag from '../common/toptag';
 
 const ServicesSection = () => {
   const [activeCard, setActiveCard] = useState(null);
@@ -74,19 +75,7 @@ const ServicesSection = () => {
         position: 'relative',
         zIndex: 1
       }}>
-        <button
-          className="btn-primary"
-          style={{ marginLeft: "500px", width: "180px", height: "50px", fontSize: "17px" }}
-        >
-          <div className="icon-circle">
-            <img
-              alt="arrow"
-              src={ServiceBtnImg}
-              style={{ width: "20px", height: "20px" }}
-            />
-          </div>
-          Services
-        </button>
+        <CommonTopTag text='Services' icon={ServiceBtnImg} />
 
         <h1
           className="services-title"
