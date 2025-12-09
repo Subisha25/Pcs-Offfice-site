@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import first from "../assets/services/1.png";
 import Second from "../assets/services/2.png";
 import Third from "../assets/services/3.png";
 import Four from "../assets/services/4.png";
@@ -15,7 +16,7 @@ const ServicesSection = () => {
       subtitle: '& Development',
       description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
-      image: Second,
+      image: first,
       light: true
     },
     {
