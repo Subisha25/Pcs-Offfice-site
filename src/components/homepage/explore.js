@@ -303,7 +303,7 @@ export default function WordAnimation() {
 
         .wordanimation-image-wrapper img {
           width: 100%;
-          height: 100vh;
+          height: 103vh;
           object-fit: cover;
         }
 
