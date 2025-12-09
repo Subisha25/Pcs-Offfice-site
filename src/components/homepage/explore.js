@@ -7,7 +7,6 @@ const projectsData = [
   {
     id: 1,
     image: Image1,
-    overlayText: "Featuring curators from around the world",
     title: "Lhome",
     link: "/lhome",
     tags: ["Web Design", "UI/UX Design"]
@@ -15,7 +14,6 @@ const projectsData = [
   {
     id: 2,
     image: Image2,
-    overlayText: "Modern kitchen designs",
     title: "Coollah",
     link: "/collah",
     tags: ["Web Design", "UI/UX Design"]
@@ -23,7 +21,6 @@ const projectsData = [
   {
     id: 3,
     image: Image3,
-    overlayText: "Luxury bedroom collections",
     title: "BJMM",
     link: "/bjmm",
     tags: ["Web Design", "UI/UX Design"]
@@ -31,7 +28,6 @@ const projectsData = [
   {
     id: 4,
     image: Image4,
-    overlayText: "Smart living solutions",
     title: "WorldTmil Siragam",
     link: "/wts",
     tags: ["Web Design", "UI/UX Design"]
@@ -69,7 +65,7 @@ export default function WordAnimation() {
       setScrollProgress(totalProgress);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -255,7 +251,7 @@ export default function WordAnimation() {
           font-size: 80px;
           font-weight: 500;
           letter-spacing: 2px;
-          transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+          transition: transform 0.05s linear, opacity 0.05s linear;
           will-change: transform, opacity;
           color: #1a1a1a;
           font-style: medium;
