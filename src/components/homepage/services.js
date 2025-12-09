@@ -227,35 +227,34 @@ const ServicesSection = () => {
                 </button>
                   </div>
               {/* Image section */}
-              <div className="card-image" style={{
-                position: isHovered ? 'absolute' : 'relative',
-                top: isHovered ? '0' : 'auto',
-                left: isHovered ? '0' : 'auto',
-                right: isHovered ? '0' : 'auto',
-                bottom: isHovered ? '0' : 'auto',
-                width: isHovered ? '100%' : 'auto',
-                height: isHovered ? '100%' : 'auto',
-                marginBottom: isHovered ? '0' : '15px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                transition: isHovered ? 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
-                zIndex: isHovered ? '1' : 'auto'
-              }}>
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="service-image"
-                  style={{
-                    width: isHovered ? '100%' : '130px',
-                    height: isHovered ? '100%' : '70px',
-                    objectFit: 'cover',
-                    borderRadius: isHovered ? '25px' : '100px',
-                    transition: isHovered ? 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
-                    filter: isHovered ? 'brightness(0.8)' : 'brightness(1)'
-                  }}
-                />
-              </div>
+<div
+  className="card-image"
+  style={{
+    position: 'absolute',
+    top: isHovered ? '0' : '140px',
+    left: isHovered ? '0' : '30px', // ⭐ MAIN FIX
+    width: isHovered ? '100%' : '130px',
+    height: isHovered ? '100%' : '70px',
+    transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+    zIndex: 1,
+    pointerEvents: 'none'
+  }}
+>
+  <img
+    src={service.image}
+    alt={service.title}
+    style={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      borderRadius: isHovered ? '25px' : '100px',
+      filter: isHovered ? 'brightness(0.8)' : 'brightness(1)',
+      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+    }}
+  />
+</div>
+
+
 
                  <div className="card-content" style={{
                 display: 'flex',
