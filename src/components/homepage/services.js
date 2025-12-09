@@ -172,7 +172,11 @@ const ServicesSection = () => {
               }}
             >
 
-                  <div className="card-header" style={{ marginBottom: '15px' }}>
+                  <div className="card-header" style={{
+    marginBottom: '15px',
+    position: 'relative',
+    zIndex: 6   // ⭐ MAIN FIX
+  }}>
                     <h3 className="card-title" style={{
                       fontSize: '32px',
                       fontWeight: '400',
@@ -267,6 +271,7 @@ const ServicesSection = () => {
               
                   
                 </div>
+                
 
                 <p className="card-description" style={{
                   fontFamily: '"WF Visual Sans"',
