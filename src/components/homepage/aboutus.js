@@ -205,7 +205,7 @@ useEffect(() => {
         </div> */}
 
         {/* WORD BY WORD FILL */}
-        <p className="animated-text">
+        <p className="animated-text2">
           {paragraph.map((word, index) => (
             <span
               key={index}

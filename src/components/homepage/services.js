@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import first from "../assets/services/1.png";
 import Second from "../assets/services/2.png";
 import Third from "../assets/services/3.png";
 import Four from "../assets/services/4.png";
@@ -15,7 +16,7 @@ const ServicesSection = () => {
       subtitle: '& Development',
       description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
-      image: Second,
+      image: first,
       light: true
     },
     {
@@ -171,50 +172,12 @@ const ServicesSection = () => {
                 transform: isHovered ? 'translateY(-10px)' : 'translateY(0)'
               }}
             >
-              {/* Image section */}
-              <div className="card-image" style={{
-                position: isHovered ? 'absolute' : 'relative',
-                top: isHovered ? '0' : 'auto',
-                left: isHovered ? '0' : 'auto',
-                right: isHovered ? '0' : 'auto',
-                bottom: isHovered ? '0' : 'auto',
-                width: isHovered ? '100%' : 'auto',
-                height: isHovered ? '100%' : 'auto',
-                marginBottom: isHovered ? '0' : '15px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                transition: isHovered ? 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
-                zIndex: isHovered ? '1' : 'auto'
-              }}>
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="service-image"
-                  style={{
-                    width: isHovered ? '100%' : '130px',
-                    height: isHovered ? '100%' : '70px',
-                    objectFit: 'cover',
-                    borderRadius: isHovered ? '25px' : '100px',
-                    transition: isHovered ? 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
-                    filter: isHovered ? 'brightness(0.8)' : 'brightness(1)'
-                  }}
-                />
-              </div>
 
-                 <div className="card-content" style={{
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-                position: 'relative',
-                zIndex: 2,
-                color: isHovered ? '#ffffff' : '#1a1a2e',
-                transition: 'color 0.4s ease',
-                alignItems: 'flex-start',
-                justifyContent: 'space-between'
-              }}>
-               <div className="card-top-content">
-                  <div className="card-header" style={{ marginBottom: '15px' }}>
+                  <div className="card-header" style={{
+    marginBottom: '15px',
+    position: 'relative',
+    zIndex: 6   // ⭐ MAIN FIX
+  }}>
                     <h3 className="card-title" style={{
                       fontSize: '32px',
                       fontWeight: '400',
@@ -236,25 +199,8 @@ const ServicesSection = () => {
                     }}>
                       {service.subtitle}
                     </h4>
-                  </div>
-                  
-                </div>
 
-                <p className="card-description" style={{
-                  fontFamily: '"WF Visual Sans"',
-                  fontWeight: '500',
-                  fontSize: '16px',
-                  lineHeight: '1.5',
-                  letterSpacing: '1%',
-                  color: descriptionColor, // WHITE on hover
-                  marginBottom: '10px',
-                  position: 'relative',
-                  zIndex: 2,
-                  transition: 'color 0.4s ease'
-                }}>
-                  {service.description}
-                </p>
-
+                    
                 <button className="card-arrow" style={{
                   position: 'absolute',
                   right: '25px',
@@ -279,6 +225,83 @@ const ServicesSection = () => {
                     }}
                   />
                 </button>
+                  </div>
+              {/* Image section */}
+<div
+  className="card-image"
+  style={{
+    position: 'absolute',
+    top: isHovered ? '0' : '140px',
+    left: isHovered ? '0' : '30px',
+    width: isHovered ? '100%' : '130px',
+    height: isHovered ? '100%' : '70px',
+    transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+    zIndex: 1,
+    pointerEvents: 'none'
+  }}
+>
+  <img
+    src={service.image}
+    alt={service.title}
+    style={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      borderRadius: isHovered ? '25px' : '100px',
+      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+    }}
+  />
+
+  {/* ✅ FIRST CARD COLOR OVERLAY ONLY */}
+  {isHovered && index === 0 && (
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        borderRadius: '25px',
+        background:
+          'linear-gradient(180deg, rgba(255,0,110,0.45) 0%, rgba(3,4,94,0.65) 100%)',
+        zIndex: 2
+      }}
+    />
+  )}
+</div>
+
+
+
+
+                 <div className="card-content" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                position: 'relative',
+                zIndex: 5,
+                color: isHovered ? '#ffffff' : '#1a1a2e',
+                transition: 'color 0.4s ease',
+                alignItems: 'flex-start',
+                justifyContent: 'space-between'
+              }}>
+               <div className="card-top-content">
+              
+                  
+                </div>
+                
+
+                <p className="card-description" style={{
+                  fontFamily: '"WF Visual Sans"',
+                  fontWeight: '500',
+                  fontSize: '16px',
+                  lineHeight: '1.5',
+                  letterSpacing: '1%',
+                  color: descriptionColor, // WHITE on hover
+                  marginBottom: '10px',
+                  position: 'relative',
+                  zIndex: 2,
+                  transition: 'color 0.4s ease'
+                }}>
+                  {service.description}
+                </p>
+
               </div>
             </div>
           );
