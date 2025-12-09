@@ -232,7 +232,7 @@ const ServicesSection = () => {
   style={{
     position: 'absolute',
     top: isHovered ? '0' : '140px',
-    left: isHovered ? '0' : '30px', // ⭐ MAIN FIX
+    left: isHovered ? '0' : '30px',
     width: isHovered ? '100%' : '130px',
     height: isHovered ? '100%' : '70px',
     transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -248,11 +248,25 @@ const ServicesSection = () => {
       height: '100%',
       objectFit: 'cover',
       borderRadius: isHovered ? '25px' : '100px',
-      filter: isHovered ? 'brightness(0.8)' : 'brightness(1)',
       transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
     }}
   />
+
+  {/* ✅ FIRST CARD COLOR OVERLAY ONLY */}
+  {isHovered && index === 0 && (
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        borderRadius: '25px',
+        background:
+          'linear-gradient(180deg, rgba(255,0,110,0.45) 0%, rgba(3,4,94,0.65) 100%)',
+        zIndex: 2
+      }}
+    />
+  )}
 </div>
+
 
 
 
