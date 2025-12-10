@@ -3,6 +3,9 @@ import Image1 from '../assets/ourworks/Mask group (1).png';
 import Image2 from '../assets/coollah.png';
 import Image3 from '../assets/bjmm.jpeg';
 import Image4 from '../assets/wts.png';
+import CommonButton from '../common/button';
+import { useNavigate } from "react-router-dom";
+
 const projectsData = [
   {
     id: 1,
@@ -42,6 +45,8 @@ const SLIDE_PROGRESS_LENGTH = SLIDE_PHASE_END - SLIDE_PHASE_START;
 export default function WordAnimation() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef(null);
+const navigate = useNavigate();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -190,11 +195,10 @@ export default function WordAnimation() {
     }
   };
 
-  const handleNavigate = (link) => {
-    console.log('Navigate to:', link);
-    // Replace with your actual navigation logic
-    // navigate(link);
-  };
+const handleNavigate = (link) => {
+  navigate(link);
+};
+
 
   return (
     <>
@@ -432,28 +436,13 @@ export default function WordAnimation() {
                         ))}
                       </div>
                     </div>
-                    <div 
-                      className="wordanimation-our-works-wrapper"
-                      onClick={() => handleNavigate(project.link)}
-                    >
-                      <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        background: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%)',
-                        borderRadius: '9999px'
-                      }}></div>
+                  <div 
+  className="wordanimation-our-works-wrapper"
+  onClick={() => handleNavigate(project.link)}
+>
+  <CommonButton text='View'/>
+</div>
 
-                      <div className="wordanimation-our-works-icon">
-                        <span style={{fontSize: '24px', color: 'white'}}>→</span>
-                      </div>
-
-                      <span className="wordanimation-our-works-text">
-                        View
-                      </span>
-                    </div>
                     <div className="wordanimation-view-all">→ View All Works</div>
                   </div>
                 </div>
