@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import first from "../assets/services/1.png";
 import Second from "../assets/services/2.png";
 import Third from "../assets/services/3.png";
@@ -10,7 +10,17 @@ import CommonTopTag from '../common/toptag';
 
 const ServicesSection = () => {
   const [activeCard, setActiveCard] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   const services = [
     {
       title: 'Web Design',
@@ -18,7 +28,8 @@ const ServicesSection = () => {
       description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: first,
-      light: true
+        overlay:
+      'linear-gradient(180deg, rgba(255,0,110,0.55) 0%, rgba(3,4,94,0.75) 100%)'
     },
     {
       title: 'App Design',
@@ -26,7 +37,8 @@ const ServicesSection = () => {
       description: 'Got a brilliant app idea? Let\'s make it a reality! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll build something that\'s smooth, sleek, and downright addictive.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Second,
-      light: true
+     overlay:
+      'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
     },
     {
       title: 'Branding &',
@@ -34,7 +46,8 @@ const ServicesSection = () => {
       description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
       gradient: 'radial-gradient(circle at 100% 0%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Third,
-      light: true
+     overlay:
+      'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
     },
     {
       title: 'Digital',
@@ -42,7 +55,8 @@ const ServicesSection = () => {
       description: 'Got a brilliant app idea? Let\'s make it a reality! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll build something that\'s smooth, sleek, and downright addictive.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Four,
-      light: true
+    overlay:
+      'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
     }
   ];
 
@@ -136,8 +150,9 @@ const ServicesSection = () => {
             <div
               key={index}
               className={`service-card ${isHovered ? 'active' : ''}`}
-              onMouseEnter={() => setActiveCard(index)}
-              onMouseLeave={() => setActiveCard(null)}
+           onMouseEnter={() => !isMobile && setActiveCard(index)}
+           onMouseLeave={() => !isMobile && setActiveCard(null)}
+
               style={{
                 width: '100%',
                 borderRadius: '25px',
@@ -220,40 +235,51 @@ const ServicesSection = () => {
   className="card-image"
   style={{
     position: 'absolute',
-    top: isHovered ? '0' : '140px',
-    left: isHovered ? '0' : '30px',
-    width: isHovered ? '100%' : '130px',
-    height: isHovered ? '100%' : '70px',
-    transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+
+    top: isMobile ? '0' : isHovered ? '0' : '140px',
+    left: isMobile ? '0' : isHovered ? '0' : '30px',
+
+    width: isMobile ? '100%' : isHovered ? '100%' : '130px',
+    height: isMobile ? '100%' : isHovered ? '100%' : '70px',
+
+    transition: isMobile
+      ? 'none'
+      : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+
     zIndex: 1,
     pointerEvents: 'none'
   }}
 >
-  <img
-    src={service.image}
-    alt={service.title}
-    style={{
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      borderRadius: isHovered ? '25px' : '100px',
-      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
-    }}
-  />
+
+<img
+  src={service.image}
+  alt={service.title}
+  style={{
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+
+    borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
+
+    transition: isMobile
+      ? 'none'
+      : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+  }}
+/>
+
 
   {/* ✅ FIRST CARD COLOR OVERLAY ONLY */}
-  {isHovered && index === 0 && (
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        borderRadius: '25px',
-        background:
-          'linear-gradient(180deg, rgba(255,0,110,0.45) 0%, rgba(3,4,94,0.65) 100%)',
-        zIndex: 2
-      }}
-    />
-  )}
+{(isHovered || isMobile) && (
+  <div
+    style={{
+      position: 'absolute',
+      inset: 0,
+      background: service.overlay,
+      zIndex: 2
+    }}
+  />
+)}
+
 </div>
 
 
@@ -299,62 +325,79 @@ const ServicesSection = () => {
 
       {/* Media Queries - unchanged */}
       <style jsx>{`
-        @media (max-width: 768px) {
-          .services-container {
-            padding: 32px 16px !important;
-            min-height: auto !important;
-            background-attachment: scroll !important;
-          }
-          .services-header {
-            margin-bottom: 32px !important;
-          }
-          .services-title {
-            font-size: 24px !important;
-            line-height: 32px !important;
-            max-width: 100% !important;
-            padding: 0 8px !important;
-          }
-          .btn-primary {
-            display: inline-flex !important;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto !important;
-            width: 150px !important;
-            height: 42px !important;
-            font-size: 14px !important;
-          }
-          .services-grid {
-            grid-template-columns: 1fr !important;
-            max-width: 100% !important;
-            gap: 24px !important;
-          }
-          .service-card {
-            padding: 22px !important;
-            min-height: auto !important;
-            border-radius: 22px !important;
-          }
-          .card-title,
-          .card-subtitle {
-            font-size: 22px !important;
-            line-height: 28px !important;
-          }
-          .card-description {
-            font-size: 14px !important;
-            line-height: 1.5 !important;
-          }
-          .card-image {
-            margin-bottom: 12px !important;
-          }
-          .card-image img {
-            width: 120px !important;
-            height: 60px !important;
-            border-radius: 999px !important;
-          }
-          .card-arrow {
-            right: 16px !important;
-            top: 16px !important;
-          }
-        }
+
+@media (max-width: 768px) {
+ /* ✅ FORCE WHITE TEXT ON MOBILE */
+  .service-card .card-title,
+  .service-card .card-subtitle,
+  .service-card .card-description {
+    color: #ffffff !important;
+  }
+
+  /* Optional – description konjam clear aa irukka */
+  .service-card .card-description {
+    opacity: 0.95;
+  }
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+
+  .card-description {
+    font-size: 14px !important;     /* 🔽 size reduced */
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
+
+    display: block !important;
+    overflow: visible !important;
+    white-space: normal !important; /* ✅ full content shows */
+  }
+      .card-arrow img {
+    filter: invert(1) !important;
+  }
+  .service-card {
+    width: 100% !important;
+    min-height: 340px !important;   /* 🔽 height reduced */
+    padding: 20px !important;
+    border-radius: 22px !important;
+    padding: 22px !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .card-image {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    z-index: 1 !important;
+  }
+
+  .card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+  }
+
+  .service-card {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  /* Make sure text stays above image */
+  .card-content,
+  .card-header {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+}
+
+      
 
         @media (max-width: 480px) {
           .services-container {
