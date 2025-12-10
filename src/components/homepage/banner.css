@@ -168,8 +168,7 @@ body {
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
-  width: 100%;
-  max-width: 320px;
+
   justify-content: center;
 }
 
@@ -233,7 +232,6 @@ section.next-section {
   font-size: 24px;
 }
   .btn-primaryhome {
-    width: 180px;
     font-size: 1rem;
   }
 }
@@ -262,10 +260,6 @@ section.next-section {
     gap: 24px;
   }
 
-  .btn-primaryhome {
-    width: auto;
-    max-width: none;
-  }
 }
 
 /* Laptops / small desktops (≥ 1024px) */
@@ -288,9 +282,7 @@ section.next-section {
     font-size: 1.05rem;
   }
 
-  .btn-primaryhome {
-    padding: 8px 26px 8px 8px;
-  }
+
 
   .icon-circle {
     width: 37px;

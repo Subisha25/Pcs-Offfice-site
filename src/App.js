@@ -20,6 +20,7 @@ import Services from "./components/servicespage/services";
 import Appdesign from "./components/servicespage/appdesign";
 import DigitalMarketing from "./components/servicespage/digitalmarketing";
 import Branding from "./components/servicespage/branding";
+import Products from "./components/products/products";
 
 
 function App() {
@@ -46,6 +47,8 @@ function App() {
         <Route path="/officechat" element={<OfficechatBanner />} />
         <Route path="/msloan" element={<MsloneBanner/>} />
         <Route path="/pcstrainingsite" element={<TrainingHomeBanner/>} />
+        <Route path="/products" element={<Products/>} />
+
 
 
 
