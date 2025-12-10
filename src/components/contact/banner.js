@@ -11,8 +11,11 @@ const ContactSection = () => {
   return (
     <div
       className="contact-wrapper"
-      style={{ backgroundImage: `url(${bgBanner})` }}
+      // style={{ backgroundImage: `url(${bgBanner})` }}
     >
+      <div>
+        <img src={bgBanner} alt="Contact Banner" className="banner-image" />
+      </div>
       <div className="contact-container">
         {/* LEFT CONTENT */}
         <div className="left-section">
