@@ -1,0 +1,76 @@
+
+
+:root {
+
+  --main-text: #000000; 
+}
+
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.traningwhychoose-stat-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 0;
+    /* background-color: #ffffff; */
+}
+
+.traningwhychoose-stats-container {
+    width: 100vw;                 /* Full screen width */
+    max-width: 1200px;
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 255px;
+    padding: 35px 80px;           
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+
+.traningwhychoose-stat {
+   flex-shrink: 0;
+    text-align: center;
+}
+
+.traningwhychoose-stat-number {
+ 
+  font-family: "WF Visual Sans";
+  font-size: 58px; 
+  font-weight: 500; 
+  color: #000000; 
+  margin-bottom: 4px;
+  white-space: nowrap;
+ 
+  line-height: 100%;
+  letter-spacing: 0.01em; 
+}
+
+.traningwhychoose-stat-label {
+  
+  font-family: "WF Visual Sans";
+  font-size: 14px; 
+  font-weight: 400; 
+  color: #000000;
+  line-height: 1.5;
+}
+
+
+@media (max-width: 768px) {
+  .traningwhychoose-stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 பத்திகள் */
+    gap: 30px 20px;
+    justify-items: center; 
+  }
+}
+
+@media (max-width: 480px) {
+  .traningwhychoose-stats-container {
+    grid-template-columns: 1fr; /* 1 பத்தி */
+  }
+}

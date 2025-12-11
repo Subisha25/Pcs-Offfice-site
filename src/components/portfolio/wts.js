@@ -2,7 +2,7 @@ import React from "react";
 import "./lhome.css";
 import Portfoliobanner from "./portfoliobanner";
 import wtsbannerImg from "../assets/wts.png";
-const WtsBanner = () => {
+const Wts = () => {
   return (
     <>
     <Portfoliobanner/>
@@ -29,4 +29,4 @@ const WtsBanner = () => {
   );
 };
 
-export default WtsBanner;
+export default Wts;

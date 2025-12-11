@@ -2,7 +2,7 @@ import React from "react";
 import "./lhome.css";
 import Portfoliobanner from "./portfoliobanner";
 import mslonebannerImg from "../assets/msloan.png"
-const MsloneBanner = () => {
+const Mslone = () => {
   return (
     <>
     <Portfoliobanner/>
@@ -28,4 +28,4 @@ const MsloneBanner = () => {
   );
 };
 
-export default MsloneBanner;
+export default Mslone;

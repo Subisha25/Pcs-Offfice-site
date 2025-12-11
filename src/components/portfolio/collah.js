@@ -2,7 +2,7 @@ import React from "react";
 import "./lhome.css";
 import Portfoliobanner from "./portfoliobanner";
 import collahbannerImg from "../assets/coollah.png";
-const CollahBanner = () => {
+const Collah = () => {
   return (
     <>
     <Portfoliobanner/>
@@ -29,4 +29,4 @@ const CollahBanner = () => {
   );
 };
 
-export default CollahBanner;
+export default Collah;
