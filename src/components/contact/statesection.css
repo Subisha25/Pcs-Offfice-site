@@ -24,9 +24,9 @@
     width: 100vw;                 /* Full screen width */
     max-width: 1200px;
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 0 80px;           
+    /* justify-content: space-between; */
+    gap: 255px;
+    padding: 35px 80px;           
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
 }

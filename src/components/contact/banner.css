@@ -79,8 +79,9 @@
 
 /* Background wrapper */
 .contact-wrapper {
+    background-color: #ffffff;
+
     width: 100%;
-    background: #f0f2f5;
     /* ஸ்கிரீன்ஷாட்டில் உள்ள லேசான சாம்பல் பின்னணி */
 
     padding: 100px 0 80px 0;
