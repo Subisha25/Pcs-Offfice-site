@@ -50,7 +50,7 @@ function App() {
         <Route path="/msloan" element={<MsloneBanner/>} />
         <Route path="/pcstrainingsite" element={<TrainingHomeBanner/>} />
         <Route path="/products" element={<Products/>} />
-                <Route path="/productdetails" element={<ProductDetails/>} />
+                <Route path="/productdetails/:id" element={<ProductDetails/>} />
 
         <Route path="/learningJourneyPage" element={<LearningJourneyPage/>} />
 
