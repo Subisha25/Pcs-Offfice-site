@@ -23,6 +23,8 @@ import Branding from "./components/servicespage/branding";
 import Products from "./components/products/products";
 import LearningJourneyPage from "./components/contact/banner";
 import ProductDetails from "./components/products/productdetails";
+import Works from "./components/works/work";
+import GraceBanner from "./components/portfolio/gracecabs";
 
 
 function App() {
@@ -48,6 +50,7 @@ function App() {
         <Route path="/wts" element={<WtsBanner />} />
         <Route path="/officechat" element={<OfficechatBanner />} />
         <Route path="/msloan" element={<MsloneBanner/>} />
+        <Route path="/gracecabs" element={<GraceBanner/>} />
         <Route path="/pcstrainingsite" element={<TrainingHomeBanner/>} />
         <Route path="/products" element={<Products/>} />
                 <Route path="/productdetails" element={<ProductDetails/>} />
@@ -55,6 +58,7 @@ function App() {
         <Route path="/learningJourneyPage" element={<LearningJourneyPage/>} />
 
 
+        <Route path="/works" element={<Works/>} />
 
 
 
