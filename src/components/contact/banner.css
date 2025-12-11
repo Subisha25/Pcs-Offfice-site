@@ -197,16 +197,17 @@
 
 .right-section {
     width: 800px;
-    padding: 50px;
-    background-size: cover !important;
-    background-position: center !important;
+    padding: 45px 55px;
+    background: #ffffff;
 }
 
 .connect-title {
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 30px;
-    color: var(--dark-text);
+    margin-bottom: 32px;
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 6px;
 }
 
 .label {
@@ -337,7 +338,100 @@
     z-index: 0;
     /* பின்னணி போல */
 }
+.form-label {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.toggle-wrapper {
+    width: 100%;
+    background: #e8e8e8;
+    padding: 6px;
+    border-radius: 10px;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+}
+.toggle-btn.active {
+    background: #000;
+    color: #fff;
+}
 
+/* Labels For Inputs */
+.input-title {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #000;
+    display: block;
+    font-weight: 600;
+}
+
+/* Input Box */
+.form-input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* Phone Row */
+.phone-input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.phone-select {
+    width: 32%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    font-size: 15px;
+}
+
+.phone-number {
+    width: 68%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    font-size: 15px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 15px 0;
+    background: #0d0f53;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Footer note */
+.footer-note {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #777;
+}
 /* Responsive adjustments for smaller screens (optional but recommended) */
 @media (max-width: 900px) {
     .contact-container {
