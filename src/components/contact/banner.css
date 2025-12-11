@@ -5,6 +5,8 @@
     --dark-text: #2c2c2c;
     --light-text: #ffffff;
     --border-color: #e0e0e0;
+    --gradient-start: #03045E;
+    --gradient-end: #FF006E;
 }
 
 /* ------------------ 1. Navbar Styling ------------------ */
@@ -18,8 +20,9 @@
     background: var(--light-text);
     border-radius: 12px 12px 0 0;
     /* Box Shadow-ஐ ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல சரிசெய்யவும் */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
-    margin-bottom: -15px; /* Contact Card-ன் மேலே சிறிது overlapping-காக */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: -15px;
+    /* Contact Card-ன் மேலே சிறிது overlapping-காக */
     position: relative;
     z-index: 10;
 }
@@ -77,86 +80,123 @@
 /* Background wrapper */
 .contact-wrapper {
     width: 100%;
-    background: #f0f2f5; /* ஸ்கிரீன்ஷாட்டில் உள்ள லேசான சாம்பல் பின்னணி */
-    padding: 100px 0 80px 0; /* Padding சரிசெய்யப்பட்டது */
+    background: #f0f2f5;
+    /* ஸ்கிரீன்ஷாட்டில் உள்ள லேசான சாம்பல் பின்னணி */
+
+    padding: 100px 0 80px 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+    /* enable absolutely-positioned background */
+    z-index: 1;
+}
+
+/* absolutely-positioned banner background placed under the card/navbar */
+.contact-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* Main container (The Card) */
 .contact-container {
-    width: 90%; 
+    width: 90;
     max-width: 1200px;
+
     display: flex;
     background: var(--light-text);
-    border-radius: 25px;
+    border-radius: 30px;
     overflow: hidden;
-    padding: 0; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* அடர்த்தியான நிழல் */
+    padding: 0;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
-/* LEFT SECTION - Gradient Background */
 .left-section {
-    width: 50%; 
-    /* ஸ்கிரீன்ஷாட்டில் உள்ள சரியான Gradient */
-    background: linear-gradient(180deg, #1b004a 0%, #d7105a 100%);
+    width: 615px;
+    height: 880px;
+    background: linear-gradient(159.72deg, #03045E 20.12%, #FF006E 100%);
     padding: 50px;
     color: var(--light-text);
 }
 
 .left-section .title {
-    font-size: 40px; 
-    line-height: 50px;
-    font-weight: 700;
+    font-family: 'WF Visual Sans', sans-serif;
+    font-weight: 500;           /* Medium */
+    font-style: normal;
+    font-size: 42px;
+    line-height: 60px;
+    letter-spacing: 1%;
     margin-bottom: 50px;
+    color: var(--light-text);
 }
-
-.left-section .title span {
+.left-section .title .highlight {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;           /* Semi-bold */
     font-style: italic;
+    font-size: 42px;
+    line-height: 60px;
+    letter-spacing: 1%;
+    color: var(--light-text);
+}
+.left-section .title span {
+    font-style: "WF Visual Sans";
     font-weight: 300;
-    font-size: 38px;
+    font-size: 25px;
 }
 
-/* Benefit cards */
+
 .benefit-card {
     display: flex;
-    align-items: flex-start; /* தலைப்பு மற்றும் விளக்கம் align ஆக இருக்க */
+    align-items: flex-start;
     gap: 15px;
-    margin-bottom: 35px; 
+    margin-bottom: 35px;
 }
 
 .benefit-card .icon {
-    /* ஐகான் ஸ்டைல் மாற்றப்பட்டது */
-    color: var(--light-text); 
+
+    color: var(--light-text);
     background: transparent;
     border-radius: 4px;
     padding: 0;
-    width: 28px; 
+    width: 28px;
     height: 28px;
     min-width: 28px;
-    margin-top: 2px; /* டெக்ஸ்டுடன் align செய்ய */
+    margin-top: 2px;
 }
 
-.benefit-card .content h4 {
+.benefit-card h4 {
     margin: 0 0 5px 0;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "WF Visual Sans";
+    letter-spacing: 1%;
 }
 
-.benefit-card .content p {
+.benefit-card  p {
+    font-weight: 500;
     margin: 0;
     opacity: 0.85;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
+    
 }
 
-/* RIGHT SECTION - Form Section */
+
 .right-section {
-    width: 50%; 
+    width: 800px;
     padding: 50px;
-    /* பின்னணிப் படம்: ஸ்கிரீன்ஷாட்டில் உள்ள மெல்லிய Pattern-க்கு */
     background-size: cover !important;
     background-position: center !important;
 }
@@ -174,24 +214,24 @@
     color: #444;
 }
 
-/* Toggle buttons */
 .toggle-options {
     display: flex;
     gap: 5px;
     margin-bottom: 30px;
     width: 100%;
-    /* ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல Toggle Group-ஐ சரிசெய்யவும் */
-    background: #f0f0f0; 
+    background: #f0f0f0;
     border-radius: 8px;
     padding: 5px;
 }
 
 .toggle-btn {
-    flex-grow: 1; 
+    flex-grow: 1;
     padding: 10px 15px;
     border-radius: 6px;
-    border: none; /* Border நீக்கப்பட்டது */
-    background: transparent; /* இயல்புநிலை வெளிப்படையானது */
+    border: none;
+  
+    background: transparent;
+   
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
@@ -200,11 +240,12 @@
 }
 
 .toggle-btn.active {
-    /* ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல Active Style */
+ 
     background: var(--light-text);
     color: var(--dark-text);
     font-weight: 600;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* லேசான நிழல் */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
 }
 
 /* Inputs */
@@ -239,7 +280,8 @@
 .input-group input::placeholder,
 .phone-row input::placeholder {
     color: #999;
-    font-size: 14px; /* சிறிய எழுத்துரு */
+    font-size: 14px;
+    /* சிறிய எழுத்துரு */
 }
 
 .phone-row {
@@ -248,8 +290,9 @@
 }
 
 .phone-row select {
-    width: 30%; /* ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல அகலத்தை சரிசெய்யவும் */
-    appearance: none; 
+    width: 30%;
+    /* ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல அகலத்தை சரிசெய்யவும் */
+    appearance: none;
     padding-right: 35px;
     background: var(--light-text) url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="#666666" d="M287 69.4a17.6 17.6 0 0 0-24.8 0L146.2 185.6 30.2 69.4a17.6 17.6 0 0 0-24.8 24.8l130 130c6.8 6.8 17.6 6.8 24.8 0l130-130a17.6 17.6 0 0 0 0-24.8z"/></svg>') no-repeat right 15px center;
     background-size: 12px;
@@ -282,6 +325,18 @@
     color: #888;
 }
 
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 580px;
+    /* நீங்க height increase / decrease பண்ணிக்கலாம் */
+    object-fit: cover;
+    z-index: 0;
+    /* பின்னணி போல */
+}
+
 /* Responsive adjustments for smaller screens (optional but recommended) */
 @media (max-width: 900px) {
     .contact-container {
@@ -296,8 +351,9 @@
     .left-section {
         border-radius: 25px 25px 0 0;
     }
-    
+
     .contact-navbar {
-        display: none; /* மொபைலில் NavBar-ஐ மறைக்கிறேன் */
+        display: none;
+        /* மொபைலில் NavBar-ஐ மறைக்கிறேன் */
     }
 }
