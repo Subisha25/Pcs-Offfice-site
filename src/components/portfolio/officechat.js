@@ -2,7 +2,7 @@ import React from "react";
 import "./lhome.css";
 import Portfoliobanner from "./portfoliobanner";
 import officebannerImg from "../assets/officechat.png"
-const OfficechatBanner = () => {
+const Officechat = () => {
   return (
     <>
     <Portfoliobanner/>
@@ -28,4 +28,4 @@ const OfficechatBanner = () => {
   );
 };
 
-export default OfficechatBanner;
+export default Officechat;

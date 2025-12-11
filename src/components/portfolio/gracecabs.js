@@ -1,11 +1,11 @@
 import React from "react";
 import "./lhome.css";
-import Portfoliobanner from "./portfoliobanner";
 import bjmmbannerImg from "../assets/gracecabs.png";
-const GraceBanner = () => {
+import Gracebanner from "./gracebanner";
+const Grace = () => {
   return (
     <>
-    <Portfoliobanner/>
+    <Gracebanner/>
     <div className="home-container">
       
       {/* TOP FULL IMAGE */}
@@ -30,4 +30,4 @@ const GraceBanner = () => {
   );
 };
 
-export default GraceBanner;
+export default Grace;

@@ -3,7 +3,7 @@ import "./lhome.css";
 import bannerImg from "../assets/Mask group (1).png"; // Change to your image path
 import Portfoliobanner from "./portfoliobanner";
 
-const LhomeBanner = () => {
+const Lhome = () => {
   return (
     <>
     <Portfoliobanner/>
@@ -30,4 +30,4 @@ const LhomeBanner = () => {
   );
 };
 
-export default LhomeBanner;
+export default Lhome;

@@ -2,7 +2,7 @@ import React from "react";
 import "./lhome.css";
 import Portfoliobanner from "./portfoliobanner";
 import bjmmbannerImg from "../assets/bjmm.jpeg";
-const BjmmBanner = () => {
+const Bjmm = () => {
   return (
     <>
     <Portfoliobanner/>
@@ -29,4 +29,4 @@ const BjmmBanner = () => {
   );
 };
 
-export default BjmmBanner;
+export default Bjmm;

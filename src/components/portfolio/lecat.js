@@ -2,7 +2,7 @@ import React from "react";
 import "./lhome.css";
 import Portfoliobanner from "./portfoliobanner";
 import lecatbannerImg from "../assets/lecat.png";
-const LecatBanner = () => {
+const Lecat = () => {
   return (
     <>
     <Portfoliobanner/>
@@ -33,4 +33,4 @@ empowers teachers with actionable insights—making student performance measurab
   );
 };
 
-export default LecatBanner;
+export default Lecat;
