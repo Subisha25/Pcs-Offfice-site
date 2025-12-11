@@ -21,6 +21,7 @@ import Appdesign from "./components/servicespage/appdesign";
 import DigitalMarketing from "./components/servicespage/digitalmarketing";
 import Branding from "./components/servicespage/branding";
 import Products from "./components/products/products";
+import ProductDetails from "./components/products/productdetails";
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path="/msloan" element={<MsloneBanner/>} />
         <Route path="/pcstrainingsite" element={<TrainingHomeBanner/>} />
         <Route path="/products" element={<Products/>} />
+        <Route path="/productdetails" element={<ProductDetails/>} />
 
 
 

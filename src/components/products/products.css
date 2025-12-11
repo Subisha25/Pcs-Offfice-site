@@ -87,7 +87,7 @@
 
 /* 👉 Remove internal scroll; let card grow with content */
 .product-page-content {
-     font-family: "WF Visual Sans";
+     /* font-family: "WF Visual Sans"; */
   padding: 40px 50px;
   display: flex;
   flex-direction: column;
