@@ -4,6 +4,7 @@ import "./banner.css";
 // User -> GraduationCap, Briefcase -> TrendingUp, CheckCircle -> Pocket & Award
 import { GraduationCap, TrendingUp, Pocket, Award } from "lucide-react";
 import bgBanner from "../assets/contact/cantactbanner.png"; // *** உங்கள் பின்னணிப் படம் ***
+import SuccessStories from "./successstories";
 
 const ContactSection = () => {
   const [selectedOption, setSelectedOption] = useState("work");
@@ -119,6 +120,7 @@ const ContactSection = () => {
           </p> */}
         </div>
       </div>
+      <SuccessStories/>
     </div>
   );
 };
