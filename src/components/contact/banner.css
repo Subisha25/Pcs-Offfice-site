@@ -1,0 +1,303 @@
+/* Custom CSS Variables - எளிமைக்காக ஸ்கிரீன்ஷாட்டில் உள்ள வண்ணங்களைப் பயன்படுத்துகிறேன் */
+:root {
+    --primary-indigo: #0d0f53;
+    --secondary-magenta: #d7105a;
+    --dark-text: #2c2c2c;
+    --light-text: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+/* ------------------ 1. Navbar Styling ------------------ */
+.contact-navbar {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: var(--light-text);
+    border-radius: 12px 12px 0 0;
+    /* Box Shadow-ஐ ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல சரிசெய்யவும் */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    margin-bottom: -15px; /* Contact Card-ன் மேலே சிறிது overlapping-காக */
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo-text {
+    color: var(--primary-indigo);
+}
+
+.logo-subtext {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-text);
+    margin-left: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-magenta);
+}
+
+.nav-cta-btn {
+    background: var(--primary-indigo);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.nav-cta-btn:hover {
+    background: #1e2069;
+}
+
+
+/* ------------------ 2. Main Contact Section Styling ------------------ */
+
+/* Background wrapper */
+.contact-wrapper {
+    width: 100%;
+    background: #f0f2f5; /* ஸ்கிரீன்ஷாட்டில் உள்ள லேசான சாம்பல் பின்னணி */
+    padding: 100px 0 80px 0; /* Padding சரிசெய்யப்பட்டது */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main container (The Card) */
+.contact-container {
+    width: 90%; 
+    max-width: 1200px;
+    display: flex;
+    background: var(--light-text);
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 0; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* அடர்த்தியான நிழல் */
+}
+
+/* LEFT SECTION - Gradient Background */
+.left-section {
+    width: 50%; 
+    /* ஸ்கிரீன்ஷாட்டில் உள்ள சரியான Gradient */
+    background: linear-gradient(180deg, #1b004a 0%, #d7105a 100%);
+    padding: 50px;
+    color: var(--light-text);
+}
+
+.left-section .title {
+    font-size: 40px; 
+    line-height: 50px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.left-section .title span {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 38px;
+}
+
+/* Benefit cards */
+.benefit-card {
+    display: flex;
+    align-items: flex-start; /* தலைப்பு மற்றும் விளக்கம் align ஆக இருக்க */
+    gap: 15px;
+    margin-bottom: 35px; 
+}
+
+.benefit-card .icon {
+    /* ஐகான் ஸ்டைல் மாற்றப்பட்டது */
+    color: var(--light-text); 
+    background: transparent;
+    border-radius: 4px;
+    padding: 0;
+    width: 28px; 
+    height: 28px;
+    min-width: 28px;
+    margin-top: 2px; /* டெக்ஸ்டுடன் align செய்ய */
+}
+
+.benefit-card .content h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.benefit-card .content p {
+    margin: 0;
+    opacity: 0.85;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* RIGHT SECTION - Form Section */
+.right-section {
+    width: 50%; 
+    padding: 50px;
+    /* பின்னணிப் படம்: ஸ்கிரீன்ஷாட்டில் உள்ள மெல்லிய Pattern-க்கு */
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.connect-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--dark-text);
+}
+
+.label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Toggle buttons */
+.toggle-options {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+    /* ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல Toggle Group-ஐ சரிசெய்யவும் */
+    background: #f0f0f0; 
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.toggle-btn {
+    flex-grow: 1; 
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none; /* Border நீக்கப்பட்டது */
+    background: transparent; /* இயல்புநிலை வெளிப்படையானது */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    /* ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல Active Style */
+    background: var(--light-text);
+    color: var(--dark-text);
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* லேசான நிழல் */
+}
+
+/* Inputs */
+.input-group,
+.phone-row {
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.phone-row input,
+.phone-row select {
+    width: 100%;
+    padding: 14px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 15px;
+    color: var(--dark-text);
+    box-shadow: none;
+    outline: none;
+    transition: border-color 0.3s;
+    /* Placeholder நிறத்தை ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல அமைக்க */
+    background: var(--light-text);
+}
+
+.input-group input:focus,
+.phone-row input:focus,
+.phone-row select:focus {
+    border-color: var(--primary-indigo);
+}
+
+/* Placeholder style */
+.input-group input::placeholder,
+.phone-row input::placeholder {
+    color: #999;
+    font-size: 14px; /* சிறிய எழுத்துரு */
+}
+
+.phone-row {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-row select {
+    width: 30%; /* ஸ்கிரீன்ஷாட்டில் உள்ளதைப் போல அகலத்தை சரிசெய்யவும் */
+    appearance: none; 
+    padding-right: 35px;
+    background: var(--light-text) url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="#666666" d="M287 69.4a17.6 17.6 0 0 0-24.8 0L146.2 185.6 30.2 69.4a17.6 17.6 0 0 0-24.8 24.8l130 130c6.8 6.8 17.6 6.8 24.8 0l130-130a17.6 17.6 0 0 0 0-24.8z"/></svg>') no-repeat right 15px center;
+    background-size: 12px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 15px 0;
+    background: var(--primary-indigo);
+    color: var(--light-text);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #1e2069;
+}
+
+/* Footer Text */
+.footer-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Responsive adjustments for smaller screens (optional but recommended) */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+    }
+
+    .left-section {
+        border-radius: 25px 25px 0 0;
+    }
+    
+    .contact-navbar {
+        display: none; /* மொபைலில் NavBar-ஐ மறைக்கிறேன் */
+    }
+}
