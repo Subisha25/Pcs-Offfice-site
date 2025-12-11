@@ -52,7 +52,7 @@ function App() {
         <Route path="/gracecabs" element={<GraceBanner/>} />
         <Route path="/pcstrainingsite" element={<TrainingHomeBanner/>} />
         <Route path="/products" element={<Products/>} />
-                <Route path="/productdetails" element={<ProductDetails/>} />
+                <Route path="/productdetails/:id" element={<ProductDetails/>} />
 
         <Route path="/learningJourneyPage" element={<LearningJourneyPage/>} />
 

@@ -25,7 +25,7 @@
 @font-face {
   font-family: "WF Visual Sans";
   src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Bold.woff2") format("woff2");
-  font-weight: 100 900;
+  /* font-weight: 100 900; */
   font-style: normal;
   font-display: swap;
 }
@@ -136,6 +136,7 @@ font-weight: 800;
 }
 
 .product-page-tech-stack {
+    cursor: pointer;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -144,6 +145,7 @@ font-weight: 800;
 
 .product-page-tech-badge {
   padding: 8px 20px;
+  cursor: pointer;
   /* background: #2d3748; */
   border: 1px solid black;
   color: black;
@@ -151,11 +153,10 @@ font-weight: 800;
   font-size: 13px;
   font-weight: 400;
   transition: all 0.3s ease;
-  cursor: default;
 }
 
 .product-page-tech-badge:hover {
-  background: #4a5568;
+  /* background: #4a5568; */
   transform: translateY(-2px);
 }
 
