@@ -3,19 +3,19 @@ import "./portfoliobanner.css";
 import rightarrow from "../assets/rightarrow.svg";
 import LhomeBanner from "./lhome";
 
-const Lhomebanner= () => {
+const Officechatbanner= () => {
   return (
     <>
     <div className="banner-section">
       <div className="banner-content">
         <h1 className="banner-title">
-          Lhome Make<br/> your home better
+          Officechat<br/> 
         </h1>
 
         <div className="details-section">
           <div className="detail-box">
             <span className="label">Client</span>
-            <span className="value">Robert</span>
+            <span className="value">Gobi Ramesh</span>
           </div>
 
           <div className="detail-box">
@@ -33,7 +33,7 @@ const Lhomebanner= () => {
      <div className="button-section">
   <button 
     className="view-btn"
-    onClick={() => window.open("https://www.lhome.co.in/", "_blank")}
+    onClick={() => window.open("https://kind-plant-0a6d72700.5.azurestaticapps.net/", "_blank")}
   >
     <span className="arrow">
       <img src={rightarrow} alt="rightarrow" />
@@ -48,4 +48,4 @@ const Lhomebanner= () => {
   );
 };
 
-export default Lhomebanner;
+export default Officechatbanner;

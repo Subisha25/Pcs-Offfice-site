@@ -1,11 +1,11 @@
 import React from "react";
 import "./lhome.css";
-import Portfoliobanner from "./portfoliobanner";
 import wtsbannerImg from "../assets/wts.png";
+import Wtsbanner from "./wtsbanner";
 const Wts = () => {
   return (
     <>
-    <Portfoliobanner/>
+    <Wtsbanner/>
     <div className="home-container">
       
       {/* TOP FULL IMAGE */}

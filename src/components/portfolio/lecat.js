@@ -1,11 +1,11 @@
 import React from "react";
 import "./lhome.css";
-import Portfoliobanner from "./portfoliobanner";
 import lecatbannerImg from "../assets/lecat.png";
+import Lecatbanner from "./lecatbanner";
 const Lecat = () => {
   return (
     <>
-    <Portfoliobanner/>
+    <Lecatbanner/>
     <div className="home-container">
       
       {/* TOP FULL IMAGE */}
@@ -20,11 +20,7 @@ const Lecat = () => {
           digital and automated process. Built with React.js and Firebase, it offers 
           a seamless experience where educators can create quizzes, track student 
           performance, and visualize learning progress through an intuitive analytics dashboard.
-{/* 
-From curriculum progress tracking to detailed score reports, Lecat VMobile 
-empowers teachers with actionable insights—making student performance measurable,
- transparent, and easy to manage. It’s the perfect smart solution for modern 
- |educational environments. */}
+
         </p>
       </div>
 

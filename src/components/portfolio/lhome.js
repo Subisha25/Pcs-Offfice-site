@@ -1,12 +1,12 @@
 import React from "react";
 import "./lhome.css";
 import bannerImg from "../assets/Mask group (1).png"; // Change to your image path
-import Portfoliobanner from "./portfoliobanner";
+import Lhomebanner from "./lhomebanner";
 
 const Lhome = () => {
   return (
     <>
-    <Portfoliobanner/>
+    <Lhomebanner/>
     <div className="home-container">
       
       {/* TOP FULL IMAGE */}

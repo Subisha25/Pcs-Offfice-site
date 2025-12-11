@@ -1,11 +1,11 @@
 import React from "react";
 import "./lhome.css";
-import Portfoliobanner from "./portfoliobanner";
 import bjmmbannerImg from "../assets/bjmm.jpeg";
+import Bjmmbanner from "./bjmmbanner";
 const Bjmm = () => {
   return (
     <>
-    <Portfoliobanner/>
+    <Bjmmbanner/>
     <div className="home-container">
       
       {/* TOP FULL IMAGE */}

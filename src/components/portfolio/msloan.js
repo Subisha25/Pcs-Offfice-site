@@ -1,11 +1,11 @@
 import React from "react";
 import "./lhome.css";
-import Portfoliobanner from "./portfoliobanner";
 import mslonebannerImg from "../assets/msloan.png"
+import Msloanbanner from "./msloanbanner";
 const Mslone = () => {
   return (
     <>
-    <Portfoliobanner/>
+    <Msloanbanner/>
     <div className="home-container">
       
       {/* TOP FULL IMAGE */}
