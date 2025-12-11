@@ -5,6 +5,7 @@ import "./banner.css";
 import { GraduationCap, TrendingUp, Pocket, Award } from "lucide-react";
 import bgBanner from "../assets/contact/cantactbanner.png"; // *** உங்கள் பின்னணிப் படம் ***
 import StateSection from "./statesection";
+import SuccessStories from "./successstories";
 
 const ContactSection = () => {
     const [selectedOption, setSelectedOption] = useState("work");
@@ -121,6 +122,7 @@ const ContactSection = () => {
                 </div>
             </div>
             <StateSection/>
+            <SuccessStories/>
         </div>
         
     );
