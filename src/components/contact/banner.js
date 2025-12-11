@@ -66,60 +66,50 @@ const ContactSection = () => {
                     </div>
                 </div>
 
-                {/* RIGHT CONTENT */}
-                <div className="right-section">
-                    <h2 className="connect-title">Connect With Us</h2>
+              {/* RIGHT CONTENT */}
+<div className="right-section">
+    <h2 className="connect-title">Connect With Us</h2>
 
-                    <p className="label">What you Preferred to connect</p>
-                    <div className="toggle-options">
-                        {/* Need to Work பட்டன் 'active' ஆக வைக்கப்பட்டுள்ளது */}
-                        <button
-                            className={`toggle-btn ${selectedOption === "work" ? "active" : ""
-                                }`}
-                            onClick={() => setSelectedOption("work")}
-                        >
-                            Need to Work
-                        </button>
+    <p className="form-label">What you Preferred to connect</p>
 
-                        <button
-                            className={`toggle-btn ${selectedOption === "learn" ? "active" : ""
-                                }`}
-                            onClick={() => setSelectedOption("learn")}
-                        >
-                            I Want to Learn
-                        </button>
-                    </div>
+    <div className="toggle-wrapper">
+        <button
+            className={`toggle-btn ${selectedOption === "work" ? "active" : ""}`}
+            onClick={() => setSelectedOption("work")}
+        >
+            I Need to Work
+        </button>
 
-                    <div className="input-group">
-                        <input type="text" placeholder="Enter your Full Name" />
-                    </div>
+        <button
+            className={`toggle-btn ${selectedOption === "learn" ? "active" : ""}`}
+            onClick={() => setSelectedOption("learn")}
+        >
+            I Want to Learn
+        </button>
+    </div>
 
-                    <div className="input-group">
-                        <input type="email" placeholder="Enter your Email" />
-                    </div>
+    <label className="input-title">Name</label>
+    <input type="text" className="form-input" placeholder="Enter your Full Name  Eg: Raj Kumar" />
 
-                    <div className="phone-row">
-                        <select>
-                            <option>India +91</option>
-                        </select>
-                        <input type="text" placeholder="Enter your Mobile Number" />
-                    </div>
+    <label className="input-title">Email*</label>
+    <input type="email" className="form-input" placeholder="Enter your Email  Eg: rjkumar55@gmail.com" />
 
-                    <div className="input-group">
-                        {/* Placeholder Text முதல் ஸ்கிரீன்ஷாட்டைப் போல மாற்றப்பட்டது */}
-                        <input type="text" placeholder="Enter your Interest to Learn" />
-                    </div>
+    <label className="input-title">Phone*</label>
+    <div className="phone-input-row">
+        <select className="phone-select">
+            <option>India +91</option>
+        </select>
+        <input type="text" className="phone-number" placeholder="Enter your Mobile Number" />
+    </div>
 
-                    {/* முதல் ஸ்கிரீன்ஷாட்டில் Submit பட்டன் இல்லை. */}
-                    {/* <button className="submit-btn">
-            I'm Ready to Start Happy Learning!
-          </button> */}
+    <label className="input-title">What you Interest to learn</label>
+    <input type="text" className="form-input" placeholder="Enter your Interest Eg: Full Stack Development," />
 
-                    {/* முதல் ஸ்கிரீன்ஷாட்டில் இந்த footer text-ம் இல்லை. */}
-                    {/* <p className="footer-text">
-            Once Submit form Our Team will connect with you
-          </p> */}
-                </div>
+    <button className="submit-btn">I’m Ready to Start Happy Learning!</button>
+
+    <p className="footer-note">Once Submit form Our Team will connect with you</p>
+</div>
+
             </div>
             <StateSection/>
             <SuccessStories/>
