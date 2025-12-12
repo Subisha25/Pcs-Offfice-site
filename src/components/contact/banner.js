@@ -66,55 +66,56 @@ const ContactSection = () => {
                     </div>
                 </div>
 
-              {/* RIGHT CONTENT */}
-<div className="right-section">
-    <h2 className="connect-title">Connect With Us</h2>
+                {/* RIGHT CONTENT */}
+                <div className="right-section">
+                    <h2 className="connect-title">Connect With Us</h2>
 
-    <p className="form-label">What you Preferred to connect</p>
+                    <p className="form-label">What you Preferred to connect</p>
 
-    <div className="toggle-wrapper">
-        <button
-            className={`toggle-btn ${selectedOption === "work" ? "active" : ""}`}
-            onClick={() => setSelectedOption("work")}
-        >
-            I Need to Work
-        </button>
+                    <div className="toggle-wrapper">
+                        <button
+                            className={`toggle-btn ${selectedOption === "work" ? "active" : ""}`}
+                            onClick={() => setSelectedOption("work")}
+                        >
+                            <span className="dot"></span> I Need to Work
+                        </button>
 
-        <button
-            className={`toggle-btn ${selectedOption === "learn" ? "active" : ""}`}
-            onClick={() => setSelectedOption("learn")}
-        >
-            I Want to Learn
-        </button>
-    </div>
+                        <button
+                            className={`toggle-btn ${selectedOption === "learn" ? "active" : ""}`}
+                            onClick={() => setSelectedOption("learn")}
+                        >
+                            <span className="dot"></span> I Want to Learn
+                        </button>
+                    </div>
 
-    <label className="input-title">Name</label>
-    <input type="text" className="form-input" placeholder="Enter your Full Name  Eg: Raj Kumar" />
 
-    <label className="input-title">Email*</label>
-    <input type="email" className="form-input" placeholder="Enter your Email  Eg: rjkumar55@gmail.com" />
+                    <label className="input-title">Name</label>
+                    <input type="text" className="form-input" placeholder="Enter your Full Name  Eg: Raj Kumar" />
 
-    <label className="input-title">Phone*</label>
-    <div className="phone-input-row">
-        <select className="phone-select">
-            <option>India +91</option>
-        </select>
-        <input type="text" className="phone-number" placeholder="Enter your Mobile Number" />
-    </div>
+                    <label className="input-title">Email*</label>
+                    <input type="email" className="form-input" placeholder="Enter your Email  Eg: rjkumar55@gmail.com" />
 
-    <label className="input-title">What you Interest to learn</label>
-    <input type="text" className="form-input" placeholder="Enter your Interest Eg: Full Stack Development," />
+                    <label className="input-title">Phone*</label>
+                    <div className="phone-input-row">
+                        <select className="phone-select">
+                            <option>India +91</option>
+                        </select>
+                        <input type="text" className="phone-number" placeholder="Enter your Mobile Number" />
+                    </div>
 
-    <button className="submit-btn">I’m Ready to Start Happy Learning!</button>
+                    <label className="input-title">What you Interest to learn</label>
+                    <input type="text" className="form-input" placeholder="Enter your Interest Eg: Full Stack Development," />
 
-    <p className="footer-note">Once Submit form Our Team will connect with you</p>
-</div>
+                    <button className="submit-btn">I’m Ready to Start Happy Learning!</button>
+
+                    <p className="footer-note">Once Submit form Our Team will connect with you</p>
+                </div>
 
             </div>
-            <StateSection/>
-            <SuccessStories/>
+            <StateSection />
+            <SuccessStories />
         </div>
-        
+
     );
 };
 
