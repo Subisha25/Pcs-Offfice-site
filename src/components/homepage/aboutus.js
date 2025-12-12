@@ -4,10 +4,13 @@ import "./aboutus.css";
 import tagicon from "../assets/Union.png";
 import Arrow from "../assets/arrow.png";
 import CommonTopTag from "../common/toptag";
+import { useNavigate } from "react-router-dom";
+
 
 export default function About() {
   const sectionRef = useRef(null);
   const statsRef = useRef(null);
+const Navigate = useNavigate();
 
   const [filledWords, setFilledWords] = useState(0);
   const [countValue, setCountValue] = useState(0);
@@ -113,81 +116,7 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handler);
 }, [filledWords]);
 
-  // useEffect(() => {
-  //   function onScroll() {
-  //     if (!sectionRef.current) return;
-
-  //     const rect = sectionRef.current.getBoundingClientRect();
-  //     const viewportH = window.innerHeight;
-  //     const centerY = viewportH / 2;
-
-  //     // Only react when user is scrolling downward
-  //     const scrollingDown = window.scrollY > lastScrollY.current;
-  //     lastScrollY.current = window.scrollY;
-
-  //     // distance the section top has moved past the center line (positive when user scrolls down)
-  //     // when section is perfectly centered initially rect.top ≈ (viewportH - sectionHeight) / 2
-  //     // centerY - rect.top becomes positive as user scrolls down.
-  //     const distanceFromCenter = Math.max(0, centerY - rect.top);
-
-  //     // choose a sensible distance window that maps to full fill.
-  //     // I use 0.0..0.9 * viewport height so roughly one screen worth of downward scroll fills all words.
-  //     const fillWindow = viewportH * 0.9;
-  //     const progress = Math.min(1, distanceFromCenter / fillWindow);
-
-  //     const targetWords = Math.floor(progress * maxWords);
-
-  //     // Only increase on downward scroll, and never decrease (freeze on stop or upward)
-  //     if (scrollingDown && targetWords > filledWords) {
-  //       setFilledWords(targetWords);
-  //     }
-
-  //     // COUNTER: when the stats section comes near center, increase counts based on how far it has moved into view.
-  //     if (statsRef.current) {
-  //       const sRect = statsRef.current.getBoundingClientRect();
-  //       // how far the top of stats is above the center line (positive when scrolling down into it)
-  //       const statsDistance = Math.max(0, centerY - sRect.top);
-  //       const statsWindow = viewportH * 0.9;
-  //       const statsProgress = Math.min(1, statsDistance / statsWindow);
-
-  //       // Map statsProgress to count values slowly (slow increase because it maps to scroll)
-  //       const projects = Math.floor(statsProgress * maxProjects);
-  //       const years = Math.floor(statsProgress * maxYears);
-
-  //       // Only increase (do not decrease), and only when user scrolls down into it
-  //       if (scrollingDown) {
-  //         if (projects > countValue) {
-  //           setCountValue(projects);
-  //         } else if (years > countValue && years > countValue) {
-  //           // ensure it increases at least for years when projects small
-  //           setCountValue(projects);
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   // Throttle with rAF for smoother behavior and less work
-  //   let ticking = false;
-  //   const handler = () => {
-  //     if (!ticking) {
-  //       window.requestAnimationFrame(() => {
-  //         onScroll();
-  //         ticking = false;
-  //       });
-  //       ticking = true;
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handler, { passive: true });
-  //   // run once to set initial state (centered -> 0)
-  //   onScroll();
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handler);
-  //   };
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [filledWords, countValue]);
-
+ 
   return (
     <div className="about-section" ref={sectionRef}>
       <div className="container">
@@ -230,8 +159,8 @@ useEffect(() => {
           </div>
 
           <div className="cta-section">
-            <a href="#" className="link">Know More About Us</a>
-            <button className="btn-primaryhome">
+            <a href="#" className="link" onClick={() => Navigate("/aboutbanner")}>Know More About Us</a>
+            <button className="btn-primaryhome"  onClick={() => Navigate("/contact")}>
               <div className="icon-circle">
                 <img alt="arrow" src={Arrow} />
               </div>

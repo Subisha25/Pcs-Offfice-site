@@ -13,6 +13,7 @@ import Footer from "./footer";
 import WordAnimation from "./explore";
 import Benefits from "../aboutpage/benefits";
 import CommonButton from "../common/button";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const words = ["build", "learn"]; // 🔁 cycle panna words
 
@@ -20,7 +21,7 @@ function Banner() {
   const [wordIndex, setWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-
+const Navigate = useNavigate();
   // 🔤 Typewriter effect
   useEffect(() => {
     const currentWord = words[wordIndex];
@@ -77,7 +78,7 @@ function Banner() {
 
             <div className="banner-buttons">
 
-              <CommonButton />
+              <CommonButton   onClick={() => Navigate("/contact")}/>
               {/* <button className="btn-primaryhome">
                 <div className="icon-circle">
                   <img alt="arrow" src={Arrow} />
@@ -85,7 +86,7 @@ function Banner() {
                 Let’s Discuss
               </button> */}
 
-              <button className="btn-link">Learn Something</button>
+              <button className="btn-link"  onClick={() => Navigate("/pcstrainingsite")}>Learn Something</button>
             </div>
           </div>
         </div>

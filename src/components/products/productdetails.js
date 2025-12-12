@@ -399,7 +399,7 @@ export default function ProductDetails() {
         </section>
 
         {/* CTA FOOTER */}
-        <section className="pd-cta">
+        {/* <section className="pd-cta">
           <div>
             <h3>Want to see it live?</h3>
             <p>
@@ -411,8 +411,8 @@ export default function ProductDetails() {
             <button className="btn-primary large">Schedule Demo</button>
             <button className="btn-outline">Contact Us</button>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );
-}
+}src/components/products/productdetails.js
