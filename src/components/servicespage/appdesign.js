@@ -359,9 +359,9 @@ export default function Appdesign() {
         {/* STEP 1: Description with typewriter words */}
         <p
           className="sw-description"
-          data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
+          data-typewriter="A successful app is more than functionality—it’s an experience your users remember. We design and develop apps that combine sleek design with intelligent technology, ensuring every screen feels intuitive, engaging, and purposeful. From navigation to user flow, we craft digital experiences that inspire trust and turn casual users into loyal app advocates."
         >
-        We craft intuitive and visually stunning mobile applications tailored to your brand’s mission and user needs. From concept to deployment, our team ensures every app is built to deliver performance, usability, and conversions — whether it’s a startup idea or an enterprise solution. We ensure a clean, scalable build that is easy to maintain and enhance.
+          We craft intuitive and visually stunning mobile applications tailored to your brand’s mission and user needs. From concept to deployment, our team ensures every app is built to deliver performance, usability, and conversions — whether it’s a startup idea or an enterprise solution. We ensure a clean, scalable build that is easy to maintain and enhance.
         </p>
 
         {/* STEP 2: What We Offer Section */}
@@ -382,12 +382,11 @@ export default function Appdesign() {
             <h2 className="sw-offer-title">What We Offer:</h2>
 
             <ul className="sw-offer-list">
-              <li>Custom native / cross-platform app design</li>
-              <li>User-friendly navigation & smart layouts</li>
-              <li>High-performance mobile app development</li>
-              <li>API integration & secure database setup</li>
-              <li>Conversion-driven UI/UX strategy</li>
-              <li>App redesign, maintenance & support</li>
+              <li>Custom App Design</li>
+              <li>Cross-Platform Development (iOS & Android)</li>
+              <li>eCommerce & Enterprise Apps</li>
+              <li>UI/UX Strategy</li>
+              <li>Performance Optimization</li>
             </ul>
           </div>
         </div>
@@ -400,10 +399,10 @@ export default function Appdesign() {
             style={{ "--delay": "0s" }}
           >
             <h2 className="sw-result-title">Result:</h2>
-            <li>Built with usability,</li>
-            <li>built with performance,</li>
-            <li>built with results</li>
-            {/* <li>solve real user problems.</li> */}
+            <p className="sw-result-content">
+
+              The results of our app development approach demonstrate how technology can deeply enhance user experiences. By understanding user behavior, our apps provide seamless navigation, personalized interactions, and actionable insights. Users engage more, perform tasks faster, and trust the app more, resulting in higher retention, satisfaction, and conversion.
+            </p>
           </ul>
 
           <div
