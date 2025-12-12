@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./banner.css";
-import { GraduationCap, TrendingUp, Pocket, Award, Briefcase, Users, Target, Clock } from "lucide-react";
+import { User, Activity, Briefcase, Award, Users, Target, Clock } from "lucide-react";
 import bgBanner from "../assets/contact/cantactbanner.png";
 import StateSection from "./statesection";
 import SuccessStories from "./successstories";
@@ -15,19 +15,19 @@ const ContactSection = () => {
             highlight: "Journey",
             benefits: [
                 {
-                    icon: GraduationCap,
+                    icon: User,
                     title: "Expert-Led Courses",
                     desc: "Learn from industry professionals with real-world experience."
                 },
                 {
-                    icon: TrendingUp,
+                    icon: Activity,
                     title: "Comprehensive Learning Paths",
                     desc: "Structured and detailed courses tailored to your skill goals."
                 },
                 {
-                    icon: Pocket,
+                    icon: Briefcase,
                     title: "Hands-On Projects",
-                    desc: "Apply your knowledge in real practical projects."
+                    desc: "Apply your knowledge through real projects and gain practical skills."
                 },
                 {
                     icon: Award,
@@ -87,20 +87,24 @@ const ContactSection = () => {
                 {/* LEFT CONTENT - Benefits Section */}
                 <div className="left-section">
                     <h2 className="title">
-                        {current.title.split(' ').slice(0, -2).join(' ')} <br />
-                        <span className="highlight">{current.highlight}</span>
+                        Why Choose Us for <br />
+                        Your Learning <span className="highlight">{current.highlight}</span>
                     </h2>
+
 
                     {current.benefits.map((benefit, idx) => {
                         const Icon = benefit.icon;
                         return (
                             <div className="benefit-card" key={idx}>
-                                <Icon className="icon" />
+                                <div className="icon-box">
+                                    <Icon className="icon" />
+                                </div>
                                 <div>
                                     <h4>{benefit.title}</h4>
                                     <p>{benefit.desc}</p>
                                 </div>
                             </div>
+
                         );
                     })}
                 </div>
@@ -115,28 +119,29 @@ const ContactSection = () => {
                             className={`toggle-btn ${selectedOption === "work" ? "active" : ""}`}
                             onClick={() => setSelectedOption("work")}
                         >
-                            {current.button1}
+                            <span className="dot"></span> I Need to Work
                         </button>
+
                         <button
                             className={`toggle-btn ${selectedOption === "learn" ? "active" : ""}`}
                             onClick={() => setSelectedOption("learn")}
                         >
-                            {current.button2}
+                            <span className="dot"></span> I Want to Learn
                         </button>
                     </div>
 
                     <label className="input-title">Name</label>
-                    <input 
-                        type="text" 
-                        className="form-input" 
-                        placeholder="Enter your Full Name  Eg: Raj Kumar" 
+                    <input
+                        type="text"
+                        className="form-input"
+                        placeholder="Enter your Full Name  Eg: Raj Kumar"
                     />
 
                     <label className="input-title">Email*</label>
-                    <input 
-                        type="email" 
-                        className="form-input" 
-                        placeholder="Enter your Email  Eg: rjkumar55@gmail.com" 
+                    <input
+                        type="email"
+                        className="form-input"
+                        placeholder="Enter your Email  Eg: rjkumar55@gmail.com"
                     />
 
                     <label className="input-title">Phone*</label>
@@ -144,18 +149,18 @@ const ContactSection = () => {
                         <select className="phone-select">
                             <option>India +91</option>
                         </select>
-                        <input 
-                            type="text" 
-                            className="phone-number" 
-                            placeholder="Enter your Mobile Number" 
+                        <input
+                            type="text"
+                            className="phone-number"
+                            placeholder="Enter your Mobile Number"
                         />
                     </div>
 
                     <label className="input-title">{current.interestLabel}</label>
-                    <input 
-                        type="text" 
-                        className="form-input" 
-                        placeholder={current.interestPlaceholder} 
+                    <input
+                        type="text"
+                        className="form-input"
+                        placeholder={current.interestPlaceholder}
                     />
 
                     <button className="submit-btn">
@@ -167,7 +172,7 @@ const ContactSection = () => {
                     </p>
                 </div>
             </div>
-            
+
             {/* StateSection மற்றும் SuccessStories காம்போனெண்ட்டுகளுக்கு selectedOption prop அனுப்புகிறேன் */}
             <StateSection selectedOption={selectedOption} />
             <SuccessStories selectedOption={selectedOption} />

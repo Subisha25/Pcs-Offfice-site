@@ -136,7 +136,7 @@
     font-family: 'WF Visual Sans', sans-serif;
     font-weight: 500;           /* Medium */
     font-style: normal;
-    font-size: 40px;
+    font-size: 38px;
     line-height: 60px;
     letter-spacing: 1%;
     margin-bottom: 50px;
@@ -146,7 +146,7 @@
     font-family: 'Playfair Display', serif;
     font-weight: 500;           /* Semi-bold */
     font-style: italic;
-    font-size: 42px;
+    font-size: 45px;
     line-height: 60px;
     letter-spacing: 1%;
     color: var(--light-text);
@@ -178,11 +178,10 @@
 }
 
 .benefit-card h4 {
-    margin: 0 0 5px 0;
-    font-size: 24px;
-    font-weight: 400;
-    font-family: "WF Visual Sans";
-    letter-spacing: 1%;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #fff;
 }
 
 .benefit-card  p {
@@ -465,6 +464,25 @@
     font-size: 13px;
     color: #777;
 }
+.icon-box {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    border-radius: 16px;
+    background: #FF006E33;   /* Your required color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box .icon {
+    color: #ffffff;    
+
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.8;
+}
+
 /* Responsive adjustments for smaller screens (optional but recommended) */
 @media (max-width: 900px) {
     .contact-container {

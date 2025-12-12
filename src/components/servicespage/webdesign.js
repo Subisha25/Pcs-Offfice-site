@@ -359,13 +359,11 @@ export default function Webdesign() {
         {/* STEP 1: Description with typewriter words */}
         <p
           className="sw-description"
-          data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
+
+
+          data-typewriter="A powerful website is more than visuals—it’s an experience your audience remembers. We design and develop websites that blend creativity with smart technology, ensuring every page feels intuitive, engaging, and purposeful. From layout to user journey, we craft digital experiences that inspire trust and turn visitors into loyal customers"
         >
-          We craft responsive, visually stunning websites tailored to your
-          brand’s needs.From concept to deployment, our team ensures every
-          website is optimized forperformance, usability, and conversions for a
-          website—like the text content thatappears on a single service page in
-          a CMS. Here’s a clean, professional exampleyou can use or adapt.
+          A powerful website is more than visuals—it’s an experience your audience remembers. We design and develop websites that blend creativity with smart technology, ensuring every page feels intuitive, engaging, and purposeful. From layout to user journey, we craft digital experiences that inspire trust and turn visitors into loyal customers
         </p>
 
         {/* STEP 2: What We Offer Section */}
@@ -387,10 +385,12 @@ export default function Webdesign() {
 
             <ul className="sw-offer-list">
               <li>Custom website design</li>
-              <li>Mobile-friendly responsive layouts</li>
-              <li>E-commerce and CMS integration</li>
+              <li>Responsive Web Development</li>
+              <li>E-Commerce & CMS</li>
               <li>SEO-optimized structure</li>
-              <li>Ongoing maintenance and support</li>
+              <li>Performance Optimization</li>
+              <li>UI/UX Strategy</li>
+              {/* Artificial Intelligence (AI) has become one of the most influential technologies shaping human life today. Its ability to understand, analyse, and even predict human behaviour has created new possibilities in the field of psychology. This study explores how AI interacts with human psychology, how it interprets emotions and behaviour patterns, and how it influences future decision-making. By examining both the positive impact and the challenges, this paper aims to provide a clear understanding of the connection between AI and human psychological development */}
             </ul>
           </div>
         </div>
@@ -403,10 +403,9 @@ export default function Webdesign() {
             style={{ "--delay": "0s" }}
           >
             <h2 className="sw-result-title">Result:</h2>
-            <li>We combine user research, wireframing,</li>
-            <li>prototyping, and visual design to deliver</li>
-            <li>solutions that not only look great but also</li>
-            <li>solve real user problems.</li>
+            <p>
+              The results show that AI can accurately understand and respond to human behaviour. By analysing patterns in thoughts, emotions, and actions, AI provides clear insights into a user’s psychological state. Overall, the study confirms that AI enhances behavioural analysis and offers a smoother, more personalized experience for users.
+            </p>
           </ul>
 
           <div
