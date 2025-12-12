@@ -5,8 +5,11 @@ import enrollBg from "../assets/footer/enroll-bg.png";       // button bg
 import arrowIcon from "../assets/footer/arrow.png";          // arrow
 import enrollCircle from "../assets/cta/ctaCircle.png"; // circle
 import CommonButton from "../common/button";
+import { useNavigate } from "react-router-dom";
 
 const CTASection = () => {
+
+  const navigate = useNavigate();
   return (
     <div className="cta_section_wrapper">
       
@@ -21,7 +24,7 @@ const CTASection = () => {
       </div>
 
       {/* UPDATED CTA BUTTON */}
-     <CommonButton />
+     <CommonButton    onClick={() => navigate("/contact")}/>
 
     </div>
   );

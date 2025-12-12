@@ -18,6 +18,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  
 }
 
 
@@ -89,6 +90,16 @@
   font-family: "WF Visual Sans", sans-serif;
   font-weight: 700;
   font-size: 74px; /* scales from small to large screens */
+  line-height: 1.25;
+  color: #000;
+  margin: 0 0 16px 0;
+}
+
+/* Main heading – responsive using clamp */
+.homebanner-titles {
+  font-family: "WF Visual Sans", sans-serif;
+  font-weight: 400;
+  font-size: 24px; /* scales from small to large screens */
   line-height: 1.25;
   color: #000;
   margin: 0 0 16px 0;
