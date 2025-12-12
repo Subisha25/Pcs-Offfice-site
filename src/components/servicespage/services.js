@@ -113,6 +113,7 @@ const Services = () => {
         >
           From idea to{" "}
           <span
+          className="execution-text"
             style={{
               fontFamily: "Playfair Display",
               fontWeight: '600',
@@ -415,19 +416,26 @@ const Services = () => {
 
         @media (max-width: 480px) {
           .services-container {
-            padding: 24px 12px !important;
+            padding: 80px 12px !important;
           }
           .services-title {
-            font-size: 20px !important;
+            font-size: 24px !important;
             line-height: 28px !important;
           }
           .service-card {
             padding: 18px !important;
             border-radius: 18px !important;
           }
+            .services-title .execution-text {
+            font-size: 28px !important;
+            line-height: 32px !important;
+          }
+        }
           .card-title,
           .card-subtitle {
-            font-size: 20px !important;
+            // font-size: 20px !important;
+            font-size: 32px !important;
+            line-height: 40px !important;
           }
           .card-description {
             fontSize: 13px !important;
