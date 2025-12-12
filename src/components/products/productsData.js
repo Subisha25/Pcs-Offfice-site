@@ -56,39 +56,43 @@ const productsData = [
     title: "E-Commerce Store",
     image: "https://pcstech.in/static/media/e%20commerce.f3223133494f1275b6b2.png",
     description: "A shopping platform with product filters, cart system, and checkout.",
-    overview: "A feature-rich e-commerce platform enabling product listing, filters, cart & checkout, order management, and admin controls built with React and Node.",
+    overview: "Zestocart is a modern full-stack e-commerce web application built using React.js, Node.js, Express.js, and MySQL. It provides users with a seamless shopping experience, supporting features such as product browsing, cart management, wishlist, checkout, secure payments, order history, tracking, and invoice generation.",
     technology_stack: [
       "React.js",
       "Node.js",
       "Express.js",
-      "MongoDB",
+      "MySQL",
    
     ],
-    key_features: [
-      "Product listing with category & filters",
-      "Shopping cart with persistent sessions",
-      "Secure checkout and payment gateway integration",
-      "Order management & invoice generation",
-      "Admin product and inventory management",
-      "User accounts with order history"
+
+     key_features: [
+      "User Registration & Login",
+      "Product Listings & Search",
+      "Add to Cart & Wishlist",
+      "Checkout & Payment Integration",
+      "Order History & Tracking",
+      "Invoice Generation",
+      "Responsive Design"
     ],
-    benefits: [
-      "Scalable online store for any catalog size",
-      "Secure transaction handling and order tracking",
-      "Easy inventory and product management"
+     benefits: [
+      "Fast and user-friendly shopping experience",
+      "Secure payment handling",
+      "Easy product browsing and management",
+      "Real-time order tracking",
+      "Scalable architecture for real-world deployment"
     ],
     faq: [
       {
-        q: "Can we integrate multiple payment gateways?",
-        a: "Yes, supports Stripe, PayPal and custom gateways."
+        q: "Is Zestocart mobile-friendly?",
+        a: "Yes, it includes fully responsive UI screens."
       },
       {
-        q: "Does it support coupons and discounts?",
-        a: "Yes, you can create coupon codes and promotional offers."
+        q: "Which payment methods are supported?",
+        a: "COD, Card, UPI, and Net Banking."
       },
       {
-        q: "Is SEO friendly product listing supported?",
-        a: "Yes, product pages are optimized for SEO and meta tags."
+        q: "Does it support invoice downloads?",
+        a: "Yes, PDF invoices are generated via the backend."
       }
     ],
     screenshots: [
@@ -327,42 +331,49 @@ const productsData = [
   },
   {
     id: 8,
-    title: "Food Delivery Website",
+    title: "Zestaurant – Online Food Ordering & Delivery System",
     image: "https://pcstech.in/static/media/food.f7dd0d573a52bdd1fff5.png",
     description: "Delicious meals delivered hot and fast to your doorstep.",
-    overview: "A full-stack food ordering and delivery platform for restaurants with menu management, order tracking, and delivery partner coordination.",
+    overview: "Zestaurant is a full‑stack online food ordering and restaurant management system built using React.js, Node.js/Express, and MySQL. It allows users to browse restaurants, order food, track delivery, and download invoices. Admins manage menus, orders, offers, and restaurants, while super-admins approve restaurants and oversee platform operations.",
     technology_stack: [
       "React.js",
       "Node.js",
       "Express.js",
-      "MongoDB",
-      "Stripe",
+      "MySQL",
       "Google Maps API"
     ],
-    key_features: [
-      "Restaurant & menu management",
-      "Customer ordering with cart & checkout",
-      "Order tracking and delivery partner assignment",
-      "Promo codes and discounts",
-      "Ratings & reviews"
+     key_features: [
+      "User registration, login, and secure JWT authentication",
+      " Restaurant browsing with filters",
+      "Menu display with Add to Cart functionality",
+      "Checkout flow with multiple payment options (COD, Card, UPI)",
+      " Order tracking with status updates",
+      " Auto-generated PDF invoice",
+      "Admin panel for menu & order management",
+      "Super-admin panel for restaurant approvals"
     ],
-    benefits: [
-      "Increases restaurant reach and order volumes",
-      "Simplifies delivery coordination and tracking",
-      "Offers better customer experience with real-time updates"
+     benefits: [
+      "Fully scalable and modular architecture",
+      "Real-world food delivery experience",
+      "Secure authentication & role-based access",
+      "Admin and super-admin controls improve platform management",
+      "Clean and responsive UI designed for mobile & desktop",
+      "Easy extension for future features like coupons, reviews, or live tracking"
     ],
+
+    
     faq: [
       {
-        q: "Can restaurants manage their own menus?",
-        a: "Yes, restaurants have access to manage menu items and prices."
+        q: "How does the order process work?",
+        a: "Users browse restaurants, add items to their cart, enter delivery details, choose a payment method, and place the order. The system updates order status until delivery."
       },
       {
-        q: "Are promo campaigns supported?",
-        a: "Yes, create promo codes and limited-time offers."
+        q: "How secure is the system?",
+        a: "The system uses JWT authentication, password hashing, SQL injection prevention, and role-based route protections for maximum safety."
       },
       {
-        q: "Does it support multi-restaurant listings?",
-        a: "Yes, supports marketplace style multi-restaurant setup."
+        q: "Can this system be expanded?",
+        a: "Yes. The architecture supports future upgrades like live tracking, delivery partner apps, coupons, chat support, and review systems."
       }
     ],
     screenshots: [
