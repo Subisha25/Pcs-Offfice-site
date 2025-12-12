@@ -25,11 +25,13 @@ import Collah from "./components/portfolio/collah";
 import Lecat from "./components/portfolio/lecat";
 import Lhome from "./components/portfolio/lhome";
 import ContactSection from "./components/contact/banner";
+import ScrollToTop from "./components/scrolltotop";
 
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Header />
   
       <Routes>
