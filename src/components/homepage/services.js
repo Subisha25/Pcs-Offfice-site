@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import first from "../assets/services/1.png";
 import Second from "../assets/services/2.png";
 import Third from "../assets/services/3.png";
@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 const ServicesSection = () => {
   const [activeCard, setActiveCard] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -28,41 +28,41 @@ const navigate = useNavigate();
       title: 'Web Design',
       subtitle: '& Development',
       route: "/webdesign",
-      description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
+      description: 'We build high-performance, scalable and visually stunning websites tailored to your business goals. From corporate websites to advanced web applications, our development approach ensures speed, security, clean UI and a seamless user experience across all devices.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: first,
-        overlay:
-      'linear-gradient(180deg, rgba(255,0,110,0.55) 0%, rgba(3,4,94,0.75) 100%)'
+      overlay:
+        'linear-gradient(180deg, rgba(255,0,110,0.55) 0%, rgba(3,4,94,0.75) 100%)'
     },
     {
       title: 'App Design',
       subtitle: '& Development',
-       route: "/appdesign",
-      description: 'Got a brilliant app idea? Let\'s make it a reality! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll build something that\'s smooth, sleek, and downright addictive.',
+      route: "/appdesign",
+      description: 'We create intuitive, fast and robust mobile applications for Android, iOS and cross-platform environments. Our team handles everything—from UX planning and interface design to backend development and cloud deployment—ensuring your app performs flawlessly from day one.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Second,
-     overlay:
-      'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
+      overlay:
+        'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
     },
     {
       title: 'Branding &',
       subtitle: 'Creative Services',
       route: "/branding",
-      description: 'Your website is like your digital handshake—it\'s the first thing people notice about you online. Our Web Design & Development services take all about making that handshake firm, friendly, and unforgettable.',
+      description: 'We craft strong brand identities that communicate who you are and what you stand for. Our creative services include brand strategy, logo design, UI/UX guidelines, visual systems and complete digital branding solutions that help your business look polished and professional.',
       gradient: 'radial-gradient(circle at 100% 0%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Third,
-     overlay:
-      'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
+      overlay:
+        'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
     },
     {
       title: 'Digital',
       subtitle: 'Marketing',
       route: "/digitalmarketing",
-      description: 'Got a brilliant app idea? Let\'s make it a reality! Whether it\'s a mobile game, a productivity tool, or the next big social platform, we\'ll build something that\'s smooth, sleek, and downright addictive.',
+      description: 'We help your business grow online through data-driven digital marketing strategies. From SEO and social media management to paid campaigns and content marketing, we ensure your brand reaches the right audience and converts effectively.',
       gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Four,
-    overlay:
-      'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
+      overlay:
+        'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
     }
   ];
 
@@ -156,8 +156,8 @@ const navigate = useNavigate();
             <div
               key={index}
               className={`service-card ${isHovered ? 'active' : ''}`}
-           onMouseEnter={() => !isMobile && setActiveCard(index)}
-           onMouseLeave={() => !isMobile && setActiveCard(null)}
+              onMouseEnter={() => !isMobile && setActiveCard(index)}
+              onMouseLeave={() => !isMobile && setActiveCard(null)}
 
               style={{
                 width: '100%',
@@ -183,123 +183,123 @@ const navigate = useNavigate();
               }}
             >
 
-                  <div className="card-header" style={{
-    marginBottom: '15px',
-    position: 'relative',
-    zIndex: 6   // ⭐ MAIN FIX
-  }}>
-                    <h3 className="card-title" style={{
-                      fontSize: '32px',
-                      fontWeight: '400',
-                      marginBottom: '2px',
-                      fontFamily: '"WF Visual Sans", sans-serif',
-                      color: titleColor,
-                      transition: 'color 0.4s ease'
-                    }}>
-                        {service.title}
-                    </h3>
-                    <h4 className="card-subtitle" style={{
-                      fontFamily: '"WF Visual Sans", sans-serif',
-                      fontSize: '32px',
-                      fontWeight: '400',
-                      opacity: '1',
-                      color: subtitleColor,
+              <div className="card-header" style={{
+                marginBottom: '15px',
+                position: 'relative',
+                zIndex: 6   // ⭐ MAIN FIX
+              }}>
+                <h3 className="card-title" style={{
+                  fontSize: '32px',
+                  fontWeight: '400',
+                  marginBottom: '2px',
+                  fontFamily: '"WF Visual Sans", sans-serif',
+                  color: titleColor,
+                  transition: 'color 0.4s ease'
+                }}>
+                  {service.title}
+                </h3>
+                <h4 className="card-subtitle" style={{
+                  fontFamily: '"WF Visual Sans", sans-serif',
+                  fontSize: '32px',
+                  fontWeight: '400',
+                  opacity: '1',
+                  color: subtitleColor,
+                  transition: 'all 0.4s ease',
+                  marginBottom: '20px'
+                }}>
+                  {service.subtitle}
+                </h4>
+
+
+                <button
+                  className="card-arrow"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(service.route);
+                  }}
+                  style={{
+                    position: 'absolute',
+                    right: '25px',
+                    top: '25px',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: '10px',
+                    borderRadius: '50%',
+                    transition: 'all 0.4s ease',
+                    zIndex: 3
+                  }}
+                >
+                  <img
+                    src={ArrowImg}
+                    alt="arrow"
+                    style={{
+                      width: '22px',
+                      height: '22px',
+                      filter: isHovered ? 'invert(1)' : 'invert(0)',
                       transition: 'all 0.4s ease',
-                      marginBottom: '20px'
-                    }}>
-                      {service.subtitle}
-                    </h4>
+                      transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
+                    }}
+                  />
+                </button>
 
-                    
-              <button
-  className="card-arrow"
-  onClick={(e) => {
-    e.stopPropagation();
-    navigate(service.route);
-  }}
-  style={{
-    position: 'absolute',
-    right: '25px',
-    top: '25px',
-    background: 'transparent',
-    border: 'none',
-    cursor: 'pointer',
-    padding: '10px',
-    borderRadius: '50%',
-    transition: 'all 0.4s ease',
-    zIndex: 3
-  }}
->
-  <img
-    src={ArrowImg}
-    alt="arrow"
-    style={{
-      width: '22px',
-      height: '22px',
-      filter: isHovered ? 'invert(1)' : 'invert(0)',
-      transition: 'all 0.4s ease',
-      transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
-    }}
-  />
-</button>
-
-                  </div>
+              </div>
               {/* Image section */}
-<div
-  className="card-image"
-  style={{
-    position: 'absolute',
+              <div
+                className="card-image"
+                style={{
+                  position: 'absolute',
 
-    top: isMobile ? '0' : isHovered ? '0' : '140px',
-    left: isMobile ? '0' : isHovered ? '0' : '30px',
+                  top: isMobile ? '0' : isHovered ? '0' : '140px',
+                  left: isMobile ? '0' : isHovered ? '0' : '30px',
 
-    width: isMobile ? '100%' : isHovered ? '100%' : '130px',
-    height: isMobile ? '100%' : isHovered ? '100%' : '70px',
+                  width: isMobile ? '100%' : isHovered ? '100%' : '130px',
+                  height: isMobile ? '100%' : isHovered ? '100%' : '70px',
 
-    transition: isMobile
-      ? 'none'
-      : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transition: isMobile
+                    ? 'none'
+                    : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
 
-    zIndex: 1,
-    pointerEvents: 'none'
-  }}
->
+                  zIndex: 1,
+                  pointerEvents: 'none'
+                }}
+              >
 
-<img
-  src={service.image}
-  alt={service.title}
-  style={{
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
 
-    borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
+                    borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
 
-    transition: isMobile
-      ? 'none'
-      : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
-  }}
-/>
-
-
-  {/* ✅ FIRST CARD COLOR OVERLAY ONLY */}
-{(isHovered || isMobile) && (
-  <div
-    style={{
-      position: 'absolute',
-      inset: 0,
-      background: service.overlay,
-      zIndex: 2
-    }}
-  />
-)}
-
-</div>
+                    transition: isMobile
+                      ? 'none'
+                      : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+                  }}
+                />
 
 
+                {/* ✅ FIRST CARD COLOR OVERLAY ONLY */}
+                {(isHovered || isMobile) && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: service.overlay,
+                      zIndex: 2
+                    }}
+                  />
+                )}
+
+              </div>
 
 
-                 <div className="card-content" style={{
+
+
+              <div className="card-content" style={{
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -310,11 +310,11 @@ const navigate = useNavigate();
                 alignItems: 'flex-start',
                 justifyContent: 'space-between'
               }}>
-               <div className="card-top-content">
-              
-                  
+                <div className="card-top-content">
+
+
                 </div>
-                
+
 
                 <p className="card-description" style={{
                   fontFamily: '"WF Visual Sans"',
@@ -323,6 +323,7 @@ const navigate = useNavigate();
                   lineHeight: '1.5',
                   letterSpacing: '1%',
                   color: descriptionColor, // WHITE on hover
+                  marginTop: isMobile || isHovered ? '0' : '80px',
                   marginBottom: '10px',
                   position: 'relative',
                   zIndex: 2,
