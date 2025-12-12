@@ -232,6 +232,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../products/productdetails.css";
 import productsData from "../products/productsData";
+import CommonButton from "../common/button";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -284,7 +285,8 @@ export default function ProductDetails() {
             </div>
 
             <div className="pd-actions">
-              <button className="btn-primary">Request Demo</button>
+                <CommonButton />
+              {/* <button className="btn-primary">Request Demo</button> */}
             </div>
           </div>
         </section>
