@@ -88,27 +88,28 @@ function PurposeSection() {
   };
 
   const cardsData = [
-    {
-      img: Discover,
-      title: "Discover",
-      text: "We start by listening and learning—diving deep into your brand, audience, and goals to uncover insights that shape every decision.",
-    },
-    {
-      img: Create,
-      title: "Create",
-      text: "With clarity in hand, we craft bold ideas and transform them into designs, stories, and experiences that resonate.",
-    },
-    {
-      img: Deliver,
-      title: "Deliver",
-      text: "From concept to launch, we ensure every detail is polished, impactful, and aligned with your vision for lasting results.",
-    },
-    {
-      img: Grow,
-      title: "Grow",
-      text: "We don't stop at the launch. We analyze performance, gather feedback, and fine-tune to ensure your brand thrives in the digital world.",
-    },
-  ];
+  {
+    img: Discover,
+    title: "Brand Strategy",
+    text: "We define what your brand stands for—its purpose, voice, values, audience, and positioning—creating a foundation that guides every creative decision.",
+  },
+  {
+    img: Create,
+    title: "Identity Creation",
+    text: "We craft your visual identity with logos, colors, typography, patterns, and design elements that express your brand’s personality with clarity and style.",
+  },
+  {
+    img: Deliver,
+    title: "Brand Experience",
+    text: "We bring your brand to life across web, social, print, and marketing touchpoints to ensure a consistent, memorable experience everywhere.",
+  },
+  {
+    img: Grow,
+    title: "Brand Growth",
+    text: "We refine, optimize, and expand your brand by analyzing performance and evolving your identity to stay relevant in a changing digital landscape.",
+  },
+];
+
 
   return (
     <div className="purpose-scroll-wrapper" ref={wrapperRef}>
@@ -338,7 +339,7 @@ export default function Branding() {
           >
             <p className="sw-small-title">Branding &amp; Identity Design</p>
             <h1 className="sw-main-title">
-             Build a brand
+              Build a brand
               <br />
               that people remember
             </h1>
@@ -361,8 +362,7 @@ export default function Branding() {
           className="sw-description"
           data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
         >
-       We help brands discover their voice, define their identity, and create a strong visual presence. Through strategy-led design, we ensure your brand stands out, connects emotionally with your audience, and builds long-term trust.
-        </p>
+          A strong brand is more than a logo—it’s an experience your audience remembers. We deliver branding and creative services that combine strategy with creativity, ensuring every touchpoint feels memorable, engaging, and purposeful. From visual identity to storytelling, we craft experiences that inspire trust, build loyalty, and set your brand apart.        </p>
 
         {/* STEP 2: What We Offer Section */}
         <div className="sw-offer-section">
@@ -382,12 +382,11 @@ export default function Branding() {
             <h2 className="sw-offer-title">What We Offer:</h2>
 
             <ul className="sw-offer-list">
-              <li>Brand strategy & positioning</li>
-              <li>Logo design & brand identity creation</li>
-              <li>Color palette & typography system</li>
-              <li>Brand storytelling & messaging</li>
-              <li>Packaging & marketing collateral design</li>
-             <li> Complete brand guidelines & asset kit</li>
+              <li>Brand Identity & Logo Design</li>
+              <li>Visual & Graphic Design</li>
+              <li>Content Strategy & Copywriting</li>
+              <li>Marketing Collateral Design</li>
+              <li>Creative Campaign Development</li>
             </ul>
           </div>
         </div>
@@ -400,11 +399,10 @@ export default function Branding() {
             style={{ "--delay": "0s" }}
           >
             <h2 className="sw-result-title">Result:</h2>
-            <li>We combine user research, wireframing,</li>
-            <li>prototyping, and visual design to deliver</li>
-            <li>solutions that not only look great but also</li>
-            <li>solve real user problems.</li>
-          </ul>
+            <p className="sw-result-content">
+
+              The results of our branding and creative services demonstrate the power of strategic storytelling. By understanding your audience and crafting meaningful visuals and messaging, our work enhances brand recognition, strengthens engagement, and drives loyalty. Every project aims to create a cohesive and memorable brand experience that resonates with your target audience.
+            </p></ul>
 
           <div
             className="sw-result-img-box"
