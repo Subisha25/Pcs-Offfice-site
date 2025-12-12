@@ -85,7 +85,7 @@ const navigate = useNavigate();
     }
 
     const wordProgress = scrollProgress / START_PHASE_END;
-    const moveDistance = 2000;
+    const moveDistance = 650;
 
     return {
       transform: `translateX(${wordProgress * (isLeft ? -moveDistance : moveDistance)}px)`,
@@ -106,10 +106,11 @@ const navigate = useNavigate();
       }
 
       const imageProgress = scrollProgress / START_PHASE_END;
-      const scale = 0.1 + imageProgress * 0.9;
+      const scale = 0.00001 + imageProgress * 0.9;
 
       return {
-        opacity: imageProgress,
+      opacity: Math.max(0.85, imageProgress),
+
         transform: `translateY(0%) scale(${scale})`,
         zIndex: 2
       };
@@ -162,38 +163,51 @@ const navigate = useNavigate();
   };
 
   const getBottomContentStyle = (projectIndex) => {
+    // Always hide content during word animation phase (0 to START_PHASE_END)
     if (scrollProgress < START_PHASE_END) {
-      // First image: fade in the bottom content from bottom
-      if (projectIndex === 0) {
-        const fadeSegmentLength = 0.05;
-        const fadeProgress = Math.min((scrollProgress - (START_PHASE_END - fadeSegmentLength)) / fadeSegmentLength, 1);
-        const opacity = Math.max(0, fadeProgress);
-        const translateY = (1 - fadeProgress) * 50; // Start from 50px below
-        return {
-          opacity,
-          transform: `translateY(${translateY}px)`
-        };
-      }
-      return { opacity: 0, transform: 'translateY(50px)' };
+      return { 
+        opacity: 0, 
+        transform: 'translateY(50px)', 
+        pointerEvents: 'none',
+        display: 'none'
+      };
     }
 
-    // For other images, content slides up with the image
+    // Show content for all images after word animation completes
     const slideProgress = (scrollProgress - SLIDE_PHASE_START) / SLIDE_PROGRESS_LENGTH;
     const projectCount = projectsData.length;
     const segmentLength = 1 / (projectCount - 1);
-    const activeIndex = Math.floor(slideProgress / segmentLength) + 1;
+    const activeIndex = Math.floor(slideProgress / segmentLength);
 
-    // Check if this is the currently active/incoming image
-    if (projectIndex === activeIndex) {
-      return { opacity: 1, transform: 'translateY(0)' };
-    } else if (projectIndex < activeIndex) {
-      // Previous images - keep visible
-      return { opacity: 1, transform: 'translateY(0)' };
+    // Show content for the first image (always visible after words disappear)
+    if (projectIndex === 0) {
+      return { 
+        opacity: 1, 
+        transform: 'translateY(0)',
+        pointerEvents: 'auto',
+        display: 'flex'
+      };
+    }
+    
+    // Show content for currently active and previous images
+    if (projectIndex <= activeIndex + 1) {
+      return { 
+        opacity: 1, 
+        transform: 'translateY(0)',
+        pointerEvents: 'auto',
+        display: 'flex'
+      };
     } else {
-      // Future images - hidden below
-      return { opacity: 0, transform: 'translateY(50px)' };
+      return { 
+        opacity: 0, 
+        transform: 'translateY(50px)',
+        pointerEvents: 'none',
+        display: 'none'
+      };
     }
   };
+
+
 
 const handleNavigate = (link) => {
   navigate(link);
@@ -269,6 +283,7 @@ const handleNavigate = (link) => {
         .wordanimation-words-wrapper {
           display: flex;
           gap: 15px;
+          padding-right : 20px;
           align-items: center;
           justify-content: center;
           position: relative;
@@ -313,7 +328,7 @@ const handleNavigate = (link) => {
 
         .wordanimation-bottom-content {
           background: white;
-          padding: 30px 90px;
+          padding: 23px 90px;
           display: flex;
           align-items: center;
           justify-content: space-between;
