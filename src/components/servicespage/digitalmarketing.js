@@ -87,28 +87,29 @@ function PurposeSection() {
     return { opacity, translateY, scale };
   };
 
-  const cardsData = [
-    {
-      img: Discover,
-      title: "Discover",
-      text: "We start by listening and learning—diving deep into your brand, audience, and goals to uncover insights that shape every decision.",
-    },
-    {
-      img: Create,
-      title: "Create",
-      text: "With clarity in hand, we craft bold ideas and transform them into designs, stories, and experiences that resonate.",
-    },
-    {
-      img: Deliver,
-      title: "Deliver",
-      text: "From concept to launch, we ensure every detail is polished, impactful, and aligned with your vision for lasting results.",
-    },
-    {
-      img: Grow,
-      title: "Grow",
-      text: "We don't stop at the launch. We analyze performance, gather feedback, and fine-tune to ensure your brand thrives in the digital world.",
-    },
-  ];
+ const cardsData = [
+  {
+    img: Discover,
+    title: "Analyze",
+    text: "We begin by studying your audience, industry trends, and brand goals—uncovering insights that shape a strong marketing foundation.",
+  },
+  {
+    img: Create,
+    title: "Strategize",
+    text: "Based on clear insights, we craft a tailored marketing strategy using the right mix of SEO, social media, content, and paid campaigns.",
+  },
+  {
+    img: Deliver,
+    title: "Execute",
+    text: "We launch targeted campaigns with compelling creatives and optimized messaging—designed to engage, attract, and convert your audience.",
+  },
+  {
+    img: Grow,
+    title: "Optimize",
+    text: "We continuously track performance, refine strategies, and improve campaigns—ensuring sustained growth and maximum ROI over time.",
+  },
+];
+
 
   return (
     <div className="purpose-scroll-wrapper" ref={wrapperRef}>
@@ -361,8 +362,7 @@ export default function DigitalMarketing() {
           className="sw-description"
           data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
         >
-        We help businesses build a strong digital presence and attract the right audience with creative campaigns and result-driven marketing strategies. Our approach blends creativity, performance insights, and smart automation to deliver measurable growth.
-        </p>
+          Effective digital marketing is more than campaigns—it’s about creating meaningful connections with your audience. We craft strategies that combine creativity, analytics, and smart technology, ensuring every touchpoint drives engagement, builds trust, and converts visitors into loyal customers. From social media to search engine campaigns, we design experiences that inspire action and deliver measurable results.        </p>
 
         {/* STEP 2: What We Offer Section */}
         <div className="sw-offer-section">
@@ -384,10 +384,9 @@ export default function DigitalMarketing() {
             <ul className="sw-offer-list">
               <li>Search Engine Optimization (SEO)</li>
               <li>Social Media Marketing (SMM)</li>
-              <li>Performance Marketing</li>
-              <li>Content Strategy & Copywriting</li>
-              <li>Email & Automation Marketing</li>
-              <li>Analytics & Reporting</li>
+              <li>Pay-Per-Click (PPC) Campaigns</li>
+              <li>Email & Content Marketing</li>
+              <li>Analytics & Performance Optimization</li>
             </ul>
           </div>
         </div>
@@ -400,11 +399,9 @@ export default function DigitalMarketing() {
             style={{ "--delay": "0s" }}
           >
             <h2 className="sw-result-title">Result:</h2>
-            <li>We combine user research, wireframing,</li>
-            <li>prototyping, and visual design to deliver</li>
-            <li>solutions that not only look great but also</li>
-            <li>solve real user problems.</li>
-          </ul>
+            <p className="sw-result-content">
+              Our digital marketing strategies deliver measurable results. By targeting the right audience, optimizing campaigns, and analyzing performance, we improve engagement, increase conversions, and maximize ROI. These results show how a data-driven and creative marketing approach can enhance visibility, strengthen brand presence, and drive sustained business growth.
+            </p></ul>
 
           <div
             className="sw-result-img-box"
