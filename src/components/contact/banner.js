@@ -87,20 +87,24 @@ const ContactSection = () => {
                 {/* LEFT CONTENT - Benefits Section */}
                 <div className="left-section">
                     <h2 className="title">
-                        {current.title.split(' ').slice(0, -2).join(' ')} <br />
-                        <span className="highlight">{current.highlight}</span>
+                        Why Choose Us for <br />
+                        Your Learning <span className="highlight">{current.highlight}</span>
                     </h2>
+
 
                     {current.benefits.map((benefit, idx) => {
                         const Icon = benefit.icon;
                         return (
                             <div className="benefit-card" key={idx}>
-                                <Icon className="icon" />
+                                <div className="icon-box">
+                                    <Icon className="icon" />
+                                </div>
                                 <div>
                                     <h4>{benefit.title}</h4>
                                     <p>{benefit.desc}</p>
                                 </div>
                             </div>
+
                         );
                     })}
                 </div>
