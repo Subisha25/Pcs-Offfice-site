@@ -115,28 +115,29 @@ const ContactSection = () => {
                             className={`toggle-btn ${selectedOption === "work" ? "active" : ""}`}
                             onClick={() => setSelectedOption("work")}
                         >
-                            {current.button1}
+                            <span className="dot"></span> I Need to Work
                         </button>
+
                         <button
                             className={`toggle-btn ${selectedOption === "learn" ? "active" : ""}`}
                             onClick={() => setSelectedOption("learn")}
                         >
-                            {current.button2}
+                            <span className="dot"></span> I Want to Learn
                         </button>
                     </div>
 
                     <label className="input-title">Name</label>
-                    <input 
-                        type="text" 
-                        className="form-input" 
-                        placeholder="Enter your Full Name  Eg: Raj Kumar" 
+                    <input
+                        type="text"
+                        className="form-input"
+                        placeholder="Enter your Full Name  Eg: Raj Kumar"
                     />
 
                     <label className="input-title">Email*</label>
-                    <input 
-                        type="email" 
-                        className="form-input" 
-                        placeholder="Enter your Email  Eg: rjkumar55@gmail.com" 
+                    <input
+                        type="email"
+                        className="form-input"
+                        placeholder="Enter your Email  Eg: rjkumar55@gmail.com"
                     />
 
                     <label className="input-title">Phone*</label>
@@ -144,18 +145,18 @@ const ContactSection = () => {
                         <select className="phone-select">
                             <option>India +91</option>
                         </select>
-                        <input 
-                            type="text" 
-                            className="phone-number" 
-                            placeholder="Enter your Mobile Number" 
+                        <input
+                            type="text"
+                            className="phone-number"
+                            placeholder="Enter your Mobile Number"
                         />
                     </div>
 
                     <label className="input-title">{current.interestLabel}</label>
-                    <input 
-                        type="text" 
-                        className="form-input" 
-                        placeholder={current.interestPlaceholder} 
+                    <input
+                        type="text"
+                        className="form-input"
+                        placeholder={current.interestPlaceholder}
                     />
 
                     <button className="submit-btn">
@@ -167,7 +168,7 @@ const ContactSection = () => {
                     </p>
                 </div>
             </div>
-            
+
             {/* StateSection மற்றும் SuccessStories காம்போனெண்ட்டுகளுக்கு selectedOption prop அனுப்புகிறேன் */}
             <StateSection selectedOption={selectedOption} />
             <SuccessStories selectedOption={selectedOption} />
