@@ -1,11 +1,11 @@
 import React from "react";
 import "./lhome.css";
-import Portfoliobanner from "./portfoliobanner";
 import officebannerImg from "../assets/officechat.png"
+import Officechatbanner from "./officechatbanner";
 const Officechat = () => {
   return (
     <>
-    <Portfoliobanner/>
+    <Officechatbanner/>
     <div className="home-container">
       
       {/* TOP FULL IMAGE */}

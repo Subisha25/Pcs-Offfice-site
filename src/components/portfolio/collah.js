@@ -1,11 +1,11 @@
 import React from "react";
 import "./lhome.css";
-import Portfoliobanner from "./portfoliobanner";
 import collahbannerImg from "../assets/coollah.png";
+import Collahbanner from "./collahbanner";
 const Collah = () => {
   return (
     <>
-    <Portfoliobanner/>
+<Collahbanner/>
     <div className="home-container">
       
       {/* TOP FULL IMAGE */}
