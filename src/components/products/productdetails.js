@@ -415,4 +415,4 @@ export default function ProductDetails() {
       </div>
     </div>
   );
-}src/components/products/productdetails.js
+}
