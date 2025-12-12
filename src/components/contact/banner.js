@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./banner.css";
-import { GraduationCap, TrendingUp, Pocket, Award, Briefcase, Users, Target, Clock } from "lucide-react";
+import { User, Activity, Briefcase, Award, Users, Target, Clock } from "lucide-react";
 import bgBanner from "../assets/contact/cantactbanner.png";
 import StateSection from "./statesection";
 import SuccessStories from "./successstories";
@@ -15,19 +15,19 @@ const ContactSection = () => {
             highlight: "Journey",
             benefits: [
                 {
-                    icon: GraduationCap,
+                    icon: User,
                     title: "Expert-Led Courses",
                     desc: "Learn from industry professionals with real-world experience."
                 },
                 {
-                    icon: TrendingUp,
+                    icon: Activity,
                     title: "Comprehensive Learning Paths",
                     desc: "Structured and detailed courses tailored to your skill goals."
                 },
                 {
-                    icon: Pocket,
+                    icon: Briefcase,
                     title: "Hands-On Projects",
-                    desc: "Apply your knowledge in real practical projects."
+                    desc: "Apply your knowledge through real projects and gain practical skills."
                 },
                 {
                     icon: Award,

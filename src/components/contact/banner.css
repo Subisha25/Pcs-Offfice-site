@@ -178,7 +178,7 @@
 }
 
 .benefit-card h4 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     margin: 0 0 8px 0;
     color: #fff;
@@ -465,9 +465,9 @@
     color: #777;
 }
 .icon-box {
-    width: 70px;
+    width: 80px;
     height: 80px;
-    min-width: 60px;
+    min-width: 80px;
     border-radius: 16px;
     background: #FF006E33;   /* Your required color */
     display: flex;
@@ -478,9 +478,9 @@
 .icon-box .icon {
     color: #ffffff;    
 
-    width: 30px;
-    height: 30px;
-    stroke-width: 1.6;
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.8;
 }
 
 /* Responsive adjustments for smaller screens (optional but recommended) */
