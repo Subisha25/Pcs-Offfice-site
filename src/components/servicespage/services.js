@@ -74,7 +74,7 @@ const Services = () => {
       backgroundRepeat: 'no-repeat',
       position: 'relative',
       minHeight: '100vh',
-      padding: '60px 40px',
+      padding: '120px 40px',
       backgroundAttachment: 'fixed'
     }}>
       {/* Background overlay */}
@@ -95,7 +95,6 @@ const Services = () => {
         position: 'relative',
         zIndex: 1
       }}>
-        <CommonTopTag text='Services' icon={ServiceBtnImg} />
 
         <h1
           className="services-title"
