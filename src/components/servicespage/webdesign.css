@@ -27,20 +27,19 @@
 /* Wrapper for scroll pinning effect */
 .purpose-scroll-wrapper {
   position: relative;
-  min-height: 400vh; /* Creates scroll space */
+  min-height: 400vh;
+  /* Creates scroll space */
 }
 
 .purpose-container {
   font-family: "WF Visual Sans";
   width: 100%;
   padding: 60px 20px;
-  background: radial-gradient(
-    circle at center,
-    #ff006e33 0%,
-    #ff006e33 12%,
-    #02468126 45%,
-    #03045e1a 100%
-  );
+  background: radial-gradient(circle at center,
+      #ff006e33 0%,
+      #ff006e33 12%,
+      #02468126 45%,
+      #03045e1a 100%);
   text-align: center;
   border-radius: 12px;
   min-height: 100vh;
@@ -137,10 +136,12 @@
 }
 
 @keyframes blink {
+
   0%,
   49% {
     opacity: 1;
   }
+
   50%,
   100% {
     opacity: 0;
@@ -436,6 +437,17 @@
   line-height: 1.6;
   padding: 0;
   list-style: none;
+}
+
+.sw-result-text p {
+  font-family: "WF Visual Sans";
+  margin-top: 10px;
+  max-width: 700px;
+  color: #000000;
+  line-height: 1.6;
+  padding: 0;
+  text-align: justify;
+  /* list-style: none; இதை <p> tag-க்கு பயன்படுத்த வேண்டாம் */
 }
 
 .sw-result-text li {

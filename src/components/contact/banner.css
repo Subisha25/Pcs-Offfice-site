@@ -178,7 +178,7 @@
 }
 
 .benefit-card h4 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     margin: 0 0 8px 0;
     color: #fff;
@@ -465,9 +465,9 @@
     color: #777;
 }
 .icon-box {
-    width: 70px;
+    width: 80px;
     height: 80px;
-    min-width: 60px;
+    min-width: 80px;
     border-radius: 16px;
     background: #FF006E33;   /* Your required color */
     display: flex;
@@ -478,9 +478,9 @@
 .icon-box .icon {
     color: #ffffff;    
 
-    width: 30px;
-    height: 30px;
-    stroke-width: 1.6;
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.8;
 }
 
 /* Responsive adjustments for smaller screens (optional but recommended) */
@@ -501,5 +501,206 @@
     .contact-navbar {
         display: none;
         /* மொபைலில் NavBar-ஐ மறைக்கிறேன் */
+    }
+}
+/* ------------------------------ */
+/* FULL MOBILE RESPONSIVE FIX     */
+/* ------------------------------ */
+
+@media (max-width: 480px) {
+
+    /* ---- Main Wrapper ---- */
+    .contact-wrapper {
+        padding: 0 !important;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* ---- Banner Image Full width ---- */
+    .banner-image {
+        height: 260px !important;
+        object-fit: cover;
+    }
+
+    /* ---- Main Container (convert to vertical) ---- */
+    .contact-container {
+        flex-direction: column !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+
+    /* ---- LEFT SECTION ---- */
+    .left-section {
+        width: 100% !important;
+        height: auto !important;
+        padding: 25px 20px !important;
+        border-radius: 0 !important;
+    }
+
+    .left-section .title {
+        font-size: 26px !important;
+        line-height: 36px !important;
+    }
+
+    .left-section .highlight {
+        font-size: 32px !important;
+    }
+
+    .benefit-card {
+        margin-bottom: 25px !important;
+    }
+
+
+    /* ---- RIGHT SECTION (FORM) ---- */
+    .right-section {
+        width: 100% !important;
+        padding: 25px 20px !important;
+    }
+
+    .connect-title {
+        font-size: 24px !important;
+    }
+
+    .toggle-wrapper {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .toggle-btn {
+        width: 100% !important;
+    }
+
+    .form-input,
+    .phone-input-row input,
+    .phone-input-row select {
+        font-size: 14px !important;
+        padding: 12px 12px !important;
+    }
+
+    .submit-btn {
+        font-size: 15px !important;
+        padding: 14px !important;
+    }
+
+
+
+
+    /* ---- STATS SECTION ---- */
+    .traningwhychoose-stats-container {
+        padding: 20px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .traningwhychoose-stat-number {
+        font-size: 36px !important;
+    }
+
+
+
+    /* ---- SUCCESS STORIES ---- */
+    .traninglearn {
+        padding: 40px 0 60px !important;
+        width: 100% !important;
+    }
+
+    .traninglearn-inner {
+        width: 100% !important;
+        padding: 0 10px !important;
+        text-align: left !important;
+    }
+
+    .traninglearn-title {
+        font-size: 22px !important;
+        padding-left: 5px !important;
+    }
+
+    .traninglearn-title-highlight {
+        font-size: 22px !important;
+    }
+
+    .traninglearn-carousel-viewport {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .traninglearn-carousel-track {
+        width: 100% !important;
+    }
+
+    .traninglearn-card {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        border-radius: 16px !important;
+        background: #f9fafb !important;
+        box-sizing: border-box !important;
+    }
+
+    .traninglearn-nav {
+        margin-top: 20px !important;
+    }
+
+    .traninglearn-nav-btn {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+}
+
+/* ---------- MOBILE VIEW FIX : 320px – 475px ---------- */
+@media (max-width: 475px) {
+
+  /* Push the whole contact container slightly downward */
+  .contact-container {
+     margin-top: 40px !important;   /* You can increase to 50–60 if needed */
+  }
+
+  /* Banner visible properly */
+  .banner-image {
+     height: 300px !important;
+     object-fit: cover;
+  }
+
+  /* Left section should not go under header */
+  .left-section {
+      padding-top: 40px !important;
+  }
+
+  /* Title spacing fix */
+  .left-section .title {
+      margin-top: 10px !important;
+  }
+
+  
+}
+
+/* ----------------------------------------- */
+/* FIX: Move banner image DOWN on mobile     */
+/* ----------------------------------------- */
+@media (max-width: 475px) {
+
+    /* Push banner down */
+    .banner-image {
+        height: 300px !important;
+        margin-bottom: 20px !important;     /* <-- KEY FIX */
+        object-fit: cover;
+    }
+
+    /* Push content further below the banner */
+    .contact-container {
+        margin-top: 80px !important;     /* Increase gap under banner */
+    }
+
+    /* Extra breathing space for title */
+    .left-section {
+        padding-top: 30px !important;
     }
 }

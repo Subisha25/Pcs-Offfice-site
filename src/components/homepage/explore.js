@@ -250,11 +250,7 @@ const handleNavigate = (link) => {
   font-display: swap;
 }
 
-        body {
-          min-height: 100vh;
-          overflow-x: hidden;
-          font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
+    
 
         .wordanimation-scroll-container {
           height: 400vh;

@@ -21,15 +21,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  font-family: "WF Visual Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: var(--main-bg);
-  color: var(--main-text);
-}
+
 
 /* Custom font */
 @font-face {

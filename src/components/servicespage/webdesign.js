@@ -404,7 +404,8 @@ export default function Webdesign() {
           >
             <h2 className="sw-result-title">Result:</h2>
             <p>
-              The results show that AI can accurately understand and respond to human behaviour. By analysing patterns in thoughts, emotions, and actions, AI provides clear insights into a user’s psychological state. Overall, the study confirms that AI enhances behavioural analysis and offers a smoother, more personalized experience for users.            </p>
+              The results show that AI can accurately understand and respond to human behaviour. By analysing patterns in thoughts, emotions, and actions, AI provides clear insights into a user’s psychological state. Overall, the study confirms that AI enhances behavioural analysis and offers a smoother, more personalized experience for users.
+            </p>
           </ul>
 
           <div

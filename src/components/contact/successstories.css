@@ -211,13 +211,71 @@
   }
 }
 
+/* ------------------------------ */
+/* PERFECT MOBILE RESPONSIVE FIX */
+/* ------------------------------ */
+
 @media (max-width: 480px) {
-  .traninglearn-title {
-    font-size: 22px;
+
+  /* Make whole section full width */
+  .traninglearn {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
   }
 
+  /* Remove center alignment issue */
+  .traninglearn-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 40px 0 !important;
+    text-align: left !important;
+  }
+
+  /* Carousel viewport full width */
+  .traninglearn-carousel-viewport {
+    width: 100% !important;
+    overflow: hidden;
+  }
+
+  /* Track should stretch fully */
+  .traninglearn-carousel-track {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  /* CARD FULL WIDTH, NO MARGIN */
   .traninglearn-card {
-    padding: 20px 18px;
-    border-radius: 18px;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 16px !important;
+    background: #f9fafb !important;
+    padding: 22px !important;
+    box-sizing: border-box;
+  }
+
+  /* Title Alignment */
+  .traninglearn-title {
+    font-size: 22px !important;
+    padding-left: 16px !important;
+    text-align: left !important;
+  }
+
+  .traninglearn-title-highlight {
+    font-size: 22px !important;
+  }
+
+  /* Navigation buttons spacing */
+  .traninglearn-nav {
+    margin-top: 24px !important;
+  }
+
+  .traninglearn-nav-btn {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 20px !important;
   }
 }
+
