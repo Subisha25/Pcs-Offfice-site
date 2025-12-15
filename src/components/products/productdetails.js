@@ -229,14 +229,17 @@
 
 // src/products/ProductDetails.js
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../products/productdetails.css";
 import productsData from "../products/productsData";
 import CommonButton from "../common/button";
 
+
+
 export default function ProductDetails() {
   const { id } = useParams();
   const productId = Number(id);
+  const navigate = useNavigate();
 
   // find product by id, fallback to first if not found
   const product =
@@ -285,7 +288,7 @@ export default function ProductDetails() {
             </div>
 
             <div className="pd-actions">
-                <CommonButton />
+                <CommonButton  onClick={() => navigate("/contact")} />
               {/* <button className="btn-primary">Request Demo</button> */}
             </div>
           </div>

@@ -209,6 +209,8 @@ font-size: 16px;
 
 .traningpopular-card-btn-primary {
 font-weight: 500;
+padding: 8px 20px;
+border-radius: 50px;
 font-size: 16px;
   border: 1px solid black;
   /* background: #111827; */
