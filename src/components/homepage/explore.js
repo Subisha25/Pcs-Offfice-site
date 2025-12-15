@@ -1,39 +1,72 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Image1 from '../assets/ourworks/Mask group (1).png';
-import Image2 from '../assets/coollah.png';
-import Image3 from '../assets/bjmm.jpeg';
-import Image4 from '../assets/wts.png';
+import Lhome_Laptop from '../assets/ourworks/Mask group (1).png';
+import Lhome_LaptopL from '../assets/ourworks/Mask group (1).png';
+import Coollah_Laptop from '../assets/coollah.png';
+import Coollah_LaptopL from '../assets/coollah.png';
+import BJMM_Laptop from '../assets/bjmm.jpeg';
+import BJMM_LaptopL from '../assets/bjmm.jpeg';
+import WTS_Laptop from '../assets/wts.png';
+import WTS_LaptopL from '../assets/wts.png';
+import { useNavigate } from 'react-router-dom';
 import CommonButton from '../common/button';
-import { useNavigate } from "react-router-dom";
 
+// Sample images - replace these with your actual image imports
 const projectsData = [
   {
     id: 1,
-    image: Image1,
     title: "Lhome",
     link: "/lhome",
-    tags: ["Web Design", "UI/UX Design"]
+    tags: ["Web Design", "UI/UX Design"],
+    images: {
+      mobileS: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=600&fit=crop',
+      mobileM: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&h=700&fit=crop',
+      mobileL: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=800&fit=crop',
+      tablet: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&h=1200&fit=crop',
+       laptop: Lhome_Laptop,
+      laptopL: Lhome_LaptopL
+    }
   },
   {
     id: 2,
-    image: Image2,
     title: "Coollah",
     link: "/collah",
-    tags: ["Web Design", "UI/UX Design"]
+    tags: ["Web Design", "UI/UX Design"],
+    images: {
+      mobileS: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=400&h=600&fit=crop',
+      mobileM: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=500&h=700&fit=crop',
+      mobileL: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=600&h=800&fit=crop',
+      tablet: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=1000&h=1200&fit=crop',
+        laptop: Coollah_Laptop,
+      laptopL: Coollah_LaptopL
+    }
   },
   {
     id: 3,
-    image: Image3,
     title: "BJMM",
     link: "/bjmm",
-    tags: ["Web Design", "UI/UX Design"]
+    tags: ["Web Design", "UI/UX Design"],
+    images: {
+      mobileS: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=400&h=600&fit=crop',
+      mobileM: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=500&h=700&fit=crop',
+      mobileL: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=600&h=800&fit=crop',
+      tablet: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=1000&h=1200&fit=crop',
+      laptop: BJMM_Laptop,
+      laptopL: BJMM_LaptopL
+    }
   },
   {
     id: 4,
-    image: Image4,
-    title: "WorldTmil Siragam",
+    title: "WorldTamil Siragam",
     link: "/wts",
-    tags: ["Web Design", "UI/UX Design"]
+    tags: ["Web Design", "UI/UX Design"],
+    images: {
+      mobileS: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400&h=600&fit=crop',
+      mobileM: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=500&h=700&fit=crop',
+      mobileL: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=600&h=800&fit=crop',
+      tablet: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1000&h=1200&fit=crop',
+       laptop: WTS_Laptop,
+      laptopL: WTS_LaptopL
+    }
   }
 ];
 
@@ -42,11 +75,37 @@ const SLIDE_PHASE_START = START_PHASE_END;
 const SLIDE_PHASE_END = 1.0;
 const SLIDE_PROGRESS_LENGTH = SLIDE_PHASE_END - SLIDE_PHASE_START;
 
-export default function WordAnimation() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const containerRef = useRef(null);
-const navigate = useNavigate();
 
+
+export default function WordAnimation() {
+  const navigate = useNavigate();
+
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentBreakpoint, setCurrentBreakpoint] = useState('laptopL');
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const updateBreakpoint = () => {
+      const width = window.innerWidth;
+      if (width < 375) {
+        setCurrentBreakpoint('mobileS');
+      } else if (width >= 375 && width < 425) {
+        setCurrentBreakpoint('mobileM');
+      } else if (width >= 425 && width < 768) {
+        setCurrentBreakpoint('mobileL');
+      } else if (width >= 768 && width < 1024) {
+        setCurrentBreakpoint('tablet');
+      } else if (width >= 1024 && width < 1440) {
+        setCurrentBreakpoint('laptop');
+      } else {
+        setCurrentBreakpoint('laptopL');
+      }
+    };
+
+    updateBreakpoint();
+    window.addEventListener('resize', updateBreakpoint);
+    return () => window.removeEventListener('resize', updateBreakpoint);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,7 +144,19 @@ const navigate = useNavigate();
     }
 
     const wordProgress = scrollProgress / START_PHASE_END;
-    const moveDistance = 650;
+      
+    // Adjust moveDistance based on breakpoint
+    let moveDistance = 650; // Default for laptopL
+    
+    if (currentBreakpoint === 'mobileS') {
+      moveDistance = 150;
+    } else if (currentBreakpoint === 'mobileM') {
+      moveDistance = 180;
+    } else if (currentBreakpoint === 'mobileL') {
+      moveDistance = 220;
+    } else if (currentBreakpoint === 'tablet') {
+      moveDistance = 350;
+    }
 
     return {
       transform: `translateX(${wordProgress * (isLeft ? -moveDistance : moveDistance)}px)`,
@@ -109,8 +180,7 @@ const navigate = useNavigate();
       const scale = 0.00001 + imageProgress * 0.9;
 
       return {
-      opacity: Math.max(0.85, imageProgress),
-
+        opacity: Math.max(0.85, imageProgress),
         transform: `translateY(0%) scale(${scale})`,
         zIndex: 2
       };
@@ -124,7 +194,6 @@ const navigate = useNavigate();
     const activeIndex = Math.floor(slideProgress / segmentLength) + 1;
 
     if (projectIndex === 0) {
-      // First image stays fixed at center - no movement
       return {
         opacity: 1,
         transform: "translateY(0%) scale(1)",
@@ -163,7 +232,6 @@ const navigate = useNavigate();
   };
 
   const getBottomContentStyle = (projectIndex) => {
-    // Always hide content during word animation phase (0 to START_PHASE_END)
     if (scrollProgress < START_PHASE_END) {
       return { 
         opacity: 0, 
@@ -173,13 +241,11 @@ const navigate = useNavigate();
       };
     }
 
-    // Show content for all images after word animation completes
     const slideProgress = (scrollProgress - SLIDE_PHASE_START) / SLIDE_PROGRESS_LENGTH;
     const projectCount = projectsData.length;
     const segmentLength = 1 / (projectCount - 1);
     const activeIndex = Math.floor(slideProgress / segmentLength);
 
-    // Show content for the first image (always visible after words disappear)
     if (projectIndex === 0) {
       return { 
         opacity: 1, 
@@ -189,7 +255,6 @@ const navigate = useNavigate();
       };
     }
     
-    // Show content for currently active and previous images
     if (projectIndex <= activeIndex + 1) {
       return { 
         opacity: 1, 
@@ -207,12 +272,12 @@ const navigate = useNavigate();
     }
   };
 
-
-
-const handleNavigate = (link) => {
-  navigate(link);
-};
-
+  const getResponsiveImage = (project) => {
+    return project.images[currentBreakpoint];
+  };
+ const handleNavigate = (link) => {
+    navigate(link);
+  };
 
   return (
     <>
@@ -224,33 +289,6 @@ const handleNavigate = (link) => {
           padding: 0;
           box-sizing: border-box;
         }
-          :root {
-  --main-bg: #f4f7fb;
-  --main-text: #222222;
-  --primary-color: #007bff;
-  --secondary-color: #555555;
-  --button-primary: #101166;
-  --button-secondary: #D9D9D9;
-  --playfair-fonts: "Playfair Display", serif;
-  --heading-font-size: 32px;
-  --subheading-font-size: 24px;
-  --title-font-size: 20px;
-  --description-font-size: 16px;
-  --small-text-font-size: 14px;
-}
-
-
-
-/* Custom font */
-@font-face {
-  font-family: "WF Visual Sans";
-  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-    
 
         .wordanimation-scroll-container {
           height: 400vh;
@@ -279,7 +317,7 @@ const handleNavigate = (link) => {
         .wordanimation-words-wrapper {
           display: flex;
           gap: 15px;
-          padding-right : 20px;
+          padding-right: 20px;
           align-items: center;
           justify-content: center;
           position: relative;
@@ -288,14 +326,13 @@ const handleNavigate = (link) => {
         }
 
         .wordanimation-word {
-         font-family: "WF Visual Sans";
+          font-family: 'SF Pro Display', -apple-system, sans-serif;
           font-size: 80px;
           font-weight: 500;
           letter-spacing: 2px;
           transition: transform 0.05s linear, opacity 0.05s linear;
           will-change: transform, opacity;
           color: #1a1a1a;
-          font-style: medium;
         }
 
         .wordanimation-image-container {
@@ -304,7 +341,7 @@ const handleNavigate = (link) => {
           height: 100vh;
           display: flex;
           flex-direction: column;
-          background: #f0f0f0;
+          background: transparent;
           transition: transform 0.05s linear, opacity 0.05s linear;
           will-change: transform;
           overflow: hidden;
@@ -314,12 +351,14 @@ const handleNavigate = (link) => {
           flex: 1;
           position: relative;
           overflow: hidden;
+          background: transparent;
         }
 
         .wordanimation-image-wrapper img {
-          width: 100%;
-          height: 103vh;
+          width: 100vw;
+          height: 105vh;
           object-fit: cover;
+          object-position: center;
         }
 
         .wordanimation-bottom-content {
@@ -358,53 +397,308 @@ const handleNavigate = (link) => {
           cursor: pointer;
         }
 
-        .wordanimation-our-works-icon {
-          width: 3.9rem;
-          height: 3.9rem;
-          background-color: #312e81;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          left: 0.4rem;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 10;
+        .breakpoint-indicator {
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          background: rgba(0,0,0,0.7);
+          color: white;
+          padding: 8px 12px;
+          border-radius: 4px;
+          font-size: 12px;
+          z-index: 9999;
+          font-family: monospace;
         }
 
-        .wordanimation-our-works-text {
-          font-family: 'SF Pro Display', sans-serif;
-          font-weight: 520;
-          font-size: 24px;
-          color: black;
-          position: absolute;
-          right: 40px;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 10;
+        /* Mobile S (320px - 374px) */
+        @media (max-width: 374px) {
+          .wordanimation-animation-container {
+            padding: 0;
+          }
+            .wordanimation-image-container {
+          height: 115vh;
         }
 
-        @media (max-width: 768px) {
+          .wordanimation-image-wrapper img {
+          width: 100vw;
+          height: 100vh;
+            object-fit: contain;
+            object-position: center;
+          }
+
           .wordanimation-word {
-            font-size: 32px;
+            font-size: 24px;
+            letter-spacing: 1px;
           }
 
           .wordanimation-words-wrapper {
-            gap: 20px;
+            gap: 8px;
+            padding-right: 10px;
           }
 
           .wordanimation-bottom-content {
-            padding: 20px;
+            padding: 12px 15px;
             flex-direction: column;
-            gap: 20px;
+            gap: 12px;
+            align-items: flex-start;
           }
 
-          .wordanimation-our-works-text {
+          .wordanimation-bottom-left h2 {
             font-size: 20px;
+            margin: 0 0 6px 0;
+          }
+
+          .wordanimation-bottom-links {
+            gap: 10px;
+            font-size: 11px;
+            flex-wrap: wrap;
+          }
+
+          .wordanimation-view-all {
+            padding: 12px 5px;
+            margin: 0 0 32px 0;
+
+            font-size: 12px;
+            align-self: flex-start;
+          }
+
+       
+        }
+
+        /* Mobile M (375px - 424px) */
+        @media (min-width: 375px) and (max-width: 424px) {
+          .wordanimation-animation-container {
+            padding: 0;
+          }
+
+             .wordanimation-image-container {
+          height: 115vh;
+        }
+
+          .wordanimation-image-wrapper img {
+          width: 100vw;
+          height: 100vh;
+            object-fit: contain;
+            object-position: center;
+          }
+
+          .wordanimation-word {
+            font-size: 28px;
+            letter-spacing: 1px;
+          }
+
+          .wordanimation-words-wrapper {
+            gap: 10px;
+            padding-right: 12px;
+          }
+
+      
+          .wordanimation-bottom-content {
+            padding: 12px 15px;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+          }
+
+          .wordanimation-bottom-left h2 {
+            font-size: 20px;
+            margin: 0 0 6px 0;
+          }
+
+          .wordanimation-bottom-links {
+            gap: 10px;
+            font-size: 11px;
+            flex-wrap: wrap;
+          }
+
+          .wordanimation-view-all {
+            padding: 12px 5px;
+            margin: 0 0 32px 0;
+
+            font-size: 12px;
+            align-self: flex-start;
+          }
+
+
+        }
+
+        /* Mobile L (425px - 767px) */
+        @media (min-width: 425px) and (max-width: 767px) {
+          .wordanimation-animation-container {
+            padding: 0;
+          }
+
+           .wordanimation-image-container {
+          height: 115vh;
+        }
+
+          .wordanimation-image-wrapper img {
+          width: 100vw;
+          height: 100vh;
+            object-fit: contain;
+            object-position: center;
+          }
+
+          .wordanimation-word {
+            font-size: 32px;
+            letter-spacing: 1.5px;
+          }
+
+          .wordanimation-words-wrapper {
+            gap: 12px;
+            padding-right: 15px;
+          }
+
+       
+          .wordanimation-bottom-content {
+            padding: 12px 15px;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+          }
+
+          .wordanimation-bottom-left h2 {
+            font-size: 20px;
+            margin: 0 0 6px 0;
+          }
+
+          .wordanimation-bottom-links {
+            gap: 10px;
+            font-size: 11px;
+            flex-wrap: wrap;
+          }
+
+          .wordanimation-view-all {
+            padding: 12px 5px;
+            margin: 0 0 32px 0;
+
+            font-size: 12px;
+            align-self: flex-start;
+          }
+
+
+        }
+
+        /* Tablet (768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .wordanimation-word {
+            font-size: 48px;
+            letter-spacing: 1.5px;
+          }
+    .wordanimation-image-container {
+          height: 115vh;
+        }
+
+          .wordanimation-image-wrapper img {
+          width: 100vw;
+          height: 100vh;
+            object-fit: contain;
+            object-position: center;
+          }
+          .wordanimation-words-wrapper {
+            gap: 15px;
+            padding-right: 18px;
+          }
+
+          .wordanimation-bottom-content {
+            padding: 70px 80px;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+          }
+
+          .wordanimation-bottom-left h2 {
+            font-size: 26px;
+            margin: 0 0 8px 0;
+          }
+
+          .wordanimation-bottom-links {
+            gap: 20px;
+            font-size: 13px;
+          }
+
+          .wordanimation-view-all {
+            font-size: 14px;
+          }
+
+        }
+
+//         /* Laptop (1024px - 1439px) */
+//         @media (min-width: 1024px) and (max-width: 1439px) {
+//           .wordanimation-word {
+//             font-size: 64px;
+//             letter-spacing: 2px;
+//           }
+            
+// .wordanimation-image-wrapper img {
+//             object-fit: contain;
+//             object-position: center;
+//           }
+//           .wordanimation-words-wrapper {
+//             gap: 18px;
+//             padding-right: 20px;
+//           }
+
+//           .wordanimation-bottom-content {
+//             padding: 22px 60px;
+//           }
+
+//           .wordanimation-bottom-left h2 {
+//             font-size: 28px;
+//           }
+
+//           .wordanimation-bottom-links {
+//             gap: 25px;
+//             font-size: 14px;
+//           }
+
+//           .wordanimation-view-all {
+//             font-size: 15px;
+//           }
+
+//           .wordanimation-our-works-wrapper {
+//             width: 200px;
+//             height: 65px;
+//           }
+//         }
+
+        /* Laptop L (1440px and above) */
+        @media (min-width: 1440px) {
+          .wordanimation-word {
+            font-size: 80px;
+            letter-spacing: 2px;
+          }
+.wordanimation-image-wrapper img {
+            object-fit: contain;
+            object-position: center;
+          }
+          .wordanimation-words-wrapper {
+            gap: 20px;
+            padding-right: 20px;
+          }
+
+          .wordanimation-bottom-content {
+            padding: 23px 90px;
+          }
+
+          .wordanimation-bottom-left h2 {
+            font-size: 32px;
+          }
+
+          .wordanimation-bottom-links {
+            gap: 30px;
+            font-size: 14px;
+          }
+
+          .wordanimation-view-all {
+            font-size: 16px;
           }
         }
       `}</style>
+
+      {/* <div className="breakpoint-indicator">
+        Current: {currentBreakpoint.toUpperCase()} ({window.innerWidth}px)
+      </div> */}
 
       <div className="wordanimation-scroll-container" ref={containerRef}>
         <div className="wordanimation-animation-container">
@@ -430,8 +724,8 @@ const handleNavigate = (link) => {
                 >
                   <div className="wordanimation-image-wrapper">
                     <img 
-                      src={project.image} 
-                      alt={project.title} 
+                      src={getResponsiveImage(project)}
+                      alt={`${project.title} - ${currentBreakpoint}`}
                     />
                   </div>
                   
@@ -447,12 +741,12 @@ const handleNavigate = (link) => {
                         ))}
                       </div>
                     </div>
-                  <div 
-  className="wordanimation-our-works-wrapper"
-  onClick={() => handleNavigate(project.link)}
->
-  <CommonButton text='View'/>
-</div>
+                   <div
+                      className="wordanimation-our-works-wrapper"
+                      onClick={() => handleNavigate(project.link)}
+                    >
+                      <CommonButton text='View' />
+                    </div>
 
                     <div className="wordanimation-view-all">→ View All Works</div>
                   </div>
