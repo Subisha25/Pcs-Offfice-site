@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import './App.css';
 import Banner from "./components/homepage/banner";
 import Portfoliobanner from "./components/portfolio/portfoliobanner";
 import Header from "./components/homepage/header";

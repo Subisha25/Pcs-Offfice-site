@@ -1,3 +1,60 @@
+:root {
+  --main-bg: #f4f7fb;
+  --main-text: #222222;
+  --primary-color: #007bff;
+  --secondary-color: #555555;
+  --button-primary: #101166;
+  --button-secondary: #D9D9D9;
+  --playfair-fonts: "Playfair Display", serif;
+  --heading-font-size: 32px;
+  --subheading-font-size: 24px;
+  --title-font-size: 20px;
+  --description-font-size: 16px;
+  --small-text-font-size: 14px;
+}
+
+/* Global reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  
+}
+
+
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Light.woff2") format("woff2");
+  font-weight:200 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom font */
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Regular.woff2") format("woff2");
+  font-weight:300 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Custom font */
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Custom font */
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 .traningpopular {
   padding: 64px 24px 72px;
   background: radial-gradient(circle at 0% 0%, #e0f2fe 0%, #f5e9ff 40%, #fdfbff 100%);
@@ -114,16 +171,19 @@
   padding: 14px 14px 0 14px;
 }
 
-.traningpopular-card-image {
+.traningpopular-card img {
+  padding: 10px;
   width: 100%;
-  height: 180px;
-  border-radius: 18px;
+  height: 220px;
+  border-radius: 30px;
   object-fit: cover;
   display: block;
 }
 
 /* Card Body */
 .traningpopular-card-body {
+    font-family: "WF Visual Sans";
+font-weight: 300;
   padding: 16px 18px 18px;
   display: flex;
   flex-direction: column;
@@ -178,17 +238,18 @@ padding: 8px 0;
 
 /* Buttons row */
 .traningpopular-card-actions {
+  justify-content: space-between;
   padding: 0 20px;
   margin-top: 14px;
   display: flex;
-  gap: 50px;
+  /* gap: 50px; */
 }
 
 .traningpopular-card-btn {
   flex: 1;
   border: none;
   height: 38px;
-  border-radius: 999px;
+  /* border-radius: 999px; */
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -209,7 +270,7 @@ font-size: 16px;
 
 .traningpopular-card-btn-primary {
 font-weight: 500;
-padding: 8px 20px;
+padding: 4px 30px;
 border-radius: 50px;
 font-size: 16px;
   border: 1px solid black;
