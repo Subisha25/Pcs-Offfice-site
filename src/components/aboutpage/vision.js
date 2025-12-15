@@ -6,10 +6,11 @@ import tagicon from "../assets/Vector (3).svg";
 import Image from "../assets/aboutimg.jpeg";
 import CommonTopTag from "../common/toptag";
 import CommonButton from "../common/button";
+import { useNavigate } from "react-router-dom";
 
 const VisionMission = () => {
   const [activeTab, setActiveTab] = useState("mission");
-
+const navigate = useNavigate();
   const content = {
     mission:
       "To be a leading global IT consultancy, driving innovation and delivering cutting-edge technology solutions that empower businesses to thrive in the digital age.",
@@ -62,8 +63,8 @@ const VisionMission = () => {
               <p>{content[activeTab]}</p>
             </div>
 
-            <CommonButton />
-            
+            <CommonButton  onClick={() => navigate("/contact")}/>
+
           </div>
         </div>
       </div>

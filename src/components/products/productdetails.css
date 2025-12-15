@@ -409,10 +409,10 @@
 }
 
 .pd-faq-item {
-  background: rgba(237, 238, 241, 0.85);
-  border-radius: 18px;
+  /* background: rgba(237, 238, 241, 0.85); */
+  /* border-radius: 18px; */
   padding: 12px 18px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.7);
 }
 
 .pd-faq-item summary {
@@ -433,14 +433,14 @@
 }
 
 .pd-faq-item summary::after {
-  content: "+";
+  content: "v";
   font-size: 18px;
   color: #0a0a0a;
   flex-shrink: 0;
 }
 
 .pd-faq-item[open] summary::after {
-  content: "−";
+  content: "^";
 }
 
 .pd-faq-item p {

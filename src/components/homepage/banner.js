@@ -85,7 +85,6 @@ const Navigate = useNavigate();
                 </div>
                 Let’s Discuss
               </button> */}
-
               <button className="btn-link"  onClick={() => Navigate("/pcstrainingsite")}>Learn Something</button>
             </div>
           </div>
