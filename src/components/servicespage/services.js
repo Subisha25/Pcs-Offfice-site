@@ -249,6 +249,9 @@ const Services = () => {
                 className="card-image"
                 style={{
                   position: 'absolute',
+                  borderRadius: '25px',
+overflow: 'hidden',
+
 
                   top: isMobile ? '0' : isHovered ? '0' : '140px',
                   left: isMobile ? '0' : isHovered ? '0' : '30px',
@@ -273,7 +276,7 @@ const Services = () => {
                     height: '100%',
                     objectFit: 'cover',
 
-                    borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
+                    // borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
 
                     transition: isMobile
                       ? 'none'
@@ -289,6 +292,7 @@ const Services = () => {
                       position: 'absolute',
                       inset: 0,
                       background: service.overlay,
+                      borderRadius: 'inherit',
                       zIndex: 2
                     }}
                   />

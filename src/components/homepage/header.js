@@ -66,7 +66,7 @@ const navigate = useNavigate();
 
   // Toggle menu
 const handleMenuClick = () => {
-  setMenuOpen(true);   // Always open only
+  setMenuOpen(true);
 };
 
 
@@ -116,7 +116,7 @@ const handleMenuClick = () => {
         <div className="header-right">
           {/* Desktop: "Let's Discuss" visible at top OR when menu is open */}
           {!isMobile && (!isScrolled || menuOpen) && (
-            <button className="header-btn">Let's Discuss</button>
+            <button className="header-btn"  onClick={() => navigate("/contact")}>Let's Discuss</button>
           )}
 <button
   className={`menu-togglemobile-btn ${menuOpen ? "close" : ""}`}
