@@ -41,7 +41,7 @@ const projects = [
     name: "Collah",
     tech: "HTML, CSS, JavaScript, JQuery, ASP.NET, Bootstrap, ReactJS, NodeJS",
     desc: "An e-commerce web application for booking services like AC and home cleaning.",
-   link: "/coollah",
+   link: "/collah",
 
   },
   {
