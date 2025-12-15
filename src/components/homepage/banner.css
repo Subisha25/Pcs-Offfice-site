@@ -157,8 +157,8 @@
 
 /* Primary CTA */
 .btn-primaryhome {
-  font-family: "WF Visual Sans",  !important;
-
+  font-family: "WF Visual Sans";
+font-weight: 500;
   background: var(--button-secondary);
   color: #000;
   border: none;
