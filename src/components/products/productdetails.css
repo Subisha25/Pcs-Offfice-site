@@ -230,10 +230,10 @@ font-family: "WF Visual Sans";
 
 /* 🔥 CAROUSEL ARROWS – ICON ONLY (NO CIRCLE) */
 .pd-carousel-arrow {
-  background: transparent;        /* ❌ remove circle */
+  background: transparent;        
   border: none;
-  color: #0f2a44;                 /* ✅ dark blue */
-  font-size: 34px;                /* arrow size */
+  color: #0f2a44;                
+  font-size: 34px;               
   cursor: pointer;
   padding: 0;
   line-height: 1;
