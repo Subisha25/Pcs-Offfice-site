@@ -1,9 +1,11 @@
 import React from 'react';
 import './trainingjourney.css';
 import CommonButton from '../../components/common/button';
-
+import { useNavigate } from "react-router-dom";
 
 const TrainingJourney = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="trainingjourney-container">
       <div className="trainingjourney-content">
@@ -19,7 +21,7 @@ const TrainingJourney = () => {
           advancing their careers through our expertly.
         </p>
         
-       <CommonButton text='Get Started'/>
+       <CommonButton text='Get Started'  onClick={() => navigate("/contact")}/>
       </div>
     </div>
   );
