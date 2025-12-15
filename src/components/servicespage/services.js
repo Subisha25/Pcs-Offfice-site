@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+
 import first from "../assets/services/1.png";
 import Second from "../assets/services/2.png";
 import Third from "../assets/services/3.png";
@@ -8,11 +9,60 @@ import ArrowImg from "../assets/services/arrow.png";
 import ServiceBtnImg from "../assets/services/tool.png";
 import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
+// import "./workprocess.css";
 
-const Services = () => {
+
+const ServicesSection = () => {
   const [activeCard, setActiveCard] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+  const sectionRef = useRef(null);
+
+  const [filledWords, setFilledWords] = useState(0);
+
+  const paragraph = [
+    "From idea to execution we've got you covered"
+  ].join(" ").split(" ");
+
+  const maxWords = paragraph.length;
+  const lastScrollY = useRef(window.scrollY);
+
+  /* ================= TEXT SCROLL FILL ================= */
+  useEffect(() => {
+    function onScroll() {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+      const centerY = viewportH / 2;
+
+      const currentScroll = window.scrollY;
+      const scrollingDown = currentScroll > lastScrollY.current;
+      const scrollingUp = currentScroll < lastScrollY.current;
+      lastScrollY.current = currentScroll;
+
+      const distanceFromCenter = centerY - rect.top;
+      const fillWindow = viewportH * 0.35;
+
+      let progress = distanceFromCenter / fillWindow;
+      progress = Math.max(0, Math.min(1, progress));
+
+      const targetWords = Math.floor(progress * maxWords);
+
+      if (scrollingDown && targetWords > filledWords) {
+        setFilledWords(targetWords);
+      }
+
+      if (scrollingUp && targetWords < filledWords) {
+        setFilledWords(targetWords);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [filledWords, maxWords]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -74,27 +124,18 @@ const Services = () => {
       backgroundRepeat: 'no-repeat',
       position: 'relative',
       minHeight: '100vh',
-      padding: '120px 40px',
-      backgroundAttachment: 'fixed'
+      padding: '60px 40px',
+      backgroundAttachment: 'scroll'
     }}>
-      {/* Background overlay */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'rgba(240, 240, 245, 0.7)',
-        pointerEvents: 'none',
-        zIndex: 0
-      }}></div>
 
-      <div className="services-header" style={{
+
+      {/* <div className="services-header" style={{
         textAlign: 'center',
         marginBottom: '60px',
         position: 'relative',
         zIndex: 1
       }}>
+        <CommonTopTag text='Services' icon={ServiceBtnImg} />
 
         <h1
           className="services-title"
@@ -113,7 +154,6 @@ const Services = () => {
         >
           From idea to{" "}
           <span
-          className="execution-text"
             style={{
               fontFamily: "Playfair Display",
               fontWeight: '600',
@@ -132,8 +172,26 @@ const Services = () => {
           <br />
           got you covered
         </h1>
-      </div>
+      </div> */}
+      <div className="workprocess-section" ref={sectionRef}>
+        <div className="container">
 
+          <CommonTopTag text="Services" icon={ServiceBtnImg} />
+
+          <p className="animated-text">
+            {paragraph.map((word, index) => (
+              <span
+                key={index}
+                className={`word ${index < filledWords ? "filled" : ""
+                  } ${word === "execution" ? "gradient-word" : ""}`}
+              >
+                {word + " "}
+              </span>
+            ))}
+          </p>
+
+        </div>
+      </div>
       <div className="services-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
@@ -250,8 +308,7 @@ const Services = () => {
                 style={{
                   position: 'absolute',
                   borderRadius: '25px',
-overflow: 'hidden',
-
+                  overflow: 'hidden',
 
                   top: isMobile ? '0' : isHovered ? '0' : '140px',
                   left: isMobile ? '0' : isHovered ? '0' : '30px',
@@ -292,7 +349,6 @@ overflow: 'hidden',
                       position: 'absolute',
                       inset: 0,
                       background: service.overlay,
-                      borderRadius: 'inherit',
                       zIndex: 2
                     }}
                   />
@@ -420,26 +476,19 @@ overflow: 'hidden',
 
         @media (max-width: 480px) {
           .services-container {
-            padding: 80px 12px !important;
+            padding: 24px 12px !important;
           }
           .services-title {
-            font-size: 24px !important;
+            font-size: 20px !important;
             line-height: 28px !important;
           }
           .service-card {
             padding: 18px !important;
             border-radius: 18px !important;
           }
-            .services-title .execution-text {
-            font-size: 28px !important;
-            line-height: 32px !important;
-          }
-        }
           .card-title,
           .card-subtitle {
-            // font-size: 20px !important;
-            font-size: 32px !important;
-            line-height: 40px !important;
+            font-size: 20px !important;
           }
           .card-description {
             fontSize: 13px !important;
@@ -454,4 +503,4 @@ overflow: 'hidden',
   );
 };
 
-export default Services;
+export default ServicesSection;
