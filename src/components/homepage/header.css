@@ -48,23 +48,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   background: transparent;
   border: 1px solid #151416;
-  /* 🔥 SUPER SLOW OPEN / CLOSE */
-    /* 👉 scale animation from center */
-  transform-origin: center;
+
   transform: scale(1);
-transition:
-  width 0.25s ease,
-  padding 0.25s ease,
-  background 0.2s ease,
-  box-shadow 0.2s ease,
-  border 0.2s ease,
-  border-radius 0.2s ease;
+  transform-origin: center;
 
-
-  box-sizing: border-box;
+  transition:
+    transform 0.4s ease,
+    padding 0.3s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
 
 
 /* .header-container {
@@ -198,7 +195,9 @@ transition:
 }
 /* SMALL/COMPACT MODE WHEN SCROLLED */
 .header.small .header-container {
-  width: 360px;
+  
+    width: 30%;
+
   min-width: 200px;
   
   padding: 10px 20px;
