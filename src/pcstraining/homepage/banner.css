@@ -13,10 +13,44 @@
   --small-text-font-size: 14px;
 }
 
+/* Global reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  
+}
+
+
 @font-face {
-  font-family: "WF Visual Sans" !important;
-  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
-  font-weight: 100 900;
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Light.woff2") format("woff2");
+  font-weight:200 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom font */
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Regular.woff2") format("woff2");
+  font-weight:300 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Custom font */
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Custom font */
+@font-face {
+  font-family: "WF Visual Sans";
+  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -31,7 +65,6 @@
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   position: relative;
   overflow: hidden;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 /* Header Navigation */
@@ -110,11 +143,11 @@
 }
 
 .train-home-ban-subtitle {
-font-family: "WF Visual Sans" !important;
+    font-family: "WF Visual Sans" !important;
   font-size: 18px;
   color: black;
   margin: 0 0 40px 0;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
 }
 

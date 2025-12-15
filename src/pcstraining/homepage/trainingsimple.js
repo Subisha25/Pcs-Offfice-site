@@ -109,7 +109,8 @@ const fillWindow = viewportH * 0.35;
           <Card img={Server} title="Internship" sub="Program"
             text="With clarity in hand, we craftbold ideas and transform theminto designs, stories, andexperiences that resonate." />
           <Card img={BookOpen} title="Inplant" sub="Training"
-            text="From concept to launch, weensure every detail is polished,impactful, and aligned with yourvision for lasting results." />
+            text="From concept to launch, weensure every detail is polished,impactful, and aligned with your
+            vision for lasting results." />
           <Card img={TrendingUp} title="Student" sub="Projects"
             text="We don't stop at the launch. Weanalyze performance, gatherfeedback, and fine-tune to ensureyour brand keeps evolving andthriving in the digital landscape." />
         </div>

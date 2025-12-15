@@ -136,10 +136,11 @@ useEffect(() => {
 
           <div className="profile-line">
             <div className="profile">
-              <img src={current.img} alt="" />
+              <img src={current.img} alt="{current.name}" />
               <div>
-                <h4>{current.name}</h4>
-                <span>{current.role}</span>
+                <h4 className="review-name">{current.name}</h4>
+                <span className="review-role">{current.role}</span>
+
               </div>
             </div>
 
