@@ -483,224 +483,418 @@
     stroke-width: 1.8;
 }
 
-/* Responsive adjustments for smaller screens (optional but recommended) */
-@media (max-width: 900px) {
+/* ============================================ */
+/* TABLET RESPONSIVE (768px - 1024px)          */
+/* ============================================ */
+@media (max-width: 1024px) {
+    .contact-wrapper {
+        padding: 80px 15px 60px;
+    }
+
+    .banner-image {
+        height: 450px;
+    }
+
+    .contact-container {
+        width: 95%;
+        border-radius: 25px;
+    }
+
+    .left-section,
+    .right-section {
+        padding: 40px;
+    }
+
+    .left-section .title {
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+
+    .left-section .title .highlight {
+        font-size: 40px;
+    }
+
+    .icon-box {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+    }
+
+    .benefit-card h4 {
+        font-size: 18px;
+    }
+
+    .connect-title {
+        font-size: 28px;
+    }
+
+    .nav-links a {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+}
+
+/* ============================================ */
+/* TABLET SMALL (600px - 768px)                */
+/* ============================================ */
+@media (max-width: 768px) {
+    .contact-navbar {
+        width: 95%;
+        padding: 12px 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .logo-subtext {
+        font-size: 12px;
+    }
+
+    .nav-links a {
+        margin-left: 15px;
+        font-size: 13px;
+    }
+
+    .nav-cta-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+        margin-left: 15px;
+    }
+
+    .contact-wrapper {
+        padding: 60px 10px 50px;
+    }
+
+    .banner-image {
+        height: 350px;
+    }
+
     .contact-container {
         flex-direction: column;
+        width: 95%;
+        border-radius: 20px;
     }
 
     .left-section,
     .right-section {
         width: 100%;
-    }
-
-    .left-section {
-        border-radius: 25px 25px 0 0;
-    }
-
-    .contact-navbar {
-        display: none;
-        /* மொபைலில் NavBar-ஐ மறைக்கிறேன் */
-    }
-}
-/* ------------------------------ */
-/* FULL MOBILE RESPONSIVE FIX     */
-/* ------------------------------ */
-
-@media (max-width: 480px) {
-
-    /* ---- Main Wrapper ---- */
-    .contact-wrapper {
-        padding: 0 !important;
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* ---- Banner Image Full width ---- */
-    .banner-image {
-        height: 260px !important;
-        object-fit: cover;
-    }
-
-    /* ---- Main Container (convert to vertical) ---- */
-    .contact-container {
-        flex-direction: column !important;
-        width: 100% !important;
-        margin: 0 !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-    }
-
-    /* ---- LEFT SECTION ---- */
-    .left-section {
-        width: 100% !important;
-        height: auto !important;
-        padding: 25px 20px !important;
-        border-radius: 0 !important;
+        padding: 35px 30px;
     }
 
     .left-section .title {
-        font-size: 26px !important;
-        line-height: 36px !important;
+        font-size: 30px;
+        line-height: 1.3;
+        margin-bottom: 35px;
     }
 
-    .left-section .highlight {
-        font-size: 32px !important;
+    .left-section .title .highlight {
+        font-size: 36px;
+    }
+
+    .left-section .title span {
+        font-size: 22px;
+    }
+
+    .icon-box {
+        width: 65px;
+        height: 65px;
+        min-width: 65px;
     }
 
     .benefit-card {
-        margin-bottom: 25px !important;
+        margin-bottom: 30px;
     }
 
+    .benefit-card h4 {
+        font-size: 17px;
+    }
 
-    /* ---- RIGHT SECTION (FORM) ---- */
-    .right-section {
-        width: 100% !important;
-        padding: 25px 20px !important;
+    .benefit-card p {
+        font-size: 13px;
     }
 
     .connect-title {
-        font-size: 24px !important;
+        font-size: 26px;
+        margin-bottom: 28px;
     }
 
     .toggle-wrapper {
-        flex-direction: column !important;
-        gap: 10px !important;
+        gap: 6px;
     }
 
     .toggle-btn {
-        width: 100% !important;
+        font-size: 14px;
+        padding: 11px;
+    }
+}
+
+/* ============================================ */
+/* MOBILE (481px - 600px)                      */
+/* ============================================ */
+@media (max-width: 600px) {
+    .contact-navbar {
+        display: none;
+    }
+
+    .contact-wrapper {
+        padding: 0;
+        min-height: auto;
+    }
+
+    .banner-image {
+        height: 280px;
+        position: relative;
+    }
+
+    .contact-container {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .left-section {
+        padding: 30px 25px;
+        border-radius: 0;
+    }
+
+    .left-section .title {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 30px;
+    }
+
+    .left-section .title .highlight {
+        font-size: 34px;
+    }
+
+    .left-section .title span {
+        font-size: 20px;
+    }
+
+    .icon-box {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        border-radius: 12px;
+    }
+
+    .icon-box .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .benefit-card {
+        margin-bottom: 25px;
+        gap: 12px;
+    }
+
+    .benefit-card h4 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .benefit-card p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .right-section {
+        padding: 30px 25px;
+    }
+
+    .connect-title {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .toggle-wrapper {
+        flex-direction: row;
+        gap: 6px;
     }
 
     .form-input,
-    .phone-input-row input,
-    .phone-input-row select {
-        font-size: 14px !important;
-        padding: 12px 12px !important;
+    .phone-number,
+    .phone-select {
+        padding: 13px 14px;
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .input-title {
+        font-size: 13px;
+        margin-bottom: 5px;
     }
 
     .submit-btn {
-        font-size: 15px !important;
-        padding: 14px !important;
+        padding: 14px;
+        font-size: 15px;
     }
 
-
-
-
-    /* ---- STATS SECTION ---- */
-    .traningwhychoose-stats-container {
-        padding: 20px !important;
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 20px !important;
-        margin: 0 !important;
-        width: 100% !important;
+    .footer-note {
+        font-size: 12px;
     }
-
-    .traningwhychoose-stat-number {
-        font-size: 36px !important;
-    }
-
-
-
-    /* ---- SUCCESS STORIES ---- */
-    .traninglearn {
-        padding: 40px 0 60px !important;
-        width: 100% !important;
-    }
-
-    .traninglearn-inner {
-        width: 100% !important;
-        padding: 0 10px !important;
-        text-align: left !important;
-    }
-
-    .traninglearn-title {
-        font-size: 22px !important;
-        padding-left: 5px !important;
-    }
-
-    .traninglearn-title-highlight {
-        font-size: 22px !important;
-    }
-
-    .traninglearn-carousel-viewport {
-        width: 100% !important;
-        overflow: hidden !important;
-    }
-
-    .traninglearn-carousel-track {
-        width: 100% !important;
-    }
-
-    .traninglearn-card {
-        width: 100% !important;
-        flex: 0 0 100% !important;
-        margin: 0 !important;
-        padding: 20px !important;
-        border-radius: 16px !important;
-        background: #f9fafb !important;
-        box-sizing: border-box !important;
-    }
-
-    .traninglearn-nav {
-        margin-top: 20px !important;
-    }
-
-    .traninglearn-nav-btn {
-        width: 44px !important;
-        height: 44px !important;
-    }
-
 }
 
-/* ---------- MOBILE VIEW FIX : 320px – 475px ---------- */
-@media (max-width: 475px) {
-
-  /* Push the whole contact container slightly downward */
-  .contact-container {
-     margin-top: 40px !important;   /* You can increase to 50–60 if needed */
-  }
-
-  /* Banner visible properly */
-  .banner-image {
-     height: 300px !important;
-     object-fit: cover;
-  }
-
-  /* Left section should not go under header */
-  .left-section {
-      padding-top: 40px !important;
-  }
-
-  /* Title spacing fix */
-  .left-section .title {
-      margin-top: 10px !important;
-  }
-
-  
-}
-
-/* ----------------------------------------- */
-/* FIX: Move banner image DOWN on mobile     */
-/* ----------------------------------------- */
-@media (max-width: 475px) {
-
-    /* Push banner down */
+/* ============================================ */
+/* MOBILE SMALL (320px - 480px)                */
+/* ============================================ */
+@media (max-width: 480px) {
     .banner-image {
-        height: 300px !important;
-        margin-bottom: 20px !important;     /* <-- KEY FIX */
-        object-fit: cover;
+        height: 240px;
     }
 
-    /* Push content further below the banner */
-    .contact-container {
-        margin-top: 80px !important;     /* Increase gap under banner */
-    }
-
-    /* Extra breathing space for title */
     .left-section {
-        padding-top: 30px !important;
+        padding: 25px 20px;
+    }
+
+    .left-section .title {
+        font-size: 24px;
+        line-height: 1.3;
+        margin-bottom: 25px;
+    }
+
+    .left-section .title .highlight {
+        font-size: 30px;
+    }
+
+    .left-section .title span {
+        font-size: 18px;
+    }
+
+    .icon-box {
+        width: 55px;
+        height: 55px;
+        min-width: 55px;
+        border-radius: 10px;
+    }
+
+    .icon-box .icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .benefit-card {
+        margin-bottom: 22px;
+        gap: 10px;
+    }
+
+    .benefit-card h4 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .benefit-card p {
+        font-size: 12px;
+    }
+
+    .right-section {
+        padding: 25px 20px;
+    }
+
+    .connect-title {
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .toggle-wrapper {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .toggle-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .form-input,
+    .phone-number,
+    .phone-select {
+        padding: 12px 13px;
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    .phone-input-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .phone-select,
+    .phone-number {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .submit-btn {
+        padding: 13px;
+        font-size: 14px;
+    }
+
+    .footer-note {
+        font-size: 11px;
+        margin-top: 12px;
+    }
+}
+
+/* ============================================ */
+/* VERY SMALL MOBILE (max 360px)               */
+/* ============================================ */
+@media (max-width: 360px) {
+    .banner-image {
+        height: 200px;
+    }
+
+    .left-section {
+        padding: 20px 15px;
+    }
+
+    .left-section .title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .left-section .title .highlight {
+        font-size: 28px;
+    }
+
+    .left-section .title span {
+        font-size: 16px;
+    }
+
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+    }
+
+    .icon-box .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .benefit-card h4 {
+        font-size: 14px;
+    }
+
+    .benefit-card p {
+        font-size: 11px;
+    }
+
+    .right-section {
+        padding: 20px 15px;
+    }
+
+    .connect-title {
+        font-size: 20px;
+    }
+
+    .form-input,
+    .phone-number,
+    .phone-select {
+        padding: 11px 12px;
+        font-size: 13px;
     }
 }
