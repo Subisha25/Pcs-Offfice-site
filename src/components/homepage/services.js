@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+
 import first from "../assets/services/1.png";
 import Second from "../assets/services/2.png";
 import Third from "../assets/services/3.png";
@@ -8,11 +9,60 @@ import ArrowImg from "../assets/services/arrow.png";
 import ServiceBtnImg from "../assets/services/tool.png";
 import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
+import "./workprocess.css";
+
 
 const ServicesSection = () => {
   const [activeCard, setActiveCard] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+  const sectionRef = useRef(null);
+
+  const [filledWords, setFilledWords] = useState(0);
+
+  const paragraph = [
+    "From idea to execution we've got you covered"
+  ].join(" ").split(" ");
+
+  const maxWords = paragraph.length;
+  const lastScrollY = useRef(window.scrollY);
+
+  /* ================= TEXT SCROLL FILL ================= */
+  useEffect(() => {
+    function onScroll() {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+      const centerY = viewportH / 2;
+
+      const currentScroll = window.scrollY;
+      const scrollingDown = currentScroll > lastScrollY.current;
+      const scrollingUp = currentScroll < lastScrollY.current;
+      lastScrollY.current = currentScroll;
+
+      const distanceFromCenter = centerY - rect.top;
+const fillWindow = viewportH * 0.35;
+
+      let progress = distanceFromCenter / fillWindow;
+      progress = Math.max(0, Math.min(1, progress));
+
+      const targetWords = Math.floor(progress * maxWords);
+
+      if (scrollingDown && targetWords > filledWords) {
+        setFilledWords(targetWords);
+      }
+
+      if (scrollingUp && targetWords < filledWords) {
+        setFilledWords(targetWords);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [filledWords, maxWords]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -77,19 +127,9 @@ const ServicesSection = () => {
       padding: '60px 40px',
       backgroundAttachment: 'fixed'
     }}>
-      {/* Background overlay */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'rgba(240, 240, 245, 0.7)',
-        pointerEvents: 'none',
-        zIndex: 0
-      }}></div>
+      
 
-      <div className="services-header" style={{
+      {/* <div className="services-header" style={{
         textAlign: 'center',
         marginBottom: '60px',
         position: 'relative',
@@ -132,8 +172,27 @@ const ServicesSection = () => {
           <br />
           got you covered
         </h1>
-      </div>
+      </div> */}
+   <div className="workprocess-section" ref={sectionRef}>
+        <div className="container">
 
+        <CommonTopTag text="Services" icon={ServiceBtnImg} />
+
+          <p className="animated-text">
+            {paragraph.map((word, index) => (
+              <span
+                key={index}
+                className={`word ${
+                  index < filledWords ? "filled" : ""
+                } ${word === "execution" ? "gradient-word" : ""}`}
+              >
+                {word + " "}
+              </span>
+            ))}
+          </p>
+
+        </div>
+      </div>
       <div className="services-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
@@ -249,8 +308,6 @@ const ServicesSection = () => {
                 className="card-image"
                 style={{
                   position: 'absolute',
-                  borderRadius: '25px',
-                  overflow: 'hidden',
 
                   top: isMobile ? '0' : isHovered ? '0' : '140px',
                   left: isMobile ? '0' : isHovered ? '0' : '30px',
@@ -275,7 +332,7 @@ const ServicesSection = () => {
                     height: '100%',
                     objectFit: 'cover',
 
-                    // borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
+                    borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
 
                     transition: isMobile
                       ? 'none'
@@ -291,13 +348,14 @@ const ServicesSection = () => {
                       position: 'absolute',
                       inset: 0,
                       background: service.overlay,
-                      borderRadius: 'inherit',
                       zIndex: 2
                     }}
                   />
                 )}
 
-              </div>git status
+              </div>
+
+
 
 
               <div className="card-content" style={{
