@@ -26,6 +26,8 @@ import Lecat from "./components/portfolio/lecat";
 import Lhome from "./components/portfolio/lhome";
 import ContactSection from "./components/contact/banner";
 import ScrollToTop from "./components/scrolltotop";
+import AllCourses from "./pcstraining/homepage/allcourses";
+import CourseDetails from "./pcstraining/homepage/coursedetails";
 
 
 function App() {
@@ -62,6 +64,8 @@ function App() {
 
         <Route path="/works" element={<Works/>} />
         <Route path="/contact" element={<ContactSection/>} />
+        <Route path="/allcourses" element={<AllCourses/>} />
+        <Route path="/coursedetails/:id" element={<CourseDetails/>} />
 
 
 

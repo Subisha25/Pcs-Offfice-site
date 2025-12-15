@@ -54,8 +54,8 @@ const TrainingHomeBanner = () => {
           </p>
           
           <div className="train-home-ban-buttons">
-           <CommonButton text='Explore all Course' />
-            <button className="train-home-ban-btn train-home-ban-btn-secondary">
+           <CommonButton text='Explore all Course'  onClick={() => navigate("/allcourses")}/>
+            <button className="train-home-ban-btn train-home-ban-btn-secondary"  onClick={() => navigate("/contact")}>
               Enroll Now
             </button>
           </div>
