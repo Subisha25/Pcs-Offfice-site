@@ -7,7 +7,7 @@ import Four from "../assets/services/4.png";
 import BackgroundImg from "../assets/services/backgroundImgae.webp";
 import ArrowImg from "../assets/services/arrow.png";
 import ServiceBtnImg from "../assets/services/tool.png";
-import CommonTopTag from '../common/toptag';
+// import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
 // import "./workprocess.css";
 
@@ -176,7 +176,7 @@ const ServicesSection = () => {
       <div className="workprocess-section" ref={sectionRef}>
         <div className="container">
 
-          <CommonTopTag text="Services" icon={ServiceBtnImg} />
+          {/* <CommonTopTag text="Services" icon={ServiceBtnImg} /> */}
 
           <p className="animated-text">
             {paragraph.map((word, index) => (
