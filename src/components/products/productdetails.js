@@ -73,7 +73,7 @@ useEffect(() => {
           {hasScreens && (
             <div className="pd-screenshots-container">
               <div className="pd-section-header">
-                <h3 className="pd-section-title">Screenshots</h3>
+                {/* <h3 className="pd-section-title">Screenshots</h3> */}
                 <p className="pd-section-subtitle">
                   Preview how users experience this product across different screens.
                 </p>
