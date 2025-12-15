@@ -133,12 +133,14 @@
 }
 
 .product-page-tech-badge {
+     font-family: "WF Visual Sans"; 
+  font-weight: 300;
   padding: 8px 20px;
   cursor: pointer;
   border: 1px solid black;
   color: black;
   border-radius: 25px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   transition: all 0.3s ease;
 }

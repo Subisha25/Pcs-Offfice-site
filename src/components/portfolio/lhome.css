@@ -50,6 +50,8 @@
 
 /* CONTENT BELOW */
 .content-section {
+  font-family: "WF Visual Sans";
+font-weight: 300;
   width: 60%;
   margin: 40px auto;
   text-align: left;

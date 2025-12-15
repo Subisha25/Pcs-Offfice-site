@@ -134,7 +134,7 @@
 
 .left-section .title {
     font-family: 'WF Visual Sans', sans-serif;
-    font-weight: 500;           /* Medium */
+    font-weight: 500;          
     font-style: normal;
     font-size: 38px;
     line-height: 60px;
@@ -178,13 +178,15 @@
 }
 
 .benefit-card h4 {
+     font-family: "WF Visual Sans"; 
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0 0 8px 0;
     color: #fff;
 }
 
 .benefit-card  p {
+     font-family: "WF Visual Sans"; 
     font-weight: 500;
     margin: 0;
     opacity: 0.85;
@@ -201,6 +203,7 @@
 }
 
 .connect-title {
+    font-family: "WF Visual Sans"; 
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 32px;
@@ -232,10 +235,10 @@
     border: none;
   
     background: transparent;
-   
+   font-family: "WF Visual Sans"; 
+    font-weight: 500;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
     color: #555;
     transition: all 0.3s ease;
 }
@@ -338,10 +341,11 @@
     /* பின்னணி போல */
 }
 .form-label {
+    font-family: "WF Visual Sans"; 
+    font-weight: 500;
     font-size: 15px;
     color: #333;
     margin-bottom: 10px;
-    font-weight: 500;
 }
 /* WRAPPER */
 .toggle-wrapper {
@@ -357,13 +361,14 @@
 
 /* Default button */
 .toggle-btn {
+    font-family: "WF Visual Sans"; 
+    font-weight: 500;
     flex: 1;
     padding: 12px;
     border-radius: 10px;
     background: transparent;
     border: none;
     font-size: 15px;
-    font-weight: 600;
     cursor: pointer;
     color: #000;
     display: flex;
@@ -385,6 +390,8 @@
 
 /* Active button */
 .toggle-btn.active {
+    font-family: "WF Visual Sans"; 
+    font-weight: 500;
     background: #e4e4e4; /* Light grey */
     color: #000;
 }
@@ -403,21 +410,24 @@
 
 /* Labels For Inputs */
 .input-title {
+    font-family: "WF Visual Sans"; 
+    font-weight: 500;
     font-size: 14px;
     margin-bottom: 6px;
     color: #000;
     display: block;
-    font-weight: 600;
 }
 
 /* Input Box */
 .form-input {
+    font-family: "WF Visual Sans"; 
+    font-weight: 300;
     width: 100%;
     padding: 14px 15px;
     border: 1px solid #cfcfcf;
     border-radius: 10px;
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 /* Phone Row */
@@ -428,6 +438,8 @@
 }
 
 .phone-select {
+    font-family: "WF Visual Sans"; 
+    font-weight: 300;
     width: 32%;
     padding: 14px;
     border-radius: 10px;
@@ -436,6 +448,8 @@
 }
 
 .phone-number {
+    font-family: "WF Visual Sans"; 
+    font-weight: 300;
     width: 68%;
     padding: 14px;
     border-radius: 10px;
@@ -445,6 +459,8 @@
 
 /* Submit Button */
 .submit-btn {
+    font-family: "WF Visual Sans"; 
+    font-weight: 500;
     width: 100%;
     padding: 15px 0;
     background: #0d0f53;
@@ -452,13 +468,14 @@
     border: none;
     border-radius: 10px;
     font-size: 16px;
-    font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
 }
 
 /* Footer note */
 .footer-note {
+    font-family: "WF Visual Sans"; 
+    font-weight: 300;
     text-align: center;
     margin-top: 15px;
     font-size: 13px;
@@ -717,6 +734,7 @@
     .form-input,
     .phone-number,
     .phone-select {
+
         padding: 13px 14px;
         font-size: 14px;
         margin-bottom: 18px;

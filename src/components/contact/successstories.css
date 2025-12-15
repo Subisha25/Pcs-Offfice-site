@@ -58,8 +58,9 @@
 
 /* Heading */
 .traninglearn-title {
+   font-family: "WF Visual Sans";
+    font-weight: 500; 
   font-size: 32px;
-  font-weight: 600;
   color: #020617;
   margin: 0;
 }
@@ -114,6 +115,8 @@
 }
 
 .traninglearn-card-text {
+   font-family: "WF Visual Sans";
+    font-weight: 300; 
   font-size: 14px;
   line-height: 1.7;
   color: #4b5563;
@@ -140,12 +143,15 @@
 }
 
 .traninglearn-card-name {
+   font-family: "WF Visual Sans";
+    font-weight: 500; 
   font-size: 14px;
-  font-weight: 600;
   color: #111827;
 }
 
 .traninglearn-card-role {
+   font-family: "WF Visual Sans";
+    font-weight: 300; 
   font-size: 12px;
   color: #9ca3af;
 }

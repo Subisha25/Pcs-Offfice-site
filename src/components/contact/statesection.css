@@ -53,8 +53,8 @@
 .traningwhychoose-stat-label {
   
   font-family: "WF Visual Sans";
+    font-weight: 300; 
   font-size: 14px; 
-  font-weight: 400; 
   color: #000000;
   line-height: 1.5;
 }
