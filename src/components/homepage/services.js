@@ -42,7 +42,7 @@ const ServicesSection = () => {
       lastScrollY.current = currentScroll;
 
       const distanceFromCenter = centerY - rect.top;
-const fillWindow = viewportH * 0.35;
+      const fillWindow = viewportH * 0.35;
 
       let progress = distanceFromCenter / fillWindow;
       progress = Math.max(0, Math.min(1, progress));
@@ -125,9 +125,9 @@ const fillWindow = viewportH * 0.35;
       position: 'relative',
       minHeight: '100vh',
       padding: '60px 40px',
-      backgroundAttachment: 'fixed'
+      backgroundAttachment: 'scroll'
     }}>
-      
+
 
       {/* <div className="services-header" style={{
         textAlign: 'center',
@@ -173,18 +173,17 @@ const fillWindow = viewportH * 0.35;
           got you covered
         </h1>
       </div> */}
-   <div className="workprocess-section" ref={sectionRef}>
+      <div className="workprocess-section" ref={sectionRef}>
         <div className="container">
 
-        <CommonTopTag text="Services" icon={ServiceBtnImg} />
+          <CommonTopTag text="Services" icon={ServiceBtnImg} />
 
           <p className="animated-text">
             {paragraph.map((word, index) => (
               <span
                 key={index}
-                className={`word ${
-                  index < filledWords ? "filled" : ""
-                } ${word === "execution" ? "gradient-word" : ""}`}
+                className={`word ${index < filledWords ? "filled" : ""
+                  } ${word === "execution" ? "gradient-word" : ""}`}
               >
                 {word + " "}
               </span>
@@ -308,6 +307,8 @@ const fillWindow = viewportH * 0.35;
                 className="card-image"
                 style={{
                   position: 'absolute',
+                  borderRadius: '25px',
+                  overflow: 'hidden',
 
                   top: isMobile ? '0' : isHovered ? '0' : '140px',
                   left: isMobile ? '0' : isHovered ? '0' : '30px',
@@ -332,7 +333,7 @@ const fillWindow = viewportH * 0.35;
                     height: '100%',
                     objectFit: 'cover',
 
-                    borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
+                    // borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
 
                     transition: isMobile
                       ? 'none'
