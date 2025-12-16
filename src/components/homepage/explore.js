@@ -16,12 +16,12 @@ import Coollah_Laptop from '../assets/coollah.png';
 import Coollah_LaptopL from '../assets/ourworks/mblview/coollah/coollah-lapL.jpeg';
 
 // BJMM Images - All Breakpoints
-import BJMM_MobileS from '../assets/ourworks/mblview/coollah.jpeg';
-import BJMM_MobileM from '../assets/ourworks/mblview/tamil/tamil-m.png';
-import BJMM_MobileL from '../assets/ourworks/mblview/tamil/tamil-l.png';
-import BJMM_Tablet from '../assets/ourworks/mblview/tamil/tamil-tab.png';
+import BJMM_MobileS from '../assets/ourworks/mblview/bjbm/BJBM-m.jpg';
+import BJMM_MobileM from '../assets/ourworks/mblview/bjbm/BJBM-m.jpg';
+import BJMM_MobileL from '../assets/ourworks/mblview/bjbm/BJBM-l.jpg';
+import BJMM_Tablet from '../assets/ourworks/mblview/bjbm/BJBM-tab.jpg';
 import BJMM_Laptop from '../assets/bjmm.jpeg';
-import BJMM_LaptopL from '../assets/ourworks/mblview/tamil/tamil-labL.png';
+import BJMM_LaptopL from '../assets/ourworks/mblview/bjbm/BJBM-lapL.jpg';
 
 // WorldTamil Siragam Images - All Breakpoints
 import WTS_MobileS from '../assets/ourworks/mblview/tamil.jpeg';

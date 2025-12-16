@@ -105,7 +105,7 @@ const handleMenuClick = () => {
             <a href="/servicespage" onClick={handleLinkClick}>Services</a>
             <a href="/works" onClick={handleLinkClick}>Works</a>
             <a href="/products" onClick={handleLinkClick}>Products</a>
-            <a href="/pcstraningsite" onClick={handleLinkClick}>Training</a>
+            <a href="/pcstrainingsite" onClick={handleLinkClick}>Training</a>
             <button className="header-btn" onClick={handleLinkClick}>
               Let's Discuss
             </button>

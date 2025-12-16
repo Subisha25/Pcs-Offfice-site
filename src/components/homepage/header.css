@@ -81,7 +81,7 @@
 
 /* SCROLLED STATE - WHITE BACKGROUND */
 .header.scrolled .header-container {
-  gap: 20px;
+  gap: 10px;
   background: white;
   border: none;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
