@@ -65,9 +65,11 @@ const navigate = useNavigate();
   }, [menuOpen, isMobile]);
 
   // Toggle menu
-const handleMenuClick = () => {
-  setMenuOpen(true);
+const handleMenuClick = (e) => {
+  e.stopPropagation();
+  setMenuOpen(prev => !prev);   // 🔥 toggle logic
 };
+
 
 
   // Close menu when link is clicked
@@ -120,8 +122,12 @@ const handleMenuClick = () => {
           )}
 <button
   className={`menu-togglemobile-btn ${menuOpen ? "close" : ""}`}
-  onClick={handleMenuClick}
+  onClick={(e) => {
+    e.stopPropagation();       // 🔥 IMPORTANT
+    handleMenuClick(e);
+  }}
 >
+
   {menuOpen ? (
     // Close Icon
     <svg

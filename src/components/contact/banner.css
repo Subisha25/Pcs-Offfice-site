@@ -89,7 +89,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height:auto;
     position: relative;
     /* enable absolutely-positioned background */
     z-index: 1;
@@ -659,17 +659,26 @@
         min-height: auto;
     }
 
-    .banner-image {
-        height: 280px;
-        position: relative;
-    }
+  .banner-image {
+    height: 220px;   /* 🔥 tablet-maari kammi */
+    position: relative;
+  }
 
-    .contact-container {
-        width: 100%;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-    }
+
+
+  .contact-container {
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: -110px;   /* 🔥 overlap like tablet */
+    border-radius: 22px;  /* 🔥 tablet feel */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    padding: 0;
+    overflow: hidden;
+  }
+
 
     .left-section {
         padding: 30px 25px;
@@ -1279,3 +1288,4 @@ font-weight: 300;
     height: 100px;
   }
 }
+
