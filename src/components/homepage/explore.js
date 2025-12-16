@@ -9,7 +9,7 @@ import WTS_Laptop from '../assets/wts.png';
 import WTS_LaptopL from '../assets/wts.png';
 import { useNavigate } from 'react-router-dom';
 import CommonButton from '../common/button';
-import arrow from "../assets/Vector (4).svg";
+import arrow from "../assets/rightVector.svg";
 // Sample images - replace these with your actual image imports
 const projectsData = [
   {
