@@ -9,7 +9,7 @@ import WTS_Laptop from '../assets/wts.png';
 import WTS_LaptopL from '../assets/wts.png';
 import { useNavigate } from 'react-router-dom';
 import CommonButton from '../common/button';
-
+import arrow from "../assets/Vector (4).svg";
 // Sample images - replace these with your actual image imports
 const projectsData = [
   {
@@ -748,8 +748,14 @@ export default function WordAnimation() {
                       <CommonButton text='View' />
                     </div>
 
-                    <div className="wordanimation-view-all">→ View All Works</div>
-                  </div>
+  <div
+  className="wordanimation-view-all cursor-pointer flex items-center gap-2"
+  onClick={() => navigate("/works")}
+>
+  <img src={arrow} alt="arrow" className="w-4 h-4" />
+  <span>View All Works</span>
+</div>
+              </div>
                 </div>
               );
             })}
