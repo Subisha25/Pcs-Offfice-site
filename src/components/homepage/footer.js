@@ -13,8 +13,11 @@ import iconPin from "../assets/footer/learn-icon.png";
 import enrollBg from "../assets/footer/enroll-bg.png";       // big button shape
 import arrowIcon from "../assets/footer/arrow.png";          // arrow
 import enrollCircle from "../assets/footer/enroll-circle.png"; // if circle is an image
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+    const navigate = useNavigate();
+
   return (
     <div
       className="footer-wrapper"
@@ -107,7 +110,9 @@ function Footer() {
               <img src={iconPin} alt="" />
               <span>LET&apos;S LEARN FROM PCS</span>
             </div>
-           <div className="enroll-btn">
+           <div className="enroll-btn cursor-pointer" 
+                 onClick={() => navigate("/contact")}
+>
   <img src={enrollBg} className="enroll-bg" alt="background" />
   
   <div className="enroll-inner-circle">

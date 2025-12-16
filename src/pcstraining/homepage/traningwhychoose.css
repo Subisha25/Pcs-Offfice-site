@@ -88,7 +88,7 @@
    font-family: "WF Visual Sans";
   font-size: 42px;
   line-height: 1.3;
-  font-weight: 600;
+  font-weight: 500;
   color: #020617;
   margin: 0 0 16px;
 }
@@ -106,9 +106,10 @@
 .traningwhychoose-description {
  font-family: "WF Visual Sans";
   font-size: 15px;
-  /* line-height: 1.7; */
+  line-height: 1.7;
+    letter-spacing: 1px; 
   color: black;
-  font-weight: 400;
+  font-weight: 300;
   margin: 24px 0px;
   max-width: 520px;
 }
@@ -147,14 +148,19 @@
 }
 
 .traningwhychoose-feature-title {
+   font-family: "WF Visual Sans";
+
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: #0f172a;
   margin: 0 0 4px;
 }
 
 .traningwhychoose-feature-description {
+   font-family: "WF Visual Sans";
+font-weight: 300;
   font-size: 14px;
+  letter-spacing: 1px;
   line-height: 1.6;
   color: #6b7280;
   margin: 0;
@@ -176,13 +182,18 @@
 }
 
 .traningwhychoose-stat-number {
+ font-family: "WF Visual Sans";
+
   font-size: 58px;
-  font-weight: 400;
+  font-weight: 500;
   color: #020617;
   margin-bottom: 4px;
 }
 
 .traningwhychoose-stat-label {
+   font-family: "WF Visual Sans";
+font-weight: 300;
+
   font-size: 14px;
   color: black;
 }

@@ -114,6 +114,7 @@ import CourseImg2 from "../assets/popular2.png";
 import CourseImg3 from "../assets/popular3.png";
 import CommonButton from "../../components/common/button";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const courses = [
   {
@@ -143,6 +144,8 @@ const courses = [
 ];
 
 const  TraningPopular = () => {
+  const navigate = useNavigate(); 
+  
   return (
     <section className="traningpopular">
       <div className="traningpopular-inner">
@@ -157,7 +160,7 @@ const  TraningPopular = () => {
             </h2>
           </div>
 
-        <CommonButton text="Explore all Course"/>
+        <CommonButton text="Explore all Course"   onClick={() => navigate("/allcourses")}/>
         </div>
 
         {/* Cards */}
@@ -183,7 +186,7 @@ const  TraningPopular = () => {
           More Details
         </Link>
 
-        <button className="traningpopular-card-btn-primary">
+        <button className="traningpopular-card-btn-primary"  onClick={() => navigate("/contact")}>
           Enroll Now
         </button>
       </div>

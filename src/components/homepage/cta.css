@@ -21,7 +21,7 @@
 /* MAIN TITLE — Figma accurate */
 .cta_title_line1,
 .cta_title_line2 {
-  font-family: "Inter", sans-serif;
+  font-family: "WF Visual Sans" !important;
   font-size: 48px;
   font-weight: 550;
   line-height: 60px;
@@ -147,12 +147,12 @@
 @media (max-width: 480px) {
   .cta_title_line1,
   .cta_title_line2 {
-    font-size: 28px;
+    font-size: 20px;
     line-height: 38px;
   }
 
   .cta_highlight {
-    font-size: 34px;
+    font-size: 20px;
   }
 
   .cta_btn {

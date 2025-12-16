@@ -35,7 +35,7 @@ import WTS_LaptopL from '../assets/ourworks/mblview/tamil/tamil-labL.png';
 import ArrowIcon from '../assets/ourworks/arrow.png'; // Add your arrow image path here
 import { useNavigate } from 'react-router-dom';
 import CommonButton from '../common/button';
-
+import arrow from "../assets/rightVector.svg";
 // Sample images - replace these with your actual image imports
 const projectsData = [
   {
@@ -756,11 +756,14 @@ export default function WordAnimation() {
                       <CommonButton text='View' />
                     </div>
 
-                    <div className="wordanimation-view-all">
-                      <img src={ArrowIcon} alt="arrow" className="wordanimation-arrow-icon" />
-                      View All Works
-                    </div>
-                  </div>
+  <div
+  className="wordanimation-view-all cursor-pointer flex items-center gap-2"
+  onClick={() => navigate("/works")}
+>
+  <img src={arrow} alt="arrow" className="w-4 h-4" />
+  <span>View All Works</span>
+</div>
+              </div>
                 </div>
               );
             })}

@@ -48,23 +48,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   background: transparent;
   border: 1px solid #151416;
-  /* 🔥 SUPER SLOW OPEN / CLOSE */
-    /* 👉 scale animation from center */
-  transform-origin: center;
+
   transform: scale(1);
-transition:
-  width 0.25s ease,
-  padding 0.25s ease,
-  background 0.2s ease,
-  box-shadow 0.2s ease,
-  border 0.2s ease,
-  border-radius 0.2s ease;
+  transform-origin: center;
 
-
-  box-sizing: border-box;
+  transition:
+    transform 0.4s ease,
+    padding 0.3s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
 
 
 /* .header-container {
@@ -198,7 +195,9 @@ transition:
 }
 /* SMALL/COMPACT MODE WHEN SCROLLED */
 .header.small .header-container {
-  width: 360px;
+  
+    width: 30%;
+
   min-width: 200px;
   
   padding: 10px 20px;
@@ -232,9 +231,11 @@ transition:
   }
 
   .header-container {
-    width: 100%;
+    width: 90%;
+     max-width: 600px;
     padding: 10px 20px;
     border-radius: 40px;
+    margin: 0 auto;
   }
 
   .header-logo img {
@@ -350,16 +351,17 @@ transition:
     margin-top: 10px;
   }
 
-  /* Adjust scrolled state for mobile */
-  .header.scrolled .header-container {
-    width: 100%;
+ 
   }
 
+ @media screen and (max-width: 768px) {
+  .header.scrolled .header-container,
   .header.small .header-container {
-    width: 100%;
-    padding: 8px 16px;
+    width: 65% !important;
+    max-width: 300px !important;
   }
 }
+
 
 /* MOBILE PHONES (max-width: 480px) */
 @media screen and (max-width: 480px) {
@@ -368,9 +370,10 @@ transition:
     padding: 0 8px;
   }
 
-  .header-container {
-    padding: 8px 12px;
-    border-radius: 30px;
+ .header-container {
+    width: 65% !important;
+    max-width: 300px !important;
+    margin: 0 auto;
   }
 
   .header-logo img {
