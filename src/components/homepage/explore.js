@@ -1,12 +1,38 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Lhome_MobileS from '../assets/ourworks/mblview/Lhome.jpeg';
+import Lhome_MobileM from '../assets/ourworks/mblview/lhome/lhom-M.jpeg';
+import Lhome_MobileL from '../assets/ourworks/mblview/lhome/lhom-L.jpeg';
+import Lhome_Tablet from '../assets/ourworks/mblview/lhome/lhome-tab.jpeg';
 import Lhome_Laptop from '../assets/ourworks/Mask group (1).png';
-import Lhome_LaptopL from '../assets/ourworks/Mask group (1).png';
+import Lhome_LaptopL from '../assets/ourworks/mblview/lhome/lhome-lapL.jpeg';
+
+
+// Coollah Images - All Breakpoints
+import Coollah_MobileS from '../assets/ourworks/mblview/coollah.jpeg';
+import Coollah_MobileM from '../assets/ourworks/mblview/coollah/coollah-m.jpeg';
+import Coollah_MobileL from '../assets/ourworks/mblview/coollah/coollah-L.png';
+import Coollah_Tablet from '../assets/ourworks/mblview/coollah/coollah-tab.jpeg';
 import Coollah_Laptop from '../assets/coollah.png';
-import Coollah_LaptopL from '../assets/coollah.png';
+import Coollah_LaptopL from '../assets/ourworks/mblview/coollah/coollah-lapL.jpeg';
+
+// BJMM Images - All Breakpoints
+import BJMM_MobileS from '../assets/ourworks/mblview/coollah.jpeg';
+import BJMM_MobileM from '../assets/ourworks/mblview/tamil/tamil-m.png';
+import BJMM_MobileL from '../assets/ourworks/mblview/tamil/tamil-l.png';
+import BJMM_Tablet from '../assets/ourworks/mblview/tamil/tamil-tab.png';
 import BJMM_Laptop from '../assets/bjmm.jpeg';
-import BJMM_LaptopL from '../assets/bjmm.jpeg';
+import BJMM_LaptopL from '../assets/ourworks/mblview/tamil/tamil-labL.png';
+
+// WorldTamil Siragam Images - All Breakpoints
+import WTS_MobileS from '../assets/ourworks/mblview/tamil.jpeg';
+import WTS_MobileM from '../assets/ourworks/mblview/tamil/tamil-m.png';
+import WTS_MobileL from '../assets/ourworks/mblview/tamil/tamil-l.png';
+import WTS_Tablet from '../assets/ourworks/mblview/tamil/tamil-tab.png';
 import WTS_Laptop from '../assets/wts.png';
-import WTS_LaptopL from '../assets/wts.png';
+import WTS_LaptopL from '../assets/ourworks/mblview/tamil/tamil-labL.png';
+
+
+import ArrowIcon from '../assets/ourworks/arrow.png'; // Add your arrow image path here
 import { useNavigate } from 'react-router-dom';
 import CommonButton from '../common/button';
 import arrow from "../assets/rightVector.svg";
@@ -18,11 +44,11 @@ const projectsData = [
     link: "/lhome",
     tags: ["Web Design", "UI/UX Design"],
     images: {
-      mobileS: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=600&fit=crop',
-      mobileM: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&h=700&fit=crop',
-      mobileL: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=800&fit=crop',
-      tablet: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&h=1200&fit=crop',
-       laptop: Lhome_Laptop,
+      mobileS: Lhome_MobileS,
+      mobileM: Lhome_MobileM,
+      mobileL: Lhome_MobileL,
+      tablet: Lhome_Tablet,
+      laptop: Lhome_Laptop,
       laptopL: Lhome_LaptopL
     }
   },
@@ -32,11 +58,11 @@ const projectsData = [
     link: "/collah",
     tags: ["Web Design", "UI/UX Design"],
     images: {
-      mobileS: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=400&h=600&fit=crop',
-      mobileM: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=500&h=700&fit=crop',
-      mobileL: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=600&h=800&fit=crop',
-      tablet: 'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=1000&h=1200&fit=crop',
-        laptop: Coollah_Laptop,
+      mobileS: Coollah_MobileS,
+      mobileM: Coollah_MobileM,
+      mobileL: Coollah_MobileL,
+      tablet: Coollah_Tablet,
+      laptop: Coollah_Laptop,
       laptopL: Coollah_LaptopL
     }
   },
@@ -46,10 +72,10 @@ const projectsData = [
     link: "/bjmm",
     tags: ["Web Design", "UI/UX Design"],
     images: {
-      mobileS: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=400&h=600&fit=crop',
-      mobileM: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=500&h=700&fit=crop',
-      mobileL: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=600&h=800&fit=crop',
-      tablet: 'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=1000&h=1200&fit=crop',
+      mobileS: BJMM_MobileS,
+      mobileM: BJMM_MobileM,
+      mobileL: BJMM_MobileL,
+      tablet: BJMM_Tablet,
       laptop: BJMM_Laptop,
       laptopL: BJMM_LaptopL
     }
@@ -60,11 +86,11 @@ const projectsData = [
     link: "/wts",
     tags: ["Web Design", "UI/UX Design"],
     images: {
-      mobileS: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400&h=600&fit=crop',
-      mobileM: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=500&h=700&fit=crop',
-      mobileL: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=600&h=800&fit=crop',
-      tablet: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1000&h=1200&fit=crop',
-       laptop: WTS_Laptop,
+      mobileS: WTS_MobileS,
+      mobileM: WTS_MobileM,
+      mobileL: WTS_MobileL,
+      tablet: WTS_Tablet,
+      laptop: WTS_Laptop,
       laptopL: WTS_LaptopL
     }
   }
@@ -93,9 +119,9 @@ export default function WordAnimation() {
         setCurrentBreakpoint('mobileM');
       } else if (width >= 425 && width < 768) {
         setCurrentBreakpoint('mobileL');
-      } else if (width >= 768 && width < 1024) {
+      } else if (width >= 768 && width < 1026) {
         setCurrentBreakpoint('tablet');
-      } else if (width >= 1024 && width < 1440) {
+      } else if (width >= 1026 && width < 1440) {
         setCurrentBreakpoint('laptop');
       } else {
         setCurrentBreakpoint('laptopL');
@@ -144,10 +170,10 @@ export default function WordAnimation() {
     }
 
     const wordProgress = scrollProgress / START_PHASE_END;
-      
+
     // Adjust moveDistance based on breakpoint
     let moveDistance = 650; // Default for laptopL
-    
+
     if (currentBreakpoint === 'mobileS') {
       moveDistance = 150;
     } else if (currentBreakpoint === 'mobileM') {
@@ -233,9 +259,9 @@ export default function WordAnimation() {
 
   const getBottomContentStyle = (projectIndex) => {
     if (scrollProgress < START_PHASE_END) {
-      return { 
-        opacity: 0, 
-        transform: 'translateY(50px)', 
+      return {
+        opacity: 0,
+        transform: 'translateY(50px)',
         pointerEvents: 'none',
         display: 'none'
       };
@@ -247,24 +273,24 @@ export default function WordAnimation() {
     const activeIndex = Math.floor(slideProgress / segmentLength);
 
     if (projectIndex === 0) {
-      return { 
-        opacity: 1, 
+      return {
+        opacity: 1,
         transform: 'translateY(0)',
         pointerEvents: 'auto',
         display: 'flex'
       };
     }
-    
+
     if (projectIndex <= activeIndex + 1) {
-      return { 
-        opacity: 1, 
+      return {
+        opacity: 1,
         transform: 'translateY(0)',
         pointerEvents: 'auto',
         display: 'flex'
       };
     } else {
-      return { 
-        opacity: 0, 
+      return {
+        opacity: 0,
         transform: 'translateY(50px)',
         pointerEvents: 'none',
         display: 'none'
@@ -275,7 +301,8 @@ export default function WordAnimation() {
   const getResponsiveImage = (project) => {
     return project.images[currentBreakpoint];
   };
- const handleNavigate = (link) => {
+
+  const handleNavigate = (link) => {
     navigate(link);
   };
 
@@ -381,18 +408,30 @@ export default function WordAnimation() {
           display: flex;
           gap: 30px;
           font-size: 14px;
-          color: #666;
+          color: #000000;
         }
 
         .wordanimation-view-all {
-          color: #666;
-          font-size: 16px;
+          color: #000000;
+          font-weight: 500;
+          font-size: 24px;
           cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .wordanimation-arrow-icon {
+        padding: 5px 0px 0px 0px;
+          width: 24px;
+          height: 24px;
+          object-fit: contain;
         }
 
         .wordanimation-our-works-wrapper {
+            margin-top:10px;
           position: relative;
-          width: 220px;
+          width: 120px;
           height: 70px;
           cursor: pointer;
         }
@@ -439,7 +478,7 @@ export default function WordAnimation() {
           .wordanimation-bottom-content {
             padding: 12px 15px;
             flex-direction: column;
-            gap: 12px;
+            gap: 2px;
             align-items: flex-start;
           }
 
@@ -455,14 +494,16 @@ export default function WordAnimation() {
           }
 
           .wordanimation-view-all {
-            padding: 12px 5px;
+            padding: 2px 5px;
             margin: 0 0 32px 0;
-
             font-size: 12px;
             align-self: flex-start;
           }
 
-       
+          .wordanimation-arrow-icon {
+            width: 16px;
+            height: 16px;
+          }
         }
 
         /* Mobile M (375px - 424px) */
@@ -496,7 +537,7 @@ export default function WordAnimation() {
           .wordanimation-bottom-content {
             padding: 12px 15px;
             flex-direction: column;
-            gap: 12px;
+            gap: 3px;
             align-items: flex-start;
           }
 
@@ -512,14 +553,16 @@ export default function WordAnimation() {
           }
 
           .wordanimation-view-all {
-            padding: 12px 5px;
+          padding: 12px 5px;
             margin: 0 0 32px 0;
-
             font-size: 12px;
             align-self: flex-start;
           }
 
-
+          .wordanimation-arrow-icon {
+            width: 16px;
+            height: 16px;
+          }
         }
 
         /* Mobile L (425px - 767px) */
@@ -553,7 +596,7 @@ export default function WordAnimation() {
           .wordanimation-bottom-content {
             padding: 12px 15px;
             flex-direction: column;
-            gap: 12px;
+            gap: 6px;
             align-items: flex-start;
           }
 
@@ -569,14 +612,16 @@ export default function WordAnimation() {
           }
 
           .wordanimation-view-all {
-            padding: 12px 5px;
+            padding: 2px 5px;
             margin: 0 0 32px 0;
-
             font-size: 12px;
             align-self: flex-start;
           }
 
-
+          .wordanimation-arrow-icon {
+            width: 18px;
+            height: 18px;
+          }
         }
 
         /* Tablet (768px - 1023px) */
@@ -601,7 +646,7 @@ export default function WordAnimation() {
           }
 
           .wordanimation-bottom-content {
-            padding: 70px 80px;
+            padding: 40px 30px 70px;
             flex-direction: row;
             gap: 20px;
             align-items: center;
@@ -616,51 +661,19 @@ export default function WordAnimation() {
             gap: 20px;
             font-size: 13px;
           }
-
-          .wordanimation-view-all {
+             .wordanimation-view-all {
+            padding: 14px 5px;
+            // margin: 0 0 12px 0;
             font-size: 14px;
+            align-self: flex-start;
           }
 
+
+          .wordanimation-arrow-icon {
+            width: 20px;
+            height: 20px;
+          }
         }
-
-//         /* Laptop (1024px - 1439px) */
-//         @media (min-width: 1024px) and (max-width: 1439px) {
-//           .wordanimation-word {
-//             font-size: 64px;
-//             letter-spacing: 2px;
-//           }
-            
-// .wordanimation-image-wrapper img {
-//             object-fit: contain;
-//             object-position: center;
-//           }
-//           .wordanimation-words-wrapper {
-//             gap: 18px;
-//             padding-right: 20px;
-//           }
-
-//           .wordanimation-bottom-content {
-//             padding: 22px 60px;
-//           }
-
-//           .wordanimation-bottom-left h2 {
-//             font-size: 28px;
-//           }
-
-//           .wordanimation-bottom-links {
-//             gap: 25px;
-//             font-size: 14px;
-//           }
-
-//           .wordanimation-view-all {
-//             font-size: 15px;
-//           }
-
-//           .wordanimation-our-works-wrapper {
-//             width: 200px;
-//             height: 65px;
-//           }
-//         }
 
         /* Laptop L (1440px and above) */
         @media (min-width: 1440px) {
@@ -677,21 +690,28 @@ export default function WordAnimation() {
             padding-right: 20px;
           }
 
-          .wordanimation-bottom-content {
-            padding: 23px 90px;
+  .wordanimation-bottom-content {
+            padding: 60px 60px 55px;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
           }
-
           .wordanimation-bottom-left h2 {
-            font-size: 32px;
+            font-size: 44px;
           }
 
           .wordanimation-bottom-links {
             gap: 30px;
-            font-size: 14px;
+            font-size: 24px;
           }
 
-          .wordanimation-view-all {
-            font-size: 16px;
+           .wordanimation-view-all {
+          color: #000000;
+          // font-weight: 500;
+            padding: 7px 5px;
+          cursor: pointer;
+            font-size: 34px;
+            align-self: flex-start;
           }
         }
       `}</style>
@@ -711,26 +731,26 @@ export default function WordAnimation() {
                 Explore
               </h1>
             </div>
-            
+
             {projectsData.map((project, index) => {
               const imageStyle = getImageStyle(index);
               const contentStyle = getBottomContentStyle(index);
-              
+
               return (
-                <div 
+                <div
                   key={project.id}
-                  className="wordanimation-image-container" 
+                  className="wordanimation-image-container"
                   style={imageStyle}
                 >
                   <div className="wordanimation-image-wrapper">
-                    <img 
+                    <img
                       src={getResponsiveImage(project)}
                       alt={`${project.title} - ${currentBreakpoint}`}
                     />
                   </div>
-                  
-                  <div 
-                    className="wordanimation-bottom-content" 
+
+                  <div
+                    className="wordanimation-bottom-content"
                     style={contentStyle}
                   >
                     <div className="wordanimation-bottom-left">
@@ -741,21 +761,21 @@ export default function WordAnimation() {
                         ))}
                       </div>
                     </div>
-                   <div
+                    <div
                       className="wordanimation-our-works-wrapper"
                       onClick={() => handleNavigate(project.link)}
                     >
                       <CommonButton text='View' />
                     </div>
 
-  <div
-  className="wordanimation-view-all cursor-pointer flex items-center gap-2"
-  onClick={() => navigate("/works")}
->
-  <img src={arrow} alt="arrow" className="w-4 h-4" />
-  <span>View All Works</span>
-</div>
-              </div>
+                    <div
+                      className="wordanimation-view-all cursor-pointer flex items-center gap-2"
+                      onClick={() => navigate("/works")}
+                    >
+                      <img src={ArrowIcon} alt="arrow" className="wordanimation-arrow-icon" />
+                      <span>View All Works</span>
+                    </div>
+                  </div>
                 </div>
               );
             })}
