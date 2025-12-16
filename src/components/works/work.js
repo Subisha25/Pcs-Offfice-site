@@ -83,28 +83,39 @@ const Works = () => {
     const navigate = useNavigate();
 
   return (
-    <div className="project-container">
-      {projects.map((p) => (
-        <div className="project-card" key={p.id}>
-          <img src={p.image} alt={p.name} className="project-img" />
+    
+    <div className="works-page">
+      
+      {/* 🔹 Center Heading */}
+      <div className="works-header">
+        {/* <h1>Our Works</h1> */}
+        <p>A glimpse of projects we’ve proudly delivered across industries</p>
+      </div>
 
-          <div className="project-name">{p.name}</div>
+      {/* 🔹 Project Grid */}
+      <div className="project-container">
+        {projects.map((p) => (
+          <div className="project-card" key={p.id}>
+            <img src={p.image} alt={p.name} className="project-img" />
 
-          {/* Hover Overlay */}
-          <div className="project-overlay">
-            <h3>{p.name}</h3>
-            <p><b>Technology Used:</b> {p.tech}</p>
-            <p><b>Description:</b> {p.desc}</p>
-               <div
-              className="view-small"
-              onClick={() => navigate(p.link)}   // 👈 Direct navigate here
-            >
-              <span className="arrows">➜</span> View
+            <div className="project-name">{p.name}</div>
+
+            <div className="project-overlay">
+              <h3>{p.name}</h3>
+              <p><b>Technology Used:</b> {p.tech}</p>
+              <p><b>Description:</b> {p.desc}</p>
+
+              <div
+                className="view-small"
+                onClick={() => navigate(p.link)}
+              >
+                <span className="arrows">➜</span> View
+              </div>
             </div>
           </div>
-          
-        </div>
-      ))}
+        ))}
+      </div>
+
     </div>
   );
 };
