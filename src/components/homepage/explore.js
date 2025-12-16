@@ -760,7 +760,7 @@ export default function WordAnimation() {
   className="wordanimation-view-all cursor-pointer flex items-center gap-2"
   onClick={() => navigate("/works")}
 >
-  <img src={arrow} alt="arrow" className="w-4 h-4" />
+  <img src={ArrowIcon} alt="arrow" className="wordanimation-arrow-icon" />
   <span>View All Works</span>
 </div>
               </div>
