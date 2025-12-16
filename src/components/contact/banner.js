@@ -4,12 +4,17 @@ import { User, Activity, Briefcase, Award, Users, Target, Clock } from "lucide-r
 import bgBanner from "../assets/contact/cantactbanner.png";
 import StateSection from "./statesection";
 import SuccessStories from "./successstories";
+import { useLocation } from "react-router-dom";
 
 const ContactSection = () => {
-    const [selectedOption, setSelectedOption] = useState("learn");
+    // const [selectedOption, setSelectedOption] = useState("learn");
+  const location = useLocation();
 
-    // "Learn" மற்றும் "Work" விருப்பங்களுக்கான உள்ளடக்கங்கள்
-    const content = {
+  const [selectedOption, setSelectedOption] = useState(
+    location.state?.mode || "learn"
+  );
+
+  const content = {
         learn: {
             title: "Why Choose Us for Your Learning Journey",
             highlight: "Journey",

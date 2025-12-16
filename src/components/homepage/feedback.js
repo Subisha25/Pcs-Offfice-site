@@ -6,7 +6,7 @@ import leftarrow from "../assets/leftarrow.svg";
 import rightarrow from "../assets/rightarrow.svg";
 import  {  useEffect, useRef } from "react";
 import CommonTopTag from "../common/toptag";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const reviewsData = [
@@ -118,12 +118,17 @@ useEffect(() => {
 
           <p className="left-text">Happy Clients</p>
 
+<Link
+  to="/contact"
+  state={{ mode: "work" }}
+>
           <button className="discuss-btn"   onClick={() => navigate("/contact")}>
             <span className="circle-arrow">
               <img src={rightarrow} alt="rightarrow" />
             </span>
             Let’s Discuss
           </button>
+          </Link>
         </div>
 
         {/* RIGHT */}

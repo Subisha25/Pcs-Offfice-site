@@ -11,6 +11,7 @@ export default function CommonButton({
 }) {
   return (
     <div className={`${wrapperClass}`}>
+        
       <button className="btn-primaryhome" onClick={onClick}>
         <div className="icon-circle">
           <img src={icon} alt="icon" />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "../products/productdetails.css";
 import productsData from "../products/productsData";
 import CommonButton from "../common/button";
@@ -62,7 +62,12 @@ useEffect(() => {
               ))}
             </div>
             <div className="pd-actions">
+              <Link
+  to="/contact"
+  state={{ mode: "work" }}
+>
               <CommonButton onClick={() => navigate("/contact")} />
+                </Link>
             </div>
           </div>
         </section>
