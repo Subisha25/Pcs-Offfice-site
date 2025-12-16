@@ -6,7 +6,8 @@ import tagicon from "../assets/Vector (3).svg";
 import Image from "../assets/aboutimg.jpeg";
 import CommonTopTag from "../common/toptag";
 import CommonButton from "../common/button";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const VisionMission = () => {
   const [activeTab, setActiveTab] = useState("mission");
@@ -62,9 +63,12 @@ const navigate = useNavigate();
             <div className="abt-sec-content-text">
               <p>{content[activeTab]}</p>
             </div>
-
+<Link
+  to="/contact"
+  state={{ mode: "work" }}
+>
             <CommonButton  onClick={() => navigate("/contact")}/>
-
+</Link>
           </div>
         </div>
       </div>

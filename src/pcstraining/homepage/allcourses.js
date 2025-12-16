@@ -68,10 +68,14 @@ const AllCourses = () => {
         >
           More Details
         </Link>
-
+<Link
+  to="/contact"
+  state={{ mode: "learn" }}
+>
         <button className="traningpopular-card-btn-primary"   onClick={() => navigate("/contact")}>
           Enroll Now
         </button>
+        </Link>
       </div>
     </div>
   </article>
