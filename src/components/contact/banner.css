@@ -916,3 +916,362 @@
         font-size: 13px;
     }
 }
+
+/* ============================================
+   MODERN SUCCESS POPUP STYLES
+   ============================================ */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+}
+
+.popup-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 24px;
+  padding: 20px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transform: scale(0.7) translateY(50px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.popup-card.active {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Close button */
+.popup-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.popup-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Icon with animated rings */
+.popup-icon-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-ring {
+  position: absolute;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: ringPulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.popup-ring-1 {
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.popup-ring-2 {
+  width: 100px;
+  height: 100px;
+  animation-delay: 0.3s;
+}
+
+.popup-ring-3 {
+  width: 120px;
+  height: 120px;
+  animation-delay: 0.6s;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.popup-success-icon {
+  background: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667eea;
+  position: relative;
+  z-index: 1;
+  animation: iconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes iconBounce {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Sparkles */
+.popup-sparkle {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8);
+  animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+.popup-sparkle-1 {
+  top: 60px;
+  left: 40px;
+  animation-delay: 0s;
+}
+
+.popup-sparkle-2 {
+  top: 80px;
+  right: 50px;
+  animation-delay: 0.5s;
+}
+
+.popup-sparkle-3 {
+  bottom: 140px;
+  left: 60px;
+  animation-delay: 1s;
+}
+
+@keyframes sparkleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Content */
+.popup-title {
+      font-family: "WF Visual Sans";
+
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  text-align: center;
+  animation: slideUp 0.6s ease 0.4s backwards;
+}
+
+.popup-message {
+      font-family: "WF Visual Sans";
+font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 0 32px;
+  animation: slideUp 0.6s ease 0.5s backwards;
+}
+
+.popup-user-name {
+  font-weight: 700;
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-underline-offset: 3px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button */
+.popup-action-btn {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 16px 48px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: slideUp 0.6s ease 0.6s backwards;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.popup-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.popup-action-btn:active {
+  transform: translateY(0);
+}
+
+.popup-btn-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.popup-action-btn:hover .popup-btn-shine {
+  left: 100%;
+}
+
+/* Decorative orbs */
+.popup-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.3;
+  animation: orbFloat 6s ease-in-out infinite;
+}
+
+.popup-orb-1 {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.3);
+  top: -50px;
+  right: -50px;
+  animation-delay: 0s;
+}
+
+.popup-orb-2 {
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  bottom: -30px;
+  left: -30px;
+  animation-delay: 3s;
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, 20px) scale(1.1);
+  }
+}
+
+/* Confetti */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+  top: -10px;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .popup-card {
+    padding: 40px 24px;
+  }
+
+  .popup-title {
+    font-size: 24px;
+  }
+
+  .popup-message {
+    font-size: 15px;
+  }
+
+  .popup-icon-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .popup-success-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .popup-ring-1 {
+    width: 70px;
+    height: 70px;
+  }
+
+  .popup-ring-2 {
+    width: 85px;
+    height: 85px;
+  }
+
+  .popup-ring-3 {
+    width: 100px;
+    height: 100px;
+  }
+}

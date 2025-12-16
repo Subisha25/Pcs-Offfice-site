@@ -408,7 +408,7 @@ export default function WordAnimation() {
           display: flex;
           gap: 30px;
           font-size: 14px;
-          color: #666;
+          color: #000000;
         }
 
         .wordanimation-view-all {
@@ -422,12 +422,14 @@ export default function WordAnimation() {
         }
 
         .wordanimation-arrow-icon {
+        padding: 5px 0px 0px 0px;
           width: 24px;
           height: 24px;
           object-fit: contain;
         }
 
         .wordanimation-our-works-wrapper {
+            margin-top:10px;
           position: relative;
           width: 120px;
           height: 70px;
@@ -695,21 +697,20 @@ export default function WordAnimation() {
             align-items: center;
           }
           .wordanimation-bottom-left h2 {
-            font-size: 32px;
+            font-size: 44px;
           }
 
           .wordanimation-bottom-links {
             gap: 30px;
-            font-size: 14px;
+            font-size: 24px;
           }
 
            .wordanimation-view-all {
           color: #000000;
-          font-weight: 500;
+          // font-weight: 500;
             padding: 7px 5px;
           cursor: pointer;
-
-            font-size: 24px;
+            font-size: 34px;
             align-self: flex-start;
           }
         }
