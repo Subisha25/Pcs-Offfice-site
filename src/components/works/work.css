@@ -393,3 +393,64 @@ font-weight: 300;
     filter: brightness(55%);
   }
 }
+
+
+/* ===== MOBILE FINAL FIX ===== */
+@media (max-width: 480px) {
+
+  .project-card {
+    height: 220px;        /* 🔥 card height reduced */
+    margin-top: 0;        /* 🔥 remove extra gap */
+  }
+
+  .project-img {
+    width: 100%;
+    height: 100%;         /* 🔥 full card */
+    object-fit: cover;   /* 🔥 no space */
+    object-position: center;
+  }
+
+  .project-name {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Extra small mobiles */
+@media (max-width: 375px) {
+  .project-card {
+    height: 200px;        /* 🔥 more compact */
+  }
+}
+
+/* ===== MOBILE VIEW BUTTON FIX ===== */
+@media (max-width: 480px) {
+
+  .project-overlay {
+    height: auto;              /* 🔥 FIX */
+    top: auto;
+    bottom: 0;
+    transform: translateY(100%);
+    padding: 14px;
+  }
+
+  .project-card:hover .project-overlay,
+  .project-card:active .project-overlay {
+    transform: translateY(0);
+  }
+
+  .view-small {
+    justify-content: center;   /* button center */
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 375px) {
+  .project-overlay {
+    padding: 12px;
+  }
+
+  .view-small {
+    font-size: 13px;
+  }
+}
