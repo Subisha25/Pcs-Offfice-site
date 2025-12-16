@@ -683,7 +683,13 @@
     .left-section {
         padding: 30px 25px;
         border-radius: 0;
-    }
+    /* width: 615px; */
+  height: auto;        /* ✅ content-ku equal height */
+  min-height: unset;  /* ✅ force remove */
+    /* background: linear-gradient(159.72deg, #03045E 20.12%, #FF006E 100%); */
+    /* padding: 50px; */
+    /* color: var(--light-text); */
+   }
 
     .left-section .title {
         font-size: 28px;
@@ -1289,3 +1295,10 @@ font-weight: 300;
   }
 }
 
+@media (max-width: 768px) {
+  .left-section {
+    height: auto !important;      /* 🔥 FIX */
+    min-height: unset !important; /* 🔥 FIX */
+    padding-bottom: 30px;         /* 🔥 small gap only */
+  }
+}

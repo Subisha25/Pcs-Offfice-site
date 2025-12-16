@@ -343,6 +343,7 @@ const ContactSection = () => {
 
       {/* ✅ New Modern Popup */}
       <SuccessPopup 
+      
         show={showPopup}
         onClose={() => setShowPopup(false)}
         userName={fullName}
