@@ -203,6 +203,15 @@
 
   .traninglearn-title {
     font-size: 26px;
+    text-align: center; /* ensure heading centers on mobile */
+  }
+
+  /* Put highlight on its own centered line on smaller screens */
+  .traninglearn-title-highlight {
+    display: block;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 26px;
   }
 
   .traninglearn-card {
@@ -219,4 +228,10 @@
     padding: 20px 18px;
     border-radius: 18px;
   }
+}
+@media (max-width: 320px) {
+  .traninglearn-title {
+    font-size: 22px;
+  }
+
 }

@@ -243,8 +243,17 @@ font-weight: 300;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 320px) {
+  /* Very small phones: single column */
   .traningwhychoose-stats {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+  /* Mobile sizes (S/M/L) => ensure 2 columns (2x2 layout) */
+  .traningwhychoose-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 20px;
   }
 }
