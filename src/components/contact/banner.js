@@ -529,9 +529,17 @@ const SuccessPopup = ({ show, onClose, userName }) => {
         className={`popup-card ${isVisible ? "active" : ""}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="popup-close-btn" onClick={handleClosePopup}>
-          <X size={20} />
-        </button>
+    <button
+  type="button"
+  className="popup-close-btn"
+  onClick={(e) => {
+    e.stopPropagation();     // 🔥 VERY IMPORTANT
+    handleClosePopup(e);
+  }}
+>
+  <X size={20} />
+</button>
+
 
         <div className="popup-icon-wrapper">
           <div className="popup-ring popup-ring-1"></div>
@@ -701,7 +709,7 @@ const ContactSection = () => {
             Why Choose Us for <br />
             Your Learning <span className="highlight">{current.highlight}</span>
           </h2>
-<CommonButton  onClick={handleButtonClick}/>
+
 
           {current.benefits.map((benefit, idx) => {
             const Icon = benefit.icon;
