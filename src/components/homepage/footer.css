@@ -173,11 +173,17 @@ padding-bottom: 40px;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
+    font-family: "WF Visual Sans" !important; 
+}
+.info-block p{
+  font-family: "WF Visual Sans", sans-serif;
+      font-weight: 500;
+
 }
 
 .info-title span {
   font-family: "WF Visual Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
   line-height: 1;
   letter-spacing: 0.12px;
@@ -186,7 +192,7 @@ padding-bottom: 40px;
 }
 
 .info-block p {
-  font-family: "WF Visual Sans", sans-serif;
+  font-family: "WF Visual Sans" !important;
   font-weight: 500;
   font-size: 18px;
   line-height: 28px;
@@ -350,6 +356,8 @@ padding-bottom: 40px;
 
  /* ADDRESS → FULL VISIBLE BUT MAX 3 LINES */
 .info-block:nth-child(3) p {
+    font-family: "WF Visual Sans";
+font-weight: 300;
   font-size: 15px;          /* smaller for mobile */
   line-height: 22px;        /* compact spacing */
   white-space: normal;
@@ -595,6 +603,8 @@ padding-bottom: 40px;
 
   /* PHONE NUMBER BLOCK EXACT LAPTOP STYLE */
   .info-block p {
+        font-family: "WF Visual Sans";
+font-weight: 500;
     font-size: 15px;
     line-height: 22px;
     white-space: nowrap;   /* STOP LINE BREAK */
@@ -609,6 +619,8 @@ padding-bottom: 40px;
 
   /* ICON TITLE SIZE */
   .info-title span {
+        font-family: "WF Visual Sans";
+font-weight: 500;
     font-size: 11px;
     letter-spacing: 1px;
   }
