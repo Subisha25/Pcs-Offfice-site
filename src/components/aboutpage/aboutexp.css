@@ -137,7 +137,8 @@
   font-size: 16px;
   line-height: 1.7;
   margin: 12px 0;
-  font-family: "WF Visual Sans" !important;
+  font-family: "WF Visual Sans", sans-serif;
+  font-weight: 500;
 }
 
 /* Tablet (768px - 1024px) */
