@@ -1,7 +1,7 @@
 /* MAIN WRAPPER */
 .cta_section_wrapper {
   width: 100%;
-  min-height: 100vh;      /* FULL SCREEN HEIGHT */
+  /* min-height: 100vh;      FULL SCREEN HEIGHT */
   display: flex;
   flex-direction: column;
   justify-content: center;   /* CENTER VERTICALLY */

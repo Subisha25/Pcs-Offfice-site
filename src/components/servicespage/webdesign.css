@@ -516,13 +516,25 @@
   }
 
   .sw-banner-wrapper {
-    height: 130vh;
+    height: 35vh;
   }
 
   .sw-description {
     font-size: 18px;
     max-width: 700px;
   }
+  /* .sw-description {
+  font-family: "WF Visual Sans";
+  max-width: 645px;
+  font-weight: 300;
+  margin: 60px auto 0;
+  text-align: left;
+  color: #7d7d7d;
+  line-height: 1.6;
+  padding: 0 20px;
+  font-size: 16px;
+} */
+
 
   .sw-offer-section {
     margin: 160px auto 0;
@@ -561,7 +573,7 @@
   }
 
   .sw-banner-wrapper {
-    height: 110vh;
+    height: 35vh;
     margin-top: -140px;
   }
 
@@ -591,7 +603,7 @@
   }
 
   .sw-banner-wrapper {
-    height: 100vh;
+    height: 40vh;
     margin-top: -130px;
   }
 
@@ -799,7 +811,7 @@
   }
 
   .sw-banner-wrapper {
-    height: 80vh;
+    height: 25vh;
     margin-top: -100px;
   }
 
@@ -878,7 +890,7 @@
   }
 
   .sw-banner-wrapper {
-    height: 75vh;
+    height: 25vh;
     margin-top: -90px;
   }
 
@@ -904,6 +916,8 @@
     gap: 25px;
     text-align: center;
     padding: 0 12px;
+  margin: 40px auto 0;
+
   }
 
   .sw-offer-content {
@@ -921,6 +935,7 @@
   }
 
   .sw-result {
+  margin: 5px auto 0;
     grid-template-columns: 1fr;
     gap: 18px;
   }
