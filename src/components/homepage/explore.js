@@ -44,11 +44,11 @@ const projectsData = [
     link: "/lhome",
     tags: ["Web Design", "UI/UX Design"],
     images: {
-        mobileS: Lhome_MobileS,
+      mobileS: Lhome_MobileS,
       mobileM: Lhome_MobileM,
       mobileL: Lhome_MobileL,
-        tablet: Lhome_Tablet,
-       laptop: Lhome_Laptop,
+      tablet: Lhome_Tablet,
+      laptop: Lhome_Laptop,
       laptopL: Lhome_LaptopL
     }
   },
@@ -72,7 +72,7 @@ const projectsData = [
     link: "/bjmm",
     tags: ["Web Design", "UI/UX Design"],
     images: {
-       mobileS: BJMM_MobileS,
+      mobileS: BJMM_MobileS,
       mobileM: BJMM_MobileM,
       mobileL: BJMM_MobileL,
       tablet: BJMM_Tablet,
@@ -86,7 +86,7 @@ const projectsData = [
     link: "/wts",
     tags: ["Web Design", "UI/UX Design"],
     images: {
-     mobileS: WTS_MobileS,
+      mobileS: WTS_MobileS,
       mobileM: WTS_MobileM,
       mobileL: WTS_MobileL,
       tablet: WTS_Tablet,
@@ -170,10 +170,10 @@ export default function WordAnimation() {
     }
 
     const wordProgress = scrollProgress / START_PHASE_END;
-      
+
     // Adjust moveDistance based on breakpoint
     let moveDistance = 650; // Default for laptopL
-    
+
     if (currentBreakpoint === 'mobileS') {
       moveDistance = 150;
     } else if (currentBreakpoint === 'mobileM') {
@@ -259,9 +259,9 @@ export default function WordAnimation() {
 
   const getBottomContentStyle = (projectIndex) => {
     if (scrollProgress < START_PHASE_END) {
-      return { 
-        opacity: 0, 
-        transform: 'translateY(50px)', 
+      return {
+        opacity: 0,
+        transform: 'translateY(50px)',
         pointerEvents: 'none',
         display: 'none'
       };
@@ -273,24 +273,24 @@ export default function WordAnimation() {
     const activeIndex = Math.floor(slideProgress / segmentLength);
 
     if (projectIndex === 0) {
-      return { 
-        opacity: 1, 
+      return {
+        opacity: 1,
         transform: 'translateY(0)',
         pointerEvents: 'auto',
         display: 'flex'
       };
     }
-    
+
     if (projectIndex <= activeIndex + 1) {
-      return { 
-        opacity: 1, 
+      return {
+        opacity: 1,
         transform: 'translateY(0)',
         pointerEvents: 'auto',
         display: 'flex'
       };
     } else {
-      return { 
-        opacity: 0, 
+      return {
+        opacity: 0,
         transform: 'translateY(50px)',
         pointerEvents: 'none',
         display: 'none'
@@ -301,7 +301,7 @@ export default function WordAnimation() {
   const getResponsiveImage = (project) => {
     return project.images[currentBreakpoint];
   };
-  
+
   const handleNavigate = (link) => {
     navigate(link);
   };
@@ -429,7 +429,7 @@ export default function WordAnimation() {
 
         .wordanimation-our-works-wrapper {
           position: relative;
-          width: 220px;
+          width: 120px;
           height: 70px;
           cursor: pointer;
         }
@@ -476,7 +476,7 @@ export default function WordAnimation() {
           .wordanimation-bottom-content {
             padding: 12px 15px;
             flex-direction: column;
-            gap: 12px;
+            gap: 2px;
             align-items: flex-start;
           }
 
@@ -492,7 +492,7 @@ export default function WordAnimation() {
           }
 
           .wordanimation-view-all {
-            padding: 12px 5px;
+            padding: 2px 5px;
             margin: 0 0 32px 0;
             font-size: 12px;
             align-self: flex-start;
@@ -535,7 +535,7 @@ export default function WordAnimation() {
           .wordanimation-bottom-content {
             padding: 12px 15px;
             flex-direction: column;
-            gap: 12px;
+            gap: 3px;
             align-items: flex-start;
           }
 
@@ -551,7 +551,7 @@ export default function WordAnimation() {
           }
 
           .wordanimation-view-all {
-            padding: 12px 5px;
+          padding: 12px 5px;
             margin: 0 0 32px 0;
             font-size: 12px;
             align-self: flex-start;
@@ -594,7 +594,7 @@ export default function WordAnimation() {
           .wordanimation-bottom-content {
             padding: 12px 15px;
             flex-direction: column;
-            gap: 12px;
+            gap: 6px;
             align-items: flex-start;
           }
 
@@ -610,7 +610,7 @@ export default function WordAnimation() {
           }
 
           .wordanimation-view-all {
-            padding: 12px 5px;
+            padding: 2px 5px;
             margin: 0 0 32px 0;
             font-size: 12px;
             align-self: flex-start;
@@ -644,7 +644,7 @@ export default function WordAnimation() {
           }
 
           .wordanimation-bottom-content {
-            padding: 70px 80px;
+            padding: 40px 30px 70px;
             flex-direction: row;
             gap: 20px;
             align-items: center;
@@ -659,10 +659,13 @@ export default function WordAnimation() {
             gap: 20px;
             font-size: 13px;
           }
-
-          .wordanimation-view-all {
+             .wordanimation-view-all {
+            padding: 14px 5px;
+            // margin: 0 0 12px 0;
             font-size: 14px;
+            align-self: flex-start;
           }
+
 
           .wordanimation-arrow-icon {
             width: 20px;
@@ -685,10 +688,12 @@ export default function WordAnimation() {
             padding-right: 20px;
           }
 
-          .wordanimation-bottom-content {
-            padding: 23px 90px;
+  .wordanimation-bottom-content {
+            padding: 60px 60px 55px;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
           }
-
           .wordanimation-bottom-left h2 {
             font-size: 32px;
           }
@@ -698,8 +703,14 @@ export default function WordAnimation() {
             font-size: 14px;
           }
 
-          .wordanimation-view-all {
-            font-size: 16px;
+           .wordanimation-view-all {
+          color: #000000;
+          font-weight: 500;
+            padding: 7px 5px;
+          cursor: pointer;
+
+            font-size: 24px;
+            align-self: flex-start;
           }
         }
       `}</style>
@@ -719,26 +730,26 @@ export default function WordAnimation() {
                 Explore
               </h1>
             </div>
-            
+
             {projectsData.map((project, index) => {
               const imageStyle = getImageStyle(index);
               const contentStyle = getBottomContentStyle(index);
-              
+
               return (
-                <div 
+                <div
                   key={project.id}
-                  className="wordanimation-image-container" 
+                  className="wordanimation-image-container"
                   style={imageStyle}
                 >
                   <div className="wordanimation-image-wrapper">
-                    <img 
+                    <img
                       src={getResponsiveImage(project)}
                       alt={`${project.title} - ${currentBreakpoint}`}
                     />
                   </div>
-                  
-                  <div 
-                    className="wordanimation-bottom-content" 
+
+                  <div
+                    className="wordanimation-bottom-content"
                     style={contentStyle}
                   >
                     <div className="wordanimation-bottom-left">
@@ -749,21 +760,21 @@ export default function WordAnimation() {
                         ))}
                       </div>
                     </div>
-                   <div
+                    <div
                       className="wordanimation-our-works-wrapper"
                       onClick={() => handleNavigate(project.link)}
                     >
                       <CommonButton text='View' />
                     </div>
 
-  <div
-  className="wordanimation-view-all cursor-pointer flex items-center gap-2"
-  onClick={() => navigate("/works")}
->
-  <img src={ArrowIcon} alt="arrow" className="wordanimation-arrow-icon" />
-  <span>View All Works</span>
-</div>
-              </div>
+                    <div
+                      className="wordanimation-view-all cursor-pointer flex items-center gap-2"
+                      onClick={() => navigate("/works")}
+                    >
+                      <img src={ArrowIcon} alt="arrow" className="wordanimation-arrow-icon" />
+                      <span>View All Works</span>
+                    </div>
+                  </div>
                 </div>
               );
             })}
