@@ -203,6 +203,15 @@
 
   .traninglearn-title {
     font-size: 26px;
+    text-align: center; /* ensure heading centers on mobile */
+  }
+
+  /* Put highlight on its own centered line on smaller screens */
+  .traninglearn-title-highlight {
+    display: block;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 26px;
   }
 
   .traninglearn-card {
@@ -220,21 +229,12 @@
     border-radius: 18px;
   }
 }
-@media (max-width: 425px) {
-  .traninglearn-title,
-  .traninglearn-title-highlight {
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
-
+@media (max-width: 320px) {
   .traninglearn-title {
-    margin-bottom: 4px;
+    font-size: 22px;
   }
+
 }
-
-
-
 @media (max-width: 425px) {
   .traninglearn-heading {
     position: relative;

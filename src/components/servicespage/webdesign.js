@@ -110,16 +110,72 @@ function PurposeSection() {
     },
   ];
 
+  // Responsive: pin only on large screens (>= 1024px)
+  const [isPinned, setIsPinned] = useState(false);
+
+  useEffect(() => {
+    function updatePinned() {
+      setIsPinned(window.innerWidth >= 1024);
+    }
+
+    updatePinned();
+    window.addEventListener("resize", updatePinned);
+    return () => window.removeEventListener("resize", updatePinned);
+  }, []);
+
+  // IntersectionObserver-based reveal for small/tablet screens
+  useEffect(() => {
+    // if pinned (large screens) -> we rely on scroll-driven transforms
+    if (isPinned) return;
+
+    // make sure refs are set
+    const els = cardsRef.current.filter(Boolean);
+    if (!els.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const idx = entry.target.dataset.index || 0;
+          if (entry.isIntersecting) {
+            entry.target.classList.add("card-visible");
+            // stagger small delay per index
+            entry.target.style.transitionDelay = `${idx * 80}ms`;
+          } else {
+            entry.target.classList.remove("card-visible");
+            entry.target.style.transitionDelay = "0ms";
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    els.forEach((el) => {
+      el.classList.remove("card-visible");
+      // ensure dataset index exists for stagger
+      if (typeof el.dataset.index === "undefined" || el.dataset.index === "") {
+        el.dataset.index = String(cardsRef.current.indexOf(el));
+      }
+      io.observe(el);
+    });
+
+    return () => io.disconnect();
+  }, [isPinned]);
+
   return (
     <div className="purpose-scroll-wrapper" ref={wrapperRef}>
       <div
         className="purpose-container"
         ref={containerRef}
         style={{
-          position:
-            scrollProgress > 0 && scrollProgress < 1 ? "fixed" : "absolute",
-          top: scrollProgress >= 1 ? "auto" : "0",
-          bottom: scrollProgress >= 1 ? "0" : "auto",
+          position: isPinned
+            ? scrollProgress > 0 && scrollProgress < 1
+              ? "fixed"
+              : "absolute"
+            : "absolute",
+          top: isPinned ? (scrollProgress >= 1 ? "auto" : "0") : "auto",
+          bottom: isPinned ? (scrollProgress >= 1 ? "0" : "auto") : "auto",
         }}
       >
         {/* Top Badge */}
@@ -160,16 +216,21 @@ function PurposeSection() {
         <div className="purpose-cards">
           {cardsData.map((card, index) => {
             const { opacity, translateY, scale } = getCardTransform(index);
+            const cardStyle = isPinned
+              ? {
+                  opacity,
+                  transform: `translateY(${translateY}px) scale(${scale})`,
+                  transition: "opacity 0.3s ease, transform 0.3s ease",
+                }
+              : {}; // small screens: handled by CSS + IntersectionObserver
+
             return (
               <div
                 key={index}
                 className="purpose-card"
                 ref={(el) => (cardsRef.current[index] = el)}
-                style={{
-                  opacity,
-                  transform: `translateY(${translateY}px) scale(${scale})`,
-                  transition: "opacity 0.3s ease, transform 0.3s ease",
-                }}
+                data-index={index}
+                style={cardStyle}
               >
                 <img
                   src={card.img}
