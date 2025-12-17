@@ -14,6 +14,7 @@ import WordAnimation from "./explore";
 import Benefits from "../aboutpage/benefits";
 import CommonButton from "../common/button";
 import { Navigate, useNavigate } from "react-router-dom";
+import WhiteBg from "../assets/bannerwhite bg.png";
 
 const words = ["build", "learn"]; // 🔁 cycle panna words
 
@@ -63,6 +64,10 @@ const Navigate = useNavigate();
           <video className="bg-video" autoPlay loop muted playsInline>
             <source src="/videos/PCS-Headertheme.mp4" type="video/mp4" />
           </video>
+           <div
+  className="white-overlay"
+  style={{ backgroundImage: `url(${WhiteBg})` }}
+></div>
 
           {/* Content on top of video */}
           <div className="banner-content">

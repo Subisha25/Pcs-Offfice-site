@@ -10,75 +10,75 @@ const StatsSection = () => {
   });
 
   const sectionRef = useRef(null);
-useEffect(() => {
-  const img = document.querySelector(".banner-img");
-  
-  function handleScroll() {
-    const rect = img.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
+  useEffect(() => {
+    const img = document.querySelector(".banner-img");
 
-    // Progress based on scroll visibility
-    const progress = Math.min(Math.max((windowHeight - rect.top) / windowHeight, 0), 1);
+    function handleScroll() {
+      const rect = img.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
 
-    const scaleValue = 0.8 + progress * 0.2; 
-    img.style.transform = `scale(${scaleValue})`;
-  }
+      // Progress based on scroll visibility
+      const progress = Math.min(Math.max((windowHeight - rect.top) / windowHeight, 0), 1);
 
-  window.addEventListener("scroll", handleScroll);
-  handleScroll();
-
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      if (entries[0].isIntersecting) {
-        const targets = {
-          projects: 50,
-          growth: 70,
-          clients: 52,
-        };
-
-        const duration = 2000;
-        const intervalTime = 50;
-
-        const animateCount = (key, endVal) => {
-          let startVal = 0;
-          const step = Math.ceil(endVal / (duration / intervalTime));
-
-          const interval = setInterval(() => {
-            startVal += step;
-            if (startVal >= endVal) {
-              startVal = endVal;
-              clearInterval(interval);
-            }
-            setCounts((prev) => ({ ...prev, [key]: startVal }));
-          }, intervalTime);
-        };
-
-        animateCount("projects", targets.projects);
-        animateCount("growth", targets.growth);
-        animateCount("clients", targets.clients);
-
-        observer.unobserve(sectionRef.current);
-      }
-    },
-    {
-      threshold: 0.1, // 🔥 Fix for mobile
-      rootMargin: "0px 0px -100px 0px", // 🔥 Trigger early
+      const scaleValue = 0.8 + progress * 0.2;
+      img.style.transform = `scale(${scaleValue})`;
     }
-  );
 
-  if (sectionRef.current) {
-    observer.observe(sectionRef.current);
-  }
-}, []);
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          const targets = {
+            projects: 50,
+            growth: 70,
+            clients: 52,
+          };
+
+          const duration = 2000;
+          const intervalTime = 50;
+
+          const animateCount = (key, endVal) => {
+            let startVal = 0;
+            const step = Math.ceil(endVal / (duration / intervalTime));
+
+            const interval = setInterval(() => {
+              startVal += step;
+              if (startVal >= endVal) {
+                startVal = endVal;
+                clearInterval(interval);
+              }
+              setCounts((prev) => ({ ...prev, [key]: startVal }));
+            }, intervalTime);
+          };
+
+          animateCount("projects", targets.projects);
+          animateCount("growth", targets.growth);
+          animateCount("clients", targets.clients);
+
+          observer.unobserve(sectionRef.current);
+        }
+      },
+      {
+        threshold: 0.1, // 🔥 Fix for mobile
+        rootMargin: "0px 0px -100px 0px", // 🔥 Trigger early
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+  }, []);
 
 
   return (
     <div className="stats-section" ref={sectionRef}>
-      
+
       <div className="banner-wrapper">
         <img src={stateImg} alt="Banner" className="banner-img" />
       </div>
@@ -89,13 +89,14 @@ useEffect(() => {
           <span></span>together —we <i>grow together.</i>
         </h2>
       </div>
-
+      {/* states card section*/}
       <div className="stats-cards">
         <div className="stats-item">
           <div className="stats-card">
             <h1>{counts.projects}+</h1>
             <p className="title">Projects Delivered</p>
           </div>
+          {/* description section */}
           <p className="desc">
             We've successfully completed over 50 projects—and we're just getting started!
           </p>
