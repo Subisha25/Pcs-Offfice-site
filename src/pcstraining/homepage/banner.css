@@ -422,7 +422,7 @@
   }
   
   .train-home-ban-btn {
-    width: 100%;
+    width: 70%;
     justify-content: center;
   }
   
@@ -489,13 +489,74 @@
 
 @media (max-width: 768px) {
   .train-home-ban-container {
-    padding-top: 70px; /* header height ku equal */
+    padding-top: 56px; /* header height ku exact */
   }
 }
 
 @media (max-width: 480px) {
   .train-home-ban-container {
-    padding-top: 54px;
+    padding-top: 52px;
+  }
+}
+@media (max-width: 480px) {
+  .train-home-ban-content {
+    padding-top: 16px;
   }
 }
 
+
+@media (max-width: 768px) {
+  .train-home-ban-buttons {
+    width: 100%;
+    max-width: 200px;      /* 🔥 fixed button width */
+    margin: 0 auto;
+    gap: 14px;
+  }
+
+  .train-home-ban-buttons > * {
+    width: 100% !important;
+    height: 52px !important;   /* 🔥 fixed height */
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .train-home-ban-buttons > * {
+    white-space: nowrap;     /* ❌ no second line */
+    overflow: hidden;
+    text-overflow: ellipsis; /* safety */
+    font-size: 14px;         /* 🔥 smaller font */
+    line-height: 1;
+  }
+}
+
+@media (max-width: 360px) {
+  .train-home-ban-buttons > * {
+    font-size: 13px;
+  }
+}
+@media (max-width: 320px) {
+  .train-home-ban-buttons > * {
+    font-size: 12px !important;   /* 🔥 MUST */
+    white-space: nowrap !important;
+    line-height: 1;
+    padding: 0 16px !important;   /* text-ku space reduce */
+  }
+}
+
+/* 320px – FORCE ONE LINE */
+@media (max-width: 320px) {
+  .trainingpopular a,
+  .trainingpopular button {
+    white-space: nowrap !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+  }
+}
