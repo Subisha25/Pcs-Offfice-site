@@ -33,12 +33,23 @@
   margin-bottom: 10px;
 }
 
+/* ============================= */
+/* WORKS PAGE MAIN HEADING STYLE */
+/* ============================= */
+
 .works-header p {
-  font-size: 24px;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto;
+  font-family: "WF Visual Sans", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  color: #000000;
+  max-width: 900px;
+  margin: 40px auto 0;   /* 👈 TOP margin added */
+  text-align: center;
 }
+
+
 /* Project Card */
 .project-card {
   position: relative;
@@ -98,6 +109,7 @@
   opacity: 0;
   transition: all 0.35s ease;
   z-index: 4;
+   letter-spacing: 1px;
 }
 
 .project-card:hover .project-overlay {
@@ -482,5 +494,78 @@ font-weight: 300;
 
   .view-small {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .works-header p {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .works-header p {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+}
+
+@media (max-width: 480px) {
+  .works-header p {
+    font-size: 26px;
+    line-height: 1.2;
+    
+  }
+}
+
+/* ===== WORKS HEADER MOBILE SPACE FIX ===== */
+@media (max-width: 480px) {
+  .works-header {
+    padding-top: 30px;     /* 🔥 100px → 40px */
+  }
+
+  .works-header p {
+    font-size: 24px;
+    line-height: 1.2;
+    padding-top: 20px;
+  }
+}
+
+/* ===== TABLET VIEW = LAPTOP-LIKE ALIGNMENT ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* HEADER */
+  .works-header {
+    padding-top: 80px;        /* laptop feel */
+  }
+
+  .works-header p {
+    font-size: 38px;          /* laptop-like */
+    line-height: 1.15;
+    margin: 30px auto 0;
+    max-width: 900px;
+  }
+
+  /* GRID */
+  .project-container {
+    grid-template-columns: repeat(2, 1fr); /* same as laptop */
+    padding: 35px 50px;       /* laptop padding */
+    gap: 30px;
+    padding-top: 100px;
+  }
+
+  /* CARD */
+  .project-card {
+    height: 340px;            /* laptop height */
+  }
+
+  .project-img {
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .project-name {
+    font-size: 19px;
+    padding: 16px;
   }
 }
