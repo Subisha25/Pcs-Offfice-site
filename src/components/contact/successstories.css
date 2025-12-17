@@ -285,3 +285,37 @@
   }
 }
 
+/* DESKTOP: force two-line heading */
+@media (min-width: 1025px) {
+  .traninglearn-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+  }
+
+  .title-main,
+  .title-highlight {
+    display: block;
+    text-align: center;
+  }
+}
+/* =============================== */
+/* FORCE TWO-LINE CENTER – ALL VIEW */
+/* =============================== */
+
+.traninglearn-title {
+  display: flex;
+  flex-direction: column;   /* 🔥 always 2 lines */
+  align-items: center;      /* 🔥 horizontal center */
+  text-align: center;
+  line-height: 1.25;
+}
+
+.title-main,
+.title-highlight {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+

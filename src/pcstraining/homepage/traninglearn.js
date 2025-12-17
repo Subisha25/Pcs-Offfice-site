@@ -79,11 +79,13 @@ const TraningLearn = () => {
        <CommonTopTag text="Feed Back" />
 
         {/* Heading */}
-        <h2 className="traninglearn-title">
-          Success stories from{" "}
-        </h2>
+<div className="traninglearn-heading">
+  <h2 className="traninglearn-title">Success stories from</h2>
+  <span className="traninglearn-title-highlight">learners</span>
+</div>
 
-          <span className="traninglearn-title-highlight">learners</span>
+
+
 
         {/* Carousel */}
         <div className="traninglearn-carousel">

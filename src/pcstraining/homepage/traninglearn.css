@@ -235,3 +235,12 @@
   }
 
 }
+@media (max-width: 425px) {
+  .traninglearn-heading {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    text-align: center;
+  }
+}
