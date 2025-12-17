@@ -1302,3 +1302,22 @@ font-weight: 300;
     padding-bottom: 30px;         /* 🔥 small gap only */
   }
 }
+/* ============================= */
+/* MOBILE + TABLET ORDER FIX     */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-section {
+    order: 1;   /* ✅ FIRST */
+  }
+
+  .left-section {
+    order: 2;   /* ✅ SECOND */
+  }
+}
+
