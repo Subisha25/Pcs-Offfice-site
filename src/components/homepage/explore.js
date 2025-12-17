@@ -390,7 +390,7 @@ export default function WordAnimation() {
 
         .wordanimation-bottom-content {
           background: white;
-          padding: 23px 90px;
+          padding: 23px 70px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -402,13 +402,30 @@ export default function WordAnimation() {
           font-size: 32px;
           font-weight: 600;
           margin: 0 0 10px 0;
+          font-family: WF Visual Sans;
+// font-weight: 500;
+// font-style: Medium;
+// font-size: 48px;
+// leading-trim: NONE;
+// line-height: 100%;
+// letter-spacing: 1%;
+// text-align: center;
+
         }
 
         .wordanimation-bottom-links {
           display: flex;
           gap: 30px;
-          font-size: 14px;
           color: #000000;
+          font-family: WF Visual Sans;
+font-weight: 500;
+font-style: Medium;
+font-size: 18px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 1%;
+text-align: center;
+
         }
 
         .wordanimation-view-all {
@@ -422,6 +439,7 @@ export default function WordAnimation() {
         }
 
         .wordanimation-arrow-icon {
+        color: #000000
         padding: 5px 0px 0px 0px;
           width: 24px;
           height: 24px;
