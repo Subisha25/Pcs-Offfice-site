@@ -173,8 +173,8 @@ const ServicesSection = () => {
           got you covered
         </h1>
       </div> */}
-      <div className="workprocess-section" ref={sectionRef}>
-        <div className="container">
+      <div className="workprocess-section" ref={sectionRef} style={{ padding: '20px 20px 60px 20px' }}> {/* Section padding-ah koraichuten */}
+        <div className="container" style={{ marginTop: '-40px', position: 'relative', zIndex: '10' }}> {/* Negative margin mela thallum */}
 
           <CommonTopTag text="Services" icon={ServiceBtnImg} />
 
