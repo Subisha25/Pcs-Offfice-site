@@ -84,40 +84,82 @@
 }
 
 .stats-card {
-  background: #fafafa;
+  background: #FCFCFD;
   padding: 25px 20px;
   border-radius: 15px;
-  
+  display: flex;
+  margin-left: 10px;
+
+  flex-direction: column;
+  align-items: start; /* keep number/title centered */
+  text-align: center; /* default for children */
 }
-.stats-card p{
+/* .stats-card p{
   font-weight: 500;
     font-family: "WF Visual Sans" !important;
-}
+} */
 .stats-card h1 {
-  font-size: 70px;
-  font-weight: 400;
-  margin-bottom: 5px;
-}
+ font-family: WF Visual Sans;
+font-weight: 400;
+font-style: Regular;
+font-size: 90px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
 
+  /* font-size: 70px;
+  font-weight: 400;
+  margin-bottom: 5px; */
+}
 .title {
-  font-size: 18px;
-  font-weight: 600;
-  font-family: "WF Visual Sans" !important;
+ font-family: WF Visual Sans;
+font-weight: 500;
+font-style: Medium;
+font-size: 24px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 1%;
 
 }
 
 .desc {
-  font-size: 14px;
-  color: #555;
-  width: 85%;
-  margin: 8px auto 25px auto;
-  line-height: 20px;
-  font-family: "WF Visual Sans" !important;
-  font-weight: 500;
+  color: #000000;
+  font-family: WF Visual Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 1.6; /* improved readability and consistent wrap */
+  letter-spacing: 0.2px;
 
+  /* keep description as a centered block but left-align text so wrapped lines start aligned */
+  /* max-width: 520px; */
+  margin: 12px auto 0;
+  margin-left: 30px;
+  text-align: left;
 }
 
-
+/* On very small cards, allow full width */
+@media (max-width: 420px) {
+  .desc {
+    /* max-width: 100%; */
+    padding: 0 6px;
+  }
+}
+@media (max-width: 320px) {
+  .desc {
+    /* max-width: 100%; */
+    padding: 0 6px;
+    margin-left: 22px;
+  }
+}
+@media (max-width: 375px) {
+  .desc {
+    /* max-width: 100%; */
+    padding: 0 6px;
+    margin-left: 22px;
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .banner-img {
