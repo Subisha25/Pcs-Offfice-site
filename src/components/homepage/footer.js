@@ -45,24 +45,45 @@ function Footer() {
       <img src={logoPcs} className="pcs-logo" alt="PCS" />
     </div>
 
-    <div className="social-row">
-      <img src={iconFacebook} className="fb-icon" alt="Facebook" />
-      <img src={iconLinkedin} alt="LinkedIn" />
-      <img src={iconInstagram} alt="Instagram" />
-    </div>
+   <div className="social-row">
+  <a
+    href="https://www.facebook.com/Pcstech2021"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src={iconFacebook} className="fb-icon" alt="Facebook" />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/company/pcs-technology"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src={iconLinkedin} alt="LinkedIn" />
+  </a>
+
+  <a
+    href="https://www.instagram.com/pcs_tech/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src={iconInstagram} alt="Instagram" />
+  </a>
+</div>
+
   </div>
 
   {/* RIGHT BLOCK → MENU */}
   <div className="footer-menu-columns">
     <div className="footer-menu-col">
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Works</a>
-      <a href="#">Products</a>
+      <a href="/aboutbanner">About</a>
+      <a href="/servicespage">Services</a>
+      <a href="/works">Works</a>
+      <a href="/products">Products</a>
     </div>
     <div className="footer-menu-col">
       <a href="#">Blog</a>
-      <a href="#">Contact</a>
+      <a href="/contact">Contact</a>
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
     </div>
@@ -78,11 +99,12 @@ function Footer() {
               <img src={iconCall} alt="" />
               <span>CALL</span>
             </div>
-            <p>
-              +91 750 222 11 22 <br />
-              +91 875 476 82 31 <br />
-              04633 211620
-            </p>
+           <p className="footer-call">
+  <a href="tel:+917502221122">+91 750 222 11 22</a><br />
+  <a href="tel:+918754768231">+91 875 476 82 31</a><br />
+  <a href="tel:+914633211620">04633 211620</a>
+</p>
+
           </div>
 
           <div className="info-block">
@@ -90,7 +112,14 @@ function Footer() {
               <img src={iconMail} alt="" />
               <span>MAIL</span>
             </div>
-            <p>contact@pcstech.in</p>
+<p>
+  <a
+    href="mailto:contact@pcstech.in"
+    className="footer-mail-link"
+  >
+    contact@pcstech.in
+  </a>
+</p>
           </div>
 
           <div className="info-block">
