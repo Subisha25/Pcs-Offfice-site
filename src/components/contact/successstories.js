@@ -131,10 +131,14 @@ const SuccessStories = ({ selectedOption }) => {
                 <CommonTopTag text={selectedOption === "work" ? "Job Placements" : "Feed Back"} />
 
                 {/* Heading */}
-                <h2 className="traninglearn-title">
-                    {title.main}
-                    <span className="traninglearn-title-highlight">{title.highlight}</span>
-                </h2>
+<h2 className="traninglearn-title">
+  <span className="title-main">{title.main}</span>
+  <span className="traninglearn-title-highlight title-highlight">
+    {title.highlight}
+  </span>
+</h2>
+
+
 
                 {/* Carousel */}
                 <div className="traninglearn-carousel">

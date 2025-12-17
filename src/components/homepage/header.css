@@ -195,17 +195,20 @@
 }
 /* SMALL/COMPACT MODE WHEN SCROLLED */
 .header.small .header-container {
-  
-    width: 30%;
-
-  min-width: 200px;
-  
-  padding: 10px 20px;
+  width: 240px !important;  /* Width-ah kammi panniyachu */
+  min-width: 240px;
+  padding: 8px 15px;
+  justify-content: space-between;
   background: white;
   border: none;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
 }
-
+.header.scrolled:not(.small) .header-container {
+  width: 70%;
+  max-width: 1300px;
+  transition: all 0.4s ease-in-out;
+}
 .header.small .header-menu {
   display: none;
 }
