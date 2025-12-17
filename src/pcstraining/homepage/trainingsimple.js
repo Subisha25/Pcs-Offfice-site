@@ -82,13 +82,26 @@ const fillWindow = viewportH * 0.35;
         <div className="container">
 
 
-          <p className="animated-text">
+          {/* <p className="animated-text">
             {paragraph.map((word, index) => (
               <span
                 key={index}
                 className={`word ${
                   index < filledWords ? "filled" : ""
                 } ${word === "simple," ? "gradient-word" : ""}`}
+              >
+                {word + " "}
+              </span>
+            ))}
+          </p> */}
+             <p className="animated-text2">
+            {paragraph.map((word, index) => (
+              <span
+                key={index}
+                className={`word 
+                  ${index < filledWords ? "filled" : ""} 
+                  ${word ===   "simple,"  ? "gradient-word" : ""}
+                `}
               >
                 {word + " "}
               </span>

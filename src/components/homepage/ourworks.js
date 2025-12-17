@@ -158,6 +158,7 @@ import React, { useEffect, useRef, useState } from "react";
 import tagicon from "../assets/Union.png";
 import Arrow from "../assets/arrow.png";
 import CommonTopTag from "../common/toptag";
+import "./aboutus.css";
 
 export default function OurWorkExplore() {
   const sectionRef = useRef(null);
@@ -175,8 +176,9 @@ export default function OurWorkExplore() {
   const maxYears = 6; // years number
 
   // keep last scroll Y to detect downward scroll only
-  const lastScrollY = useRef(typeof window !== "undefined" ? window.scrollY : 0);
+//  const maxWords = paragraph.length;
 
+    const lastScrollY = useRef(typeof window !== "undefined" ? window.scrollY : 0);
   // COUNTER ANIMATION (AUTO START WHEN VISIBLE)
 useEffect(() => {
   let observer = new IntersectionObserver(
@@ -277,7 +279,7 @@ useEffect(() => {
        <CommonTopTag  text="Our Works" icon={tagicon}/>
 
         {/* WORD BY WORD FILL */}
-        <p className="animated-text">
+        {/* <p className="animated-text">
           {paragraph.map((word, index) => (
             <span
               key={index}
@@ -289,7 +291,21 @@ useEffect(() => {
               {word + " "}
             </span>
           ))}
-        </p>
+        </p> */}
+           <p className="animated-text2">
+            {paragraph.map((word, index) => (
+              <span
+                key={index}
+                className={`word 
+                  ${index < filledWords ? "filled" : ""} 
+                  ${word ===  "something" || word === "amazing." ? "gradient-word" : ""}
+                `}
+              >
+                {word + " "}
+              </span>
+            ))}
+          </p>
+
 
         {/* COUNTER */}
         
