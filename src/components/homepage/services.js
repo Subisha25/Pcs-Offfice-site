@@ -9,7 +9,7 @@ import ArrowImg from "../assets/services/arrow.png";
 import ServiceBtnImg from "../assets/services/tool.png";
 import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
-import "./workprocess.css";
+// import "./workprocess.css";
 
 
 const ServicesSection = () => {
@@ -178,7 +178,7 @@ const ServicesSection = () => {
 
           <CommonTopTag text="Services" icon={ServiceBtnImg} />
 
-          <p className="animated-text">
+          {/* <p className="animated-text">
             {paragraph.map((word, index) => (
               <span
                 key={index}
@@ -188,7 +188,21 @@ const ServicesSection = () => {
                 {word + " "}
               </span>
             ))}
+          </p> */}
+            <p className="animated-text2">
+            {paragraph.map((word, index) => (
+              <span
+                key={index}
+                className={`word 
+                  ${index < filledWords ? "filled" : ""} 
+                  ${word ===  "execution" ? "gradient-word" : ""}
+                `}
+              >
+                {word + " "}
+              </span>
+            ))}
           </p>
+
 
         </div>
       </div>
@@ -247,7 +261,7 @@ const ServicesSection = () => {
                 zIndex: 6   // ⭐ MAIN FIX
               }}>
                 <h3 className="card-title" style={{
-                  fontSize: '32px',
+                  fontSize: '38px',
                   fontWeight: '400',
                   marginBottom: '2px',
                   fontFamily: '"WF Visual Sans", sans-serif',
@@ -258,7 +272,7 @@ const ServicesSection = () => {
                 </h3>
                 <h4 className="card-subtitle" style={{
                   fontFamily: '"WF Visual Sans", sans-serif',
-                  fontSize: '32px',
+                  fontSize: '38px',
                   fontWeight: '400',
                   opacity: '1',
                   color: subtitleColor,
@@ -310,7 +324,7 @@ const ServicesSection = () => {
                   borderRadius: '25px',
                   overflow: 'hidden',
 
-                  top: isMobile ? '0' : isHovered ? '0' : '140px',
+                  top: isMobile ? '0' : isHovered ? '0' : '170px',
                   left: isMobile ? '0' : isHovered ? '0' : '30px',
 
                   width: isMobile ? '100%' : isHovered ? '100%' : '130px',
@@ -378,7 +392,7 @@ const ServicesSection = () => {
 
                 <p className="card-description" style={{
                   fontFamily: '"WF Visual Sans"',
-                  fontWeight: '500',
+                  fontWeight: '400',
                   fontSize: '16px',
                   lineHeight: '1.5',
                   letterSpacing: '1%',
@@ -488,7 +502,7 @@ const ServicesSection = () => {
           }
           .card-title,
           .card-subtitle {
-            font-size: 20px !important;
+            font-size: 30px !important;
           }
           .card-description {
             fontSize: 13px !important;

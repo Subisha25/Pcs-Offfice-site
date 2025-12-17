@@ -44,7 +44,12 @@
 .animated-text2 .word.filled {
   color: #000;
 }
-
+.animated-text2 .gradient-word {
+  color: #bbbbbb !important;
+  font-family: var(--playfair-fonts) !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+}
 /* Default gradient words: white + Playfair */
 .gradient-word {
   color: #bbbbbb !important;
