@@ -7,7 +7,7 @@ import Four from "../assets/services/4.png";
 import BackgroundImg from "../assets/services/backgroundImgae.webp";
 import ArrowImg from "../assets/services/arrow.png";
 import ServiceBtnImg from "../assets/services/tool.png";
-// import CommonTopTag from '../common/toptag';
+import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
 // import "./workprocess.css";
 
@@ -173,25 +173,58 @@ const ServicesSection = () => {
           got you covered
         </h1>
       </div> */}
-      <div className="workprocess-section" ref={sectionRef}>
-        <div className="container">
+    <div className="workprocess-section" style={{ padding: '20px 20px 60px 20px' }}>
+<div
+  className="container"
+  style={{
+    marginTop: '60px',   // 🔥 heading keela move aagum
+    position: 'relative',
+    zIndex: '10'
+  }}
+>
 
-          {/* <CommonTopTag text="Services" icon={ServiceBtnImg} /> */}
+<h1
+  style={{
+    fontFamily: "WF Visual Sans",
+    fontSize: '54px',          // 🔼 MAIN SIZE (others)
+    fontWeight: '500',
+    color: '#1a1a2e',
+    lineHeight: '64px',
+    letterSpacing: '1%',
+    maxWidth: '900px',
+    margin: '0 auto',
+    textAlign: 'center'
+  }}
+>
+  <span className="heading-normal">
+    From idea to{" "}
+  </span>
 
-          <p className="animated-text">
-            {paragraph.map((word, index) => (
-              <span
-                key={index}
-                className={`word ${index < filledWords ? "filled" : ""
-                  } ${word === "execution" ? "gradient-word" : ""}`}
-              >
-                {word + " "}
-              </span>
-            ))}
-          </p>
+  <span
+    style={{
+      fontFamily: "Playfair Display",
+      fontWeight: '600',
+      fontStyle: 'italic',
+      fontSize: '56px',       // ❌ execution size SAME
+      background: 'linear-gradient(90deg, #03045E 0%, #FF006E 100%)',
+      WebkitBackgroundClip: 'text',
+      color: 'transparent'
+    }}
+  >
+    execution
+  </span>
 
-        </div>
-      </div>
+  <span className="heading-normal">
+    {" "}we’ve got you
+    <br />
+    covered
+  </span>
+</h1>
+
+
+  </div>
+</div>
+
       <div className="services-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
@@ -247,7 +280,7 @@ const ServicesSection = () => {
                 zIndex: 6   // ⭐ MAIN FIX
               }}>
                 <h3 className="card-title" style={{
-                  fontSize: '32px',
+                  fontSize: '38px',
                   fontWeight: '400',
                   marginBottom: '2px',
                   fontFamily: '"WF Visual Sans", sans-serif',
@@ -258,7 +291,7 @@ const ServicesSection = () => {
                 </h3>
                 <h4 className="card-subtitle" style={{
                   fontFamily: '"WF Visual Sans", sans-serif',
-                  fontSize: '32px',
+                  fontSize: '38px',
                   fontWeight: '400',
                   opacity: '1',
                   color: subtitleColor,
@@ -310,7 +343,7 @@ const ServicesSection = () => {
                   borderRadius: '25px',
                   overflow: 'hidden',
 
-                  top: isMobile ? '0' : isHovered ? '0' : '140px',
+                  top: isMobile ? '0' : isHovered ? '0' : '170px',
                   left: isMobile ? '0' : isHovered ? '0' : '30px',
 
                   width: isMobile ? '100%' : isHovered ? '100%' : '130px',
@@ -378,7 +411,7 @@ const ServicesSection = () => {
 
                 <p className="card-description" style={{
                   fontFamily: '"WF Visual Sans"',
-                  fontWeight: '500',
+                  fontWeight: '400',
                   fontSize: '16px',
                   lineHeight: '1.5',
                   letterSpacing: '1%',
@@ -488,7 +521,7 @@ const ServicesSection = () => {
           }
           .card-title,
           .card-subtitle {
-            font-size: 20px !important;
+            font-size: 30px !important;
           }
           .card-description {
             fontSize: 13px !important;
@@ -498,6 +531,76 @@ const ServicesSection = () => {
             top: 12px !important;
           }
         }
+
+        @media (max-width: 480px) {
+
+  .workprocess-section h1 {
+    font-size: 26px !important;
+    line-height: 34px !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  /* 🔥 KEY TRICK */
+  .workprocess-section h1 {
+    word-spacing: 2px;
+  }
+
+  .workprocess-section h1 span {
+    display: inline;
+  }
+
+  /* execution break aagama irukka */
+  .workprocess-section h1 {
+    word-break: keep-all;
+  }
+
+  /* execution konjam highlight */
+  .workprocess-section h1 span[style*="Playfair"] {
+    font-size: 28px !important;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 480px) {
+
+  .workprocess-section h1 {
+    font-size: 26px !important;
+    line-height: 34px !important;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  /* 🔥 FORCE execution stay with first line */
+  .workprocess-section h1 span[style*="Playfair"] {
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 28px !important;
+  }
+
+  /* 🔥 FORCE “we’ve got you” second line */
+  .workprocess-section h1::after {
+    content: "";
+    display: block;
+  }
+}
+/* 🔥 ONLY for very small mobiles like 320px */
+@media (max-width: 320px) {
+
+  .workprocess-section h1 {
+    font-size: 24px !important;   /* ⬇️ konjam small */
+    line-height: 32px !important;
+    max-width: 260px !important; /* ⬅️ force 3 lines */
+  }
+
+  .workprocess-section h1 span[style*="Playfair"] {
+    font-size: 26px !important;  /* execution adjust */
+    white-space: nowrap;
+  }
+}
+
       `}</style>
     </div>
   );
