@@ -85,19 +85,7 @@ const fillWindow = viewportH * 0.35;
         <div className="container">
 
         <CommonTopTag text="Our Works Process" icon={tagicon} />
-
-          {/* <p className="animated-text">
-            {paragraph.map((word, index) => (
-              <span
-                key={index}
-                className={`word ${
-                  index < filledWords ? "filled" : ""
-                } ${word === "effective!" ? "gradient-word" : ""}`}
-              >
-                {word + " "}
-              </span>
-            ))}
-          </p> */}
+        
              <p className="animated-text2">
             {paragraph.map((word, index) => (
               <span
