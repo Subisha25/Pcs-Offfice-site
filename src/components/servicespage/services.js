@@ -531,6 +531,76 @@ const ServicesSection = () => {
             top: 12px !important;
           }
         }
+
+        @media (max-width: 480px) {
+
+  .workprocess-section h1 {
+    font-size: 26px !important;
+    line-height: 34px !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  /* 🔥 KEY TRICK */
+  .workprocess-section h1 {
+    word-spacing: 2px;
+  }
+
+  .workprocess-section h1 span {
+    display: inline;
+  }
+
+  /* execution break aagama irukka */
+  .workprocess-section h1 {
+    word-break: keep-all;
+  }
+
+  /* execution konjam highlight */
+  .workprocess-section h1 span[style*="Playfair"] {
+    font-size: 28px !important;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 480px) {
+
+  .workprocess-section h1 {
+    font-size: 26px !important;
+    line-height: 34px !important;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  /* 🔥 FORCE execution stay with first line */
+  .workprocess-section h1 span[style*="Playfair"] {
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 28px !important;
+  }
+
+  /* 🔥 FORCE “we’ve got you” second line */
+  .workprocess-section h1::after {
+    content: "";
+    display: block;
+  }
+}
+/* 🔥 ONLY for very small mobiles like 320px */
+@media (max-width: 320px) {
+
+  .workprocess-section h1 {
+    font-size: 24px !important;   /* ⬇️ konjam small */
+    line-height: 32px !important;
+    max-width: 260px !important; /* ⬅️ force 3 lines */
+  }
+
+  .workprocess-section h1 span[style*="Playfair"] {
+    font-size: 26px !important;  /* execution adjust */
+    white-space: nowrap;
+  }
+}
+
       `}</style>
     </div>
   );
