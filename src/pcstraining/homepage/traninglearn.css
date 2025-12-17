@@ -220,3 +220,27 @@
     border-radius: 18px;
   }
 }
+@media (max-width: 425px) {
+  .traninglearn-title,
+  .traninglearn-title-highlight {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .traninglearn-title {
+    margin-bottom: 4px;
+  }
+}
+
+
+
+@media (max-width: 425px) {
+  .traninglearn-heading {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    text-align: center;
+  }
+}
