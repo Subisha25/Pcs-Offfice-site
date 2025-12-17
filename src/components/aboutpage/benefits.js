@@ -223,6 +223,9 @@ import React, { useState, useEffect, useRef } from "react";
 import "../homepage/workprocess.css";
 import "../homepage/aboutus.css";
 import '../aboutpage/benefits.css';
+  // import "./aboutus.css";
+  import "../homepage/aboutus.css";
+
 import Globe from "../assets/workprocess/Group 1.png";
 import Server from "../assets/workprocess/Group 2.png";
 import BookOpen from "../assets/workprocess/Group 3.png";
@@ -308,19 +311,19 @@ const fillWindow = viewportH * 0.35;
         <div>
 
  
-          <p className="animated-text">
+          <p className="animated-text2">
             {paragraph.map((word, index) => (
               <span
                 key={index}
-                className={`word ${
-                  index < filledWords ? "filled" : ""
-                } ${word === "smartest" ? "gradient-word" : ""}`}
+                className={`word 
+                  ${index < filledWords ? "filled" : ""} 
+                  ${word === "smartest" ? "gradient-word" : ""}
+                `}
               >
                 {word + " "}
               </span>
             ))}
           </p>
-
         </div>
       </div>
 
