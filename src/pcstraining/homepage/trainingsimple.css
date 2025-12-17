@@ -104,11 +104,11 @@ background-color: white;
 }
 .commontag {
     font-family: "WF Visual Sans" !important;
-
-  background: #D9D9D9;
+border: 1px solid #a19999;
+  /* background: #D9D9D9; */
   border-radius: 30px;
   padding: 2px 16px 2px 6px;
-  font-size: 18px;
+  font-size: 14px;
   color: #000;
   display: inline-flex;
   align-items: center;

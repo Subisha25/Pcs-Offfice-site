@@ -26,7 +26,10 @@ const Products = () => {
 
       {/* TOP CENTER SECTION */}
       <div className="top-centers">
-      <CommonTopTag text="Our Products" icon={tagicon} />
+<CommonTopTag
+  icon={tagicon}
+  text={<span className="products-tag-text">Our Products</span>}
+/>
 
         <h2 className="titles">
           Proud wins from <span>passion</span> <br /> products

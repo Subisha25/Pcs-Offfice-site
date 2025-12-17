@@ -21,6 +21,11 @@
   font-display: swap;
 }
 
+/* Products page – CommonTopTag text white */
+.products-tag-text {
+  color: #ffffff;
+}
+
 .products-section {
   background-color: #050b3d;
   padding: 100px 100px;
@@ -433,5 +438,40 @@
 
   .products-list {
     gap: 18px;
+  }
+}
+
+
+
+/* 🔥 Mobile + Tablet – Image full width like red box */
+@media (max-width: 1024px) {
+
+  .left-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .left-image img {
+    width: 100% !important;      /* 🔥 FULL WIDTH */
+    max-width: 320px;            /* mobile size control */
+    height: auto !important;
+    aspect-ratio: 3 / 4;         /* nice portrait look */
+    border-radius: 22px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-image img {
+    max-width: 380px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 320px) {
+  .left-image img {
+    max-width: 290px;
+    border-radius: 16px;
   }
 }
