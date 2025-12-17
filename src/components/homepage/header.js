@@ -70,14 +70,19 @@ function Header() {
       <div className="header-container" onClick={isScrolled ? handleMenuClick : undefined}>
         
         {/* Logo Logic: Scroll-il matum chinna logo, click seithal full logo */}
-        <div className="header-logo" onClick={(e) => {
-          if(!isScrolled) navigate("/");
-        }}>
-          <img 
-            src={(isScrolled && !menuOpen) ? logoSmall : logo} 
-            alt="PCS Logo" 
-          />
-        </div>
+        <div
+  className="header-logo"
+  onClick={(e) => {
+    e.stopPropagation();   // 🔥 MOST IMPORTANT
+    navigate("/");         // always go home
+  }}
+>
+  <img
+    src={(isScrolled && !menuOpen) ? logoSmall : logo}
+    alt="PCS Logo"
+  />
+</div>
+
 
         {/* Desktop Menu - show when NOT scrolled OR when menu is open */}
         {!isMobile && (!isScrolled || menuOpen) && (
