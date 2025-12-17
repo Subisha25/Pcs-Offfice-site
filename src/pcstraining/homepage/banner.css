@@ -479,3 +479,23 @@
     content: none;
   }
 }
+
+
+@media (max-width: 1024px) {
+  .train-home-ban-header {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .train-home-ban-container {
+    padding-top: 70px; /* header height ku equal */
+  }
+}
+
+@media (max-width: 480px) {
+  .train-home-ban-container {
+    padding-top: 54px;
+  }
+}
+
