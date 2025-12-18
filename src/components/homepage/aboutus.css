@@ -260,7 +260,23 @@
     font-size: 48px;
   }
 
-  .stats-container {
-    flex-direction: column;
-  }
+          .stats-container {
+            flex-direction: column;
+          }
+        }
+
+        .about-section {
+  font-family: "WF Visual Sans" !important;
+  background-color: white;
+
+  min-height: 100vh;
+
+  /* ✅ SAME SPACE TOP & BOTTOM – ALL VIEWS */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+
