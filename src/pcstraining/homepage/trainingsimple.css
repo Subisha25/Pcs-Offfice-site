@@ -78,19 +78,6 @@
 }
 
 
-
-.about-section {
-  
-    font-family: "WF Visual Sans" !important;
-background-color: white;
-          /* background: linear-gradient(to bottom, #03045E80, #FFFFFF00); */
-          min-height: 100vh;
-          padding: 80px 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
         .container {
           max-width: 1000px;
           width: 100%;
