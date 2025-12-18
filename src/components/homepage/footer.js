@@ -79,11 +79,12 @@ function Footer() {
             <div className="footer-menu-col">
               <a href="/aboutbanner">About</a>
               <a href="/servicespage">Services</a>
-              <a href="/works">Works</a>
+                           <a href="#">Blog</a>
+
               <a href="/products">Products</a>
             </div>
             <div className="footer-menu-col">
-              <a href="#">Blog</a>
+              {/* <a href="#">Blog</a> */}
               <a href="/contact">Contact</a>
               <a href="#">Privacy Policy</a>
               <a href="#">Terms of Service</a>
@@ -101,7 +102,6 @@ function Footer() {
               <span>CALL</span>
             </div>
             <p className="footer-call">
-              <a href="tel:+917502221122">+91 750 222 11 22</a><br />
               <a href="tel:+918754768231">+91 875 476 82 31</a><br />
               <a href="tel:+914633211620">04633 211620</a>
             </p>
@@ -150,7 +150,7 @@ function Footer() {
                 <img src={arrowIcon} className="arrow-icon" alt="arrow" />
               </div>
 
-              <span className="enroll-text">Enroll Now</span>
+              <span className="enroll-text">Let's Discuss</span>
             </div>
 
           </div>

@@ -89,7 +89,7 @@ function Header() {
           <nav className={`header-menu ${menuOpen ? "show-menu" : ""}`}>
             <a href="/aboutbanner" onClick={handleLinkClick}>About</a>
             <a href="/servicespage" onClick={handleLinkClick}>Services</a>
-            <a href="/works" onClick={handleLinkClick}>Works</a>
+            {/* <a href="/works" onClick={handleLinkClick}>Works</a> */}
             <a href="/products" onClick={handleLinkClick}>Products</a>
             <a href="/pcstrainingsite" onClick={handleLinkClick}>Training</a>
           </nav>
@@ -100,7 +100,7 @@ function Header() {
           <nav className="header-menu show-menu">
             <a href="/aboutbanner" onClick={handleLinkClick}>About</a>
             <a href="/servicespage" onClick={handleLinkClick}>Services</a>
-            <a href="/works" onClick={handleLinkClick}>Works</a>
+            {/* <a href="/works" onClick={handleLinkClick}>Works</a> */}
             <a href="/products" onClick={handleLinkClick}>Products</a>
             <a href="/pcstrainingsite" onClick={handleLinkClick}>Training</a>
             <button className="header-btn" onClick={handleLinkClick}>
