@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./purpose.css";
+import tagicon from "../assets/allheadingicon/ourWorkicon.png";
+
 import Whychoose from '../assets/whychoose.png';
 import Discover from '../assets/discovers.png';
 import Deliver from '../assets/deliver.png';
 import Create from '../assets/create.png';
 import Grow from '../assets/grow.png';
+import CommonTopTag from "../common/toptag";
 
 export default function Purpose() {
   const wrapperRef = useRef(null);
@@ -44,7 +47,7 @@ export default function Purpose() {
 
   // Calculate badge visibility (0-10% scroll)
   const badgeOpacity = Math.min(scrollProgress * 10, 1);
-  
+
   // Typewriter effect (10-30% scroll)
   const typewriterProgress = Math.min(Math.max((scrollProgress - 0.1) / 0.2, 0), 1);
   const fullText = "Design with purpose,";
@@ -53,31 +56,31 @@ export default function Purpose() {
   const showCursor = typewriterProgress < 1;
 
   // Title movement (30-60% scroll) - moves up and scales down
- // Title movement (30-60% scroll)
-const titleMoveProgress = Math.min(Math.max((scrollProgress - 0.3) / 0.3, 0), 1);
-// const titleTranslateY = -200 * titleMoveProgress;
-const titleTranslateY = -120 * titleMoveProgress; // 🔥 softer move
+  // Title movement (30-60% scroll)
+  const titleMoveProgress = Math.min(Math.max((scrollProgress - 0.3) / 0.3, 0), 1);
+  // const titleTranslateY = -200 * titleMoveProgress;
+  const titleTranslateY = -120 * titleMoveProgress; // 🔥 softer move
 
   const titleScale = 1 - (0.2 * titleMoveProgress);
 
   // Cards visibility (60-100% scroll)
-    const cardsStartProgress = 0.6;
-    const getCardOpacity = (index) => {
-        const cardProgress = (scrollProgress - cardsStartProgress - (index * 0.08)) / 0.08;
-        return Math.min(Math.max(cardProgress, 0), 1);
-    };
+  const cardsStartProgress = 0.6;
+  const getCardOpacity = (index) => {
+    const cardProgress = (scrollProgress - cardsStartProgress - (index * 0.08)) / 0.08;
+    return Math.min(Math.max(cardProgress, 0), 1);
+  };
 
-    const getCardTransform = (index) => {
-        const opacity = getCardOpacity(index);
-        const translateY = 50 * (1 - opacity);
-        const scale = 0.9 + (0.1 * opacity);
-        return { opacity, translateY, scale };
-    };
+  const getCardTransform = (index) => {
+    const opacity = getCardOpacity(index);
+    const translateY = 50 * (1 - opacity);
+    const scale = 0.9 + (0.1 * opacity);
+    return { opacity, translateY, scale };
+  };
 
   return (
     <div className="purpose-scroll-wrapper" ref={wrapperRef}>
-      <div 
-        className="purpose-container" 
+      <div
+        className="purpose-container"
         ref={containerRef}
         style={{
           position: scrollProgress > 0 && scrollProgress < 1 ? 'fixed' : 'absolute',
@@ -86,25 +89,27 @@ const titleTranslateY = -120 * titleMoveProgress; // 🔥 softer move
         }}
       >
         {/* Top Badge */}
-        <div 
-          className="purpose-badge-box" 
+        <div
+          className="purpose-badge-box"
           ref={badgeRef}
           style={{
             opacity: badgeOpacity,
             transform: `translateY(${-20 * (1 - badgeOpacity)}px)`
           }}
         >
-          <button className="btn-primary">
+          {/* <button className="btn-primary">
             <div className="icon-circle">
               <img alt="arrow" src={Whychoose} />
             </div>
             Why Choose Us
-          </button>
+          </button> */}
+          <CommonTopTag text="Why Choose Us" icon={tagicon} />
+
         </div>
 
         {/* Main Heading with Typewriter */}
-        <h2 
-          className="purpose-title" 
+        <h2
+          className="purpose-title"
           ref={titleRef}
           style={{
             transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,

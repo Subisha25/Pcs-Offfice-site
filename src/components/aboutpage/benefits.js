@@ -230,7 +230,7 @@ import Globe from "../assets/workprocess/Group 1.png";
 import Server from "../assets/workprocess/Group 2.png";
 import BookOpen from "../assets/workprocess/Group 3.png";
 import TrendingUp from "../assets/workprocess/Group 4.png";
-import tagicon from "../assets/whychoose.png";
+import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 import CommonTopTag from "../common/toptag";
 
 export default function Benefits() {

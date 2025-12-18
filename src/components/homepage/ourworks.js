@@ -155,7 +155,7 @@
 
 
 import React, { useEffect, useRef, useState } from "react";
-import tagicon from "../assets/Union.png";
+import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 import Arrow from "../assets/arrow.png";
 import CommonTopTag from "../common/toptag";
 import "./aboutus.css";

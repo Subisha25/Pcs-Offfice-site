@@ -6,7 +6,7 @@ import Third from "../assets/services/3.png";
 import Four from "../assets/services/4.png";
 import BackgroundImg from "../assets/services/backgroundImgae.webp";
 import ArrowImg from "../assets/services/arrow.png";
-import ServiceBtnImg from "../assets/services/tool.png";
+import ServiceBtnImg from "../assets/allheadingicon/servicesicon.png";
 import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
 // import "./workprocess.css";

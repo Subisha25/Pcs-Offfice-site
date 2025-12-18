@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
+import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 
 import Mockup from "../assets/brand.jpg";
 import Team from "../assets/brand3.avif";
@@ -12,6 +13,7 @@ import Create from "../assets/create.png";
 import Grow from "../assets/grow.png";
 
 import CTASection from "../homepage/cta";
+import CommonTopTag from "../common/toptag";
 
 /* ==================== PURPOSE SECTION (SCROLL PIN) ==================== */
 
@@ -88,27 +90,27 @@ function PurposeSection() {
   };
 
   const cardsData = [
-  {
-    img: Discover,
-    title: "Brand Strategy",
-    text: "We define what your brand stands for—its purpose, voice, values, audience, and positioning—creating a foundation that guides every creative decision.",
-  },
-  {
-    img: Create,
-    title: "Identity Creation",
-    text: "We craft your visual identity with logos, colors, typography, patterns, and design elements that express your brand’s personality with clarity and style.",
-  },
-  {
-    img: Deliver,
-    title: "Brand Experience",
-    text: "We bring your brand to life across web, social, print, and marketing touchpoints to ensure a consistent, memorable experience everywhere.",
-  },
-  {
-    img: Grow,
-    title: "Brand Growth",
-    text: "We refine, optimize, and expand your brand by analyzing performance and evolving your identity to stay relevant in a changing digital landscape.",
-  },
-];
+    {
+      img: Discover,
+      title: "Brand Strategy",
+      text: "We define what your brand stands for—its purpose, voice, values, audience, and positioning—creating a foundation that guides every creative decision.",
+    },
+    {
+      img: Create,
+      title: "Identity Creation",
+      text: "We craft your visual identity with logos, colors, typography, patterns, and design elements that express your brand’s personality with clarity and style.",
+    },
+    {
+      img: Deliver,
+      title: "Brand Experience",
+      text: "We bring your brand to life across web, social, print, and marketing touchpoints to ensure a consistent, memorable experience everywhere.",
+    },
+    {
+      img: Grow,
+      title: "Brand Growth",
+      text: "We refine, optimize, and expand your brand by analyzing performance and evolving your identity to stay relevant in a changing digital landscape.",
+    },
+  ];
 
 
   return (
@@ -132,12 +134,14 @@ function PurposeSection() {
             transform: `translateY(${-20 * (1 - badgeOpacity)}px)`,
           }}
         >
-          <button className="btn-primary">
+          {/* <button className="btn-primary">
             <div className="icon-circle">
               <img alt="arrow" src={Whychoose} />
             </div>
             Why Choose Us
-          </button>
+          </button> */}
+          <CommonTopTag text="Why Choose Us" icon={tagicon} />
+
         </div>
 
         {/* Main Heading with Typewriter */}

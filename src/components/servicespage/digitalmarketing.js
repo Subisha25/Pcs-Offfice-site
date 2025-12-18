@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
+import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 
 import Mockup from "../assets/digital1.jpg";
 import Team from "../assets/digital.jpg";
@@ -12,6 +13,7 @@ import Create from "../assets/create.png";
 import Grow from "../assets/grow.png";
 
 import CTASection from "../homepage/cta";
+import CommonTopTag from "../common/toptag";
 
 /* ==================== PURPOSE SECTION (SCROLL PIN) ==================== */
 
@@ -87,28 +89,28 @@ function PurposeSection() {
     return { opacity, translateY, scale };
   };
 
- const cardsData = [
-  {
-    img: Discover,
-    title: "Analyze",
-    text: "We begin by studying your audience, industry trends, and brand goals—uncovering insights that shape a strong marketing foundation.",
-  },
-  {
-    img: Create,
-    title: "Strategize",
-    text: "Based on clear insights, we craft a tailored marketing strategy using the right mix of SEO, social media, content, and paid campaigns.",
-  },
-  {
-    img: Deliver,
-    title: "Execute",
-    text: "We launch targeted campaigns with compelling creatives and optimized messaging—designed to engage, attract, and convert your audience.",
-  },
-  {
-    img: Grow,
-    title: "Optimize",
-    text: "We continuously track performance, refine strategies, and improve campaigns—ensuring sustained growth and maximum ROI over time.",
-  },
-];
+  const cardsData = [
+    {
+      img: Discover,
+      title: "Analyze",
+      text: "We begin by studying your audience, industry trends, and brand goals—uncovering insights that shape a strong marketing foundation.",
+    },
+    {
+      img: Create,
+      title: "Strategize",
+      text: "Based on clear insights, we craft a tailored marketing strategy using the right mix of SEO, social media, content, and paid campaigns.",
+    },
+    {
+      img: Deliver,
+      title: "Execute",
+      text: "We launch targeted campaigns with compelling creatives and optimized messaging—designed to engage, attract, and convert your audience.",
+    },
+    {
+      img: Grow,
+      title: "Optimize",
+      text: "We continuously track performance, refine strategies, and improve campaigns—ensuring sustained growth and maximum ROI over time.",
+    },
+  ];
 
 
   return (
@@ -132,12 +134,14 @@ function PurposeSection() {
             transform: `translateY(${-20 * (1 - badgeOpacity)}px)`,
           }}
         >
-          <button className="btn-primary">
+          {/* <button className="btn-primary">
             <div className="icon-circle">
               <img alt="arrow" src={Whychoose} />
             </div>
             Why Choose Us
-          </button>
+          </button> */}
+          <CommonTopTag text="Why Choose Us" icon={tagicon} />
+
         </div>
 
         {/* Main Heading with Typewriter */}
