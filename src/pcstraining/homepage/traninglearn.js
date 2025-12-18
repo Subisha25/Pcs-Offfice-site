@@ -73,7 +73,7 @@ const TraningLearn = () => {
   const translateX = (100 / slidesPerView) * currentIndex;
 
   return (
-    <section className="traninglearn">
+    <section className="traninglearn-section">
       <div className="traninglearn-inner">
         {/* Top tag */}
        <CommonTopTag text="Feed Back" />

@@ -32,8 +32,8 @@
   border: 1px solid #a19999;
   /* background: #D9D9D9; */
   border-radius: 30px;
-  padding: 2px 16px 2px 6px;
-  font-size: 14px;
+  padding: 4px 16px 4px 16px;
+  font-size: 20px;
   color: #03045E;
   display: inline-flex;
   align-items: center;
@@ -43,8 +43,8 @@
 
 
 .boxicon {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
 }
 
@@ -260,7 +260,23 @@
     font-size: 48px;
   }
 
-  .stats-container {
-    flex-direction: column;
-  }
+          .stats-container {
+            flex-direction: column;
+          }
+        }
+
+        .about-section {
+  font-family: "WF Visual Sans" !important;
+  background-color: white;
+
+  min-height: 100vh;
+
+  /* ✅ SAME SPACE TOP & BOTTOM – ALL VIEWS */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+
