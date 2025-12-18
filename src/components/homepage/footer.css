@@ -144,7 +144,7 @@ padding-bottom: 40px;
   font-weight: 500;                       /* Medium */
   font-size: 18px;                        /* Figma size */
   line-height: 100%;                      /* line height */
-  letter-spacing: 0.18px;                 /* 1% of 18px */
+  letter-spacing: 1px;                 /* 1% of 18px */
   
   color: #FFFFFF;                         /* white */
   opacity: 1;                             /* clear white */
@@ -743,6 +743,31 @@ font-weight: 500;
   .footer-copy {
     font-size: 13px;
     margin-top: 10px;
+  }
+}
+
+
+/* Desktop default */
+.footer-copy .rights {
+  display: inline;
+}
+
+/* ✅ ALL MOBILE VIEW ONLY */
+@media (max-width: 768px) {
+  .footer-copy {
+    text-align: center;
+  }
+
+  .footer-copy .rights {
+    display: block;   /* 👈 keela pogum */
+    margin-top: 4px;
+  }
+}
+
+/* ✅ MOBILE VIEW – ADDRESS same weight as MAIL */
+@media (max-width: 768px) {
+  .footer-middle .info-block:nth-child(3) p {
+    font-weight: 500;   /* 👈 SAME AS contact@pcstech.in */
   }
 }
 

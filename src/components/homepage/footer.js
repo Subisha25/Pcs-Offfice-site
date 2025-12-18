@@ -16,7 +16,8 @@ import enrollCircle from "../assets/footer/enroll-circle.png"; // if circle is a
 import { useNavigate } from "react-router-dom";
 
 function Footer() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const currentYear = new Date().getFullYear();
 
   return (
     <div
@@ -25,72 +26,72 @@ function Footer() {
     >
       <div className="footer-inner">
 
-<div className="footer-top">
+        <div className="footer-top">
 
-  {/* LEFT BLOCK */}
-  <div className="footer-left">
-    <h2 className="footer-title">
-      Let&apos;s Scale <br /> Your Business.
-    </h2>
+          {/* LEFT BLOCK */}
+          <div className="footer-left">
+            <h2 className="footer-title">
+              Let&apos;s Scale <br /> Your Business.
+            </h2>
 
-    <p className="footer-sub">
-      Feel free to reach our if you want to <br />
-      collaborate with us, or simply have a chat
-    </p>
-  </div>
+            <p className="footer-sub">
+              Feel free to reach our if you want to <br />
+              collaborate with us, or simply have a chat
+            </p>
+          </div>
 
-  {/* CENTER BLOCK → LOGO + ICONS */}
-  <div className="footer-center">
-    <div className="footer-center-logo">
-      <img src={logoPcs} className="pcs-logo" alt="PCS" />
-    </div>
+          {/* CENTER BLOCK → LOGO + ICONS */}
+          <div className="footer-center">
+            <div className="footer-center-logo">
+              <img src={logoPcs} className="pcs-logo" alt="PCS" />
+            </div>
 
-   <div className="social-row">
-  <a
-    href="https://www.facebook.com/Pcstech2021"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src={iconFacebook} className="fb-icon" alt="Facebook" />
-  </a>
+            <div className="social-row">
+              <a
+                href="https://www.facebook.com/Pcstech2021"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={iconFacebook} className="fb-icon" alt="Facebook" />
+              </a>
 
-  <a
-    href="https://www.linkedin.com/company/pcs-technology"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src={iconLinkedin} alt="LinkedIn" />
-  </a>
+              <a
+                href="https://www.linkedin.com/company/pcs-technology"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={iconLinkedin} alt="LinkedIn" />
+              </a>
 
-  <a
-    href="https://www.instagram.com/pcs_tech/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src={iconInstagram} alt="Instagram" />
-  </a>
-</div>
+              <a
+                href="https://www.instagram.com/pcs_tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={iconInstagram} alt="Instagram" />
+              </a>
+            </div>
 
-  </div>
+          </div>
 
-  {/* RIGHT BLOCK → MENU */}
-  <div className="footer-menu-columns">
-    <div className="footer-menu-col">
-      <a href="/aboutbanner">About</a>
-      <a href="/servicespage">Services</a>
-      <a href="/works">Works</a>
-      <a href="/products">Products</a>
-    </div>
-    <div className="footer-menu-col">
-      <a href="#">Blog</a>
-      <a href="/contact">Contact</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </div>
-  </div>
+          {/* RIGHT BLOCK → MENU */}
+          <div className="footer-menu-columns">
+            <div className="footer-menu-col">
+              <a href="/aboutbanner">About</a>
+              <a href="/servicespage">Services</a>
+              <a href="/works">Works</a>
+              <a href="/products">Products</a>
+            </div>
+            <div className="footer-menu-col">
+              <a href="#">Blog</a>
+              <a href="/contact">Contact</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
 
-</div>
-<div className="footer-divider" />
+        </div>
+        <div className="footer-divider" />
 
         {/* CONTACT BLOCKS */}
         <div className="footer-middle">
@@ -99,11 +100,11 @@ function Footer() {
               <img src={iconCall} alt="" />
               <span>CALL</span>
             </div>
-           <p className="footer-call">
-  <a href="tel:+917502221122">+91 750 222 11 22</a><br />
-  <a href="tel:+918754768231">+91 875 476 82 31</a><br />
-  <a href="tel:+914633211620">04633 211620</a>
-</p>
+            <p className="footer-call">
+              <a href="tel:+917502221122">+91 750 222 11 22</a><br />
+              <a href="tel:+918754768231">+91 875 476 82 31</a><br />
+              <a href="tel:+914633211620">04633 211620</a>
+            </p>
 
           </div>
 
@@ -112,14 +113,14 @@ function Footer() {
               <img src={iconMail} alt="" />
               <span>MAIL</span>
             </div>
-<p>
-  <a
-    href="mailto:contact@pcstech.in"
-    className="footer-mail-link"
-  >
-    contact@pcstech.in
-  </a>
-</p>
+            <p>
+              <a
+                href="mailto:contact@pcstech.in"
+                className="footer-mail-link"
+              >
+                contact@pcstech.in
+              </a>
+            </p>
           </div>
 
           <div className="info-block">
@@ -139,27 +140,31 @@ function Footer() {
               <img src={iconPin} alt="" />
               <span>LET&apos;S LEARN FROM PCS</span>
             </div>
-           <div className="enroll-btn cursor-pointer" 
-                 onClick={() => navigate("/contact")}
->
-  <img src={enrollBg} className="enroll-bg" alt="background" />
-  
-  <div className="enroll-inner-circle">
-    <img src={enrollCircle} className="circle-img" alt="circle" />
-    <img src={arrowIcon} className="arrow-icon" alt="arrow" />
-  </div>
+            <div className="enroll-btn cursor-pointer"
+              onClick={() => navigate("/contact")}
+            >
+              <img src={enrollBg} className="enroll-bg" alt="background" />
 
-  <span className="enroll-text">Enroll Now</span>
-</div>
+              <div className="enroll-inner-circle">
+                <img src={enrollCircle} className="circle-img" alt="circle" />
+                <img src={arrowIcon} className="arrow-icon" alt="arrow" />
+              </div>
+
+              <span className="enroll-text">Enroll Now</span>
+            </div>
 
           </div>
         </div>
 
         <div className="footer-divider" />
 
-        <p className="footer-copy">
-          Copyright PCS Technology © 2026. All Rights Reserved
-        </p>
+      <p className="footer-copy">
+  Copyright PCS Technology © {currentYear}.
+  <span className="rights">All Rights Reserved</span>
+</p>
+
+
+
       </div>
     </div>
   );
