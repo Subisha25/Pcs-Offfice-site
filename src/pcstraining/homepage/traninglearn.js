@@ -7,34 +7,34 @@ import CommonTopTag from "../../components/common/toptag";
 
 const testimonials = [
   {
-    name: "Daniel Kim",
-    role: "Founder of MindEase App",
-    text: "The hands-on projects and real-world examples gave me the confidence to tackle complex design challenges. PCS made all the difference in my career pivot.",
-    avatar: Avatar1,
+    name: "Jesi J",
+    role: "Full Stack Developer",
+    text: "The Full Stack Development course at PCS was highly practical and well structured. Working on real-time projects helped me strengthen both frontend and backend skills with confidence.",
+    initial: "J",
   },
   {
-    name: "Aisha Patel",
-    role: "UI/UX Designer",
-    text: "Each module was structured clearly, and the feedback from mentors helped me improve fast. I landed my first design role within weeks of finishing.",
-    avatar: Avatar1,
+    name: "Mathavi K",
+    role: "Full Stack Developer",
+    text: "PCS provided excellent hands-on training with clear explanations. The trainers focused on real-world development scenarios, which made learning fast and effective.",
+    initial: "M",
   },
   {
-    name: "James Lee",
-    role: "Front-End Developer",
-    text: "The blend of theory and practice was perfect. Building real projects helped me fill my portfolio and feel ready for interviews.",
-    avatar: Avatar1,
+    name: "Maha lakshmi V",
+    role: "Full Stack Developer",
+    text: "The course content was industry-oriented and easy to follow. Building complete applications during the training helped me improve my problem-solving and coding skills.",
+    initial: "M",
   },
   {
-    name: "Maria Rodriguez",
-    role: "Product Designer",
-    text: "I loved the community support and live sessions. The course helped me transition from graphic design into full product design.",
-    avatar: Avatar1,
+    name: "Subisha S",
+    role: "Full Stack Web Developer",
+    text: "I gained strong knowledge in React, Node.js, and database integration. The practical approach and mentor support made a huge difference in my learning journey.",
+    initial: "S",
   },
   {
-    name: "Rahul Sharma",
-    role: "Full-Stack Engineer",
-    text: "The curriculum stayed aligned with industry trends. I could immediately apply new skills at work and move into a better role.",
-    avatar: Avatar1,
+    name: "Rama lakshmi S",
+    role: "Mobile Application Developer",
+    text: "PCS training boosted my confidence as a developer. The live projects and continuous guidance prepared me well for real-time development and interviews.",
+    initial: "R",
   },
 ];
 
@@ -109,11 +109,10 @@ const TraningLearn = () => {
                   <p className="traninglearn-card-text">{item.text}</p>
 
                   <div className="traninglearn-card-footer">
-                    <img
-                      src={item.avatar}
-                      alt={item.name}
-                      className="traninglearn-card-avatar"
-                    />
+                    <div className="avatar-circle">
+  {item.initial}
+</div>
+
                     <div className="traninglearn-card-person">
                       <div className="traninglearn-card-name">{item.name}</div>
                       <div className="traninglearn-card-role">{item.role}</div>
