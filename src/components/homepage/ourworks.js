@@ -81,7 +81,7 @@ useEffect(() => {
 
     // Map distance → 0 to 1 smooth
     const fillWindow = viewportH * 0.9;
-    let progress = distanceFromCenter / fillWindow;
+    let progress = (distanceFromCenter / fillWindow) * 1.6;
 
     if (progress < 0) progress = 0;
     if (progress > 1) progress = 1;
