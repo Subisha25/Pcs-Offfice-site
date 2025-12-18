@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
+import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 
 import Mockup from "../assets/servicebanner.png";
 import Team from "../assets/service1.png";
@@ -12,6 +13,7 @@ import Create from "../assets/create.png";
 import Grow from "../assets/grow.png";
 
 import CTASection from "../homepage/cta";
+import CommonTopTag from "../common/toptag";
 
 /* ==================== PURPOSE SECTION (SCROLL PIN) ==================== */
 
@@ -187,12 +189,15 @@ function PurposeSection() {
             transform: `translateY(${-20 * (1 - badgeOpacity)}px)`,
           }}
         >
-          <button className="btn-primary">
+          {/* <button className="btn-primary">
             <div className="icon-circle">
               <img alt="arrow" src={Whychoose} />
             </div>
             Why Choose Us
-          </button>
+          </button> */}
+
+          <CommonTopTag text="Why Choose Us" icon={tagicon} />
+
         </div>
 
         {/* Main Heading with Typewriter */}
@@ -218,10 +223,10 @@ function PurposeSection() {
             const { opacity, translateY, scale } = getCardTransform(index);
             const cardStyle = isPinned
               ? {
-                  opacity,
-                  transform: `translateY(${translateY}px) scale(${scale})`,
-                  transition: "opacity 0.3s ease, transform 0.3s ease",
-                }
+                opacity,
+                transform: `translateY(${translateY}px) scale(${scale})`,
+                transition: "opacity 0.3s ease, transform 0.3s ease",
+              }
               : {}; // small screens: handled by CSS + IntersectionObserver
 
             return (

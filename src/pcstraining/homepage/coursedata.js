@@ -1,190 +1,13 @@
-// // src/data/coursedata.js
-
-// import CourseImg1 from "../assets/popular1.png";
-// import CourseImg2 from "../assets/popular2.png";
-// import CourseImg3 from "../assets/popular3.png";
-// import CourseImg4 from "../assets/popular2.png";
-// import CourseImg5 from "../assets/popular2.png";
-
-// const coursedata = [
-//   {
-//     id: "fullstack-web",
-//     title: "Full Stack Web Development",
-//     shortTitle: "HTML, CSS, JS, React & Node",
-//     category: "Development",
-//     image: CourseImg1,
-//     duration: "3 Months",
-//     level: "Beginner to Advanced",
-//     mode: "Online / Offline",
-//     lessons: 27,
-
-//     overview:
-//       "Master frontend and backend web development by building real-world applications using modern technologies.",
-
-//     learn: [
-//       "HTML5, CSS3 & Responsive Design",
-//       "JavaScript & ES6",
-//       "React.js & Hooks",
-//       "Node.js & Express.js",
-//       "MongoDB & REST APIs",
-//       "Live Projects & Deployment",
-//     ],
-
-//     curriculum: [
-//       { module: "Frontend Basics", desc: "HTML, CSS, Flexbox, Grid" },
-//       { module: "JavaScript", desc: "DOM, Events, ES6" },
-//       { module: "React.js", desc: "Hooks, Routing, APIs" },
-//       { module: "Backend", desc: "Node, Express, MongoDB" },
-//     ],
-
-//     tools: ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"],
-
-//     whoCanJoin: [
-//       "Students & Freshers",
-//       "Career Switchers",
-//       "Working Professionals",
-//     ],
-//   },
-
-//   {
-//     id: "frontend-react",
-//     title: "Frontend Development with React",
-//     shortTitle: "HTML, CSS, JS & React",
-//     category: "Development",
-//     image: CourseImg2,
-//     duration: "2 Months",
-//     level: "Beginner to Intermediate",
-//     mode: "Online / Offline",
-//     lessons: 20,
-
-//     overview:
-//       "Build fast, responsive and scalable frontend applications using React.js.",
-
-//     learn: [
-//       "Modern HTML & CSS",
-//       "JavaScript Fundamentals",
-//       "React Components",
-//       "Hooks & State Management",
-//       "API Integration",
-//     ],
-
-//     curriculum: [
-//       { module: "HTML & CSS", desc: "Layouts, Responsive UI" },
-//       { module: "JavaScript", desc: "Logic & DOM" },
-//       { module: "React", desc: "Hooks & Components" },
-//     ],
-
-//     tools: ["HTML", "CSS", "JavaScript", "React"],
-
-//     whoCanJoin: ["Students", "UI Developers", "Freshers"],
-//   },
-
-//   {
-//     id: "backend-node",
-//     title: "Backend Development with Node.js",
-//     shortTitle: "Node.js, Express & MongoDB",
-//     category: "Development",
-//     image: CourseImg3,
-//     duration: "2 Months",
-//     level: "Intermediate",
-//     mode: "Online / Offline",
-//     lessons: 18,
-
-//     overview:
-//       "Learn to build secure and scalable backend applications using Node.js.",
-
-//     learn: [
-//       "Node.js Fundamentals",
-//       "Express.js",
-//       "MongoDB",
-//       "Authentication",
-//       "REST APIs",
-//     ],
-
-//     curriculum: [
-//       { module: "Node Basics", desc: "Async, Events" },
-//       { module: "Express", desc: "Routing & Middleware" },
-//       { module: "Database", desc: "MongoDB" },
-//     ],
-
-//     tools: ["Node.js", "Express", "MongoDB"],
-
-//     whoCanJoin: ["Backend Developers", "Full Stack Learners"],
-//   },
-
-//   {
-//     id: "python-full",
-//     title: "Python Full Course",
-//     shortTitle: "Python, Django & Flask",
-//     category: "Programming",
-//     image: CourseImg4,
-//     duration: "2.5 Months",
-//     level: "Beginner to Advanced",
-//     mode: "Online / Offline",
-//     lessons: 22,
-
-//     overview:
-//       "Learn Python programming from basics to backend development.",
-
-//     learn: [
-//       "Python Basics",
-//       "OOPS Concepts",
-//       "Django & Flask",
-//       "Database Handling",
-//     ],
-
-//     curriculum: [
-//       { module: "Python Basics", desc: "Syntax & Logic" },
-//       { module: "Advanced Python", desc: "OOPS & Modules" },
-//       { module: "Frameworks", desc: "Django, Flask" },
-//     ],
-
-//     tools: ["Python", "Django", "Flask"],
-
-//     whoCanJoin: ["Beginners", "Backend Developers"],
-//   },
-
-//   {
-//     id: "react-native",
-//     title: "React Native App Development",
-//     shortTitle: "Mobile App Development",
-//     category: "Mobile",
-//     image: CourseImg5,
-//     duration: "2 Months",
-//     level: "Intermediate",
-//     mode: "Online / Offline",
-//     lessons: 16,
-
-//     overview:
-//       "Build Android & iOS apps using React Native.",
-
-//     learn: [
-//       "React Native Basics",
-//       "Navigation",
-//       "API Integration",
-//       "App Deployment",
-//     ],
-
-//     curriculum: [
-//       { module: "Basics", desc: "Components & Styling" },
-//       { module: "Advanced", desc: "APIs & Navigation" },
-//     ],
-
-//     tools: ["React Native", "JavaScript"],
-
-//     whoCanJoin: ["React Developers", "Mobile App Learners"],
-//   },
-// ];
-
-// export default coursedata;
-
-// src/data/coursedata.js
 
 import CourseImg1 from "../assets/popular1.png";
 import CourseImg2 from "../assets/popular2.png";
 import CourseImg3 from "../assets/popular3.png";
 import CourseImg4 from "../assets/popular2.png";
 import CourseImg5 from "../assets/popular2.png";
+import CourseImgAI from "../assets/AI image.jpg";
+import CourseImgDM from "../assets/digital marketing.jpg";
+import CourseImgJava from "../assets/java.jpg";
+
 
 const coursedata = [
   {
@@ -718,7 +541,440 @@ const coursedata = [
       companies: ["Swiggy", "Zomato", "Mobile Tech Lead"],
       students: 2800
     }
+  },
+  {
+  id: "artificial-intelligence",
+  title: "Artificial Intelligence & Machine Learning",
+  shortTitle: "Python, ML, DL & AI",
+  category: "AI & Data Science",
+  image: CourseImgAI,
+  duration: "4 Months",
+  level: "Beginner to Advanced",
+  mode: "Online / Offline",
+  lessons: 32,
+  students: 980,
+  rating: 4.9,
+  reviews: 410,
+  price: 18999,
+  language: "English & Tamil",
+  certificate: true,
+  liveProjects: 6,
+
+  overview:
+    "Become an AI expert by learning Python, Machine Learning, Deep Learning, and real-world AI applications. This course takes you from basic concepts to building intelligent systems used in the industry.",
+
+  learn: [
+    "Python programming for AI & Data Science",
+    "Statistics & Mathematics for Machine Learning",
+    "Machine Learning algorithms with real examples",
+    "Deep Learning using Neural Networks",
+    "Natural Language Processing (NLP)",
+    "Computer Vision basics",
+    "Model training, testing & optimization",
+    "AI project deployment",
+    "Working with real-world datasets",
+    "Ethical AI & future trends"
+  ],
+
+  curriculum: [
+    {
+      module: "Python for AI",
+      desc: "Python basics, data structures & libraries",
+      duration: "3 weeks",
+      topics: ["Python syntax", "NumPy", "Pandas", "Matplotlib"]
+    },
+    {
+      module: "Maths & Statistics for ML",
+      desc: "Core math concepts for AI",
+      duration: "2 weeks",
+      topics: ["Linear Algebra", "Probability", "Statistics", "Data analysis"]
+    },
+    {
+      module: "Machine Learning",
+      desc: "Supervised & Unsupervised Learning",
+      duration: "4 weeks",
+      topics: [
+        "Linear Regression",
+        "Logistic Regression",
+        "Decision Trees",
+        "KNN",
+        "Clustering",
+        "Model evaluation"
+      ]
+    },
+    {
+      module: "Deep Learning",
+      desc: "Neural Networks & Deep Learning models",
+      duration: "3 weeks",
+      topics: [
+        "Neural Networks",
+        "ANN",
+        "CNN",
+        "RNN",
+        "TensorFlow & Keras"
+      ]
+    },
+    {
+      module: "NLP & Computer Vision",
+      desc: "Text & Image based AI systems",
+      duration: "2 weeks",
+      topics: [
+        "Text preprocessing",
+        "Sentiment Analysis",
+        "Image classification",
+        "Face detection"
+      ]
+    },
+    {
+      module: "AI Projects & Deployment",
+      desc: "Real-world projects & deployment",
+      duration: "2 weeks",
+      topics: [
+        "End-to-end AI projects",
+        "Model deployment",
+        "Flask basics",
+        "Cloud introduction"
+      ]
+    }
+  ],
+
+  tools: [
+    "Python",
+    "NumPy",
+    "Pandas",
+    "Matplotlib",
+    "Scikit-learn",
+    "TensorFlow",
+    "Keras",
+    "Jupyter Notebook",
+    "VS Code"
+  ],
+
+  prerequisites: [
+    "Basic computer knowledge",
+    "Interest in AI & problem solving",
+    "No prior AI experience required"
+  ],
+
+  whoCanJoin: [
+    "Students & Freshers interested in AI",
+    "Software Developers upgrading to AI",
+    "Career switchers entering Data & AI field",
+    "Entrepreneurs building AI-based products"
+  ],
+
+  careerOpportunities: [
+    "AI Engineer",
+    "Machine Learning Engineer",
+    "Data Scientist",
+    "AI Developer",
+    "Research Assistant"
+  ],
+
+  highlights: [
+    "6 Real-time AI Projects",
+    "Hands-on Practical Training",
+    "1-on-1 Mentorship",
+    "Job Assistance",
+    "Interview Preparation",
+    "Industry Recognized Certificate"
+  ],
+
+  instructor: {
+    name: "Dr. Suresh Anand",
+    experience: "10+ years",
+    companies: ["Microsoft", "IBM", "AI Research Labs"],
+    students: 6200
   }
+},
+{
+  id: "digital-marketing",
+  title: "Digital Marketing & Growth Hacking",
+  shortTitle: "SEO, SEM, SMM & Analytics",
+  category: "Marketing",
+  image: CourseImgDM,
+  duration: "3 Months",
+  level: "Beginner to Advanced",
+  mode: "Online / Offline",
+  lessons: 25,
+  students: 1420,
+  rating: 4.7,
+  reviews: 380,
+  price: 14999,
+  language: "English & Tamil",
+  certificate: true,
+  liveProjects: 4,
+
+  overview:
+    "Learn Digital Marketing from scratch and master online branding, lead generation, and performance marketing. This course focuses on practical skills with real-time campaigns and tools used by industry experts.",
+
+  learn: [
+    "Digital Marketing fundamentals & strategy planning",
+    "Search Engine Optimization (SEO)",
+    "Search Engine Marketing (Google Ads)",
+    "Social Media Marketing (Facebook, Instagram, LinkedIn)",
+    "Content Marketing & Copywriting",
+    "Email Marketing & Automation",
+    "Google Analytics & Data Tracking",
+    "Conversion Rate Optimization (CRO)",
+    "Influencer & Affiliate Marketing",
+    "Live Campaign Management"
+  ],
+
+  curriculum: [
+    { 
+      module: "Digital Marketing Fundamentals", 
+      desc: "Introduction to online marketing & branding",
+      duration: "2 weeks",
+      topics: ["Digital ecosystem", "Customer journey", "Marketing funnels"]
+    },
+    { 
+      module: "Search Engine Optimization (SEO)", 
+      desc: "On-page, Off-page & Technical SEO",
+      duration: "3 weeks",
+      topics: ["Keyword research", "On-page SEO", "Backlinks", "SEO tools"]
+    },
+    { 
+      module: "Search Engine Marketing (SEM)", 
+      desc: "Paid advertising with Google Ads",
+      duration: "3 weeks",
+      topics: ["Google Ads setup", "Keyword bidding", "Ad copy", "Quality score"]
+    },
+    { 
+      module: "Social Media Marketing (SMM)", 
+      desc: "Organic & paid social media campaigns",
+      duration: "3 weeks",
+      topics: [
+        "Facebook Ads",
+        "Instagram growth",
+        "LinkedIn marketing",
+        "Content calendar"
+      ]
+    },
+    { 
+      module: "Analytics & Performance Tracking", 
+      desc: "Measure, analyze & optimize campaigns",
+      duration: "2 weeks",
+      topics: [
+        "Google Analytics",
+        "Google Search Console",
+        "Conversion tracking",
+        "Campaign optimization"
+      ]
+    },
+    { 
+      module: "Advanced Marketing & Projects", 
+      desc: "Growth hacking & real-time projects",
+      duration: "2 weeks",
+      topics: [
+        "Email automation",
+        "Influencer marketing",
+        "Affiliate marketing",
+        "Live project execution"
+      ]
+    }
+  ],
+
+  tools: [
+    "Google Analytics",
+    "Google Ads",
+    "Search Console",
+    "Facebook Ads Manager",
+    "Canva",
+    "Mailchimp",
+    "SEMrush",
+    "Ahrefs"
+  ],
+
+  prerequisites: [
+    "Basic computer & internet knowledge",
+    "Interest in marketing & branding",
+    "No prior marketing experience required"
+  ],
+
+  whoCanJoin: [
+    "Students & Freshers interested in marketing",
+    "Business owners & Entrepreneurs",
+    "Career switchers entering digital marketing",
+    "Working professionals upgrading marketing skills"
+  ],
+
+  careerOpportunities: [
+    "Digital Marketing Executive",
+    "SEO Specialist",
+    "Social Media Manager",
+    "Performance Marketer",
+    "Content Marketing Strategist"
+  ],
+
+  highlights: [
+    "4 Live Industry Projects",
+    "Hands-on Campaign Experience",
+    "1-on-1 Mentorship",
+    "Internship Guidance",
+    "Job Assistance",
+    "Industry Recognized Certificate"
+  ],
+
+  instructor: {
+    name: "Arun Prakash",
+    experience: "7+ years",
+    companies: ["Zoho", "Flipkart", "Marketing Agency"],
+    students: 4300
+  }
+},
+{
+  id: "java-fullstack",
+  title: "Java Full Stack Development",
+  shortTitle: "Java, Spring Boot & React",
+  category: "Development",
+  image: CourseImgJava,
+  duration: "4 Months",
+  level: "Beginner to Advanced",
+  mode: "Online / Offline",
+  lessons: 30,
+  students: 1580,
+  rating: 4.8,
+  reviews: 420,
+  price: 16999,
+  language: "English & Tamil",
+  certificate: true,
+  liveProjects: 6,
+
+  overview:
+    "Become a professional Java Full Stack Developer by mastering core Java, backend development with Spring Boot, database management, and frontend integration. This course focuses on real-world applications and enterprise-level projects.",
+
+  learn: [
+    "Core Java fundamentals & OOP concepts",
+    "Advanced Java & Collections framework",
+    "JDBC & database connectivity",
+    "Spring & Spring Boot framework",
+    "RESTful API development",
+    "Hibernate & JPA",
+    "Frontend basics with HTML, CSS & React",
+    "Authentication & Authorization",
+    "Microservices basics",
+    "Real-time project development"
+  ],
+
+  curriculum: [
+    { 
+      module: "Core Java Fundamentals", 
+      desc: "Java basics, syntax & OOP concepts",
+      duration: "3 weeks",
+      topics: [
+        "Java syntax",
+        "Data types",
+        "OOP concepts",
+        "Exception handling"
+      ]
+    },
+    { 
+      module: "Advanced Java", 
+      desc: "Collections, Multithreading & Java 8",
+      duration: "3 weeks",
+      topics: [
+        "Collections framework",
+        "Streams & Lambda",
+        "Multithreading",
+        "File handling"
+      ]
+    },
+    { 
+      module: "Database & JDBC", 
+      desc: "SQL & Java database connectivity",
+      duration: "2 weeks",
+      topics: [
+        "SQL basics",
+        "JDBC",
+        "CRUD operations",
+        "Transactions"
+      ]
+    },
+    { 
+      module: "Spring & Spring Boot", 
+      desc: "Enterprise backend development",
+      duration: "4 weeks",
+      topics: [
+        "Spring Core",
+        "Spring MVC",
+        "Spring Boot",
+        "REST APIs"
+      ]
+    },
+    { 
+      module: "Hibernate & JPA", 
+      desc: "ORM & database mapping",
+      duration: "2 weeks",
+      topics: [
+        "Hibernate",
+        "JPA annotations",
+        "Entity relationships",
+        "Caching"
+      ]
+    },
+    { 
+      module: "Full Stack Project & Deployment", 
+      desc: "End-to-end application development",
+      duration: "2 weeks",
+      topics: [
+        "React integration",
+        "Security (JWT)",
+        "Project deployment",
+        "Microservices intro"
+      ]
+    }
+  ],
+
+  tools: [
+    "Java",
+    "Spring Boot",
+    "Hibernate",
+    "MySQL",
+    "React",
+    "Maven",
+    "Git",
+    "IntelliJ IDEA",
+    "Postman"
+  ],
+
+  prerequisites: [
+    "Basic computer knowledge",
+    "Logical thinking & problem-solving interest",
+    "No prior Java experience required"
+  ],
+
+  whoCanJoin: [
+    "Students & Freshers learning Java",
+    "Backend developers upgrading to Full Stack",
+    "Career switchers entering Java development",
+    "Professionals targeting enterprise projects"
+  ],
+
+  careerOpportunities: [
+    "Java Developer",
+    "Java Full Stack Developer",
+    "Backend Developer",
+    "Spring Boot Developer",
+    "Software Engineer"
+  ],
+
+  highlights: [
+    "6 Enterprise-level Projects",
+    "Hands-on Java Coding",
+    "1-on-1 Mentorship",
+    "Job Assistance",
+    "Interview Preparation",
+    "Industry Recognized Certificate"
+  ],
+
+  instructor: {
+    name: "Vignesh Rao",
+    experience: "9+ years",
+    companies: ["TCS", "Infosys", "Product-based Company"],
+    students: 5800
+  }
+}
 ];
 
 export default coursedata;

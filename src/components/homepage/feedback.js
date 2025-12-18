@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./feedback.css";
-import tagicon from "../assets/Group 17.svg";
+import tagicon from "../assets/allheadingicon/feedbackicon.png";
 import quote from "../assets/quote.svg";
 import leftarrow from "../assets/leftarrow.svg";
 import rightarrow from "../assets/rightarrow.svg";

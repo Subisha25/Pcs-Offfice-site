@@ -21,21 +21,49 @@
   font-style: normal;
   font-display: swap;
 }
+/*  TOP CENTER */
+.top-center {
+  text-align: center;
+  /* margin-bottom: 40px; */
+}
+
+.commontag {
+  font-family: "WF Visual Sans" !important;
+  border: 1px solid #a19999;
+  /* background: #D9D9D9; */
+  border-radius: 30px;
+  padding: 2px 16px 2px 6px;
+  font-size: 14px;
+  color: #03045E;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+
+.boxicon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+
 .animated-text2 {
   max-width: 900px;
-  margin: 0 auto 20px auto; 
+  margin: 0 auto 20px auto;
   line-height: 1.4;
-  
+
 }
 
 /* WORDS GREY BEFORE FILL */
 .animated-text2 .word {
-   font-family: "WF Visual Sans" !important;
-          font-size: 48px;
-          font-weight: 600;
-          line-height: 1.3;
-          /* color: #000; */
-          margin-bottom: 30px;
+  font-family: "WF Visual Sans" !important;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.3;
+  /* color: #000; */
+  margin-bottom: 30px;
   color: #bbbbbb;
   transition: color 0.1s ease-in-out;
 }
@@ -44,12 +72,14 @@
 .animated-text2 .word.filled {
   color: #000;
 }
+
 .animated-text2 .gradient-word {
   color: #bbbbbb !important;
   font-family: var(--playfair-fonts) !important;
   font-style: italic !important;
   font-weight: 600 !important;
 }
+
 /* Default gradient words: white + Playfair */
 .gradient-word {
   color: #bbbbbb !important;
@@ -85,174 +115,150 @@
 
 
 
+.about-section {
 
-
-        .container {
-          max-width: 1000px;
-          width: 100%;
-          text-align: center;
-        }
-
-     /*  TOP CENTER */
-.top-center {
-  text-align: center;
-  /* margin-bottom: 40px; */
-}
-.commontag {
-    font-family: "WF Visual Sans" !important;
-border: 1px solid #D9D9D9;
-  /* background: #D9D9D9; */
-  border-radius: 30px;
-  padding: 4px 30px 4px 8px;
-  font-size: 18px;
-  color: #000;
-  display: inline-flex;
+  font-family: "WF Visual Sans" !important;
+  background-color: white;
+  /* background: linear-gradient(to bottom, #03045E80, #FFFFFF00); */
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.main-heading {
+  font-family: "WF Visual Sans" !important;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.gradient-text1 {
+
+  color: #03045E;
+  font-family: var(--playfair-fonts);
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+  background-clip: text;
+  /* font-style: italic; */
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, #03045E, #FF006E);
+  font-family: var(--playfair-fonts);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.subtext {
+  font-family: "WF Visual Sans" !important;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex: 1;
+  min-width: 150px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 72px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #333;
   font-weight: 500;
+  margin-top: -35px;
 }
 
-.commontag-icon {
-    font-family: "WF Visual Sans" !important;
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
 
-  width: 30px;
-  height: 30px;
+.link {
+  color: #000;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cta-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(90deg, #e0e0e0 0%, #f5f5f5 100%);
+  border: none;
+  padding: 16px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button svg {
+  background: #03045E;
   border-radius: 50%;
-  background: #000c5a; /* circle background */
-  display: flex;        /* make it flex to center image */
-  align-items: center;  /* vertically center */
-  justify-content: center; /* horizontally center */
-  padding: 0;           /* remove padding, center via flex */
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  stroke: white;
 }
 
-.boxicon {
-  width: 30%;          /* smaller than circle for "kutty" look */
-  height: 420%;
-  /* object-fit: contain; */
-}
-        .main-heading {
-           font-family: "WF Visual Sans" !important;
-          font-size: 48px;
-          font-weight: 600;
-          line-height: 1.3;
-          color: #000;
-          margin-bottom: 30px;
-        }
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 22px;
+  }
 
-           .gradient-text1 {
+  .animated-text2 .word {
+    font-size: 22px;
+  }
 
-         color:  #03045E;
-         font-family: var(--playfair-fonts);
-          -webkit-background-clip: text;
-          /* -webkit-text-fill-color: transparent; */
-          background-clip: text;
-          /* font-style: italic; */
-        }
-        .gradient-text {
-          background: linear-gradient(100deg, #03045E, #FF006E);    
-               font-family: var(--playfair-fonts);
-
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-style: italic;
-        }
-
-        .subtext {
-           font-family: "WF Visual Sans" !important;
-          font-size: 16px;
-          color: #666;
-          margin-bottom: 60px;
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .stats-container {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 40px;
-          flex-wrap: wrap;
-        }
-
-        .stat-item {
-          display: flex;
-          flex: 1;
-          min-width: 150px;
-           flex-direction: column;
-           align-items: center; 
-           text-align: center;
-        }
-
-        .stat-number {
-          font-size: 72px;
-          font-weight: 400;
-          color: #000;
-          margin-bottom: 10px;
-        }
-
-        .stat-label {
-          font-size: 14px;
-          color: #333;
-          font-weight: 500;
-           margin-top: -35px;
-        }
-
-        .cta-section {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-          align-items: center;
-        }
-
-        .link {
-          color: #000;
-          text-decoration: underline;
-          font-size: 16px;
-          font-weight: 500;
-          cursor: pointer;
-        }
-
-        .cta-button {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          background: linear-gradient(90deg, #e0e0e0 0%, #f5f5f5 100%);
-          border: none;
-          padding: 16px 30px;
-          border-radius: 50px;
-          font-size: 16px;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .cta-button svg {
-          background: #03045E;
-          border-radius: 50%;
-          padding: 8px;
-          width: 36px;
-          height: 36px;
-          stroke: white;
-        }
-
-        @media (max-width: 768px) {
-          .main-heading {
-            font-size: 22px;
-          }
-
-          .animated-text2 .word{
-            font-size: 22px;
-          }
-          .stat-number {
-            font-size: 48px;
-          }
+  .stat-number {
+    font-size: 48px;
+  }
 
           .stats-container {
             flex-direction: column;
