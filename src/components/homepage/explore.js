@@ -779,20 +779,20 @@ text-align: center;
                         ))}
                       </div>
                     </div>
-                    <div
+                    {/* <div
                       className="wordanimation-our-works-wrapper"
                       onClick={() => handleNavigate(project.link)}
                     >
                       <CommonButton text='View' />
-                    </div>
+                    </div> */}
 
-                    <div
+                    {/* <div
                       className="wordanimation-view-all cursor-pointer flex items-center gap-2"
                       onClick={() => navigate("/works")}
                     >
                       <img src={ArrowIcon} alt="arrow" className="wordanimation-arrow-icon" />
                       <span>View All Works</span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               );
