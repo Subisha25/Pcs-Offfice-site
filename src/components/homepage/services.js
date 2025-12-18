@@ -124,7 +124,7 @@ const ServicesSection = () => {
       backgroundRepeat: 'no-repeat',
       position: 'relative',
       minHeight: '100vh',
-      padding: '60px 40px',
+      padding: '80px 40px',
       backgroundAttachment: 'scroll'
     }}>
 
@@ -436,7 +436,7 @@ const ServicesSection = () => {
   .card-description {
     font-size: 14px !important;     /* 🔽 size reduced */
     line-height: 1.4 !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 30px !important;
 
     display: block !important;
     overflow: visible !important;
@@ -483,14 +483,28 @@ const ServicesSection = () => {
   .card-header {
     position: relative !important;
     z-index: 5 !important;
+    padding-top:20px
+  }
+}
+@media (max-width: 768px) {
+ 
+
+      @media (max-width: 768px) {
+  .card-title,
+  .card-subtitle {
+    line-height: 1.1 !important;   /* 🔽 kammi */
+    margin-bottom: 4px !important;
+  }
+  .card-description {
+    margin-top: 16px !important;   /* ⬇️ title-kku keela gap */
+    line-height: 1.45 !important;
   }
 }
 
-      
 
         @media (max-width: 480px) {
           .services-container {
-            padding: 24px 12px !important;
+            padding: 80px 12px !important;
           }
           .services-title {
             font-size: 20px !important;
@@ -511,7 +525,83 @@ const ServicesSection = () => {
             right: 12px !important;
             top: 12px !important;
           }
+  .services-grid {
+    margin-top: -40px !important;   /* 👈 cards mela thallum */
         }
+
+  .service-card .card-description {
+    margin-top: -12px !important;   /* 👈 description mela varum */
+}
+
+/* ================= MOBILE VIEW CARD SPACING FIX ================= */
+@media (max-width: 768px) {
+
+  /* 1️⃣ SAME TOP & BOTTOM DISTANCE INSIDE CARD */
+  .service-card {
+    padding-top: 26px !important;
+    padding-bottom: 26px !important;
+  }
+
+  /* 2️⃣ HEADING – LITTLE DOWN (LINE HEIGHT + SPACING) */
+  .card-title,
+  .card-subtitle {
+    line-height: 1.15 !important;   /* konjam relaxed */
+    margin-top: 6px !important;     /* 👇 little down */
+    margin-bottom: 6px !important;
+  }
+
+  /* 3️⃣ PARAGRAPH – LITTLE UP */
+  .card-description {
+    margin-top: 4px !important;     /* 👆 paragraph mela varum */
+  }
+    /* ================= EXTRA COMPACT CARD – MOBILE ONLY ================= */
+@media (max-width: 768px) {
+
+  /* 🔽 Card overall height */
+  .service-card {
+    min-height: 240px !important;   /* 🔥 more reduced */
+    padding: 14px !important;       /* 🔥 tight padding */
+  }
+
+  /* 🔽 Header spacing reduce */
+  .card-header {
+    margin-bottom: 4px !important;
+
+  }
+
+  /* 🔽 Title & subtitle tight */
+  .card-title,
+  .card-subtitle {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* 🔽 Description space reduce */
+  .card-description {
+    margin-top: 2px !important;
+    margin-bottom: 4px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* 🔽 Stop vertical stretch */
+  .card-content {
+    justify-content: flex-start !important;
+  }
+}
+  /* ================= MOVE CARD HEADER UP – MOBILE ONLY ================= */
+@media (max-width: 768px) {
+
+  .card-header {
+    padding-top: 6px !important;   /* 👆 mela thallum */
+    margin-top: -6px !important;   /* 👆 extra lift */
+  }
+}
+
+
+}
+
+    
       `}</style>
     </div>
   );
