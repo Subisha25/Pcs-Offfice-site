@@ -63,7 +63,7 @@ const AboutExperience = () => {
       lastScrollY.current = currentScroll;
 
       const distanceFromCenter = centerY - rect.top;
-      const fillWindow = viewportH * 0.9;
+      const fillWindow = viewportH * 0.5;
       let progress = distanceFromCenter / fillWindow;
 
       if (progress < 0) progress = 0;

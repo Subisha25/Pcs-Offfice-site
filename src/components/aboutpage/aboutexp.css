@@ -24,7 +24,7 @@
 .about-exp-section {
   display: flex;
   gap: 80px;
-  padding: 80px 120px;
+  padding: 25px 120px;
   align-items: flex-start;
   background: #fff;
 }
