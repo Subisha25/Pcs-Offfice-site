@@ -22,61 +22,61 @@ const Products = () => {
 
   return (
     <>
-    <div className="products-section">
+      <div className="products-section">
 
-      {/* TOP CENTER SECTION */}
-      <div className="top-centers">
-<CommonTopTag
-  icon={tagicon}
-  text={<span className="products-tag-text">Our Products</span>}
-/>
+        {/* TOP CENTER SECTION */}
+        <div className="top-centers">
+          <CommonTopTag
+            icon={tagicon}
+            text={<span className="products-tag-text">Our Products</span>}
+          />
 
-        <h2 className="titles">
-          Proud wins from <span>passion</span> <br /> products
-        </h2>
-      </div>
-
-      {/* LEFT IMAGE & RIGHT LIST */}
-      <div className="content-wrapper">
-        <div className="left-image">
-          <img src={activeProduct.image} alt={activeProduct.name} />
+          <h2 className="titles">
+            Proud wins from <span>passion</span> <br /> products
+          </h2>
         </div>
 
-        <div className="right-list">
-      <div className="products-list">
-  {products.map((item, index) => (
-    <div className="product-row" key={index}>
-      
-      {/* Click name to change image */}
-    <p
-  style={{ cursor: "pointer" }}
-  onMouseEnter={() => setActiveProduct(item)}  // <- CHANGE HERE
->
-  {item.name}
-</p>
+        {/* LEFT IMAGE & RIGHT LIST */}
+        <div className="content-wrapper">
+          <div className="left-image">
+            <img src={activeProduct.image} alt={activeProduct.name} />
+          </div>
+
+          <div className="right-list">
+            <div className="products-list">
+              {products.map((item, index) => (
+                <div className="product-row" key={index}>
+
+                  {/* Click name to change image */}
+                  <p
+                    style={{ cursor: "pointer" }}
+                    onMouseEnter={() => setActiveProduct(item)}  // <- CHANGE HERE
+                  >
+                    {item.name}
+                  </p>
 
 
-      <div className="view-container">
-        
-        {/* Arrow ONLY for active product */}
-        {activeProduct.name === item.name && (
-          <span className="arrows"> <img src={arrow} alt="arrows"/></span>
-        )}
-        {/* View always visible */}
-        <a href={item.link} className="view-link">
-          View
-        </a>
+                  <div className="view-container">
 
-      </div>
+                    {/* Arrow ONLY for active product */}
+                    {activeProduct.name === item.name && (
+                      <span className="arrows"> <img src={arrow} alt="arrows" /></span>
+                    )}
+                    {/* View always visible */}
+                    <a href={item.link} className="view-link">
+                      View
+                    </a>
 
-    </div>
-  ))}
-</div>
+                  </div>
 
+                </div>
+              ))}
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
- <FeedbackSection/>
+      <FeedbackSection />
     </>
   );
 };

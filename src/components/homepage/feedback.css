@@ -22,7 +22,7 @@
 }
 .feedback-section {
   width: 100%;
-  padding: 100px 130px;
+  /* padding: 60px 0px 60px; */
   background-color:#F5F5F5;
 }
 
@@ -63,7 +63,7 @@
 .feedback-header h2 {
   font-size: 48px;
   font-weight: 600;
-  margin-top: 20px;
+  /* margin-top: 10px; */
   font-family: "WF Visual Sans" !important;
 
 }
