@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "./vision.css";
 import Arrow from "../assets/arrow.png";
-import tagicon from "../assets/Vector (3).svg";
+import tagicon from "../assets/allheadingicon/servicesicon.png";
 import Image from "../assets/aboutimg.jpeg";
 import CommonTopTag from "../common/toptag";
 import CommonButton from "../common/button";
