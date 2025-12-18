@@ -73,15 +73,15 @@ const TraningLearn = () => {
   const translateX = (100 / slidesPerView) * currentIndex;
 
   return (
-    <section className="traninglearn-section">
+    <section className="traninglearn">
       <div className="traninglearn-inner">
         {/* Top tag */}
        <CommonTopTag text="Feed Back" />
 
         {/* Heading */}
 <div className="traninglearn-heading">
-  <h2 className="traninglearn-title">Success stories from</h2>
-  <span className="traninglearn-title-highlight">learners</span>
+  <h2 className="successtraninglearn-title">Success stories from</h2>
+  <span className="successtraninglearn-title-highlight">learners</span>
 </div>
 
 
