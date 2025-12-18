@@ -440,12 +440,34 @@
 .phone-select {
     font-family: "WF Visual Sans"; 
     font-weight: 300;
-    width: 32%;
+    width: 20%;
     padding: 14px;
     border-radius: 10px;
     border: 1px solid #cfcfcf;
     font-size: 15px;
 }
+
+.phone-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: #fff !important;
+  background-image: none !important;
+
+  text-align: center;        /* 🔥 text center */
+  text-align-last: center;  /* 🔥 select special fix */
+
+  padding-left: 0;          /* 🔥 equal left */
+  padding-right: 0;         /* 🔥 equal right */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: default;
+}
+
 
 .phone-number {
     font-family: "WF Visual Sans"; 
@@ -1321,3 +1343,74 @@ font-weight: 300;
   }
 }
 
+/* wrapper */
+.phone-input-wrapper {
+  position: relative;
+  width: 68%;
+}
+
+/* +91 inside input */
+.country-code {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #444;
+  pointer-events: none;
+}
+
+/* input padding adjust */
+.phone-input-wrapper .phone-number {
+  padding-left: 48px; /* space for +91 */
+}
+
+/* 🔥 MOBILE ONLY */
+@media (max-width: 600px) {
+
+  /* remove India +91 box */
+  .phone-select {
+    display: none;
+  }
+
+  /* make phone input full width */
+  .phone-input-wrapper {
+    width: 100%;
+  }
+}
+/* Default: hide +91 inside input (Laptop / Desktop) */
+.country-code {
+  display: none;
+}
+@media (max-width: 600px) {
+
+  /* remove India +91 box */
+  .phone-select {
+    display: none;
+  }
+
+  .phone-input-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  /* +91 left inside input */
+  .country-code {
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size: 13px;
+    font-weight: 300;     /* 🔥 lite */
+    color: #aaa;          /* 🔥 lite grey */
+    pointer-events: none;
+  }
+
+  /* input text & placeholder start after +91 */
+  .phone-input-wrapper .phone-number {
+    padding-left: 48px;   /* 🔥 space for +91 */
+    text-align: left;
+  }
+}

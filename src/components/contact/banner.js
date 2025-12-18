@@ -297,18 +297,24 @@ const ContactSection = () => {
             />
 
             <label className="input-title">Phone*</label>
-            <div className="phone-input-row">
-              <select className="phone-select" disabled>
-                <option>India +91</option>
-              </select>
-              <input
-                type="text"
-                className="phone-number"
-                placeholder="Enter your Mobile Number"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </div>
+          <div className="phone-input-row">
+  <select className="phone-select" disabled>
+    <option>India +91</option>
+  </select>
+
+  <div className="phone-input-wrapper">
+    <span className="country-code">+91</span>
+    <input
+      type="text"
+      className="phone-number"
+      placeholder="Enter your Mobile Number"
+      value={phone}
+      onChange={(e) => setPhone(e.target.value)}
+    />
+  </div>
+</div>
+
+
 
             <label className="input-title">{current.interestLabel}</label>
             <input
