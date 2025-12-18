@@ -4,6 +4,14 @@
   background-color: white;
   font-family: 'WF Visual Sans', sans-serif;
 }
+.ourwork-section{
+      font-family: "WF Visual Sans" !important;
+background-color: white;
+          padding: 80px 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+}
 
 /* Top Section */
 .ourwork-explore-top-section {
