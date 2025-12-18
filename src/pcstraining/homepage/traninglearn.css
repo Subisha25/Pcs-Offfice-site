@@ -74,16 +74,19 @@
   text-transform: uppercase;
 }
 
-/* Heading */
-.traninglearn-title {
-  font-size: 32px;
-  font-weight: 600;
-  color: #020617;
+.successtraninglearn-title {
+  font-family: "WF Visual Sans", system-ui, sans-serif;
+  font-weight: 500;              /* Medium */
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0.01em;        /* 1% */
+  text-align: center;
   margin: 0;
+  color: #020617;
 }
 
-.traninglearn-title-highlight {
-    font-size: 32px;
+.successtraninglearn-title-highlight {
+    font-size: 48px;
 
   font-family: "Playfair Display", serif;
   font-style: italic;
@@ -92,11 +95,13 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+
 }
 
 /* Carousel base */
 .traninglearn-carousel {
   margin-top: 40px;
+  
 }
 
 .traninglearn-carousel-viewport {
@@ -107,13 +112,14 @@
 .traninglearn-carousel-track {
   display: flex;
   align-items: stretch;
+  gap: 24px;
   transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 /* Card */
 .traninglearn-card {
   padding: 24px 26px;
-  margin: 0 12px;
+  /* margin: 0 12px; */
   background: #f9fafb;
   border-radius: 24px;
   text-align: left;
@@ -222,6 +228,7 @@
   .traninglearn-title {
     font-size: 26px;
     text-align: center; /* ensure heading centers on mobile */
+    
   }
 
   /* Put highlight on its own centered line on smaller screens */
@@ -238,8 +245,16 @@
 }
 
 @media (max-width: 480px) {
-  .traninglearn-title {
-    font-size: 22px;
+   .successtraninglearn-title {
+    font-size: 38px;      /* 48 → 28 */
+    line-height: 36px;   /* 60 → 36 */
+    margin-bottom: 4px;
+  }
+  .successtraninglearn-title-highlight {
+    font-size: 38px;     /* 48 → 32 */
+    line-height: 36px;
+    display: block;
+    margin-top: 0;
   }
 
   .traninglearn-card {
