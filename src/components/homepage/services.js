@@ -117,6 +117,7 @@ const ServicesSection = () => {
   ];
 
   return (
+    <>
     <div className="services-container" style={{
       backgroundImage: `url(${BackgroundImg})`,
       backgroundSize: 'cover',
@@ -604,7 +605,75 @@ const ServicesSection = () => {
 
     
       `}</style>
+      
     </div>
+{/* Bottom Services Strip - Carousel */}
+<div className="services-strip">
+  <div className="strip-track">
+    <span>HTML5</span>
+    <span className="dot">•</span>
+    <span>CSS3</span>
+    <span className="dot">•</span>
+    <span>JavaScript</span>
+    <span className="dot">•</span>
+    <span>React.js</span>
+    <span className="dot">•</span>
+
+    <span>Node.js</span>
+    <span className="dot">•</span>
+    <span>Java</span>
+    <span className="dot">•</span>
+    <span>REST APIs</span>
+    <span className="dot">•</span>
+    <span>Databases</span>
+    <span className="dot">•</span>
+
+    <span>React Native</span>
+    <span className="dot">•</span>
+    <span>Android</span>
+    <span className="dot">•</span>
+    <span>iOS</span>
+    <span className="dot">•</span>
+
+    <span>Python</span>
+    <span className="dot">•</span>
+    <span>Django</span>
+    <span className="dot">•</span>
+    <span>Flask</span>
+    <span className="dot">•</span>
+
+    <span>Machine Learning</span>
+    <span className="dot">•</span>
+    <span>AI Models</span>
+    <span className="dot">•</span>
+
+    <span>SEO</span>
+    <span className="dot">•</span>
+    <span>Google Ads</span>
+    <span className="dot">•</span>
+    <span>Social Media Marketing</span>
+
+    {/* Duplicate for infinite loop */}
+    <span className="dot">•</span>
+
+    <span>HTML5</span>
+    <span className="dot">•</span>
+    <span>CSS3</span>
+    <span className="dot">•</span>
+    <span>JavaScript</span>
+    <span className="dot">•</span>
+    <span>React.js</span>
+    <span className="dot">•</span>
+    <span>Node.js</span>
+    <span className="dot">•</span>
+    <span>Python</span>
+    <span className="dot">•</span>
+    <span>SEO</span>
+  </div>
+</div>
+
+
+    </>
   );
 };
 

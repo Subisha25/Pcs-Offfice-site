@@ -55,14 +55,16 @@
   font-weight: 500;
 
 }
-
 .stats-heading h2 {
-  font-size: 32px;
-  font-weight: 500;
-      font-family: "WF Visual Sans" !important;
-
+  font-size: 48px;          /* font increase */
+  font-weight: 600;
+  font-family: "WF Visual Sans" !important;
+  line-height: 1.05;        /* better spacing */
+  margin: 0;
 }
-
+.stats-heading h2 i {
+  font-style: italic;      /* grow together italic */
+}
 .stats-heading span {
   font-weight: 500;
     font-family: "WF Visual Sans" !important;
@@ -125,9 +127,9 @@ letter-spacing: 1%;
 .desc {
   color: #000000;
   font-family: WF Visual Sans;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 16px;
+  font-weight: 300;
+  /* font-style: Regular; */
+  font-size: 17px;
   leading-trim: NONE;
   line-height: 1.6; /* improved readability and consistent wrap */
   letter-spacing: 0.2px;
@@ -151,6 +153,7 @@ letter-spacing: 1%;
     /* max-width: 100%; */
     padding: 0 6px;
     margin-left: 22px;
+    font-size: 13px;
   }
 }
 @media (max-width: 375px) {
@@ -159,6 +162,18 @@ letter-spacing: 1%;
     padding: 0 6px;
     margin-left: 22px;
   }
+  .title{
+    font-size: 20px;
+  }
+  
+/* Heading */
+.stats-heading {
+  margin: 40px 20px;
+  color: #000;
+  font-family: "WF Visual Sans" !important;
+  font-weight: 500;
+
+}
 }
 /* Responsive */
 @media (max-width: 768px) {
@@ -167,7 +182,8 @@ letter-spacing: 1%;
   }
 
   .stats-heading h2 {
-    font-size: 24px;
+    font-size: 22px;
+    /* line-height: 1.08; */
   }
 
   .stats-cards {
