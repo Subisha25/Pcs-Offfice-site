@@ -180,6 +180,9 @@ background-color: white;
 
 /* Responsive Design */
 @media (min-width: 768px) {
+   .ourwork-section{
+    padding:60px 100px;
+  }
   .ourwork-main-heading {
     font-size: 3.75rem;
   }
@@ -194,6 +197,9 @@ background-color: white;
     padding: 2rem 1rem;
   }
 
+  .ourwork-section{
+    padding: 45px 20px 30px 20px;
+  }
   .ourwork-main-heading {
     font-size: 2rem;
   }
