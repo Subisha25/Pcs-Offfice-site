@@ -357,15 +357,24 @@
 /* Small Tablets (600px - 768px) */
 @media (max-width: 768px) {
   .feedback-section {
+   display: flex;
+    flex-direction: column; 
     padding: 50px 30px;
   }
   
   .feedback-header {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 50px;
+    margin-top: 0; 
+    align-items: center;
   }
   
   .feedback-header h2 {
+    order: 1; /* Heading first varum */
     font-size: 32px;
+    margin-bottom: 20px;
+    
   }
   
   .feedback-body {
@@ -503,7 +512,7 @@
 /* Small Mobile (320px - 480px) */
 @media (max-width: 480px) {
   .feedback-section {
-    padding: 30px 15px;
+    padding: 40px 15px;
   }
   
   .feedback-header {
@@ -556,6 +565,7 @@
   
   .right-box {
     padding-top: 30px;
+    margin-top: -10px;
   }
   
   .quote {
@@ -612,10 +622,12 @@
   
   .left-box h1 {
     font-size: 50px;
+    margin-top: -50px;
   }
   
   .review {
     font-size: 15px;
+    margin-top: -5px;
   }
   
   .profile h4 {
