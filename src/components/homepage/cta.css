@@ -7,8 +7,8 @@
   justify-content: center;   /* CENTER VERTICALLY */
   align-items: center;       /* CENTER HORIZONTALLY */
   text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   background: #fff;
 }
 
@@ -167,5 +167,9 @@
 
   .cta_btn_text {
     font-size: 16px;
+  }
+  .cta_section_wrapper{
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
