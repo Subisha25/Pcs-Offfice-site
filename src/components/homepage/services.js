@@ -125,7 +125,8 @@ const ServicesSection = () => {
       backgroundRepeat: 'no-repeat',
       position: 'relative',
       minHeight: '100vh',
-      padding: ' 40px 20px',
+      padding: '70px 0px 70px',
+      // padding: ' 40px 20px',
       backgroundAttachment: 'scroll'
     }}>
 

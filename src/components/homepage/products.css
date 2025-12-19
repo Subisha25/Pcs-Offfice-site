@@ -181,7 +181,7 @@
 /* Tablet - Large (768px to 1024px) */
 @media (max-width: 1024px) {
   .products-section {
-    padding: 80px 50px;
+    padding: 60px 50px;
   }
 
   .titles {

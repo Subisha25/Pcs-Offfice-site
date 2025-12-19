@@ -7,13 +7,7 @@
   padding: 30px 20px;
   background: #ffffff;
 }
-.workprocess-section {
-  font-family: "WF Visual Sans" !important;
-  padding: 60px 20px;   
-  display: flex;
-  justify-content: center;
-  text-align: center;
-} */
+
 
 /* ================= TOP SECTION ================= */
 .ourwork-explore-top-section {
@@ -66,10 +60,10 @@
   margin: 0 auto;
 }
 
-.workprocess-cards-grid {
+/* .workprocess-cards-grid {
   position: relative;
   height: 420px;
-}
+} */
 
 /* ================= CARD BASE ================= */
 .workprocess-card {
@@ -138,20 +132,20 @@
 
 /* ================= MOBILE ================= */
 @media (max-width: 1024px) {
-  .workprocess-cards-grid {
+  /* .workprocess-cards-grid {
     position: static;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 24px;
-  }
+  } */
 
-  .workprocess-card {
+  /* .workprocess-card {
     position: relative;
     transform: none !important;
     opacity: 1;
     margin: 0 auto;
-  }
+  } */
 }
 
 /* ================= TABLET (769px - 1024px) ================= */
@@ -174,7 +168,7 @@
   }
 
   /* 2x2 Grid layout for tablet */
-  .workprocess-cards-grid {
+  /* .workprocess-cards-grid {
     position: static;
     height: auto;
     display: grid;
@@ -182,9 +176,9 @@
     gap: 24px;
     max-width: 700px;
     margin: 0 auto;
-  }
+  } */
 
-  .workprocess-card {
+  /* .workprocess-card {
     position: relative !important;
     transform: none !important;
     left: auto !important;
@@ -193,7 +187,7 @@
     min-height: 320px;
     padding: 28px;
     transition: none;
-  }
+  } */
 
   .workprocess-card-title {
     font-size: 20px;
@@ -243,16 +237,16 @@
     padding: 0 16px;
   }
 
-  .workprocess-cards-grid {
+  /* .workprocess-cards-grid {
     position: static;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
-  }
+  } */
 
-  .workprocess-card {
+  /* .workprocess-card {
     position: relative !important;
     transform: none !important;
     left: auto !important;
@@ -260,7 +254,7 @@
     max-width: 340px;
     min-height: auto;
     padding: 28px 24px;
-  }
+  } */
 
   .workprocess-icon-wrapper {
     width: 40px;

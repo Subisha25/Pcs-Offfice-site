@@ -13,7 +13,7 @@ const CTASection = () => {
   const navigate = useNavigate();
   return (
     <div className="cta_section_wrapper">
-      
+
       <div className="cta_section_heading">
         <h1 className="cta_title_line1">
           Ready to bring your brand to life?
@@ -26,11 +26,11 @@ const CTASection = () => {
 
       {/* UPDATED CTA BUTTON */}
       <Link
-  to="/contact"
-  state={{ mode: "work" }}
->
-     <CommonButton    onClick={() => navigate("/contact")}/>
-</Link>
+        to="/contact"
+        state={{ mode: "work" }}
+      >
+        <CommonButton onClick={() => navigate("/contact")} />
+      </Link>
     </div>
   );
 };

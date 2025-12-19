@@ -79,7 +79,7 @@ function Footer() {
             <div className="footer-menu-col">
               <a href="/aboutbanner">About</a>
               <a href="/servicespage">Services</a>
-                           <a href="#">Blog</a>
+              <a href="#">Blog</a>
 
               <a href="/products">Products</a>
             </div>
@@ -92,6 +92,7 @@ function Footer() {
           </div>
 
         </div>
+        
         <div className="footer-divider" />
 
         {/* CONTACT BLOCKS */}
@@ -158,13 +159,11 @@ function Footer() {
 
         <div className="footer-divider" />
 
-      <p className="footer-copy">
-  Copyright PCS Technology © {currentYear}.
-  <span className="rights">All Rights Reserved</span>
-</p>
-
-
-
+        <p className="footer-copy">
+          Copyright PCS Technology © {currentYear}.
+          <span className="rights">All Rights Reserved</span>
+        </p>
+        
       </div>
     </div>
   );

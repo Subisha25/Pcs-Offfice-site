@@ -240,7 +240,7 @@
 /* Laptop & Large Screens (1200px - 1440px) */
 @media (max-width: 1440px) {
   .feedback-section {
-    padding: 90px 100px;
+    padding: 70px 100px;
   }
   
   .left-box h1 {
@@ -254,9 +254,7 @@
 
 /* Medium Laptop (1024px - 1200px) */
 @media (max-width: 1200px) {
-  .feedback-section {
-    padding: 80px 60px;
-  }
+ 
   
   .feedback-header h2 {
     font-size: 42px;
@@ -282,9 +280,7 @@
 
 /* Tablets (768px - 1024px) */
 @media (max-width: 1024px) {
-  .feedback-section {
-    padding: 60px 40px;
-  }
+  
   
   .feedback-tag {
     font-size: 20px;
