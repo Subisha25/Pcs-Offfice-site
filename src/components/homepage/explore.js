@@ -494,10 +494,11 @@ text-align: center;
           }
 
           .wordanimation-bottom-content {
-            padding: 12px 15px;
+            padding: 30px 20px 30px 20px;
             flex-direction: column;
             gap: 2px;
             align-items: flex-start;
+            margin-bottom: 40px;
           }
 
           .wordanimation-bottom-left h2 {
@@ -553,7 +554,9 @@ text-align: center;
 
       
           .wordanimation-bottom-content {
-            padding: 12px 15px;
+            padding: 30px 20px 30px 20px;
+            margin-bottom: 40px;
+
             flex-direction: column;
             gap: 3px;
             align-items: flex-start;
@@ -612,7 +615,8 @@ text-align: center;
 
        
           .wordanimation-bottom-content {
-            padding: 12px 15px;
+              padding: 30px 20px 30px 20px;
+            margin-bottom: 40px;
             flex-direction: column;
             gap: 6px;
             align-items: flex-start;
@@ -664,7 +668,9 @@ text-align: center;
           }
 
           .wordanimation-bottom-content {
-            padding: 40px 30px 70px;
+            // padding: 40px 30px 70px;
+              padding: 50px 70px 50px 70px;
+            margin-bottom: 40px;
             flex-direction: row;
             gap: 20px;
             align-items: center;
@@ -700,6 +706,8 @@ text-align: center;
             letter-spacing: 2px;
           }
 .wordanimation-image-wrapper img {
+width: 100vw;
+          height: 100vh;
             object-fit: contain;
             object-position: center;
           }
@@ -709,7 +717,7 @@ text-align: center;
           }
 
   .wordanimation-bottom-content {
-            padding: 60px 60px 55px;
+            padding: 50px 60px 50px;
             flex-direction: row;
             gap: 20px;
             align-items: center;
