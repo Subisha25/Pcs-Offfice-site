@@ -497,13 +497,16 @@
 /* Small Mobile (320px - 480px) */
 @media (max-width: 480px) {
   .feedback-section {
-    padding: 30px 15px;
+    padding: 40px 20px;
   }
   
   .feedback-header {
-    margin-bottom: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
   }
-  
+  .left-box p {
+   padding-bottom: 20px;
+  }
   .feedback-tag {
     font-size: 16px;
     padding: 3px 18px 3px 3px;

@@ -124,7 +124,7 @@ const ServicesSection = () => {
       backgroundRepeat: 'no-repeat',
       position: 'relative',
       minHeight: '100vh',
-      padding: '80px 0px 80px',
+      padding: ' 40px 20px',
       backgroundAttachment: 'scroll'
     }}>
 
@@ -268,7 +268,7 @@ const ServicesSection = () => {
                   color: titleColor,
                   transition: 'color 0.4s ease'
                 }}>
-                  {service.title}
+                  {service.title} 
                 </h3>
                 <h4 className="card-subtitle" style={{
                   fontFamily: '"WF Visual Sans", sans-serif',
@@ -504,7 +504,7 @@ const ServicesSection = () => {
 
         @media (max-width: 480px) {
           .services-container {
-            padding: 80px 12px !important;
+            padding:65px 12px 45px 12px !important;
           }
           .services-title {
             font-size: 20px !important;
@@ -516,6 +516,7 @@ const ServicesSection = () => {
           }
           .card-title,
           .card-subtitle {
+          mrgin-bottom:0px !important;
             font-size: 30px !important;
           }
           .card-description {

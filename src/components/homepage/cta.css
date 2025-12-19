@@ -7,8 +7,9 @@
   justify-content: center;   /* CENTER VERTICALLY */
   align-items: center;       /* CENTER HORIZONTALLY */
   text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 80px;
+  /* padding-top: 80px;
+  padding-bottom: 40px; */
   background: #fff;
 }
 
@@ -119,6 +120,9 @@
 /* ============================= */
 
 @media (max-width: 768px) {
+    .cta_section_wrapper{
+    padding: 60px 40px;
+  }
   .cta_title_line1,
   .cta_title_line2 {
     font-size: 35px;
@@ -145,12 +149,18 @@
 }
 
 @media (max-width: 480px) {
-  .cta_title_line1,
+  .cta_section_wrapper{
+    padding: 40px 40px;
+  }
+  .cta_title_line1 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+ 
   .cta_title_line2 {
     font-size: 20px;
-    line-height: 38px;
+    line-height: 0px;
   }
-
   .cta_highlight {
     font-size: 20px;
   }

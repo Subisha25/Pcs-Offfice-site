@@ -3,7 +3,7 @@ import tagicon from "../assets/allheadingicon/abouticon.png"; // adjust path if 
 import '../homepage/aboutus.css';
 export default function CommonTopTag({ text = "About", icon }) {
   return (
-    <div className="top-center">
+    <div className="top-center1">
       <div className="commontag">
         <div className="commontag-icon">
           <img
