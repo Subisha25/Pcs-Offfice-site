@@ -21,7 +21,10 @@
   font-style: normal;
   font-display: swap;
 }
-
+.benefits-container {
+  padding: 70px 20px;
+  background: #ffffff;
+}
 .benefit-tag {
   display: inline-flex;
   align-items: center;
