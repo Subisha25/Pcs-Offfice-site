@@ -398,7 +398,7 @@
 /* Mobile - Extra Small (< 320px) */
 @media (max-width: 320px) {
   .products-section {
-    padding: 30px 12px;
+    padding: 60px 0px 60px;
   }
 
   .titles {
