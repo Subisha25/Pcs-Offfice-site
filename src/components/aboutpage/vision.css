@@ -36,6 +36,12 @@
   justify-content: center;
 }
 
+.vision-italic-text {
+  font-style: italic;
+  color: #02055b;
+  font-family: "Playfair Display", serif;
+}
+
 /* Inner wrapper to center content on big screens */
 .abt-sec-inner {
   width: 100%;
@@ -49,6 +55,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
+  margin-top: -25px;
 }
 
 .tag {
@@ -87,6 +94,7 @@
   font-weight: 500;
   color: #1a1a1a;
   margin-bottom: 40px;
+   margin-top: -20px;
   line-height: 1.25;
   text-align: center;
 }
@@ -236,7 +244,8 @@
   }
 
   .abt-sec-image-section {
-    order: -1; /* image on top for tablets/mobile */
+    order: -1;
+    /* image on top for tablets/mobile */
   }
 
   .abt-sec-text-section {

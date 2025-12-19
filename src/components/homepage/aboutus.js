@@ -124,16 +124,7 @@
           {/* TOP TAG */}
 
           <CommonTopTag />
-          {/* <div className="top-center">
-            <div className="tag">
-              <div className="tag-icon">
-                <img src={tagicon} alt="icon" className="boxicon" />
-              </div>
-              About
-            </div>
-          </div> */}
-
-          {/* WORD BY WORD FILL */}
+         
           <p className="animated-text2">
             {paragraph.map((word, index) => (
               <span
