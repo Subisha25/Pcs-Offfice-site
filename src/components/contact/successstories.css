@@ -124,12 +124,15 @@
 }
 
 .traninglearn-card-quoteMark {
+      margin-top: -20px;
   font-size: 32px;
   color: #1d4ed8;
   margin-bottom: 8px;
 }
 
 .traninglearn-card-text {
+  margin-top: -10px;
+ 
    font-family: "WF Visual Sans";
     font-weight: 300; 
   font-size: 14px;

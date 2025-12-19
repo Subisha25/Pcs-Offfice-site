@@ -225,6 +225,7 @@ margin-top: 25px;
   .years {
     font-size: 60px;
     margin: 15px 0 0;
+    margin-top: -30px;
   }
 
   .exp-text {
@@ -236,6 +237,7 @@ margin-top: 25px;
     font-size: 24px;
     line-height: 1.4;
     margin-bottom: 20px;
+    margin-top: -30px;
   }
 
   .word-animate {
@@ -254,6 +256,7 @@ margin-top: 25px;
   .about-exp-section {
     padding: 30px 16px;
     gap: 25px;
+    margin-top: -30px;
   }
 
   .about-badge {
@@ -269,6 +272,7 @@ margin-top: 25px;
 
   .years {
     font-size: 50px;
+    margin-top: -30px;
   }
 
   .exp-text {
@@ -277,6 +281,7 @@ margin-top: 25px;
 
   .main-heading {
     font-size: 22px;
+    margin-top: -25px;
   }
 
   .word-animate {

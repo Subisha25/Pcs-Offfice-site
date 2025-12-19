@@ -92,6 +92,7 @@ function Footer() {
           </div>
 
         </div>
+        
         <div className="footer-divider" />
 
         {/* CONTACT BLOCKS */}
@@ -162,9 +163,7 @@ function Footer() {
           Copyright PCS Technology © {currentYear}.
           <span className="rights">All Rights Reserved</span>
         </p>
-
-
-
+        
       </div>
     </div>
   );

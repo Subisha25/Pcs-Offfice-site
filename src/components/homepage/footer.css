@@ -149,7 +149,7 @@ padding-bottom: 40px;
   color: #FFFFFF;                         /* white */
   opacity: 1;                             /* clear white */
 
-  margin-top: 10px;        /* was 20px */
+  margin-top: 50px;        /* was 20px */
   margin-bottom: 5px;      /* was 10px */
                    /* spacing bottom */
 }
@@ -574,7 +574,7 @@ font-weight: 300;
 }
 
   .footer-wrapper {
-    padding: 40px 32px;
+    padding: 50px 32px 50px 32px;
   }
 
   /* LEFT HEADING */

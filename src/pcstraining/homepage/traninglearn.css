@@ -1,49 +1,12 @@
 :root {
-  --main-bg: #f4f7fb;
-  --main-text: #222222;
-  --primary-color: #007bff;
-  --secondary-color: #555555;
-  --button-primary: #101166;
-  --button-secondary: #D9D9D9;
   --playfair-fonts: "Playfair Display", serif;
-  --heading-font-size: 32px;
-  --subheading-font-size: 24px;
-  --title-font-size: 20px;
-  --description-font-size: 16px;
-  --small-text-font-size: 14px;
 }
 
-@font-face {
-  font-family: "WF Visual Sans" !important;
-  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-.avatar-circle {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
- background: #03045E;
-
-
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  /* background: linear-gradient(135deg, #6366f1, #4f46e5); */
-}
-
-
-.traninglearn-section {
-  padding: 64px 24px 80px;
-  background-color: #F5F5F5;
-  font-family: "WF Visual Sans", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+/* ===== Section ===== */
+.traninglearn {
+  padding: 72px 24px 84px;
+  background: #f5f5f5;
+  font-family: "WF Visual Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .traninglearn-inner {
@@ -52,154 +15,141 @@
   text-align: center;
 }
 
-/* Tag */
-.traninglearn-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: 999px;
-  background: #020617;
-  color: #f9fafb;
-  font-size: 13px;
-  margin-bottom: 14px;
-}
-
-.traninglearn-tag-icon {
-  font-size: 14px;
-}
-
-.traninglearn-tag-text {
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+/* ===== Heading ===== */
+.traninglearn-heading {
+  margin-top: 10px;
 }
 
 .successtraninglearn-title {
-  font-family: "WF Visual Sans", system-ui, sans-serif;
-  font-weight: 500;              /* Medium */
+  font-weight: 500;
   font-size: 48px;
-  line-height: 60px;
-  letter-spacing: 0.01em;        /* 1% */
-  text-align: center;
-  margin: 0;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin: 10px 0 0;
   color: #020617;
 }
 
 .successtraninglearn-title-highlight {
-    font-size: 48px;
-
-  font-family: "Playfair Display", serif;
+  display: inline-block;
+  font-size: 48px;
+  line-height: 1.15;
+  font-family: var(--playfair-fonts);
   font-style: italic;
   font-weight: 600;
-  background: linear-gradient(90deg, #03045E 0%, #FF006E 100%);
+  background: linear-gradient(90deg, #03045e 0%, #ff006e 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-
+  margin-top: 6px;
 }
 
-/* Carousel base */
+/* ===== Carousel ===== */
 .traninglearn-carousel {
-  margin-top: 40px;
-  
+  margin-top: 42px;
 }
 
 .traninglearn-carousel-viewport {
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
+  /* a tiny padding helps avoid shadow clipping */
+  padding: 2px;
 }
 
 .traninglearn-carousel-track {
   display: flex;
   align-items: stretch;
-  gap: 24px;
+  will-change: transform;
   transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Card */
+/* ===== Card ===== */
 .traninglearn-card {
-  padding: 24px 26px;
-  /* margin: 0 12px; */
+  flex: 0 0 auto;
   background: #f9fafb;
   border-radius: 24px;
+  padding: 26px 26px 22px;
   text-align: left;
-  /* box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12); */
+  min-height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 220px;
+  border: 1px solid rgba(2, 6, 23, 0.08);
 }
 
 .traninglearn-card-quoteMark {
-  font-size: 32px;
+  font-size: 34px;
   color: #1d4ed8;
-  margin-bottom: 8px;
+  line-height: 1;
+  margin-bottom: 10px;
 }
 
 .traninglearn-card-text {
   font-size: 14px;
   line-height: 1.7;
   color: #4b5563;
-  margin-bottom: 18px;
+  margin: 0 0 18px;
 }
 
-/* Card footer */
+/* footer */
 .traninglearn-card-footer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.traninglearn-card-avatar {
+.avatar-circle {
   width: 40px;
   height: 40px;
   border-radius: 999px;
-  object-fit: cover;
-}
-
-.traninglearn-card-person {
+  background: #03045e;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-transform: uppercase;
 }
 
 .traninglearn-card-name {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: #111827;
 }
 
 .traninglearn-card-role {
   font-size: 12px;
   color: #9ca3af;
+  margin-top: 2px;
 }
 
-/* Nav buttons */
+/* ===== Nav ===== */
 .traninglearn-nav {
-  margin-top: 32px;
+  margin-top: 28px;
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .traninglearn-nav-btn {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   border: none;
-  background: #03045E;
+  background: #03045e;
   color: #f9fafb;
   font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, opacity 0.15s ease;
 }
 
 .traninglearn-nav-btn:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.4);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.25);
   background: #1d1b7a;
 }
 
@@ -208,72 +158,84 @@
   cursor: default;
 }
 
-/* ---------- Responsive ---------- */
+/* ===== Responsive ===== */
 
+/* Large screens */
+@media (min-width: 1200px) {
+  .traninglearn {
+    padding: 80px 24px 92px;
+  }
+}
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .traninglearn-title {
-    font-size: 28px;
+  .successtraninglearn-title,
+  .successtraninglearn-title-highlight {
+    font-size: 40px;
   }
 
   .traninglearn-card {
-    margin: 0 10px;
+    border-radius: 20px;
+    min-height: 240px;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-  .traninglearn-section {
-    padding: 48px 16px 64px;
+  .traninglearn {
+    padding: 54px 16px 64px;
   }
 
-  .traninglearn-title {
-    font-size: 26px;
-    text-align: center; /* ensure heading centers on mobile */
-    
+  .successtraninglearn-title,
+  .successtraninglearn-title-highlight {
+    font-size: 34px;
   }
 
-  /* Put highlight on its own centered line on smaller screens */
-  .traninglearn-title-highlight {
-    display: block;
-    margin-top: 8px;
-    text-align: center;
-    font-size: 26px;
-  }
-
-  .traninglearn-card {
-    margin: 0 6px;
+  .traninglearn-carousel {
+    margin-top: 28px;
   }
 }
 
-@media (max-width: 480px) {
-   .successtraninglearn-title {
-    font-size: 38px;      /* 48 → 28 */
-    line-height: 36px;   /* 60 → 36 */
-    margin-bottom: 4px;
+/* Small mobile */
+@media (max-width: 425px) {
+  .successtraninglearn-title{
+    font-size: 32px;
+    margin-left: 15%;
+
   }
   .successtraninglearn-title-highlight {
-    font-size: 38px;     /* 48 → 32 */
-    line-height: 36px;
-    display: block;
-    margin-top: 0;
+    margin-left: 35%;
+
   }
 
   .traninglearn-card {
     padding: 20px 18px;
     border-radius: 18px;
-  }
-}
-@media (max-width: 320px) {
-  .traninglearn-title {
-    font-size: 22px;
+    min-height: 230px;
   }
 
+  .traninglearn-nav-btn {
+    width: 42px;
+    height: 42px;
+  }
 }
-@media (max-width: 425px) {
-  .traninglearn-heading {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-    text-align: center;
+
+/* Very small */
+@media (max-width: 360px) {
+  .successtraninglearn-title{
+    font-size: 32px;
+    margin-left: 10px;
+
+  }
+  .successtraninglearn-title-highlight {
+    margin-left: 35%;
+
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .traninglearn-carousel-track {
+    transition: none;
   }
 }

@@ -248,7 +248,15 @@ font-weight: 300;
   .traningwhychoose-stats {
     grid-template-columns: 1fr;
   }
+  .traningwhychoose-inner{
+    gap: 40px;
+  }
+
+  .traningwhychoose-description{
+    margin:0 0 20px 0;
+  }
 }
+
 
 @media (min-width: 320px) and (max-width: 640px) {
   /* Mobile sizes (S/M/L) => ensure 2 columns (2x2 layout) */
