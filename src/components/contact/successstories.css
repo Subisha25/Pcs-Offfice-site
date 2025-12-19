@@ -37,7 +37,7 @@
 }
 
 .traninglearn {
-  padding: 64px 24px 0px;
+  padding: 64px 24px 80px;
   background-color: #ffffff;
   font-family: "WF Visual Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -124,14 +124,15 @@
 }
 
 .traninglearn-card-quoteMark {
-  margin-top: -30px;
+      margin-top: -20px;
   font-size: 32px;
   color: #1d4ed8;
   margin-bottom: 8px;
 }
 
 .traninglearn-card-text {
-  margin-top: -40px;
+  margin-top: -10px;
+ 
    font-family: "WF Visual Sans";
     font-weight: 300; 
   font-size: 14px;
