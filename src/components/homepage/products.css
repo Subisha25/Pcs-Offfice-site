@@ -28,7 +28,7 @@
 
 .products-section {
   background-color: #050b3d;
-  padding: 60px 0px 60px;
+  padding: 60px 60px 60px;
   color: #fff;
 }
 
@@ -335,7 +335,7 @@
 /* Mobile - Small (320px to 480px) */
 @media (max-width: 480px) {
   .products-section {
-    padding: 40px 15px;
+    padding: 60px 15px 60px;
   }
 
   .titles {
@@ -398,7 +398,7 @@
 /* Mobile - Extra Small (< 320px) */
 @media (max-width: 320px) {
   .products-section {
-    padding: 60px 0px 60px;
+    padding: 60px 12px 60px 12px ;
   }
 
   .titles {
