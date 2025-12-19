@@ -3,13 +3,10 @@
 }
 
 /* ================= SECTION ================= */
-.workprocess {
-  padding: 30px 20px;
-  background: #ffffff;
-}
+
 .workprocess-section {
   font-family: "WF Visual Sans" !important;
-  padding: 60px 20px;   /* ✅ control space manually */
+  padding: 40px 0px 0px;   /* ✅ control space manually */
   display: flex;
   justify-content: center;
   text-align: center;

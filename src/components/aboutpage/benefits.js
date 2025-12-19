@@ -84,7 +84,7 @@
     }, []);
 
     return (
-      <div className="workprocess">
+      <div className="benefits-container">
         {/* ===== ABOUT ===== */}
         <div className="benefits-top-section" ref={sectionRef}>
           <CommonTopTag text="Benefits" icon={tagicon} />
