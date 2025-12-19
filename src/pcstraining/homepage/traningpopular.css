@@ -281,13 +281,14 @@ font-size: 16px;
 
 /* ---------- Responsive ---------- */
 
-@media (max-width: 1024px) {
+@media (min-width: 668px) and (max-width: 1024px) {
   .traningpopular-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 667px) {
   .traningpopular {
     padding: 40px 16px 52px;
   }
@@ -315,10 +316,16 @@ font-size: 16px;
     align-items: stretch;
   }
 
-  .traningpopular-title {
+  .traningpopular-title, .traningpopular-eyebrow {
     font-size: 24px;
   }
+.traningpopular-card-btn-secondary, .traningpopular-card-btn-primary{
+  font-size: 14px;
+}
 
+.traningpopular-card-actions{
+  padding: 0;
+}
   .traningpopular-cta {
     width: 100%;
     justify-content: space-between;
