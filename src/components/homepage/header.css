@@ -54,13 +54,18 @@
 
   transform: scale(1);
   transform-origin: center;
-
-  transition: width 0.7s cubic-bezier(0.65, 0, 0.35, 1), 
-              background 0.5s ease, 
-              padding 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+transition: 
+    width 0.7s cubic-bezier(0.65, 0, 0.35, 1), 
+    background 0.5s ease, 
+  padding 0.8s cubic-bezier(0.65, 0, 0.35, 1);
   
-  overflow: hidden; 
-  white-space: nowrap; /* Expand aagumbothu text keezhe varama irukka */
+  /* overflow: hidden;  */
+  white-space: nowrap;
+  /* transition:
+    transform 0.4s ease,
+    padding 0.3s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease; */
 }
 
 
@@ -196,7 +201,7 @@
 }
 /* SMALL/COMPACT MODE WHEN SCROLLED */
 .header.small .header-container {
-  width: 200px !important;  /* Width-ah kammi panniyachu */
+  width: 240px !important;  /* Width-ah kammi panniyachu */
   min-width: 240px;
   padding: 8px 15px;
   justify-content: space-between;
