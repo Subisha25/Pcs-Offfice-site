@@ -24,7 +24,7 @@
 .about-exp-section {
   display: flex;
   gap: 80px;
-  padding: 25px 120px;
+  padding: 35px 120px;
   align-items: flex-start;
   background: #fff;
 }
@@ -286,4 +286,9 @@ margin-top: 25px;
   .sub-text {
     font-size: 13px;
   }
+  /* LEFT BOX */
+.left-box {
+ 
+  padding-top: 0px;
+}
 }
