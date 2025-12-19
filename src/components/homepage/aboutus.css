@@ -54,7 +54,7 @@
   max-width: 900px;
   margin: 0 auto 20px auto;
   line-height: 1.4;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 /* WORDS GREY BEFORE FILL */
@@ -122,7 +122,7 @@
   background-color: white;
   /* background: linear-gradient(to bottom, #03045E80, #FFFFFF00); */
   min-height: 100vh;
-  padding: 70px 0px 70px;
+  padding: 50px 0px 50px;
   display: flex;
   align-items: center;
   justify-content: center;

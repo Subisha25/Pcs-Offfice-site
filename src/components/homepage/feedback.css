@@ -240,7 +240,7 @@
 /* Laptop & Large Screens (1200px - 1440px) */
 @media (max-width: 1440px) {
   .feedback-section {
-    padding: 80px 100px;
+    padding: 70px 100px;
   }
   
   .left-box h1 {
