@@ -441,9 +441,19 @@
 }
 
 @media (max-width: 480px) {
-  /* .train-home-ban-header {
-    padding: 24px;
-  } */
+  .train-home-ban-header {
+    padding-top: 25px;
+
+  }
+
+  .train-home-ban-home, .train-home-ban-back svg{
+    width: 16px;
+    height: 16px;
+  }
+
+  .train-home-ban-breadcrumb {
+    font-size: 14px;
+  }
       .services-strip2 {
     padding: 6px;
   }
@@ -458,16 +468,14 @@
     font-size: 18px;
     margin: 0 5px;
   }
-  .train-home-ban-content {
-    padding: 40px 24px 80px;
-  }
-  
+ 
   .train-home-ban-title {
     font-size: 32px;
   }
   
   .train-home-ban-subtitle {
     font-size: 16px;
+    letter-spacing: 1px;
   }
   
   .train-home-ban-footer {
@@ -481,15 +489,14 @@
 }
 
 
-@media (max-width: 1024px) {
-  .train-home-ban-header {
-    padding-top: 60px;
-  }
-}
 
 @media (max-width: 768px) {
   .train-home-ban-container {
     padding-top: 56px; /* header height ku exact */
+  }
+
+  .train-home-ban-header{
+    padding-top:60px ;
   }
 }
 
@@ -497,12 +504,12 @@
   .train-home-ban-container {
     padding-top: 52px;
   }
-}
-@media (max-width: 480px) {
+
   .train-home-ban-content {
-    padding-top: 16px;
+    padding:20px 20px 0 20px;
   }
 }
+
 
 
 @media (max-width: 768px) {
@@ -537,14 +544,10 @@
   }
 }
 
-@media (max-width: 360px) {
-  .train-home-ban-buttons > * {
-    font-size: 13px;
-  }
-}
+
 @media (max-width: 320px) {
   .train-home-ban-buttons > * {
-    font-size: 12px !important;   /* 🔥 MUST */
+    font-size: 16px !important;   /* 🔥 MUST */
     white-space: nowrap !important;
     line-height: 1;
     padding: 0 16px !important;   /* text-ku space reduce */

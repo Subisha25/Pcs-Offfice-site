@@ -264,7 +264,7 @@ const ServicesSection = () => {
               }}>
                 <h3 className="card-title" style={{
                   fontSize: '38px',
-                  fontWeight: '400',
+                  fontWeight: '300',
                   marginBottom: '2px',
                   fontFamily: '"WF Visual Sans", sans-serif',
                   color: titleColor,
@@ -275,7 +275,7 @@ const ServicesSection = () => {
                 <h4 className="card-subtitle" style={{
                   fontFamily: '"WF Visual Sans", sans-serif',
                   fontSize: '38px',
-                  fontWeight: '400',
+                  fontWeight: '300',
                   opacity: '1',
                   color: subtitleColor,
                   transition: 'all 0.4s ease',
@@ -394,10 +394,10 @@ const ServicesSection = () => {
 
                 <p className="card-description" style={{
                   fontFamily: '"WF Visual Sans"',
-                  fontWeight: '400',
+                  fontWeight: '300',
                   fontSize: '16px',
                   lineHeight: '1.5',
-                  letterSpacing: '1%',
+                  letterSpacing: '1px',
                   color: descriptionColor, // WHITE on hover
                   marginTop: isMobile || isHovered ? '0' : '80px',
                   marginBottom: '10px',
@@ -424,6 +424,7 @@ const ServicesSection = () => {
   .service-card .card-description {
     color: #ffffff !important;
   }
+    
 
   /* Optional – description konjam clear aa irukka */
   .service-card .card-description {
@@ -436,7 +437,7 @@ const ServicesSection = () => {
 
 
   .card-description {
-    font-size: 14px !important;     /* 🔽 size reduced */
+    font-size: 18px !important;     /* 🔽 size reduced */
     line-height: 1.4 !important;
     margin-bottom: 30px !important;
 
