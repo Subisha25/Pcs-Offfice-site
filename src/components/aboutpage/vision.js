@@ -11,7 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const VisionMission = () => {
   const [activeTab, setActiveTab] = useState("mission");
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const content = {
     mission:
       "To be a leading global IT consultancy, driving innovation and delivering cutting-edge technology solutions that empower businesses to thrive in the digital age.",
@@ -23,11 +23,13 @@ const navigate = useNavigate();
     <section className="abt-sec-container">
       <div className="abt-sec-inner">
         {/* TOP TAG */}
-       <CommonTopTag text="Services" icon={tagicon} />
+        <CommonTopTag text="Services" icon={tagicon} />
 
         <h1 className="abt-sec-title">
-          Our product and vision for the digital
+          Our product and vision for the{" "}
+          <span className="vision-italic-text">digital</span>
         </h1>
+
 
         <div className="abt-sec-content-wrapper">
           {/* IMAGE */}
@@ -43,17 +45,15 @@ const navigate = useNavigate();
           <div className="abt-sec-text-section">
             <div className="abt-sec-tab-buttons">
               <button
-                className={`abt-sec-tab-button ${
-                  activeTab === "mission" ? "abt-sec-active" : ""
-                }`}
+                className={`abt-sec-tab-button ${activeTab === "mission" ? "abt-sec-active" : ""
+                  }`}
                 onClick={() => setActiveTab("mission")}
               >
                 Our Mission
               </button>
               <button
-                className={`abt-sec-tab-button ${
-                  activeTab === "vision" ? "abt-sec-active" : ""
-                }`}
+                className={`abt-sec-tab-button ${activeTab === "vision" ? "abt-sec-active" : ""
+                  }`}
                 onClick={() => setActiveTab("vision")}
               >
                 Our Vision
@@ -63,12 +63,12 @@ const navigate = useNavigate();
             <div className="abt-sec-content-text">
               <p>{content[activeTab]}</p>
             </div>
-<Link
-  to="/contact"
-  state={{ mode: "work" }}
->
-            <CommonButton  onClick={() => navigate("/contact")}/>
-</Link>
+            <Link
+              to="/contact"
+              state={{ mode: "work" }}
+            >
+              <CommonButton onClick={() => navigate("/contact")} />
+            </Link>
           </div>
         </div>
       </div>

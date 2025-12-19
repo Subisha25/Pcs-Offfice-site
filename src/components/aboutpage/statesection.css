@@ -55,14 +55,16 @@
   font-weight: 500;
 
 }
-
 .stats-heading h2 {
-  font-size: 32px;
-  font-weight: 500;
-      font-family: "WF Visual Sans" !important;
-
+  font-size: 48px;          /* font increase */
+  font-weight: 600;
+  font-family: "WF Visual Sans" !important;
+  line-height: 1.05;        /* better spacing */
+  margin: 0;
 }
-
+.stats-heading h2 i {
+  font-style: italic;      /* grow together italic */
+}
 .stats-heading span {
   font-weight: 500;
     font-family: "WF Visual Sans" !important;
@@ -180,7 +182,8 @@ letter-spacing: 1%;
   }
 
   .stats-heading h2 {
-    font-size: 24px;
+    font-size: 22px;
+    /* line-height: 1.08; */
   }
 
   .stats-cards {
