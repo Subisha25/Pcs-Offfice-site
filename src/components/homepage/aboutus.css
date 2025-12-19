@@ -249,6 +249,9 @@
 }
 
 @media (max-width: 768px) {
+    .about-section {
+padding:80px;
+}
   .main-heading {
     font-size: 22px;
   }
