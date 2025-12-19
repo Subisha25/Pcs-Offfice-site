@@ -11,68 +11,69 @@ const SuccessStories = ({ selectedOption }) => {
     const testimonialsData = {
         learn: [
             {
-                name: "Daniel Kim",
-                role: "Founder of MindEase App",
-                text: "The hands-on projects and real-world examples gave me the confidence to tackle complex design challenges. PCS made all the difference in my career pivot.",
-                avatar: Avatar1,
-            },
-            {
-                name: "Aisha Patel",
-                role: "UI/UX Designer",
-                text: "Each module was structured clearly, and the feedback from mentors helped me improve fast. I landed my first design role within weeks of finishing.",
-                avatar: Avatar1,
-            },
-            {
-                name: "James Lee",
-                role: "Front-End Developer",
-                text: "The blend of theory and practice was perfect. Building real projects helped me fill my portfolio and feel ready for interviews.",
-                avatar: Avatar1,
-            },
-            {
-                name: "Maria Rodriguez",
-                role: "Product Designer",
-                text: "I loved the community support and live sessions. The course helped me transition from graphic design into full product design.",
-                avatar: Avatar1,
-            },
-            {
-                name: "Rahul Sharma",
-                role: "Full-Stack Engineer",
-                text: "The curriculum stayed aligned with industry trends. I could immediately apply new skills at work and move into a better role.",
-                avatar: Avatar1,
-            },
+    name: "Jesi J",
+    role: "Full Stack Developer",
+    text: "The Full Stack Development course at PCS was highly practical and well structured. Working on real-time projects helped me strengthen both frontend and backend skills with confidence.",
+    initial: "J",
+  },
+  {
+    name: "Mathavi K",
+    role: "Full Stack Developer",
+    text: "PCS provided excellent hands-on training with clear explanations. The trainers focused on real-world development scenarios, which made learning fast and effective.",
+    initial: "M",
+  },
+  {
+    name: "Maha lakshmi V",
+    role: "Full Stack Developer",
+    text: "The course content was industry-oriented and easy to follow. Building complete applications during the training helped me improve my problem-solving and coding skills.",
+    initial: "M",
+  },
+  {
+    name: "Subisha S",
+    role: "Full Stack Web Developer",
+    text: "I gained strong knowledge in React, Node.js, and database integration. The practical approach and mentor support made a huge difference in my learning journey.",
+    initial: "S",
+  },
+  {
+    name: "Rama lakshmi S",
+    role: "Mobile Application Developer",
+    text: "PCS training boosted my confidence as a developer. The live projects and continuous guidance prepared me well for real-time development and interviews.",
+    initial: "R",
+  },
         ],
-        work: [
-            {
-                name: "Sarah Johnson",
-                role: "Senior Developer at TechCorp",
-                text: "The career coaching and interview prep were invaluable. I got three job offers within a month of completing the program.",
-                avatar: Avatar2,
-            },
-            {
-                name: "Michael Chen",
-                role: "Product Manager at StartupX",
-                text: "Direct connections to hiring managers made all the difference. I was placed in my dream company within 2 weeks.",
-                avatar: Avatar2,
-            },
-            {
-                name: "Priya Nair",
-                role: "Data Scientist at DataWorks",
-                text: "The job-ready training prepared me perfectly for technical interviews. I aced all rounds and got a 40% salary hike.",
-                avatar: Avatar2,
-            },
-            {
-                name: "David Wilson",
-                role: "DevOps Engineer at CloudTech",
-                text: "Industry connections through PCS helped me network with the right people. Landed a role I didn't even know existed!",
-                avatar: Avatar2,
-            },
-            {
-                name: "Lisa Wang",
-                role: "UX Lead at DesignStudio",
-                text: "The flexible schedule allowed me to upskill while working full-time. Now I lead a team of designers.",
-                avatar: Avatar2,
-            },
-        ]
+      work: [
+  {
+    name: "Manju",
+    role: "Software Engineer at PCS Software Solutions",
+    text: "Working at PCS Software Solutions has been amazing. The team culture and real-time projects helped me grow quickly and take ownership of client solutions.",
+    initial: "M",
+  },
+  {
+    name: "Kalam Ruso",
+    role: "Frontend Developer at PCS Software Solutions",
+    text: "I enjoyed building interactive applications with modern frameworks at PCS Software Solutions. Mentorship here accelerated my career development.",
+    initial: "K",
+  },
+  {
+    name: "Abishek",
+    role: "Backend Developer at PCS Software Solutions",
+    text: "PCS Software Solutions gave me hands-on experience with databases and APIs. I can now confidently design and implement backend systems for clients.",
+    initial: "A",
+  },
+  {
+    name: "Surya",
+    role: "Full Stack Developer at PCS Software Solutions",
+    text: "From frontend to backend, PCS Software Solutions provided exposure to complete project workflows. I feel fully prepared for any challenging project now.",
+    initial: "S",
+  },
+  {
+    name: "Marish",
+    role: "UI/UX Designer at PCS Software Solutions",
+    text: "Designing real client solutions at PCS Software Solutions improved my skills immensely. The collaborative environment helped me understand user needs better.",
+    initial: "M",
+  },
+]
+
     };
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -162,11 +163,10 @@ const SuccessStories = ({ selectedOption }) => {
                                     <p className="traninglearn-card-text">{item.text}</p>
 
                                     <div className="traninglearn-card-footer">
-                                        <img
-                                            src={item.avatar}
-                                            alt={item.name}
-                                            className="traninglearn-card-avatar"
-                                        />
+                                       <div className="traninglearn-card-avatar-circle">
+  {item.initial || item.name.charAt(0)}
+</div>
+
                                         <div className="traninglearn-card-person">
                                             <div className="traninglearn-card-name">{item.name}</div>
                                             <div className="traninglearn-card-role">{item.role}</div>
