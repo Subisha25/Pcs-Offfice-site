@@ -24,16 +24,22 @@
   width: 100%;
   /* padding: 60px 0px 60px; */
   background-color:#F5F5F5;
+  
 }
 
 /* TOP */
 .feedback-header {
   text-align: center;
   margin-bottom: 70px;
+  margin-top: -50px;
   font-family: "WF Visual Sans" !important;
+  
 
 }
-
+.feedback-header h2 {
+  margin-top: -25px;
+  line-height: 1.05;
+}
 .feedback-tag {
   display: inline-flex;
   background: #e2e2e2;
