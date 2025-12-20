@@ -437,7 +437,7 @@ const ServicesSection = () => {
 
 
   .card-description {
-    font-size: 18px !important;     /* 🔽 size reduced */
+    font-size: 13px !important;     /* 🔽 size reduced */
     line-height: 1.4 !important;
     margin-bottom: 30px !important;
 
