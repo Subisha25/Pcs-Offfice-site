@@ -197,11 +197,15 @@
 }
 
 /* Small mobile */
-@media (max-width: 480px) {
-  .successtraninglearn-title,
+@media (max-width: 425px) {
+  .successtraninglearn-title{
+    font-size: 32px;
+    margin-left: 15%;
+
+  }
   .successtraninglearn-title-highlight {
-    font-size: 28px;
-    line-height: 1.2;
+    margin-left: 35%;
+
   }
 
   .traninglearn-card {
@@ -218,9 +222,14 @@
 
 /* Very small */
 @media (max-width: 360px) {
-  .successtraninglearn-title,
+  .successtraninglearn-title{
+    font-size: 32px;
+    margin-left: 10px;
+
+  }
   .successtraninglearn-title-highlight {
-    font-size: 24px;
+    margin-left: 35%;
+
   }
 }
 

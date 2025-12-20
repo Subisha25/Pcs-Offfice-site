@@ -151,7 +151,7 @@
 .purpose-title .highlight {
   font-family: var(--playfair-fonts);
   font-style: italic;
-  color: #000000;
+  color: #00008B;
 }
 
 /* ==================== CARDS SECTION ==================== */
@@ -242,12 +242,16 @@
 
 @media (max-width: 600px) {
   .purpose-scroll-wrapper {
-    min-height: 350vh;
+    min-height: 250vh;
   }
 
   .purpose-title {
     font-size: 26px;
+    margin-top: -40px;   /* 👈 heading mela pogum */
+    padding-top: 0px;     /* 👈 extra top space remove */
+    padding-bottom: 20px;
   }
+
 
   .purpose-cards {
     grid-template-columns: 1fr;
@@ -887,10 +891,12 @@
   .sw-result-img-box {
     grid-column: 1 / -1;
     text-align: center;
+    margin-top: -60px;
   }
 
   .sw-result-img {
     max-height: 280px;
+    margin-top: 60px;
   }
 }
 
@@ -947,6 +953,7 @@
 
   .sw-offer-title,
   .sw-result-title {
+    margin-top: -30px;
     font-size: 18px;
   }
 
@@ -964,12 +971,14 @@
   .sw-result-title,
   .sw-result-text,
   .sw-result-img-box {
+    margin-top: -60px;
     grid-column: 1 / -1;
     text-align: center;
   }
 
   .sw-result-img {
     max-height: 250px;
+    margin-top: 70px;
   }
 }
 
@@ -1006,3 +1015,13 @@
     transform: none;
   }
 }
+
+
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}
+
+
+
