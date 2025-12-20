@@ -12,7 +12,7 @@ import Coollah_MobileS from '../assets/ourworks/mblview/coollah.jpeg';
 import Coollah_MobileM from '../assets/ourworks/mblview/coollah/coollah-m.jpeg';
 import Coollah_MobileL from '../assets/ourworks/mblview/coollah/coollah-L.png';
 import Coollah_Tablet from '../assets/ourworks/mblview/coollah/coollah-tab.jpeg';
-import Coollah_Laptop from '../assets/coollah.png';
+import Coollah_Laptop from '../assets/ourworks/mblview/grace gabs.jpeg';
 import Coollah_LaptopL from '../assets/ourworks/mblview/coollah/coollah-lapL.jpeg';
 
 // BJMM Images - All Breakpoints
@@ -20,7 +20,7 @@ import BJMM_MobileS from '../assets/ourworks/mblview/bjbm/BJBM-m.jpg';
 import BJMM_MobileM from '../assets/ourworks/mblview/bjbm/BJBM-m.jpg';
 import BJMM_MobileL from '../assets/ourworks/mblview/bjbm/BJBM-l.jpg';
 import BJMM_Tablet from '../assets/ourworks/mblview/bjbm/BJBM-tab.jpg';
-import BJMM_Laptop from '../assets/bjmm.jpeg';
+import BJMM_Laptop from '../assets/ourworks/mblview/nibrasimg.png';
 import BJMM_LaptopL from '../assets/ourworks/mblview/bjbm/BJBM-lapL.jpg';
 
 // WorldTamil Siragam Images - All Breakpoints
@@ -54,8 +54,8 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Coollah",
-    link: "/collah",
+    title: "Grace Cabs",
+    link: "/Grace Cabs",
     tags: ["Web Design", "UI/UX Design"],
     images: {
       mobileS: Coollah_MobileS,
@@ -68,8 +68,8 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "BJMM",
-    link: "/bjmm",
+    title: "Nibras",
+    link: "/Nibras",
     tags: ["Web Design", "UI/UX Design"],
     images: {
       mobileS: BJMM_MobileS,
