@@ -81,7 +81,7 @@ const fillWindow = viewportH * 0.35;
   return (
     <div className="workprocess">
       {/* ===== ABOUT ===== */}
-      <div className="workprocess-section" ref={sectionRef}>
+      <div className="work-process-section1" ref={sectionRef}>
         <div className="container">
 
         <CommonTopTag text="Our Works Process" icon={tagicon} />
