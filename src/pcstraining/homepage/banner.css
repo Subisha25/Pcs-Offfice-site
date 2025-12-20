@@ -563,3 +563,16 @@
     line-height: 1 !important;
   }
 }
+
+
+@media (max-width: 768px) {
+  .train-home-ban-container {
+    min-height: auto;   /* 🔥 IMPORTANT */
+  }
+}
+
+@media (max-width: 480px) {
+  .services-strip2 {
+    margin-top: 30px;   /* 🔥 banner & strip gap */
+  }
+}
