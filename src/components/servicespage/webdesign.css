@@ -247,6 +247,7 @@
 
   .purpose-title {
     font-size: 26px;
+    margin-top: -40px;
   }
 
   .purpose-cards {
@@ -814,9 +815,7 @@
     max-height: 300px;
   }
 }
-
-/* SMALL MOBILE (360px - 479px) */
-@media (min-width: 360px) and (max-width: 479px) {
+@media (max-width: 425px) {
   .sw-header {
     padding: 45px 14px 120px;
   }
@@ -848,7 +847,7 @@
 
   .sw-description {
     font-size: 13px;
-    margin-top: 30px;
+    margin-top: 70px;
     padding: 0 14px;
     line-height: 1.7;
   }
@@ -893,6 +892,87 @@
     max-height: 280px;
   }
 }
+/* SMALL MOBILE (360px - 479px) */
+@media (min-width: 360px){
+  .sw-header {
+    padding: 45px 14px 120px;
+  }
+
+  .sw-small-title {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  .sw-main-title {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .sw-banner-wrapper {
+    height: 25vh;
+    margin-top: -100px;
+  }
+
+  .sw-banner {
+    top: 55px;
+    padding: 0 12px;
+  }
+
+  .sw-banner-img {
+    max-width: 450px;
+    border-radius: 14px;
+  }
+
+  .sw-description {
+    font-size: 13px;
+    margin-top: 70px;
+    padding: 0 14px;
+    line-height: 1.7;
+  }
+
+  .sw-offer-section {
+    flex-direction: column;
+    margin: 60px auto 0;
+    gap: 30px;
+    text-align: center;
+    padding: 0 14px;
+  }
+
+  .sw-offer-content {
+    text-align: center;
+  }
+
+  .sw-offer-title,
+  .sw-result-title {
+    font-size: 19px;
+  }
+
+  .sw-offer-list li,
+  .sw-result-text li {
+    font-size: 13px;
+  }
+
+  .sw-result {
+    grid-template-columns: 1fr;
+    margin: 60px auto 0;
+    gap: 20px;
+    padding: 0 14px 40px;
+  }
+
+  .sw-result-title,
+  .sw-result-text,
+  .sw-result-img-box {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: -90px;
+  }
+
+  .sw-result-img {
+    max-height: 280px;
+    margin-top:90px;
+  }
+}
+
 
 /* EXTRA SMALL MOBILE (< 360px) */
 @media (max-width: 359px) {
@@ -927,7 +1007,7 @@
 
   .sw-description {
     font-size: 12px;
-    margin-top: 25px;
+    margin-top: 40px;
     padding: 0 12px;
     line-height: 1.8;
   }
@@ -948,6 +1028,7 @@
   .sw-offer-title,
   .sw-result-title {
     font-size: 18px;
+    margin-top: -40px;
   }
 
   .sw-offer-list li,
@@ -966,10 +1047,12 @@
   .sw-result-img-box {
     grid-column: 1 / -1;
     text-align: center;
+    margin-top: -80px;
   }
 
   .sw-result-img {
     max-height: 250px;
+    margin-top:80px;
   }
 }
 
