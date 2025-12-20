@@ -499,6 +499,7 @@ const ServicesSection = () => {
     margin-bottom: 4px !important;
   }
   .card-description {
+  font-size:14px;
     margin-top: 16px !important;   /* ⬇️ title-kku keela gap */
     line-height: 1.45 !important;
   }
@@ -523,7 +524,7 @@ const ServicesSection = () => {
             font-size: 30px !important;
           }
           .card-description {
-            fontSize: 13px !important;
+            fontSize: 1px !important;
           }
           .card-arrow {
             right: 12px !important;
