@@ -24,6 +24,8 @@ function PurposeSection() {
   const badgeRef = useRef(null);
   const cardsRef = useRef([]);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const isMobile = window.innerWidth <= 768;
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,10 +63,18 @@ function PurposeSection() {
     Math.max((scrollProgress - 0.1) / 0.2, 0),
     1
   );
-  const fullText = "Design with purpose,";
-  const typedLength = Math.floor(fullText.length * typewriterProgress);
-  const typedText = fullText.substring(0, typedLength);
-  const showCursor = typewriterProgress < 1;
+const fullText = "Design with purpose,";
+
+// mobile-la full text direct show
+const typedText = isMobile
+  ? fullText
+  : fullText.substring(
+      0,
+      Math.floor(fullText.length * typewriterProgress)
+    );
+
+const showCursor = !isMobile && typewriterProgress < 1;
+
 
   // Title movement (30–60% scroll)
   const titleMoveProgress = Math.min(
@@ -181,34 +191,25 @@ function PurposeSection() {
         }}
       >
         {/* Top Badge */}
-        <div
-          className="purpose-badge-box"
-          ref={badgeRef}
-          style={{
-            opacity: badgeOpacity,
-            transform: `translateY(${-20 * (1 - badgeOpacity)}px)`,
-          }}
-        >
-          {/* <button className="btn-primary">
-            <div className="icon-circle">
-              <img alt="arrow" src={Whychoose} />
-            </div>
-            Why Choose Us
-          </button> */}
+   <div className="purpose-badge-box" ref={badgeRef}>
+  <CommonTopTag text="Why Choose Us" icon={tagicon} />
+</div>
 
-          <CommonTopTag text="Why Choose Us" icon={tagicon} />
-
-        </div>
 
         {/* Main Heading with Typewriter */}
-        <h2
-          className="purpose-title"
-          ref={titleRef}
-          style={{
-            transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
-            transition: "transform 0.1s linear",
-          }}
-        >
+      <h2
+  className="purpose-title"
+  ref={titleRef}
+  style={
+    isMobile
+      ? { transform: "none", transition: "none" }
+      : {
+          transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
+          transition: "transform 0.1s linear",
+        }
+  }
+>
+
           <span className="typewriter-text">
             {typedText}
             {showCursor && <span className="cursor">|</span>}
@@ -221,22 +222,28 @@ function PurposeSection() {
         <div className="purpose-cards">
           {cardsData.map((card, index) => {
             const { opacity, translateY, scale } = getCardTransform(index);
-            const cardStyle = isPinned
-              ? {
-                opacity,
-                transform: `translateY(${translateY}px) scale(${scale})`,
-                transition: "opacity 0.3s ease, transform 0.3s ease",
-              }
-              : {}; // small screens: handled by CSS + IntersectionObserver
+           const cardStyle =
+  isPinned && !isMobile
+    ? {
+        opacity,
+        transform: `translateY(${translateY}px) scale(${scale})`,
+        transition: "opacity 0.3s ease, transform 0.3s ease",
+      }
+    : {
+        opacity: 1,
+        transform: "none",
+        transition: "none",
+      };
 
             return (
-              <div
-                key={index}
-                className="purpose-card"
-                ref={(el) => (cardsRef.current[index] = el)}
-                data-index={index}
-                style={cardStyle}
-              >
+           <div
+  key={index}
+  className="purpose-card"
+  ref={(el) => (cardsRef.current[index] = el)}
+  data-index={index}
+  style={cardStyle}
+>
+
                 <img
                   src={card.img}
                   alt={card.title}
