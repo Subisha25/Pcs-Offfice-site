@@ -24,6 +24,7 @@ function PurposeSection() {
   const badgeRef = useRef(null);
   const cardsRef = useRef([]);
   const [scrollProgress, setScrollProgress] = useState(0);
+const isMobile = window.innerWidth <= 768;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,9 +63,15 @@ function PurposeSection() {
     1
   );
   const fullText = "Design with purpose,";
-  const typedLength = Math.floor(fullText.length * typewriterProgress);
-  const typedText = fullText.substring(0, typedLength);
-  const showCursor = typewriterProgress < 1;
+const typedText = isMobile
+  ? fullText          // ✅ mobile-la full text first-la
+  : fullText.substring(
+      0,
+      Math.floor(fullText.length * typewriterProgress)
+    );
+
+const showCursor = !isMobile && typewriterProgress < 1;
+
 
   // Title movement (30–60% scroll)
   const titleMoveProgress = Math.min(
@@ -115,44 +122,39 @@ function PurposeSection() {
 
   return (
     <div className="purpose-scroll-wrapper" ref={wrapperRef}>
-      <div
-        className="purpose-container"
-        ref={containerRef}
-        style={{
-          position:
-            scrollProgress > 0 && scrollProgress < 1 ? "fixed" : "absolute",
-          top: scrollProgress >= 1 ? "auto" : "0",
-          bottom: scrollProgress >= 1 ? "0" : "auto",
-        }}
-      >
+   <div
+  className="purpose-container"
+  ref={containerRef}
+  style={{
+    position: isMobile
+      ? "relative"   // ✅ mobile normal scroll
+      : scrollProgress > 0 && scrollProgress < 1
+        ? "fixed"
+        : "absolute",
+    top: isMobile ? "auto" : scrollProgress >= 1 ? "auto" : "0",
+    bottom: isMobile ? "auto" : scrollProgress >= 1 ? "0" : "auto",
+  }}
+>
         {/* Top Badge */}
-        <div
-          className="purpose-badge-box"
-          ref={badgeRef}
-          style={{
-            opacity: badgeOpacity,
-            transform: `translateY(${-20 * (1 - badgeOpacity)}px)`,
-          }}
-        >
-          {/* <button className="btn-primary">
-            <div className="icon-circle">
-              <img alt="arrow" src={Whychoose} />
-            </div>
-            Why Choose Us
-          </button> */}
-          <CommonTopTag text="Why Choose Us" icon={tagicon} />
-
-        </div>
+          <div className="purpose-badge-box" ref={badgeRef}>
+             <CommonTopTag text="Why Choose Us" icon={tagicon} />
+           </div>
 
         {/* Main Heading with Typewriter */}
-        <h2
-          className="purpose-title"
-          ref={titleRef}
-          style={{
-            transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
-            transition: "transform 0.1s linear",
-          }}
-        >
+      
+          <h2
+  className="purpose-title"
+  style={
+    isMobile
+      ? { transform: "none", transition: "none" } // ✅ mobile
+      : {
+          transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
+          transition: "transform 0.1s linear",
+        }
+  }
+>
+
+        
           <span className="typewriter-text">
             {typedText}
             {showCursor && <span className="cursor">|</span>}
@@ -170,11 +172,20 @@ function PurposeSection() {
                 key={index}
                 className="purpose-card"
                 ref={(el) => (cardsRef.current[index] = el)}
-                style={{
-                  opacity,
-                  transform: `translateY(${translateY}px) scale(${scale})`,
-                  transition: "opacity 0.3s ease, transform 0.3s ease",
-                }}
+                style={
+  isMobile
+    ? {
+        opacity: 1,
+        transform: "none",
+        transition: "none",
+      }
+    : {
+        opacity,
+        transform: `translateY(${translateY}px) scale(${scale})`,
+        transition: "opacity 0.3s ease, transform 0.3s ease",
+      }
+}
+
               >
                 <img
                   src={card.img}
