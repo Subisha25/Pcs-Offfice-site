@@ -247,7 +247,11 @@
 
   .purpose-title {
     font-size: 26px;
+    margin-top: -40px;   /* 👈 heading mela pogum */
+    padding-top: 0px;     /* 👈 extra top space remove */
+    padding-bottom: 20px;
   }
+
 
   .purpose-cards {
     grid-template-columns: 1fr;
@@ -1013,3 +1017,5 @@
     display: none;
   }
 }
+
+
