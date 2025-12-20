@@ -223,12 +223,12 @@
 /* Very small */
 @media (max-width: 360px) {
   .successtraninglearn-title{
-    font-size: 32px;
+    font-size: 28px;
     margin-left: 10px;
 
   }
   .successtraninglearn-title-highlight {
-    margin-left: 35%;
+    margin-left: 20px;
 
   }
 }
