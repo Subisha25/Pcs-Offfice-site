@@ -3,9 +3,9 @@ import "./banner.css";
 import { User, Activity, Briefcase, Award, Users, Target, Clock, CheckCircle, Sparkles, X } from "lucide-react";
 import bgBanner from "../assets/contact/cantactbanner.png";
 import StateSection from "./statesection";
-import SuccessStories from "./successstories";
 import { useLocation } from "react-router-dom";
 import CommonButton from "../common/button";
+import TraningLearn from "../../pcstraining/homepage/traninglearn";
 
 const API_URL = "https://pcstech.in/mail/mail.php";
 
@@ -356,8 +356,8 @@ const ContactSection = () => {
       />
 
       <StateSection selectedOption={selectedOption} />
-      <SuccessStories selectedOption={selectedOption} />
-    </div>
+<TraningLearn />
+      </div>
   );
 };
 
