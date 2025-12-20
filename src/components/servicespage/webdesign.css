@@ -891,10 +891,12 @@
   .sw-result-img-box {
     grid-column: 1 / -1;
     text-align: center;
+    margin-top: -60px;
   }
 
   .sw-result-img {
     max-height: 280px;
+    margin-top: 60px;
   }
 }
 
