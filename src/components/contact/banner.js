@@ -6,6 +6,8 @@ import StateSection from "./statesection";
 import { useLocation } from "react-router-dom";
 import CommonButton from "../common/button";
 import TraningLearn from "../../pcstraining/homepage/traninglearn";
+import LearnReviews from "./learnersReviews";
+import WorkersReviews from "./workersReviews";
 
 const API_URL = "https://pcstech.in/mail/mail.php";
 
@@ -57,16 +59,16 @@ const SuccessPopup = ({ show, onClose, userName }) => {
         className={`popup-card ${isVisible ? "active" : ""}`}
         onClick={(e) => e.stopPropagation()}
       >
-    <button
-  type="button"
-  className="popup-close-btn"
-  onClick={(e) => {
-    e.stopPropagation();     // 🔥 VERY IMPORTANT
-    handleClosePopup(e);
-  }}
->
-  <X size={20} />
-</button>
+        <button
+          type="button"
+          className="popup-close-btn"
+          onClick={(e) => {
+            e.stopPropagation();     // 🔥 VERY IMPORTANT
+            handleClosePopup(e);
+          }}
+        >
+          <X size={20} />
+        </button>
 
 
         <div className="popup-icon-wrapper">
@@ -110,7 +112,7 @@ const ContactSection = () => {
 
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState({ type: "", msg: "" });
- const handleClosePopup = () => {
+  const handleClosePopup = () => {
     setShowPopup(false); // Close popup
   };
   const content = {
@@ -195,7 +197,7 @@ const ContactSection = () => {
       let msg = text;
       try {
         msg = JSON.parse(text);
-      } catch (_) {}
+      } catch (_) { }
 
       if (!res.ok) {
         setStatus({ type: "error", msg: typeof msg === "string" ? msg : "Something went wrong." });
@@ -221,7 +223,7 @@ const ContactSection = () => {
     }
   };
 
-    // ✅ Function to handle button click
+  // ✅ Function to handle button click
   const handleButtonClick = () => {
     setShowPopup(true); // Open popup
   };
@@ -297,21 +299,21 @@ const ContactSection = () => {
             />
 
             <label className="input-title">Phone*</label>
-          <div className="phone-input-row">
-  <select className="phone-select" disabled>
-    <option>India +91</option>
-  </select>
+            <div className="phone-input-row">
+              <select className="phone-select" disabled>
+                <option>India +91</option>
+              </select>
 
-  <div className="phone-input-wrapper">
-    <input
-      type="text"
-      className="phone-number"
-      placeholder="Enter your Mobile Number"
-      value={phone}
-      onChange={(e) => setPhone(e.target.value)}
-    />
-  </div>
-</div>
+              <div className="phone-input-wrapper">
+                <input
+                  type="text"
+                  className="phone-number"
+                  placeholder="Enter your Mobile Number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </div>
+            </div>
 
 
 
@@ -347,16 +349,17 @@ const ContactSection = () => {
       </div>
 
       {/* ✅ New Modern Popup */}
-      <SuccessPopup 
-      
+      <SuccessPopup
+
         show={showPopup}
         onClose={() => setShowPopup(false)}
         userName={fullName}
       />
 
       <StateSection selectedOption={selectedOption} />
-<TraningLearn />
-      </div>
+      {/* <TraningLearn /> */}
+      <LearnReviews />
+    </div>
   );
 };
 
