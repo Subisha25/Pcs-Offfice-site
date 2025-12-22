@@ -494,12 +494,14 @@ font-family: "WF Visual Sans";
 }
 
 .pd-faq-item summary::after {
-  content: "∨";
-  font-size: 20px;
-  color: #6b7280;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-  font-weight: 400;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #6b7280;
+  border-bottom: 2px solid #6b7280;
+  transform: rotate(45deg);   /* 👇 V shape */
+  transition: transform 0.3s ease;
+  margin-left: auto;
 }
 
 .pd-faq-item:hover summary::after {
@@ -507,10 +509,8 @@ font-family: "WF Visual Sans";
 }
 
 .pd-faq-item[open] summary::after {
-  content: "∧";
-  transform: rotate(0deg);
+  transform: rotate(-135deg); /* 👆 inverted V */
 }
-
 .pd-faq-item p {
     font-family: "WF Visual Sans";
   font-weight: 300;
@@ -518,7 +518,7 @@ font-family: "WF Visual Sans";
   padding: 12px 0 0;
   margin: 0;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.7; 
   animation: fadeIn 0.3s ease-out;
 }
 

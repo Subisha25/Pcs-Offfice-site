@@ -97,6 +97,7 @@
   font-family: var(--playfair-fonts);
   font-style: italic;
   font-weight: 600;
+  padding-left: 5px;
   background: linear-gradient(90deg, #03045E 0%, #FF006E 100%);
   -webkit-background-clip: text;
   /* background-clip: text; */
