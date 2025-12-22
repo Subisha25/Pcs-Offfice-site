@@ -7,7 +7,7 @@
   --button-primary: #101166;
   --button-secondary: #D9D9D9;
   --playfair-fonts: 'Playfair Display', serif;
-  
+
   /* Font Sizes */
   --heading-font-size: 32px;
   --subheading-font-size: 24px;
@@ -33,7 +33,7 @@
   top: 20px;
   left: 0;
   z-index: 9999;
-  padding: 0 15px ;
+  padding: 0 15px;
   box-sizing: border-box;
 }
 
@@ -54,11 +54,11 @@
 
   transform: scale(1);
   transform-origin: center;
-transition: 
-    width 0.7s cubic-bezier(0.65, 0, 0.35, 1), 
-    background 0.5s ease, 
-  padding 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-  
+  transition:
+    width 0.7s cubic-bezier(0.65, 0, 0.35, 1),
+    background 0.5s ease,
+    padding 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+
   /* overflow: hidden;  */
   white-space: nowrap;
   /* transition:
@@ -161,9 +161,11 @@ transition:
   gap: 15px;
   flex-shrink: 0;
 }
-.menu-togglemobile-btn{
+
+.menu-togglemobile-btn {
   display: none;
 }
+
 /* MENU TOGGLE BUTTON */
 .menu-toggle-btn {
   background: black;
@@ -193,15 +195,19 @@ transition:
   transition: all 0.2s;
   white-space: nowrap;
 }
+
 .menu-toggle-btn:hover {
   background: #333;
 }
+
 .menu-toggleclose-btn:hover {
   background: #333;
 }
+
 /* SMALL/COMPACT MODE WHEN SCROLLED */
 .header.small .header-container {
-  width: 240px !important;  /* Width-ah kammi panniyachu */
+  width: 240px !important;
+  /* Width-ah kammi panniyachu */
   min-width: 240px;
   padding: 8px 15px;
   justify-content: space-between;
@@ -210,11 +216,13 @@ transition:
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease-in-out;
 }
+
 .header.scrolled:not(.small) .header-container {
   width: 70%;
   max-width: 1300px;
   transition: all 0.4s ease-in-out;
 }
+
 .header.small .header-menu {
   display: none;
 }
@@ -241,7 +249,7 @@ transition:
 
   .header-container {
     width: 90%;
-     max-width: 600px;
+    max-width: 600px;
     padding: 10px 20px;
     border-radius: 40px;
     margin: 0 auto;
@@ -265,21 +273,22 @@ transition:
 /* SMALL TABLETS & LARGE PHONES (max-width: 768px) */
 @media screen and (max-width: 768px) {
 
-  .menu-togglemobile-btn{
+  .menu-togglemobile-btn {
 
-  display: block;
+    display: block;
     background: black;
-  color: white;
-  border: none;
-  font-size: 14px;
-  padding: 8px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-family: 'WF Visual Sans', sans-serif;
-  font-weight: 500;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
+    color: white;
+    border: none;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'WF Visual Sans', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
   .header {
     top: 10px;
     padding: 0 10px;
@@ -304,19 +313,20 @@ transition:
   }
 
   .menu-toggleclose-btn {
-  display: block;
-  background: black;
-  color: white;
-  border: none;
-  padding: 7px 14px;
-  font-size: 11px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-family: 'WF Visual Sans', sans-serif;
-  font-weight: 500;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
+    display: block;
+    background: black;
+    color: white;
+    border: none;
+    padding: 7px 14px;
+    font-size: 11px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'WF Visual Sans', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
   /* Always show menu toggle on mobile */
   .menu-toggle-btn {
     display: none;
@@ -354,20 +364,34 @@ transition:
   }
 
   /* Show button in mobile menu */
-  .show-menu ~ .header-right .header-btn {
+  .show-menu~.header-right .header-btn {
     display: block;
     width: 100%;
     margin-top: 10px;
   }
 
- 
+
+}
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    width: 65% !important;
+    max-width: 300px !important;
   }
 
- @media screen and (max-width: 768px) {
-  .header.scrolled .header-container,
+  /* Mobile-la scroll pannumbodhu background matum white aaganum */
+  .header.scrolled .header-container {
+    background: white;
+    border: none;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Small class mobile-la apply aagakoodathu */
   .header.small .header-container {
     width: 65% !important;
     max-width: 300px !important;
+    padding: 8px 16px;
+    /* Original mobile padding maintain pannanum */
   }
 }
 
@@ -379,7 +403,7 @@ transition:
     padding: 0 8px;
   }
 
- .header-container {
+  .header-container {
     width: 65% !important;
     max-width: 300px !important;
     margin: 0 auto;
