@@ -303,7 +303,6 @@ const ContactSection = () => {
   </select>
 
   <div className="phone-input-wrapper">
-    <span className="country-code">+91</span>
     <input
       type="text"
       className="phone-number"

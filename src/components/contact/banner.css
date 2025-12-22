@@ -1410,7 +1410,7 @@ font-weight: 300;
 
   /* input text & placeholder start after +91 */
   .phone-input-wrapper .phone-number {
-    padding-left: 48px;   /* 🔥 space for +91 */
+    padding-left: 8px;   /* 🔥 space for +91 */
     text-align: left;
   }
 }
