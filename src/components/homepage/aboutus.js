@@ -68,7 +68,7 @@ export default function About() {
 
       const rect = sectionRef.current.getBoundingClientRect();
       const viewportH = window.innerHeight;
-      const centerY = viewportH / 2;
+      const centerY = viewportH / 1;
 
       // Detect scroll direction
       const currentScroll = window.scrollY;

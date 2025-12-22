@@ -449,6 +449,7 @@
   .train-home-ban-home, .train-home-ban-back svg{
     width: 16px;
     height: 16px;
+    margin-left: -30px;
   }
 
   .train-home-ban-breadcrumb {
@@ -496,7 +497,7 @@
   }
 
   .train-home-ban-header{
-    padding-top:60px ;
+    padding-top:20px ;
   }
 }
 
@@ -522,7 +523,7 @@
 
   .train-home-ban-buttons > * {
     width: 100% !important;
-    height: 52px !important;   /* 🔥 fixed height */
+    height: 46px !important;   /* 🔥 fixed height */
     border-radius: 999px;
     font-size: 16px;
     font-weight: 600;
