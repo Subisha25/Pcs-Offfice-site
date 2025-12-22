@@ -358,7 +358,7 @@ const ContactSection = () => {
 
       <StateSection selectedOption={selectedOption} />
       {/* <TraningLearn /> */}
-      <LearnReviews />
+      {selectedOption === "learn" ? <LearnReviews /> : <WorkersReviews />}
     </div>
   );
 };
