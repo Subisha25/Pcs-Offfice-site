@@ -204,12 +204,12 @@
 /* Small mobile */
 @media (max-width: 425px) {
   .successtraninglearn-title{
-    font-size: 32px;
+    font-size: 25px;font-size: 32px;
     margin-left: 15%;
 
   }
   .successtraninglearn-title-highlight {
-    margin-left: 35%;
+    margin-left: 15%;
 
   }
 

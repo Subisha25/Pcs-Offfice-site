@@ -13,6 +13,7 @@ function Header() {
     e.stopPropagation();
     setMenuOpen(prev => !prev);
   };
+const [scrollingUp, setScrollingUp] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -23,17 +24,28 @@ function Header() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 50;
-      setIsScrolled(scrolled);
-      if (scrolled && menuOpen) {
-        setMenuOpen(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [menuOpen]);
+ useEffect(() => {
+  let lastScrollY = window.scrollY;
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // scrolling DOWN
+      setIsScrolled(true);
+      setScrollingUp(false);
+      setMenuOpen(false);
+    } else if (currentScrollY < lastScrollY) {
+      // scrolling UP
+      setScrollingUp(true);
+    }
+
+    lastScrollY = currentScrollY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -70,10 +82,13 @@ function Header() {
   };
 
   return (
-    <header
-      className={`header ${isScrolled ? "scrolled" : ""} ${isScrolled && !menuOpen && !isMobile ? "small" : ""
-        }`}
-    >
+   <header
+  className={`header 
+    ${isScrolled ? "scrolled" : ""} 
+    ${isScrolled && !scrollingUp && !menuOpen && !isMobile ? "small" : ""}
+  `}
+>
+
       {/* Click seiyum pothu expand aaga handleMenuClick inga irukkum */}
       <div className="header-container" onClick={isScrolled ? handleMenuClick : undefined}>
 
@@ -93,7 +108,8 @@ function Header() {
 
 
         {/* Desktop Menu - show when NOT scrolled OR when menu is open */}
-        {!isMobile && (!isScrolled || menuOpen) && (
+        {!isMobile && menuOpen && (
+
           <nav className={`header-menu ${menuOpen ? "show-menu" : ""}`}>
             <a href="/aboutbanner" onClick={handleLinkClick}>About</a>
             <a href="/servicespage" onClick={handleLinkClick}>Services</a>
