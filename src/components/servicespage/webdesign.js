@@ -63,17 +63,17 @@ function PurposeSection() {
     Math.max((scrollProgress - 0.1) / 0.2, 0),
     1
   );
-const fullText = "Design with purpose,";
+  const fullText = "Design with purpose,";
 
-// mobile-la full text direct show
-const typedText = isMobile
-  ? fullText
-  : fullText.substring(
+  // mobile-la full text direct show
+  const typedText = isMobile
+    ? fullText
+    : fullText.substring(
       0,
       Math.floor(fullText.length * typewriterProgress)
     );
 
-const showCursor = !isMobile && typewriterProgress < 1;
+  const showCursor = !isMobile && typewriterProgress < 1;
 
 
   // Title movement (30–60% scroll)
@@ -191,24 +191,24 @@ const showCursor = !isMobile && typewriterProgress < 1;
         }}
       >
         {/* Top Badge */}
-   <div className="purpose-badge-box" ref={badgeRef}>
-  <CommonTopTag text="Why Choose Us" icon={tagicon} />
-</div>
+        <div className="purpose-badge-box" ref={badgeRef}>
+          <CommonTopTag text="Why Choose Us" icon={tagicon} />
+        </div>
 
 
         {/* Main Heading with Typewriter */}
-      <h2
-  className="purpose-title"
-  ref={titleRef}
-  style={
-    isMobile
-      ? { transform: "none", transition: "none" }
-      : {
-          transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
-          transition: "transform 0.1s linear",
-        }
-  }
->
+        <h2
+          className="purpose-title"
+          ref={titleRef}
+          style={
+            isMobile
+              ? { transform: "none", transition: "none" }
+              : {
+                transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
+                transition: "transform 0.1s linear",
+              }
+          }
+        >
 
           <span className="typewriter-text">
             {typedText}
@@ -222,27 +222,27 @@ const showCursor = !isMobile && typewriterProgress < 1;
         <div className="purpose-cards">
           {cardsData.map((card, index) => {
             const { opacity, translateY, scale } = getCardTransform(index);
-           const cardStyle =
-  isPinned && !isMobile
-    ? {
-        opacity,
-        transform: `translateY(${translateY}px) scale(${scale})`,
-        transition: "opacity 0.3s ease, transform 0.3s ease",
-      }
-    : {
-        opacity: 1,
-        transform: "none",
-        transition: "none",
-      };
+            const cardStyle =
+              isPinned && !isMobile
+                ? {
+                  opacity,
+                  transform: `translateY(${translateY}px) scale(${scale})`,
+                  transition: "opacity 0.3s ease, transform 0.3s ease",
+                }
+                : {
+                  opacity: 1,
+                  transform: "none",
+                  transition: "none",
+                };
 
             return (
-           <div
-  key={index}
-  className="purpose-card"
-  ref={(el) => (cardsRef.current[index] = el)}
-  data-index={index}
-  style={cardStyle}
->
+              <div
+                key={index}
+                className="purpose-card"
+                ref={(el) => (cardsRef.current[index] = el)}
+                data-index={index}
+                style={cardStyle}
+              >
 
                 <img
                   src={card.img}
@@ -436,7 +436,8 @@ export default function Webdesign() {
 
           data-typewriter="A powerful website is more than visuals—it’s an experience your audience remembers. We design and develop websites that blend creativity with smart technology, ensuring every page feels intuitive, engaging, and purposeful. From layout to user journey, we craft digital experiences that inspire trust and turn visitors into loyal customers"
         >
-          A powerful website is more than visuals—it’s an experience your audience remembers. We design and develop websites that blend creativity with smart technology, ensuring every page feels intuitive, engaging, and purposeful. From layout to user journey, we craft digital experiences that inspire trust and turn visitors into loyal customers
+          A powerful website is more than just visuals—it’s an experience your audience remembers.
+          We design and develop websites that seamlessly blend creativity with smart technology, ensuring every page feels intuitive, engaging, and purposeful. From layout to user journey, we craft digital experiences that build trust and turn visitors into loyal customers.
         </p>
 
         {/* STEP 2: What We Offer Section */}
@@ -477,7 +478,7 @@ export default function Webdesign() {
           >
             <h2 className="sw-result-title">Result:</h2>
             <p>
-              The results show that AI can accurately understand and respond to human behaviour. By analysing patterns in thoughts, emotions, and actions, AI provides clear insights into a user’s psychological state. Overall, the study confirms that AI enhances behavioural analysis and offers a smoother, more personalized experience for users.
+              The results show that AI can accurately understand and respond to human behaviour. By analysing patterns in thoughts, emotions, and actions, AI provides clear insights into a user’s psychological state. Overall, this study confirms that AI enhances behavioural analysis and delivers a smoother, more personalized user experience.
             </p>
           </ul>
 

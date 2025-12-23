@@ -62,16 +62,16 @@ function PurposeSection() {
     1
   );
   const fullText = "Design with purpose,";
-const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768;
 
-const typedText = isMobile
-  ? fullText            // 👉 mobile: full text first-la
-  : fullText.substring(
+  const typedText = isMobile
+    ? fullText            // 👉 mobile: full text first-la
+    : fullText.substring(
       0,
       Math.floor(fullText.length * typewriterProgress)
     );
 
-const showCursor = !isMobile && typewriterProgress < 1;
+  const showCursor = !isMobile && typewriterProgress < 1;
 
 
   // Title movement (30–60% scroll)
@@ -122,37 +122,37 @@ const showCursor = !isMobile && typewriterProgress < 1;
 
   return (
     <div className="purpose-scroll-wrapper" ref={wrapperRef}>
-<div
-  className="purpose-container"
-  ref={containerRef}
-  style={{
-    position: isMobile
-      ? "relative"   // ✅ mobile-la normal scroll
-      : scrollProgress > 0 && scrollProgress < 1
-        ? "fixed"
-        : "absolute",
-    top: isMobile ? "auto" : scrollProgress >= 1 ? "auto" : "0",
-    bottom: isMobile ? "auto" : scrollProgress >= 1 ? "0" : "auto",
-  }}
->
+      <div
+        className="purpose-container"
+        ref={containerRef}
+        style={{
+          position: isMobile
+            ? "relative"   // ✅ mobile-la normal scroll
+            : scrollProgress > 0 && scrollProgress < 1
+              ? "fixed"
+              : "absolute",
+          top: isMobile ? "auto" : scrollProgress >= 1 ? "auto" : "0",
+          bottom: isMobile ? "auto" : scrollProgress >= 1 ? "0" : "auto",
+        }}
+      >
 
-           {/* Top Badge */}
+        {/* Top Badge */}
         <div className="purpose-badge-box" ref={badgeRef}>
-       <CommonTopTag text="Why Choose Us" icon={tagicon} />
-     </div>
+          <CommonTopTag text="Why Choose Us" icon={tagicon} />
+        </div>
 
         {/* Main Heading with Typewriter */}
-    <h2
-  className="purpose-title"
-  style={
-    isMobile
-      ? { transform: "none", transition: "none" }
-      : {
-          transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
-          transition: "transform 0.1s linear",
-        }
-  }
->
+        <h2
+          className="purpose-title"
+          style={
+            isMobile
+              ? { transform: "none", transition: "none" }
+              : {
+                transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
+                transition: "transform 0.1s linear",
+              }
+          }
+        >
 
           <span className="typewriter-text">
             {typedText}
@@ -171,19 +171,19 @@ const showCursor = !isMobile && typewriterProgress < 1;
                 key={index}
                 className="purpose-card"
                 ref={(el) => (cardsRef.current[index] = el)}
-               style={
-  isMobile
-    ? {
-        opacity: 1,
-        transform: "none",
-        transition: "none",
-      }
-    : {
-        opacity,
-        transform: `translateY(${translateY}px) scale(${scale})`,
-        transition: "opacity 0.3s ease, transform 0.3s ease",
-      }
-}
+                style={
+                  isMobile
+                    ? {
+                      opacity: 1,
+                      transform: "none",
+                      transition: "none",
+                    }
+                    : {
+                      opacity,
+                      transform: `translateY(${translateY}px) scale(${scale})`,
+                      transition: "opacity 0.3s ease, transform 0.3s ease",
+                    }
+                }
 
               >
                 <img
@@ -374,7 +374,8 @@ export default function Appdesign() {
         {/* STEP 1: Description with typewriter words */}
         <p
           className="sw-description"
-          data-typewriter="A successful app is more than functionality—it’s an experience your users remember. We design and develop apps that combine sleek design with intelligent technology, ensuring every screen feels intuitive, engaging, and purposeful. From navigation to user flow, we craft digital experiences that inspire trust and turn casual users into loyal app advocates."
+          data-typewriter="A successful app is more than functionality—it’s an experience users remember.
+          We design and develop apps that blend sleek design with intelligent technology, ensuring every screen feels intuitive, engaging, and purposeful. From navigation to user flow, we craft digital experiences that inspire trust and turn casual users into loyal app advocates."
         >
           We craft intuitive and visually stunning mobile applications tailored to your brand’s mission and user needs. From concept to deployment, our team ensures every app is built to deliver performance, usability, and conversions — whether it’s a startup idea or an enterprise solution. We ensure a clean, scalable build that is easy to maintain and enhance.
         </p>
@@ -416,7 +417,7 @@ export default function Appdesign() {
             <h2 className="sw-result-title">Result:</h2>
             <p className="sw-result-content">
 
-              The results of our app development approach demonstrate how technology can deeply enhance user experiences. By understanding user behavior, our apps provide seamless navigation, personalized interactions, and actionable insights. Users engage more, perform tasks faster, and trust the app more, resulting in higher retention, satisfaction, and conversion.
+The results of our app development approach demonstrate how technology can deeply enhance user experiences. By understanding user behavior, our apps deliver seamless navigation, personalized interactions, and actionable insights. This enables users to engage more, complete tasks faster, and build greater trust in the app—resulting in higher retention, satisfaction, and conversion rates.
             </p>
           </ul>
 

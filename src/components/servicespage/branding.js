@@ -416,7 +416,7 @@ export default function Branding() {
             <h2 className="sw-result-title">Result:</h2>
             <p className="sw-result-content">
 
-              The results of our branding and creative services demonstrate the power of strategic storytelling. By understanding your audience and crafting meaningful visuals and messaging, our work enhances brand recognition, strengthens engagement, and drives loyalty. Every project aims to create a cohesive and memorable brand experience that resonates with your target audience.
+The results of our branding and creative services highlight the power of strategic storytelling. By understanding your audience and crafting meaningful visuals and messaging, we enhance brand recognition, strengthen engagement, and drive long-term loyalty. Every project is designed to create a cohesive and memorable brand experience that truly resonates with your target audience.
             </p></ul>
 
           <div
