@@ -608,6 +608,33 @@ const ServicesSection = () => {
 
 }
 
+/* =========================
+   MOBILE – ONLY PADDING INCREASE
+========================= */
+
+@media (max-width: 768px) {
+  .service-card {
+    padding: 34px !important;   /* 🔥 previous ~22px → ippo BIG */
+    box-sizing: border-box !important;
+  }
+    
+}
+
+/* Small mobiles */
+@media (max-width: 480px) {
+  .service-card {
+    padding: 25px !important;
+  }
+}
+
+/* Very small mobiles */
+@media (max-width: 320px) {
+  .service-card {
+    padding: 28px !important;
+  }
+}
+
+
     
       `}</style>
 
