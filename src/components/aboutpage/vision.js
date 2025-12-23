@@ -26,8 +26,8 @@ const VisionMission = () => {
         <CommonTopTag text="Services" icon={tagicon} />
 
         <h1 className="abt-sec-title">
-          Our product and vision for the{" "}
-          <span className="vision-italic-text">digital</span>
+          Our products and vision for the{" "}
+          <span className="vision-italic-text">digital world.</span>
         </h1>
 
 

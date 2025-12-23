@@ -16,7 +16,7 @@ export default function About() {
   const [countValue, setCountValue] = useState(0);
 
   const paragraph =
-    `We're a passionate creatives and experts who believe in delivering results. Experience in Web Dev, Digital Marketing and UI/UX design, we help brands stand out in the crowded digital space.`
+    ` We're a passionate creatives and experts who believe in delivering results. With experience in Web Development, Digital Marketing, and UI/UX Design, we help brands stand out in the crowded digital space.`
       .split(" ");
 
   const maxWords = paragraph.length;

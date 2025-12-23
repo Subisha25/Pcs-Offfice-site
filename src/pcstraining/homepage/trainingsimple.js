@@ -15,7 +15,7 @@ export default function TrainingSimple() {
 
   const paragraph = [
     "Learning made",
-    "simple, accessible, & effective"
+    "simple, accessible, and effective."
   ].join(" ").split(" ");
 
   const maxWords = paragraph.length;
@@ -36,7 +36,7 @@ export default function TrainingSimple() {
       lastScrollY.current = currentScroll;
 
       const distanceFromCenter = centerY - rect.top;
-const fillWindow = viewportH * 0.35;
+      const fillWindow = viewportH * 0.35;
 
       let progress = distanceFromCenter / fillWindow;
       progress = Math.max(0, Math.min(1, progress));
@@ -94,13 +94,13 @@ const fillWindow = viewportH * 0.35;
               </span>
             ))}
           </p> */}
-             <p className="animated-text2">
+          <p className="animated-text2">
             {paragraph.map((word, index) => (
               <span
                 key={index}
                 className={`word 
                   ${index < filledWords ? "filled" : ""} 
-                  ${word ===   "simple,"  ? "gradient-word" : ""}
+                  ${word === "simple," ? "gradient-word" : ""}
                 `}
               >
                 {word + " "}
@@ -118,14 +118,13 @@ const fillWindow = viewportH * 0.35;
           className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
         >
           <Card img={Globe} title="Certified" sub="Course"
-            text="We start by listening andlearning—diving deep into yourbrand, audience, and goals touncover insights that shapeevery decision." />
+            text="listening and learning—diving deep into your brand, audience, and goals to uncover insights that shape every decision." />
           <Card img={Server} title="Internship" sub="Program"
-            text="With clarity in hand, we craftbold ideas and transform theminto designs, stories, andexperiences that resonate." />
+            text="we craft bold ideas and transform them into designs, stories, and experiences that resonate." />
           <Card img={BookOpen} title="Inplant" sub="Training"
-            text="From concept to launch, weensure every detail is polished,impactful, and aligned with your
-            vision for lasting results." />
+            text="we ensure every detail is polished, impactful, and aligned with your vision for lasting results." />
           <Card img={TrendingUp} title="Student" sub="Projects"
-            text="We don't stop at the launch. Weanalyze performance, gatherfeedback, and fine-tune to ensureyour brand keeps evolving andthriving in the digital landscape." />
+            text="We don’t stop at the launch. We analyze performance, gather feedback, and fine-tune to ensure your brand keeps evolving and thriving in the digital landscape." />
         </div>
       </div>
     </div>
