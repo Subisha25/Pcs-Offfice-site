@@ -101,9 +101,15 @@
   flex-shrink: 0;
 }
 
-.header-logo img {
+.header-logo-full {
   height: 40px;
-  width: 130px;
+  width: auto;
+  display: block;
+}
+
+.header-logo-small {
+  height: 34px;
+  width: 100px;
   display: block;
 }
 
@@ -411,6 +417,7 @@
 
   .header-logo img {
     height: 28px;
+    width: 130px;
   }
 
   .menu-toggle-btn {

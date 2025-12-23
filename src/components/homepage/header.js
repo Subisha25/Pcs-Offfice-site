@@ -85,10 +85,20 @@
               navigate("/");         // always go home
             }}
           >
-            <img
-              src={logo}
-              alt="PCS Logo"
-            />
+     <img
+  src={
+    !isMobile && isScrolled && !menuOpen
+      ? logoSmall   // show small logo when scrolled and menu closed (desktop)
+      : logo        // otherwise, show full logo
+  }
+  alt="PCS Logo"
+  className={
+    !isMobile && isScrolled && !menuOpen
+      ? "header-logo-small"  // small logo class
+      : "header-logo-full"   // full logo class
+  }
+/>
+
           </div>
 
 
