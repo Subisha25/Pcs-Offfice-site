@@ -17,7 +17,7 @@ export default function WorkProcess() {
   const [animate, setAnimate] = useState(false);
 
   const paragraph = [
-    "From idea to impact—our process makes it",
+    "From idea to impact, our process makes it",
     "easy, exciting, and effective!"
   ].join(" ").split(" ");
 
@@ -109,13 +109,13 @@ const fillWindow = viewportH * 0.35;
           ref={cardsRef}
           className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
         >
-          <Card img={Globe} title="Discover" sub="Strategize"
+          <Card img={Globe} title="Discover  & " sub="Strategize"
             text="We dive deep into understanding your brand, goals, and audience." />
-          <Card img={Server} title="Conversion" sub="Focused"
+          <Card img={Server} title="Conversion &" sub="Focused"
             text="Our layouts are performance-driven and guide users clearly." />
-          <Card img={BookOpen} title="Build" sub="Launch"
+          <Card img={BookOpen} title="Build  & " sub="Launch"
             text="We design and build with precision and clarity." />
-          <Card img={TrendingUp} title="Refine" sub="Grow"
+          <Card img={TrendingUp} title="Refine  & " sub="Grow"
             text="We analyze performance and continuously refine your growth." />
         </div>
       </div>

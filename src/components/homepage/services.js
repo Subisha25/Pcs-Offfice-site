@@ -21,7 +21,7 @@ const ServicesSection = () => {
   const [filledWords, setFilledWords] = useState(0);
 
   const paragraph = [
-    "From idea to execution we've got you covered"
+    "From idea to execution, we’ve got you covered at every step."
   ].join(" ").split(" ");
 
   const maxWords = paragraph.length;
@@ -78,8 +78,7 @@ const ServicesSection = () => {
       title: 'Web Design',
       subtitle: '& Development',
       route: "/webdesign",
-      description: 'We build high-performance, scalable and visually stunning websites tailored to your business goals. From corporate websites to advanced web applications, our development approach ensures speed, security, clean UI and a seamless user experience across all devices.',
-      gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
+      description: 'We build high-performance, scalable, and visually stunning websites tailored to your business goals. From corporate websites to advanced web applications, our development approach ensures speed, security, clean UI, and a seamless user experience across all devices.',
       image: first,
       overlay:
         'linear-gradient(180deg, rgba(255,0,110,0.55) 0%, rgba(3,4,94,0.75) 100%)'
@@ -88,8 +87,7 @@ const ServicesSection = () => {
       title: 'App Design',
       subtitle: '& Development',
       route: "/appdesign",
-      description: 'We create intuitive, fast and robust mobile applications for Android, iOS and cross-platform environments. Our team handles everything—from UX planning and interface design to backend development and cloud deployment—ensuring your app performs flawlessly from day one.',
-      gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
+      description: 'We create intuitive, fast, and robust mobile applications for Android, iOS, and cross-platform environments. Our team handles everything—from UX planning and interface design to backend development and cloud deployment—ensuring your app performs flawlessly from day one.',
       image: Second,
       overlay:
         'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
@@ -98,8 +96,7 @@ const ServicesSection = () => {
       title: 'Branding &',
       subtitle: 'Creative Services',
       route: "/branding",
-      description: 'We craft strong brand identities that communicate who you are and what you stand for. Our creative services include brand strategy, logo design, UI/UX guidelines, visual systems and complete digital branding solutions that help your business look polished and professional.',
-      gradient: 'radial-gradient(circle at 100% 0%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
+      description: 'We craft strong brand identities that communicate who you are and what you stand for. Our creative services include brand strategy, logo design, UI/UX guidelines, visual systems, and complete digital branding solutions that help your business look polished and professional.',
       image: Third,
       overlay:
         'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
@@ -109,7 +106,6 @@ const ServicesSection = () => {
       subtitle: 'Marketing',
       route: "/digitalmarketing",
       description: 'We help your business grow online through data-driven digital marketing strategies. From SEO and social media management to paid campaigns and content marketing, we ensure your brand reaches the right audience and converts effectively.',
-      gradient: 'radial-gradient(circle at 0% 100%, rgba(255, 0, 110, 0.05) 0%, rgba(255, 255, 255, 1) 30%, rgba(107, 76, 154, 0.05) 100%)',
       image: Four,
       overlay:
         'linear-gradient(180deg, rgba(131,56,236,0.55) 0%, rgba(58,12,163,0.75) 100%)'
@@ -118,20 +114,20 @@ const ServicesSection = () => {
 
   return (
     <>
-    <div className="services-container" style={{
-      backgroundImage: `url(${BackgroundImg})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      position: 'relative',
-      minHeight: '100vh',
-      padding: '70px 0px 70px',
-      // padding: ' 40px 20px',
-      backgroundAttachment: 'scroll'
-    }}>
+      <div className="services-container" style={{
+        backgroundImage: `url(${BackgroundImg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+        minHeight: '100vh',
+        padding: '70px 0px 70px',
+        // padding: ' 40px 20px',
+        backgroundAttachment: 'scroll'
+      }}>
 
 
-      {/* <div className="services-header" style={{
+        {/* <div className="services-header" style={{
         textAlign: 'center',
         marginBottom: '60px',
         position: 'relative',
@@ -175,12 +171,12 @@ const ServicesSection = () => {
           got you covered
         </h1>
       </div> */}
-      <div className="workprocess-section" ref={sectionRef} style={{ padding: '20px 20px 60px 20px' }}> {/* Section padding-ah koraichuten */}
-        <div className="container" style={{ marginTop: '-40px', position: 'relative', zIndex: '10' }}> {/* Negative margin mela thallum */}
+        <div className="workprocess-section" ref={sectionRef} style={{ padding: '20px 20px 60px 20px' }}> {/* Section padding-ah koraichuten */}
+          <div className="container" style={{ marginTop: '-40px', position: 'relative', zIndex: '10' }}> {/* Negative margin mela thallum */}
 
-          <CommonTopTag text="Services" icon={ServiceBtnImg} />
+            <CommonTopTag text="Services" icon={ServiceBtnImg} />
 
-          {/* <p className="animated-text">
+            {/* <p className="animated-text">
             {paragraph.map((word, index) => (
               <span
                 key={index}
@@ -192,230 +188,236 @@ const ServicesSection = () => {
             ))}
           </p> */}
             <p className="animated-text2">
-            {paragraph.map((word, index) => (
-              <span
-                key={index}
-                className={`word 
-                  ${index < filledWords ? "filled" : ""} 
-                  ${word ===  "execution" ? "gradient-word" : ""}
-                `}
-              >
-                {word + " "}
-              </span>
-            ))}
-          </p>
+              {paragraph.map((word, index) => {
+                // Remove punctuation and convert to lowercase for matching
+                const cleanWord = word.replace(/[^a-zA-Z]/g, "").toLowerCase();
+                const isExecution = cleanWord === "execution";
+
+                return (
+                  <span
+                    key={index}
+                    className={`word 
+                      ${index < filledWords ? "filled" : ""} 
+                      ${isExecution ? "gradient-word" : ""}
+                    `}
+                  >
+                    {word + " "}
+                  </span>
+                );
+              })}
+            </p>
 
 
+          </div>
         </div>
-      </div>
-      <div className="services-grid" style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        gap: '40px',
-        maxWidth: '1300px',
-        margin: '0 auto',
-        position: 'relative',
-        zIndex: 1,
-        alignItems: 'stretch'
-      }}>
-        {services.map((service, index) => {
-          const isHovered = activeCard === index;
+        <div className="services-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '40px',
+          maxWidth: '1300px',
+          margin: '0 auto',
+          position: 'relative',
+          zIndex: 1,
+          alignItems: 'stretch'
+        }}>
+          {services.map((service, index) => {
+            const isHovered = activeCard === index;
 
-          // Text colors: WHITE when hovered, black/dark gray when not hovered
-          const titleColor = isHovered ? '#ffffff' : '#1a1a2e';
-          const subtitleColor = isHovered ? '#ffffff' : '#1a1a2e';
-          const descriptionColor = isHovered ? '#ffffff' : '#7D7D7D';
+            // Text colors: WHITE when hovered, black/dark gray when not hovered
+            const titleColor = isHovered ? '#ffffff' : '#1a1a2e';
+            const subtitleColor = isHovered ? '#ffffff' : '#1a1a2e';
+            const descriptionColor = isHovered ? '#ffffff' : '#7D7D7D';
 
-          return (
-            <div
-              key={index}
-              className={`service-card ${isHovered ? 'active' : ''}`}
-              onMouseEnter={() => !isMobile && setActiveCard(index)}
-              onMouseLeave={() => !isMobile && setActiveCard(null)}
-
-              style={{
-                width: '100%',
-                borderRadius: '25px',
-                padding: '35px 30px',
-                position: 'relative',
-                overflow: 'hidden',
-                cursor: 'pointer',
-                boxShadow: isHovered
-                  ? '0 10px 40px rgba(255, 255, 255, 0.3)'
-                  : '0px 8px 20px rgba(0, 0, 0, 0.15)',
-                minHeight: '350px',
-                display: 'flex',
-                flexDirection: 'column',
-                background: isHovered
-                  ? '#ffffff'  // Hover → White
-                  : service.gradient,
-
-                color: isHovered ? '#ffffff' : '#1a1a2e',
-                transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                isolation: 'isolate',
-                transform: isHovered ? 'translateY(-10px)' : 'translateY(0)'
-              }}
-            >
-
-              <div className="card-header" style={{
-                marginBottom: '15px',
-                position: 'relative',
-                zIndex: 6   // ⭐ MAIN FIX
-              }}>
-                <h3 className="card-title" style={{
-                  fontSize: '38px',
-                  fontWeight: '300',
-                  marginBottom: '2px',
-                  fontFamily: '"WF Visual Sans", sans-serif',
-                  color: titleColor,
-                  transition: 'color 0.4s ease'
-                }}>
-                  {service.title} 
-                </h3>
-                <h4 className="card-subtitle" style={{
-                  fontFamily: '"WF Visual Sans", sans-serif',
-                  fontSize: '38px',
-                  fontWeight: '300',
-                  opacity: '1',
-                  color: subtitleColor,
-                  transition: 'all 0.4s ease',
-                  marginBottom: '20px'
-                }}>
-                  {service.subtitle}
-                </h4>
-
-
-                <button
-                  className="card-arrow"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigate(service.route);
-                  }}
-                  style={{
-                    position: 'absolute',
-                    right: '25px',
-                    top: '25px',
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                    padding: '10px',
-                    borderRadius: '50%',
-                    transition: 'all 0.4s ease',
-                    zIndex: 3
-                  }}
-                >
-                  <img
-                    src={ArrowImg}
-                    alt="arrow"
-                    style={{
-                      width: '22px',
-                      height: '22px',
-                      filter: isHovered ? 'invert(1)' : 'invert(0)',
-                      transition: 'all 0.4s ease',
-                      transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
-                    }}
-                  />
-                </button>
-
-              </div>
-              {/* Image section */}
+            return (
               <div
-                className="card-image"
+                key={index}
+                className={`service-card ${isHovered ? 'active' : ''}`}
+                onMouseEnter={() => !isMobile && setActiveCard(index)}
+                onMouseLeave={() => !isMobile && setActiveCard(null)}
+
                 style={{
-                  position: 'absolute',
+                  width: '100%',
                   borderRadius: '25px',
+                  padding: '35px 30px',
+                  position: 'relative',
                   overflow: 'hidden',
+                  cursor: 'pointer',
+                  boxShadow: isHovered
+                    ? '0 10px 40px rgba(255, 255, 255, 0.3)'
+                    : '0px 8px 20px rgba(0, 0, 0, 0.15)',
+                  minHeight: '350px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  background: isHovered
+                    ? '#ffffff'  // Hover → White
+                    : service.gradient,
 
-                  top: isMobile ? '0' : isHovered ? '0' : '170px',
-                  left: isMobile ? '0' : isHovered ? '0' : '30px',
-
-                  width: isMobile ? '100%' : isHovered ? '100%' : '130px',
-                  height: isMobile ? '100%' : isHovered ? '100%' : '70px',
-
-                  transition: isMobile
-                    ? 'none'
-                    : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-
-                  zIndex: 1,
-                  pointerEvents: 'none'
+                  color: isHovered ? '#ffffff' : '#1a1a2e',
+                  transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                  isolation: 'isolate',
+                  transform: isHovered ? 'translateY(-10px)' : 'translateY(0)'
                 }}
               >
 
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
+                <div className="card-header" style={{
+                  marginBottom: '15px',
+                  position: 'relative',
+                  zIndex: 6   // ⭐ MAIN FIX
+                }}>
+                  <h3 className="card-title" style={{
+                    fontSize: '38px',
+                    fontWeight: '300',
+                    marginBottom: '2px',
+                    fontFamily: '"WF Visual Sans", sans-serif',
+                    color: titleColor,
+                    transition: 'color 0.4s ease'
+                  }}>
+                    {service.title}
+                  </h3>
+                  <h4 className="card-subtitle" style={{
+                    fontFamily: '"WF Visual Sans", sans-serif',
+                    fontSize: '38px',
+                    fontWeight: '300',
+                    opacity: '1',
+                    color: subtitleColor,
+                    transition: 'all 0.4s ease',
+                    marginBottom: '20px'
+                  }}>
+                    {service.subtitle}
+                  </h4>
 
-                    // borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
+
+                  <button
+                    className="card-arrow"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(service.route);
+                    }}
+                    style={{
+                      position: 'absolute',
+                      right: '25px',
+                      top: '25px',
+                      background: 'transparent',
+                      border: 'none',
+                      cursor: 'pointer',
+                      padding: '10px',
+                      borderRadius: '50%',
+                      transition: 'all 0.4s ease',
+                      zIndex: 3
+                    }}
+                  >
+                    <img
+                      src={ArrowImg}
+                      alt="arrow"
+                      style={{
+                        width: '22px',
+                        height: '22px',
+                        filter: isHovered ? 'invert(1)' : 'invert(0)',
+                        transition: 'all 0.4s ease',
+                        transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
+                      }}
+                    />
+                  </button>
+
+                </div>
+                {/* Image section */}
+                <div
+                  className="card-image"
+                  style={{
+                    position: 'absolute',
+                    borderRadius: '25px',
+                    overflow: 'hidden',
+
+                    top: isMobile ? '0' : isHovered ? '0' : '170px',
+                    left: isMobile ? '0' : isHovered ? '0' : '30px',
+
+                    width: isMobile ? '100%' : isHovered ? '100%' : '130px',
+                    height: isMobile ? '100%' : isHovered ? '100%' : '70px',
 
                     transition: isMobile
                       ? 'none'
-                      : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+                      : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+
+                    zIndex: 1,
+                    pointerEvents: 'none'
                   }}
-                />
+                >
 
-
-                {/* ✅ FIRST CARD COLOR OVERLAY ONLY */}
-                {(isHovered || isMobile) && (
-                  <div
+                  <img
+                    src={service.image}
+                    alt={service.title}
                     style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: service.overlay,
-                      zIndex: 2
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+
+                      // borderRadius: isMobile ? '25px' : isHovered ? '25px' : '100px',
+
+                      transition: isMobile
+                        ? 'none'
+                        : 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
                     }}
                   />
-                )}
-
-              </div>
 
 
-
-
-              <div className="card-content" style={{
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-                position: 'relative',
-                zIndex: 5,
-                color: isHovered ? '#ffffff' : '#1a1a2e',
-                transition: 'color 0.4s ease',
-                alignItems: 'flex-start',
-                justifyContent: 'space-between'
-              }}>
-                <div className="card-top-content">
-
+                  {/* ✅ FIRST CARD COLOR OVERLAY ONLY */}
+                  {(isHovered || isMobile) && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: service.overlay,
+                        zIndex: 2
+                      }}
+                    />
+                  )}
 
                 </div>
 
 
-                <p className="card-description" style={{
-                  fontFamily: '"WF Visual Sans"',
-                  fontWeight: '300',
-                  fontSize: '16px',
-                  lineHeight: '1.5',
-                  letterSpacing: '1px',
-                  color: descriptionColor, // WHITE on hover
-                  marginTop: isMobile || isHovered ? '0' : '80px',
-                  marginBottom: '10px',
+
+
+                <div className="card-content" style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
                   position: 'relative',
-                  zIndex: 2,
-                  transition: 'color 0.4s ease'
+                  zIndex: 5,
+                  color: isHovered ? '#ffffff' : '#1a1a2e',
+                  transition: 'color 0.4s ease',
+                  alignItems: 'flex-start',
+                  justifyContent: 'space-between'
                 }}>
-                  {service.description}
-                </p>
+                  <div className="card-top-content">
 
+
+                  </div>
+
+
+                  <p className="card-description" style={{
+                    fontFamily: '"WF Visual Sans"',
+                    fontWeight: '300',
+                    fontSize: '16px',
+                    lineHeight: '1.5',
+                    letterSpacing: '1px',
+                    color: descriptionColor, // WHITE on hover
+                    marginTop: isMobile || isHovered ? '0' : '80px',
+                    marginBottom: '10px',
+                    position: 'relative',
+                    zIndex: 2,
+                    transition: 'color 0.4s ease'
+                  }}>
+                    {service.description}
+                  </p>
+
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
 
-      {/* Media Queries - unchanged */}
-      <style jsx>{`
+        {/* Media Queries - unchanged */}
+        <style jsx>{`
 
 @media (max-width: 768px) {
  /* ✅ FORCE WHITE TEXT ON MOBILE */
@@ -608,72 +610,72 @@ const ServicesSection = () => {
 
     
       `}</style>
-      
-    </div>
-{/* Bottom Services Strip - Carousel */}
-<div className="services-strip">
-  <div className="strip-track">
-    <span>HTML5</span>
-    <span className="dot">•</span>
-    <span>CSS3</span>
-    <span className="dot">•</span>
-    <span>JavaScript</span>
-    <span className="dot">•</span>
-    <span>React.js</span>
-    <span className="dot">•</span>
 
-    <span>Node.js</span>
-    <span className="dot">•</span>
-    <span>Java</span>
-    <span className="dot">•</span>
-    <span>REST APIs</span>
-    <span className="dot">•</span>
-    <span>Databases</span>
-    <span className="dot">•</span>
+      </div>
+      {/* Bottom Services Strip - Carousel */}
+      <div className="services-strip">
+        <div className="strip-track">
+          <span>HTML5</span>
+          <span className="dot">•</span>
+          <span>CSS3</span>
+          <span className="dot">•</span>
+          <span>JavaScript</span>
+          <span className="dot">•</span>
+          <span>React.js</span>
+          <span className="dot">•</span>
 
-    <span>React Native</span>
-    <span className="dot">•</span>
-    <span>Android</span>
-    <span className="dot">•</span>
-    <span>iOS</span>
-    <span className="dot">•</span>
+          <span>Node.js</span>
+          <span className="dot">•</span>
+          <span>Java</span>
+          <span className="dot">•</span>
+          <span>REST APIs</span>
+          <span className="dot">•</span>
+          <span>Databases</span>
+          <span className="dot">•</span>
 
-    <span>Python</span>
-    <span className="dot">•</span>
-    <span>Django</span>
-    <span className="dot">•</span>
-    <span>Flask</span>
-    <span className="dot">•</span>
+          <span>React Native</span>
+          <span className="dot">•</span>
+          <span>Android</span>
+          <span className="dot">•</span>
+          <span>iOS</span>
+          <span className="dot">•</span>
 
-    <span>Machine Learning</span>
-    <span className="dot">•</span>
-    <span>AI Models</span>
-    <span className="dot">•</span>
+          <span>Python</span>
+          <span className="dot">•</span>
+          <span>Django</span>
+          <span className="dot">•</span>
+          <span>Flask</span>
+          <span className="dot">•</span>
 
-    <span>SEO</span>
-    <span className="dot">•</span>
-    <span>Google Ads</span>
-    <span className="dot">•</span>
-    <span>Social Media Marketing</span>
+          <span>Machine Learning</span>
+          <span className="dot">•</span>
+          <span>AI Models</span>
+          <span className="dot">•</span>
 
-    {/* Duplicate for infinite loop */}
-    <span className="dot">•</span>
+          <span>SEO</span>
+          <span className="dot">•</span>
+          <span>Google Ads</span>
+          <span className="dot">•</span>
+          <span>Social Media Marketing</span>
 
-    <span>HTML5</span>
-    <span className="dot">•</span>
-    <span>CSS3</span>
-    <span className="dot">•</span>
-    <span>JavaScript</span>
-    <span className="dot">•</span>
-    <span>React.js</span>
-    <span className="dot">•</span>
-    <span>Node.js</span>
-    <span className="dot">•</span>
-    <span>Python</span>
-    <span className="dot">•</span>
-    <span>SEO</span>
-  </div>
-</div>
+          {/* Duplicate for infinite loop */}
+          <span className="dot">•</span>
+
+          <span>HTML5</span>
+          <span className="dot">•</span>
+          <span>CSS3</span>
+          <span className="dot">•</span>
+          <span>JavaScript</span>
+          <span className="dot">•</span>
+          <span>React.js</span>
+          <span className="dot">•</span>
+          <span>Node.js</span>
+          <span className="dot">•</span>
+          <span>Python</span>
+          <span className="dot">•</span>
+          <span>SEO</span>
+        </div>
+      </div>
 
 
     </>

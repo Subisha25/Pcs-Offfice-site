@@ -50,7 +50,7 @@ const TrainingHomeBanner = () => {
             That Shape Your <span className="train-home-ban-highlight">Future.</span>
           </h1>
           <p className="train-home-ban-subtitle">
-            Your next career step in IT starts with PCS. No.1 Software Training Institute since 2021
+            Your next career step in IT starts with PCS, the No.1 Software Training Institute since 2021
           </p>
           
           <div className="train-home-ban-buttons">
