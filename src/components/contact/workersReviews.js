@@ -22,6 +22,12 @@ const testimonials = [
     initial: "M",
   },
   {
+    name: "Surya",
+    role: "Full Stack Developer",
+    text: "The program provided a realistic work environment. I gained practical experience in developing projects, collaborating with peers, and applying theoretical knowledge to solve real challenges.",
+    initial: "S",
+  },
+  {
     name: "Marish S",
     role: "Full Stack Web Developer",
     text: "I gained strong knowledge in React, Node.js, and database integration. The practical approach and mentor support made a huge difference in my learning journey.",
