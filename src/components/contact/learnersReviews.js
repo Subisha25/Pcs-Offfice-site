@@ -144,19 +144,19 @@ const cardWidth = useMemo(() => {
   }, [cardWidth, gap, slidesPerView, maxIndex, canSlide]);
 
   return (
-    <section className="traninglearn">
-      <div className="traninglearn-inner">
+    <section className="learnreviews">
+      <div className="learnreviews-inner">
         <CommonTopTag text="Feed Back" />
 
-        <div className="traninglearn-heading">
-          <h2 className="successtraninglearn-title">Success stories from</h2>
-          <span className="successtraninglearn-title-highlight">learners</span>
+        <div className="learnreviews-heading">
+          <h2 className="successlearnreviews-title">Success stories from</h2>
+          <span className="successlearnreviews-title-highlight">learners</span>
         </div>
 
-        <div className="traninglearn-carousel">
-          <div className="traninglearn-carousel-viewport" ref={viewportRef}>
+        <div className="learnreviews-carousel">
+          <div className="learnreviews-carousel-viewport" ref={viewportRef}>
             <div
-              className="traninglearn-carousel-track"
+              className="learnreviews-carousel-track"
               style={{
                 gap: `${gap}px`,
                 transform: `translate3d(-${translateX}px, 0, 0)`,
@@ -164,18 +164,18 @@ const cardWidth = useMemo(() => {
             >
               {testimonials.map((item, idx) => (
                 <article
-                  className="traninglearn-card"
+                  className="learnreviews-card"
                   key={idx}
                   style={{ width: cardWidth ? `${cardWidth}px` : "auto" }}
                 >
-                  <div className="traninglearn-card-quoteMark">“</div>
-                  <p className="traninglearn-card-text">{item.text}</p>
+                  <div className="learnreviews-card-quoteMark">“</div>
+                  <p className="learnreviews-card-text">{item.text}</p>
 
-                  <div className="traninglearn-card-footer">
+                  <div className="learnreviews-card-footer">
                     <div className="avatar-circle">{item.initial}</div>
-                    <div className="traninglearn-card-person">
-                      <div className="traninglearn-card-name">{item.name}</div>
-                      <div className="traninglearn-card-role">{item.role}</div>
+                    <div className="learnreviews-card-person">
+                      <div className="learnreviews-card-name">{item.name}</div>
+                      <div className="learnreviews-card-role">{item.role}</div>
                     </div>
                   </div>
                 </article>
@@ -183,11 +183,11 @@ const cardWidth = useMemo(() => {
             </div>
           </div>
 
-          <div className="traninglearn-nav">
-            <button className="traninglearn-nav-btn" onClick={prev} disabled={!canSlide}>
+          <div className="learnreviews-nav">
+            <button className="learnreviews-nav-btn" onClick={prev} disabled={!canSlide}>
               ←
             </button>
-            <button className="traninglearn-nav-btn" onClick={next} disabled={!canSlide}>
+            <button className="learnreviews-nav-btn" onClick={next} disabled={!canSlide}>
               →
             </button>
           </div>
