@@ -103,7 +103,7 @@
 
 .header-logo img {
   height: 40px;
-  width: auto;
+  width: 130px;
   display: block;
 }
 
@@ -451,6 +451,7 @@
 
   .header-logo img {
     height: 24px;
+    width: 100px;
   }
 
   .menu-toggle-btn {
