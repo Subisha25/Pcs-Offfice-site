@@ -9,28 +9,28 @@ const projects = [
   {
     id: 1,
     title: "Lhome",
-    subtitle: "Interior Design Platform",
+    // subtitle: "Interior Design Platform",
     tags: ["Web Design", "UI/UX Design"],
     image: img1,
   },
   {
     id: 2,
     title: "Grace Cabs",
-    subtitle: "Transportation Service",
+    // subtitle: "Transportation Service",
     tags: ["Web Design", "UI/UX Design"],
     image:  img2 ,
   },
   {
     id: 3,
     title: "Nibras",
-    subtitle: "Fashion E-commerce",
+    // subtitle: "Fashion E-commerce",
     tags: ["Web Design", "UI/UX Design"],
     image: img3,
   },
   {
     id: 4,
     title: "World Tamil Siragam",
-    subtitle: "Cultural Platform",
+    // subtitle: "Cultural Platform",
     tags: ["Web Design", "UI/UX Design"],
     image: img4,
   },
@@ -81,7 +81,7 @@ export default function ProjectSlider() {
                   </span>
                 </div>
               )}
-              
+
               <div
                 style={{
                   ...styles.progressLine,
@@ -130,9 +130,9 @@ export default function ProjectSlider() {
                   {/* Text Content */}
                   <div style={styles.textContainer}>
                     <div style={styles.textWrapper}>
-                      <h3 style={styles.title}>{project.title}</h3>
-                      <p style={styles.subtitle}>{project.subtitle}</p>
+                      <h3 className="project-title">{project.title}</h3>
 
+                      <p style={styles.subtitle}>{project.subtitle}</p>
                       <CommonButton text='View Project' />
                     </div>
                   </div>
@@ -144,6 +144,25 @@ export default function ProjectSlider() {
       </div>
 
       <style>{`
+       .project-title {
+    font-size: 48px;   
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-family: WF Visual Sans;
+    letter-spacing: 1%;
+    style: medium;
+  
+
+
+  }
+
+  /* Large screen (laptop) */
+  @media (min-width: 1024px) {
+    .project-title {
+      font-size: 2.5rem;
+    }
+  }
         @keyframes progress-line {
           from {
             transform: scaleX(0);
@@ -262,13 +281,18 @@ const styles = {
   },
   textContainer: {
     position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
+    inset: 0,
+    display: 'flex',
+    // alignItems: 'center',
+    justifyContent: 'center',
     padding: '32px',
+    textAlign: 'center',
+    marginTop:'250px'
   },
   textWrapper: {
-    maxWidth: '1024px',
+    maxWidth: '900px',
+    width: '100%',
+    margin: '0 auto',
   },
   title: {
     fontSize: '3rem',
@@ -286,7 +310,7 @@ const styles = {
     alignItems: 'center',
     gap: '8px',
     padding: '12px 24px',
-     marginLeft: '48%',
+    marginTop: '16px',
     backgroundColor: '#ffffff',
     color: '#0f172a',
     borderRadius: '9999px',
