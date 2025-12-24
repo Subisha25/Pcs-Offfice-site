@@ -201,3 +201,20 @@
   .ps-line { margin: 0 8px; }
   .ps-dot { width: 34px; height: 34px; }
 }
+/* ===============================
+   MOBILE & TAB – Progress Down
+================================ */
+
+/* Mobile */
+@media (max-width: 480px) {
+  .ps-progress {
+    top: 64px; /* 🔥 keela thalli */
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .ps-progress {
+    top: 72px; /* 🔥 tablet-ku konjam extra */
+  }
+}
