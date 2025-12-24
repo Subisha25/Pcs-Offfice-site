@@ -1,7 +1,6 @@
 /* ========= WRAP ========= */
 .ps-wrap {
-  /* ✅ add extra hold screens too */
-  min-height: calc((var(--slides) + var(--hold)) * 100vh);
+  min-height: calc((var(--slides) + 1.2) * 100vh);
   background: #fff;
   position: relative;
 }

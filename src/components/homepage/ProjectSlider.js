@@ -13,58 +13,79 @@ const projects = [
   { id: 4, title: "World Tamil Siragam", tags: ["Web Design", "UI/UX Design"], image: img4 },
 ];
 
+
+
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
+const HOLD_SCREENS = 0.12;
 
 export default function ProjectSlider() {
   const wrapRef = useRef(null);
   const rafRef = useRef(null);
 
+  const pinStartRef = useRef(null); // ✅ lock point when sticky engages
+
   const slides = projects.length;
-  const segments = Math.max(1, slides - 1); // 4 slides => 3 segments (dot gaps)
+  const segments = Math.max(1, slides - 1);
 
-  const [p, setP] = useState(0); // overall progress 0..1
-const HOLD_SCREENS = 0.5;
+  const [p, setP] = useState(0);
 
-useEffect(() => {
-  const onScroll = () => {
-    if (!wrapRef.current) return;
+  useEffect(() => {
+    const onScroll = () => {
+      if (!wrapRef.current) return;
 
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
 
-    rafRef.current = requestAnimationFrame(() => {
-      const el = wrapRef.current;
-      const vh = window.innerHeight;
+      rafRef.current = requestAnimationFrame(() => {
+        const wrap = wrapRef.current;
+        const sticky = wrap.querySelector(".ps-sticky");
+        if (!sticky) return;
 
-      const start = el.offsetTop;             // slider starts when section reaches top (sticky)
-      const hold = HOLD_SCREENS * vh;         // ✅ hold before filling starts
-      const travel = segments * vh;           // 3 gaps => 3 screens travel
+        const vh = window.innerHeight;
 
-      const y = window.scrollY - start;
+        // ✅ sticky உண்மையிலே stuck ஆனதா check (top:0 க்கு)
+        const stickyTop = sticky.getBoundingClientRect().top;
+        const engaged = stickyTop <= 0.5; // small tolerance
 
-      // ✅ 1) before hold => p=0 (image1 only)
-      if (y <= hold) {
-        setP(0);
-        return;
-      }
+        // ✅ pinned ஆகும் முன் => NO FILL
+        if (!engaged) {
+          pinStartRef.current = null; // reset when leaving
+          setP(0);
+          return;
+        }
 
-      // ✅ 2) after hold => start filling
-      const raw = (y - hold) / travel;
-      setP(clamp01(raw));
-    });
-  };
+        // ✅ first time pinned ஆன moment-ல start lock
+        if (pinStartRef.current == null) {
+          pinStartRef.current = window.scrollY;
+        }
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  onScroll();
+        const pinStart = pinStartRef.current;
 
-  return () => {
-    window.removeEventListener("scroll", onScroll);
-    window.removeEventListener("resize", onScroll);
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-  };
-}, [segments]);
+        const hold = HOLD_SCREENS * vh;
+        const travel = segments * vh;
 
+        const y = window.scrollY - pinStart;
 
+        // ✅ pinned + hold வரை => NO FILL
+        if (y <= hold) {
+          setP(0);
+          return;
+        }
+
+        const raw = (y - hold) / travel;
+        setP(clamp01(raw));
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [segments]);
 
 
   // Active dot: 1..slides

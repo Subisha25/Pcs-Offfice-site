@@ -214,6 +214,8 @@ const ServicesSection = () => {
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '40px',
+          padding:"30px",
+          padding:"30px",
           maxWidth: '1300px',
           margin: '0 auto',
           position: 'relative',
