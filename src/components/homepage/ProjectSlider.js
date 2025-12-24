@@ -8,20 +8,31 @@ import img4 from "../assets/explore/4.jpg";
 import CommonButton from "../common/button";
 
 const projects = [
-  { id: 1, title: "World Tamil Siragam", image: img1 },
-  { id: 2, title: "Grace Cabs", image: img2 },
-  { id: 3, title: "Lhome",  image: img3 },
-  { id: 4, title: "Nibras", image: img4 },
+  { id: 1, title: "World Tamil Siragam", image: img1, url: "https://worldtamilsiragam.com/" },
+  { id: 2, title: "Grace Cabs", image: img2, url: "https://gracecabs.com/" },
+  { id: 3, title: "Lhome", image: img3, url: "https://lhome.co.in/" },
+  { id: 4, title: "Nibras", image: img4, url: "https://www.nibrasconsulting.com/" },
 ];
 
+
+const openProject = (url) => {
+  if (!url) return;
+  window.open(url, "_blank", "noopener,noreferrer"); // ✅ new tab safe
+  // window.location.href = url; // ✅ same tab venumna
+};
+
+
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
+const HOLD_SCREENS = 0.12;
 
 export default function ProjectSlider() {
   const wrapRef = useRef(null);
   const rafRef = useRef(null);
 
+  const pinStartRef = useRef(null); // ✅ lock point when sticky engages
+
   const slides = projects.length;
-  const segments = Math.max(1, slides - 1); // 4 slides => 3 segments (dot gaps)
+  const segments = Math.max(1, slides - 1);
 
   const [p, setP] = useState(0); // overall progress 0..1
 const HOLD_SCREENS = 0.5;
@@ -48,11 +59,11 @@ const scrollToSlide = (index) => {
   });
 };
 
-useEffect(() => {
-  const onScroll = () => {
-    if (!wrapRef.current) return;
+  useEffect(() => {
+    const onScroll = () => {
+      if (!wrapRef.current) return;
 
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
 
 rafRef.current = requestAnimationFrame(() => {
   const el = wrapRef.current;
@@ -89,9 +100,9 @@ rafRef.current = requestAnimationFrame(() => {
 
   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
 
   return () => {
     window.removeEventListener("scroll", onScroll);
@@ -99,7 +110,6 @@ rafRef.current = requestAnimationFrame(() => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
   };
 }, [segments]);
-
 
 
 
@@ -192,7 +202,10 @@ rafRef.current = requestAnimationFrame(() => {
                 <div className="ps-text">
                   <div className="ps-title">{proj.title}</div>
                   <div className="ps-tags">
-                    < CommonButton text="View Project"></CommonButton>
+<CommonButton
+  text="View Project"
+  onClick={() => openProject(proj.url)}
+/>
                   </div>
                 </div>
               </div>
