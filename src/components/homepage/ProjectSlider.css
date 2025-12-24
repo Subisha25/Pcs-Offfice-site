@@ -1,8 +1,9 @@
 /* ========= WRAP ========= */
 .ps-wrap {
   /* ✅ add extra hold screens too */
-  min-height: calc((var(--slides) + var(--hold)) * 100vh);
-  background: #fff;
+min-height: calc(
+    (var(--slides) + var(--hold) + 0.7) * 100vh
+  );  background: #fff;
   position: relative;
 }
 
@@ -227,5 +228,12 @@
     top: 72px; /* 🔥 tablet-ku konjam extra */
   }
 
+}
+
+.ps-dot {
+  cursor: pointer;
+}
+.ps-dot:hover {
+  transform: scale(1.05);
 }
 
