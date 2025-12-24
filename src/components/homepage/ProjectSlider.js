@@ -5,12 +5,13 @@ import img1 from "../assets/explore/1.jpg";
 import img2 from "../assets/explore/2.jpg";
 import img3 from "../assets/explore/3.jpg";
 import img4 from "../assets/explore/4.jpg";
+import CommonButton from "../common/button";
 
 const projects = [
-  { id: 1, title: "Lhome", tags: ["Web Design", "UI/UX Design"], image: img1 },
-  { id: 2, title: "Grace Cabs", tags: ["Web Design", "UI/UX Design"], image: img2 },
-  { id: 3, title: "Nibras", tags: ["Web Design", "UI/UX Design"], image: img3 },
-  { id: 4, title: "World Tamil Siragam", tags: ["Web Design", "UI/UX Design"], image: img4 },
+  { id: 1, title: "World Tamil Siragam", image: img1 },
+  { id: 2, title: "Grace Cabs", image: img2 },
+  { id: 3, title: "Lhome",  image: img3 },
+  { id: 4, title: "Nibras", image: img4 },
 ];
 
 
@@ -42,50 +43,41 @@ export default function ProjectSlider() {
 
         const vh = window.innerHeight;
 
-        // ✅ sticky உண்மையிலே stuck ஆனதா check (top:0 க்கு)
-        const stickyTop = sticky.getBoundingClientRect().top;
-        const engaged = stickyTop <= 0.5; // small tolerance
+      // 🔥 IMPORTANT FIX
+      const rect = el.getBoundingClientRect();
 
-        // ✅ pinned ஆகும் முன் => NO FILL
-        if (!engaged) {
-          pinStartRef.current = null; // reset when leaving
-          setP(0);
-          return;
-        }
+      // section sticky aagura moment
+      const start = window.scrollY + rect.top;
 
-        // ✅ first time pinned ஆன moment-ல start lock
-        if (pinStartRef.current == null) {
-          pinStartRef.current = window.scrollY;
-        }
+      const hold = HOLD_SCREENS * vh;   // first image hold
+      const travel = segments * vh;     // slide travel
 
-        const pinStart = pinStartRef.current;
+      const y = window.scrollY - start;
 
-        const hold = HOLD_SCREENS * vh;
-        const travel = segments * vh;
+      // 🛑 BEFORE HOLD → image fixed (NO SCROLL EFFECT)
+      if (y <= hold) {
+        setP(0);
+        return;
+      }
 
-        const y = window.scrollY - pinStart;
-
-        // ✅ pinned + hold வரை => NO FILL
-        if (y <= hold) {
-          setP(0);
-          return;
-        }
-
-        const raw = (y - hold) / travel;
-        setP(clamp01(raw));
-      });
-    };
+      // ▶ AFTER HOLD → scroll start
+      const raw = (y - hold) / travel;
+      setP(Math.min(1, Math.max(0, raw)));
+    });
+  };
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     onScroll();
 
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [segments]);
+  return () => {
+    window.removeEventListener("scroll", onScroll);
+    window.removeEventListener("resize", onScroll);
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+  };
+}, [segments]);
+
+
 
 
   // Active dot: 1..slides
@@ -173,11 +165,7 @@ export default function ProjectSlider() {
                 <div className="ps-text">
                   <div className="ps-title">{proj.title}</div>
                   <div className="ps-tags">
-                    {proj.tags.map((t) => (
-                      <span key={t} className="ps-tag">
-                        {t}
-                      </span>
-                    ))}
+                    < CommonButton text="View Project"></CommonButton>
                   </div>
                 </div>
               </div>
@@ -185,8 +173,7 @@ export default function ProjectSlider() {
           })}
         </div>
 
-        {/* optional hint */}
-        <div className="ps-hint">Scroll to explore</div>
+       
       </div>
     </section>
   );

@@ -156,11 +156,16 @@
 }
 
 .ps-title {
-  font-size: clamp(28px, 4vw, 56px);
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  font-family: "WF Visual Sans";
+  font-weight: 500;              /* Medium */
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1;                /* 100% */
+  letter-spacing: 0.01em;        /* 1% */
+  text-align: center;
   margin-bottom: 14px;
+  font-size: 40px;
 }
+
 
 .ps-tags {
   display: flex;
@@ -200,3 +205,26 @@
   .ps-line { margin: 0 8px; }
   .ps-dot { width: 34px; height: 34px; }
 }
+/* ===============================
+   MOBILE & TAB – Progress Down
+================================ */
+
+/* Mobile */
+@media (max-width: 480px) {
+  .ps-progress {
+    top: 64px; /* 🔥 keela thalli */
+  }
+    .ps-title {
+    font-size: 28px;
+    letter-spacing: 0.005em;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .ps-progress {
+    top: 72px; /* 🔥 tablet-ku konjam extra */
+  }
+
+}
+
