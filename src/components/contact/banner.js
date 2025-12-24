@@ -117,8 +117,8 @@ const ContactSection = () => {
   };
   const content = {
     learn: {
-      title: "Why Choose Us for Your Learning Journey",
-      highlight: "Journey",
+      title: "Why Choose Us for Your Learning journey",
+      highlight: "journey",
       benefits: [
         { icon: User, title: "Expert-Led Courses", desc: "Learn from industry professionals with real-world experience." },
         { icon: Activity, title: "Comprehensive Learning Paths", desc: "Structured and detailed courses tailored to your skill goals." },
@@ -133,8 +133,8 @@ const ContactSection = () => {
       submitText: "I'm Ready to Start Happy Learning!"
     },
     work: {
-      title: "Why Choose Us for Your Career Growth",
-      highlight: "Growth",
+      title: "Why Choose Us for Your Career growth",
+      highlight: "growth",
       benefits: [
         { icon: Briefcase, title: "Job-Ready Training", desc: "Get trained on the latest tools and technologies used in top companies." },
         { icon: Users, title: "Industry Connections", desc: "Connect with hiring managers and industry experts directly." },
