@@ -783,3 +783,30 @@ font-weight: 500;
 
 
 
+@media (max-width: 768px) {
+  .footer-middle .info-block:nth-child(3) p {
+    white-space: normal;
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: unset;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+       padding-left: 12px;   /* 👈 value increase/decrease pannalaam */
+  }
+}
+@media (max-width: 768px) {
+  .footer-center {
+    margin-left: 0;          /* desktop negative margin remove */
+    transform: translateX(10px); /* 👈 konjam right side */
+  }
+
+  .footer-center-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-row {
+    justify-content: center;
+  }
+}
