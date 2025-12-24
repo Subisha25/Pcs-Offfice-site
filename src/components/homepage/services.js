@@ -489,6 +489,13 @@ const ServicesSection = () => {
     padding-top:20px
   }
 }
+
+@media (max-width: 1024px) {
+   .services-container {
+            padding:65px 12px 45px 12px !important;
+          }
+
+      }
 @media (max-width: 768px) {
  
 
@@ -498,6 +505,9 @@ const ServicesSection = () => {
     line-height: 1.1 !important;   /* 🔽 kammi */
     margin-bottom: 4px !important;
   }
+     .services-container {
+            padding:65px 12px 45px 12px !important;
+          }
   .card-description {
   font-size:14px;
     margin-top: 16px !important;   /* ⬇️ title-kku keela gap */
