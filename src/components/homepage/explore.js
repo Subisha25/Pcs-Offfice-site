@@ -55,13 +55,30 @@ export default function ProjectSlider() {
     setTimeout(() => setIsAnimating(false), 600);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
+ useEffect(() => {
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
 
-    return () => clearInterval(interval);
-  }, [currentIndex, isAnimating]);
+    projects.forEach((_, index) => {
+      const slide = document.getElementById(`slide-${index}`);
+      if (!slide) return;
+
+      const rect = slide.getBoundingClientRect();
+      const progress = Math.min(Math.max((windowHeight - rect.top) / windowHeight, 0), 1);
+
+      slide.style.transform = `translateX(${(1 - progress) * 100}px)`; // right-to-left
+      const progressLine = document.getElementById(`progress-${index}`);
+      if (progressLine) progressLine.style.width = `${progress * 100}%`;
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // initialize on load
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   return (
     <div style={styles.container}>
@@ -86,6 +103,7 @@ export default function ProjectSlider() {
                 style={{
                   ...styles.progressLine,
                   backgroundColor: index < currentIndex ? '#1e40af' : '#d1d5db',
+                  width: '280px'
                 }}
               >
                 {index === currentIndex && (
