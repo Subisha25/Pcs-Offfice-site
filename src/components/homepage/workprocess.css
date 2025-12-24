@@ -11,6 +11,13 @@
   justify-content: center;
   text-align: center;
 }
+.work-process-section1 {
+  font-family: "WF Visual Sans" !important;
+  padding: 0px 40px;   
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
 /* ================= TOP SECTION ================= */
 .ourwork-explore-top-section {
@@ -135,9 +142,12 @@
 }
 
 .workprocess-card-description {
+  font-family: "WF Visual Sans";
+  font-weight: 500;
   font-size: 15px;
   line-height: 1.6;
   color: #666;
+  letter-spacing: 1%;
 }
 
 /* ================= MOBILE ================= */
@@ -200,7 +210,9 @@
   }
 
   .workprocess-card-title {
-    font-size: 20px;
+     font-family: "WF Visual Sans";
+  font-weight: 500;
+    font-size: 38px;
   }
 
   .workprocess-card-description {

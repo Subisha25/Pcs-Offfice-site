@@ -120,14 +120,19 @@
 }
 
 .workprocess-card-title {
+       font-family: "WF Visual Sans";
+  font-weight: 500;
   font-size: 22px;
   margin-bottom: 12px;
 }
 
 .workprocess-card-description {
+  font-family: "WF Visual Sans";
+  font-weight: 500;
   font-size: 15px;
   line-height: 1.6;
   color: #666;
+  letter-spacing: 1%;
 }
 
 /* ================= MOBILE ================= */
@@ -190,7 +195,9 @@
   } */
 
   .workprocess-card-title {
-    font-size: 20px;
+     font-family: "WF Visual Sans";
+  font-weight: 500;
+    font-size: 38px;
   }
 
   .workprocess-card-description {
@@ -297,6 +304,8 @@
 
 }
   .workprocess-card-title {
+      font-family: "WF Visual Sans";
+  font-weight: 500;
     font-size: 18px;
   }
 

@@ -3,24 +3,24 @@
 }
 
 /* ===== Section ===== */
-.traninglearn {
+.learnreviews {
   padding: 72px 24px 84px;
   background: #f5f5f5;
   font-family: "WF Visual Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.traninglearn-inner {
-  max-width: 1180px;
+.learnreviews-inner {
+  max-width: 1300px;
   margin: 0 auto;
   text-align: center;
 }
 
 /* ===== Heading ===== */
-.traninglearn-heading {
+.learnreviews-heading {
   margin-top: 10px;
 }
 
-.successtraninglearn-title {
+.successlearnreviews-title {
   font-weight: 500;
   font-size: 48px;
   line-height: 1.15;
@@ -29,7 +29,7 @@
   color: #020617;
 }
 
-.successtraninglearn-title-highlight {
+.successlearnreviews-title-highlight {
   display: inline-block;
   font-size: 48px;
   line-height: 1.15;
@@ -44,18 +44,18 @@
 }
 
 /* ===== Carousel ===== */
-.traninglearn-carousel {
+.learnreviews-carousel {
   margin-top: 42px;
 }
 
-.traninglearn-carousel-viewport {
+.learnreviews-carousel-viewport {
   width: 100%;
   overflow: hidden;
   /* a tiny padding helps avoid shadow clipping */
   padding: 2px;
 }
 
-.traninglearn-carousel-track {
+.learnreviews-carousel-track {
   display: flex;
   align-items: stretch;
   will-change: transform;
@@ -63,7 +63,7 @@
 }
 
 /* ===== Card ===== */
-.traninglearn-card {
+.learnreviews-card {
   flex: 0 0 auto;
   background: #f9fafb;
   border-radius: 24px;
@@ -76,14 +76,14 @@
   border: 1px solid rgba(2, 6, 23, 0.08);
 }
 
-.traninglearn-card-quoteMark {
+.learnreviews-card-quoteMark {
   font-size: 34px;
   color: #1d4ed8;
   line-height: 1;
   margin-bottom: 10px;
 }
 
-.traninglearn-card-text {
+.learnreviews-card-text {
   font-size: 14px;
   line-height: 1.7;
   color: #4b5563;
@@ -91,7 +91,7 @@
 }
 
 /* footer */
-.traninglearn-card-footer {
+.learnreviews-card-footer {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -112,27 +112,27 @@
   text-transform: uppercase;
 }
 
-.traninglearn-card-name {
+.learnreviews-card-name {
   font-size: 14px;
   font-weight: 700;
   color: #111827;
 }
 
-.traninglearn-card-role {
+.learnreviews-card-role {
   font-size: 12px;
   color: #9ca3af;
   margin-top: 2px;
 }
 
 /* ===== Nav ===== */
-.traninglearn-nav {
+.learnreviews-nav {
   margin-top: 28px;
   display: flex;
   justify-content: center;
   gap: 14px;
 }
 
-.traninglearn-nav-btn {
+.learnreviews-nav-btn {
   width: 44px;
   height: 44px;
   border-radius: 999px;
@@ -147,13 +147,13 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, opacity 0.15s ease;
 }
 
-.traninglearn-nav-btn:hover:not(:disabled) {
+.learnreviews-nav-btn:hover:not(:disabled) {
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(15, 23, 42, 0.25);
   background: #1d1b7a;
 }
 
-.traninglearn-nav-btn:disabled {
+.learnreviews-nav-btn:disabled {
   opacity: 0.35;
   cursor: default;
 }
@@ -162,19 +162,19 @@
 
 /* Large screens */
 @media (min-width: 1200px) {
-  .traninglearn {
+  .learnreviews {
     padding: 80px 24px 92px;
   }
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .successtraninglearn-title,
-  .successtraninglearn-title-highlight {
+  .successlearnreviews-title,
+  .successlearnreviews-title-highlight {
     font-size: 40px;
   }
 
-  .traninglearn-card {
+  .learnreviews-card {
     border-radius: 20px;
     min-height: 240px;
   }
@@ -182,60 +182,99 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-  .traninglearn {
+  .learnreviews {
     padding: 54px 16px 64px;
   }
 
-  .successtraninglearn-title,
-  .successtraninglearn-title-highlight {
+  .successlearnreviews-title,
+  .successlearnreviews-title-highlight {
     font-size: 34px;
   }
 
-  .traninglearn-carousel {
+  .learnreviews-carousel {
     margin-top: 28px;
   }
+  .learnreviews-inner {
+  max-width: 280px;
+  margin: 0 auto;
+  text-align: center;
+}
 }
 
 /* Small mobile */
 @media (max-width: 425px) {
-  .successtraninglearn-title{
+  .learnreviews {
+    padding: 24px 73px 64px;
+  }
+
+  .successlearnreviews-title{
     font-size: 32px;
     margin-left: 15%;
 
   }
-  .successtraninglearn-title-highlight {
+  .successlearnreviews-title-highlight {
     margin-left: 35%;
 
   }
 
-  .traninglearn-card {
+  .learnreviews-card {
     padding: 20px 18px;
     border-radius: 18px;
     min-height: 230px;
   }
 
-  .traninglearn-nav-btn {
+  .learnreviews-nav-btn {
     width: 42px;
     height: 42px;
   }
 }
 
 /* Very small */
-@media (max-width: 360px) {
-  .successtraninglearn-title{
+@media (max-width: 375px) {
+  .learnreviews {
+    padding: 24px 47px 64px;
+  }
+  .successlearnreviews-title{
     font-size: 28px;
     margin-left: 10px;
 
   }
-  .successtraninglearn-title-highlight {
+  .successlearnreviews-title-highlight {
     margin-left: 20px;
 
   }
 }
+@media (max-width: 320px) {
+  .learnreviews {
+    padding: 24px 20px 64px;
+  }
+  .successlearnreviews-title{
+    font-size: 28px;
+    margin-left: 10px;
 
+  }
+  .successlearnreviews-title-highlight {
+    margin-left: 20px;
+
+  }
+}
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .traninglearn-carousel-track {
+  .learnreviews-carousel-track {
     transition: none;
   }
+}
+
+
+/* add this */
+.learnreviews,
+.learnreviews-carousel,
+.learnreviews-carousel-viewport {
+  overflow-x: hidden;
+}
+
+
+.learnreviews-card {
+  flex-shrink: 0;
+  max-width: 100%;
 }

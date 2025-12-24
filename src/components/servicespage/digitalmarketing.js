@@ -24,6 +24,7 @@ function PurposeSection() {
   const badgeRef = useRef(null);
   const cardsRef = useRef([]);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const isMobile = window.innerWidth <= 768;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,9 +63,14 @@ function PurposeSection() {
     1
   );
   const fullText = "Design with purpose,";
-  const typedLength = Math.floor(fullText.length * typewriterProgress);
-  const typedText = fullText.substring(0, typedLength);
-  const showCursor = typewriterProgress < 1;
+  const typedText = isMobile
+    ? fullText          // ✅ mobile-la full text first-la
+    : fullText.substring(
+      0,
+      Math.floor(fullText.length * typewriterProgress)
+    );
+
+  const showCursor = !isMobile && typewriterProgress < 1;
 
   // Title movement (30–60% scroll)
   const titleMoveProgress = Math.min(
@@ -119,39 +125,31 @@ function PurposeSection() {
         className="purpose-container"
         ref={containerRef}
         style={{
-          position:
-            scrollProgress > 0 && scrollProgress < 1 ? "fixed" : "absolute",
-          top: scrollProgress >= 1 ? "auto" : "0",
-          bottom: scrollProgress >= 1 ? "0" : "auto",
+          position: isMobile
+            ? "relative"   // ✅ mobile normal scroll
+            : scrollProgress > 0 && scrollProgress < 1
+              ? "fixed"
+              : "absolute",
+          top: isMobile ? "auto" : scrollProgress >= 1 ? "auto" : "0",
+          bottom: isMobile ? "auto" : scrollProgress >= 1 ? "0" : "auto",
         }}
       >
         {/* Top Badge */}
-        <div
-          className="purpose-badge-box"
-          ref={badgeRef}
-          style={{
-            opacity: badgeOpacity,
-            transform: `translateY(${-20 * (1 - badgeOpacity)}px)`,
-          }}
-        >
-          {/* <button className="btn-primary">
-            <div className="icon-circle">
-              <img alt="arrow" src={Whychoose} />
-            </div>
-            Why Choose Us
-          </button> */}
+        <div className="purpose-badge-box" ref={badgeRef}>
           <CommonTopTag text="Why Choose Us" icon={tagicon} />
-
         </div>
 
         {/* Main Heading with Typewriter */}
         <h2
           className="purpose-title"
-          ref={titleRef}
-          style={{
-            transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
-            transition: "transform 0.1s linear",
-          }}
+          style={
+            isMobile
+              ? { transform: "none", transition: "none" } // ✅ mobile
+              : {
+                transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
+                transition: "transform 0.1s linear",
+              }
+          }
         >
           <span className="typewriter-text">
             {typedText}
@@ -170,11 +168,20 @@ function PurposeSection() {
                 key={index}
                 className="purpose-card"
                 ref={(el) => (cardsRef.current[index] = el)}
-                style={{
-                  opacity,
-                  transform: `translateY(${translateY}px) scale(${scale})`,
-                  transition: "opacity 0.3s ease, transform 0.3s ease",
-                }}
+                style={
+                  isMobile
+                    ? {
+                      opacity: 1,
+                      transform: "none",
+                      transition: "none",
+                    }
+                    : {
+                      opacity,
+                      transform: `translateY(${translateY}px) scale(${scale})`,
+                      transition: "opacity 0.3s ease, transform 0.3s ease",
+                    }
+                }
+
               >
                 <img
                   src={card.img}
@@ -364,7 +371,7 @@ export default function DigitalMarketing() {
         {/* STEP 1: Description with typewriter words */}
         <p
           className="sw-description"
-          data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
+          data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs. From concept to deployment, our team ensures every website is optimized for performance, usability, and conversions."
         >
           Effective digital marketing is more than campaigns—it’s about creating meaningful connections with your audience. We craft strategies that combine creativity, analytics, and smart technology, ensuring every touchpoint drives engagement, builds trust, and converts visitors into loyal customers. From social media to search engine campaigns, we design experiences that inspire action and deliver measurable results.        </p>
 
@@ -404,7 +411,7 @@ export default function DigitalMarketing() {
           >
             <h2 className="sw-result-title">Result:</h2>
             <p className="sw-result-content">
-              Our digital marketing strategies deliver measurable results. By targeting the right audience, optimizing campaigns, and analyzing performance, we improve engagement, increase conversions, and maximize ROI. These results show how a data-driven and creative marketing approach can enhance visibility, strengthen brand presence, and drive sustained business growth.
+              Our digital marketing strategies deliver measurable results. By targeting the right audience, optimizing campaigns, and analyzing performance, we improve engagement, increase conversions, and maximize ROI. This data-driven and creative marketing approach enhances visibility, strengthens brand presence, and drives sustained business growth.
             </p></ul>
 
           <div

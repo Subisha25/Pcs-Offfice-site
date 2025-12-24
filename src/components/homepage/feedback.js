@@ -106,7 +106,7 @@ useEffect(() => {
 
         <h2>
           Real reviews <br />
-          <span className="italic-text">from real</span> people
+          <span className="italic-text">from real</span> people!
         </h2>
       </div>
 

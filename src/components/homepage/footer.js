@@ -56,7 +56,7 @@ function Footer() {
               </a>
 
               <a
-                href="https://www.linkedin.com/company/pcs-technology"
+                // href="https://www.linkedin.com/company/pcs-technology"
                 target="_blank"
                 rel="noopener noreferrer"
               >

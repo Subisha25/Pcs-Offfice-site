@@ -86,7 +86,7 @@ const StatsSection = () => {
       <div className="stats-heading">
         <h2>We don’t just work</h2>
         <h2>
-          <span></span>together —we <i>grow together.</i>
+          <span></span>together - we <i>grow together.</i>
         </h2>
       </div>
       {/* states card section*/}
@@ -98,7 +98,7 @@ const StatsSection = () => {
           </div>
           {/* description section */}
           <p className="desc">
-            We've successfully completed over 50 projects—and we're just getting started!
+            We’ve successfully completed over 50 projects—and we’re just getting started!
           </p>
         </div>
 
@@ -108,7 +108,7 @@ const StatsSection = () => {
             <p className="title">Business Growth</p>
           </div>
           <p className="desc">
-            Our strategies have helped clients achieve up to 70% revenue growth in just one year!
+            Our strategies have helped clients achieve up to 70% revenue growth in just one year.
           </p>
         </div>
 

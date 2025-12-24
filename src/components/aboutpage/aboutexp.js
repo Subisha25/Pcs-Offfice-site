@@ -6,14 +6,14 @@ import CommonTopTag from "../common/toptag";
 const AboutExperience = () => {
   const [count, setCount] = useState(0);
   const counterRef = useRef(null);
-  
+
   // Text animation states
   const [filledWords, setFilledWords] = useState(0);
   const textRef = useRef(null);
   const lastScrollY = useRef(typeof window !== "undefined" ? window.scrollY : 0);
 
   // Split the main heading into words
-  const headingText = `We're a passionate creatives and experts who believe in delivering results. Experience in Web Dev, Digital Marketing and UI/UX design, we help brands stand out in the crowded digital space.`;
+  const headingText = `We're a passionate creatives and experts, driven by results. With strong experience in Web Development, Digital Marketing, and UI/UX Design, we help brands stand out in today’s crowded digital space.`;
   const paragraph = headingText.split(" ");
   const maxWords = paragraph.length;
 
@@ -101,7 +101,7 @@ const AboutExperience = () => {
     <div className="about-exp-section">
       {/* Left content */}
       <div className="left-box">
-       <CommonTopTag />
+        <CommonTopTag />
 
         <h2 className="years" ref={counterRef}>
           {count}+
@@ -131,20 +131,20 @@ const AboutExperience = () => {
 
         <p className="sub-text">
           We began as a small team of dreamers, turning creativity into meaningful
-          connections. From day one, our mission has been to blend design and
-          strategy into experiences that matter.
+           connections. From day one, our mission has been to blend design and 
+           strategy into experiences that truly matter.
         </p>
 
         <p className="sub-text">
-          Curiosity drives us—we listen, explore, and craft solutions that feel
-          authentic. Every project is built on clarity, collaboration, and
-          creativity from start to finish.
+          Curiosity drives us—we listen, explore, and craft solutions 
+          that feel authentic. Every project is built on clarity, collaboration,
+           and creativity from start to finish.
         </p>
 
         <p className="sub-text">
-          We value honesty, passion, and respect in every interaction. For us,
-          creativity isn't about noise—it's about making ideas simple, powerful,
-          and human.
+          We value honesty, passion, and respect in every 
+          interaction. For us, creativity isn’t about noise—it’s about making ideas simple,
+           powerful, and human.
         </p>
       </div>
     </div>

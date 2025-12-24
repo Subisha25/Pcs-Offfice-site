@@ -242,7 +242,7 @@
 
 @media (max-width: 600px) {
   .purpose-scroll-wrapper {
-    min-height: 250vh;
+    min-height: 165vh;
   }
 
   .purpose-title {
@@ -986,6 +986,7 @@
 @media (hover: none) and (pointer: coarse) {
   .sw-banner-img {
     transition: transform 0.2s linear, opacity 0.2s linear;
+    margin-top: 30px;
   }
 
   [data-animate] {
@@ -998,6 +999,7 @@
   .sw-banner {
     position: relative;
     top: 0;
+    
   }
 
   .sw-banner-wrapper {
