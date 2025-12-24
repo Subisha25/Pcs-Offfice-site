@@ -1,7 +1,8 @@
 /* ========= WRAP ========= */
 .ps-wrap {
-  min-height: calc((var(--slides) + 1.2) * 100vh);
-  background: #fff;
+min-height: calc(
+    (var(--slides) + 1.2 + 0.7) * 100vh
+  );  background: #fff;
   position: relative;
 }
 
@@ -226,5 +227,12 @@
     top: 72px; /* 🔥 tablet-ku konjam extra */
   }
 
+}
+
+.ps-dot {
+  cursor: pointer;
+}
+.ps-dot:hover {
+  transform: scale(1.05);
 }
 

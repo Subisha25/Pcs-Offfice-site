@@ -28,7 +28,30 @@ export default function ProjectSlider() {
   const slides = projects.length;
   const segments = Math.max(1, slides - 1);
 
-  const [p, setP] = useState(0);
+  const [p, setP] = useState(0); // overall progress 0..1
+const HOLD_SCREENS = 0.5;
+const HOLD_END = 0.7;    // 🔥 last image hold (new)
+
+
+
+const scrollToSlide = (index) => {
+  if (!wrapRef.current) return;
+
+  const vh = window.innerHeight;
+  const start = wrapRef.current.offsetTop;
+
+  const holdStartPx = HOLD_SCREENS * vh;
+  const travel = segments * vh;
+
+  // index: 0,1,2,3
+  const targetScroll =
+    start + holdStartPx + (index / segments) * travel;
+
+  window.scrollTo({
+    top: targetScroll,
+    behavior: "smooth",
+  });
+};
 
   useEffect(() => {
     const onScroll = () => {
@@ -36,34 +59,39 @@ export default function ProjectSlider() {
 
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
 
-      rafRef.current = requestAnimationFrame(() => {
-        const wrap = wrapRef.current;
-        const sticky = wrap.querySelector(".ps-sticky");
-        if (!sticky) return;
+rafRef.current = requestAnimationFrame(() => {
+  const el = wrapRef.current;
+  const vh = window.innerHeight;
 
-        const vh = window.innerHeight;
+  const rect = el.getBoundingClientRect();
+  const start = window.scrollY + rect.top;
 
-      // 🔥 IMPORTANT FIX
-      const rect = el.getBoundingClientRect();
+  const holdStartPx = HOLD_SCREENS * vh;
+  const holdEndPx = HOLD_END * vh;
 
-      // section sticky aagura moment
-      const start = window.scrollY + rect.top;
+  const travel = segments * vh;
+  const total = holdStartPx + travel + holdEndPx;
 
-      const hold = HOLD_SCREENS * vh;   // first image hold
-      const travel = segments * vh;     // slide travel
+  const y = window.scrollY - start;
 
-      const y = window.scrollY - start;
+  // 🛑 First image fixed
+  if (y <= holdStartPx) {
+    setP(0);
+    return;
+  }
 
-      // 🛑 BEFORE HOLD → image fixed (NO SCROLL EFFECT)
-      if (y <= hold) {
-        setP(0);
-        return;
-      }
+  // 🛑 Last image fixed (IMPORTANT)
+  if (y >= holdStartPx + travel) {
+    setP(1);
+    return;
+  }
 
-      // ▶ AFTER HOLD → scroll start
-      const raw = (y - hold) / travel;
-      setP(Math.min(1, Math.max(0, raw)));
-    });
+  // ▶ Only middle scrolling
+  const raw = (y - holdStartPx) / travel;
+  setP(Math.min(1, Math.max(0, raw)));
+});
+
+
   };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -122,13 +150,16 @@ export default function ProjectSlider() {
               return (
                 <React.Fragment key={dotIndex}>
                   {/* DOT */}
-                  <div
-                    className={[
-                      "ps-dot",
-                      isActive ? "active" : "",
-                      isDone ? "done" : "",
-                    ].join(" ")}
-                  >
+                 <div
+  className={[
+    "ps-dot",
+    isActive ? "active" : "",
+    isDone ? "done" : "",
+  ].join(" ")}
+  onClick={() => scrollToSlide(i)}
+  style={{ cursor: "pointer" }}
+>
+
                     <span className="ps-dotNum">{String(dotIndex).padStart(2, "0")}</span>
                   </div>
 
