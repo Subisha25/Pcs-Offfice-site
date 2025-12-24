@@ -10,7 +10,7 @@ import Portfoliobanner from "../portfolio/portfoliobanner";
 import WorkProcess from "./workprocess";
 import CTASection from "./cta";
 import Footer from "./footer";
-import WordAnimation from "./explore";
+import WordAnimation from "./ProjectSlider";
 import Benefits from "../aboutpage/benefits";
 import CommonButton from "../common/button";
 import { Navigate, useNavigate } from "react-router-dom";
