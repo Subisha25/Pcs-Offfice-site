@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
+import CommonButton from '../common/button';
+import img1 from '../assets/explore/1.jpg';
+import img2 from '../assets/explore/2.jpg';
+import img3 from '../assets/explore/3.jpg';
+import img4 from '../assets/explore/4.jpg';
 // Project data with images
 const projects = [
   {
@@ -7,36 +11,30 @@ const projects = [
     title: "Lhome",
     subtitle: "Interior Design Platform",
     tags: ["Web Design", "UI/UX Design"],
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&h=1080&fit=crop",
+    image: img1,
   },
   {
     id: 2,
     title: "Grace Cabs",
     subtitle: "Transportation Service",
     tags: ["Web Design", "UI/UX Design"],
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1920&h=1080&fit=crop",
+    image:  img2 ,
   },
   {
     id: 3,
     title: "Nibras",
     subtitle: "Fashion E-commerce",
     tags: ["Web Design", "UI/UX Design"],
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&h=1080&fit=crop",
+    image: img3,
   },
   {
     id: 4,
     title: "World Tamil Siragam",
     subtitle: "Cultural Platform",
     tags: ["Web Design", "UI/UX Design"],
-    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1920&h=1080&fit=crop",
+    image: img4,
   },
-  {
-    id: 5,
-    title: "Tech Solutions",
-    subtitle: "Software Development",
-    tags: ["Web Design", "UI/UX Design"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop",
-  }
+  
 ];
 
 export default function ProjectSlider() {
@@ -135,10 +133,7 @@ export default function ProjectSlider() {
                       <h3 style={styles.title}>{project.title}</h3>
                       <p style={styles.subtitle}>{project.subtitle}</p>
 
-                      <button style={styles.button}>
-                        <span>View Project</span>
-                        <span style={styles.arrow}>→</span>
-                      </button>
+                      <CommonButton text='View Project' />
                     </div>
                   </div>
                 </div>
