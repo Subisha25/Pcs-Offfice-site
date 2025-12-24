@@ -7,7 +7,7 @@
   --button-primary: #101166;
   --button-secondary: #D9D9D9;
   --playfair-fonts: 'Playfair Display', serif;
-
+  
   /* Font Sizes */
   --heading-font-size: 32px;
   --subheading-font-size: 24px;
@@ -24,6 +24,64 @@
   font-display: swap;
 }
 
+/* =========================================
+   ✅ SEQUENCE OPEN ANIMATION
+   1) menuOpen -> container expands
+   2) menuReveal -> items appear one-by-one
+========================================= */
+
+/* During opening (menu-open but not reveal yet) hide menu + discuss button */
+.header.menu-open:not(.menu-reveal) .header-menu,
+.header.menu-open:not(.menu-reveal) .header-right .header-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+/* After reveal starts */
+.header.menu-open.menu-reveal .header-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Keyframe for each item */
+@keyframes menuItemIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Animate each link one-by-one */
+.header.menu-open.menu-reveal .header-menu a {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: menuItemIn 0.35s ease forwards;
+}
+
+/* Stagger delays */
+.header.menu-open.menu-reveal .header-menu a:nth-child(1) { animation-delay: 0.05s; }
+.header.menu-open.menu-reveal .header-menu a:nth-child(2) { animation-delay: 0.12s; }
+.header.menu-open.menu-reveal .header-menu a:nth-child(3) { animation-delay: 0.19s; }
+.header.menu-open.menu-reveal .header-menu a:nth-child(4) { animation-delay: 0.26s; }
+.header.menu-open.menu-reveal .header-menu a:nth-child(5) { animation-delay: 0.33s; }
+
+/* Animate mobile menu button inside nav */
+.header.menu-open.menu-reveal .header-menu .header-btn {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: menuItemIn 0.35s ease forwards;
+  animation-delay: 0.40s;
+}
+
+/* Animate desktop "Let's Discuss" after links */
+.header.menu-open.menu-reveal .header-right .header-btn {
+  opacity: 0;
+  transform: translateY(11px);
+  animation: menuItemIn 0.35s ease forwards;
+  animation-delay: 0.42s;
+}
+
 /* HEADER WRAPPER - ALWAYS CENTER */
 .header {
   width: 100%;
@@ -33,7 +91,7 @@
   top: 20px;
   left: 0;
   z-index: 9999;
-  padding: 0 15px;
+  padding: 0 15px ;
   box-sizing: border-box;
 }
 
@@ -54,11 +112,11 @@
 
   transform: scale(1);
   transform-origin: center;
-  transition:
-    width 0.7s cubic-bezier(0.65, 0, 0.35, 1),
-    background 0.5s ease,
-    padding 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-
+transition: 
+    width 0.7s cubic-bezier(0.65, 0, 0.35, 1), 
+    background 0.5s ease, 
+  padding 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  
   /* overflow: hidden;  */
   white-space: nowrap;
   /* transition:
@@ -101,15 +159,9 @@
   flex-shrink: 0;
 }
 
-.header-logo-full {
+.header-logo img {
   height: 40px;
   width: auto;
-  display: block;
-}
-
-.header-logo-small {
-  height: 34px;
-  width: 100px;
   display: block;
 }
 
@@ -167,11 +219,9 @@
   gap: 15px;
   flex-shrink: 0;
 }
-
-.menu-togglemobile-btn {
+.menu-togglemobile-btn{
   display: none;
 }
-
 /* MENU TOGGLE BUTTON */
 .menu-toggle-btn {
   background: black;
@@ -201,19 +251,15 @@
   transition: all 0.2s;
   white-space: nowrap;
 }
-
 .menu-toggle-btn:hover {
   background: #333;
 }
-
 .menu-toggleclose-btn:hover {
   background: #333;
 }
-
 /* SMALL/COMPACT MODE WHEN SCROLLED */
 .header.small .header-container {
-  width: 240px !important;
-  /* Width-ah kammi panniyachu */
+  width: 240px !important;  /* Width-ah kammi panniyachu */
   min-width: 240px;
   padding: 8px 15px;
   justify-content: space-between;
@@ -222,13 +268,11 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease-in-out;
 }
-
 .header.scrolled:not(.small) .header-container {
   width: 70%;
   max-width: 1300px;
   transition: all 0.4s ease-in-out;
 }
-
 .header.small .header-menu {
   display: none;
 }
@@ -255,7 +299,7 @@
 
   .header-container {
     width: 90%;
-    max-width: 600px;
+     max-width: 600px;
     padding: 10px 20px;
     border-radius: 40px;
     margin: 0 auto;
@@ -279,22 +323,21 @@
 /* SMALL TABLETS & LARGE PHONES (max-width: 768px) */
 @media screen and (max-width: 768px) {
 
-  .menu-togglemobile-btn {
+  .menu-togglemobile-btn{
 
-    display: block;
+  display: block;
     background: black;
-    color: white;
-    border: none;
-    font-size: 14px;
-    padding: 8px 20px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-family: 'WF Visual Sans', sans-serif;
-    font-weight: 500;
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'WF Visual Sans', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
   .header {
     top: 10px;
     padding: 0 10px;
@@ -319,20 +362,19 @@
   }
 
   .menu-toggleclose-btn {
-    display: block;
-    background: black;
-    color: white;
-    border: none;
-    padding: 7px 14px;
-    font-size: 11px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-family: 'WF Visual Sans', sans-serif;
-    font-weight: 500;
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-
+  display: block;
+  background: black;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  font-size: 11px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'WF Visual Sans', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
   /* Always show menu toggle on mobile */
   .menu-toggle-btn {
     display: none;
@@ -370,34 +412,20 @@
   }
 
   /* Show button in mobile menu */
-  .show-menu~.header-right .header-btn {
+  .show-menu ~ .header-right .header-btn {
     display: block;
     width: 100%;
     margin-top: 10px;
   }
 
-
-}
-
-@media screen and (max-width: 768px) {
-  .header-container {
-    width: 65% !important;
-    max-width: 300px !important;
+ 
   }
 
-  /* Mobile-la scroll pannumbodhu background matum white aaganum */
-  .header.scrolled .header-container {
-    background: white;
-    border: none;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Small class mobile-la apply aagakoodathu */
+ @media screen and (max-width: 768px) {
+  .header.scrolled .header-container,
   .header.small .header-container {
     width: 65% !important;
     max-width: 300px !important;
-    padding: 8px 16px;
-    /* Original mobile padding maintain pannanum */
   }
 }
 
@@ -409,7 +437,7 @@
     padding: 0 8px;
   }
 
-  .header-container {
+ .header-container {
     width: 65% !important;
     max-width: 300px !important;
     margin: 0 auto;
@@ -417,7 +445,6 @@
 
   .header-logo img {
     height: 28px;
-    width: 130px;
   }
 
   .menu-toggle-btn {
@@ -458,7 +485,6 @@
 
   .header-logo img {
     height: 24px;
-    width: 100px;
   }
 
   .menu-toggle-btn {
