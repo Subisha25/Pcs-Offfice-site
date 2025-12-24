@@ -1,155 +1,203 @@
-/* Container */
-.project-slider-container {
-  width: 100%;
-  min-height: 400vh;
-  background-color: #ffffff;
+/* ========= WRAP ========= */
+.ps-wrap {
+  /* ✅ add extra hold screens too */
+  min-height: calc((var(--slides) + var(--hold)) * 100vh);
+  background: #fff;
   position: relative;
 }
 
-/* Progress bar top */
-.progress-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  padding: 24px;
+
+/* Sticky viewport */
+.ps-sticky {
   position: sticky;
   top: 0;
-  background-color: #ffffff;
-  z-index: 100;
-}
-
-.progress-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.progress-line-wrapper {
-  position: relative;
-}
-
-/* Active circle */
-.active-circle {
-  position: absolute;
-  top: -24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #1e40af;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
-.circle-number {
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-/* Progress line */
-.progress-line {
-  height: 2px;
-  width: 80px;
-  background-color: #d1d5db;
-  border-radius: 9999px;
-  position: relative;
+  height: 100vh;
   overflow: hidden;
 }
 
-.progress-fill {
-  height: 100%;
-  background-color: #1e3a8a;
-  border-radius: 9999px;
-  transition: width 0.1s linear;
+/* ========= TOP PROGRESS ========= */
+.ps-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 18px;
+  z-index: 10;
+  /* background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0)); */
+  /* backdrop-filter: blur(6px); */
+}
+
+.ps-track {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
 
 /* Dot */
-.progress-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin: 0 4px;
-  background-color: #d1d5db;
-  transition: background-color 0.3s;
+.ps-dot {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #d1d5db;
+  background: #fff;
+  color: #111827;
+  flex: 0 0 auto;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
-.progress-dot.completed {
-  background-color: #1e3a8a;
+.ps-dotNum {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
 }
 
-/* Project section */
-.project-section {
-  height: 100vh;
-  width: 100%;
-  position: sticky;
-  top: 0;
+/* active dot */
+.ps-dot.active {
+  border-color: #1e40af;
+  background: #1e40af;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(30, 64, 175, 0.25);
 }
 
-.image-container {
-  position: relative;
-  height: 100vh;
-  width: 100%;
+/* completed dot */
+.ps-dot.done {
+  border-color: #1e40af;
+}
+
+/* Equal space line */
+.ps-line {
+  flex: 1 1 auto;
+  height: 2px;
+  margin: 0 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
   overflow: hidden;
+  position: relative;
 }
 
-/* Image */
-.image-wrapper {
+.ps-lineFill {
+  height: 100%;
+  width: 100%;
+  background: #1e40af;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.06s linear; /* smooth fill while scrolling */
+}
+
+/* ========= SLIDES ========= */
+.ps-stage {
   position: absolute;
   inset: 0;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  z-index: 1;
 }
 
-.project-image {
+/* Each slide absolute */
+.ps-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(10%);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: transform, opacity;
+}
+
+.ps-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 3;
+}
+
+.ps-slide.prev {
+  opacity: 0;
+  transform: translateX(-10%);
+  z-index: 1;
+}
+
+.ps-slide.next {
+  opacity: 0;
+  transform: translateX(10%);
+  z-index: 2;
+}
+
+.ps-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* Overlay */
-.image-overlay {
+.ps-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.4),
-    transparent
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0)
   );
 }
 
 /* Text */
-.text-container {
+.ps-text {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  width: min(920px, calc(100% - 40px));
   text-align: center;
+  color: #fff;
+  z-index: 4;
   pointer-events: none;
 }
 
-.text-wrapper {
-  max-width: 900px;
-  width: 100%;
-  margin: 150px auto 0;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+.ps-title {
+  font-size: clamp(28px, 4vw, 56px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
 }
 
-.project-title {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 12px;
+.ps-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.project-subtitle {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 16px;
+.ps-tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Hint */
+.ps-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+  z-index: 5;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .ps-progress { padding: 14px 12px; }
+  .ps-line { margin: 0 8px; }
+  .ps-dot { width: 34px; height: 34px; }
 }

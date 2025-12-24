@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./ProjectSlider.css";
 
 import img1 from "../assets/explore/1.jpg";
@@ -7,170 +7,166 @@ import img3 from "../assets/explore/3.jpg";
 import img4 from "../assets/explore/4.jpg";
 
 const projects = [
-  {
-    id: 1,
-    title: "Lhome",
-    tags: ["Web Design", "UI/UX Design"],
-    image: img1,
-  },
-  {
-    id: 2,
-    title: "Grace Cabs",
-    tags: ["Web Design", "UI/UX Design"],
-    image: img2,
-  },
-  {
-    id: 3,
-    title: "Nibras",
-    tags: ["Web Design", "UI/UX Design"],
-    image: img3,
-  },
-  {
-    id: 4,
-    title: "World Tamil Siragam",
-    tags: ["Web Design", "UI/UX Design"],
-    image: img4,
-  },
+  { id: 1, title: "Lhome", tags: ["Web Design", "UI/UX Design"], image: img1 },
+  { id: 2, title: "Grace Cabs", tags: ["Web Design", "UI/UX Design"], image: img2 },
+  { id: 3, title: "Nibras", tags: ["Web Design", "UI/UX Design"], image: img3 },
+  { id: 4, title: "World Tamil Siragam", tags: ["Web Design", "UI/UX Design"], image: img4 },
 ];
 
+const clamp01 = (v) => Math.min(1, Math.max(0, v));
+
 export default function ProjectSlider() {
-  const containerRef = useRef(null);
+  const wrapRef = useRef(null);
+  const rafRef = useRef(null);
 
-  const [scrollProgress, setScrollProgress] = useState(
-    projects.map(() => ({
-      imageProgress: 0,
-      titleProgress: 0,
-      progressBar: 0,
-    }))
-  );
+  const slides = projects.length;
+  const segments = Math.max(1, slides - 1); // 4 slides => 3 segments (dot gaps)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
+  const [p, setP] = useState(0); // overall progress 0..1
+const HOLD_SCREENS = 0.5;
 
-      const container = containerRef.current;
-      const containerTop = container.getBoundingClientRect().top;
-      const containerHeight = container.offsetHeight;
-      const windowHeight = window.innerHeight;
+useEffect(() => {
+  const onScroll = () => {
+    if (!wrapRef.current) return;
 
-      const newProgress = projects.map((_, index) => {
-        const projectScrollHeight = containerHeight / projects.length;
-        const projectStart = containerTop + index * projectScrollHeight;
-        const projectEnd = projectStart - projectScrollHeight;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
 
-        let progress = 0;
+    rafRef.current = requestAnimationFrame(() => {
+      const el = wrapRef.current;
+      const vh = window.innerHeight;
 
-        if (projectStart <= 0 && projectEnd > -windowHeight) {
-          progress = Math.min(
-            Math.max((0 - projectStart) / projectScrollHeight, 0),
-            1
-          );
-        } else if (projectEnd <= -windowHeight) {
-          progress = 1;
-        }
+      const start = el.offsetTop;             // slider starts when section reaches top (sticky)
+      const hold = HOLD_SCREENS * vh;         // ✅ hold before filling starts
+      const travel = segments * vh;           // 3 gaps => 3 screens travel
 
-        const imageProgress = Math.min(progress / 0.5, 1);
-        const titleProgress = Math.min(
-          Math.max((progress - 0.3) / 0.3, 0),
-          1
-        );
+      const y = window.scrollY - start;
 
-        const progressBar =
-          progress < 0.5
-            ? progress * 0.5
-            : 0.5 + ((progress - 0.5) / 0.5) * 0.5;
+      // ✅ 1) before hold => p=0 (image1 only)
+      if (y <= hold) {
+        setP(0);
+        return;
+      }
 
-        return { imageProgress, titleProgress, progressBar };
-      });
+      // ✅ 2) after hold => start filling
+      const raw = (y - hold) / travel;
+      setP(clamp01(raw));
+    });
+  };
 
-      setScrollProgress(newProgress);
-    };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+  return () => {
+    window.removeEventListener("scroll", onScroll);
+    window.removeEventListener("resize", onScroll);
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+  };
+}, [segments]);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
+
+
+  // Active dot: 1..slides
+  const activeDot = useMemo(() => {
+    // 0..1 => 1..4 based on segments (3)
+    return Math.min(Math.floor(p * segments) + 1, slides);
+  }, [p, segments, slides]);
+
+  // Which image to show: dot reached => that image
+  const activeSlideIndex = activeDot - 1; // 0..3
+
+  // line fill between dots (3 lines)
+  const lineFill = useMemo(() => {
+    const fills = [];
+    for (let i = 0; i < slides - 1; i++) {
+      // each gap is 1/segments
+      const start = i / segments;
+      const fill = clamp01((p - start) * segments);
+      fills.push(fill);
+    }
+    return fills; // [0..1, 0..1, 0..1]
+  }, [p, segments, slides]);
 
   return (
-    <div className="project-slider-container" ref={containerRef}>
-      {/* PROGRESS BAR */}
-      <div className="progress-container">
-        {projects.map((_, index) => {
-          const progress = scrollProgress[index].progressBar;
-          const isActive = progress > 0 && progress < 1;
-          const isCompleted = progress >= 1;
+   <section
+  className="ps-wrap"
+  ref={wrapRef}
+  style={{ "--slides": slides, "--hold": HOLD_SCREENS }}
+  aria-label="Project slider"
+>
 
-          return (
-            <div className="progress-wrapper" key={index}>
-              <div className="progress-line-wrapper">
-                {isActive && (
-                  <div className="active-circle">
-                    <span className="circle-number">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                )}
+      {/* sticky viewport */}
+      <div className="ps-sticky">
+        {/* TOP DOTS BAR */}
+        <div className="ps-progress">
+          <div className="ps-track">
+            {projects.map((_, i) => {
+              const dotIndex = i + 1;
+              const isActive = dotIndex === activeDot;
+              const isDone = dotIndex < activeDot;
 
-                <div className="progress-line">
+              return (
+                <React.Fragment key={dotIndex}>
+                  {/* DOT */}
                   <div
-                    className="progress-fill"
-                    style={{ width: `${progress * 100}%` }}
-                  />
-                </div>
-              </div>
+                    className={[
+                      "ps-dot",
+                      isActive ? "active" : "",
+                      isDone ? "done" : "",
+                    ].join(" ")}
+                  >
+                    <span className="ps-dotNum">{String(dotIndex).padStart(2, "0")}</span>
+                  </div>
 
-              {index < projects.length - 1 && (
-                <div
-                  className={`progress-dot ${
-                    isCompleted ? "completed" : ""
-                  }`}
-                />
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      {/* PROJECT SECTIONS */}
-      {projects.map((project, index) => {
-        const { imageProgress, titleProgress } = scrollProgress[index];
-
-        return (
-          <div className="project-section" key={project.id}>
-            <div className="image-container">
-              {/* IMAGE */}
-              <div
-                className="image-wrapper"
-                style={{
-                  transform: `translateX(${(1 - imageProgress) * 100}%)`,
-                  opacity: imageProgress,
-                }}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                />
-                <div className="image-overlay" />
-              </div>
-
-              {/* TEXT */}
-              <div className="text-container">
-                <div
-                  className="text-wrapper"
-                  style={{
-                    transform: `translateX(${(1 - titleProgress) * 100}%)`,
-                    opacity: titleProgress,
-                  }}
-                >
-                  <h2 className="project-title">{project.title}</h2>
-                </div>
-              </div>
-            </div>
+                  {/* LINE (not after last dot) */}
+                  {i < projects.length - 1 ? (
+                    <div className="ps-line">
+                      <div
+                        className="ps-lineFill"
+                        style={{ transform: `scaleX(${lineFill[i]})` }}
+                      />
+                    </div>
+                  ) : null}
+                </React.Fragment>
+              );
+            })}
           </div>
-        );
-      })}
-    </div>
+        </div>
+
+        {/* SLIDES */}
+        <div className="ps-stage">
+          {projects.map((proj, i) => {
+            const cls =
+              i === activeSlideIndex
+                ? "active"
+                : i < activeSlideIndex
+                ? "prev"
+                : "next";
+
+            return (
+              <div className={`ps-slide ${cls}`} key={proj.id}>
+                <img className="ps-img" src={proj.image} alt={proj.title} />
+                <div className="ps-overlay" />
+
+                <div className="ps-text">
+                  <div className="ps-title">{proj.title}</div>
+                  <div className="ps-tags">
+                    {proj.tags.map((t) => (
+                      <span key={t} className="ps-tag">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* optional hint */}
+        <div className="ps-hint">Scroll to explore</div>
+      </div>
+    </section>
   );
 }
