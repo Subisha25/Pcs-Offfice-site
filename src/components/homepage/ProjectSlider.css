@@ -215,6 +215,10 @@
   .ps-progress {
     top: 64px; /* 🔥 keela thalli */
   }
+    .ps-title {
+    font-size: 28px;
+    letter-spacing: 0.005em;
+  }
 }
 
 /* Tablet */
@@ -222,4 +226,6 @@
   .ps-progress {
     top: 72px; /* 🔥 tablet-ku konjam extra */
   }
+
 }
+
