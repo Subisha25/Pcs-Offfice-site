@@ -5,12 +5,13 @@ import img1 from "../assets/explore/1.jpg";
 import img2 from "../assets/explore/2.jpg";
 import img3 from "../assets/explore/3.jpg";
 import img4 from "../assets/explore/4.jpg";
+import CommonButton from "../common/button";
 
 const projects = [
-  { id: 1, title: "Lhome", tags: ["Web Design", "UI/UX Design"], image: img1 },
-  { id: 2, title: "Grace Cabs", tags: ["Web Design", "UI/UX Design"], image: img2 },
-  { id: 3, title: "Nibras", tags: ["Web Design", "UI/UX Design"], image: img3 },
-  { id: 4, title: "World Tamil Siragam", tags: ["Web Design", "UI/UX Design"], image: img4 },
+  { id: 1, title: "World Tamil Siragam", image: img1 },
+  { id: 2, title: "Grace Cabs", image: img2 },
+  { id: 3, title: "Lhome",  image: img3 },
+  { id: 4, title: "Nibras", image: img4 },
 ];
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
@@ -35,21 +36,26 @@ useEffect(() => {
       const el = wrapRef.current;
       const vh = window.innerHeight;
 
-      const start = el.offsetTop;             // slider starts when section reaches top (sticky)
-      const hold = HOLD_SCREENS * vh;         // ✅ hold before filling starts
-      const travel = segments * vh;           // 3 gaps => 3 screens travel
+      // 🔥 IMPORTANT FIX
+      const rect = el.getBoundingClientRect();
+
+      // section sticky aagura moment
+      const start = window.scrollY + rect.top;
+
+      const hold = HOLD_SCREENS * vh;   // first image hold
+      const travel = segments * vh;     // slide travel
 
       const y = window.scrollY - start;
 
-      // ✅ 1) before hold => p=0 (image1 only)
+      // 🛑 BEFORE HOLD → image fixed (NO SCROLL EFFECT)
       if (y <= hold) {
         setP(0);
         return;
       }
 
-      // ✅ 2) after hold => start filling
+      // ▶ AFTER HOLD → scroll start
       const raw = (y - hold) / travel;
-      setP(clamp01(raw));
+      setP(Math.min(1, Math.max(0, raw)));
     });
   };
 
@@ -63,6 +69,7 @@ useEffect(() => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
   };
 }, [segments]);
+
 
 
 
@@ -152,11 +159,7 @@ useEffect(() => {
                 <div className="ps-text">
                   <div className="ps-title">{proj.title}</div>
                   <div className="ps-tags">
-                    {proj.tags.map((t) => (
-                      <span key={t} className="ps-tag">
-                        {t}
-                      </span>
-                    ))}
+                    < CommonButton text="View Project"></CommonButton>
                   </div>
                 </div>
               </div>
@@ -164,8 +167,7 @@ useEffect(() => {
           })}
         </div>
 
-        {/* optional hint */}
-        <div className="ps-hint">Scroll to explore</div>
+       
       </div>
     </section>
   );
