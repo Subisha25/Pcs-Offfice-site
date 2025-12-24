@@ -8,12 +8,18 @@ import img4 from "../assets/explore/4.jpg";
 import CommonButton from "../common/button";
 
 const projects = [
-  { id: 1, title: "World Tamil Siragam", image: img1 },
-  { id: 2, title: "Grace Cabs", image: img2 },
-  { id: 3, title: "Lhome",  image: img3 },
-  { id: 4, title: "Nibras", image: img4 },
+  { id: 1, title: "World Tamil Siragam", image: img1, url: "https://worldtamilsiragam.com/" },
+  { id: 2, title: "Grace Cabs", image: img2, url: "https://gracecabs.com/" },
+  { id: 3, title: "Lhome", image: img3, url: "https://lhome.co.in/" },
+  { id: 4, title: "Nibras", image: img4, url: "https://www.nibrasconsulting.com/" },
 ];
 
+
+const openProject = (url) => {
+  if (!url) return;
+  window.open(url, "_blank", "noopener,noreferrer"); // ✅ new tab safe
+  // window.location.href = url; // ✅ same tab venumna
+};
 
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
@@ -196,7 +202,10 @@ rafRef.current = requestAnimationFrame(() => {
                 <div className="ps-text">
                   <div className="ps-title">{proj.title}</div>
                   <div className="ps-tags">
-                    < CommonButton text="View Project"></CommonButton>
+<CommonButton
+  text="View Project"
+  onClick={() => openProject(proj.url)}
+/>
                   </div>
                 </div>
               </div>
