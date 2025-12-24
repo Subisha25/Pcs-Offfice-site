@@ -1,203 +1,182 @@
-import React, { useState, useEffect } from 'react';
-import CommonButton from '../common/button';
+import React, { useState, useEffect, useRef } from 'react';
 import img1 from '../assets/explore/1.jpg';
 import img2 from '../assets/explore/2.jpg';
 import img3 from '../assets/explore/3.jpg';
 import img4 from '../assets/explore/4.jpg';
+
 // Project data with images
 const projects = [
   {
     id: 1,
     title: "Lhome",
-    // subtitle: "Interior Design Platform",
     tags: ["Web Design", "UI/UX Design"],
     image: img1,
   },
   {
     id: 2,
     title: "Grace Cabs",
-    // subtitle: "Transportation Service",
     tags: ["Web Design", "UI/UX Design"],
-    image:  img2 ,
+    image: img2,
   },
   {
     id: 3,
     title: "Nibras",
-    // subtitle: "Fashion E-commerce",
     tags: ["Web Design", "UI/UX Design"],
     image: img3,
   },
   {
     id: 4,
     title: "World Tamil Siragam",
-    // subtitle: "Cultural Platform",
     tags: ["Web Design", "UI/UX Design"],
     image: img4,
   },
-  
 ];
 
 export default function ProjectSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const containerRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(
+    projects.map(() => ({ imageProgress: 0, titleProgress: 0, progressBar: 0 }))
+  );
 
-  const nextSlide = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev + 1) % projects.length);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
 
-  const goToSlide = (index) => {
-    if (isAnimating || index === currentIndex) return;
-    setIsAnimating(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsAnimating(false), 600);
-  };
+      const container = containerRef.current;
+      const containerTop = container.getBoundingClientRect().top;
+      const containerHeight = container.offsetHeight;
+      const windowHeight = window.innerHeight;
+      
+      // Calculate how much of the container is visible
+      const scrollStart = containerTop;
+      const scrollEnd = containerTop - windowHeight + containerHeight;
 
- useEffect(() => {
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    const windowHeight = window.innerHeight;
+      const newProgress = projects.map((_, index) => {
+        // Each project takes up equal portion of scroll
+        const projectScrollHeight = containerHeight / projects.length;
+        const projectStart = scrollStart + (index * projectScrollHeight);
+        const projectEnd = projectStart - projectScrollHeight;
 
-    projects.forEach((_, index) => {
-      const slide = document.getElementById(`slide-${index}`);
-      if (!slide) return;
+        // Calculate progress for this project (0 to 1)
+        let progress = 0;
+        if (scrollStart > 0) {
+          progress = 0;
+        } else if (projectStart <= 0 && projectEnd > -windowHeight) {
+          progress = Math.min(Math.max((0 - projectStart) / projectScrollHeight, 0), 1);
+        } else if (projectEnd <= -windowHeight) {
+          progress = 1;
+        }
 
-      const rect = slide.getBoundingClientRect();
-      const progress = Math.min(Math.max((windowHeight - rect.top) / windowHeight, 0), 1);
+        // Image comes in from 100% (right) to 0% during first 50% of scroll (slow and smooth)
+        const imageProgress = Math.min(progress / 0.5, 1);
+        
+        // Title comes in from 100% (right) to 0% during 30%-60% of scroll
+        const titleProgress = Math.min(Math.max((progress - 0.3) / 0.3, 0), 1);
+        
+        // Progress bar fills slowly during first 50% (while image comes), then fills rest during 50%-100%
+        const progressBar = imageProgress < 1 ? progress * 0.5 : 0.5 + ((progress - 0.5) / 0.5) * 0.5;
 
-      slide.style.transform = `translateX(${(1 - progress) * 100}px)`; // right-to-left
-      const progressLine = document.getElementById(`progress-${index}`);
-      if (progressLine) progressLine.style.width = `${progress * 100}%`;
-    });
-  };
+        return { imageProgress, titleProgress, progressBar };
+      });
 
-  window.addEventListener("scroll", handleScroll);
-  handleScroll(); // initialize on load
+      setScrollProgress(newProgress);
+    };
 
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initialize on mount
 
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} ref={containerRef}>
       {/* Progress Indicators */}
       <div style={styles.progressContainer}>
-        {projects.map((_, index) => (
-          <div key={index} style={styles.progressWrapper}>
-            <div
-              style={styles.progressLineWrapper}
-              onClick={() => goToSlide(index)}
-            >
-              {/* Circle with Number for Current Slide */}
-              {index === currentIndex && (
-                <div style={styles.activeCircle}>
-                  <span style={styles.circleNumber}>
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-              )}
+        {projects.map((_, index) => {
+          const progress = scrollProgress[index].progressBar;
+          const isActive = progress > 0 && progress < 1;
+          const isCompleted = progress >= 1;
 
+          return (
+            <div key={index} style={styles.progressWrapper}>
+              <div style={styles.progressLineWrapper}>
+                {/* Circle with Number for Active Slide */}
+                {isActive && (
+                  <div style={styles.activeCircle}>
+                    <span style={styles.circleNumber}>
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                )}
+                
+                {/* Progress Line */}
+                <div style={styles.progressLine}>
+                  <div 
+                    style={{
+                      ...styles.progressFill,
+                      width: `${progress * 100}%`,
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Dot between lines */}
+              {index < projects.length - 1 && (
+                <div 
+                  style={{
+                    ...styles.progressDot,
+                    backgroundColor: isCompleted ? '#1e3a8a' : '#d1d5db',
+                  }} 
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Projects Stack */}
+      {projects.map((project, index) => {
+        const { imageProgress, titleProgress } = scrollProgress[index];
+        
+        return (
+          <div key={project.id} style={styles.projectSection}>
+            <div style={styles.imageContainer}>
+              {/* Image sliding from right */}
               <div
                 style={{
-                  ...styles.progressLine,
-                  backgroundColor: index < currentIndex ? '#1e40af' : '#d1d5db',
-                  width: '280px'
+                  ...styles.imageWrapper,
+                  transform: `translateX(${(1 - imageProgress) * 100}%)`,
+                  opacity: imageProgress,
                 }}
               >
-                {index === currentIndex && (
-                  <div style={styles.progressAnimation} />
-                )}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  style={styles.image}
+                />
+                {/* Overlay */}
+                <div style={styles.overlay} />
               </div>
-            </div>
 
-            {index < projects.length - 1 && (
-              <div
-                style={{
-                  ...styles.progressDot,
-                  backgroundColor: index < currentIndex ? '#1e40af' : '#e5e7eb',
-                }}
-              />
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Slider */}
-      <div style={styles.sliderContainer}>
-        <div style={styles.sliderOverflow}>
-          <div
-            style={{
-              ...styles.sliderTrack,
-              transform: `translateX(-${currentIndex * 100}%)`,
-            }}
-          >
-            {projects.map((project) => (
-              <div key={project.id} style={styles.slide}>
-                <div style={styles.imageContainer}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    style={styles.image}
-                  />
-
-                  {/* Overlay */}
-                  <div style={styles.overlay} />
-
-                  {/* Text Content */}
-                  <div style={styles.textContainer}>
-                    <div style={styles.textWrapper}>
-                      <h3 className="project-title">{project.title}</h3>
-
-                      <p style={styles.subtitle}>{project.subtitle}</p>
-                      <CommonButton text='View Project' />
-                    </div>
-                  </div>
+              {/* Text Content sliding from right */}
+              <div style={styles.textContainer}>
+                <div
+                  style={{
+                    ...styles.textWrapper,
+                    transform: `translateX(${(1 - titleProgress) * 100}%)`,
+                    opacity: titleProgress,
+                  }}
+                >
+                  <h2 style={styles.title}>{project.title}</h2>
+                  {project.subtitle && (
+                    <p style={styles.subtitle}>{project.subtitle}</p>
+                  )}
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </div>
-
-      <style>{`
-       .project-title {
-    font-size: 48px;   
-    font-weight: 500;
-    color: #ffffff;
-    margin-bottom: 12px;
-    font-family: WF Visual Sans;
-    letter-spacing: 1%;
-    style: medium;
-  
-
-
-  }
-
-  /* Large screen (laptop) */
-  @media (min-width: 1024px) {
-    .project-title {
-      font-size: 2.5rem;
-    }
-  }
-        @keyframes progress-line {
-          from {
-            transform: scaleX(0);
-          }
-          to {
-            transform: scaleX(1);
-          }
-        }
-
-        button:hover {
-          background-color: #f1f5f9;
-        }
-
-        button:hover span:last-child {
-          transform: translateX(4px);
-        }
-      `}</style>
+        );
+      })}
     </div>
   );
 }
@@ -205,16 +184,20 @@ export default function ProjectSlider() {
 const styles = {
   container: {
     width: '100%',
-    Height: '70vh',
+    minHeight: '400vh', // Tall enough for scroll effect
     backgroundColor: '#ffffff',
+    position: 'relative',
   },
   progressContainer: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     gap: '12px',
-    marginBottom: '32px',
-    paddingTop: '24px',
+    padding: '24px',
+    position: 'sticky',
+    top: '0',
+    backgroundColor: '#ffffff',
+    zIndex: 100,
   },
   progressWrapper: {
     display: 'flex',
@@ -222,7 +205,6 @@ const styles = {
   },
   progressLineWrapper: {
     position: 'relative',
-    cursor: 'pointer',
   },
   activeCircle: {
     position: 'absolute',
@@ -247,16 +229,16 @@ const styles = {
   progressLine: {
     height: '2px',
     width: '80px',
+    backgroundColor: '#d1d5db',
     borderRadius: '9999px',
-    transition: 'all 0.5s',
     position: 'relative',
     overflow: 'hidden',
   },
-  progressAnimation: {
+  progressFill: {
     height: '100%',
     backgroundColor: '#1e3a8a',
-    animation: 'progress-line 5s linear',
-    transformOrigin: 'left',
+    transition: 'width 0.1s linear',
+    borderRadius: '9999px',
   },
   progressDot: {
     width: '12px',
@@ -264,28 +246,24 @@ const styles = {
     borderRadius: '50%',
     marginLeft: '4px',
     marginRight: '4px',
-    transition: 'background-color 0.5s',
+    transition: 'background-color 0.3s',
   },
-  sliderContainer: {
-    position: 'relative',
+  projectSection: {
+    height: '100vh',
     width: '100%',
-  },
-  sliderOverflow: {
-    overflow: 'hidden',
-    width: '100%',
-  },
-  sliderTrack: {
-    display: 'flex',
-    transition: 'transform 0.7s ease-in-out',
-  },
-  slide: {
-    minWidth: '100%',
-    flexShrink: 0,
+    position: 'sticky',
+    top: '0',
   },
   imageContainer: {
     position: 'relative',
-    height: '80vh',
+    height: '100vh',
     width: '100%',
+    overflow: 'hidden',
+  },
+  imageWrapper: {
+    position: 'absolute',
+    inset: 0,
+    transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
   },
   image: {
     width: '100%',
@@ -301,16 +279,18 @@ const styles = {
     position: 'absolute',
     inset: 0,
     display: 'flex',
-    // alignItems: 'center',
+    alignItems: 'center',
     justifyContent: 'center',
     padding: '32px',
     textAlign: 'center',
-    marginTop:'250px'
+    pointerEvents: 'none',
   },
   textWrapper: {
     maxWidth: '900px',
     width: '100%',
     margin: '0 auto',
+    marginTop: '150px',
+    transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
   },
   title: {
     fontSize: '3rem',
@@ -323,28 +303,4 @@ const styles = {
     color: 'rgba(255,255,255,0.9)',
     marginBottom: '16px',
   },
-  button: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '8px',
-    padding: '12px 24px',
-    marginTop: '16px',
-    backgroundColor: '#ffffff',
-    color: '#0f172a',
-    borderRadius: '9999px',
-    fontWeight: '600',
-    border: 'none',
-    cursor: 'pointer',
-    transition: 'all 0.3s',
-  },
-  arrow: {
-    display: 'inline-block',
-    transition: 'transform 0.3s',
-  },
 };
-
-// Media Query for larger screens
-if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
-  styles.textContainer.padding = '64px';
-  styles.title.fontSize = '3.75rem';
-}
