@@ -22,7 +22,23 @@ import FOOD2 from "./images/food/food2.jpeg";
 import FOOD3 from "./images/food/food3.jpeg";
 import Billing from "./images/doc/billing.png";
 
+import Ecommerce from "./images/ecommerce/e-commerce.png";
+import Ecommerce1 from "./images/ecommerce/ecommerce1.png";
+import Ecommerce2 from "./images/ecommerce/ecommerce2.png";
+import Ecommerce3 from "./images/ecommerce/ecommerce3.png";
+import Ecommerce4 from "./images/ecommerce/ecommerce4.png";
 
+import Gas from "./images/gas/gas.png";
+import Gas1 from "./images/gas/gas1.png";
+import Gas2 from "./images/gas/gas2.jpg";
+
+import Kyc from "./images/kyc/kyc.png";
+import Kyc1 from "./images/kyc/kyc1.png";
+// import Kyc2 from "./images/kyc/kyc2.png";
+
+import Carrendal from "./images/carrendal/carrendal.png";
+
+import Tailoring from "./images/tailoring/tailoring.jpg";
 
 
 // src/products/productsData.js
@@ -80,7 +96,7 @@ const productsData = [
   {
     id: 2,
     title: "E-Commerce Store",
-    image: "https://pcstech.in/static/media/e%20commerce.f3223133494f1275b6b2.png",
+    image: Ecommerce,
     description: "A shopping platform with product filters, cart system, and checkout.",
     overview: "Zestocart is a modern full-stack e-commerce web application built using React.js, Node.js, Express.js, and MySQL. It provides users with a seamless shopping experience, supporting features such as product browsing, cart management, wishlist, checkout, secure payments, order history, tracking, and invoice generation.",
     technology_stack: [
@@ -122,15 +138,16 @@ const productsData = [
       }
     ],
     screenshots: [
-      "https://pcstech.in/static/media/e%20commerce.f3223133494f1275b6b2.png",
-      "https://pcstech.in/static/media/e%20commerce.f3223133494f1275b6b2.png",
-      "https://pcstech.in/static/media/e%20commerce.f3223133494f1275b6b2.png"
+      Ecommerce1,
+      Ecommerce2,
+      Ecommerce3,
+      Ecommerce4
     ]
   },
   {
     id: 3,
     title: "KYC System",
-    image: "https://pcstech.in/static/media/kyc.c51f92619c2c73661f51.jpeg",
+    image: Kyc,
     description: "A secure and automated system to verify customer identity and ensure compliance with regulatory standards.",
     overview: "A secure and automated system to verify customer identity and ensure compliance with regulatory standards, supporting document uploads, verification statuses, and audit logs.",
     technology_stack: [
@@ -167,9 +184,7 @@ const productsData = [
       }
     ],
     screenshots: [
-      "https://pcstech.in/static/media/kyc.c51f92619c2c73661f51.jpeg",
-      "https://pcstech.in/static/media/kyc.c51f92619c2c73661f51.jpeg",
-      "https://pcstech.in/static/media/kyc.c51f92619c2c73661f51.jpeg"
+      Kyc1,
     ]
   },
   {
@@ -219,7 +234,7 @@ const productsData = [
   {
     id: 5,
     title: "Car Rental App",
-    image: "https://pcstech.in/static/media/car.6613c3edb0420ec8c8cf.jpeg",
+    image: Carrendal,
     description: "A smart car rental solution offering hassle-free booking, flexible options, and doorstep delivery.",
     overview: "A modern car rental management solution for booking, fleet management, flexible pricing, and door-step delivery.",
     technology_stack: [
@@ -256,15 +271,15 @@ const productsData = [
       }
     ],
     screenshots: [
-      "https://pcstech.in/static/media/car.6613c3edb0420ec8c8cf.jpeg",
-      "https://pcstech.in/static/media/car.6613c3edb0420ec8c8cf.jpeg",
-      "https://pcstech.in/static/media/car.6613c3edb0420ec8c8cf.jpeg"
+      "",
+      "",
+      ""
     ]
   },
   {
     id: 6,
     title: "Gas Booking App",
-    image: "https://pcstech.in/static/media/gas1.38d2d0a543811cc66b76.avif",
+    image: Gas,
     description: "Easily book and track your gas cylinder anytime, anywhere with just a tap.",
     overview: "A user-friendly app to book and track gas cylinder deliveries with scheduling, tracking, and order history.",
     technology_stack: [
@@ -296,9 +311,8 @@ const productsData = [
       }
     ],
     screenshots: [
-      "https://pcstech.in/static/media/gas1.38d2d0a543811cc66b76.avif",
-      "https://pcstech.in/static/media/gas1.38d2d0a543811cc66b76.avif",
-      "https://pcstech.in/static/media/gas1.38d2d0a543811cc66b76.avif"
+      Gas1,
+      Gas2
     ]
   },
    {
@@ -484,7 +498,7 @@ const productsData = [
   {
     id: 10,
     title: "Tailoring Mobile App",
-    image: "https://pcstech.in/static/media/tailor.9b4c21d9eff7225c47ae.webp",
+    image:Tailoring,
     description: "Your personal tailor in your pocket – stitch, style, and track orders effortlessly.",
     overview: "A tailoring & alterations app to place stitch orders, store measurements, track orders and manage tailors with pickup/delivery options.",
     technology_stack: [
@@ -520,9 +534,9 @@ const productsData = [
       }
     ],
     screenshots: [
-      "https://pcstech.in/static/media/tailor.9b4c21d9eff7225c47ae.webp",
-      "https://pcstech.in/static/media/tailor.9b4c21d9eff7225c47ae.webp",
-      "https://pcstech.in/static/media/tailor.9b4c21d9eff7225c47ae.webp"
+      "",
+      "",
+      ""
     ]
   }
 ];
