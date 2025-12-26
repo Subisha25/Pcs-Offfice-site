@@ -10,9 +10,9 @@ const TrainingJourney = () => {
     <div className="trainingjourney-container">
       <div className="trainingjourney-content">
         <h2 className="trainingjourney-title">
-          Start Your <span className="trainingjourney-highlight-learning">Learning</span>
+          Start your <span className="trainingjourney-highlight-learning">learning</span>
           <br />
-          <span className="trainingjourney-highlight-journey">Journey</span> Today!
+          <span className="trainingjourney-highlight-journey">journey</span> today!
         </h2>
         
         <p className="trainingjourney-description">

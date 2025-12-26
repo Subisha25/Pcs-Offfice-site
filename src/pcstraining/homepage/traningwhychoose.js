@@ -58,7 +58,7 @@ const TraningWhyChoose = () => {
 
           <h2 className="traningwhychoose-title">
             Why Choose Us for Your Learning {" "}
-            <span className="traningwhychoose-title-highlight">Journey</span>
+            <span className="traningwhychoose-title-highlight">journey</span>
           </h2>
 
           <p className="traningwhychoose-description">

@@ -46,10 +46,10 @@ const  TraningPopular = () => {
         {/* Header */}
         <div className="traningpopular-header">
           <div className="traningpopular-heading">
-            <p className="traningpopular-eyebrow">Discover Our</p>
+            <p className="traningpopular-eyebrow">Discover our</p>
             <h2 className="traningpopular-title">
-              Most{" "}
-              <span className="traningpopular-title-highlight">Popular</span>{" "}
+              most{" "}
+              <span className="traningpopular-title-highlight">popular</span>{" "}
               Courses
             </h2>
           </div>

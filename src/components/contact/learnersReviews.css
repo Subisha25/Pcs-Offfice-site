@@ -21,6 +21,7 @@
 }
 
 .successlearnreviews-title {
+  font-family: "WF Visual Sans";
   font-weight: 500;
   font-size: 48px;
   line-height: 1.15;
@@ -188,7 +189,7 @@
 
   .successlearnreviews-title,
   .successlearnreviews-title-highlight {
-    font-size: 34px;
+    font-size: 28px;
   }
 
   .learnreviews-carousel {
