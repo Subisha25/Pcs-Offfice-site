@@ -426,10 +426,6 @@
     justify-content: center;
   }
   
-  .train-home-ban-avatar {
-    display: none;
-  }
-  
   .train-home-ban-footer {
     gap: 24px;
     font-size: 13px;
@@ -437,6 +433,32 @@
   
   .train-home-ban-category::after {
     right: -16px;
+  }
+   .train-home-ban-avatar {
+    display: block;
+    width: 70px !important;
+    height: 70px !important;
+    opacity: 0.9;
+  }
+
+  .train-home-ban-avatar-1 {
+    top: 40px;
+    left: 10px;
+  }
+
+  .train-home-ban-avatar-2 {
+    top: 220px;
+    left: 10px;
+  }
+
+  .train-home-ban-avatar-3 {
+    top: 20px;
+    right: 10px;
+  }
+
+  .train-home-ban-avatar-4 {
+    top: 40px;
+    right: 10px;
   }
 }
 
@@ -486,6 +508,31 @@
   
   .train-home-ban-category::after {
     content: none;
+  }
+   .train-home-ban-avatar {
+    width: 65px !important;
+    height: 65px !important;
+    opacity: 0.95;
+  }
+
+  .train-home-ban-avatar-1 {
+    top: -35px;
+    left: 8px;
+  }
+
+  .train-home-ban-avatar-4 {
+    top: -35px;
+    right: 8px;
+  }
+
+  .train-home-ban-avatar-2 {
+    top: 230px;
+    left: 8px;
+  }
+
+  .train-home-ban-avatar-3 {
+    top: 230px;
+    right: 8px;
   }
 }
 
