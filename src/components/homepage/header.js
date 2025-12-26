@@ -322,11 +322,15 @@ function Header() {
   const isAnimOpen = menuOpen || autoOpenAnim;
 
   return (
-    <header
-      className={`header ${isScrolled ? "scrolled" : ""} ${
-        isScrolled && !menuOpen ? "small" : ""
-      } ${isAnimOpen ? "menu-open" : ""} ${menuReveal ? "menu-reveal" : ""}`}
-    >
+  <header
+  className={`header 
+    ${isScrolled ? "scrolled" : ""} 
+    ${isScrolled && !menuOpen && !isMobile ? "small" : ""}
+    ${isAnimOpen ? "menu-open" : ""} 
+    ${menuReveal ? "menu-reveal" : ""}
+  `}
+>
+
       <div
         className="header-container"
         onClick={isScrolled ? handleMenuClick : undefined}
@@ -339,7 +343,7 @@ function Header() {
             navigate("/");
           }}
         >
-          <img src={isScrolled && !menuOpen ? logoSmall : logo} alt="PCS Logo" />
+          <img src={isScrolled && !menuOpen && !isMobile? logoSmall : logo} alt="PCS Logo" />
         </div>
 
         {/* Desktop Menu */}

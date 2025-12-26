@@ -341,16 +341,12 @@ padding-bottom: 40px;
 
   /* CONTACT BLOCKS CENTER + STACKED */
   .footer-middle {
-    flex-direction: column;
+    /* flex-direction: column; */
     text-align: center;
     gap: 22px;
     margin-top: 12px;
   }
 
-  .info-block {
-    width:100%;
-    text-align: center;
-  }
 
   .info-title {
     justify-content: center;
@@ -773,6 +769,54 @@ font-weight: 500;
     display: block;   /* 👈 keela pogum */
     margin-top: 4px;
   }
+  
+
+  .footer-middle {
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+  }
+
+  .footer-middle .info-block {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* ADDRESS */
+  .footer-middle .info-block:nth-child(3) p {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    text-align: center;
+
+    white-space: normal;
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: unset;
+
+    padding: 0;          /* 🔥 IMPORTANT */
+    margin: 10px auto;
+  }
+  .info-title {
+    justify-content: center;
+  }
+
+  .info-block p {
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* LET’S DISCUSS BUTTON CENTER */
+  .info-block.enroll-block {
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .enroll-btn {
+    margin: 12px auto 0;
+  }
+
 }
 
 /* ✅ MOBILE VIEW – ADDRESS same weight as MAIL */
@@ -782,20 +826,6 @@ font-weight: 500;
   }
 }
 
-
-
-@media (max-width: 768px) {
-  .footer-middle .info-block:nth-child(3) p {
-    white-space: normal;
-    overflow: visible;
-    display: block;
-    -webkit-line-clamp: unset;
-    font-size: 14px;
-    line-height: 22px;
-    text-align: center;
-       padding-left: 12px;   /* 👈 value increase/decrease pannalaam */
-  }
-}
 @media (max-width: 768px) {
   .footer-center {
     /* margin-left: 0;          desktop negative margin remove */

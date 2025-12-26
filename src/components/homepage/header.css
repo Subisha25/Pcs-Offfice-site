@@ -426,6 +426,8 @@ transition:
   .header.small .header-container {
     width: 65% !important;
     max-width: 300px !important;
+  border: 1px solid white;
+
   }
 }
 
