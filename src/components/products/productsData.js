@@ -32,13 +32,28 @@ import Gas from "./images/gas/gas.png";
 import Gas1 from "./images/gas/gas1.png";
 import Gas2 from "./images/gas/gas2.jpg";
 
-import Kyc from "./images/kyc/kyc.png";
 import Kyc1 from "./images/kyc/kyc1.png";
+import Kyc2 from "./images/kyc/kyc2.png";
+import Kyc3 from "./images/kyc/kyc3.png";
+import Kyc4 from "./images/kyc/kyc4.png";
+import Kyc5 from "./images/kyc/kyc5.png";
+
+
 // import Kyc2 from "./images/kyc/kyc2.png";
 
 import Carrendal from "./images/carrendal/carrendal.png";
+import Car1 from "./images/carrendal/car1.png";
+import Car2 from "./images/carrendal/car2.png";
+import Car3 from "./images/carrendal/car3.png";
+import Car4 from "./images/carrendal/car4.png";
 
 import Tailoring from "./images/tailoring/tailoring.jpg";
+import Tailoring1 from "./images/tailoring/tailor1.png";
+import Tailoring2 from "./images/tailoring/tailor2.png";
+import Tailoring3 from "./images/tailoring/tailor3.png";
+import Tailoring4 from "./images/tailoring/tailor4.png";
+import Tailoring5 from "./images/tailoring/tailor5.png";
+
 
 
 // src/products/productsData.js
@@ -147,7 +162,7 @@ const productsData = [
   {
     id: 3,
     title: "KYC System",
-    image: Kyc,
+    image: Kyc1,
     description: "A secure and automated system to verify customer identity and ensure compliance with regulatory standards.",
     overview: "A secure and automated system to verify customer identity and ensure compliance with regulatory standards, supporting document uploads, verification statuses, and audit logs.",
     technology_stack: [
@@ -184,7 +199,10 @@ const productsData = [
       }
     ],
     screenshots: [
-      Kyc1,
+     Kyc2,
+      Kyc3,
+      Kyc4,
+      Kyc5
     ]
   },
   {
@@ -271,9 +289,10 @@ const productsData = [
       }
     ],
     screenshots: [
-      "",
-      "",
-      ""
+      Car1,
+      Car2,
+      Car3,
+      Car4,
     ]
   },
   {
@@ -534,9 +553,11 @@ const productsData = [
       }
     ],
     screenshots: [
-      "",
-      "",
-      ""
+      Tailoring1,
+      Tailoring2,
+      Tailoring3,
+      Tailoring4,
+      Tailoring5
     ]
   }
 ];
