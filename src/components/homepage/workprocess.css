@@ -298,181 +298,39 @@
 
 /* ================= SMALL MOBILE (up to 480px) ================= */
 @media (max-width: 480px) {
-  .workprocess {
-    padding: 20px;
-  }
 
-  .animated-text {
-    font-size: 24px;
-  }
-
-  .ourwork-main-heading {
-    font-size: 24px;
-  }
-
-  /* .workprocess-card {
-    max-width: 100%;
-    padding: 24px 20px;
-  } */
-.workprocess-card {
-
-  width: 280px;
-
-}
-  .workprocess-card-title {
-    font-size: 18px;
-  }
-
-  .workprocess-card-description {
-    font-size: 13px;
-  }
-}
-@media (max-width: 375px) {
-  /* .workprocess {
-    padding: 40px 16px;
-  }
-
-  .workprocess-section {
-    padding: 30px 16px;
-  } */
-
-  .animated-text {
-    font-size: 28px;
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
-  .ourwork-main-heading {
-    font-size: 28px;
-  }
-
-  .our-works-bg-image {
-    height: 32px;
-  }
-
-  .ourwork-icon-svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .our-works-text {
-    font-size: 12px;
-    left: 32px;
-  }
-
-  /* Stack cards vertically on mobile */
   .workprocess-scroll-area {
     padding: 0 16px;
   }
 
   .workprocess-cards-grid {
     position: static;
-    height: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    margin-left: 20px;
+    margin: 0 auto;
   }
 
   .workprocess-card {
     position: relative !important;
     transform: none !important;
     left: auto !important;
-    width: 100%;
-    max-width: 340px;
-    min-height: auto;
-    padding: 28px 24px;
-  }
-
-  .workprocess-icon-wrapper {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 20px;
+    width: clamp(260px, 90vw, 340px);
+    padding: clamp(20px, 5vw, 28px);
+    border-radius: 18px;
   }
 
   .workprocess-card-title {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: clamp(18px, 5vw, 22px);
   }
 
   .workprocess-card-description {
-    font-size: 14px;
+    font-size: clamp(13px, 4vw, 15px);
     line-height: 1.5;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 374px) {
-  /* .workprocess {
-    padding: 40px 16px;
-  }
-
-  .workprocess-section {
-    padding: 30px 16px;
-  } */
-
-  .animated-text {
-    font-size: 28px;
-    max-width: 100%;
-    padding: 0 10px;
   }
 
   .ourwork-main-heading {
-    font-size: 28px;
-  }
-
-  .our-works-bg-image {
-    height: 32px;
-  }
-
-  .ourwork-icon-svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .our-works-text {
-    font-size: 12px;
-    left: 32px;
-  }
-
-  /* Stack cards vertically on mobile */
-  .workprocess-scroll-area {
-    padding: 0 16px;
-  }
-
-  .workprocess-cards-grid {
-    position: static;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    margin-left: -5px;
-  }
-
-  .workprocess-card {
-    position: relative !important;
-    transform: none !important;
-    left: auto !important;
-    width: 100%;
-    max-width: 340px;
-    min-height: auto;
-    padding: 28px 24px;
-  }
-
-  .workprocess-icon-wrapper {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 20px;
-  }
-
-  .workprocess-card-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .workprocess-card-description {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: clamp(24px, 6vw, 32px);
   }
 }
