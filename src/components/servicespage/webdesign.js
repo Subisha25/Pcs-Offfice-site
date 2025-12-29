@@ -14,7 +14,7 @@ import Discover from "../assets/discovers.png";
 import Deliver from "../assets/deliver.png";
 import Create from "../assets/create.png";
 import Grow from "../assets/grow.png";
-
+import TechLogoStrip from "./teachstrip";
 function PurposeSection() {
   const cardsRef = useRef(null);
   const [animate, setAnimate] = useState(false);
@@ -313,8 +313,7 @@ export default function Webdesign() {
           </div>
         </div>
       </div>
-
-      {/* PURPOSE SCROLL SECTION + CTA */}
+<TechLogoStrip />
       <PurposeSection />
       <CTASection />
     </>

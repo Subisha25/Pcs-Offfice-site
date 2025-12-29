@@ -807,5 +807,8 @@ text-align: center;
   }
 }
 
-
-
+/* REMOVE EXTRA SPACE BELOW RESULT SECTION */
+.sw-result {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
