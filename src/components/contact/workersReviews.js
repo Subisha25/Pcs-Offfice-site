@@ -6,38 +6,32 @@ const testimonials = [
   {
     name: "Manju",
     role: "Full Stack Developer",
-    text: "The Full Stack Development course at PCS was highly practical and well structured. Working on real-time projects helped me strengthen both frontend and backend skills with confidence.",
-    initial: "J",
-  },
-  {
-    name: "Ruso K",
-    role: "Full Stack Developer",
-    text: "PCS provided excellent hands-on training with clear explanations. The trainers focused on real-world development scenarios, which made learning fast and effective.",
+    text: "Working at PCS as a Full Stack Developer has given me strong hands-on experience in both frontend and backend technologies. The project-based work culture helped me improve my problem-solving skills and write clean, scalable code.",
     initial: "M",
   },
   {
     name: "Kalai V",
     role: "Full Stack Developer",
-    text: "The course content was industry-oriented and easy to follow. Building complete applications during the training helped me improve my problem-solving and coding skills.",
-    initial: "M",
+    text: "PCS provides a professional environment where developers are encouraged to learn and grow. I gained solid experience in building end-to-end applications and collaborating with team members on real-time projects.",
+    initial: "K",
   },
   {
     name: "Surya",
     role: "Full Stack Developer",
-    text: "The program provided a realistic work environment. I gained practical experience in developing projects, collaborating with peers, and applying theoretical knowledge to solve real challenges.",
+    text: "As a Full Stack Developer at PCS, I worked on real-world applications that strengthened my understanding of system design, APIs, and frontend performance. The exposure to live projects helped me grow professionally.",
     initial: "S",
   },
   {
     name: "Marish S",
-    role: "Full Stack Web Developer",
-    text: "I gained strong knowledge in React, Node.js, and database integration. The practical approach and mentor support made a huge difference in my learning journey.",
-    initial: "S",
+    role: "Full Stack Developer",
+    text: "My experience at PCS has been very valuable. I worked extensively with React, backend services, and databases. The structured workflow and technical guidance helped me deliver quality solutions confidently.",
+    initial: "M",
   },
   {
     name: "Abishak S",
-    role: "Mobile Application Developer",
-    text: "PCS training boosted my confidence as a developer. The live projects and continuous guidance prepared me well for real-time development and interviews.",
-    initial: "R",
+    role: "Full Stack Developer",
+    text: "PCS helped me enhance my skills as a Full Stack Developer through continuous learning and real-time project exposure. The professional work environment and technical discussions improved both my coding and analytical abilities.",
+    initial: "A",
   },
 ];
 

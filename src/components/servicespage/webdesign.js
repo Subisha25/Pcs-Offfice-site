@@ -1,261 +1,83 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,useRef, useState } from "react";
 import "./webdesign.css";
+import "../homepage/workprocess.css";
+
 import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 
 import Mockup from "../assets/servicebanner.png";
 import Team from "../assets/service1.png";
 import Result from "../assets/service2.png";
 
-import Whychoose from "../assets/whychoose.png";
+import CTASection from "../homepage/cta";
+import CommonTopTag from "../common/toptag";
 import Discover from "../assets/discovers.png";
 import Deliver from "../assets/deliver.png";
 import Create from "../assets/create.png";
 import Grow from "../assets/grow.png";
 
-import CTASection from "../homepage/cta";
-import CommonTopTag from "../common/toptag";
-
-/* ==================== PURPOSE SECTION (SCROLL PIN) ==================== */
-
 function PurposeSection() {
-  const wrapperRef = useRef(null);
-  const containerRef = useRef(null);
-  const titleRef = useRef(null);
-  const badgeRef = useRef(null);
-  const cardsRef = useRef([]);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const isMobile = window.innerWidth <= 768;
-
-
+  const cardsRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+  /* ================= CARD FLOWER EFFECT ================= */
   useEffect(() => {
-    const handleScroll = () => {
-      if (!wrapperRef.current) return;
-
-      const wrapper = wrapperRef.current;
-      const rect = wrapper.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const wrapperHeight = wrapper.offsetHeight;
-
-      // Calculate scroll progress when section is in view
-      if (rect.top <= 0 && rect.bottom >= windowHeight) {
-        const scrolled = Math.abs(rect.top);
-        const scrollRange = wrapperHeight - windowHeight;
-        const progress = Math.min(Math.max(scrolled / scrollRange, 0), 1);
-        setScrollProgress(progress);
-      } else if (rect.top > 0) {
-        setScrollProgress(0);
-      } else {
-        setScrollProgress(1);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Badge visibility (0–10% scroll)
-  const badgeOpacity = Math.min(scrollProgress * 10, 1);
-
-  // Typewriter effect (10–30% scroll)
-  const typewriterProgress = Math.min(
-    Math.max((scrollProgress - 0.1) / 0.2, 0),
-    1
-  );
-  const fullText = "Design with purpose,";
-
-  // mobile-la full text direct show
-  const typedText = isMobile
-    ? fullText
-    : fullText.substring(
-      0,
-      Math.floor(fullText.length * typewriterProgress)
-    );
-
-  const showCursor = !isMobile && typewriterProgress < 1;
-
-
-  // Title movement (30–60% scroll)
-  const titleMoveProgress = Math.min(
-    Math.max((scrollProgress - 0.3) / 0.3, 0),
-    1
-  );
-  const titleTranslateY = -120 * titleMoveProgress; // softer move
-  const titleScale = 1 - 0.2 * titleMoveProgress;
-
-  // Cards visibility (60–100% scroll)
-  const cardsStartProgress = 0.6;
-  const getCardOpacity = (index) => {
-    const cardProgress =
-      (scrollProgress - cardsStartProgress - index * 0.08) / 0.08;
-    return Math.min(Math.max(cardProgress, 0), 1);
-  };
-
-  const getCardTransform = (index) => {
-    const opacity = getCardOpacity(index);
-    const translateY = 50 * (1 - opacity);
-    const scale = 0.9 + 0.1 * opacity;
-    return { opacity, translateY, scale };
-  };
-
-  const cardsData = [
-    {
-      img: Discover,
-      title: "Discover",
-      text: "We start by listening and learning—diving deep into your brand, audience, and goals to uncover insights that shape every decision.",
-    },
-    {
-      img: Create,
-      title: "Create",
-      text: "With clarity in hand, we craft bold ideas and transform them into designs, stories, and experiences that resonate.",
-    },
-    {
-      img: Deliver,
-      title: "Deliver",
-      text: "From concept to launch, we ensure every detail is polished, impactful, and aligned with your vision for lasting results.",
-    },
-    {
-      img: Grow,
-      title: "Grow",
-      text: "We don't stop at the launch. We analyze performance, gather feedback, and fine-tune to ensure your brand thrives in the digital world.",
-    },
-  ];
-
-  // Responsive: pin only on large screens (>= 1024px)
-  const [isPinned, setIsPinned] = useState(false);
-
-  useEffect(() => {
-    function updatePinned() {
-      setIsPinned(window.innerWidth >= 1024);
-    }
-
-    updatePinned();
-    window.addEventListener("resize", updatePinned);
-    return () => window.removeEventListener("resize", updatePinned);
-  }, []);
-
-  // IntersectionObserver-based reveal for small/tablet screens
-  useEffect(() => {
-    // if pinned (large screens) -> we rely on scroll-driven transforms
-    if (isPinned) return;
-
-    // make sure refs are set
-    const els = cardsRef.current.filter(Boolean);
-    if (!els.length) return;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const idx = entry.target.dataset.index || 0;
-          if (entry.isIntersecting) {
-            entry.target.classList.add("card-visible");
-            // stagger small delay per index
-            entry.target.style.transitionDelay = `${idx * 80}ms`;
-          } else {
-            entry.target.classList.remove("card-visible");
-            entry.target.style.transitionDelay = "0ms";
-          }
-        });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setAnimate(true), 400);
+        } else {
+          setAnimate(false);
+        }
       },
-      {
-        threshold: 0.15,
-      }
+      { threshold: 0.4 }
     );
 
-    els.forEach((el) => {
-      el.classList.remove("card-visible");
-      // ensure dataset index exists for stagger
-      if (typeof el.dataset.index === "undefined" || el.dataset.index === "") {
-        el.dataset.index = String(cardsRef.current.indexOf(el));
-      }
-      io.observe(el);
-    });
-
-    return () => io.disconnect();
-  }, [isPinned]);
-
+    if (cardsRef.current) observer.observe(cardsRef.current);
+    return () => observer.disconnect();
+  }, []);
   return (
-    <div className="purpose-scroll-wrapper" ref={wrapperRef}>
+    <div className="purpose-container">
       <div
-        className="purpose-container"
-        ref={containerRef}
-        style={{
-          position: isPinned
-            ? scrollProgress > 0 && scrollProgress < 1
-              ? "fixed"
-              : "absolute"
-            : "absolute",
-          top: isPinned ? (scrollProgress >= 1 ? "auto" : "0") : "auto",
-          bottom: isPinned ? (scrollProgress >= 1 ? "0" : "auto") : "auto",
-        }}
+        className=""
       >
         {/* Top Badge */}
-        <div className="purpose-badge-box" ref={badgeRef}>
+        <div className="" >
           <CommonTopTag text="Why Choose Us" icon={tagicon} />
         </div>
-
-
-        {/* Main Heading with Typewriter */}
-        <h2
-          className="purpose-title"
-          ref={titleRef}
-          style={
-            isMobile
-              ? { transform: "none", transition: "none" }
-              : {
-                transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
-                transition: "transform 0.1s linear",
-              }
-          }
+        <p className="webdesign-p">
+          Design with purpose,
+        </p>
+        <p className="webdesign-p"> built with{" "}
+          <span className="highlight-result">results</span>
+        </p>
+         <div className="workprocess-scroll-area">
+        <div
+          ref={cardsRef}
+          className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
         >
-
-          <span className="typewriter-text">
-            {typedText}
-            {showCursor && <span className="cursor">|</span>}
-          </span>
-          <br />
-          built with <span className="highlight">results</span>
-        </h2>
-
-        {/* Cards Section */}
-        <div className="purpose-cards">
-          {cardsData.map((card, index) => {
-            const { opacity, translateY, scale } = getCardTransform(index);
-            const cardStyle =
-              isPinned && !isMobile
-                ? {
-                  opacity,
-                  transform: `translateY(${translateY}px) scale(${scale})`,
-                  transition: "opacity 0.3s ease, transform 0.3s ease",
-                }
-                : {
-                  opacity: 1,
-                  transform: "none",
-                  transition: "none",
-                };
-
-            return (
-              <div
-                key={index}
-                className="purpose-card"
-                ref={(el) => (cardsRef.current[index] = el)}
-                data-index={index}
-                style={cardStyle}
-              >
-
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="purpose-icon"
-                />
-                <h3 className="purpose-card-title">{card.title}</h3>
-                <p className="purpose-card-text">{card.text}</p>
-              </div>
-            );
-          })}
+          <Card img={Discover} title="Discover  & " sub="Strategize"
+            text="We dive deep into understanding your brand, goals, and audience." />
+          <Card img={Deliver} title="Conversion &" sub="Focused"
+            text="Our layouts are performance-driven and guide users clearly." />
+          <Card img={Create} title="Build  & " sub="Launch"
+            text="We design and build with precision and clarity." />
+          <Card img={Grow} title="Refine  & " sub="Grow"
+            text="We analyze performance and continuously refine your growth." />
         </div>
       </div>
+      </div>
+    </div>
+  );
+}
+function Card({ img, title, sub, text }) {
+  return (
+    <div className="workprocess-card">
+      <div className="workprocess-icon-wrapper">
+        <img src={img} alt="" />
+      </div>
+      <h3 className="workprocess-card-title">
+        {title} <br /> {sub}
+      </h3>
+      <p className="workprocess-card-description">{text}</p>
     </div>
   );
 }

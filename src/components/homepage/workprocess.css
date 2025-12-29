@@ -71,6 +71,7 @@
 }
 
 .workprocess-cards-grid {
+  margin: 50px;
   position: relative;
    height: 300px;
 }
