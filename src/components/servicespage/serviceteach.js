@@ -54,7 +54,7 @@ export default function TechLogoScroll() {
       <style>{`
         /* ===== DESKTOP DEFAULT ===== */
         .tech-scroll {
-          padding: 70px 20px;
+          padding: 10px 10px 10px; ;
           text-align: center;
         }
 
