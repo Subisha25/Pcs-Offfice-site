@@ -8,6 +8,7 @@ import reactLogo from "../../components/assets/teach/react.svg";
 import node from "../../components/assets/teach/node.svg";
 import java from "../../components/assets/teach/java.svg";
 import python from "../../components/assets/teach/python.svg";
+import php from "../../components/assets/teach/php.svg";
 import django from "../../components/assets/teach/django.svg";
 import flask from "../../components/assets/teach/flask-svgrepo-com.svg";
 import android from "../../components/assets/teach/android-svgrepo-com.svg";
@@ -27,6 +28,7 @@ export default function TechLogoScroll() {
     { name: "Node.js", img: node },
     { name: "Java", img: java },
     { name: "Python", img: python },
+    { name: "PHP", img: php },
     { name: "Django", img: django },
     { name: "Flask", img: flask },
     { name: "Android", img: android },
