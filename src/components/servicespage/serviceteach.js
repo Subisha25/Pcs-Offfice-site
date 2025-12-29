@@ -41,11 +41,11 @@ export default function TechLogoScroll() {
   ];
 
   return (
-    <section className="tech-scroll">
-      <div className="scroll-wrapper">
-        <div className="scroll-track">
+    <section className="serviceteach-scroll">
+      <div className="serviceteach-wrapper">
+        <div className="serviceteach-track">
           {[...techs, ...techs].map((tech, i) => (
-            <div className="tech-card" key={i}>
+            <div className="serviceteach-card" key={i}>
               <img src={tech.img} alt={tech.name} />
               <span>{tech.name}</span>
             </div>
@@ -55,24 +55,24 @@ export default function TechLogoScroll() {
 
       <style>{`
         /* ===== DESKTOP DEFAULT ===== */
-        .tech-scroll {
-          padding: 10px 10px 10px; ;
+        .serviceteach-scroll {
+          padding: 10px 10px 10px;
           text-align: center;
         }
 
-        .scroll-wrapper {
+        .serviceteach-wrapper {
           overflow: hidden;
           margin-top: 50px;
         }
 
-        .scroll-track {
+        .serviceteach-track {
           display: flex;
           gap: 28px;
           width: max-content;
-          animation: scroll-left 35s linear infinite;
+          animation: serviceteach-scroll-left 35s linear infinite;
         }
 
-        .tech-card {
+        .serviceteach-card {
           min-width: 160px;
           padding: 26px 16px;
           border-radius: 14px;
@@ -81,88 +81,88 @@ export default function TechLogoScroll() {
           align-items: center;
         }
 
-        .tech-card img {
+        .serviceteach-card img {
           width: 44px;
           height: 44px;
           object-fit: contain;
           margin-bottom: 12px;
         }
 
-        .tech-card span {
+        .serviceteach-card span {
           font-size: 14px;
           font-weight: 500;
           color: #22282b;
         }
 
-        @keyframes scroll-left {
+        @keyframes serviceteach-scroll-left {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
 
         /* ===== MOBILE 425px ===== */
         @media (max-width: 425px) {
-          .tech-scroll {
-            padding: 40px 10px;
+          .serviceteach-scroll {
+            padding: 0px 10px 20px;
           }
 
-          .scroll-track {
+          .serviceteach-track {
             gap: 16px;
             animation-duration: 28s;
           }
 
-          .tech-card {
+          .serviceteach-card {
             min-width: 110px;
             padding: 14px 8px;
           }
 
-          .tech-card img {
+          .serviceteach-card img {
             width: 30px;
             height: 30px;
             margin-bottom: 6px;
           }
 
-          .tech-card span {
+          .serviceteach-card span {
             font-size: 11px;
           }
         }
 
         /* ===== MOBILE 375px ===== */
         @media (max-width: 375px) {
-          .scroll-track {
+          .serviceteach-track {
             gap: 14px;
           }
 
-          .tech-card {
+          .serviceteach-card {
             min-width: 100px;
           }
 
-          .tech-card img {
+          .serviceteach-card img {
             width: 28px;
             height: 28px;
           }
 
-          .tech-card span {
+          .serviceteach-card span {
             font-size: 10.5px;
           }
         }
 
         /* ===== MOBILE 320px ===== */
         @media (max-width: 320px) {
-          .scroll-track {
+          .serviceteach-track {
             gap: 12px;
           }
 
-          .tech-card {
+          .serviceteach-card {
             min-width: 90px;
             padding: 10px 6px;
           }
 
-          .tech-card img {
+          .serviceteach-card img {
             width: 26px;
             height: 26px;
           }
 
-          .tech-card span {
+          .serviceteach-card span {
             font-size: 10px;
           }
         }

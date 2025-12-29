@@ -269,3 +269,31 @@
     transition: none;
   }
 }
+
+
+/* ================= MOBILE BG LOCK (<= 768px) ================= */
+@media (max-width: 768px) {
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    background: #f5f5f5;
+  }
+
+  .workersreviews {
+    width: 100vw;                 /* 🔒 full viewport */
+    padding: 24px 16px 64px;      /* 🔒 SAME ALL DEVICES */
+    background: #f5f5f5;
+    margin: 0;
+  }
+
+  .workersreviews-inner {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .workersreviews-carousel-viewport {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
