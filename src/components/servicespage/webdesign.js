@@ -36,9 +36,7 @@ function PurposeSection() {
   }, []);
   return (
     <div className="purpose-container">
-      <div
-        className=""
-      >
+    
         {/* Top Badge */}
         <div className="" >
           <CommonTopTag text="Why Choose Us" icon={tagicon} />
@@ -65,7 +63,6 @@ function PurposeSection() {
         </div>
       </div>
       </div>
-    </div>
   );
 }
 function Card({ img, title, sub, text }) {

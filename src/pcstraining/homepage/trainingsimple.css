@@ -70,8 +70,8 @@
   position: absolute;
   top: 0;
   left: 50%;
-  width: 280px;
-  min-height: 360px;
+  width: 260px;
+  height: 290px;
   padding: 32px;
   background: #FCFCFD;
   border-radius: 18px;
@@ -136,22 +136,7 @@
 }
 
 /* ================= MOBILE ================= */
-@media (max-width: 1024px) {
-  /* .workprocess-cards-grid {
-    position: static;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  } */
 
-  /* .workprocess-card {
-    position: relative;
-    transform: none !important;
-    opacity: 1;
-    margin: 0 auto;
-  } */
-}
 
 /* ================= TABLET (769px - 1024px) ================= */
 @media (min-width: 768px) and (max-width: 1024px) {

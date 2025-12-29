@@ -22,7 +22,7 @@
   font-display: swap;
 }
 .purpose-container {
-  padding: 50px 10px;
+  padding: 50px 10px 5px;
   background: radial-gradient(circle at center,
       #ff006e33 0%,
       #ff006e33 12%,
