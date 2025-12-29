@@ -28,6 +28,7 @@ import ContactSection from "./components/contact/banner";
 import ScrollToTop from "./components/scrolltotop";
 import AllCourses from "./pcstraining/homepage/allcourses";
 import CourseDetails from "./pcstraining/homepage/coursedetails";
+import TechLogoStrip from "./components/servicespage/teachstrip";
 
 
 function App() {
@@ -61,7 +62,7 @@ function App() {
 
         <Route path="/learningJourneyPage" element={<LearningJourneyPage/>} />
 
-
+        <Route path="/teachstrip" element={<TechLogoStrip />} />
         <Route path="/works" element={<Works/>} />
         <Route path="/contact" element={<ContactSection/>} />
         <Route path="/allcourses" element={<AllCourses/>} />

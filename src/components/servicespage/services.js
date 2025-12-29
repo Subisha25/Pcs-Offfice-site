@@ -9,6 +9,7 @@ import ArrowImg from "../assets/services/arrow.png";
 import ServiceBtnImg from "../assets/services/tool.png";
 import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
+import TechLogoStrip from "./serviceteach";
 // import "./workprocess.css";
 
 
@@ -602,6 +603,8 @@ const ServicesSection = () => {
 }
 
       `}</style>
+          <TechLogoStrip />
+
     </div>
   );
 };
