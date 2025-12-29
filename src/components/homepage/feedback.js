@@ -4,47 +4,41 @@ import tagicon from "../assets/allheadingicon/feedbackicon.png";
 import quote from "../assets/quote.svg";
 import leftarrow from "../assets/leftarrow.svg";
 import rightarrow from "../assets/rightarrow.svg";
-import  {  useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import CommonTopTag from "../common/toptag";
 import { Link, useNavigate } from "react-router-dom";
 
 
 const reviewsData = [
   {
-    text: "Built helped us take our marketing to the next level. Their team is skilled, responsive, and dedicated to driving real results. We’ve seen more traffic, better conversions, and an overall boost in business. Worth every penny!",
-    name: "Daniel Kim",
-    role: "Founder of MindEase App",
-    img: "https://i.pravatar.cc/60?img=8",
+    text: "The Lhome project was executed beautifully. The team understood our vision for a modern and welcoming home platform and delivered a clean, user-friendly website. From layout to performance, everything feels perfect.",
+    name: "Raj Kumar",
+    role: "Business Owner",
+    // img: "https://i.pravatar.cc/60?img=11",
   },
   {
-    text: "Amazing service! Their creativity and dedication boosted our brand presence enormously.",
-    name: "Sophia Lee",
-    role: "Marketing Manager",
-    img: "https://i.pravatar.cc/60?img=32",
+    text: "The Nibras project was handled with great clarity and professionalism. The team understood our startup requirements perfectly and delivered a high-quality product on time. The overall experience was smooth and stress-free.",
+    name: "Nausheen",
+    role: "Startup Founder",
+    // img: "https://i.pravatar.cc/60?img=47",
   },
   {
-    text: "Excellent support and timely delivery. Worth every investment made!",
-    name: "John Carter",
-    role: "CEO, UrbanTech",
-    img: "https://i.pravatar.cc/60?img=12",
+    text: "The World Tamil Siragam project was handled with great responsibility and cultural understanding. The team was highly responsive and ensured every stage of development aligned with our vision. The final outcome met all our expectations.",
+    name: "Gopi Ramesh",
+    role: "Project Manager",
+    // img: "https://i.pravatar.cc/60?img=22",
   },
   {
-    text: "Super professional team with a great eye for detail. Highly recommended!",
-    name: "Priya Sharma",
-    role: "Founder, StyleHub",
-    img: "https://i.pravatar.cc/60?img=56",
-  },
-  {
-    text: "Our conversions improved a lot after working with them! Friendly and highly skilled.",
-    name: "Ahmed Raza",
-    role: "Director, FastStore",
-    img: "https://i.pravatar.cc/60?img=45",
+    text: "The Grace Cabs project stood out for its strong development approach and attention to detail. The booking flow, performance, and UI were well optimized, making the platform smooth and reliable for users.",
+    name: "Robert Jeyakumar",
+    role: "Technical Lead",
+    // img: "https://i.pravatar.cc/60?img=33",
   },
 ];
 
 const FeedbackSection = () => {
   const [index, setIndex] = useState(0);
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleNext = () => {
     setIndex((prev) => (prev + 1) % reviewsData.length);
@@ -55,54 +49,54 @@ const navigate = useNavigate();
   };
 
   const current = reviewsData[index];
-const [count, setCount] = useState(0);
-const countRef = useRef(null);
-const [startCount, setStartCount] = useState(false);
+  const [count, setCount] = useState(0);
+  const countRef = useRef(null);
+  const [startCount, setStartCount] = useState(false);
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      if (entries[0].isIntersecting) {
-        setStartCount(true);
-      }
-    },
-    { threshold: 0.5 } // 50% visible aana udane start
-  );
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setStartCount(true);
+        }
+      },
+      { threshold: 0.5 } // 50% visible aana udane start
+    );
 
-  if (countRef.current) {
-    observer.observe(countRef.current);
-  }
-
-  return () => {
     if (countRef.current) {
-      observer.unobserve(countRef.current);
+      observer.observe(countRef.current);
     }
-  };
-}, []);
 
-useEffect(() => {
-  if (!startCount) return;
+    return () => {
+      if (countRef.current) {
+        observer.unobserve(countRef.current);
+      }
+    };
+  }, []);
 
-  let start = 0;
-  const end = 52;
-  const duration = 2000;
-  const stepTime = Math.abs(Math.floor(duration / end));
+  useEffect(() => {
+    if (!startCount) return;
 
-  const timer = setInterval(() => {
-    start += 1;
-    setCount(start);
-    if (start === end) clearInterval(timer);
-  }, stepTime);
+    let start = 0;
+    const end = 10;
+    const duration = 2000;
+    const stepTime = Math.abs(Math.floor(duration / end));
 
-  return () => clearInterval(timer);
-}, [startCount]);
+    const timer = setInterval(() => {
+      start += 1;
+      setCount(start);
+      if (start === end) clearInterval(timer);
+    }, stepTime);
+
+    return () => clearInterval(timer);
+  }, [startCount]);
 
   return (
     <div className="feedback-section">
-      
+
       {/* TOP CENTER */}
       <div className="feedback-header">
-        <CommonTopTag text="Feed Back" icon={tagicon}/>
+        <CommonTopTag text="Feed Back" icon={tagicon} />
 
         <h2>
           Real reviews <br />
@@ -118,16 +112,16 @@ useEffect(() => {
 
           <p className="left-text">Happy Clients</p>
 
-<Link
-  to="/contact"
-  state={{ mode: "work" }}
->
-          <button className="discuss-btn"   onClick={() => navigate("/contact")}>
-            <span className="circle-arrow">
-              <img src={rightarrow} alt="rightarrow" />
-            </span>
-            Let’s Discuss
-          </button>
+          <Link
+            to="/contact"
+            state={{ mode: "work" }}
+          >
+            <button className="discuss-btn" onClick={() => navigate("/contact")}>
+              <span className="circle-arrow">
+                <img src={rightarrow} alt="rightarrow" />
+              </span>
+              Let’s Discuss
+            </button>
           </Link>
         </div>
 
@@ -141,13 +135,16 @@ useEffect(() => {
 
           <div className="profile-line">
             <div className="profile">
-              <img src={current.img} alt="{current.name}" />
+              <div className="avatars-circles">
+                {current.name.charAt(0)}
+              </div>
+
               <div>
                 <h4 className="review-name">{current.name}</h4>
                 <span className="review-role">{current.role}</span>
-
               </div>
             </div>
+
 
             <div className="nav-arrows">
               <button className="arrow-btn" onClick={handlePrev}>

@@ -20,11 +20,12 @@
   font-style: normal;
   font-display: swap;
 }
+
 .feedback-section {
   width: 100%;
   /* padding: 60px 0px 60px; */
-  background-color:#F5F5F5;
-  
+  background-color: #F5F5F5;
+
 }
 
 /* TOP */
@@ -33,13 +34,15 @@
   margin-bottom: 70px;
   margin-top: -10px;
   font-family: "WF Visual Sans" !important;
-  
+
 
 }
+
 .feedback-header h2 {
   margin-top: -10px;
   line-height: 1.05;
 }
+
 .feedback-tag {
   display: inline-flex;
   background: #e2e2e2;
@@ -99,10 +102,10 @@
 
 .left-text {
   font-family: "WF Visual Sans";
-  font-weight: 500;      
+  font-weight: 500;
   font-size: 23px;
-  line-height: 1;          
-  letter-spacing: 0.01em;  
+  line-height: 1;
+  letter-spacing: 0.01em;
   margin-top: -15px;
 }
 
@@ -130,8 +133,9 @@
   justify-content: center;
   align-items: center;
 }
+
 .circle-arrow img {
-   width: 18px;
+  width: 18px;
   height: 18px;
 }
 
@@ -140,7 +144,7 @@
   width: 85%;
   border-left: 2px solid #d6d6d6;
   padding-left: 50px;
-    font-family: "WF Visual Sans" !important;
+  font-family: "WF Visual Sans" !important;
 }
 
 .quote {
@@ -149,33 +153,48 @@
   margin-bottom: 10px;
 }
 
+.avatar-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #03045E;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .review {
   font-family: "WF Visual Sans";
-  font-weight: 500;          
+  font-weight: 500;
   font-size: 28px;
-  line-height: 1.5;            
-  letter-spacing: 0.01em;    
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 
   width: 100%;
   height: 150px;
   padding-left: 40px;
 }
+
 .review-name {
   font-family: "WF Visual Sans";
-  font-weight: 500;         
+  font-weight: 500;
   font-size: 24px;
-  line-height: 1;           
-  letter-spacing: 0.01em;    
-  
+  line-height: 1;
+  letter-spacing: 0.01em;
+
 }
 
 .review-role {
   font-family: "WF Visual Sans";
-  font-weight: 500;       
+  font-weight: 500;
   font-size: 24px;
-  line-height: 1;          
-  letter-spacing: 0.01em;  
-  color: #666;             
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: #666;
 }
 
 .profile-line {
@@ -189,7 +208,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-left: 0; 
+  padding-left: 0;
 }
 
 .profile img {
@@ -227,9 +246,24 @@
   font-size: 20px;
   cursor: pointer;
 }
-.arrow-btn img{
+
+.arrow-btn img {
   width: 18px;
   height: 18px;
+}
+
+.avatars-circles {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #03045E;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 
@@ -242,24 +276,25 @@
   .feedback-section {
     padding: 70px 100px;
   }
-  
+
   .left-box h1 {
     font-size: 100px;
   }
-  
+
   .review {
     font-size: 22px;
   }
 }
+
 @media (max-width: 2560px) {
   .feedback-section {
     padding: 70px 100px;
   }
-  
+
   .left-box h1 {
     font-size: 100px;
   }
-  
+
   .review {
     font-size: 22px;
   }
@@ -267,25 +302,25 @@
 
 /* Medium Laptop (1024px - 1200px) */
 @media (max-width: 1200px) {
- 
-  
+
+
   .feedback-header h2 {
     font-size: 42px;
   }
-  
+
   .left-box h1 {
     font-size: 90px;
   }
-  
+
   .review {
     font-size: 20px;
     padding-left: 30px;
   }
-  
+
   .profile {
     padding-left: 30px;
   }
-  
+
   .right-box {
     padding-left: 40px;
   }
@@ -293,70 +328,70 @@
 
 /* Tablets (768px - 1024px) */
 @media (max-width: 1024px) {
-  
-  
+
+
   .feedback-tag {
     font-size: 20px;
     padding: 4px 24px 4px 4px;
     gap: 15px;
   }
-  
+
   .tagg-icon {
     width: 36px;
     height: 36px;
   }
-  
+
   .feedback-header h2 {
     font-size: 36px;
   }
-  
+
   .feedback-body {
     gap: 30px;
   }
-  
+
   .left-box {
     width: 35%;
   }
-  
+
   .left-box h1 {
     font-size: 80px;
   }
-  
+
   .left-text {
     font-size: 16px;
   }
-  
+
   .discuss-btn {
     font-size: 16px;
     padding: 5px 20px 5px 5px;
     margin-top: 30px;
   }
-  
+
   .circle-arrow {
     width: 42px;
     height: 42px;
   }
-  
+
   .right-box {
     width: 65%;
     padding-left: 30px;
   }
-  
+
   .review {
     font-size: 18px;
     padding-left: 20px;
     min-height: 130px;
   }
-  
+
   .profile {
     padding-left: 20px;
   }
-  
+
   .profile img {
     width: 50px;
     height: 50px;
   }
-  
+
   .arrow-btn {
     width: 45px;
     height: 45px;
@@ -366,32 +401,33 @@
 /* Small Tablets (600px - 768px) */
 @media (max-width: 768px) {
   .feedback-section {
-   display: flex;
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     padding: 50px 30px;
   }
-  
+
   .feedback-header {
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
-    margin-top: 0; 
+    margin-top: 0;
     align-items: center;
   }
-  
+
   .feedback-header h2 {
-    order: 1; /* Heading first varum */
+    order: 1;
+    /* Heading first varum */
     font-size: 32px;
     margin-bottom: 20px;
-    
+
   }
-  
+
   .feedback-body {
     flex-direction: column;
     gap: 40px;
     align-items: center;
   }
-  
+
   .left-box {
     width: 100%;
     text-align: center;
@@ -399,15 +435,15 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .left-box h1 {
     font-size: 90px;
   }
-  
+
   .discuss-btn {
     margin-top: 25px;
   }
-  
+
   .right-box {
     width: 100%;
     border-left: none;
@@ -415,20 +451,20 @@
     padding-left: 0;
     padding-top: 40px;
   }
-  
+
   .review {
     font-size: 20px;
     padding-left: 0;
     text-align: center;
     min-height: auto;
   }
-  
+
   .profile-line {
     flex-direction: column;
     gap: 30px;
     align-items: center;
   }
-  
+
   .profile {
     padding-left: 0;
   }
@@ -439,80 +475,80 @@
   .feedback-section {
     padding: 40px 20px;
   }
-  
+
   .feedback-tag {
     font-size: 18px;
     padding: 4px 20px 4px 4px;
     gap: 12px;
   }
-  
+
   .tagg-icon {
     width: 32px;
     height: 32px;
   }
-  
+
   .feedback-header h2 {
     font-size: 28px;
     line-height: 1.3;
   }
-  
+
   .left-box h1 {
     font-size: 70px;
   }
-  
+
   .left-text {
     font-size: 15px;
     margin-top: -10px;
   }
-  
+
   .discuss-btn {
     font-size: 15px;
     padding: 5px 18px 5px 5px;
     gap: 12px;
   }
-  
+
   .circle-arrow {
     width: 38px;
     height: 38px;
   }
-  
+
   .circle-arrow img {
     width: 16px;
     height: 16px;
   }
-  
+
   .quote {
     font-size: 50px;
   }
-  
+
   .review {
     font-size: 18px;
     line-height: 1.5;
   }
-  
+
   .profile img {
     width: 45px;
     height: 45px;
   }
-  
+
   .profile h4 {
     font-size: 16px;
   }
-  
+
   .profile span {
     font-size: 13px;
   }
-  
+
   .arrow-btn {
     width: 42px;
     height: 42px;
   }
-  
+
   .arrow-btn img {
     width: 16px;
     height: 16px;
   }
-  
+
   .nav-arrows {
     gap: 15px;
   }
@@ -523,105 +559,107 @@
   .feedback-section {
     padding: 40px 15px;
   }
-  
+
   .feedback-header {
     margin-top: 0;
     margin-bottom: 20px;
   }
+
   .left-box p {
-   padding-bottom: 20px;
+    padding-bottom: 20px;
   }
+
   .feedback-tag {
     font-size: 16px;
     padding: 3px 18px 3px 3px;
     gap: 10px;
   }
-  
+
   .tagg-icon {
     width: 28px;
     height: 28px;
   }
-  
+
   .feedback-header h2 {
     font-size: 24px;
   }
-  
+
   .feedback-body {
     margin-top: -50px;
     gap: 30px;
   }
-  
+
   .left-box h1 {
     font-size: 60px;
   }
-  
+
   .left-text {
     font-size: 14px;
   }
-  
+
   .discuss-btn {
     font-size: 14px;
     padding: 4px 16px 4px 4px;
     gap: 10px;
     margin-top: 20px;
   }
-  
+
   .circle-arrow {
     width: 36px;
     height: 36px;
   }
-  
+
   .circle-arrow img {
     width: 14px;
     height: 14px;
   }
-  
+
   .right-box {
     padding-top: 30px;
     margin-top: -10px;
   }
-  
+
   .quote {
     font-size: 40px;
     text-align: center;
   }
-  
+
   .review {
     font-size: 16px;
     line-height: 1.5;
   }
-  
+
   .profile {
     gap: 12px;
   }
-  
+
   .profile img {
     width: 40px;
     height: 40px;
   }
-  
+
   .profile h4 {
     font-size: 15px;
   }
-  
+
   .profile span {
     font-size: 12px;
   }
-  
+
   .profile-line {
     gap: 25px;
   }
-  
+
   .arrow-btn {
     width: 38px;
     height: 38px;
   }
-  
+
   .arrow-btn img {
     width: 14px;
     height: 14px;
   }
-  
+
   .nav-arrows {
     gap: 12px;
   }
@@ -632,17 +670,17 @@
   .feedback-header h2 {
     font-size: 22px;
   }
-  
+
   .left-box h1 {
     font-size: 50px;
     margin-top: -20px;
   }
-  
+
   .review {
     font-size: 15px;
     margin-top: -5px;
   }
-  
+
   .profile h4 {
     font-size: 14px;
   }
