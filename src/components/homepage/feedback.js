@@ -13,25 +13,25 @@ const reviewsData = [
   {
     text: "The Lhome project was executed beautifully. The team understood our vision for a modern and welcoming home platform and delivered a clean, user-friendly website. From layout to performance, everything feels perfect.",
     name: "Raj Kumar",
-    role: "Business Owner",
+    role: "Lhome",
     // img: "https://i.pravatar.cc/60?img=11",
   },
   {
     text: "The Nibras project was handled with great clarity and professionalism. The team understood our startup requirements perfectly and delivered a high-quality product on time. The overall experience was smooth and stress-free.",
     name: "Nausheen",
-    role: "Startup Founder",
+    role: "Nibras",
     // img: "https://i.pravatar.cc/60?img=47",
   },
   {
     text: "The World Tamil Siragam project was handled with great responsibility and cultural understanding. The team was highly responsive and ensured every stage of development aligned with our vision. The final outcome met all our expectations.",
     name: "Gopi Ramesh",
-    role: "Project Manager",
+    role: "World Tamil Siragam",
     // img: "https://i.pravatar.cc/60?img=22",
   },
   {
     text: "The Grace Cabs project stood out for its strong development approach and attention to detail. The booking flow, performance, and UI were well optimized, making the platform smooth and reliable for users.",
     name: "Robert Jeyakumar",
-    role: "Technical Lead",
+    role: "Grace Cabs",
     // img: "https://i.pravatar.cc/60?img=33",
   },
 ];
@@ -68,6 +68,7 @@ const FeedbackSection = () => {
     }
 
     return () => {
+      
       if (countRef.current) {
         observer.unobserve(countRef.current);
       }

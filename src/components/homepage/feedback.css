@@ -559,7 +559,10 @@
   .feedback-section {
     padding: 40px 15px;
   }
-
+.avatars-circles {
+    width: 38px;
+    height: 38px;
+}
   .feedback-header {
     margin-top: 0;
     margin-bottom: 20px;
