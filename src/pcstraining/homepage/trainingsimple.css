@@ -1,7 +1,11 @@
 :root {
   --playfair-fonts: "Playfair Display", serif;
 }
-
+.divider-card-container{
+  /* margin: -100px; */
+  margin-top: -110px;
+  margin-bottom: -50px;
+}
 /* ================= SECTION ================= */
 .workprocess {
   padding: 30px 20px;
