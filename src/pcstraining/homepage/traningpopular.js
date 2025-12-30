@@ -47,11 +47,16 @@ const  TraningPopular = () => {
         <div className="traningpopular-header">
           <div className="traningpopular-heading">
             <p className="traningpopular-eyebrow">Discover our</p>
-            <h2 className="traningpopular-title">
-              most{" "}
-              <span className="traningpopular-title-highlight">popular</span>{" "}
-              Courses
-            </h2>
+<h2 className="traningpopular-title">
+  most{" "}
+  <span className="traningpopular-title-highlight">
+    popul
+    <span className="traningpopular-title-gradient">ar</span>
+  </span>{" "}
+  Courses
+</h2>
+
+
           </div>
 
         <CommonButton text="Explore all Course"   onClick={() => navigate("/allcourses")}/>

@@ -85,9 +85,18 @@ const StatsSection = () => {
 
       <div className="stats-heading">
         <h2>We don’t just work</h2>
-        <h2>
-          <span></span>together - we <i>grow together.</i>
-        </h2>
+<h2>
+  together - we{" "}
+  <span className="grow-text">
+    <i>
+      grow toget
+      <span className="grow-last3">her.</span>
+    </i>
+  </span>
+</h2>
+
+
+
       </div>
       {/* states card section*/}
       <div className="stats-cards">

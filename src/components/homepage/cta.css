@@ -35,14 +35,13 @@
 
 /* Highlight word 'create' */
 .cta_highlight {
-  font-size: 48px;
   font-family: "Playfair Display", serif;
-  font-style: italic;
+  font-size: 54px;
   font-weight: 600;
-  background: linear-gradient(90deg, #03045E 100%, #FF006E 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-style: italic;
+  line-height: 60px;
+  letter-spacing: 1%;
+  color: #010146;
 }
 
 /* ============================= */

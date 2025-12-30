@@ -22,6 +22,37 @@
 }
 
 
+.grow-text {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #03045E;
+  font-size: 54px;
+}
+.grow-last3 {
+  display: inline-block;
+
+  /* 🔥 FORCE italic again */
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 500;
+
+  background: linear-gradient(
+    90deg,
+    #03045E 0%,
+    #5a189a 50%,
+    #FF006E 100%
+  );
+
+  background-size: 200% 100%;
+  background-position: left center;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 
 .stats-section {
   width: 100%;
@@ -65,11 +96,11 @@
 .stats-heading h2 i {
   font-style: italic;      /* grow together italic */
 }
-.stats-heading span {
+/* .stats-heading span {
   font-weight: 500;
     font-family: "WF Visual Sans" !important;
 
-}
+} */
 
 .stats-heading i {
   font-weight: 500;

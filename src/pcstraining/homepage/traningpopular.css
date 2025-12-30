@@ -83,7 +83,7 @@
 }
 
 .traningpopular-eyebrow {
-  font-size: 32px;
+  font-size: 40px;
   line-height: 1.3;
   font-weight: 600;
   /* color: #020617;  letter-spacing: 0.008em; */
@@ -91,7 +91,7 @@
 }
 
 .traningpopular-title {
-  font-size: 32px;
+  font-size: 40px;
   line-height: 1.3;
   font-weight: 600;
   color: #020617;
@@ -102,11 +102,33 @@
   font-family: "Playfair Display", serif;
   font-style: italic;
   font-weight: 600;
-  background: linear-gradient(90deg, #03045E 100%, #FF006E 100%);
+  color: #03045E; /* popul */
+    font-size: 44px;   /* try 40px – 48px range */
+  line-height: 1.1;
+}
+
+/* a + r → SAME gradient look */
+.traningpopular-title-gradient {
+  display: inline-block;
+
+  background: linear-gradient(
+    90deg,
+    #03045E 0%,
+    #5a189a 50%,
+    #FF006E 100%
+  );
+
+  /* 🔥 KEY FIX */
+  background-size: 200% 100%;
+  background-position: left center;
+
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
 }
+
+
 
 /* CTA Button */
 .traningpopular-cta {
