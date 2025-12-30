@@ -14,12 +14,18 @@
   max-width: 1300px;
   margin: 0 auto;
   text-align: center;
+  padding: 10px 52px 0px;
+}
+.workersreviews-inner > :first-child {
+  margin-top: -50px;   /* 🔥 button mela pogum */
 }
 
 /* ===== Heading ===== */
 .traninglearn-heading {
-  margin-top: 10px;
+  margin-top: -30px;
 }
+
+
 
 .successtraninglearn-title {
   font-family: "WF Visual Sans";
