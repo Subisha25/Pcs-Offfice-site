@@ -2,76 +2,74 @@
   --playfair-fonts: "Playfair Display", serif;
 }
 
-/* ===== Section ===== */
+/* ================= SECTION ================= */
 .learnreviews {
-  padding: 72px 24px 84px;
+  width: 100%;
   background: #f5f5f5;
+  padding: clamp(56px, 6vw, 96px) 16px;
   font-family: "WF Visual Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-.learnreviews-inner > :first-child {
-  margin-bottom: 12px;   /* reduce gap */
-  margin-top: -40px;     /* 🔼 move up */
+  overflow-x: hidden;
 }
 
-
+/* ================= INNER ================= */
 .learnreviews-inner {
-  max-width: 1300px;
+  max-width: 1280px;           /* 🔥 769 → 2560 auto */
   margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 32px);
   text-align: center;
-  padding: 10px 32px 0px;
 }
 
-/* ===== Heading ===== */
+/* ================= HEADING ================= */
 .learnreviews-heading {
-  margin-top: 10px;
+  margin-top: clamp(0px, 2vw, 10px);
 }
 
 .successlearnreviews-title {
   font-family: "WF Visual Sans";
   font-weight: 500;
-  font-size: 48px;
+  font-size: clamp(28px, 4vw, 48px);
   line-height: 1.15;
   letter-spacing: 0.01em;
-  margin: 10px 0 0;
+  margin: 0;
   color: #020617;
 }
 
 .successlearnreviews-title-highlight {
   display: inline-block;
-  font-size: 48px;
+  font-size: clamp(28px, 4vw, 48px);
   line-height: 1.15;
   font-family: var(--playfair-fonts);
   font-style: italic;
   font-weight: 600;
-  background: linear-gradient(90deg, #03045e 0%, #ff006e 100%);
+  background: linear-gradient(90deg, #03045e, #ff006e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  margin-top: 6px;
 }
 
-/* ===== Carousel ===== */
+/* ================= CAROUSEL ================= */
 .learnreviews-carousel {
-  margin-top: 42px;
+  margin-top: clamp(28px, 4vw, 48px);
 }
 
 .learnreviews-carousel-viewport {
   width: 100%;
   overflow: hidden;
-  /* a tiny padding helps avoid shadow clipping */
   padding: 2px;
 }
 
 .learnreviews-carousel-track {
   display: flex;
   align-items: stretch;
+  gap: clamp(16px, 2vw, 24px);
   will-change: transform;
   transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* ===== Card ===== */
+/* ================= CARD ================= */
 .learnreviews-card {
   flex: 0 0 auto;
+  width: clamp(260px, 30vw, 380px);   /* 🔥 auto scale */
   background: #f9fafb;
   border-radius: 24px;
   padding: 26px 26px 22px;
@@ -94,10 +92,10 @@
   font-size: 14px;
   line-height: 1.7;
   color: #4b5563;
-  margin: 0 0 18px;
+  margin-bottom: 18px;
 }
 
-/* footer */
+/* ================= CARD FOOTER ================= */
 .learnreviews-card-footer {
   display: flex;
   align-items: center;
@@ -107,9 +105,9 @@
 .avatar-circle {
   width: 40px;
   height: 40px;
-  border-radius: 999px;
+  border-radius: 50%;
   background: #03045e;
-  color: #fff;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 700;
   display: flex;
@@ -128,12 +126,11 @@
 .learnreviews-card-role {
   font-size: 12px;
   color: #9ca3af;
-  margin-top: 2px;
 }
 
-/* ===== Nav ===== */
+/* ================= NAV ================= */
 .learnreviews-nav {
-  margin-top: 28px;
+  margin-top: clamp(24px, 4vw, 36px);
   display: flex;
   justify-content: center;
   gap: 14px;
@@ -142,7 +139,7 @@
 .learnreviews-nav-btn {
   width: 44px;
   height: 44px;
-  border-radius: 999px;
+  border-radius: 50%;
   border: none;
   background: #03045e;
   color: #f9fafb;
@@ -151,7 +148,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .learnreviews-nav-btn:hover:not(:disabled) {
@@ -165,151 +162,25 @@
   cursor: default;
 }
 
-/* ===== Responsive ===== */
-
-/* Large screens */
-@media (min-width: 1200px) {
-  .learnreviews {
-    padding: 80px 24px 92px;
-  }
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .successlearnreviews-title,
-  .successlearnreviews-title-highlight {
-    font-size: 40px;
-  }
-
-  .learnreviews-card {
-    border-radius:20px;
-    min-height:240px;
-  }
-}
-
-/* Mobile */
+/* ================= MOBILE ONLY ================= */
 @media (max-width: 768px) {
-  /* .learnreviews {
-    padding: 54px 240px 64px;
-  } */
-
-  .successlearnreviews-title,
-  .successlearnreviews-title-highlight {
-    font-size: 28px;
-  }
-
-  .learnreviews-carousel {
-    margin-top: 28px;
-  }
-  .learnreviews-inner {
-  max-width: 280px;
-  margin: 0 auto;
-  text-align: center;
-}
-}
-
-/* Small mobile */
-@media (max-width: 425px) {
-  /* .learnreviews {
-    padding: 24px 73px 64px;
-  } */
-
-  .successlearnreviews-title{
-    font-size: 32px;
-    margin-left: 15%;
-
-  }
-  .successlearnreviews-title-highlight {
-    margin-left: 35%;
-
-  }
-
-  .learnreviews-card {
-    padding: 20px 18px;
-    border-radius: 18px;
-    min-height: 230px;
-  }
-
-  .learnreviews-nav-btn {
-    width: 42px;
-    height: 42px;
-  }
-}
-
-/* Very small */
-@media (max-width: 375px) {
-  /* .learnreviews {
-    padding: 24px 47px 64px;
-  } */
-  .successlearnreviews-title{
-    font-size: 28px;
-    margin-left: 10px;
-
-  }
-  .successlearnreviews-title-highlight {
-    margin-left: 20px;
-
-  }
-}
-@media (max-width: 320px) {
-  /* .learnreviews {
-    padding: 24px 20px 64px;
-  } */
-  .successlearnreviews-title{
-    font-size: 28px;
-    margin-left: 10px;
-
-  }
-  .successlearnreviews-title-highlight {
-    margin-left: 20px;
-
-  }
-}
-/* Reduced motion accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .learnreviews-carousel-track {
-    transition: none;
-  }
-}
-
-
-/* add this */
-.learnreviews,
-.learnreviews-carousel,
-.learnreviews-carousel-viewport {
-  overflow-x: hidden;
-}
-
-
-.learnreviews-card {
-  flex-shrink: 0;
-  max-width: 100%;
-}
-
-
-/* ================= MOBILE BG LOCK (<= 768px) ================= */
-@media (max-width: 768px) {
-
   body {
     margin: 0;
     overflow-x: hidden;
-    background: #f5f5f5;
   }
 
   .learnreviews {
-    width: 100vw;                 /* 🔒 full viewport */
-    padding: 24px 16px 64px;      /* 🔒 SAME ALL DEVICES */
-    background: #f5f5f5;
-    margin: 0;
+    padding: 24px 16px 64px;
   }
 
-  .learnreviews-inner {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .learnreviews-carousel-viewport {
+  .learnreviews-card {
     width: 100%;
-    overflow-x: hidden;
+  }
+}
+
+/* ================= ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+  .learnreviews-carousel-track {
+    transition: none;
   }
 }
