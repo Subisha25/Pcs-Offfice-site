@@ -102,7 +102,7 @@ export default function TechLogoScroll() {
         /* ===== MOBILE 425px ===== */
         @media (max-width: 425px) {
           .tech-scroll {
-            padding: 40px 10px;
+        padding: 0px 10px 30px;        
           }
 
           .scroll-track {
@@ -148,6 +148,7 @@ export default function TechLogoScroll() {
 
         /* ===== MOBILE 320px ===== */
         @media (max-width: 320px) {
+        
           .scroll-track {
             gap: 12px;
           }
