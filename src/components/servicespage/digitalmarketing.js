@@ -38,62 +38,62 @@ function PurposeSection() {
   }, []);
   return (
     <div className="purpose-container">
-    
-        {/* Top Badge */}
-        <div className="" >
-          <CommonTopTag text="Why Choose Us" icon={tagicon} />
-        </div>
-        <p className="webdesign-p">
-          Design with purpose,
-        </p>
-        <p className="webdesign-p"> built with{" "}
-          <span className="highlight-result">results</span>
-        </p>
-         <div className="workprocess-scroll-area">
-       <div
-  ref={cardsRef}
-  className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(4, 1fr)",
-    gap: "32px",
-    alignItems: "stretch",
-    paddingTop: "40px",
-    paddingBottom: "40px",
-  }}
->
 
-         <Card
-  img={Discover}
-  title="Analyze"
-  sub=""
-  text="We study your audience, market trends, and goals to uncover actionable insights."
-/>
+      {/* Top Badge */}
+      <div className="" >
+        <CommonTopTag text="Why Choose Us" icon={tagicon} />
+      </div>
+      <p className="webdesign-p">
+        Design with purpose,
+      </p>
+      <p className="webdesign-p"> built with{" "}
+        <span className="highlight-result">results</span>
+      </p>
+      <div className="workprocess-scroll-area">
+        <div
+          ref={cardsRef}
+          className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "32px",
+            alignItems: "stretch",
+            paddingTop: "40px",
+            paddingBottom: "40px",
+          }}
+        >
 
-<Card
-  img={Deliver}
-  title="Strategize"
-  sub=""
-  text="We create a focused marketing plan using SEO, content, social, and paid channels."
-/>
+          <Card
+            img={Discover}
+            title="Analyze"
+            sub=""
+            text="We study your audience, market trends, and goals to uncover actionable insights."
+          />
 
-<Card
-  img={Create}
-  title="Execute"
-  sub=""
-  text="We launch data-driven campaigns with compelling creatives that attract and convert."
-/>
+          <Card
+            img={Deliver}
+            title="Strategize"
+            sub=""
+            text="We create a focused marketing plan using SEO, content, social, and paid channels."
+          />
 
-<Card
-  img={Grow}
-  title="Optimize"
-  sub=""
-  text="We track results, refine strategies, and continuously improve performance for growth."
-/>
+          <Card
+            img={Create}
+            title="Execute"
+            sub=""
+            text="We launch data-driven campaigns with compelling creatives that attract and convert."
+          />
+
+          <Card
+            img={Grow}
+            title="Optimize"
+            sub=""
+            text="We track results, refine strategies, and continuously improve performance for growth."
+          />
 
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 function Card({ img, title, sub, text }) {
@@ -282,7 +282,11 @@ export default function DigitalMarketing() {
         {/* STEP 1: Description with typewriter words */}
         <p
           className="sw-description"
-          data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs. From concept to deployment, our team ensures every website is optimized for performance, usability, and conversions."
+          data-typewriter="We craft responsive and visually stunning websites tailored to your brand’s needs.
+From concept to deployment, our team handles every stage with precision and care.
+Each website is optimized for speed, performance, and smooth user experience.
+We focus on clean design, usability, and conversion-driven layouts.
+Our goal is to build websites that truly represent your brand and drive results."
         >
           Effective digital marketing is more than campaigns—it’s about creating meaningful connections with your audience. We craft strategies that combine creativity, analytics, and smart technology, ensuring every touchpoint drives engagement, builds trust, and converts visitors into loyal customers. From social media to search engine campaigns, we design experiences that inspire action and deliver measurable results.        </p>
 
