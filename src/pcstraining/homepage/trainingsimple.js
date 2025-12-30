@@ -110,21 +110,22 @@ export default function TrainingSimple() {
 
         </div>
       </div>
-
-      {/* ===== CARDS ===== */}
-      <div className="workprocess-scroll-area">
-        <div
-          ref={cardsRef}
-          className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
-        >
-          <Card img={Globe} title="Certified" sub="Course"
-            text="listening and learning—diving deep into your brand, audience, and goals to uncover insights that shape every decision." />
-          <Card img={Server} title="Internship" sub="Program"
-            text="we craft bold ideas and transform them into designs, stories, and experiences that resonate." />
-          <Card img={BookOpen} title="Inplant" sub="Training"
-            text="we ensure every detail is polished, impactful, and aligned with your vision for lasting results." />
-          <Card img={TrendingUp} title="Student" sub="Projects"
-            text="We don’t stop at the launch. We analyze performance, gather feedback, and fine-tune to ensure your brand keeps evolving and thriving in the digital landscape." />
+      <div className="divider-card-container">
+        {/* ===== CARDS ===== */}
+        <div className="workprocess-scroll-area">
+          <div
+            ref={cardsRef}
+            className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
+          >
+            <Card img={Globe} title="Certified" sub="Course"
+              text="listening and learning—diving deep into your brand, audience, and goals to uncover insights that shape every decision." />
+            <Card img={Server} title="Internship" sub="Program"
+              text="we craft bold ideas and transform them into designs, stories, and experiences that resonate." />
+            <Card img={BookOpen} title="Inplant" sub="Training"
+              text="we ensure every detail is polished, impactful, and aligned with your vision for lasting results." />
+            <Card img={TrendingUp} title="Student" sub="Projects"
+              text="We don’t stop at the launch. We analyze performance, gather feedback, and fine-tune to ensure your brand keeps evolving and thriving in the digital landscape." />
+          </div>
         </div>
       </div>
     </div>
