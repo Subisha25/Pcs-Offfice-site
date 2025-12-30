@@ -1,61 +1,68 @@
-:root {
-  --main-bg: #f4f7fb;
-  --main-text: #222222;
-  --primary-color: #007bff;
-  --secondary-color: #555555;
-  --button-primary: #101166;
-  --button-secondary: #D9D9D9;
-  --playfair-fonts: "Playfair Display", serif;
-  --heading-font-size: 32px;
-  --subheading-font-size: 24px;
-  --title-font-size: 20px;
-  --description-font-size: 16px;
-  --small-text-font-size: 14px;
-}
+  :root {
+    --main-bg: #f4f7fb;
+    --main-text: #222222;
+    --primary-color: #007bff;
+    --secondary-color: #555555;
+    --button-primary: #101166;
+    --button-secondary: #D9D9D9;
+    --playfair-fonts: "Playfair Display", serif;
+    --heading-font-size: 32px;
+    --subheading-font-size: 24px;
+    --title-font-size: 20px;
+    --description-font-size: 16px;
+    --small-text-font-size: 14px;
+  }
 
-/* Global reset-ish */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  
-}
+  /* Global reset-ish */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    
+  }
 
 
-@font-face {
-  font-family: "WF Visual Sans";
-  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Light.woff2") format("woff2");
-  font-weight:200 300;
-  font-style: normal;
-  font-display: swap;
-}
+  @font-face {
+    font-family: "WF Visual Sans";
+    src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Light.woff2") format("woff2");
+    font-weight:200 300;
+    font-style: normal;
+    font-display: swap;
+  }
 
-/* Custom font */
-@font-face {
-  font-family: "WF Visual Sans";
-  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Regular.woff2") format("woff2");
-  font-weight:300 400;
-  font-style: normal;
-  font-display: swap;
-}
-/* Custom font */
-@font-face {
-  font-family: "WF Visual Sans";
-  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-/* Custom font */
-@font-face {
-  font-family: "WF Visual Sans";
-  src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+  /* Custom font */
+  @font-face {
+    font-family: "WF Visual Sans";
+    src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Regular.woff2") format("woff2");
+    font-weight:300 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  /* Custom font */
+  @font-face {
+    font-family: "WF Visual Sans";
+    src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  /* Custom font */
+  @font-face {
+    font-family: "WF Visual Sans";
+    src: url("/public/fonts/V0.3/V0.3/OTF/Web/WFVisualSans-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
 
-.common-regular{
-  font-family: "WF Visual Sans";
-  
+  .common-regular{
+    font-family: "WF Visual Sans";
+    
+  }
+  /* ===== GLOBAL PAGE FIX ===== */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative; /* animations / absolute safe-a irukkanum */
 }

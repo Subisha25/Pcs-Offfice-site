@@ -21,16 +21,14 @@
 }
 
 .traningwhychoose-stats-container {
-    width: 100vw;                 /* Full screen width */
+    width: 100%;                /* use 100% instead of 100vw */
     max-width: 1200px;
     display: flex;
-    /* justify-content: space-between; */
-    gap: 245px;
-    padding: 35px 80px;           
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    gap: 40px;                  /* responsive / reasonable gap */
+    padding: 35px 20px;         /* left/right space */
+    margin: 0 auto;             /* center container */
+    box-sizing: border-box;     /* include padding in width */
 }
-
 
 .traningwhychoose-stat {
    flex-shrink: 0;
