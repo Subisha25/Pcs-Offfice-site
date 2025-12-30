@@ -35,9 +35,9 @@ const StatsSection = () => {
       (entries) => {
         if (entries[0].isIntersecting) {
           const targets = {
-            projects: 50,
+            projects: 10,
             growth: 70,
-            clients: 52,
+            clients: 10,
           };
 
           const duration = 2000;
