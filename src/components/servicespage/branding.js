@@ -18,187 +18,65 @@ import CommonTopTag from "../common/toptag";
 /* ==================== PURPOSE SECTION (SCROLL PIN) ==================== */
 
 function PurposeSection() {
-  const wrapperRef = useRef(null);
-  const containerRef = useRef(null);
-  const titleRef = useRef(null);
-  const badgeRef = useRef(null);
-  const cardsRef = useRef([]);
-  const [scrollProgress, setScrollProgress] = useState(0);
-const isMobile = window.innerWidth <= 768;
-
+  const cardsRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+  /* ================= CARD FLOWER EFFECT ================= */
   useEffect(() => {
-    const handleScroll = () => {
-      if (!wrapperRef.current) return;
-
-      const wrapper = wrapperRef.current;
-      const rect = wrapper.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const wrapperHeight = wrapper.offsetHeight;
-
-      // Calculate scroll progress when section is in view
-      if (rect.top <= 0 && rect.bottom >= windowHeight) {
-        const scrolled = Math.abs(rect.top);
-        const scrollRange = wrapperHeight - windowHeight;
-        const progress = Math.min(Math.max(scrolled / scrollRange, 0), 1);
-        setScrollProgress(progress);
-      } else if (rect.top > 0) {
-        setScrollProgress(0);
-      } else {
-        setScrollProgress(1);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Badge visibility (0–10% scroll)
-  const badgeOpacity = Math.min(scrollProgress * 10, 1);
-
-  // Typewriter effect (10–30% scroll)
-  const typewriterProgress = Math.min(
-    Math.max((scrollProgress - 0.1) / 0.2, 0),
-    1
-  );
-  const fullText = "Design with purpose,";
-const typedText = isMobile
-  ? fullText          // ✅ mobile-la full text first-la
-  : fullText.substring(
-      0,
-      Math.floor(fullText.length * typewriterProgress)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setAnimate(true), 400);
+        } else {
+          setAnimate(false);
+        }
+      },
+      { threshold: 0.4 }
     );
 
-const showCursor = !isMobile && typewriterProgress < 1;
-
-
-  // Title movement (30–60% scroll)
-  const titleMoveProgress = Math.min(
-    Math.max((scrollProgress - 0.3) / 0.3, 0),
-    1
-  );
-  const titleTranslateY = -120 * titleMoveProgress; // softer move
-  const titleScale = 1 - 0.2 * titleMoveProgress;
-
-  // Cards visibility (60–100% scroll)
-  const cardsStartProgress = 0.6;
-  const getCardOpacity = (index) => {
-    const cardProgress =
-      (scrollProgress - cardsStartProgress - index * 0.08) / 0.08;
-    return Math.min(Math.max(cardProgress, 0), 1);
-  };
-
-  const getCardTransform = (index) => {
-    const opacity = getCardOpacity(index);
-    const translateY = 50 * (1 - opacity);
-    const scale = 0.9 + 0.1 * opacity;
-    return { opacity, translateY, scale };
-  };
-
-  const cardsData = [
-    {
-      img: Discover,
-      title: "Brand Strategy",
-      text: "We define what your brand stands for—its purpose, voice, values, audience, and positioning—creating a foundation that guides every creative decision.",
-    },
-    {
-      img: Create,
-      title: "Identity Creation",
-      text: "We craft your visual identity with logos, colors, typography, patterns, and design elements that express your brand’s personality with clarity and style.",
-    },
-    {
-      img: Deliver,
-      title: "Brand Experience",
-      text: "We bring your brand to life across web, social, print, and marketing touchpoints to ensure a consistent, memorable experience everywhere.",
-    },
-    {
-      img: Grow,
-      title: "Brand Growth",
-      text: "We refine, optimize, and expand your brand by analyzing performance and evolving your identity to stay relevant in a changing digital landscape.",
-    },
-  ];
-
-
+    if (cardsRef.current) observer.observe(cardsRef.current);
+    return () => observer.disconnect();
+  }, []);
   return (
-    <div className="purpose-scroll-wrapper" ref={wrapperRef}>
-   <div
-  className="purpose-container"
-  ref={containerRef}
-  style={{
-    position: isMobile
-      ? "relative"   // ✅ mobile normal scroll
-      : scrollProgress > 0 && scrollProgress < 1
-        ? "fixed"
-        : "absolute",
-    top: isMobile ? "auto" : scrollProgress >= 1 ? "auto" : "0",
-    bottom: isMobile ? "auto" : scrollProgress >= 1 ? "0" : "auto",
-  }}
->
+    <div className="purpose-container">
+    
         {/* Top Badge */}
-          <div className="purpose-badge-box" ref={badgeRef}>
-             <CommonTopTag text="Why Choose Us" icon={tagicon} />
-           </div>
-
-        {/* Main Heading with Typewriter */}
-      
-          <h2
-  className="purpose-title"
-  style={
-    isMobile
-      ? { transform: "none", transition: "none" } // ✅ mobile
-      : {
-          transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
-          transition: "transform 0.1s linear",
-        }
-  }
->
-
-        
-          <span className="typewriter-text">
-            {typedText}
-            {showCursor && <span className="cursor">|</span>}
-          </span>
-          <br />
-          built with <span className="highlight">results</span>
-        </h2>
-
-        {/* Cards Section */}
-        <div className="purpose-cards">
-          {cardsData.map((card, index) => {
-            const { opacity, translateY, scale } = getCardTransform(index);
-            return (
-              <div
-                key={index}
-                className="purpose-card"
-                ref={(el) => (cardsRef.current[index] = el)}
-                style={
-  isMobile
-    ? {
-        opacity: 1,
-        transform: "none",
-        transition: "none",
-      }
-    : {
-        opacity,
-        transform: `translateY(${translateY}px) scale(${scale})`,
-        transition: "opacity 0.3s ease, transform 0.3s ease",
-      }
-}
-
-              >
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="purpose-icon"
-                />
-                <h3 className="purpose-card-title">{card.title}</h3>
-                <p className="purpose-card-text">{card.text}</p>
-              </div>
-            );
-          })}
+        <div className="" >
+          <CommonTopTag text="Why Choose Us" icon={tagicon} />
+        </div>
+        <p className="webdesign-p">
+          Design with purpose,
+        </p>
+        <p className="webdesign-p"> built with{" "}
+          <span className="highlight-result">results</span>
+        </p>
+         <div className="workprocess-scroll-area">
+        <div
+          ref={cardsRef}
+          className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
+        >
+          <Card img={Discover} title="Brand Strategy " sub=""
+            text="We define what your brand stands for—its purpose, voice, values, audience, and positioning—creating a foundation that guides every creative decision." />
+          <Card img={Deliver} title="Identity " sub="Creation"
+            text="We bring your idea to life with stunning visuals, seamless navigation & interactive mockups." />
+          <Card img={Create} title="Brand" sub=" Experience"
+            text="We bring your brand to life across web, social, print, and marketing touchpoints to ensure a consistent, memorable experience everywhere." />
+          <Card img={Grow} title="Brand " sub=" Growth"
+            text="We refine, optimize, and expand your brand by analyzing performance and evolving your identity to stay relevant in a changing digital landscape." />
         </div>
       </div>
+      </div>
+  );
+}
+function Card({ img, title, sub, text }) {
+  return (
+    <div className="workprocess-card">
+      <div className="workprocess-icon-wrapper">
+        <img src={img} alt="" />
+      </div>
+      <h3 className="workprocess-card-title">
+        {title} <br /> {sub}
+      </h3>
+      <p className="workprocess-card-description">{text}</p>
     </div>
   );
 }

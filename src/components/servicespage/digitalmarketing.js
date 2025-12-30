@@ -18,183 +18,74 @@ import CommonTopTag from "../common/toptag";
 /* ==================== PURPOSE SECTION (SCROLL PIN) ==================== */
 
 function PurposeSection() {
-  const wrapperRef = useRef(null);
-  const containerRef = useRef(null);
-  const titleRef = useRef(null);
-  const badgeRef = useRef(null);
-  const cardsRef = useRef([]);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const isMobile = window.innerWidth <= 768;
-
+  const cardsRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+  /* ================= CARD FLOWER EFFECT ================= */
   useEffect(() => {
-    const handleScroll = () => {
-      if (!wrapperRef.current) return;
-
-      const wrapper = wrapperRef.current;
-      const rect = wrapper.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const wrapperHeight = wrapper.offsetHeight;
-
-      // Calculate scroll progress when section is in view
-      if (rect.top <= 0 && rect.bottom >= windowHeight) {
-        const scrolled = Math.abs(rect.top);
-        const scrollRange = wrapperHeight - windowHeight;
-        const progress = Math.min(Math.max(scrolled / scrollRange, 0), 1);
-        setScrollProgress(progress);
-      } else if (rect.top > 0) {
-        setScrollProgress(0);
-      } else {
-        setScrollProgress(1);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Badge visibility (0–10% scroll)
-  const badgeOpacity = Math.min(scrollProgress * 10, 1);
-
-  // Typewriter effect (10–30% scroll)
-  const typewriterProgress = Math.min(
-    Math.max((scrollProgress - 0.1) / 0.2, 0),
-    1
-  );
-  const fullText = "Design with purpose,";
-  const typedText = isMobile
-    ? fullText          // ✅ mobile-la full text first-la
-    : fullText.substring(
-      0,
-      Math.floor(fullText.length * typewriterProgress)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setAnimate(true), 400);
+        } else {
+          setAnimate(false);
+        }
+      },
+      { threshold: 0.4 }
     );
 
-  const showCursor = !isMobile && typewriterProgress < 1;
-
-  // Title movement (30–60% scroll)
-  const titleMoveProgress = Math.min(
-    Math.max((scrollProgress - 0.3) / 0.3, 0),
-    1
-  );
-  const titleTranslateY = -120 * titleMoveProgress; // softer move
-  const titleScale = 1 - 0.2 * titleMoveProgress;
-
-  // Cards visibility (60–100% scroll)
-  const cardsStartProgress = 0.6;
-  const getCardOpacity = (index) => {
-    const cardProgress =
-      (scrollProgress - cardsStartProgress - index * 0.08) / 0.08;
-    return Math.min(Math.max(cardProgress, 0), 1);
-  };
-
-  const getCardTransform = (index) => {
-    const opacity = getCardOpacity(index);
-    const translateY = 50 * (1 - opacity);
-    const scale = 0.9 + 0.1 * opacity;
-    return { opacity, translateY, scale };
-  };
-
-  const cardsData = [
-    {
-      img: Discover,
-      title: "Analyze",
-      text: "We begin by studying your audience, industry trends, and brand goals—uncovering insights that shape a strong marketing foundation.",
-    },
-    {
-      img: Create,
-      title: "Strategize",
-      text: "Based on clear insights, we craft a tailored marketing strategy using the right mix of SEO, social media, content, and paid campaigns.",
-    },
-    {
-      img: Deliver,
-      title: "Execute",
-      text: "We launch targeted campaigns with compelling creatives and optimized messaging—designed to engage, attract, and convert your audience.",
-    },
-    {
-      img: Grow,
-      title: "Optimize",
-      text: "We continuously track performance, refine strategies, and improve campaigns—ensuring sustained growth and maximum ROI over time.",
-    },
-  ];
-
-
+    if (cardsRef.current) observer.observe(cardsRef.current);
+    return () => observer.disconnect();
+  }, []);
   return (
-    <div className="purpose-scroll-wrapper" ref={wrapperRef}>
-      <div
-        className="purpose-container"
-        ref={containerRef}
-        style={{
-          position: isMobile
-            ? "relative"   // ✅ mobile normal scroll
-            : scrollProgress > 0 && scrollProgress < 1
-              ? "fixed"
-              : "absolute",
-          top: isMobile ? "auto" : scrollProgress >= 1 ? "auto" : "0",
-          bottom: isMobile ? "auto" : scrollProgress >= 1 ? "0" : "auto",
-        }}
-      >
+    <div className="purpose-container">
+    
         {/* Top Badge */}
-        <div className="purpose-badge-box" ref={badgeRef}>
+        <div className="" >
           <CommonTopTag text="Why Choose Us" icon={tagicon} />
         </div>
+        <p className="webdesign-p">
+          Design with purpose,
+        </p>
+        <p className="webdesign-p"> built with{" "}
+          <span className="highlight-result">results</span>
+        </p>
+         <div className="workprocess-scroll-area">
+       <div
+  ref={cardsRef}
+  className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(4, 1fr)",
+    gap: "32px",
+    alignItems: "stretch",
+    paddingTop: "40px",
+    paddingBottom: "40px",
+  }}
+>
 
-        {/* Main Heading with Typewriter */}
-        <h2
-          className="purpose-title"
-          style={
-            isMobile
-              ? { transform: "none", transition: "none" } // ✅ mobile
-              : {
-                transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,
-                transition: "transform 0.1s linear",
-              }
-          }
-        >
-          <span className="typewriter-text">
-            {typedText}
-            {showCursor && <span className="cursor">|</span>}
-          </span>
-          <br />
-          built with <span className="highlight">results</span>
-        </h2>
-
-        {/* Cards Section */}
-        <div className="purpose-cards">
-          {cardsData.map((card, index) => {
-            const { opacity, translateY, scale } = getCardTransform(index);
-            return (
-              <div
-                key={index}
-                className="purpose-card"
-                ref={(el) => (cardsRef.current[index] = el)}
-                style={
-                  isMobile
-                    ? {
-                      opacity: 1,
-                      transform: "none",
-                      transition: "none",
-                    }
-                    : {
-                      opacity,
-                      transform: `translateY(${translateY}px) scale(${scale})`,
-                      transition: "opacity 0.3s ease, transform 0.3s ease",
-                    }
-                }
-
-              >
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="purpose-icon"
-                />
-                <h3 className="purpose-card-title">{card.title}</h3>
-                <p className="purpose-card-text">{card.text}</p>
-              </div>
-            );
-          })}
+          <Card img={Discover} title="Analyze" sub=""
+            text="We begin by studying your audience, industry trends, and brand goals—uncovering insights that shape a strong marketing foundation." />
+          <Card img={Deliver} title="Strategize" sub=""
+            text="Based on clear insights, we craft a tailored marketing strategy using the right mix of SEO, social media, content, and paid campaigns." />
+          <Card img={Create} title="Execute" sub=""
+            text="We launch targeted campaigns with compelling creatives and optimized messaging—designed to engage, attract, and convert your audience." />
+          <Card img={Grow} title="Optimize " sub=""
+            text="We continuously track performance, refine strategies, and improve campaigns—ensuring sustained growth and maximum ROI over time." />
         </div>
       </div>
+      </div>
+  );
+}
+function Card({ img, title, sub, text }) {
+  return (
+    <div className="workprocess-card">
+      <div className="workprocess-icon-wrapper">
+        <img src={img} alt="" />
+      </div>
+      <h3 className="workprocess-card-title">
+        {title} <br /> {sub}
+      </h3>
+      <p className="workprocess-card-description">{text}</p>
     </div>
   );
 }
