@@ -63,14 +63,34 @@ function PurposeSection() {
   }}
 >
 
-          <Card img={Discover} title="Analyze" sub=""
-            text="We begin by studying your audience, industry trends, and brand goals—uncovering insights that shape a strong marketing foundation." />
-          <Card img={Deliver} title="Strategize" sub=""
-            text="Based on clear insights, we craft a tailored marketing strategy using the right mix of SEO, social media, content, and paid campaigns." />
-          <Card img={Create} title="Execute" sub=""
-            text="We launch targeted campaigns with compelling creatives and optimized messaging—designed to engage, attract, and convert your audience." />
-          <Card img={Grow} title="Optimize " sub=""
-            text="We continuously track performance, refine strategies, and improve campaigns—ensuring sustained growth and maximum ROI over time." />
+         <Card
+  img={Discover}
+  title="Analyze"
+  sub=""
+  text="We study your audience, market trends, and goals to uncover actionable insights."
+/>
+
+<Card
+  img={Deliver}
+  title="Strategize"
+  sub=""
+  text="We create a focused marketing plan using SEO, content, social, and paid channels."
+/>
+
+<Card
+  img={Create}
+  title="Execute"
+  sub=""
+  text="We launch data-driven campaigns with compelling creatives that attract and convert."
+/>
+
+<Card
+  img={Grow}
+  title="Optimize"
+  sub=""
+  text="We track results, refine strategies, and continuously improve performance for growth."
+/>
+
         </div>
       </div>
       </div>

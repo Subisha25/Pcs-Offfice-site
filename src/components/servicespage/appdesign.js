@@ -54,14 +54,35 @@ function PurposeSection() {
           ref={cardsRef}
           className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
         >
-          <Card img={Discover} title="Business needs  & " sub="user research"
-            text="We listen, analyze, and identify what delivers maximum value for your users and your business." />
-          <Card img={Deliver} title="UI/UX Design &" sub="Prototyping"
-            text="We bring your idea to life with stunning visuals, seamless navigation & interactive mockups." />
-          <Card img={Create} title="App  & " sub="Engineering"
-            text="We build high-performance apps with clean architecture — ready to scale and perform." />
-          <Card img={Grow} title="Launch & " sub="Optimization"
-            text="We continually monitor performance, improve features, and help you grow digitally." />
+         <Card
+  img={Discover}
+  title="Business Needs &"
+  sub="User Research"
+  text="We analyze goals and user behavior to uncover real business opportunities."
+/>
+
+<Card
+  img={Deliver}
+  title="UI/UX Design &"
+  sub="Prototyping"
+  text="We design intuitive interfaces and interactive prototypes for smooth user experiences."
+/>
+
+<Card
+  img={Create}
+  title="App &"
+  sub="Engineering"
+  text="We build scalable, high-performance apps with clean architecture."
+/>
+
+
+<Card
+  img={Grow}
+  title="Launch &"
+  sub="Optimization"
+  text="We optimize performance, refine features, and support continuous digital growth."
+/>
+
         </div>
       </div>
       </div>
