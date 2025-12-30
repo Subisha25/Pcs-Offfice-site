@@ -21,6 +21,15 @@
   font-style: normal;
   font-display: swap;
 }
+
+.workprocess-card-description {
+  font-family: "WF Visual Sans";
+  font-size: 14px;          /* optional */
+  line-height: 1.6;         /* readability */
+  letter-spacing: 0.4px;    /* 🔥 MAIN POINT */
+  color: #555;
+}
+
 .purpose-container {
   padding: 50px 10px 5px;
   background: radial-gradient(circle at center,
@@ -717,3 +726,6 @@ text-align: center;
     display: block;
   }
 }
+
+
+
