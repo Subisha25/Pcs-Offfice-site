@@ -232,3 +232,25 @@ letter-spacing: 1%;
   margin-bottom: 5px;
 }
 }
+
+
+@media (max-width: 768px) {
+  .grow-text {
+    font-size: 28px;   /* mobile size */
+    line-height: 1.1;
+  }
+
+  .grow-last3 {
+    font-size: 28px;   /* same as grow-text */
+  }
+}
+
+@media (max-width: 480px) {
+  .grow-text {
+    font-size: 24px;
+  }
+
+  .grow-last3 {
+    font-size: 24px;
+  }
+}
