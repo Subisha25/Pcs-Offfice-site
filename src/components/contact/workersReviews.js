@@ -135,8 +135,8 @@ const WorkersReviews = () => {
   }, [cardWidth, gap, slidesPerView, maxIndex, canSlide]);
 
   return (
-    <section className="workersreviews">
-      <div className="workersreviews-inner">
+    <section className="learnreviews">
+      <div className="learnreviews-inner">
         <CommonTopTag text="Feed Back" />
 
         <div className="traninglearn-heading">
@@ -144,10 +144,10 @@ const WorkersReviews = () => {
           <span className="successtraninglearn-title-highlight">Workers</span>
         </div>
 
-        <div className="workersreviews-carousel">
-          <div className="workersreviews-carousel-viewport" ref={viewportRef}>
+        <div className="learnreviews-carousel">
+          <div className="learnreviews-carousel-viewport" ref={viewportRef}>
             <div
-              className="workersreviews-carousel-track"
+              className="learnreviews-carousel-track"
               style={{
                 gap: `${gap}px`,
                 transform: `translate3d(-${translateX}px, 0, 0)`,
@@ -155,18 +155,18 @@ const WorkersReviews = () => {
             >
               {testimonials.map((item, idx) => (
                 <article
-                  className="workersreviews-card"
+                  className="learnreviews-card"
                   key={idx}
                   style={{ width: cardWidth ? `${cardWidth}px` : "auto" }}
                 >
-                  <div className="workersreviews-card-quoteMark">“</div>
-                  <p className="workersreviews-card-text">{item.text}</p>
+                  <div className="learnreviews-card-quoteMark">“</div>
+                  <p className="learnreviews-card-text">{item.text}</p>
 
-                  <div className="workersreviews-card-footer">
+                  <div className="learnreviews-card-footer">
                     <div className="avatar-circle">{item.initial}</div>
-                    <div className="workersreviews-card-person">
-                      <div className="workersreviews-card-name">{item.name}</div>
-                      <div className="workersreviews-card-role">{item.role}</div>
+                    <div className="learnreviews-card-person">
+                      <div className="learnreviews-card-name">{item.name}</div>
+                      <div className="learnreviews-card-role">{item.role}</div>
                     </div>
                   </div>
                 </article>
@@ -174,11 +174,11 @@ const WorkersReviews = () => {
             </div>
           </div>
 
-          <div className="workersreviews-nav">
-            <button className="workersreviews-nav-btn" onClick={prev} disabled={!canSlide}>
+          <div className="learnreviews-nav">
+            <button className="learnreviews-nav-btn" onClick={prev} disabled={!canSlide}>
               ←
             </button>
-            <button className="workersreviews-nav-btn" onClick={next} disabled={!canSlide}>
+            <button className="learnreviews-nav-btn" onClick={next} disabled={!canSlide}>
               →
             </button>
           </div>
