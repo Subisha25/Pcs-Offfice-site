@@ -47,7 +47,7 @@
   text-align: center;
 }
 .highlight-result {
-  color: #00008B;
+  /* color: #00008B;
  font-family: Playfair Display;
 font-weight: 500;
 font-style: Italic;
@@ -55,8 +55,15 @@ font-size: 48px;
 leading-trim: NONE;
 line-height: 60px;
 letter-spacing: 1%;
-text-align: center;
+text-align: center; */
 
+font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(90deg, #03045E 100%, #FF006E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* ================== BASE STYLES (SERVICE BANNER) ================== */
