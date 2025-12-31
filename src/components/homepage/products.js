@@ -9,16 +9,19 @@ import ecommerceImage from "../assets/ecommerce.jpg";
 import tailoringImage from "../assets/tailoring.jpg";
 import FeedbackSection from "./feedback.js";
 import CommonTopTag from "../common/toptag.js";
+import { useNavigate } from "react-router-dom";
 
 const products = [
-  { name: "Billing Software", image: billingImage, link: "/billing" },
-  { name: "LMS", image: lmsImage, link: "/lms" },
-  { name: "E commerce", image: ecommerceImage, link: "/ecommerce" },
-  { name: "Tailoring", image: tailoringImage, link: "/tailoring" },
+  { id: 4, name: "Billing Software", image: billingImage },
+  { id: 7, name: "LMS", image: lmsImage },
+  { id: 2, name: "E commerce", image: ecommerceImage },
+  { id: 10, name: "Tailoring", image: tailoringImage },
 ];
+
 
 const Products = () => {
   const [activeProduct, setActiveProduct] = useState(products[0]);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -63,9 +66,13 @@ const Products = () => {
                       <span className="arrows"> <img src={arrow} alt="arrows" /></span>
                     )}
                     {/* View always visible */}
-                    <a href={item.link} className="view-link">
-                      View
-                    </a>
+                  <span
+  className="view-link"
+onClick={() => navigate(`/productdetails/${item.id}`)}
+>
+  View
+</span>
+
 
                   </div>
 
