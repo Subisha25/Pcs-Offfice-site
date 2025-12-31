@@ -38,62 +38,53 @@ function PurposeSection() {
   }, []);
   return (
     <div className="purpose-container">
-
-      {/* Top Badge */}
-      <div className="" >
-        <CommonTopTag text="Why Choose Us" icon={tagicon} />
-      </div>
-      <p className="webdesign-p">
-        Design with purpose,
-      </p>
-      <p className="webdesign-p"> built with{" "}
-        <span className="highlight-result">results</span>
-      </p>
-      <div className="workprocess-scroll-area">
+    
+        {/* Top Badge */}
+        <div className="" >
+          <CommonTopTag text="Why Choose Us" icon={tagicon} />
+        </div>
+        <p className="webdesign-p">
+          Design with purpose,
+        </p>
+        <p className="webdesign-p"> built with{" "}
+          <span className="highlight-result">results</span>
+        </p>
+         <div className="workprocess-scroll-area">
         <div
           ref={cardsRef}
           className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "32px",
-            alignItems: "stretch",
-            paddingTop: "40px",
-            paddingBottom: "40px",
-          }}
         >
+         <Card
+  img={Discover}
+  title="Brand"
+  sub="Strategy"
+  text="We define your brand’s purpose, voice, audience, and positioning to guide all decisions."
+/>
 
-          <Card
-            img={Discover}
-            title="Analyze"
-            sub=""
-            text="We study your audience, market trends, and goals to uncover actionable insights."
-          />
+<Card
+  img={Deliver}
+  title="Identity"
+  sub="Creation"
+  text="We craft strong visual identities that clearly communicate your brand’s personality."
+/>
 
-          <Card
-            img={Deliver}
-            title="Strategize"
-            sub=""
-            text="We create a focused marketing plan using SEO, content, social, and paid channels."
-          />
+<Card
+  img={Create}
+  title="Brand"
+  sub="Experience"
+  text="We deliver consistent brand experiences across digital, print, and marketing channels."
+/>
 
-          <Card
-            img={Create}
-            title="Execute"
-            sub=""
-            text="We launch data-driven campaigns with compelling creatives that attract and convert."
-          />
-
-          <Card
-            img={Grow}
-            title="Optimize"
-            sub=""
-            text="We track results, refine strategies, and continuously improve performance for growth."
-          />
+<Card
+  img={Grow}
+  title="Brand"
+  sub="Growth"
+  text="We evolve your brand through insights, optimization, and strategic digital expansion."
+/>
 
         </div>
       </div>
-    </div>
+      </div>
   );
 }
 function Card({ img, title, sub, text }) {
