@@ -342,3 +342,51 @@
     font-size: 13px;
   }
 }
+
+
+/* =====================================================
+   MOBILE HEADING FULL VISIBILITY FIX (320px – 425px)
+   ===================================================== */
+@media (max-width: 425px) {
+
+  /* 🔹 SECTION SPACING – heading ku space irukkanum */
+  .workprocess-section {
+    padding-top: 40px;
+    padding-bottom: 24px;
+  }
+
+  /* 🔹 MAIN ANIMATED HEADING FIX */
+  .animated-text2 {
+    white-space: normal;        /* 🔥 line break allow */
+    word-break: break-word;
+    text-align: center;
+    line-height: 1.35;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+
+  /* 🔹 WORD SPANS – wrap aaga allow */
+  .animated-text2 .word {
+    display: inline;            /* inline-block remove */
+    opacity: 1 !important;      /* 🔥 mobile-la full visible */
+    transform: none !important;
+  }
+
+  /* 🔹 Gradient word safe-aa wrap aaga */
+  .animated-text2 .gradient-word {
+    display: inline;
+    white-space: normal;
+  }
+
+  /* 🔹 NEGATIVE MARGIN REMOVE (heading hide aaguradha stop) */
+  .divider-card-container {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* 🔹 Cards section heading mela overlap aagadha protection */
+  .workprocess {
+    padding-top: 20px;
+  }
+}
