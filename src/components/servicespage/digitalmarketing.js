@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
 import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 
-import Mockup from "../assets/brand.jpg";
-import Team from "../assets/brand3.avif";
-import Result from "../assets/brand2.avif";
+import Mockup from "../assets/digital1.jpg";
+import Team from "../assets/digital.jpg";
+import Result from "../assets/digital2.jpg";
 
 import Whychoose from "../assets/whychoose.png";
 import Discover from "../assets/discovers.png";
@@ -54,34 +54,33 @@ function PurposeSection() {
           ref={cardsRef}
           className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
         >
-         <Card
-  img={Discover}
-  title="Brand"
-  sub="Strategy"
-  text="We define your brand’s purpose, voice, audience, and positioning to guide all decisions."
-/>
+        <Card
+            img={Discover}
+            title="Analyze"
+            sub=""
+            text="We study your audience, market trends, and goals to uncover actionable insights."
+          />
 
-<Card
-  img={Deliver}
-  title="Identity"
-  sub="Creation"
-  text="We craft strong visual identities that clearly communicate your brand’s personality."
-/>
+          <Card
+            img={Deliver}
+            title="Strategize"
+            sub=""
+            text="We create a focused marketing plan using SEO, content, social, and paid channels."
+          />
 
-<Card
-  img={Create}
-  title="Brand"
-  sub="Experience"
-  text="We deliver consistent brand experiences across digital, print, and marketing channels."
-/>
+          <Card
+            img={Create}
+            title="Execute"
+            sub=""
+            text="We launch data-driven campaigns with compelling creatives that attract and convert."
+          />
 
-<Card
-  img={Grow}
-  title="Brand"
-  sub="Growth"
-  text="We evolve your brand through insights, optimization, and strategic digital expansion."
-/>
-
+          <Card
+            img={Grow}
+            title="Optimize"
+            sub=""
+            text="We track results, refine strategies, and continuously improve performance for growth."
+          />
         </div>
       </div>
       </div>
@@ -104,7 +103,7 @@ function Card({ img, title, sub, text }) {
 /* ==================== MAIN WEB DESIGN PAGE ==================== */
 
 export default function DigitalMarketing() {
-  useEffect(() => {
+   useEffect(() => {
     /* ================= MOBILE CHECK ================= */
     const isMobileTypewriterDisabled =
       window.matchMedia("(max-width: 425px)").matches;
@@ -218,7 +217,7 @@ export default function DigitalMarketing() {
       window.removeEventListener("resize", onScroll);
     };
   }, []);
-
+  
   return (
     <>
       <div className="sw-container">
@@ -230,11 +229,11 @@ export default function DigitalMarketing() {
             data-animate="fade-up"
             style={{ "--delay": "0s" }}
           >
-            <p className="sw-small-title">Branding &amp; Identity Design</p>
+            <p className="sw-small-title">Digital Marketing </p>
             <h1 className="sw-main-title">
-              Build a brand
+              Drive traffic, boost conversions &
               <br />
-              that people remember
+              grow your brand online
             </h1>
           </div>
 
@@ -253,9 +252,13 @@ export default function DigitalMarketing() {
         {/* STEP 1: Description with typewriter words */}
         <p
           className="sw-description"
-          data-typewriter="We craft responsive, visually stunning websites tailored to your brand’s needs.From concept to deployment, our team ensures every website is optimized forperformance, usability, and conversions for a website—like the text content thatappears on a single service page in a CMS. Here’s a clean, professional exampleyou can use or adapt."
+          data-typewriter="We craft responsive and visually stunning websites tailored to your brand’s needs.
+From concept to deployment, our team handles every stage with precision and care.
+Each website is optimized for speed, performance, and smooth user experience.
+We focus on clean design, usability, and conversion-driven layouts.
+Our goal is to build websites that truly represent your brand and drive results."
         >
-          A strong brand is more than a logo—it’s an experience your audience remembers. We deliver branding and creative services that combine strategy with creativity, ensuring every touchpoint feels memorable, engaging, and purposeful. From visual identity to storytelling, we craft experiences that inspire trust, build loyalty, and set your brand apart.        </p>
+          Effective digital marketing is more than campaigns—it’s about creating meaningful connections with your audience. We craft strategies that combine creativity, analytics, and smart technology, ensuring every touchpoint drives engagement, builds trust, and converts visitors into loyal customers. From social media to search engine campaigns, we design experiences that inspire action and deliver measurable results.        </p>
 
         {/* STEP 2: What We Offer Section */}
         <div className="sw-offer-section">
@@ -275,11 +278,11 @@ export default function DigitalMarketing() {
             <h2 className="sw-offer-title">What We Offer:</h2>
 
             <ul className="sw-offer-list">
-              <li>Brand Identity & Logo Design</li>
-              <li>Visual & Graphic Design</li>
-              <li>Content Strategy & Copywriting</li>
-              <li>Marketing Collateral Design</li>
-              <li>Creative Campaign Development</li>
+              <li>Search Engine Optimization (SEO)</li>
+              <li>Social Media Marketing (SMM)</li>
+              <li>Pay-Per-Click (PPC) Campaigns</li>
+              <li>Email & Content Marketing</li>
+              <li>Analytics & Performance Optimization</li>
             </ul>
           </div>
         </div>
@@ -293,8 +296,7 @@ export default function DigitalMarketing() {
           >
             <h2 className="sw-result-title">Result:</h2>
             <p className="sw-result-content">
-
-The results of our branding and creative services highlight the power of strategic storytelling. By understanding your audience and crafting meaningful visuals and messaging, we enhance brand recognition, strengthen engagement, and drive long-term loyalty. Every project is designed to create a cohesive and memorable brand experience that truly resonates with your target audience.
+              Our digital marketing strategies deliver measurable results. By targeting the right audience, optimizing campaigns, and analyzing performance, we improve engagement, increase conversions, and maximize ROI. This data-driven and creative marketing approach enhances visibility, strengthens brand presence, and drives sustained business growth.
             </p></ul>
 
           <div

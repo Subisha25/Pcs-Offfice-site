@@ -41,10 +41,10 @@ function PurposeSection() {
         <div className="" >
           <CommonTopTag text="Why Choose Us" icon={tagicon} />
         </div>
-        <p className="webdesign-p">
-          Design with purpose,built with
+       <p className="webdesign-p">
+          Design with purpose,
         </p>
-        <p className="webdesign-p">
+        <p className="webdesign-p"> built with{" "}
           <span className="highlight-result">results</span>
         </p>
          <div className="workprocess-scroll-area">
