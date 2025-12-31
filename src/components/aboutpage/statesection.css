@@ -173,11 +173,12 @@ letter-spacing: 1%;
 }
 
 /* On very small cards, allow full width */
-@media (max-width: 420px) {
+@media (max-width: 425px) {
   .desc {
     /* max-width: 100%; */
     padding: 0 6px;
   }
+
 }
 @media (max-width: 320px) {
   .desc {
@@ -252,5 +253,31 @@ letter-spacing: 1%;
 
   .grow-last3 {
     font-size: 24px;
+  }
+}
+
+
+/* 🔥 EXTRA TIGHT MOBILE FIX */
+@media (max-width: 480px) {
+
+  .stats-card {
+    padding-top: 10px;     /* 👈 card top space reduce */
+    padding-bottom: 10px;  /* 👈 card bottom space reduce */
+  }
+
+  .stats-card h1 {
+    margin-top: 0;
+    margin-bottom: 2px;    /* 👈 number → title gap tight */
+  }
+
+  .title {
+    margin-top: 0;
+    margin-bottom: 2px;    /* 👈 title → desc gap reduce */
+    line-height: 1.1;
+  }
+
+  .desc {
+    margin-top: 2px;       /* 👈 MAIN FIX (was 6–12px before) */
+    padding-top: 0;
   }
 }
