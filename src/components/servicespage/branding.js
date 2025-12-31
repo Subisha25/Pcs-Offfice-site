@@ -105,137 +105,117 @@ function Card({ img, title, sub, text }) {
 
 export default function Branding() {
   useEffect(() => {
-    // ==== 1) Generic fade/slide/zoom for [data-animate] (works on scroll down & up) ====
+    /* ================= MOBILE CHECK ================= */
+    const isMobileTypewriterDisabled =
+      window.matchMedia("(max-width: 425px)").matches;
+  
+    /* ================= 1) SCROLL ANIMATIONS ================= */
     const animatedEls = document.querySelectorAll("[data-animate]");
-
     const scrollIO = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          } else {
-            entry.target.classList.remove("is-visible");
-          }
+          entry.target.classList.toggle("is-visible", entry.isIntersecting);
         });
       },
-      {
-        threshold: 0.35,
-      }
+      { threshold: 0.35 }
     );
-
+  
     animatedEls.forEach((el) => scrollIO.observe(el));
-
-    // ==== 2) Typewriter per word for [data-typewriter] (runs once when visible) ====
-    const typeEls = document.querySelectorAll("[data-typewriter]");
-    const typeMap = new WeakMap();
-
-    function startTypewriter(el) {
-      if (typeMap.has(el)) return;
-
-      const fullText = el.dataset.typewriter || el.textContent.trim();
-      const words = fullText.split(" ");
-      el.textContent = ""; // clear existing text
-
-      let index = 0;
-
-      const interval = setInterval(() => {
-        if (index >= words.length) {
-          clearInterval(interval);
-          return;
-        }
-
-        const span = document.createElement("span");
-        span.className = "sw-type-word";
-        span.textContent = words[index];
-
-        if (index > 0) {
-          el.appendChild(document.createTextNode(" "));
-        }
-        el.appendChild(span);
-
-        index++;
-      }, 110); // speed per word
-
-      typeMap.set(el, interval);
-    }
-
-    const typeIO = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            startTypewriter(entry.target);
-            typeIO.unobserve(entry.target); // only once
+  
+    /* ================= 2) TYPEWRITER (DESKTOP ONLY) ================= */
+    let typeIO = null; // 🔥 declare outside (important)
+  
+    if (!isMobileTypewriterDisabled) {
+      const typeEls = document.querySelectorAll("[data-typewriter]");
+      const typeMap = new WeakMap();
+  
+      function startTypewriter(el) {
+        if (typeMap.has(el)) return;
+  
+        const fullText = el.dataset.typewriter || el.textContent.trim();
+        const words = fullText.split(" ");
+        el.textContent = "";
+  
+        let index = 0;
+  
+        const interval = setInterval(() => {
+          if (index >= words.length) {
+            clearInterval(interval);
+            return;
           }
-        });
-      },
-      {
-        threshold: 0.5,
+  
+          const span = document.createElement("span");
+          span.className = "sw-type-word";
+          span.textContent = words[index];
+  
+          if (index > 0) el.appendChild(document.createTextNode(" "));
+          el.appendChild(span);
+  
+          index++;
+        }, 110);
+  
+        typeMap.set(el, interval);
       }
-    );
-
-    typeEls.forEach((el) => typeIO.observe(el));
-
-    // ==== 3) Scroll-driven zoom for banner mockup (clear, no blur) ====
+  
+      typeIO = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startTypewriter(entry.target);
+              typeIO.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+  
+      typeEls.forEach((el) => typeIO.observe(el));
+    }
+  
+    /* ================= 3) BANNER SCROLL ZOOM ================= */
     const bannerImg = document.querySelector(".sw-banner-img");
     const bannerWrap = document.querySelector(".sw-banner-wrapper");
     let ticking = false;
-
+  
     function updateBannerZoom() {
       if (!bannerImg || !bannerWrap) return;
-
+  
       const rect = bannerWrap.getBoundingClientRect();
-      const viewportH = window.innerHeight || 1;
-
-      // When wrapper top is near bottom -> start
-      const start = viewportH * 0.95;
-      // When wrapper top is around middle/upper -> end
-      const end = viewportH * 0.35;
-
+      const vh = window.innerHeight || 1;
+  
+      const start = vh * 0.95;
+      const end = vh * 0.35;
+  
       let progress = (start - rect.top) / (start - end);
-      // clamp 0–1
-      if (progress < 0) progress = 0;
-      if (progress > 1) progress = 1;
-
-      // progress 0 -> 1  => scale 0.1 -> 1, opacity 0 -> 1
-      const minScale = 0.1;
-      const maxScale = 1;
-      const minOpacity = 0;
-      const maxOpacity = 1;
-      const minTranslate = 80;
-      const maxTranslate = 0;
-
-      const scale = minScale + (maxScale - minScale) * progress;
-      const opacity = minOpacity + (maxOpacity - minOpacity) * progress;
-      const translateY =
-        minTranslate + (maxTranslate - minTranslate) * progress;
-
-      bannerImg.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-      bannerImg.style.opacity = opacity;
-      // no blur here → always clear
+      progress = Math.min(Math.max(progress, 0), 1);
+  
+      bannerImg.style.transform = `
+        scale(${0.1 + 0.9 * progress})
+        translateY(${80 - 80 * progress}px)
+      `;
+      bannerImg.style.opacity = progress;
     }
-
-    function onScrollOrResize() {
+  
+    function onScroll() {
       if (!ticking) {
-        window.requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
           updateBannerZoom();
           ticking = false;
         });
         ticking = true;
       }
     }
-
-    // initial state (in case page already scrolled)
+  
     updateBannerZoom();
-
-    window.addEventListener("scroll", onScrollOrResize);
-    window.addEventListener("resize", onScrollOrResize);
-
-    // cleanup
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+  
+    /* ================= CLEANUP ================= */
     return () => {
       scrollIO.disconnect();
-      typeIO.disconnect();
-      window.removeEventListener("scroll", onScrollOrResize);
-      window.removeEventListener("resize", onScrollOrResize);
+      if (typeIO) typeIO.disconnect(); // 🔥 safe cleanup
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
     };
   }, []);
 
