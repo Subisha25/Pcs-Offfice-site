@@ -12,8 +12,8 @@ import { Link, useNavigate } from "react-router-dom";
 const reviewsData = [
   {
     text: "The Lhome project was executed beautifully. The team understood our vision for a modern and welcoming home platform and delivered a clean, user-friendly website. From layout to performance, everything feels perfect.",
-    name: "Raj Kumar",
-    role: "Lhome",
+    name: "Tony Rosario",
+    role: "Rio business solutions",
     // img: "https://i.pravatar.cc/60?img=11",
   },
   {
