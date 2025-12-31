@@ -10,6 +10,7 @@ import CommonButton from "../../components/common/button";
 import { Link, useNavigate } from "react-router-dom";
 
 
+
 const courses = [
   {
     id: 1,
@@ -42,7 +43,7 @@ const AllCourses = () => {
 
 
   return (
-    <section className="traningpopular">
+    <section className="allcourse">
       <div className="traningpopular-inner">
    
 
@@ -50,12 +51,21 @@ const AllCourses = () => {
         <div className="traningpopular-grid">
        {coursedata.map((course) => (
   <article className="traningpopular-card" key={course.id}>
-    <img src={course.image} alt={course.title} />
-
+<Link to={`/coursedetails/${course.id}`}>
+  <img
+    src={course.image}
+    alt={course.title}
+    className="traningpopular-card-image"
+  />
+</Link>
     <div className="traningpopular-card-body">
-      <p>{course.category}</p>
-      <h3>{course.shortTitle}</h3>
+      <p className="traningpopular-card-category">
+  {course.category}
+</p>
 
+<h3 className="traningpopular-card-title">
+  {course.shortTitle}
+</h3>
       <div className="traningpopular-card-meta">
         <span>{course.mode}</span>
         <span>{course.lessons} Lessons</span>

@@ -94,7 +94,6 @@ font-family: "Playfair Display", serif;
   background-size: cover;
   background-position: center top;
   position: relative;
-  z-index: 1;
 }
 
 .sw-small-title {
@@ -123,16 +122,17 @@ font-family: "Playfair Display", serif;
   margin-top: -150px;
 }
 
-.sw-banner {
-  max-width: 1150px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  padding: 0 20px;
-  position: sticky;
-  top: 90px;
-  z-index: 2;
+/* GLOBAL FIX */
+.sw-banner-wrapper {
+  position: relative;
+  margin-top: -140px;
+  height: auto !important;   /* 🔥 THIS FIXES ALL VIEWS */
 }
+
+.sw-header {
+  padding-bottom: clamp(260px, 35vw, 420px);  /* 🔥 KEY FIX */
+}
+
 
 .sw-banner-img {
   width: 100%;
@@ -143,20 +143,33 @@ font-family: "Playfair Display", serif;
   transform: scale(0.1) translateY(80px);
   transform-origin: center top;
   transition: transform 0.15s linear, opacity 0.15s linear;
+
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
+
+
 
 /* ================== DESCRIPTION ================== */
 .sw-description {
   font-family: "WF Visual Sans";
   max-width: 645px;
   font-weight: 300;
-  margin: 60px auto 0;
   text-align: left;
   color: #7d7d7d;
   line-height: 1.6;
   padding: 0 20px;
   font-size: 16px;
+
+    position: relative;
+  margin-top: clamp(90px, 12vw, 140px);
+    text-align: center;     /* 🔥 CENTER */
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
 
 .sw-type-word {
   font-family: "WF Visual Sans";
@@ -640,11 +653,14 @@ font-family: "Playfair Display", serif;
   }
 
   /* BANNER */
-  .sw-banner {
-    position: relative; /* ❗ disable sticky */
-    top: unset;
-    padding: 0 14px;
-  }
+.sw-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
   .sw-banner-wrapper {
     height: auto;
@@ -656,6 +672,7 @@ font-family: "Playfair Display", serif;
     border-radius: 14px;
     transform: scale(1);
     opacity: 1;
+    margin-top: 50px;
   }
 
   /* DESCRIPTION */
@@ -707,6 +724,7 @@ font-family: "Playfair Display", serif;
   }
 }
 
+
 @media (max-width: 425px) {
 
   .sw-result {
@@ -734,5 +752,35 @@ font-family: "Playfair Display", serif;
   }
 }
 
+
+
+/* TABLET & SMALL LAPTOP SAFETY */
+@media (max-width: 1024px) {
+  .sw-banner {
+    top: 70px;   /* slightly less sticky pull */
+  }
+}
+
+@media (max-width: 991px) {
+  .sw-banner-wrapper {
+    margin-top: -100px;
+  }
+
+  .sw-description {
+    margin-top: 120px;
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .sw-banner-wrapper {
+    margin-top: -170px;
+  }
+
+  .sw-description {
+    margin-top: 140px;
+    max-width: 720px;
+  }
+}
 
 

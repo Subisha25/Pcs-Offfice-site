@@ -245,11 +245,14 @@ const ServicesSection = () => {
           const descriptionColor = isHovered ? '#ffffff' : '#7D7D7D';
 
           return (
-            <div
-              key={index}
-              className={`service-card ${isHovered ? 'active' : ''}`}
-              onMouseEnter={() => !isMobile && setActiveCard(index)}
-              onMouseLeave={() => !isMobile && setActiveCard(null)}
+        <div
+  key={index}
+  className={`service-card ${isHovered ? 'active' : ''}`}
+  onClick={() => navigate(service.route)}   // 👈 FULL CARD CLICK
+  onMouseEnter={() => !isMobile && setActiveCard(index)}
+  onMouseLeave={() => !isMobile && setActiveCard(null)}
+
+
 
               style={{
                 width: '100%',
@@ -339,6 +342,7 @@ const ServicesSection = () => {
               {/* Image section */}
               <div
                 className="card-image"
+                
                 style={{
                   position: 'absolute',
                   borderRadius: '25px',
@@ -433,7 +437,7 @@ const ServicesSection = () => {
       </div>
 
       {/* Media Queries - unchanged */}
-      <style jsx>{`
+         <style jsx>{`
 
 @media (max-width: 768px) {
  /* ✅ FORCE WHITE TEXT ON MOBILE */
@@ -442,6 +446,7 @@ const ServicesSection = () => {
   .service-card .card-description {
     color: #ffffff !important;
   }
+    
 
   /* Optional – description konjam clear aa irukka */
   .service-card .card-description {
@@ -454,9 +459,9 @@ const ServicesSection = () => {
 
 
   .card-description {
-    font-size: 14px !important;     /* 🔽 size reduced */
+    font-size: 13px !important;     /* 🔽 size reduced */
     line-height: 1.4 !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 30px !important;
 
     display: block !important;
     overflow: visible !important;
@@ -503,14 +508,39 @@ const ServicesSection = () => {
   .card-header {
     position: relative !important;
     z-index: 5 !important;
+    padding-top:20px
   }
 }
 
-      
+@media (max-width: 1024px) {
+   .services-container {
+            padding:65px 12px 45px 12px !important;
+          }
+
+      }
+@media (max-width: 768px) {
+ 
+
+      @media (max-width: 768px) {
+  .card-title,
+  .card-subtitle {
+    line-height: 1.1 !important;   /* 🔽 kammi */
+    margin-bottom: 4px !important;
+  }
+     .services-container {
+            padding:65px 12px 45px 12px !important;
+          }
+  .card-description {
+  font-size:14px;
+    margin-top: 16px !important;   /* ⬇️ title-kku keela gap */
+    line-height: 1.45 !important;
+  }
+}
+
 
         @media (max-width: 480px) {
           .services-container {
-            padding: 24px 12px !important;
+            padding:65px 12px 45px 12px !important;
           }
           .services-title {
             font-size: 20px !important;
@@ -522,86 +552,120 @@ const ServicesSection = () => {
           }
           .card-title,
           .card-subtitle {
+          mrgin-bottom:0px !important;
             font-size: 30px !important;
           }
           .card-description {
-            fontSize: 13px !important;
+            fontSize: 1px !important;
           }
           .card-arrow {
             right: 12px !important;
             top: 12px !important;
           }
+  .services-grid {
+    margin-top: -40px !important;   /* 👈 cards mela thallum */
         }
 
-        @media (max-width: 480px) {
+  .service-card .card-description {
+    margin-top: -12px !important;   /* 👈 description mela varum */
+}
 
-  .workprocess-section h1 {
-    font-size: 26px !important;
-    line-height: 34px !important;
-    max-width: 300px !important;
-    margin: 0 auto !important;
-    text-align: center !important;
+/* ================= MOBILE VIEW CARD SPACING FIX ================= */
+@media (max-width: 768px) {
+
+  /* 1️⃣ SAME TOP & BOTTOM DISTANCE INSIDE CARD */
+  .service-card {
+    padding-top: 26px !important;
+    padding-bottom: 26px !important;
   }
 
-  /* 🔥 KEY TRICK */
-  .workprocess-section h1 {
-    word-spacing: 2px;
+  /* 2️⃣ HEADING – LITTLE DOWN (LINE HEIGHT + SPACING) */
+  .card-title,
+  .card-subtitle {
+    line-height: 1.15 !important;   /* konjam relaxed */
+    margin-top: 6px !important;     /* 👇 little down */
+    margin-bottom: 6px !important;
   }
 
-  .workprocess-section h1 span {
-    display: inline;
+  /* 3️⃣ PARAGRAPH – LITTLE UP */
+  .card-description {
+    margin-top: 4px !important;     /* 👆 paragraph mela varum */
+  }
+    /* ================= EXTRA COMPACT CARD – MOBILE ONLY ================= */
+@media (max-width: 768px) {
+
+  /* 🔽 Card overall height */
+  .service-card {
+    min-height: 240px !important;   /* 🔥 more reduced */
+    padding: 14px !important;       /* 🔥 tight padding */
   }
 
-  /* execution break aagama irukka */
-  .workprocess-section h1 {
-    word-break: keep-all;
+  /* 🔽 Header spacing reduce */
+  .card-header {
+    margin-bottom: 4px !important;
+
   }
 
-  /* execution konjam highlight */
-  .workprocess-section h1 span[style*="Playfair"] {
-    font-size: 28px !important;
-    white-space: nowrap;
+  /* 🔽 Title & subtitle tight */
+  .card-title,
+  .card-subtitle {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* 🔽 Description space reduce */
+  .card-description {
+    margin-top: 2px !important;
+    margin-bottom: 4px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* 🔽 Stop vertical stretch */
+  .card-content {
+    justify-content: flex-start !important;
   }
 }
+  /* ================= MOVE CARD HEADER UP – MOBILE ONLY ================= */
+@media (max-width: 768px) {
+
+  .card-header {
+    padding-top: 6px !important;   /* 👆 mela thallum */
+    margin-top: -6px !important;   /* 👆 extra lift */
+  }
+}
+
+
+}
+
+/* =========================
+   MOBILE – ONLY PADDING INCREASE
+========================= */
+
+@media (max-width: 768px) {
+  .service-card {
+    padding: 34px !important;   /* 🔥 previous ~22px → ippo BIG */
+    box-sizing: border-box !important;
+  }
+    
+}
+
+/* Small mobiles */
 @media (max-width: 480px) {
-
-  .workprocess-section h1 {
-    font-size: 26px !important;
-    line-height: 34px !important;
-    max-width: 300px;
-    margin: 0 auto;
-    text-align: center;
-    word-break: keep-all;
-  }
-
-  /* 🔥 FORCE execution stay with first line */
-  .workprocess-section h1 span[style*="Playfair"] {
-    white-space: nowrap;
-    display: inline-block;
-    font-size: 28px !important;
-  }
-
-  /* 🔥 FORCE “we’ve got you” second line */
-  .workprocess-section h1::after {
-    content: "";
-    display: block;
+  .service-card {
+    padding: 25px !important;
   }
 }
-/* 🔥 ONLY for very small mobiles like 320px */
+
+/* Very small mobiles */
 @media (max-width: 320px) {
-
-  .workprocess-section h1 {
-    font-size: 24px !important;   /* ⬇️ konjam small */
-    line-height: 32px !important;
-    max-width: 260px !important; /* ⬅️ force 3 lines */
-  }
-
-  .workprocess-section h1 span[style*="Playfair"] {
-    font-size: 26px !important;  /* execution adjust */
-    white-space: nowrap;
+  .service-card {
+    padding: 28px !important;
   }
 }
 
+
+    
       `}</style>
           <TechLogoStrip />
 

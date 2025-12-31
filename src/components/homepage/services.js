@@ -230,11 +230,13 @@ const ServicesSection = () => {
             const descriptionColor = isHovered ? '#ffffff' : '#7D7D7D';
 
             return (
-              <div
-                key={index}
-                className={`service-card ${isHovered ? 'active' : ''}`}
-                onMouseEnter={() => !isMobile && setActiveCard(index)}
-                onMouseLeave={() => !isMobile && setActiveCard(null)}
+         <div
+  key={index}
+  className={`service-card ${isHovered ? 'active' : ''}`}
+  onClick={() => navigate(service.route)}   // 👈 FULL CARD CLICK
+  onMouseEnter={() => !isMobile && setActiveCard(index)}
+  onMouseLeave={() => !isMobile && setActiveCard(null)}
+
 
                 style={{
                   width: '100%',
