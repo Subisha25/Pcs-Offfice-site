@@ -21,7 +21,7 @@ const ServicesSection = () => {
   const [filledWords, setFilledWords] = useState(0);
 
   const paragraph = [
-    "From idea to execution, we’ve got you covered at every step."
+    "From idea to execution, we’ve got you covered."
   ].join(" ").split(" ");
 
   const maxWords = paragraph.length;

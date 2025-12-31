@@ -54,34 +54,33 @@ function PurposeSection() {
           ref={cardsRef}
           className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
         >
-         <Card
-  img={Discover}
-  title="Brand"
-  sub="Strategy"
-  text="We define your brand’s purpose, voice, audience, and positioning to guide all decisions."
-/>
+        <Card
+            img={Discover}
+            title="Analyze"
+            sub=""
+            text="We study your audience, market trends, and goals to uncover actionable insights."
+          />
 
-<Card
-  img={Deliver}
-  title="Identity"
-  sub="Creation"
-  text="We craft strong visual identities that clearly communicate your brand’s personality."
-/>
+          <Card
+            img={Deliver}
+            title="Strategize"
+            sub=""
+            text="We create a focused marketing plan using SEO, content, social, and paid channels."
+          />
 
-<Card
-  img={Create}
-  title="Brand"
-  sub="Experience"
-  text="We deliver consistent brand experiences across digital, print, and marketing channels."
-/>
+          <Card
+            img={Create}
+            title="Execute"
+            sub=""
+            text="We launch data-driven campaigns with compelling creatives that attract and convert."
+          />
 
-<Card
-  img={Grow}
-  title="Brand"
-  sub="Growth"
-  text="We evolve your brand through insights, optimization, and strategic digital expansion."
-/>
-
+          <Card
+            img={Grow}
+            title="Optimize"
+            sub=""
+            text="We track results, refine strategies, and continuously improve performance for growth."
+          />
         </div>
       </div>
       </div>

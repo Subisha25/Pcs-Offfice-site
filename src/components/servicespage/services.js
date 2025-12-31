@@ -665,6 +665,31 @@ const ServicesSection = () => {
 }
 
 
+/* =========================
+   MOBILE HEADING – SAME SIZE
+   320px → 425px (3 lines)
+========================= */
+@media (max-width: 425px) {
+
+  .workprocess-section h1 {
+    font-size: clamp(26px, 7vw, 28px) !important;
+    line-height: 1.25 !important;
+    margin-top: -40px !important;
+    text-align: center;
+  }
+
+  .workprocess-section h1 .heading-normal {
+    font-size: inherit !important;
+  }
+
+  /* execution word */
+  .workprocess-section h1 span[style*="Playfair"] {
+    font-size: clamp(28px, 7.5vw, 30px) !important;
+    line-height: 1.25 !important;
+  }
+}
+
+
     
       `}</style>
           <TechLogoStrip />
