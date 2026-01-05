@@ -6,7 +6,7 @@ import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 
 import Mockup from "../assets/servicebanner.png";
 import Team from "../assets/service1.png";
-import Result from "../assets/service2.png";
+import CicdImg from "../assets/cicd/cicd.jpeg";
 
 import CTASection from "../homepage/cta";
 import CommonTopTag from "../common/toptag";
@@ -288,25 +288,29 @@ export default function Webdesign() {
           </div>
         </div>
 
-        {/* STEP 3: Result Section */}
-        <div className="sw-result">
-          <ul
-            className="sw-result-text"
-            data-animate="fade-up"
+        {/* STEP 3: CI/CD Section (uses .sw-offer-section for consistent layout) */}
+        <div className="sw-offer-section">
+          <div
+            className="sw-offer-img-box"
+            data-animate="zoom-in"
             style={{ "--delay": "0s" }}
           >
-            <h2 className="sw-result-title">Result:</h2>
-            <p>
-              The results show that AI can accurately understand and respond to human behaviour. By analysing patterns in thoughts, emotions, and actions, AI provides clear insights into a user’s psychological state. Overall, this study confirms that AI enhances behavioural analysis and delivers a smoother, more personalized user experience.
-            </p>
-          </ul>
+            <img src={CicdImg} alt="CI/CD" className="sw-offer-img" />
+          </div>
 
           <div
-            className="sw-result-img-box"
-            data-animate="zoom-in"
+            className="sw-offer-content"
+            data-animate="fade-left"
             style={{ "--delay": "0.15s" }}
           >
-            <img src={Result} alt="Results" className="sw-result-img" />
+            <h2 className="sw-offer-title">CI/CD & Deployment</h2>
+
+            <p className="sw-result-text">
+              Continuous integration and delivery streamline releases, reduce
+              manual errors, and keep your site up-to-date with fast, reliable
+              deployments. We automate testing and delivery so updates reach
+              users safely and quickly.
+            </p>
           </div>
         </div>
       </div>
