@@ -151,7 +151,7 @@ font-weight: 300;
 .meta-badge .dot {
   width: 6px;
   height: 6px;
-  background: #1a1a1a;   /* dark – visible */
+  background: #FF006E;   /* dark – visible */
   border-radius: 50%;
   flex-shrink: 0;
 }
