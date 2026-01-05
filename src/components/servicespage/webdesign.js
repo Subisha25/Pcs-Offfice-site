@@ -41,7 +41,7 @@ function PurposeSection() {
         <div className="" >
           <CommonTopTag text="Why Choose Us" icon={tagicon} />
         </div>
-        <p className="webdesign-p">
+       <p className="webdesign-p">
           Design with purpose,
         </p>
         <p className="webdesign-p"> built with{" "}
@@ -82,28 +82,28 @@ function Card({ img, title, sub, text }) {
 /* ==================== MAIN WEB DESIGN PAGE ==================== */
 
 export default function Webdesign() {
-  useEffect(() => {
-    // ==== 1) Generic fade/slide/zoom for [data-animate] (works on scroll down & up) ====
-    const animatedEls = document.querySelectorAll("[data-animate]");
+ useEffect(() => {
+  /* ================= MOBILE CHECK ================= */
+  const isMobileTypewriterDisabled =
+    window.matchMedia("(max-width: 425px)").matches;
 
-    const scrollIO = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          } else {
-            entry.target.classList.remove("is-visible");
-          }
-        });
-      },
-      {
-        threshold: 0.35,
-      }
-    );
+  /* ================= 1) SCROLL ANIMATIONS ================= */
+  const animatedEls = document.querySelectorAll("[data-animate]");
+  const scrollIO = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
+      });
+    },
+    { threshold: 0.35 }
+  );
 
-    animatedEls.forEach((el) => scrollIO.observe(el));
+  animatedEls.forEach((el) => scrollIO.observe(el));
 
-    // ==== 2) Typewriter per word for [data-typewriter] (runs once when visible) ====
+  /* ================= 2) TYPEWRITER (DESKTOP ONLY) ================= */
+  let typeIO = null; // 🔥 declare outside (important)
+
+  if (!isMobileTypewriterDisabled) {
     const typeEls = document.querySelectorAll("[data-typewriter]");
     const typeMap = new WeakMap();
 
@@ -112,7 +112,7 @@ export default function Webdesign() {
 
       const fullText = el.dataset.typewriter || el.textContent.trim();
       const words = fullText.split(" ");
-      el.textContent = ""; // clear existing text
+      el.textContent = "";
 
       let index = 0;
 
@@ -126,96 +126,77 @@ export default function Webdesign() {
         span.className = "sw-type-word";
         span.textContent = words[index];
 
-        if (index > 0) {
-          el.appendChild(document.createTextNode(" "));
-        }
+        if (index > 0) el.appendChild(document.createTextNode(" "));
         el.appendChild(span);
 
         index++;
-      }, 110); // speed per word
+      }, 110);
 
       typeMap.set(el, interval);
     }
 
-    const typeIO = new IntersectionObserver(
+    typeIO = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             startTypewriter(entry.target);
-            typeIO.unobserve(entry.target); // only once
+            typeIO.unobserve(entry.target);
           }
         });
       },
-      {
-        threshold: 0.5,
-      }
+      { threshold: 0.5 }
     );
 
     typeEls.forEach((el) => typeIO.observe(el));
+  }
 
-    // ==== 3) Scroll-driven zoom for banner mockup (clear, no blur) ====
-    const bannerImg = document.querySelector(".sw-banner-img");
-    const bannerWrap = document.querySelector(".sw-banner-wrapper");
-    let ticking = false;
+  /* ================= 3) BANNER SCROLL ZOOM ================= */
+  const bannerImg = document.querySelector(".sw-banner-img");
+  const bannerWrap = document.querySelector(".sw-banner-wrapper");
+  let ticking = false;
 
-    function updateBannerZoom() {
-      if (!bannerImg || !bannerWrap) return;
+  function updateBannerZoom() {
+    if (!bannerImg || !bannerWrap) return;
 
-      const rect = bannerWrap.getBoundingClientRect();
-      const viewportH = window.innerHeight || 1;
+    const rect = bannerWrap.getBoundingClientRect();
+    const vh = window.innerHeight || 1;
 
-      // When wrapper top is near bottom -> start
-      const start = viewportH * 0.95;
-      // When wrapper top is around middle/upper -> end
-      const end = viewportH * 0.35;
+    const start = vh * 0.95;
+    const end = vh * 0.35;
 
-      let progress = (start - rect.top) / (start - end);
-      // clamp 0–1
-      if (progress < 0) progress = 0;
-      if (progress > 1) progress = 1;
+    let progress = (start - rect.top) / (start - end);
+    progress = Math.min(Math.max(progress, 0), 1);
 
-      // progress 0 -> 1  => scale 0.1 -> 1, opacity 0 -> 1
-      const minScale = 0.1;
-      const maxScale = 1;
-      const minOpacity = 0;
-      const maxOpacity = 1;
-      const minTranslate = 80;
-      const maxTranslate = 0;
+    bannerImg.style.transform = `
+      scale(${0.1 + 0.9 * progress})
+      translateY(${80 - 80 * progress}px)
+    `;
+    bannerImg.style.opacity = progress;
+  }
 
-      const scale = minScale + (maxScale - minScale) * progress;
-      const opacity = minOpacity + (maxOpacity - minOpacity) * progress;
-      const translateY =
-        minTranslate + (maxTranslate - minTranslate) * progress;
-
-      bannerImg.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-      bannerImg.style.opacity = opacity;
-      // no blur here → always clear
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateBannerZoom();
+        ticking = false;
+      });
+      ticking = true;
     }
+  }
 
-    function onScrollOrResize() {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          updateBannerZoom();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
+  updateBannerZoom();
+  window.addEventListener("scroll", onScroll);
+  window.addEventListener("resize", onScroll);
 
-    // initial state (in case page already scrolled)
-    updateBannerZoom();
+  /* ================= CLEANUP ================= */
+  return () => {
+    scrollIO.disconnect();
+    if (typeIO) typeIO.disconnect(); // 🔥 safe cleanup
+    window.removeEventListener("scroll", onScroll);
+    window.removeEventListener("resize", onScroll);
+  };
+}, []);
 
-    window.addEventListener("scroll", onScrollOrResize);
-    window.addEventListener("resize", onScrollOrResize);
-
-    // cleanup
-    return () => {
-      scrollIO.disconnect();
-      typeIO.disconnect();
-      window.removeEventListener("scroll", onScrollOrResize);
-      window.removeEventListener("resize", onScrollOrResize);
-    };
-  }, []);
 
   return (
     <>

@@ -12,7 +12,7 @@
   
 }
 
-/* HERO SECTION */
+/* HERO SECTION*/
 .course-hero {
   background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 50%, #e0e7ff 100%);
   color: black;
@@ -148,18 +148,30 @@ font-weight: 300;
   flex-wrap: wrap;
   margin: 30px 0;
 }
+.meta-badge .dot {
+  width: 6px;
+  height: 6px;
+  background: #1a1a1a;   /* dark – visible */
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
 
 .meta-badge {
-      font-family: "WF Visual Sans";
-font-weight: 300;
+  display: flex;              /* 🔥 MUST */
+  align-items: center;
+  gap: 10px;
+
+  font-family: "WF Visual Sans";
+  font-weight: 300;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 25px;
   font-size: 14px;
-  font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 
 .hero-actions {
   display: flex;
@@ -737,6 +749,9 @@ font-weight: 500;
   padding: 100px 20px;
 }
 
+
+
+
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
@@ -801,3 +816,26 @@ font-weight: 500;
     font-size: 24px;
   }
 }
+
+
+
+
+
+@media (max-width: 480px) {
+
+  .course-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 🔥 whole block center */
+    gap: 12px;
+  }
+
+  .meta-badge {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 🔥 same start */
+    min-width: 240px;            /* equal width pills */
+    text-align: left;
+  }
+}
+

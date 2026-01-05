@@ -632,7 +632,37 @@ font-family: "Playfair Display", serif;
   }
 }
 @media (max-width: 425px) {
+/* SCROLL / DATA ANIMATIONS */
+  [data-animate],
+  [data-animate="fade-right"],
+  [data-animate="fade-left"],
+  [data-animate="zoom-in"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 
+  /* WORD / TEXT ANIMATIONS */
+  .sw-type-word {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* BANNER IMAGE ANIMATION */
+  .sw-banner-img {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+
+  /* GLOBAL SAFETY (just in case) */
+  * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
   /* GLOBAL SPACING */
   .purpose-container {
     padding: clamp(30px, 6vw, 70px) 0;
@@ -722,6 +752,22 @@ font-family: "Playfair Display", serif;
     max-height: clamp(220px, 60vw, 320px);
     margin-top: 20px;
   }
+  .webdesign-p {
+  font-family: "WF Visual Sans";
+  font-weight: 550;
+  font-size: 28px;
+  margin-top: -20px;
+}
+.highlight-result {
+
+font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(90deg, #03045E 100%, #FF006E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 }
 
 
@@ -751,6 +797,8 @@ font-family: "Playfair Display", serif;
     display: block;
   }
 }
+/* ================= MOBILE (320px–425px) NO ANIMATION ================= */
+
 
 
 
@@ -767,7 +815,14 @@ font-family: "Playfair Display", serif;
   }
 
   .sw-description {
-    margin-top: 120px;
+    margin-top: 20px;
+  }
+   .sw-banner-img {
+    max-width: 80%;
+    border-radius: 14px;
+    transform: scale(1);
+    opacity: 1;
+    margin-top: 50px;
   }
 }
 
