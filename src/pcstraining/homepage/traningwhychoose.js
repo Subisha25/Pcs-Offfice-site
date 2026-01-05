@@ -34,7 +34,7 @@ const stats = [
   { number: "2K+", label: "Happy Learners" },
   { number: "99%", label: "Success Rate" },
   { number: "100+", label: "Projects Delivered" },
-  { number: "15+", label: "Experience" },
+  { number: "6+", label: "Experience" },
 ];
 
 const TraningWhyChoose = () => {
