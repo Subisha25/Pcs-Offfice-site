@@ -11,6 +11,7 @@ import Discover from "../assets/discovers.png";
 import Deliver from "../assets/deliver.png";
 import Create from "../assets/create.png";
 import Grow from "../assets/grow.png";
+import CicdImg from "../assets/cicd/cicd.jpeg";
 
 import CTASection from "../homepage/cta";
 import CommonTopTag from "../common/toptag";
@@ -288,23 +289,29 @@ Our goal is to build websites that truly represent your brand and drive results.
         </div>
 
         {/* STEP 3: Result Section */}
-        <div className="sw-result">
-          <ul
-            className="sw-result-text"
-            data-animate="fade-up"
+          {/* STEP 3: CI/CD Section (uses .sw-offer-section for consistent layout) */}
+        <div className="sw-offer-section result-box">
+          <div
+            className="sw-offer-img-box"
+            data-animate="zoom-in"
             style={{ "--delay": "0s" }}
           >
-            <h2 className="sw-result-title">Result:</h2>
-            <p className="sw-result-content">
-              Our digital marketing strategies deliver measurable results. By targeting the right audience, optimizing campaigns, and analyzing performance, we improve engagement, increase conversions, and maximize ROI. This data-driven and creative marketing approach enhances visibility, strengthens brand presence, and drives sustained business growth.
-            </p></ul>
+            <img src={CicdImg} alt="CI/CD" className="sw-offer-img" />
+          </div>
 
           <div
-            className="sw-result-img-box"
-            data-animate="zoom-in"
+            className="sw-offer-content"
+            data-animate="fade-left"
             style={{ "--delay": "0.15s" }}
           >
-            <img src={Result} alt="Results" className="sw-result-img" />
+            <h2 className="sw-offer-title">CI/CD & Deployment</h2>
+
+            <p className="sw-result-text">
+              Continuous integration and delivery streamline releases, reduce
+              manual errors, and keep your site up-to-date with fast, reliable
+              deployments. We automate testing and delivery so updates reach
+              users safely and quickly.
+            </p>
           </div>
         </div>
       </div>
