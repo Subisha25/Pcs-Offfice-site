@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 /* 🔥 IMPORT LOCAL SVG IMAGES */
 import html from "../../components/assets/teach/html.svg";
@@ -40,10 +40,65 @@ export default function TechLogoScroll() {
     { name: "Social Media", img: social },
   ];
 
+  // Refs to control auto-scroll on small screens (320-425px)
+  const wrapperRef = useRef(null);
+  const trackRef = useRef(null);
+
+  useEffect(() => {
+    // Respect user preference for reduced motion
+    const reduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) return;
+
+    let rafId;
+    let pos = 0;
+    let lastTs = null;
+    const speedPxPerSec = 30; // adjust speed here
+
+    function step(ts) {
+      if (!lastTs) lastTs = ts;
+      const dt = ts - lastTs;
+      lastTs = ts;
+
+      const wrapper = wrapperRef.current;
+      const track = trackRef.current;
+      if (!wrapper || !track) {
+        rafId = requestAnimationFrame(step);
+        return;
+      }
+
+      const w = window.innerWidth;
+      // Only auto-scroll on small devices 320 - 425px
+      if (w < 320 || w > 425) {
+        rafId = requestAnimationFrame(step);
+        return;
+      }
+
+      const half = track.scrollWidth / 2;
+      pos += (speedPxPerSec * dt) / 1000;
+      if (pos >= half) pos = pos - half;
+      wrapper.scrollLeft = pos;
+
+      rafId = requestAnimationFrame(step);
+    }
+
+    rafId = requestAnimationFrame(step);
+
+    function onResize() {
+      pos = wrapperRef.current ? wrapperRef.current.scrollLeft : 0;
+      lastTs = null;
+    }
+
+    window.addEventListener('resize', onResize);
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
+
   return (
     <section className="tech-scroll">
-      <div className="scroll-wrapper">
-        <div className="scroll-track">
+      <div className="scroll-wrapper" ref={wrapperRef}>
+        <div className="scroll-track" ref={trackRef}>
           {[...techs, ...techs].map((tech, i) => (
             <div className="tech-card" key={i}>
               <img src={tech.img} alt={tech.name} />
@@ -107,7 +162,8 @@ export default function TechLogoScroll() {
 
           .scroll-track {
             gap: 16px;
-            animation-duration: 28s;
+            /* disable CSS animation on small screens and use JS auto-scroll */
+            animation: none;
           }
 
           .tech-card {

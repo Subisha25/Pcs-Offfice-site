@@ -1,14 +1,19 @@
-import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FiCheck, FiTool, FiUser, FiInfo, FiBriefcase } from "react-icons/fi";
 import coursedata from "./coursedata";
 import "./coursedetails.css";
 import CommonButton from "../../components/common/button";
+import React, { useState } from "react";
+
 
 const CourseDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const course = coursedata.find((c) => c.id === id);
+const [activePrereqImage, setActivePrereqImage] = useState(
+  course.prerequisites?.[0]?.image
+);
+const [activeCareer, setActiveCareer] = useState(0);
 
   if (!course) {
     return (
@@ -112,9 +117,9 @@ const CourseDetails = () => {
         <div className="highlights-container">
           {course.highlights.map((highlight, i) => (
             <div key={i} className="highlight-card">
-              <div className="highlight-icon">
+              {/* <div className="highlight-icon">
                 <FiCheck />
-              </div>
+              </div> */}
               <p>{highlight}</p>
             </div>
           ))}
@@ -141,121 +146,212 @@ const CourseDetails = () => {
         </div>
       </section>
 
-      {/* CURRICULUM */}
-      <section className="course-section curriculum-section gray-bg">
-        <div className="section-header">
-          <h2>Course Curriculum</h2>
-          <p className="section-subtitle">
-            Structured learning path from basics to advanced
-          </p>
-        </div>
-        <div className="curriculum-container">
-          {course.curriculum.map((mod, i) => (
-            <div key={i} className="module-card">
-              <div className="module-header">
-                <div className="module-number">{i + 1}</div>
-                <div className="module-info">
-                  <h3>{mod.module}</h3>
-                  <p className="module-desc">{mod.desc}</p>
-                  <span className="module-duration">⏱ {mod.duration}</span>
-                </div>
-              </div>
-              {mod.topics && mod.topics.length > 0 && (
-                <div className="module-topics">
-                  <strong>Topics covered:</strong>
-                  <div className="topics-list">
-                    {mod.topics.map((topic, j) => (
-                      <span key={j} className="topic-tag">
-                        {topic}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
+{/* CURRICULUM */}
+<section className="course-section curriculum-section gray-bg">
+  <div className="section-header">
+    <h2>Course Curriculum</h2>
+    <p className="section-subtitle">
+      Structured learning path from basics to advanced
+    </p>
+  </div>
+
+  <div className="curriculum-split">
+
+    {/* LEFT – MODULE LIST */}
+    <div className="curriculum-left">
+      {course.curriculum.map((mod, i) => (
+        <details key={i} className="module-accordion">
+
+          {/* HEADER */}
+          <summary className="module-row">
+            <div className="module-left">
+              <h4>{mod.module}</h4>
+              <p>Module {i + 1} · {mod.duration}</p>
             </div>
+
+            <div className="module-right">
+              <span className="module-details">Module details</span>
+              <span className="dropdown-icon">⌄</span>
+            </div>
+          </summary>
+
+          {/* EXPANDED CONTENT */}
+          <div className="module-content">
+            <p className="module-desc">
+              {mod.desc}
+            </p>
+
+            {mod.topics && (
+           <div className="module-topics">
+  <strong>Topics covered</strong>
+
+  <ul className="topics-row">
+    {mod.topics.map((topic, j) => (
+      <li key={j} className="topic-pill">
+        {topic}
+      </li>
+    ))}
+  </ul>
+</div>
+
+            )}
+          </div>
+
+        </details>
+      ))}
+    </div>
+
+    {/* RIGHT – INSTRUCTOR */}
+<div className="curriculum-right">
+
+  <h4 className="tools-title">Tools & Technologies</h4>
+
+<div className="tools-icons">
+  {course.tools.map((tool, i) => (
+    <div key={i} className="tool-icon-box">
+      <img src={tool.icon} alt={tool.name} />
+      <span>{tool.name}</span>
+    </div>
+  ))}
+</div>
+
+
+</div>
+
+
+  </div>
+</section>
+
+ {/* CAREER OPPORTUNITIES – IMAGE + LIST */}
+{course.careerOpportunities && course.careerOpportunities.length > 0 && (
+  <section className="career-split-section">
+    <div className="career-split-container">
+
+      {/* LEFT IMAGE */}
+      <div className="career-image-side">
+        <img
+          src={
+            course.careerImages?.[activeCareer] || course.image
+          }
+          alt="Career opportunity"
+        />
+      </div>
+
+      {/* RIGHT LIST */}
+      <div className="career-list-side">
+        <h2 className="career-title">Career Opportunities</h2>
+
+        <div className="career-list">
+          {course.careerOpportunities.map((career, i) => (
+           <div
+  key={i}
+  className={`career-row ${activeCareer === i ? "active" : ""}`}
+  onMouseEnter={() => setActiveCareer(i)}
+>
+  <span>{career}</span>
+</div>
+
           ))}
         </div>
-      </section>
+      </div>
 
-      {/* TOOLS & TECH */}
-      <section className="course-section tools-section">
-        <div className="section-header">
-          <h2>Tools & Technologies</h2>
-          <p className="section-subtitle">
-            Industry-standard tools you'll master
-          </p>
-        </div>
-        <div className="tools-grid">
-          {course.tools.map((tool, i) => (
-            <div key={i} className="tool-card">
-              <div className="tool-icon">
-                <FiTool />
-              </div>
-              <span>{tool}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+    </div>
+  </section>
+)}
 
-      {/* WHO CAN JOIN */}
+
+   
+
+  {/* WHO CAN JOIN */}
       <section className="course-section who-section">
         <div className="section-header">
           <h2>Who Can Join?</h2>
           <p className="section-subtitle">This course is perfect for</p>
         </div>
-        <div className="who-grid">
-          {course.whoCanJoin.map((person, i) => (
-            <div key={i} className="who-card">
-              <div className="who-icon">
-                <FiUser />
+
+        <div className="who-container">
+          {/* LEFT: IMAGE */}
+          <div className="who-image-side">
+            <div className="who-illustration">
+              <div className="who-illustration-inner">
+                <img
+                  src={course.image}
+                  alt="Who can join"
+                  onError={(e) => {
+                    e.target.style.opacity = 0.08;
+                  }}
+                />
               </div>
-              <p>{person}</p>
             </div>
-          ))}
+          </div>
+
+          {/* RIGHT: CONTENT */}
+          <div className="who-content">
+            <div className="who-grid">
+              {course.whoCanJoin.map((person, i) => (
+                <div key={i} className="who-card">
+                  <div className="who-icon">
+                    <FiUser />
+                  </div>
+                  <p>{person}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* PREREQUISITES */}
-      {course.prerequisites && course.prerequisites.length > 0 && (
-        <section className="course-section prereq-section gray-bg">
-          <div className="section-header">
-            <h2>Prerequisites</h2>
-            <p className="section-subtitle">What you need to get started</p>
-          </div>
-          <div className="prereq-list">
-            {course.prerequisites.map((prereq, i) => (
-              <div key={i} className="prereq-item">
-                <div className="prereq-icon">
-                  <FiInfo />
-                </div>
-                <p>{prereq}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
 
-      {/* CAREER OPPORTUNITIES */}
-      {course.careerOpportunities && course.careerOpportunities.length > 0 && (
-        <section className="course-section career-section">
-          <div className="section-header">
-            <h2>Career Opportunities</h2>
-            <p className="section-subtitle">
-              Roles you can pursue after this course
-            </p>
+
+{/* PREREQUISITES */}
+<section className="course-section prereq-section gray-bg">
+  <div className="prereq-split">
+
+    {/* LEFT : CONTENT */}
+    <div className="prereq-content">
+      <div className="section-header align-left">
+        <h2>Prerequisites</h2>
+        <p className="section-subtitle">
+          What you need to get started
+        </p>
+      </div>
+
+      <div className="who-grid prereq-grid">
+        {course.prerequisites.map((prereq, i) => (
+          <div
+            key={i}
+            className="who-card prereq-card"
+            onMouseEnter={() =>
+              typeof prereq === "object" &&
+              setActivePrereqImage(prereq.image)
+            }
+          >
+            <div className="who-icon">
+              <FiInfo />
+            </div>
+            <p>{typeof prereq === "string" ? prereq : prereq.text}</p>
           </div>
-          <div className="career-grid">
-            {course.careerOpportunities.map((career, i) => (
-              <div key={i} className="career-card">
-                <div className="career-icon">
-                  <FiBriefcase />
-                </div>
-                <p>{career}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+        ))}
+      </div>
+    </div>
+
+    {/* RIGHT : IMAGE */}
+    <div className="prereq-image">
+      <div className="prereq-image-inner">
+        <img
+          src={activePrereqImage || course.image}
+          alt="Prerequisites"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+ 
 
       {/* CTA SECTION */}
       {/* <section className="course-cta">

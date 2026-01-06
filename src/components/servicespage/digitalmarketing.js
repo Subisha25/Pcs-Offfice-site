@@ -315,8 +315,7 @@ Our goal is to build websites that truly represent your brand and drive results.
           </div>
         </div>
       </div>
-
-      {/* PURPOSE SCROLL SECTION + CTA */}
+         {/* PURPOSE SCROLL SECTION + CTA */}
       <PurposeSection />
       <CTASection />
     </>

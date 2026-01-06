@@ -8,8 +8,50 @@ import CourseImgAI from "../assets/AI image.jpg";
 import CourseImgDM from "../assets/digital marketing.jpg";
 import CourseImgJava from "../assets/java.jpg";
 
-
+import htmlIcon from "../../components/assets/teach/html.svg";
+import cssIcon from "../../components/assets/teach/css.svg";
+import jsIcon from "../../components/assets/teach/js.svg";
+import reactIcon from "../../components/assets/teach/react.svg";
+import nodeIcon from "../../components/assets/teach/node.svg";
+import expressIcon from "../../components/assets/teach/html.svg";
+import mongoIcon from "../../components/assets/teach/mongodb-svgrepo-com.svg";
+import gitIcon from "../../components/assets/teach/git.svg";
+import vscodeIcon from "../../components/assets/teach/vscode.svg";
+import postmanIcon from "../../components/assets/teach/postman.svg";
+import chromedevtools from "../../components/assets/teach/chrome-devtools.svg";
+import heroku from "../../components/assets/teach/heroku.svg";
+import aws from "../../components/assets/teach/aws.svg";
+import python from "../../components/assets/teach/python.svg";
+import django from "../../components/assets/teach/django.svg";
+import Flask from "../../components/assets/teach/flask-svgrepo-com.svg";
+import postgresql from "../../components/assets/teach/postgresql.svg";
+import jbpycharm from "../../components/assets/teach/jbpycharm.svg";
+import expo from "../../components/assets/teach/expo.svg";
+import android from "../../components/assets/teach/androidsudio.svg";
+import xcode from "../../components/assets/teach/xcode.svg";
+import firebase from "../../components/assets/teach/firebase.svg";
+import numpy from "../../components/assets/teach/numpy.svg";
+import pandas from "../../components/assets/teach/pandas.svg";
+import Matplotlib from "../../components/assets/teach/Matplotlib.png";
+import scikitlearn from "../../components/assets/teach/scikitlearn.png";
+import keras from "../../components/assets/teach/keras.svg";
+import jupyter from "../../components/assets/teach/jupyter.svg";
+import googleanalytics from "../../components/assets/teach/googleanalytics.svg";
+import googleads from "../../components/assets/teach/googleads.svg";
+import googlesearchcons from "../../components/assets/teach/googlesearchcons.svg";
+import facebookads from "../../components/assets/teach/facebook.svg";
+import canva from "../../components/assets/teach/canva.svg";
+import mailchimp from "../../components/assets/teach/mailchimp.svg";
+import semrush from "../../components/assets/teach/semrush.png";
+import ahrefs from "../../components/assets/teach/ahref.png";
+import java from "../../components/assets/teach/java.svg";
+import springboot1 from "../../components/assets/teach/springboot1.png";
+import hibernate from "../../components/assets/teach/hibernate.svg";
+import Mysql from "../../components/assets/teach/mysql-svgrepo-com.svg";
+import maven from "../../components/assets/teach/maven-svgrepo-com.svg";
+import IntelliJ from "../../components/assets/teach/intellij-idea-svgrepo-com.svg";
 const coursedata = [
+
   {
     id: "fullstack-web",
     title: "Full Stack Web Development",
@@ -44,47 +86,59 @@ const coursedata = [
       "Performance optimization & SEO basics"
     ],
 
-    curriculum: [
-      { 
-        module: "Frontend Fundamentals", 
-        desc: "HTML5, CSS3, Flexbox, Grid, Responsive Design",
-        duration: "3 weeks",
-        topics: ["Semantic HTML", "CSS Variables", "Media Queries", "Bootstrap basics"]
-      },
-      { 
-        module: "JavaScript Mastery", 
-        desc: "DOM Manipulation, ES6+, Async Programming",
-        duration: "4 weeks",
-        topics: ["Arrow Functions", "Promises", "Fetch API", "Local Storage"]
-      },
-      { 
-        module: "React.js Development", 
-        desc: "Components, Hooks, Routing, State Management",
-        duration: "4 weeks",
-        topics: ["JSX", "useState/useEffect", "React Router", "Context API", "Redux"]
-      },
-      { 
-        module: "Backend with Node.js", 
-        desc: "Node.js, Express.js, RESTful APIs",
-        duration: "3 weeks",
-        topics: ["Express Setup", "Middleware", "Route Handling", "Error Handling"]
-      },
-      { 
-        module: "Database & Authentication", 
-        desc: "MongoDB, Mongoose, JWT, OAuth",
-        duration: "2 weeks",
-        topics: ["CRUD Operations", "Schema Design", "JWT Tokens", "Password Hashing"]
-      },
-      { 
-        module: "Deployment & DevOps", 
-        desc: "Git, GitHub, Hosting, CI/CD basics",
-        duration: "1 week",
-        topics: ["Git commands", "GitHub workflows", "Vercel deployment", "Environment variables"]
-      }
-    ],
+ curriculum: [
+  {
+    module: "Frontend Fundamentals",
+    desc: "This module introduces the fundamentals of frontend development. You will learn HTML5 structure, CSS3 styling, and modern layout systems like Flexbox and Grid to build responsive and user-friendly websites.",
+    duration: "3 weeks",
+    topics: ["Semantic HTML", "CSS Variables", "Media Queries", "Bootstrap basics"]
+  },
+  {
+    module: "JavaScript Mastery",
+    desc: "Learn how to make websites interactive by mastering JavaScript concepts such as DOM manipulation, ES6 features, and asynchronous programming techniques used in real-world applications.",
+    duration: "4 weeks",
+    topics: ["Arrow Functions", "Promises", "Fetch API", "Local Storage"]
+  },
+  {
+    module: "React.js Development",
+    desc: "Build scalable and high-performance user interfaces using React.js by learning components, hooks, routing, and modern state management techniques.",
+    duration: "4 weeks",
+    topics: ["JSX", "useState/useEffect", "React Router", "Context API", "Redux"]
+  },
+  {
+    module: "Backend with Node.js",
+    desc: "Understand server-side development using Node.js and Express by creating RESTful APIs, handling requests, and managing backend application logic.",
+    duration: "3 weeks",
+    topics: ["Express Setup", "Middleware", "Route Handling", "Error Handling"]
+  },
+  {
+    module: "Database & Authentication",
+    desc: "Learn how to design and manage databases using MongoDB and implement secure authentication and authorization using JWT and modern security practices.",
+    duration: "2 weeks",
+    topics: ["CRUD Operations", "Schema Design", "JWT Tokens", "Password Hashing"]
+  },
+  {
+    module: "Deployment & DevOps",
+    desc: "Gain hands-on experience with Git, GitHub, and cloud deployment tools to deploy, manage, and maintain applications in production environments.",
+    duration: "1 week",
+    topics: ["Git commands", "GitHub workflows", "Vercel deployment", "Environment variables"]
+  }
+]
+,
 
-    tools: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB", "Git", "VS Code", "Postman"],
-
+tools: [
+  { name: "HTML", icon: htmlIcon },
+  { name: "CSS", icon: cssIcon },
+  { name: "JavaScript", icon: jsIcon },
+  { name: "React", icon: reactIcon },
+  { name: "Node.js", icon: nodeIcon },
+  { name: "Express", icon: expressIcon },
+  { name: "MongoDB", icon: mongoIcon },
+  { name: "Git", icon: gitIcon },
+  { name: "VS Code", icon: vscodeIcon },
+  { name: "Postman", icon: postmanIcon }
+]
+,
     prerequisites: [
       "Basic computer knowledge",
       "Passion to learn coding",
@@ -157,34 +211,45 @@ const coursedata = [
       "Performance Optimization techniques"
     ],
 
-    curriculum: [
-      { 
-        module: "HTML & CSS Mastery", 
-        desc: "Modern layouts, Responsive UI, Flexbox, Grid",
-        duration: "2 weeks",
-        topics: ["Semantic HTML", "CSS Grid", "Flexbox", "Animations", "Media Queries"]
-      },
-      { 
-        module: "JavaScript Essentials", 
-        desc: "ES6+, DOM Manipulation, Event Handling",
-        duration: "3 weeks",
-        topics: ["Variables", "Functions", "Arrays", "Objects", "DOM API"]
-      },
-      { 
-        module: "React Fundamentals", 
-        desc: "Components, JSX, Props, State",
-        duration: "2 weeks",
-        topics: ["JSX Syntax", "Component Types", "Props passing", "Conditional Rendering"]
-      },
-      { 
-        module: "React Hooks & Advanced", 
-        desc: "Hooks, Context, Custom Hooks",
-        duration: "3 weeks",
-        topics: ["useState", "useEffect", "useContext", "Custom Hooks", "Performance"]
-      }
-    ],
+ curriculum: [
+  { 
+    module: "HTML & CSS Mastery", 
+    desc: "This module builds a strong foundation in web layout and styling. You will learn how to structure pages using semantic HTML and design modern, responsive user interfaces with CSS, Flexbox, Grid, animations, and media queries for multiple screen sizes.",
+    duration: "2 weeks",
+    topics: ["Semantic HTML", "CSS Grid", "Flexbox", "Animations", "Media Queries"]
+  },
+  { 
+    module: "JavaScript Essentials", 
+    desc: "Learn the core concepts of JavaScript required to build interactive websites. This module covers ES6+ features, DOM manipulation, event handling, and data structures to make web pages dynamic and user-driven.",
+    duration: "3 weeks",
+    topics: ["Variables", "Functions", "Arrays", "Objects", "DOM API"]
+  },
+  { 
+    module: "React Fundamentals", 
+    desc: "Understand the basics of React by learning how to build reusable components using JSX. You will work with props and state to create dynamic user interfaces and manage data flow within applications.",
+    duration: "2 weeks",
+    topics: ["JSX Syntax", "Component Types", "Props passing", "Conditional Rendering"]
+  },
+  { 
+    module: "React Hooks & Advanced", 
+    desc: "Dive deeper into React with hooks and advanced patterns. This module focuses on managing state and side effects using hooks, sharing data with Context API, creating custom hooks, and optimizing application performance.",
+    duration: "3 weeks",
+    topics: ["useState", "useEffect", "useContext", "Custom Hooks", "Performance"]
+  }
+]
+,
 
-    tools: ["HTML", "CSS", "JavaScript", "React", "VS Code", "Chrome DevTools", "Git"],
+
+    tools: [
+  { name: "HTML", icon: htmlIcon },
+  { name: "CSS", icon: cssIcon },
+  { name: "JavaScript", icon: jsIcon },
+  { name: "React", icon: reactIcon },
+  { name: "VS Code", icon: vscodeIcon },
+  { name: "chromedevtools", icon: chromedevtools },
+  { name: "Git", icon: gitIcon },
+
+],
 
     prerequisites: [
       "Basic understanding of HTML/CSS helpful",
@@ -256,40 +321,53 @@ const coursedata = [
       "Deployment on cloud platforms"
     ],
 
-    curriculum: [
-      { 
-        module: "Node.js Basics", 
-        desc: "Core modules, Async programming, Event Loop",
-        duration: "2 weeks",
-        topics: ["File System", "HTTP module", "Events", "Streams", "NPM"]
-      },
-      { 
-        module: "Express.js Framework", 
-        desc: "Routing, Middleware, Request handling",
-        duration: "2 weeks",
-        topics: ["Express setup", "Routes", "Middleware chain", "Error handling"]
-      },
-      { 
-        module: "Database Integration", 
-        desc: "MongoDB, Mongoose, CRUD operations",
-        duration: "2 weeks",
-        topics: ["Schema design", "Models", "Queries", "Aggregation", "Indexing"]
-      },
-      { 
-        module: "Authentication & Security", 
-        desc: "JWT, bcrypt, OAuth, API security",
-        duration: "1.5 weeks",
-        topics: ["JWT tokens", "Password hashing", "Role-based access", "CORS"]
-      },
-      { 
-        module: "Advanced Topics", 
-        desc: "WebSockets, Caching, Performance",
-        duration: "1.5 weeks",
-        topics: ["Socket.io", "Redis", "Load balancing", "PM2"]
-      }
-    ],
+curriculum: [
+  { 
+    module: "Node.js Basics", 
+    desc: "This module introduces the core concepts of Node.js, including built-in modules, asynchronous programming, and the event-driven architecture. You will understand how the Node.js event loop works and how to build efficient, non-blocking server-side applications.",
+    duration: "2 weeks",
+    topics: ["File System", "HTTP module", "Events", "Streams", "NPM"]
+  },
+  { 
+    module: "Express.js Framework", 
+    desc: "Learn how to build web servers and REST APIs using Express.js. This module covers routing, middleware flow, request and response handling, and structured error management for scalable backend applications.",
+    duration: "2 weeks",
+    topics: ["Express setup", "Routes", "Middleware chain", "Error handling"]
+  },
+  { 
+    module: "Database Integration", 
+    desc: "Understand how to integrate MongoDB with Node.js using Mongoose. You will learn schema design, perform CRUD operations, optimize queries, and work with aggregations and indexes for better performance.",
+    duration: "2 weeks",
+    topics: ["Schema design", "Models", "Queries", "Aggregation", "Indexing"]
+  },
+  { 
+    module: "Authentication & Security", 
+    desc: "Focus on securing backend applications by implementing authentication and authorization. This module covers JWT-based login systems, password hashing with bcrypt, role-based access control, and essential API security practices.",
+    duration: "1.5 weeks",
+    topics: ["JWT tokens", "Password hashing", "Role-based access", "CORS"]
+  },
+  { 
+    module: "Advanced Topics", 
+    desc: "Explore advanced backend concepts such as real-time communication, caching, and performance optimization. You will work with WebSockets, Redis caching, process management, and scalability techniques used in production systems.",
+    duration: "1.5 weeks",
+    topics: ["Socket.io", "Redis", "Load balancing", "PM2"]
+  }
+]
+,
 
-    tools: ["Node.js", "Express", "MongoDB", "Postman", "Git", "VS Code", "Heroku", "AWS"],
+tools: [
+
+  { name: "Node.js", icon: nodeIcon },
+  { name: "Express", icon: expressIcon },
+  { name: "MongoDB", icon: mongoIcon },
+  { name: "Git", icon: gitIcon },
+  { name: "VS Code", icon: vscodeIcon },
+  { name: "Postman", icon: postmanIcon },
+    { name: "Heroku", icon: heroku },
+  { name: "AWS", icon:aws }
+
+],
+    
 
     prerequisites: [
       "Good understanding of JavaScript",
@@ -364,40 +442,50 @@ const coursedata = [
       "Deployment and hosting"
     ],
 
-    curriculum: [
-      { 
-        module: "Python Basics", 
-        desc: "Syntax, Variables, Data types, Control flow",
-        duration: "2 weeks",
-        topics: ["Variables", "Loops", "Functions", "Modules", "Input/Output"]
-      },
-      { 
-        module: "Data Structures & OOPS", 
-        desc: "Lists, Tuples, Classes, Inheritance",
-        duration: "2 weeks",
-        topics: ["Lists operations", "Dictionary methods", "Classes", "Inheritance", "Polymorphism"]
-      },
-      { 
-        module: "Django Framework", 
-        desc: "MVC, Models, Views, Templates, Forms",
-        duration: "3 weeks",
-        topics: ["Project setup", "URL routing", "Models & ORM", "Templates", "Forms", "Admin panel"]
-      },
-      { 
-        module: "Flask Framework", 
-        desc: "Routing, Templates, RESTful APIs",
-        duration: "2 weeks",
-        topics: ["Flask basics", "Jinja templates", "REST API", "Database integration"]
-      },
-      { 
-        module: "Database & Deployment", 
-        desc: "SQL, PostgreSQL, Heroku deployment",
-        duration: "1.5 weeks",
-        topics: ["SQLite", "PostgreSQL", "Migrations", "Cloud deployment"]
-      }
-    ],
-
-    tools: ["Python", "Django", "Flask", "PostgreSQL", "Git", "PyCharm", "VS Code", "Postman"],
+ curriculum: [
+  { 
+    module: "Python Basics", 
+    desc: "This module introduces the fundamentals of Python programming. You will learn Python syntax, variables, data types, and control flow statements to build a strong foundation for writing clean and efficient programs.",
+    duration: "2 weeks",
+    topics: ["Variables", "Loops", "Functions", "Modules", "Input/Output"]
+  },
+  { 
+    module: "Data Structures & OOPS", 
+    desc: "Learn how to organize and manage data efficiently using Python data structures. This module also covers object-oriented programming concepts such as classes, inheritance, polymorphism, and real-world problem solving using OOP principles.",
+    duration: "2 weeks",
+    topics: ["Lists operations", "Dictionary methods", "Classes", "Inheritance", "Polymorphism"]
+  },
+  { 
+    module: "Django Framework", 
+    desc: "Build full-featured and scalable web applications using Django. You will work with the MVC architecture, models, views, templates, forms, and Django ORM to create secure, database-driven web applications.",
+    duration: "3 weeks",
+    topics: ["Project setup", "URL routing", "Models & ORM", "Templates", "Forms", "Admin panel"]
+  },
+  { 
+    module: "Flask Framework", 
+    desc: "Learn to develop lightweight and flexible web applications using Flask. This module focuses on routing, templating with Jinja, RESTful API development, and integrating databases for backend functionality.",
+    duration: "2 weeks",
+    topics: ["Flask basics", "Jinja templates", "REST API", "Database integration"]
+  },
+  { 
+    module: "Database & Deployment", 
+    desc: "Understand database management and application deployment workflows. You will work with SQL databases like SQLite and PostgreSQL, handle migrations, and deploy Python applications to cloud platforms for production use.",
+    duration: "1.5 weeks",
+    topics: ["SQLite", "PostgreSQL", "Migrations", "Cloud deployment"]
+  }
+]
+,
+      
+    tools: [
+  { name: "Python", icon: python },
+  { name: "Django", icon: django },
+  { name: "Flask", icon: Flask },
+  { name: "PostgreSQL", icon: postgresql },
+  { name: "PyCharm", icon: jbpycharm },
+  { name: "Git", icon: gitIcon },
+  { name: "VS Code", icon: vscodeIcon },
+  { name: "Postman", icon: postmanIcon }
+],
 
     prerequisites: [
       "Basic computer knowledge",
@@ -472,40 +560,49 @@ const coursedata = [
       "Push notifications integration"
     ],
 
-    curriculum: [
-      { 
-        module: "React Native Basics", 
-        desc: "Setup, Components, Styling, Layouts",
-        duration: "2 weeks",
-        topics: ["Environment setup", "Core components", "Flexbox styling", "Platform-specific code"]
-      },
-      { 
-        module: "Navigation & Routing", 
-        desc: "React Navigation, Stack, Tab, Drawer",
-        duration: "2 weeks",
-        topics: ["Stack Navigator", "Tab Navigator", "Drawer Navigator", "Nested navigation"]
-      },
-      { 
-        module: "State & APIs", 
-        desc: "State management, API calls, AsyncStorage",
-        duration: "2 weeks",
-        topics: ["useState/useEffect", "Fetch API", "Axios", "Context API", "AsyncStorage"]
-      },
-      { 
-        module: "Native Features", 
-        desc: "Camera, Location, Permissions, Notifications",
-        duration: "1.5 weeks",
-        topics: ["Camera integration", "Maps", "Permissions", "Push notifications"]
-      },
-      { 
-        module: "Deployment", 
-        desc: "Build, Test, Deploy to Play Store & App Store",
-        duration: "0.5 weeks",
-        topics: ["APK generation", "iOS build", "Store submissions", "Testing"]
-      }
-    ],
+   curriculum: [
+  { 
+    module: "React Native Basics", 
+    desc: "This module introduces the fundamentals of React Native development. You will set up the development environment, understand core components, and build mobile layouts using Flexbox while handling platform-specific behaviors for Android and iOS.",
+    duration: "2 weeks",
+    topics: ["Environment setup", "Core components", "Flexbox styling", "Platform-specific code"]
+  },
+  { 
+    module: "Navigation & Routing", 
+    desc: "Learn how to manage screen transitions and navigation flows in mobile applications using React Navigation. This module covers stack, tab, and drawer navigators along with nested navigation patterns.",
+    duration: "2 weeks",
+    topics: ["Stack Navigator", "Tab Navigator", "Drawer Navigator", "Nested navigation"]
+  },
+  { 
+    module: "State & APIs", 
+    desc: "Understand how to manage application state and work with external data sources. You will learn to handle state using hooks, make API calls, store data locally, and share data across components.",
+    duration: "2 weeks",
+    topics: ["useState/useEffect", "Fetch API", "Axios", "Context API", "AsyncStorage"]
+  },
+  { 
+    module: "Native Features", 
+    desc: "Explore native device capabilities and integrate them into your applications. This module focuses on working with camera, location services, permissions, maps, and push notifications for real-world mobile apps.",
+    duration: "1.5 weeks",
+    topics: ["Camera integration", "Maps", "Permissions", "Push notifications"]
+  },
+  { 
+    module: "Deployment", 
+    desc: "Learn the complete process of preparing, testing, and deploying React Native applications. You will generate builds and publish apps to the Google Play Store and Apple App Store following best practices.",
+    duration: "0.5 weeks",
+    topics: ["APK generation", "iOS build", "Store submissions", "Testing"]
+  }
+]
+,
 
-    tools: ["React Native", "JavaScript", "Expo", "Android Studio", "Xcode", "Firebase", "Git"],
+    tools: [
+  { name: "React Native", icon: reactIcon },
+  { name: "JavaScript", icon: jsIcon },
+  { name: "Expo", icon: expo },
+  { name: "Android Studio", icon: android },
+  { name: "Xcode", icon: xcode },
+  { name: "Firebase", icon: firebase },
+  { name: "Git", icon: gitIcon },
+],
 
     prerequisites: [
       "Good knowledge of React.js",
@@ -576,79 +673,79 @@ const coursedata = [
     "Ethical AI & future trends"
   ],
 
-  curriculum: [
-    {
-      module: "Python for AI",
-      desc: "Python basics, data structures & libraries",
-      duration: "3 weeks",
-      topics: ["Python syntax", "NumPy", "Pandas", "Matplotlib"]
-    },
-    {
-      module: "Maths & Statistics for ML",
-      desc: "Core math concepts for AI",
-      duration: "2 weeks",
-      topics: ["Linear Algebra", "Probability", "Statistics", "Data analysis"]
-    },
-    {
-      module: "Machine Learning",
-      desc: "Supervised & Unsupervised Learning",
-      duration: "4 weeks",
-      topics: [
-        "Linear Regression",
-        "Logistic Regression",
-        "Decision Trees",
-        "KNN",
-        "Clustering",
-        "Model evaluation"
-      ]
-    },
-    {
-      module: "Deep Learning",
-      desc: "Neural Networks & Deep Learning models",
-      duration: "3 weeks",
-      topics: [
-        "Neural Networks",
-        "ANN",
-        "CNN",
-        "RNN",
-        "TensorFlow & Keras"
-      ]
-    },
-    {
-      module: "NLP & Computer Vision",
-      desc: "Text & Image based AI systems",
-      duration: "2 weeks",
-      topics: [
-        "Text preprocessing",
-        "Sentiment Analysis",
-        "Image classification",
-        "Face detection"
-      ]
-    },
-    {
-      module: "AI Projects & Deployment",
-      desc: "Real-world projects & deployment",
-      duration: "2 weeks",
-      topics: [
-        "End-to-end AI projects",
-        "Model deployment",
-        "Flask basics",
-        "Cloud introduction"
-      ]
-    }
-  ],
+curriculum: [
+  {
+    module: "Python for AI",
+    desc: "This module builds a strong foundation in Python for artificial intelligence. You will learn Python programming basics, essential data structures, and widely used libraries such as NumPy, Pandas, and Matplotlib for data handling and visualization.",
+    duration: "3 weeks",
+    topics: ["Python syntax", "NumPy", "Pandas", "Matplotlib"]
+  },
+  {
+    module: "Maths & Statistics for ML",
+    desc: "Understand the core mathematical concepts required for machine learning. This module covers linear algebra, probability, statistics, and data analysis techniques that form the backbone of ML algorithms.",
+    duration: "2 weeks",
+    topics: ["Linear Algebra", "Probability", "Statistics", "Data analysis"]
+  },
+  {
+    module: "Machine Learning",
+    desc: "Learn how machine learning algorithms work and how to apply them to real-world problems. This module covers both supervised and unsupervised learning techniques, model training, evaluation, and performance tuning.",
+    duration: "4 weeks",
+    topics: [
+      "Linear Regression",
+      "Logistic Regression",
+      "Decision Trees",
+      "KNN",
+      "Clustering",
+      "Model evaluation"
+    ]
+  },
+  {
+    module: "Deep Learning",
+    desc: "Dive into deep learning concepts by building and training neural network models. You will work with architectures such as ANN, CNN, and RNN using modern frameworks like TensorFlow and Keras.",
+    duration: "3 weeks",
+    topics: [
+      "Neural Networks",
+      "ANN",
+      "CNN",
+      "RNN",
+      "TensorFlow & Keras"
+    ]
+  },
+  {
+    module: "NLP & Computer Vision",
+    desc: "Explore advanced AI domains including Natural Language Processing and Computer Vision. This module focuses on building text-based and image-based intelligent systems using practical techniques and real datasets.",
+    duration: "2 weeks",
+    topics: [
+      "Text preprocessing",
+      "Sentiment Analysis",
+      "Image classification",
+      "Face detection"
+    ]
+  },
+  {
+    module: "AI Projects & Deployment",
+    desc: "Apply your knowledge by working on end-to-end AI projects. You will learn how to deploy trained models using Flask, understand basic cloud concepts, and take AI solutions into production environments.",
+    duration: "2 weeks",
+    topics: [
+      "End-to-end AI projects",
+      "Model deployment",
+      "Flask basics",
+      "Cloud introduction"
+    ]
+  }
+],
+ tools: [
+  { name: "Python", icon: python },
+  { name: "NumPy", icon: numpy },
+  { name: "Pandas", icon: pandas },
+  { name: "Matplotlib", icon: Matplotlib },
+  { name: "Scikit-learn", icon: scikitlearn },
+  { name: "Keras", icon:keras },
+  { name: "Jupyter Notebook", icon: jupyter },
+    { name: "VS Code", icon: vscodeIcon },
 
-  tools: [
-    "Python",
-    "NumPy",
-    "Pandas",
-    "Matplotlib",
-    "Scikit-learn",
-    "TensorFlow",
-    "Keras",
-    "Jupyter Notebook",
-    "VS Code"
-  ],
+  
+],
 
   prerequisites: [
     "Basic computer knowledge",
@@ -721,70 +818,73 @@ const coursedata = [
     "Live Campaign Management"
   ],
 
-  curriculum: [
-    { 
-      module: "Digital Marketing Fundamentals", 
-      desc: "Introduction to online marketing & branding",
-      duration: "2 weeks",
-      topics: ["Digital ecosystem", "Customer journey", "Marketing funnels"]
-    },
-    { 
-      module: "Search Engine Optimization (SEO)", 
-      desc: "On-page, Off-page & Technical SEO",
-      duration: "3 weeks",
-      topics: ["Keyword research", "On-page SEO", "Backlinks", "SEO tools"]
-    },
-    { 
-      module: "Search Engine Marketing (SEM)", 
-      desc: "Paid advertising with Google Ads",
-      duration: "3 weeks",
-      topics: ["Google Ads setup", "Keyword bidding", "Ad copy", "Quality score"]
-    },
-    { 
-      module: "Social Media Marketing (SMM)", 
-      desc: "Organic & paid social media campaigns",
-      duration: "3 weeks",
-      topics: [
-        "Facebook Ads",
-        "Instagram growth",
-        "LinkedIn marketing",
-        "Content calendar"
-      ]
-    },
-    { 
-      module: "Analytics & Performance Tracking", 
-      desc: "Measure, analyze & optimize campaigns",
-      duration: "2 weeks",
-      topics: [
-        "Google Analytics",
-        "Google Search Console",
-        "Conversion tracking",
-        "Campaign optimization"
-      ]
-    },
-    { 
-      module: "Advanced Marketing & Projects", 
-      desc: "Growth hacking & real-time projects",
-      duration: "2 weeks",
-      topics: [
-        "Email automation",
-        "Influencer marketing",
-        "Affiliate marketing",
-        "Live project execution"
-      ]
-    }
+curriculum: [
+  { 
+    module: "Digital Marketing Fundamentals", 
+    desc: "This module introduces the basics of digital marketing and online branding. You will understand the digital ecosystem, customer journey, and marketing funnels that help businesses attract, engage, and convert customers online.",
+    duration: "2 weeks",
+    topics: ["Digital ecosystem", "Customer journey", "Marketing funnels"]
+  },
+  { 
+    module: "Search Engine Optimization (SEO)", 
+    desc: "Learn how to improve website visibility on search engines through effective SEO strategies. This module covers keyword research, on-page and off-page optimization, technical SEO concepts, and the use of popular SEO tools.",
+    duration: "3 weeks",
+    topics: ["Keyword research", "On-page SEO", "Backlinks", "SEO tools"]
+  },
+  { 
+    module: "Search Engine Marketing (SEM)", 
+    desc: "Understand paid advertising strategies using search engines. You will learn how to create, manage, and optimize Google Ads campaigns, including keyword bidding, ad copy creation, and improving quality scores.",
+    duration: "3 weeks",
+    topics: ["Google Ads setup", "Keyword bidding", "Ad copy", "Quality score"]
+  },
+  { 
+    module: "Social Media Marketing (SMM)", 
+    desc: "Learn to build brand presence and run successful campaigns across social media platforms. This module focuses on organic growth, paid advertising, audience targeting, and content planning for platforms like Facebook, Instagram, and LinkedIn.",
+    duration: "3 weeks",
+    topics: [
+      "Facebook Ads",
+      "Instagram growth",
+      "LinkedIn marketing",
+      "Content calendar"
+    ]
+  },
+  { 
+    module: "Analytics & Performance Tracking", 
+    desc: "Measure and analyze the performance of digital marketing campaigns using analytics tools. You will learn to track user behavior, conversions, and key metrics to optimize campaigns for better results.",
+    duration: "2 weeks",
+    topics: [
+      "Google Analytics",
+      "Google Search Console",
+      "Conversion tracking",
+      "Campaign optimization"
+    ]
+  },
+  { 
+    module: "Advanced Marketing & Projects", 
+    desc: "Apply advanced digital marketing techniques through real-world projects. This module covers growth hacking strategies, email automation, influencer and affiliate marketing, and hands-on project execution.",
+    duration: "2 weeks",
+    topics: [
+      "Email automation",
+      "Influencer marketing",
+      "Affiliate marketing",
+      "Live project execution"
+    ]
+  }
+]
+,
+
+
+   tools: [
+  { name: "Google Analytics", icon: googleanalytics },
+  { name: "Google Ads", icon: googleads },
+  { name: "Search Console", icon: googlesearchcons },
+  { name: "Facebook Ads Manager", icon: facebookads },
+  { name: "Canva", icon: canva },
+  { name: "Mailchimp", icon: mailchimp },
+  { name: "SEMrush", icon: semrush },
+    { name: "Ahrefs", icon: ahrefs },
   ],
 
-  tools: [
-    "Google Analytics",
-    "Google Ads",
-    "Search Console",
-    "Facebook Ads Manager",
-    "Canva",
-    "Mailchimp",
-    "SEMrush",
-    "Ahrefs"
-  ],
 
   prerequisites: [
     "Basic computer & internet knowledge",
@@ -857,94 +957,95 @@ const coursedata = [
     "Real-time project development"
   ],
 
-  curriculum: [
-    { 
-      module: "Core Java Fundamentals", 
-      desc: "Java basics, syntax & OOP concepts",
-      duration: "3 weeks",
-      topics: [
-        "Java syntax",
-        "Data types",
-        "OOP concepts",
-        "Exception handling"
-      ]
-    },
-    { 
-      module: "Advanced Java", 
-      desc: "Collections, Multithreading & Java 8",
-      duration: "3 weeks",
-      topics: [
-        "Collections framework",
-        "Streams & Lambda",
-        "Multithreading",
-        "File handling"
-      ]
-    },
-    { 
-      module: "Database & JDBC", 
-      desc: "SQL & Java database connectivity",
-      duration: "2 weeks",
-      topics: [
-        "SQL basics",
-        "JDBC",
-        "CRUD operations",
-        "Transactions"
-      ]
-    },
-    { 
-      module: "Spring & Spring Boot", 
-      desc: "Enterprise backend development",
-      duration: "4 weeks",
-      topics: [
-        "Spring Core",
-        "Spring MVC",
-        "Spring Boot",
-        "REST APIs"
-      ]
-    },
-    { 
-      module: "Hibernate & JPA", 
-      desc: "ORM & database mapping",
-      duration: "2 weeks",
-      topics: [
-        "Hibernate",
-        "JPA annotations",
-        "Entity relationships",
-        "Caching"
-      ]
-    },
-    { 
-      module: "Full Stack Project & Deployment", 
-      desc: "End-to-end application development",
-      duration: "2 weeks",
-      topics: [
-        "React integration",
-        "Security (JWT)",
-        "Project deployment",
-        "Microservices intro"
-      ]
-    }
-  ],
+curriculum: [
+  { 
+    module: "Core Java Fundamentals", 
+    desc: "This module introduces the fundamentals of Java programming. You will learn Java syntax, data types, object-oriented programming concepts, and exception handling to build a strong foundation for backend and enterprise development.",
+    duration: "3 weeks",
+    topics: [
+      "Java syntax",
+      "Data types",
+      "OOP concepts",
+      "Exception handling"
+    ]
+  },
+  { 
+    module: "Advanced Java", 
+    desc: "Dive deeper into Java with advanced programming concepts. This module covers the Collections framework, Java 8 features such as streams and lambda expressions, multithreading, and file handling for real-world applications.",
+    duration: "3 weeks",
+    topics: [
+      "Collections framework",
+      "Streams & Lambda",
+      "Multithreading",
+      "File handling"
+    ]
+  },
+  { 
+    module: "Database & JDBC", 
+    desc: "Learn how to work with databases using Java. This module focuses on SQL fundamentals, JDBC connectivity, performing CRUD operations, and handling transactions to build data-driven applications.",
+    duration: "2 weeks",
+    topics: [
+      "SQL basics",
+      "JDBC",
+      "CRUD operations",
+      "Transactions"
+    ]
+  },
+  { 
+    module: "Spring & Spring Boot", 
+    desc: "Build enterprise-grade backend applications using Spring and Spring Boot. You will learn dependency injection, Spring MVC architecture, RESTful API development, and rapid application configuration.",
+    duration: "4 weeks",
+    topics: [
+      "Spring Core",
+      "Spring MVC",
+      "Spring Boot",
+      "REST APIs"
+    ]
+  },
+  { 
+    module: "Hibernate & JPA", 
+    desc: "Understand object-relational mapping and database interaction using Hibernate and JPA. This module covers entity mapping, relationships, caching strategies, and efficient data persistence techniques.",
+    duration: "2 weeks",
+    topics: [
+      "Hibernate",
+      "JPA annotations",
+      "Entity relationships",
+      "Caching"
+    ]
+  },
+  { 
+    module: "Full Stack Project & Deployment", 
+    desc: "Apply your learning by building an end-to-end full stack application. This module includes frontend integration, backend security using JWT, deployment strategies, and an introduction to microservices architecture.",
+    duration: "2 weeks",
+    topics: [
+      "React integration",
+      "Security (JWT)",
+      "Project deployment",
+      "Microservices intro"
+    ]
+  }
+],
 
-  tools: [
-    "Java",
-    "Spring Boot",
-    "Hibernate",
-    "MySQL",
-    "React",
-    "Maven",
-    "Git",
-    "IntelliJ IDEA",
-    "Postman"
-  ],
+tools: [
+  { name: "Java", icon: java },
+  { name: "Spring Boot", icon: springboot1 },
+  { name: "Hibernate", icon: hibernate },
+  { name: "MySQL", icon: Mysql },
+  { name: "React", icon: reactIcon },
+  { name: "Maven", icon:maven },
+  { name: "Git", icon: gitIcon },
+  { name: "IntelliJ IDEA", icon: IntelliJ },
+{ name: "Postman", icon: postmanIcon }
+  
+],
+prerequisites: [
 
-  prerequisites: [
-    "Basic computer knowledge",
-    "Logical thinking & problem-solving interest",
-    "No prior Java experience required"
-  ],
+     "Basic computer knowledge",
+     "Logical thinking & problem-solving interest",
+      "No prior Java experience required",
 
-  whoCanJoin: [
+],
+whoCanJoin: [
     "Students & Freshers learning Java",
     "Backend developers upgrading to Full Stack",
     "Career switchers entering Java development",
