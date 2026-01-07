@@ -344,6 +344,11 @@
   animation: scroll-left 22s linear infinite;
 }
 
+.services-strip2,
+.strip-track2,
+.services-strip2 span {
+  font-family: "WF Visual Sans" !important;
+}
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -622,5 +627,39 @@
 @media (max-width: 480px) {
   .services-strip2 {
     margin-top: 30px;   /* 🔥 banner & strip gap */
+  }
+}
+
+/* Small phones (320px - 425px) */
+@media (min-width: 320px) and (max-width: 425px) {
+  .services-strip2 {
+    padding: 6px 6px !important;
+    margin-top: 20px !important;
+  }
+  .strip-track2 {
+    gap: 16px !important;
+    font-size: 12px !important;
+    /* Slower, smooth scroll for small phones */
+    animation: scroll-left 26s linear infinite !important;
+    -webkit-animation: scroll-left 26s linear infinite !important;
+    will-change: transform;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    animation-play-state: running !important;
+  }
+  .services-strip2 .dot {
+    font-size: 18px !important;
+    margin: 0 5px !important;
+  }
+  /* Pause on touch (mobile friendly) */
+  .services-strip2.touching .strip-track2 {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .strip-track2 {
+    animation: none !important;
   }
 }

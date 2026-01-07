@@ -13,7 +13,7 @@ import cssIcon from "../../components/assets/teach/css.svg";
 import jsIcon from "../../components/assets/teach/js.svg";
 import reactIcon from "../../components/assets/teach/react.svg";
 import nodeIcon from "../../components/assets/teach/node.svg";
-import expressIcon from "../../components/assets/teach/html.svg";
+import expressIcon from "../../components/assets/teach/expressjs.png";
 import mongoIcon from "../../components/assets/teach/mongodb-svgrepo-com.svg";
 import gitIcon from "../../components/assets/teach/git.svg";
 import vscodeIcon from "../../components/assets/teach/vscode.svg";

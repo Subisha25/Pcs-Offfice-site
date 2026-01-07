@@ -20,25 +20,44 @@ import ads from "../../components/assets/teach/megaphone-advertising-svgrepo-com
 import social from "../../components/assets/teach/internet-connection-contact-svgrepo-com.svg";
 
 export default function TechLogoScroll() {
-  const techs = [
-    { name: "HTML5", img: html },
-    { name: "CSS3", img: css },
-    { name: "JavaScript", img: js },
-    { name: "React", img: reactLogo },
-    { name: "Node.js", img: node },
-    { name: "Java", img: java },
-    { name: "Python", img: python },
-    { name: "PHP", img: php },
-    { name: "Django", img: django },
-    { name: "Flask", img: flask },
-    { name: "Android", img: android },
-    { name: "iOS", img: ios },
-    { name: "MySQL", img: mysql },
-    { name: "MongoDB", img: mongodb },
-    { name: "SEO", img: seo },
-    { name: "Google Ads", img: ads },
-    { name: "Social Media", img: social },
-  ];
+    const techs = [
+      { name: "", img: html },
+      { name: "", img: css },
+      { name: "", img: js },
+      { name: "", img: reactLogo },
+      { name: "", img: node },
+      { name: "", img: java },
+      { name: "", img: python },
+      { name: "", img: php },
+      { name: "", img: django },
+      { name: "", img: flask },
+      { name: "", img: android },
+      { name: "", img: ios },
+      { name: "", img: mysql },
+      { name: "", img: mongodb },
+      { name: "", img: seo },
+      { name: "", img: ads },
+      { name: "", img: social },
+    ];
+  // const techs = [
+  //   { name: "HTML5", img: html },
+  //   { name: "CSS3", img: css },
+  //   { name: "JavaScript", img: js },
+  //   { name: "React", img: reactLogo },
+  //   { name: "Node.js", img: node },
+  //   { name: "Java", img: java },
+  //   { name: "Python", img: python },
+  //   { name: "PHP", img: php },
+  //   { name: "Django", img: django },
+  //   { name: "Flask", img: flask },
+  //   { name: "Android", img: android },
+  //   { name: "iOS", img: ios },
+  //   { name: "MySQL", img: mysql },
+  //   { name: "MongoDB", img: mongodb },
+  //   { name: "SEO", img: seo },
+  //   { name: "Google Ads", img: ads },
+  //   { name: "Social Media", img: social },
+  // ];
 
   // Refs to control auto-scroll on small screens (320-425px)
   const wrapperRef = useRef(null);

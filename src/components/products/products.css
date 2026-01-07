@@ -29,6 +29,7 @@
 
 .product-page {
   background-color: white;
+  padding-top: 100px; /* 🔥 navbar height adjust */
 }
 
 .product-page-container {
