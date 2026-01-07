@@ -1282,6 +1282,19 @@ font-weight: 300;
 }
 
 @media (max-width: 768px) {
+
+  /* ===== HERO BUTTON – MOBILE CENTER FIX ===== */
+  .hero-actions {
+    display: flex;
+    justify-content: center;   /* 🔥 center horizontally */
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-actions > * {
+    margin: 0 auto;            /* 🔥 force center */
+  }
+
   .hero-title {
     font-size: 32px;
   }
@@ -1446,7 +1459,11 @@ font-weight: 300;
     text-align: left;
     margin: 0;
   }
-
+.course-section {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 
 }
