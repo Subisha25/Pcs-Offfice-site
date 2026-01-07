@@ -67,7 +67,7 @@
   font-size: 18px;
   font-weight: 400;
   color: #000;
-  animation: scroll-left 22s linear infinite;
+  animation: scroll-left 18s linear infinite;
 }
 
 @keyframes scroll-left {
@@ -107,7 +107,7 @@
   .strip-track {
     gap: 30px;
     font-size: 16px;
-    animation: scroll-left 20s linear infinite;
+    animation: scroll-left 16s linear infinite;
   }
 
   .services-strip .dot {
@@ -208,8 +208,8 @@
   .strip-track {
     gap: 14px !important;
     font-size: 12px !important;
-    animation: scroll-left 14s linear infinite !important;
-    -webkit-animation: scroll-left 14s linear infinite !important;
+    animation: scroll-left 40s linear infinite !important;
+    -webkit-animation: scroll-left 40s linear infinite !important;
     will-change: transform;
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
