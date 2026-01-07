@@ -4,31 +4,31 @@ import CommonTopTag from "../../components/common/toptag";
 
 const testimonials = [
   {
-    name: "Manju",
+    name: "Manju M",
     role: "Full Stack Developer",
     text: "Working at PCS as a Full Stack Developer has given me strong hands-on experience in both frontend and backend technologies. The project-based work culture helped me improve my problem-solving skills and write clean, scalable code.",
     initial: "M",
   },
   {
-    name: "Kalai V",
+    name: "Kalai M ",
     role: "Full Stack Developer",
     text: "PCS provides a professional environment where developers are encouraged to learn and grow. I gained solid experience in building end-to-end applications and collaborating with team members on real-time projects.",
     initial: "K",
   },
   {
-    name: "Surya",
+    name: "Surya G",
     role: "Full Stack Developer",
     text: "As a Full Stack Developer at PCS, I worked on real-world applications that strengthened my understanding of system design, APIs, and frontend performance. The exposure to live projects helped me grow professionally.",
     initial: "S",
   },
   {
-    name: "Marish S",
+    name: "Marish D",
     role: "Full Stack Developer",
     text: "My experience at PCS has been very valuable. I worked extensively with React, backend services, and databases. The structured workflow and technical guidance helped me deliver quality solutions confidently.",
     initial: "M",
   },
   {
-    name: "Abishak S",
+    name: "Abisheak S",
     role: "Full Stack Developer",
     text: "PCS helped me enhance my skills as a Full Stack Developer through continuous learning and real-time project exposure. The professional work environment and technical discussions improved both my coding and analytical abilities.",
     initial: "A",
