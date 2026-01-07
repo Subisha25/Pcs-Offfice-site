@@ -13,7 +13,6 @@ const CourseDetails = () => {
   const [activePrereqImage, setActivePrereqImage] = useState(
     course.prerequisites?.[0]?.image
   );
-  const [activeCareer, setActiveCareer] = useState(0);
 
   if (!course) {
     return (
@@ -259,11 +258,10 @@ const CourseDetails = () => {
             {/* LEFT IMAGE */}
             <div className="career-image-side">
               <img
-                src={
-                  course.careerImages?.[activeCareer] || course.image
-                }
-                alt="Career opportunity"
-              />
+  src={course.careerImages?.[0] || course.image}
+  alt="Career opportunity"
+/>
+
             </div>
 
             {/* RIGHT LIST */}
@@ -272,13 +270,10 @@ const CourseDetails = () => {
 
               <div className="career-list">
                 {course.careerOpportunities.map((career, i) => (
-                  <div
-                    key={i}
-                    className={`career-row ${activeCareer === i ? "active" : ""}`}
-                    onMouseEnter={() => setActiveCareer(i)}
-                  >
-                    <span>{career}</span>
-                  </div>
+                 <div key={i} className="career-row">
+  <span>{career}</span>
+</div>
+
 
                 ))}
               </div>
@@ -291,44 +286,42 @@ const CourseDetails = () => {
 
 
 
-      {/* WHO CAN JOIN */}
-      <section className="course-section who-section">
-        <div className="section-header">
-          <h2>Who Can Join?</h2>
-          <p className="section-subtitle">This course is perfect for</p>
-        </div>
-
-        <div className="who-container">
-          {/* LEFT: IMAGE */}
-          <div className="who-image-side">
-            <div className="who-illustration">
-              <div className="who-illustration-inner">
-                <img
-                  src={course.image}
-                  alt="Who can join"
-                  onError={(e) => {
-                    e.target.style.opacity = 0.08;
-                  }}
-                />
+        {/* WHO CAN JOIN */}
+          <section className="course-section who-section">
+            <div className="section-header">
+              <h2>Who Can Join?</h2>
+              <p className="section-subtitle">This course is perfect for</p>
+            </div>
+    
+            <div className="who-container">
+              {/* LEFT: IMAGE */}
+              <div className="who-image-side">
+                <div className="who-illustration">
+                  <div className="who-illustration-inner">
+                   <img
+  src={course.highlightsImages?.[0] || course.image}
+  alt="Career opportunity"
+/>
+                    
+                  </div>
+                </div>
+              </div>
+    
+              {/* RIGHT: CONTENT */}
+              <div className="who-content">
+                <div className="who-grid">
+                  {course.whoCanJoin.map((person, i) => (
+                    <div key={i} className="who-card">
+                      <div className="who-icon">
+                        <FiUser />
+                      </div>
+                      <p>{person}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* RIGHT: CONTENT */}
-          <div className="who-content">
-            <div className="who-grid">
-              {course.whoCanJoin.map((person, i) => (
-                <div key={i} className="who-card">
-                  <div className="who-icon">
-                    <FiUser />
-                  </div>
-                  <p>{person}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
 
 

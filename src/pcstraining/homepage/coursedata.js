@@ -50,6 +50,7 @@ import hibernate from "../../components/assets/teach/hibernate.svg";
 import Mysql from "../../components/assets/teach/mysql-svgrepo-com.svg";
 import maven from "../../components/assets/teach/maven-svgrepo-com.svg";
 import IntelliJ from "../../components/assets/teach/intellij-idea-svgrepo-com.svg";
+import developer from "../../components/assets/prerequisites/developer.png";
 const coursedata = [
 
   {
@@ -152,13 +153,19 @@ tools: [
       "Entrepreneurs building their own web products"
     ],
 
-    careerOpportunities: [
-      "Full Stack Developer",
-      "Frontend Developer",
-      "Backend Developer",
-      "MERN Stack Developer",
-      "Web Application Developer"
-    ],
+ careerOpportunities: [
+  "Full Stack Developer",
+  "Frontend Developer",
+  "Backend Developer",
+  "MERN Stack Developer",
+  "Web Application Developer"
+],
+
+careerImages: [
+ developer,
+ 
+],
+
 
     highlights: [
       "5 Industry-level Projects",
@@ -169,6 +176,10 @@ tools: [
       "Certificate of Completion"
     ],
 
+    highlightsImages: [
+ ,
+ 
+],
     instructor: {
       name: "Rajesh Kumar",
       experience: "8+ years",
