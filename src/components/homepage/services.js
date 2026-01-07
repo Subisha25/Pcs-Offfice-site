@@ -10,7 +10,7 @@ import ServiceBtnImg from "../assets/allheadingicon/servicesicon.png";
 import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
 // import "./workprocess.css";
-
+import "./services.css";
 
 const ServicesSection = () => {
   const [activeCard, setActiveCard] = useState(null);
