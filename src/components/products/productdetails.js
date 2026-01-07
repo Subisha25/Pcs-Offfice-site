@@ -165,20 +165,21 @@ useEffect(() => {
           </div>
         </section>
 
-        {/* FAQ - Separate Row */}
-        <section className="pd-section">
-          <div className="pd-kb-block">
-            <h3 className="pd-section-title">FAQ</h3>
-            <div className="pd-faq-list">
-              {product.faq?.map((item, idx) => (
-                <details className="pd-faq-item" key={idx}>
-                  <summary>{item.q}</summary>
-                  <p>{item.a}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
+   <section className="pd-section">
+  <div className="pd-faq-minimal">
+    <h3 className="pd-section-title">FAQ</h3>
+
+    <div className="pd-faq-list">
+      {product.faq?.map((item, idx) => (
+        <details className="pd-faq-row" key={idx}>
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
       </div>
     </div>
   );

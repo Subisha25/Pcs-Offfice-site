@@ -438,75 +438,60 @@ font-family: "WF Visual Sans";
 }
 
 /* FAQ - Matching Image 2 clean style */
-.pd-faq-list {
-  margin-top: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+/* FAQ WRAPPER */
+.pd-faq-minimal {
+  max-width: 820px;
+  margin: 0 auto;
 }
 
-.pd-faq-item {
-  padding: 24px 0;
+/* FAQ ROW */
+.pd-faq-row {
   border-bottom: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.5s ease-out backwards;
+  padding: 22px 0;
 }
 
-.pd-faq-item:nth-child(1) { animation-delay: 0.1s; }
-.pd-faq-item:nth-child(2) { animation-delay: 0.2s; }
-.pd-faq-item:nth-child(3) { animation-delay: 0.3s; }
-.pd-faq-item:nth-child(4) { animation-delay: 0.4s; }
-
-.pd-faq-item:last-child {
-  border-bottom: none;
-}
-
-.pd-faq-item:hover {
-  background: #f9fafb;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-left: -16px;
-  margin-right: -16px;
-  border-radius: 8px;
-}
-
-.pd-faq-item summary {
-    font-family: "WF Visual Sans";
+/* QUESTION */
+.pd-faq-row summary {
+  font-family: "WF Visual Sans";
+  font-size: 17px;
   font-weight: 500;
-  color: #1f2937;
-  padding: 0;
-  font-size: 16px;
-  list-style: none;
+  color: #111827;
   cursor: pointer;
+  list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  transition: color 0.3s ease;
 }
 
-.pd-faq-item:hover summary {
-  color: #111827;
-}
-
-.pd-faq-item summary::-webkit-details-marker {
+/* REMOVE DEFAULT ARROW */
+.pd-faq-row summary::-webkit-details-marker {
   display: none;
 }
 
-.pd-faq-item summary::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid #6b7280;
-  border-bottom: 2px solid #6b7280;
-  transform: rotate(45deg);   /* 👇 V shape */
+/* PLUS ICON */
+.pd-faq-row summary::after {
+  content: "+";
+  font-size: 22px;
+  color: #6b7280;
   transition: transform 0.3s ease;
-  margin-left: auto;
 }
 
-.pd-faq-item:hover summary::after {
-  color: #1f2937;
+/* OPEN STATE */
+.pd-faq-row[open] summary::after {
+  content: "–";
+  color: #111827;
 }
+
+/* ANSWER */
+.pd-faq-row p {
+  font-family: "WF Visual Sans";
+  font-size: 15px;
+  color: #4b5563;
+  margin-top: 12px;
+  line-height: 1.8;
+  max-width: 720px;
+}
+
 /* KEY FEATURES - ICON GRID WITH BLUE & WHITE + ENHANCEMENTS */
 .pd-feature-list {
   display: grid;
