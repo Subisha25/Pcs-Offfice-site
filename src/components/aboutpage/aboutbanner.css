@@ -54,6 +54,11 @@
   white-space: nowrap;
   padding: 10px;
 }
+.services-strip,
+.strip-track,
+.services-strip span {
+  font-family: "WF Visual Sans" !important;
+}
 
 .strip-track {
   display: inline-flex;
