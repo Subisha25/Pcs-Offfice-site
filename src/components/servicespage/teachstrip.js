@@ -143,7 +143,7 @@ export default function TechLogoScroll() {
           display: flex;
           gap: 28px;
           width: max-content;
-          animation: scroll-left 35s linear infinite;
+          animation: scroll-left 75s linear infinite;
         }
 
         .tech-card {

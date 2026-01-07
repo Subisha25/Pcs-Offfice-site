@@ -124,8 +124,7 @@ export default function TechLogoScroll() {
           display: flex;
           gap: 28px;
           width: max-content;
-          animation: serviceteach-scroll-left 35s linear infinite;
-        }
+  animation: serviceteach-scroll-left 75s linear infinite; /* 🔥 slower */        }
 
         .serviceteach-card {
           min-width: 160px;

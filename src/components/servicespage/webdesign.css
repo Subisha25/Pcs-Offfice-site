@@ -252,6 +252,143 @@ font-family: "Playfair Display", serif;
   border-radius: 50%;
 }
 
+
+
+
+
+/* ===== CI/CD CUSTOM LAYOUT ===== */
+.sw-cicd-section {
+  max-width: 1150px;
+  margin: 60px auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* CONTENT */
+.sw-cide-title {
+  font-family: "WF Visual Sans";
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.sw-cicd-text {
+  font-family: "WF Visual Sans";
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* IMAGE GRID */
+.sw-cicd-images img {
+  width: 100%;
+  aspect-ratio: 16 / 9;      /* 🔥 BIG & RESPONSIVE */
+  object-fit: contain;         /* 🔥 full card fill */
+  object-position: center;
+
+  border-radius: 14px;
+  display: block;
+}
+
+
+
+.sw-cicd-section {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+
+/* 🔥 FINAL MOBILE SPACE FIX ABOVE CI/CD IMAGE */
+@media (max-width: 480px) {
+  /* reduce gap from previous section */
+  .sw-offer-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* remove CI/CD top spacing */
+  .sw-cicd-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* safety: image wrapper spacing */
+  .sw-cicd-images {
+    margin-top: 0 !important;
+  }
+
+    /* remove section gap */
+  .sw-cicd-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* pull image upward */
+  .sw-cicd-images {
+    margin-top: -20px;   /* 🔥 THIS IS THE KEY */
+  }
+
+  /* fix image sizing conflict */
+  .sw-cicd-images img {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    display: block;
+    margin-top: -90px;
+  }
+}
+
+/* ✅ CI/CD MOBILE ORDER FIX */
+@media (max-width: 768px) {
+  .sw-cicd-section {
+    display: flex;          /* 🔥 grid → flex */
+    flex-direction: column;
+    
+  }
+ /* 🔥 REMOVE SPACE ABOVE CI/CD IMAGE (MOBILE ONLY) */
+@media (max-width: 768px) {
+  .sw-cicd-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+  .sw-cicd-images {
+    order: 1;               /* 👈 IMAGE FIRST */
+  }
+
+  .sw-cide-content {
+    order: 2;               /* 👈 CONTENT NEXT */
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .sw-cicd-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 20px auto;
+  }
+
+  .sw-cicd-images {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sw-cicd-images {
+    grid-template-columns: 1fr; /* mobile-la one image per row */
+  }
+
+  .sw-cicd-images img {
+    height: 160px;
+  }
+}
+
+
 /* ================== RESULT SECTION ================== */
 .sw-result {
   font-family: "WF Visual Sans";
@@ -851,4 +988,12 @@ font-family: "Playfair Display", serif;
 
 .result-box{
   padding-bottom: 80px;
+}
+
+
+@media (max-width: 480px) {
+  .sw-offer-section {
+    margin: 16px auto !important;
+    gap: 20px;
+  }
 }

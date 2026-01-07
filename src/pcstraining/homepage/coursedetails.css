@@ -1342,6 +1342,21 @@ font-weight: 300;
   .who-illustration {
     max-width: 100%;
   }
+
+  /* ===== WHO CAN JOIN – MOBILE FULL IMAGE FIX ===== */
+
+
+  .who-illustration-inner {
+    height: auto;        /* 🔥 remove fixed height */
+  }
+
+  .who-illustration-inner img {
+    width: 100%;
+    height: auto;        /* 🔥 natural height */
+    object-fit: contain;/* 🔥 no crop */
+  }
+
+
 }
 
 @media (max-width: 480px) {
@@ -1387,6 +1402,53 @@ font-weight: 300;
   .topic-pill {
     width: fit-content;
   }
+
+  /* ===== HIGHLIGHTS – MOBILE OPTIMIZATION ===== */
+
+  .highlights-banner {
+    padding: 24px 12px; /* 🔥 reduce outer space */
+  }
+
+
+
+  .highlights-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .highlight-card {
+    width: 85%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 6px 12px;
+
+    display: flex;
+    align-items: flex-start;   /* 🔥 align dot + text */
+    justify-content: flex-start;
+  }
+
+  /* PINK DOT */
+  .highlight-card::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #ff006e;      /* 🔥 pink */
+    border-radius: 50%;
+    margin-top: 6px;          /* 🔥 vertical align with text */
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  .highlight-card p {
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+    text-align: left;
+    margin: 0;
+  }
+
+
+
 }
 
 
@@ -1419,3 +1481,93 @@ font-weight: 300;
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ===== MOBILE: Heading → Image → List (FINAL) ===== */
+@media (max-width: 900px) {
+  .career-split-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* break list-side into separate flow */
+  .career-list-side {
+    display: contents; /* 🔥 THIS IS THE KEY */
+  }
+
+  .career-title {
+    order: 1; /* heading first */
+    margin-bottom: 20px;
+  }
+
+  .career-image-side {
+    order: 2; /* image second */
+    margin-bottom: 30px;
+  }
+
+  .career-list {
+    order: 3; /* list last */
+    width: 100%;
+  }
+
+  .career-image-side img {
+    margin: 0 auto;
+  }
+
+   .career-image-side img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;          /* 🔥 allow full height */
+    object-fit: contain;  /* 🔥 no crop */
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* ===== PREREQUISITES – MOBILE ORDER FIX ===== */
+@media (max-width: 900px) {
+
+  .prereq-split {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* split heading + list */
+  .prereq-content {
+    display: contents; /* 🔥 KEY */
+  }
+
+  /* 1️⃣ Heading first */
+  .prereq-content .section-header {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  /* 2️⃣ Image second */
+  .prereq-image {
+    order: 2;
+    margin-bottom: 30px;
+  }
+
+  /* 3️⃣ List last */
+  .prereq-grid {
+    order: 3;
+    width: 100%;
+  }
+
+  /* FULL IMAGE – no crop */
+  .prereq-image-inner img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+

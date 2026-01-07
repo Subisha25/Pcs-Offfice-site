@@ -50,7 +50,9 @@ import hibernate from "../../components/assets/teach/hibernate.svg";
 import Mysql from "../../components/assets/teach/mysql-svgrepo-com.svg";
 import maven from "../../components/assets/teach/maven-svgrepo-com.svg";
 import IntelliJ from "../../components/assets/teach/intellij-idea-svgrepo-com.svg";
-import developer from "../../components/assets/prerequisites/developer.png";
+import developer from "../../components/assets/prerequisites/career.png";
+import WhyBasicComputer from "../../components/assets/prerequisites/pre.png"
+import students from "../../components/assets/prerequisites/whocanjion.png"
 const coursedata = [
 
   {
@@ -146,12 +148,20 @@ tools: [
       "No prior programming experience needed"
     ],
 
+    prerequisitesImages: [
+ WhyBasicComputer,
+ 
+],
     whoCanJoin: [
       "Students & College Freshers looking to start a tech career",
       "Career Switchers wanting to enter web development",
       "Working Professionals upskilling for better opportunities",
       "Entrepreneurs building their own web products"
     ],
+
+
+    whoCanJoinImages: [
+ students,],
 
  careerOpportunities: [
   "Full Stack Developer",
@@ -266,20 +276,28 @@ careerImages: [
       "Basic understanding of HTML/CSS helpful",
       "Eagerness to learn modern web development"
     ],
-
+    prerequisitesImages: [
+ WhyBasicComputer,
+ 
+],
     whoCanJoin: [
       "Students wanting to specialize in frontend",
       "UI/UX Designers transitioning to development",
       "Freshers starting their coding journey",
       "Backend developers learning frontend skills"
     ],
-
+    whoCanJoinImages: [
+ students,],
     careerOpportunities: [
       "React Developer",
       "Frontend Developer",
       "UI Developer",
       "JavaScript Developer"
     ],
+  careerImages: [
+ developer,
+ 
+],
 
     highlights: [
       "3 Real-world Projects",
@@ -385,14 +403,18 @@ tools: [
       "Basic knowledge of databases",
       "Familiarity with command line"
     ],
-
+    prerequisitesImages: [
+ WhyBasicComputer,
+ 
+],
     whoCanJoin: [
       "Backend Developers wanting to specialize in Node.js",
       "Full Stack learners focusing on server-side",
       "Frontend developers expanding to backend",
       "Software Engineers upskilling"
     ],
-
+    whoCanJoinImages: [
+ students,],
     careerOpportunities: [
       "Backend Developer",
       "Node.js Developer",
@@ -401,6 +423,10 @@ tools: [
       "DevOps Engineer"
     ],
 
+    careerImages: [
+ developer,
+ 
+],
     highlights: [
       "4 Production-ready Projects",
       "API Design Best Practices",
@@ -504,13 +530,18 @@ tools: [
       "No programming experience needed"
     ],
 
+        prerequisitesImages: [
+ WhyBasicComputer,
+ 
+],
     whoCanJoin: [
       "Complete beginners to programming",
       "Students interested in data science path",
       "Backend developers learning Python",
       "Automation enthusiasts"
     ],
-
+    whoCanJoinImages: [
+ students,],
     careerOpportunities: [
       "Python Developer",
       "Django Developer",
@@ -518,6 +549,10 @@ tools: [
       "Automation Engineer",
       "Data Analyst (with further learning)"
     ],
+    careerImages: [
+ developer,
+ 
+],
 
     highlights: [
       "4 Full-stack Projects",
@@ -620,7 +655,10 @@ tools: [
       "JavaScript ES6+ proficiency",
       "Basic understanding of mobile app concepts"
     ],
-
+    prerequisitesImages: [
+ WhyBasicComputer,
+ 
+],
     whoCanJoin: [
       "React developers moving to mobile",
       "Mobile app development learners",
@@ -628,13 +666,18 @@ tools: [
       "Entrepreneurs building mobile products"
     ],
 
+        whoCanJoinImages: [
+ students,],
     careerOpportunities: [
       "React Native Developer",
       "Mobile App Developer",
       "Cross-platform Developer",
       "Full Stack Mobile Developer"
     ],
-
+careerImages: [
+ developer,
+ 
+],
     highlights: [
       "3 Mobile Apps from scratch",
       "Play Store & App Store deployment",
@@ -763,7 +806,10 @@ curriculum: [
     "Interest in AI & problem solving",
     "No prior AI experience required"
   ],
-
+    prerequisitesImages: [
+ WhyBasicComputer,
+ 
+],
   whoCanJoin: [
     "Students & Freshers interested in AI",
     "Software Developers upgrading to AI",
@@ -771,6 +817,8 @@ curriculum: [
     "Entrepreneurs building AI-based products"
   ],
 
+      whoCanJoinImages: [
+ students,],
   careerOpportunities: [
     "AI Engineer",
     "Machine Learning Engineer",
@@ -778,7 +826,10 @@ curriculum: [
     "AI Developer",
     "Research Assistant"
   ],
-
+careerImages: [
+ developer,
+ 
+],
   highlights: [
     "6 Real-time AI Projects",
     "Hands-on Practical Training",
@@ -902,14 +953,18 @@ curriculum: [
     "Interest in marketing & branding",
     "No prior marketing experience required"
   ],
-
+    prerequisitesImages: [
+ WhyBasicComputer,
+ 
+],
   whoCanJoin: [
     "Students & Freshers interested in marketing",
     "Business owners & Entrepreneurs",
     "Career switchers entering digital marketing",
     "Working professionals upgrading marketing skills"
   ],
-
+    whoCanJoinImages: [
+ students,],
   careerOpportunities: [
     "Digital Marketing Executive",
     "SEO Specialist",
@@ -917,7 +972,10 @@ curriculum: [
     "Performance Marketer",
     "Content Marketing Strategist"
   ],
-
+careerImages: [
+ developer,
+ 
+],
   highlights: [
     "4 Live Industry Projects",
     "Hands-on Campaign Experience",
@@ -1056,6 +1114,10 @@ prerequisites: [
       "No prior Java experience required",
 
 ],
+    prerequisitesImages: [
+ WhyBasicComputer,
+ 
+],
 whoCanJoin: [
     "Students & Freshers learning Java",
     "Backend developers upgrading to Full Stack",
@@ -1063,6 +1125,8 @@ whoCanJoin: [
     "Professionals targeting enterprise projects"
   ],
 
+      whoCanJoinImages: [
+ students,],
   careerOpportunities: [
     "Java Developer",
     "Java Full Stack Developer",
@@ -1070,7 +1134,10 @@ whoCanJoin: [
     "Spring Boot Developer",
     "Software Engineer"
   ],
-
+careerImages: [
+ developer,
+ 
+],
   highlights: [
     "6 Enterprise-level Projects",
     "Hands-on Java Coding",

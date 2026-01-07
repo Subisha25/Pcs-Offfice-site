@@ -299,7 +299,7 @@ const CourseDetails = () => {
                 <div className="who-illustration">
                   <div className="who-illustration-inner">
                    <img
-  src={course.highlightsImages?.[0] || course.image}
+  src={course.whoCanJoinImages?.[0] || course.image}
   alt="Career opportunity"
 />
                     
@@ -361,7 +361,7 @@ const CourseDetails = () => {
           <div className="prereq-image">
             <div className="prereq-image-inner">
               <img
-                src={activePrereqImage || course.image}
+                src={course.prerequisitesImages || course.image}
                 alt="Prerequisites"
               />
             </div>

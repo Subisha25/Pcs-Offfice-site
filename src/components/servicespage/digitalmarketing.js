@@ -290,30 +290,28 @@ Our goal is to build websites that truly represent your brand and drive results.
 
         {/* STEP 3: Result Section */}
           {/* STEP 3: CI/CD Section (uses .sw-offer-section for consistent layout) */}
-        <div className="sw-offer-section result-box">
-          <div
-            className="sw-offer-img-box"
-            data-animate="zoom-in"
-            style={{ "--delay": "0s" }}
-          >
-            <img src={CicdImg} alt="CI/CD" className="sw-offer-img" />
-          </div>
+      <div className="sw-cicd-section">
+  {/* LEFT CONTENT */}
+  <div
+    className="sw-cide-content"
+    data-animate="fade-left"
+    style={{ "--delay": "0s" }}
+  >
+    <h2 className="sw-cide-title">CI/CD & Deployment</h2>
 
-          <div
-            className="sw-offer-content"
-            data-animate="fade-left"
-            style={{ "--delay": "0.15s" }}
-          >
-            <h2 className="sw-offer-title">CI/CD & Deployment</h2>
+    <p className="sw-cicd-text">
+      Continuous integration and delivery streamline releases, reduce
+      manual errors, and keep your site up-to-date with fast, reliable
+      deployments. We automate testing and delivery so updates reach
+      users safely and quickly.
+    </p>
+  </div>
 
-            <p className="sw-result-text">
-              Continuous integration and delivery streamline releases, reduce
-              manual errors, and keep your site up-to-date with fast, reliable
-              deployments. We automate testing and delivery so updates reach
-              users safely and quickly.
-            </p>
-          </div>
-        </div>
+  {/* RIGHT IMAGES */}
+  <div className="sw-cicd-images">
+    <img src={CicdImg} alt="CI/CD 1" />
+  </div>
+</div>
       </div>
          {/* PURPOSE SCROLL SECTION + CTA */}
       <PurposeSection />
