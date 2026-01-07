@@ -507,6 +507,333 @@ font-family: "WF Visual Sans";
 .pd-faq-item:hover summary::after {
   color: #1f2937;
 }
+/* KEY FEATURES - ICON GRID WITH BLUE & WHITE + ENHANCEMENTS */
+.pd-feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px 32px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.pd-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent bar */
+.pd-feature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #03045E, #0353A4);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.pd-feature:hover::before {
+  transform: scaleX(1);
+}
+
+/* Bottom underline */
+.pd-feature::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #03045E, #0353A4);
+  transition: width 0.4s ease;
+}
+
+.pd-feature:hover::after {
+  width: 100%;
+}
+
+.pd-feature:hover {
+  transform: translateY(-8px);
+  border-color: #03045E;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(3, 4, 94, 0.15);
+}
+
+.pd-feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #03045E;
+  font-size: 28px;
+  border: 3px solid #03045E;
+  transition: all 0.4s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(3, 4, 94, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+/* Pulse ring effect */
+.pd-feature-icon::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 2px solid #03045E;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.pd-feature:hover .pd-feature-icon {
+  background: #03045E;
+  color: #ffffff;
+  border-color: #03045E;
+  transform: scale(1.1) rotate(360deg);
+  box-shadow: 0 8px 24px rgba(3, 4, 94, 0.3);
+}
+
+.pd-feature:hover .pd-feature-icon::before {
+  opacity: 0.3;
+  inset: -12px;
+}
+
+.pd-feature > div:last-child {
+  padding: 0;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.pd-feature p {
+  font-family: "WF Visual Sans";
+  font-weight: 300;
+  margin: 0;
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.8;
+  transition: all 0.3s ease;
+}
+
+.pd-feature:hover p {
+  color: #03045E;
+  font-weight: 400;
+}
+
+/* FAQ - CLEAN MINIMAL ACCORDION */
+.pd-faq-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pd-faq-item {
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.pd-faq-item:hover {
+  border-bottom-color: #d1d5db;
+}
+
+.pd-faq-item[open] {
+  border-bottom-color: #1f2937;
+}
+
+.pd-faq-item summary {
+  font-family: "WF Visual Sans";
+  font-weight: 500;
+  color: #1f2937;
+  padding: 32px 48px 32px 0;
+  font-size: 17px;
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  background: transparent;
+  position: relative;
+}
+
+.pd-faq-item:hover summary {
+  color: #111827;
+  padding-left: 12px;
+}
+
+.pd-faq-item[open] summary {
+  padding-bottom: 24px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.pd-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Simple line indicator */
+.pd-faq-item summary::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background: #9ca3af;
+  transition: all 0.3s ease;
+}
+
+.pd-faq-item summary::before {
+  content: "";
+  position: absolute;
+  right: 11px;
+  top: 50%;
+  width: 2px;
+  height: 24px;
+  background: #9ca3af;
+  transition: all 0.3s ease;
+}
+
+.pd-faq-item:hover summary::after,
+.pd-faq-item:hover summary::before {
+  background: #1f2937;
+}
+
+.pd-faq-item[open] summary::before {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.pd-faq-item[open] summary::after {
+  background: #1f2937;
+}
+
+.pd-faq-item p {
+  font-family: "WF Visual Sans";
+  font-weight: 300;
+  color: #6b7280;
+  padding: 0 48px 32px 0;
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.8;
+  background: transparent;
+  animation: smoothReveal 0.3s ease-out;
+}
+
+@keyframes smoothReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section title enhancement */
+.pd-section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.pd-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 48px;
+  height: 2px;
+  background: #1f2937;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .pd-feature-list {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .pd-feature {
+    padding: 24px 20px;
+  }
+
+  .pd-feature-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 26px;
+  }
+
+  .pd-feature p {
+    font-size: 14.5px;
+  }
+
+  .pd-faq-item summary {
+    padding: 28px 40px 28px 0;
+    font-size: 16px;
+  }
+
+  .pd-faq-item:hover summary {
+    padding-left: 8px;
+  }
+
+  .pd-faq-item[open] summary {
+    padding-bottom: 20px;
+  }
+
+  .pd-faq-item p {
+    padding: 0 40px 28px 0;
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pd-feature-list {
+    gap: 28px;
+  }
+
+  .pd-feature {
+    padding: 22px 18px;
+  }
+
+  .pd-feature-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .pd-feature p {
+    font-size: 14px;
+  }
+
+  .pd-faq-item summary {
+    padding: 24px 36px 24px 0;
+    font-size: 15px;
+  }
+
+  .pd-faq-item p {
+    padding: 0 36px 24px 0;
+    font-size: 14px;
+  }
+}
 
 .pd-faq-item[open] summary::after {
   transform: rotate(-135deg); /* 👆 inverted V */
