@@ -47,37 +47,31 @@ const Products = () => {
 
           <div className="right-list">
             <div className="products-list">
-              {products.map((item, index) => (
-                <div className="product-row" key={index}>
+           {products.map((item, index) => (
+  <div
+    className="product-row"
+    key={index}
+    onMouseEnter={() => setActiveProduct(item)}   // ✅ HERE
+  >
+    <p>{item.name}</p>
 
-                  {/* Click name to change image */}
-                  <p
-                    style={{ cursor: "pointer" }}
-                    onMouseEnter={() => setActiveProduct(item)}  // <- CHANGE HERE
-                  >
-                    {item.name}
-                  </p>
+    <div className="view-container">
+      {activeProduct.name === item.name && (
+        <span className="arrows">
+          <img src={arrow} alt="arrows" />
+        </span>
+      )}
 
+      <span
+        className="view-link"
+        onClick={() => navigate(`/productdetails/${item.id}`)}
+      >
+        View
+      </span>
+    </div>
+  </div>
+))}
 
-                  <div className="view-container">
-
-                    {/* Arrow ONLY for active product */}
-                    {activeProduct.name === item.name && (
-                      <span className="arrows"> <img src={arrow} alt="arrows" /></span>
-                    )}
-                    {/* View always visible */}
-                  <span
-  className="view-link"
-onClick={() => navigate(`/productdetails/${item.id}`)}
->
-  View
-</span>
-
-
-                  </div>
-
-                </div>
-              ))}
             </div>
 
           </div>
