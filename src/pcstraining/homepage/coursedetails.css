@@ -1037,11 +1037,18 @@ font-weight: 300;
 
 /* arrow alignment */
 .dropdown-icon {
-  line-height: 1;
-  margin-top: 1px;
-   font-size: 18px;
-  color: #2563eb;
+  display: inline-flex;
+  align-items: center;
 }
+
+.arrow-svg {
+  color: #2563eb;
+  transition: transform 0.25s ease;
+}
+.module-accordion[open] .arrow-svg {
+  transform: rotate(180deg); /* ↑ */
+}
+
 
 
 .module-details {

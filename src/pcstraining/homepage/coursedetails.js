@@ -48,10 +48,22 @@ const CourseDetails = () => {
           <div className="course-hero-grid">
             {/* LEFT : TEXT */}
             <div className="course-hero-left">
-              <div className="breadcrumb">
-                <span>Home</span> / <span>Courses</span> /{" "}
-                <span>{course.category}</span>
-              </div>
+           <div className="breadcrumb">
+  <span className="crumb" onClick={() => navigate("/")}>
+    Home
+  </span>
+  <span className="crumb-sep">/</span>
+
+  <span className="crumb" onClick={() => navigate("/allcourses")}>
+    Courses
+  </span>
+  <span className="crumb-sep">/</span>
+
+  <span className="crumb active">
+    {course.category}
+  </span>
+</div>
+
 
               <h1 className="hero-title">{course.title}</h1>
               <p className="hero-subtitle">{course.overview}</p>
@@ -171,7 +183,24 @@ const CourseDetails = () => {
 
                   <div className="module-right">
                     <span className="module-details">Module details</span>
-                    <span className="dropdown-icon">⌄</span>
+<span className="dropdown-icon">
+  <svg
+    className="arrow-svg"
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6 9L12 15L18 9"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+</span>
                   </div>
                 </summary>
 
