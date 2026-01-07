@@ -344,6 +344,11 @@
   animation: scroll-left 22s linear infinite;
 }
 
+.services-strip2,
+.strip-track2,
+.services-strip2 span {
+  font-family: "WF Visual Sans" !important;
+}
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
