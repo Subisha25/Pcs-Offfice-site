@@ -10,10 +10,10 @@ const CourseDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const course = coursedata.find((c) => c.id === id);
-const [activePrereqImage, setActivePrereqImage] = useState(
-  course.prerequisites?.[0]?.image
-);
-const [activeCareer, setActiveCareer] = useState(0);
+  const [activePrereqImage, setActivePrereqImage] = useState(
+    course.prerequisites?.[0]?.image
+  );
+  const [activeCareer, setActiveCareer] = useState(0);
 
   if (!course) {
     return (
@@ -61,29 +61,29 @@ const [activeCareer, setActiveCareer] = useState(0);
                 ...
               </div> */}
 
-          <div className="course-meta">
-  <span className="meta-badge">
-    <span className="dot"></span>
-    {course.level}
-  </span>
+              <div className="course-meta">
+                <span className="meta-badge">
+                  <span className="dot"></span>
+                  {course.level}
+                </span>
 
-  <span className="meta-badge">
-    <span className="dot"></span>
-    {course.mode}
-  </span>
+                <span className="meta-badge">
+                  <span className="dot"></span>
+                  {course.mode}
+                </span>
 
-  <span className="meta-badge">
-    <span className="dot"></span>
-    {course.language}
-  </span>
+                <span className="meta-badge">
+                  <span className="dot"></span>
+                  {course.language}
+                </span>
 
-  {course.certificate && (
-    <span className="meta-badge">
-      <span className="dot"></span>
-      Certificate
-    </span>
-  )}
-</div>
+                {course.certificate && (
+                  <span className="meta-badge">
+                    <span className="dot"></span>
+                    Certificate
+                  </span>
+                )}
+              </div>
 
 
               <div className="hero-actions">
@@ -146,123 +146,123 @@ const [activeCareer, setActiveCareer] = useState(0);
         </div>
       </section>
 
-{/* CURRICULUM */}
-<section className="course-section curriculum-section gray-bg">
-  <div className="section-header">
-    <h2>Course Curriculum</h2>
-    <p className="section-subtitle">
-      Structured learning path from basics to advanced
-    </p>
-  </div>
+      {/* CURRICULUM */}
+      <section className="course-section curriculum-section gray-bg">
+        <div className="section-header">
+          <h2>Course Curriculum</h2>
+          <p className="section-subtitle">
+            Structured learning path from basics to advanced
+          </p>
+        </div>
 
-  <div className="curriculum-split">
+        <div className="curriculum-split">
 
-    {/* LEFT – MODULE LIST */}
-    <div className="curriculum-left">
-      {course.curriculum.map((mod, i) => (
-        <details key={i} className="module-accordion">
+          {/* LEFT – MODULE LIST */}
+          <div className="curriculum-left">
+            {course.curriculum.map((mod, i) => (
+              <details key={i} className="module-accordion">
 
-          {/* HEADER */}
-          <summary className="module-row">
-            <div className="module-left">
-              <h4>{mod.module}</h4>
-              <p>Module {i + 1} · {mod.duration}</p>
-            </div>
+                {/* HEADER */}
+                <summary className="module-row">
+                  <div className="module-left">
+                    <h4>{mod.module}</h4>
+                    <p>Module {i + 1} · {mod.duration}</p>
+                  </div>
 
-            <div className="module-right">
-              <span className="module-details">Module details</span>
-              <span className="dropdown-icon">⌄</span>
-            </div>
-          </summary>
+                  <div className="module-right">
+                    <span className="module-details">Module details</span>
+                    <span className="dropdown-icon">⌄</span>
+                  </div>
+                </summary>
 
-          {/* EXPANDED CONTENT */}
-          <div className="module-content">
-            <p className="module-desc">
-              {mod.desc}
-            </p>
+                {/* EXPANDED CONTENT */}
+                <div className="module-content">
+                  <p className="module-desc">
+                    {mod.desc}
+                  </p>
 
-            {mod.topics && (
-           <div className="module-topics">
-  <strong>Topics covered</strong>
+                  {mod.topics && (
+                    <div className="module-topics">
+                      <strong>Topics covered</strong>
 
-  <ul className="topics-row">
-    {mod.topics.map((topic, j) => (
-      <li key={j} className="topic-pill">
-        {topic}
-      </li>
-    ))}
-  </ul>
-</div>
+                      <ul className="topics-row">
+                        {mod.topics.map((topic, j) => (
+                          <li key={j} className="topic-pill">
+                            {topic}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-            )}
+                  )}
+                </div>
+
+              </details>
+            ))}
           </div>
 
-        </details>
-      ))}
-    </div>
+          {/* RIGHT – INSTRUCTOR */}
+          <div className="curriculum-right">
 
-    {/* RIGHT – INSTRUCTOR */}
-<div className="curriculum-right">
+            <h4 className="tools-title">Tools & Technologies</h4>
 
-  <h4 className="tools-title">Tools & Technologies</h4>
-
-<div className="tools-icons">
-  {course.tools.map((tool, i) => (
-    <div key={i} className="tool-icon-box">
-      <img src={tool.icon} alt={tool.name} />
-      <span>{tool.name}</span>
-    </div>
-  ))}
-</div>
+            <div className="tools-icons">
+              {course.tools.map((tool, i) => (
+                <div key={i} className="tool-icon-box">
+                  <img src={tool.icon} alt={tool.name} />
+                  <span>{tool.name}</span>
+                </div>
+              ))}
+            </div>
 
 
-</div>
+          </div>
 
 
-  </div>
-</section>
-
- {/* CAREER OPPORTUNITIES – IMAGE + LIST */}
-{course.careerOpportunities && course.careerOpportunities.length > 0 && (
-  <section className="career-split-section">
-    <div className="career-split-container">
-
-      {/* LEFT IMAGE */}
-      <div className="career-image-side">
-        <img
-          src={
-            course.careerImages?.[activeCareer] || course.image
-          }
-          alt="Career opportunity"
-        />
-      </div>
-
-      {/* RIGHT LIST */}
-      <div className="career-list-side">
-        <h2 className="career-title">Career Opportunities</h2>
-
-        <div className="career-list">
-          {course.careerOpportunities.map((career, i) => (
-           <div
-  key={i}
-  className={`career-row ${activeCareer === i ? "active" : ""}`}
-  onMouseEnter={() => setActiveCareer(i)}
->
-  <span>{career}</span>
-</div>
-
-          ))}
         </div>
-      </div>
+      </section>
 
-    </div>
-  </section>
-)}
+      {/* CAREER OPPORTUNITIES – IMAGE + LIST */}
+      {course.careerOpportunities && course.careerOpportunities.length > 0 && (
+        <section className="career-split-section">
+          <div className="career-split-container">
+
+            {/* LEFT IMAGE */}
+            <div className="career-image-side">
+              <img
+                src={
+                  course.careerImages?.[activeCareer] || course.image
+                }
+                alt="Career opportunity"
+              />
+            </div>
+
+            {/* RIGHT LIST */}
+            <div className="career-list-side">
+              <h2 className="career-title">Career Opportunities</h2>
+
+              <div className="career-list">
+                {course.careerOpportunities.map((career, i) => (
+                  <div
+                    key={i}
+                    className={`career-row ${activeCareer === i ? "active" : ""}`}
+                    onMouseEnter={() => setActiveCareer(i)}
+                  >
+                    <span>{career}</span>
+                  </div>
+
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </section>
+      )}
 
 
-   
 
-  {/* WHO CAN JOIN */}
+
+      {/* WHO CAN JOIN */}
       <section className="course-section who-section">
         <div className="section-header">
           <h2>Who Can Join?</h2>
@@ -303,55 +303,55 @@ const [activeCareer, setActiveCareer] = useState(0);
 
 
 
-{/* PREREQUISITES */}
-<section className="course-section prereq-section gray-bg">
-  <div className="prereq-split">
+      {/* PREREQUISITES */}
+      <section className="course-section prereq-section gray-bg">
+        <div className="prereq-split">
 
-    {/* LEFT : CONTENT */}
-    <div className="prereq-content">
-      <div className="section-header align-left">
-        <h2>Prerequisites</h2>
-        <p className="section-subtitle">
-          What you need to get started
-        </p>
-      </div>
-
-      <div className="who-grid prereq-grid">
-        {course.prerequisites.map((prereq, i) => (
-          <div
-            key={i}
-            className="who-card prereq-card"
-            onMouseEnter={() =>
-              typeof prereq === "object" &&
-              setActivePrereqImage(prereq.image)
-            }
-          >
-            <div className="who-icon">
-              <FiInfo />
+          {/* LEFT : CONTENT */}
+          <div className="prereq-content">
+            <div className="section-header align-left">
+              <h2>Prerequisites</h2>
+              <p className="section-subtitle">
+                What you need to get started
+              </p>
             </div>
-            <p>{typeof prereq === "string" ? prereq : prereq.text}</p>
+
+            <div className="who-grid prereq-grid">
+              {course.prerequisites.map((prereq, i) => (
+                <div
+                  key={i}
+                  className="who-card prereq-card"
+                  onMouseEnter={() =>
+                    typeof prereq === "object" &&
+                    setActivePrereqImage(prereq.image)
+                  }
+                >
+                  <div className="who-icon">
+                    <FiInfo />
+                  </div>
+                  <p>{typeof prereq === "string" ? prereq : prereq.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
 
-    {/* RIGHT : IMAGE */}
-    <div className="prereq-image">
-      <div className="prereq-image-inner">
-        <img
-          src={activePrereqImage || course.image}
-          alt="Prerequisites"
-        />
-      </div>
-    </div>
+          {/* RIGHT : IMAGE */}
+          <div className="prereq-image">
+            <div className="prereq-image-inner">
+              <img
+                src={activePrereqImage || course.image}
+                alt="Prerequisites"
+              />
+            </div>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
 
 
 
 
- 
+
 
       {/* CTA SECTION */}
       {/* <section className="course-cta">
