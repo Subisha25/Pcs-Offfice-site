@@ -25,8 +25,7 @@
 .workprocess-card-description {
   font-family: "WF Visual Sans";
   font-size: 14px;          /* optional */
-  line-height: 1.6;         /* readability */
-  letter-spacing: 0.4px;    /* 🔥 MAIN POINT */
+  font-weight: 400;
   color: #555;
 }
 
