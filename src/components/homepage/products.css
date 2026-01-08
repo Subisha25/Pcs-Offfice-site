@@ -62,12 +62,15 @@
   padding: 0;           /* remove padding, center via flex */
 }
 
+.view-link {
+  cursor: pointer;   /* 🔥 THIS IS THE MAIN FIX */
+}
 
 
 .titles {
   font-size: 48px;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.1;
   font-family: "WF Visual Sans" !important;
 
 }

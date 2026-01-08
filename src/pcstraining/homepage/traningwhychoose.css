@@ -58,7 +58,6 @@
   width: 100%;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
 }
 
 .traningwhychoose-image {
@@ -106,11 +105,10 @@
 
 .traningwhychoose-description {
  font-family: "WF Visual Sans";
-  font-size: 15px;
-  line-height: 1.7;
-    letter-spacing: 1px; 
+  font-size: 16px;
+  /* line-height: 1.7; */
   color: black;
-  font-weight: 300;
+  font-weight: 600;
   margin: 24px 0px;
   max-width: 520px;
 }
@@ -152,17 +150,15 @@
    font-family: "WF Visual Sans";
 
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   color: #0f172a;
   margin: 0 0 4px;
 }
 
 .traningwhychoose-feature-description {
    font-family: "WF Visual Sans";
-font-weight: 300;
+font-weight: 400;
   font-size: 14px;
-  letter-spacing: 1px;
-  line-height: 1.6;
   color: #6b7280;
   margin: 0;
 }
@@ -185,8 +181,8 @@ font-weight: 300;
 .traningwhychoose-stat-number {
  font-family: "WF Visual Sans";
 
-  font-size: 58px;
-  font-weight: 500;
+  font-size: 60px;
+  font-weight: 600;
   color: #020617;
   margin-bottom: 4px;
 }
@@ -196,7 +192,7 @@ font-weight: 300;
 font-weight: 400;
 font-size: 14px;
   color: #7D7D7D;
-  letter-spacing: 0.5px;
+  /* letter-spacing: 0.5px; */
 }
 
 /* ---------- Responsive ---------- */

@@ -42,19 +42,16 @@ padding-bottom: 40px;
 
 .footer-title {
   font-family: "WF Visual Sans", sans-serif;
-  font-weight: 300;        /* Medium weight */
+  font-weight: 400;        /* Medium weight */
   font-size: 48px;         /* Figma exact */
   line-height: 60px;       /* Figma exact */
-  letter-spacing: 1%;      /* Figma exact */
   color: #fff;
 }
 
 .footer-sub {
   font-family: "WF Visual Sans", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.4;
-  letter-spacing: 0.18px;
+  font-weight: 400;
+  font-size: 16px;
   margin-top: 10px;
   color: #ffffff;
 }

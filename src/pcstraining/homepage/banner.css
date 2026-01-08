@@ -144,11 +144,11 @@
 
 .train-home-ban-subtitle {
     font-family: "WF Visual Sans" !important;
-  font-size: 18px;
+  font-size: 16px;
   color: black;
   margin: 0 0 40px 0;
-  font-weight: 300;
-  line-height: 1.6;
+  font-weight: 600;
+  /* line-height: 1.6; */
 }
 
 /* Buttons */
@@ -503,7 +503,6 @@
   
   .train-home-ban-subtitle {
     font-size: 16px;
-    letter-spacing: 1px;
   }
   
   .train-home-ban-footer {

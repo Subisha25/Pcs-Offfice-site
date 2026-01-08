@@ -33,6 +33,7 @@ min-height: calc(
   display: flex;
   align-items: center;
   gap: 0;
+  margin-top:10px ;
 }
 
 /* Dot */
@@ -60,6 +61,9 @@ min-height: calc(
 }
 
 .ps-dotNum {
+  display: none !important;
+}
+.ps-dotNum {
   font-size: 9px;
   font-weight: 500;
   opacity: 0;                 /* 🔥 hidden */
@@ -70,8 +74,8 @@ min-height: calc(
 /* active dot */
 /* ACTIVE DOT */
 .ps-dot.active {
-  width: 25px;
-  height: 25px;
+  width: 12px;
+  height: 12px;
   background: #1e40af;
   border-color: #1e40af;
   color: #fff;

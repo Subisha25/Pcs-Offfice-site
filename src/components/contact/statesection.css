@@ -38,23 +38,23 @@
 .traningwhychoose-stat-number {
  
   font-family: "WF Visual Sans";
-  font-size: 58px; 
+  font-size: 60px; 
   font-weight: 500; 
   color: #000000; 
   margin-bottom: 4px;
   white-space: nowrap;
  
   line-height: 100%;
-  letter-spacing: 0.01em; 
+  /* letter-spacing: 0.01em;  */
 }
 
 .traningwhychoose-stat-label {
   
   font-family: "WF Visual Sans";
-    font-weight: 500; 
+    font-weight: 400; 
   font-size: 14px; 
   color:#7D7D7D;
-  line-height: 1.5;
+  /* line-height: 1.5; */
 }
 
 /* Tablet (768px - 1024px) */
