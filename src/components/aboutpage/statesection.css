@@ -133,9 +133,9 @@
 } */
 .stats-card h1 {
  font-family: WF Visual Sans;
-font-weight: 400;
+font-weight: 500;
 font-style: Regular;
-font-size: 90px;
+font-size: 60px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
@@ -146,24 +146,24 @@ letter-spacing: 0%;
 }
 .title {
  font-family: WF Visual Sans;
-font-weight: 500;
+font-weight: 400;
 font-style: Medium;
-font-size: 24px;
+font-size: 14px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 1%;
-
+  color:#7D7D7D;
 }
 
 .desc {
   color: #000000;
   font-family: WF Visual Sans;
-  font-weight: 300;
+  font-weight: 400;
   /* font-style: Regular; */
-  font-size: 17px;
+  font-size: 14px;
   leading-trim: NONE;
-  line-height: 1.6; /* improved readability and consistent wrap */
-  letter-spacing: 0.2px;
+  /* line-height: 1.6; improved readability and consistent wrap */
+  /* letter-spacing: 0.2px; */
 
   /* keep description as a centered block but left-align text so wrapped lines start aligned */
   /* max-width: 520px; */
