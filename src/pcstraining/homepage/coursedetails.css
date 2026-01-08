@@ -429,11 +429,10 @@ font-weight: 300;
 
 .module-desc {
         font-family: "WF Visual Sans";
-font-weight: 300;
-  font-size: 15px;
+font-weight: 400;
+  font-size: 14px;
   color: #666;
   margin-bottom: 10px;
-  letter-spacing: 0.6px;
 }
 
 .module-duration {
@@ -1173,13 +1172,8 @@ font-weight: 300;
   border-top: 1px solid #e5e7eb;
 }
 
-/* DESCRIPTION */
-.module-desc {
-  font-size: 14px;
-  color: #374151;
-  margin-bottom: 14px;
-  line-height: 1.6;
-}
+
+
 
 /* TOPICS */
 .module-topics strong {
