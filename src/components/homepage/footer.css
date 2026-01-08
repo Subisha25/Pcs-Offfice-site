@@ -68,9 +68,9 @@ padding-bottom: 40px;
 .footer-menu-col a {
   font-family: "WF Visual Sans", sans-serif;
   font-weight: 400;           /* Medium */
-  font-size: 16px;            /* Figma size */
+  font-size: 14px;            /* Figma size */
   line-height: 36px;          /* Figma line height */
-  letter-spacing: 0.18px;     /* 1% in CSS */
+  /* letter-spacing: 0.18px;     1% in CSS */
   color: #FFFFFF;
   opacity: 1;
   text-decoration: none;
@@ -115,10 +115,10 @@ padding-bottom: 40px;
 
 .footer-menu-col a {
   font-family: "WF Visual Sans", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 36px;
-  letter-spacing: 0.18px;
+  font-weight: 400;
+  font-size: 16px;
+  /* line-height: 36px; */
+  /* letter-spacing: 0.18px; */
   color: #ffffff;
   text-decoration: none;
   display: block;
@@ -132,22 +132,24 @@ padding-bottom: 40px;
 
 .footer-divider {
   border-bottom: 1px solid rgba(255,255,255,0.15);
-    margin: 20px 0;  
+    margin: 20px 0; 
+     font-weight: 400;
+     font-size: 16px;
+     font-family: "WF Visual Sans";
 }
 
 .footer-copy {
   width: 100%;
   text-align: center;
-  font-family: "WF Visual Sans", sans-serif;
-  font-weight: 500;                       /* Medium */
-  font-size: 18px;                        /* Figma size */
+  font-family: "WF Visual Sans";
+  font-weight: 400;                       /* Medium */
+  font-size: 16px;                        /* Figma size */
   line-height: 100%;                      /* line height */
-  letter-spacing: 1px;                 /* 1% of 18px */
   
   color: #FFFFFF;                         /* white */
   opacity: 1;                             /* clear white */
 
-  margin-top: 50px;        /* was 20px */
+  margin-top: 30px;        /* was 20px */
   margin-bottom: 5px;      /* was 10px */
                    /* spacing bottom */
 }
@@ -159,6 +161,9 @@ padding-bottom: 40px;
   justify-content: space-between;
   gap: 12px;               /* smaller gap */
   margin-bottom: 20px;      /* reduce height */
+  font-size: 14px;
+  font-family: "WF Visual Sans";
+  font-weight: 400;
 }
 .info-block.enroll-block{
   padding-right: 30px;
@@ -173,11 +178,7 @@ padding-bottom: 40px;
   text-transform: uppercase;
     font-family: "WF Visual Sans" !important; 
 }
-.info-block p{
-  font-family: "WF Visual Sans", sans-serif;
-      font-weight: 500;
 
-}
 
 .info-title span {
   font-family: "WF Visual Sans", sans-serif;
@@ -191,10 +192,10 @@ padding-bottom: 40px;
 
 .info-block p {
   font-family: "WF Visual Sans" !important;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0.9px;
+  font-weight: 400;
+  font-size: 16px;
+  /* line-height: 28px; */
+  /* letter-spacing: 0.9px; */
   color: #ffffff;
   margin-top: 10px;
 }
@@ -282,7 +283,7 @@ padding-bottom: 40px;
   font-weight: 400;         /* Medium */
   font-size: 16px;
   line-height: 28px;        /* Figma exact */
-  letter-spacing: 0.9px;    /* 5% converted */
+  /* letter-spacing: 0.9px;    5% converted */
   color: #FFFFFF;
   opacity: 1;
   margin-top: 10px;
@@ -352,8 +353,8 @@ padding-bottom: 40px;
  /* ADDRESS → FULL VISIBLE BUT MAX 3 LINES */
 .info-block:nth-child(3) p {
     font-family: "WF Visual Sans";
-font-weight: 300;
-  font-size: 15px;          /* smaller for mobile */
+font-weight: 400;
+  font-size: 16px;          /* smaller for mobile */
   line-height: 22px;        /* compact spacing */
   white-space: normal;
   overflow: hidden;
@@ -569,7 +570,7 @@ font-weight: 300;
 }
 
   .footer-wrapper {
-    padding: 50px 32px 50px 32px;
+    padding: 50px 32px 30px 32px;
   }
 
   /* LEFT HEADING */
@@ -578,10 +579,7 @@ font-weight: 300;
     line-height: 46px;
   }
 
-  .footer-sub {
-    font-size: 15px;
-    line-height: 22px;
-  }
+
 
   /* LOGO SIZE */
   .footer-center-logo .pcs-logo {
@@ -591,37 +589,33 @@ font-weight: 300;
 .social-row {
   margin-right: -0px;
 }
-  /* MENU TEXT SMALL */
-  .footer-menu-col a {
-    font-size: 14px;
-    line-height: 28px;
-    white-space: nowrap;
-  }
+
 
 
   /* PHONE NUMBER BLOCK EXACT LAPTOP STYLE */
   .info-block p {
         font-family: "WF Visual Sans";
-font-weight: 500;
-    font-size: 15px;
-    line-height: 22px;
+font-weight: 400;
+    font-size: 16px;
+    /* line-height: 22px; */
     white-space: nowrap;   /* STOP LINE BREAK */
   }
 
   /* ADDRESS BLOCK – allow 3 lines max if needed */
   .info-block:nth-child(3) p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 22px;
     white-space: normal;
     margin-right: 50px;
+    font-weight: 400;
   }
 
   /* ICON TITLE SIZE */
   .info-title span {
         font-family: "WF Visual Sans";
-font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 1px;
+font-weight: 400;
+    font-size: 14px;
+    /* letter-spacing: 1px; */
   }
 
   /* 🔥 SMALLER CTA BUTTON FOR TABLET */
@@ -644,10 +638,7 @@ font-weight: 500;
     height: 16px;
   }
 
-  /* COPYRIGHT */
-  .footer-copy {
-    font-size: 14px;
-  }
+
 
 
 /* ✅ FIX : 426px – 700px FORCE MOBILE LAYOUT */
@@ -782,9 +773,9 @@ font-weight: 500;
 
   /* ADDRESS */
   .footer-middle .info-block:nth-child(3) p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 22px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
 
     white-space: normal;
