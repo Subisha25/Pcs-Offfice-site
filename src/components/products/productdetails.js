@@ -54,13 +54,13 @@ useEffect(() => {
             {product.overview && (
               <p className="pd-sub">{product.overview}</p>
             )}
-            <div className="pd-tech">
-              {product.technology_stack?.map((t) => (
-                <span key={t} className="pd-badge">
-                  {t}
-                </span>
-              ))}
-            </div>
+         <div className="productdetail-page-tech-stack">
+  {product.technology_stack?.map((icon, index) => (
+    <div key={index} className="productdetail-page-tech-icon">
+      <img src={icon} alt="productdetailtech-icon" />
+    </div>
+  ))}
+</div>
             <div className="pd-actions">
               <Link
   to="/contact"

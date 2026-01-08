@@ -130,7 +130,7 @@ export default function TechLogoScroll() {
       <style>{`
         /* ===== DESKTOP DEFAULT ===== */
         .tech-scroll {
-          padding: 0px 20px 60px;
+          padding: 0px 20px 0px;
           text-align: center;
         }
 
@@ -141,14 +141,13 @@ export default function TechLogoScroll() {
 
         .scroll-track {
           display: flex;
-          gap: 28px;
           width: max-content;
           animation: scroll-left 75s linear infinite;
         }
 
         .tech-card {
           min-width: 160px;
-          padding: 26px 16px;
+          padding: 20px 16px 20px ;
           border-radius: 14px;
           display: flex;
           flex-direction: column;

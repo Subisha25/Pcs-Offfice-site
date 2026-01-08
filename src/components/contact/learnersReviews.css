@@ -98,6 +98,7 @@
   color: #4b5563;
   margin-bottom: 18px;
   font-family: "WF Visual Sans";
+  font-weight: 400;
 }
 
 /* ================= CARD FOOTER ================= */
@@ -123,14 +124,17 @@
 }
 
 .learnreviews-card-name {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   color: #111827;
+  font-family: "WF Visual Sans";
 }
 
 .learnreviews-card-role {
-  font-size: 12px;
-  color: #9ca3af;
+  font-size: 14px;
+  color: #7d7d7d;
+  font-family: "WF Visual Sans";
+  font-weight: 400;
 }
 
 /* ================= NAV ================= */

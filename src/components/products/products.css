@@ -127,25 +127,32 @@
 }
 
 .product-page-tech-stack {
-  cursor: pointer;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 14px;
+  align-items: center;
 }
 
-.product-page-tech-badge {
-     font-family: "WF Visual Sans"; 
-  font-weight: 300;
-  padding: 8px 20px;
-  cursor: pointer;
-  border: 1px solid black;
-  color: black;
-  border-radius: 25px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.3s ease;
+.product-page-tech-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
+
+.product-page-tech-icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.product-page-tech-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
 
 .product-page-tech-badge:hover {
   transform: translateY(-2px);

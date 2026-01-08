@@ -163,16 +163,14 @@ const Products = () => {
                 onClick={() => handleViewDetails(product.id)}
               />
 
-              <div className="product-page-tech-stack">
-                {product.technology_stack?.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="product-page-tech-badge"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+             <div className="product-page-tech-stack">
+  {product.technology_stack?.map((icon, index) => (
+    <div key={index} className="product-page-tech-icon">
+      <img src={icon} alt="tech-icon" />
+    </div>
+  ))}
+</div>
+
             </div>
           </div>
         ))}

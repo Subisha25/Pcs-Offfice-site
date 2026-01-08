@@ -267,7 +267,7 @@ const ContactSection = () => {
               className={`toggle-btn ${selectedOption === "work" ? "active" : ""}`}
               onClick={() => setSelectedOption("work")}
             >
-              <span className="dot"></span> I Need to Work
+               I Need to Work
             </button>
 
             <button
@@ -275,7 +275,7 @@ const ContactSection = () => {
               className={`toggle-btn ${selectedOption === "learn" ? "active" : ""}`}
               onClick={() => setSelectedOption("learn")}
             >
-              <span className="dot"></span> I Want to Learn
+               I Want to Learn
             </button>
           </div>
 

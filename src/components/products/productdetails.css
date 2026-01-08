@@ -26,6 +26,42 @@
   box-sizing: border-box;
 }
 
+
+.productdetail-page-tech-stack {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;   /* 🔥 MAIN FIX */
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+
+.productdetail-page-tech-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.productdetail-page-tech-icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.productdetail-page-tech-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+
+.productdetail-page-tech-badge:hover {
+  transform: translateY(-2px);
+}
 .pd-page {
   min-height: 100vh;
   padding: 130px 20px;
@@ -78,18 +114,17 @@ font-family: "WF Visual Sans";
 
 .pd-short {
     font-family: "WF Visual Sans";
-  font-weight: 500;
+  font-weight: 600;
   color: rgba(105, 105, 105, 0.9);
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: 16px;
   padding: 12px 0;
 }
 
 .pd-sub {
     font-family: "WF Visual Sans";
-  font-weight: 300;
-  color: rgba(112, 113, 114, 0.9);
-  font-size: 15px;
+  font-weight: 600;
+  color: #7d7d7d;
+  font-size: 16px;
   padding: 20px 0;
 }
 
@@ -298,9 +333,9 @@ font-family: "WF Visual Sans";
 
 .pd-kb-sub {
     font-family: "WF Visual Sans";
-  font-weight: 500;
+  font-weight: 600;
   color: rgba(107, 114, 128, 0.9);
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 24px;
   line-height: 1.6;
 }
@@ -399,12 +434,12 @@ font-family: "WF Visual Sans";
 
 .pd-benefit-list li {
     font-family: "WF Visual Sans";
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   padding-left: 32px;
   color: #374151;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 14px;
+  /* line-height: 1.7; */
   transition: all 0.3s ease;
   animation: fadeInUp 0.5s ease-out backwards;
 }
@@ -453,8 +488,8 @@ font-family: "WF Visual Sans";
 /* QUESTION */
 .pd-faq-row summary {
   font-family: "WF Visual Sans";
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   color: #111827;
   cursor: pointer;
   list-style: none;
@@ -485,11 +520,12 @@ font-family: "WF Visual Sans";
 /* ANSWER */
 .pd-faq-row p {
   font-family: "WF Visual Sans";
-  font-size: 15px;
-  color: #4b5563;
+  font-size: 14px;
+  color: #7d7d7d;
   margin-top: 12px;
-  line-height: 1.8;
+  /* line-height: 1.8; */
   max-width: 720px;
+  font-weight: 400;
 }
 
 /* KEY FEATURES - ICON GRID WITH BLUE & WHITE + ENHANCEMENTS */

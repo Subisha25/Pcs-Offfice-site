@@ -154,7 +154,7 @@ font-family: "Playfair Display", serif;
 .sw-description {
   font-family: "WF Visual Sans";
   max-width: 645px;
-  font-weight: 300;
+  font-weight: 600;
   text-align: left;
   color: #7d7d7d;
   line-height: 1.6;
@@ -226,14 +226,17 @@ font-family: "Playfair Display", serif;
   list-style: none;
   padding: 0;
   margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #7d7d7d;
 }
 
 .sw-offer-list li {
   font-family: "WF Visual Sans";
-  font-weight: 500;
   margin-bottom: 10px;
-  font-size: 16px;
-  color: #000000;
+ font-size: 16px;
+  font-weight: 600;
+  color: #7d7d7d;
   line-height: 1.5;
     position: relative;
   padding-left: 18px;  
@@ -259,7 +262,7 @@ font-family: "Playfair Display", serif;
 .sw-cicd-section {
   max-width: 1150px;
   margin: 60px auto;
-  padding: 0 20px;
+  padding:  0px 20px;
 
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -278,8 +281,9 @@ font-family: "Playfair Display", serif;
 .sw-cicd-text {
   font-family: "WF Visual Sans";
   font-size: 16px;
-  line-height: 1.6;
-  color: #000;
+  /* line-height: 1.6; */
+  color: #7d7d7d;
+  font-weight: 600;
 }
 
 /* IMAGE GRID */
@@ -506,7 +510,7 @@ font-family: "Playfair Display", serif;
   }
 
   .sw-description {
-    font-size: 18px;
+    font-size: 16px;
     max-width: 700px;
   }
   /* .sw-description {

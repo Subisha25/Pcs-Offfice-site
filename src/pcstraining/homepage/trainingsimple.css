@@ -172,11 +172,9 @@
 
 .workprocess-card-description {
   font-family: "WF Visual Sans";
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 1.6;
+  font-weight: 400;
+  font-size: 14px;
   color: #666;
-  letter-spacing: 1%;
 }
 
 /* ================= MOBILE ================= */

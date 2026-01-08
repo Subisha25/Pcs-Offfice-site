@@ -122,13 +122,12 @@ export default function TechLogoScroll() {
 
         .serviceteach-track {
           display: flex;
-          gap: 28px;
           width: max-content;
   animation: serviceteach-scroll-left 75s linear infinite; /* 🔥 slower */        }
 
         .serviceteach-card {
           min-width: 160px;
-          padding: 26px 16px;
+          // padding: 26px 16px;
           border-radius: 14px;
           display: flex;
           flex-direction: column;
