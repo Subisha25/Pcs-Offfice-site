@@ -190,7 +190,7 @@
 
 .benefit-card  p {
      font-family: "WF Visual Sans"; 
-    font-weight: 500;
+    font-weight: 400;
     margin: 0;
     opacity: 0.85;
     font-size: 14px;
@@ -395,8 +395,8 @@
 .toggle-btn.active {
     font-family: "WF Visual Sans"; 
     font-weight: 500;
-    background: #e4e4e4; /* Light grey */
-    color: #000;
+    background: #03045E;
+    color: #ffffff;       
 }
 
 /* Active radio dot */
@@ -500,10 +500,10 @@
 /* Footer note */
 .footer-note {
     font-family: "WF Visual Sans"; 
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
     margin-top: 15px;
-    font-size: 13px;
+    font-size: 14px;
     color: #777;
 }
 .icon-box {
@@ -524,7 +524,28 @@
     height: 28px;
     stroke-width: 1.8;
 }
+.form-input::placeholder,
+.phone-number::placeholder {
+  font-family: "WF Visual Sans";
+  font-weight: 400;
+  font-size: 14px;
+  color: #999;
+}
 
+
+/* Email, name, interest – autofill consistency */
+.form-input {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* Phone select (India +91) text */
+.phone-select {
+  font-family: "WF Visual Sans";
+  font-weight: 400;
+  font-size: 14px;
+  color: #444;
+}
 /* ============================================ */
 /* TABLET RESPONSIVE (768px - 1024px)          */
 /* ============================================ */
