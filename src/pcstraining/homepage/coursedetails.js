@@ -4,6 +4,7 @@ import coursedata from "./coursedata";
 import "./coursedetails.css";
 import CommonButton from "../../components/common/button";
 import React, { useState } from "react";
+import homeicon from "../../components/assets/prerequisites/home.png"
 
 
 const CourseDetails = () => {
@@ -48,9 +49,10 @@ const CourseDetails = () => {
             {/* LEFT : TEXT */}
             <div className="course-hero-left">
            <div className="breadcrumb">
-  <span className="crumb" onClick={() => navigate("/")}>
-    Home
-  </span>
+<span className="crumb crumb-home" onClick={() => navigate("/")}>
+  <img src={homeicon} alt="Home" />
+</span>
+
   <span className="crumb-sep">/</span>
 
   <span className="crumb" onClick={() => navigate("/allcourses")}>

@@ -268,8 +268,8 @@ const ServicesSection = () => {
                   zIndex: 6   // ⭐ MAIN FIX
                 }}>
                   <h3 className="card-title" style={{
-                    fontSize: '38px',
-                    fontWeight: '300',
+                    fontSize: '35px',
+                    fontWeight: '400',
                     marginBottom: '2px',
                     fontFamily: '"WF Visual Sans", sans-serif',
                     color: titleColor,
@@ -279,8 +279,8 @@ const ServicesSection = () => {
                   </h3>
                   <h4 className="card-subtitle" style={{
                     fontFamily: '"WF Visual Sans", sans-serif',
-                    fontSize: '38px',
-                    fontWeight: '300',
+                    fontSize: '35px',
+                    fontWeight: '400',
                     opacity: '1',
                     color: subtitleColor,
                     transition: 'all 0.4s ease',
@@ -331,7 +331,7 @@ const ServicesSection = () => {
                     borderRadius: '25px',
                     overflow: 'hidden',
 
-                    top: isMobile ? '0' : isHovered ? '0' : '170px',
+                    top: isMobile ? '0' : isHovered ? '0' : '140px',
                     left: isMobile ? '0' : isHovered ? '0' : '30px',
 
                     width: isMobile ? '100%' : isHovered ? '100%' : '130px',
@@ -421,6 +421,10 @@ const ServicesSection = () => {
 
         {/* Media Queries - unchanged */}
         <style jsx>{`
+.card-title,
+.card-subtitle {
+  line-height: 1.05;   /* 🔥 tight & clean */
+}
 
 @media (max-width: 768px) {
  /* ✅ FORCE WHITE TEXT ON MOBILE */
