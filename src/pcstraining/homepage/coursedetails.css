@@ -1076,7 +1076,7 @@ font-weight: 300;
 
 
 .module-details {
-          font-family: "WF Visual Sans";
+font-family: "WF Visual Sans";
 font-weight: 300;
   font-size: 14px;
   color: #2563eb;
@@ -1085,6 +1085,7 @@ font-weight: 300;
   transform: translateX(6px);
   transition: all 0.25s ease;
   letter-spacing: 0.6px;
+  padding-left: 10px;
 }
 
 .module-row:hover .module-details {
