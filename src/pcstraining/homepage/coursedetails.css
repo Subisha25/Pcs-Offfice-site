@@ -1085,7 +1085,7 @@ font-weight: 300;
   transform: translateX(6px);
   transition: all 0.25s ease;
   letter-spacing: 0.6px;
-  padding-left: 10px;
+  padding-left: 30px;
 }
 
 .module-row:hover .module-details {
