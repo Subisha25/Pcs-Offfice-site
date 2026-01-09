@@ -96,11 +96,7 @@
 .stats-heading h2 i {
   font-style: italic;      /* grow together italic */
 }
-/* .stats-heading span {
-  font-weight: 500;
-    font-family: "WF Visual Sans" !important;
 
-} */
 
 .stats-heading i {
   font-weight: 500;
@@ -140,9 +136,6 @@ leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
 
-  /* font-size: 70px;
-  font-weight: 400;
-  margin-bottom: 5px; */
 }
 .title {
  font-family: WF Visual Sans;
@@ -162,11 +155,6 @@ letter-spacing: 1%;
   /* font-style: Regular; */
   font-size: 16px;
   leading-trim: NONE;
-  /* line-height: 1.6; improved readability and consistent wrap */
-  /* letter-spacing: 0.2px; */
-
-  /* keep description as a centered block but left-align text so wrapped lines start aligned */
-  /* max-width: 520px; */
   margin: 12px auto 0;
   margin-left: 30px;
   text-align: left;
