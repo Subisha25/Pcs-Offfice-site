@@ -161,9 +161,6 @@
   cursor: default;
 }
 
-/* ===== Responsive ===== */
-
-/* Large screens */
 @media (min-width: 1200px) {
   .traninglearn {
     padding: 80px 24px 92px;

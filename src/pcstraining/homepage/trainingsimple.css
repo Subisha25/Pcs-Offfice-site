@@ -1,9 +1,6 @@
 :root {
   --playfair-fonts: "Playfair Display", serif;
 }
-
-
-
 .learning-heading {
   text-align: center;
 }
@@ -104,12 +101,6 @@
   margin: 0 auto;
 }
 
-/* .workprocess-cards-grid {
-  position: relative;
-  height: 420px;
-} */
-
-/* ================= CARD BASE ================= */
 .workprocess-card {
   position: absolute;
   top: 0;
@@ -177,10 +168,6 @@
   color: #666;
 }
 
-/* ================= MOBILE ================= */
-
-
-/* ================= TABLET (769px - 1024px) ================= */
 @media (min-width: 768px) and (max-width: 1024px) {
   .workprocess {
     padding: 50px 20px;
@@ -199,27 +186,6 @@
     font-size: 32px;
   }
 
-  /* 2x2 Grid layout for tablet */
-  /* .workprocess-cards-grid {
-    position: static;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    max-width: 700px;
-    margin: 0 auto;
-  } */
-
-  /* .workprocess-card {
-    position: relative !important;
-    transform: none !important;
-    left: auto !important;
-    opacity: 1;
-    width: 100%;
-    min-height: 320px;
-    padding: 28px;
-    transition: none;
-  } */
 
   .workprocess-card-title {
      font-family: "WF Visual Sans";
@@ -271,25 +237,6 @@
     padding: 40px 16px;
   }
 
-  /* .workprocess-cards-grid {
-    position: static;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  } */
-
-  /* .workprocess-card {
-    position: relative !important;
-    transform: none !important;
-    left: auto !important;
-    width: 100%;
-    max-width: 340px;
-    min-height: auto;
-    padding: 28px 24px;
-  } */
-
   .workprocess-icon-wrapper {
     width: 40px;
     height: 40px;
@@ -321,10 +268,6 @@
     font-size: 24px;
   }
 
-  /* .workprocess-card {
-    max-width: 100%;
-    padding: 24px 20px;
-  } */
 .workprocess-card {
 
   width: 280px;
@@ -341,10 +284,6 @@
   }
 }
 
-
-/* =====================================================
-   MOBILE HEADING FULL VISIBILITY FIX (320px – 425px)
-   ===================================================== */
 @media (max-width: 425px) {
 
   /* 🔹 SECTION SPACING – heading ku space irukkanum */

@@ -23,13 +23,6 @@
   font-style: normal;
   font-display: swap;
 }
-
-/* =========================================
-   ✅ SEQUENCE OPEN ANIMATION
-   1) menuOpen -> container expands
-   2) menuReveal -> items appear one-by-one
-========================================= */
-
 /* During opening (menu-open but not reveal yet) hide menu + discuss button */
 .header.menu-open:not(.menu-reveal) .header-menu,
 .header.menu-open:not(.menu-reveal) .header-right .header-btn {
@@ -119,30 +112,8 @@ transition:
   
   /* overflow: hidden;  */
   white-space: nowrap;
-  /* transition:
-    transform 0.4s ease,
-    padding 0.3s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease; */
+  
 }
-
-
-
-/* .header-container {
-  cursor: pointer;
-  width: 70%;
-  max-width: 1300px;
-  padding: 12px 30px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: transparent;
-  border: 1px solid #151416;
-  transition: all 0.3s ease-in-out;
-  box-sizing: border-box;
-} */
-
 /* SCROLLED STATE - WHITE BACKGROUND */
 .header.scrolled .header-container {
   gap: 10px;
@@ -286,11 +257,6 @@ transition:
   display: flex !important;
 }
 
-/* ========================================
-   RESPONSIVE BREAKPOINTS
-======================================== */
-
-/* TABLET AND BELOW (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
   .header {
     top: 15px;
