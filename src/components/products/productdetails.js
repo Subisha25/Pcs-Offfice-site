@@ -55,9 +55,10 @@ useEffect(() => {
               <p className="pd-sub">{product.overview}</p>
             )}
          <div className="productdetail-page-tech-stack">
-  {product.technology_stack?.map((icon, index) => (
+  {product.technology_stack?.map((tech, index) => (
     <div key={index} className="productdetail-page-tech-icon">
-      <img src={icon} alt="productdetailtech-icon" />
+      <img src={tech.icon} alt={tech.name} />
+      <p className="productdetail-page-tech-name">{tech.name}</p>
     </div>
   ))}
 </div>

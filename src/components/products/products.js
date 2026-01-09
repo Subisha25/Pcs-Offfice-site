@@ -40,9 +40,10 @@ const Products = () => {
               />
 
              <div className="product-page-tech-stack">
-  {product.technology_stack?.map((icon, index) => (
+  {product.technology_stack?.map((tech, index) => (
     <div key={index} className="product-page-tech-icon">
-      <img src={icon} alt="tech-icon"/>
+      <img src={tech.icon} alt={tech.name}/>
+      <p className="product-page-tech-name">{tech.name}</p>
     </div>
   ))}
 </div>

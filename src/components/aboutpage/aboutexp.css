@@ -116,7 +116,7 @@ margin-top: 25px;
 
 /* Gradient words when filled */
 .gradient-word-animate.filled {
-  background: linear-gradient(100deg, #03045E, #FF006E);
+  background: linear-gradient(100deg, #03045E,#FF006E);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -197,7 +197,7 @@ margin-top: 25px;
   }
 
   .sub-text {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .right-boxs {
@@ -246,7 +246,6 @@ margin-top: 25px;
 
   .sub-text {
     font-size: 14px;
-    line-height: 1.6;
     margin: 10px 0;
   }
 }
@@ -288,9 +287,9 @@ margin-top: 25px;
     font-size: 22px;
   }
 
-  .sub-text {
+  /* .sub-text {
     font-size: 13px;
-  }
+  } */
   /* LEFT BOX */
 .left-box {
  

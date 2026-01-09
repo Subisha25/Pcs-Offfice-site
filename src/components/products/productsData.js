@@ -57,7 +57,7 @@ import react from "../../components/assets/teach/react.svg"
 import node from "../../components/assets/teach/node.svg"
 import meterialui from "../../components/assets/teach/material-ui-svgrepo-com.svg"
 import mysql from "../../components/assets/teach/mysql-svgrepo-com.svg"
-import express from "../../components/assets/teach/express.png"
+import express from "../../components/assets/teach/expressjs.svg"
 import Tailwind from "../../components/assets/teach/tailwind.png"
 import mongodb from "../../components/assets/teach/mongodb-svgrepo-com.svg"
 import html from "../../components/assets/teach/html.svg";
@@ -75,11 +75,10 @@ const productsData = [
     description: "Easily book doctor appointments online. Simplifies scheduling and enhances patient convenience.",
     overview: "A complete hospital appointment management system built using React.js and Node.js that helps hospitals simplify patient bookings, manage doctors, nurses, pharmacists, departments, medicines, and streamline day-to-day hospital operations.",
     technology_stack: [
-      react,
-      node,
-      meterialui,
-      mysql,
-     
+      { icon: react, name: "React" },
+      { icon: node, name: "Node.js" },
+      { icon: meterialui, name: "Material UI" },
+      { icon: mysql, name: "MySQL" },
     ],
     key_features: [
       "Add/Edit/Delete doctors with availability and specializations",
@@ -125,12 +124,11 @@ const productsData = [
     description: "A shopping platform with product filters, cart system, and checkout.",
     overview: "Zestocart is a modern full-stack e-commerce web application built using React.js, Node.js, Express.js, and MySQL. It provides users with a seamless shopping experience, supporting features such as product browsing, cart management, wishlist, checkout, secure payments, order history, tracking, and invoice generation.",
     technology_stack: [
-      react,
-      Tailwind ,
-      node,
-      express,
-      mysql,
-   
+      { icon: react, name: "React" },
+      { icon: Tailwind, name: "Tailwind CSS" },
+      { icon: node, name: "Node.js" },
+      { icon: express, name: "Express" },
+      { icon: mysql, name: "MySQL" },
     ],
 
      key_features: [
@@ -141,7 +139,7 @@ const productsData = [
       "Order History & Tracking & Invoice Generation",
     
     ],
-     benefits: [
+     benefits:[
       "Fast and user-friendly shopping experience",
       "Secure payment handling",
       "Easy product browsing and management",
@@ -176,11 +174,10 @@ const productsData = [
     description: "A secure and automated system to verify customer identity and ensure compliance with regulatory standards.",
     overview: "A secure and automated system to verify customer identity and ensure compliance with regulatory standards, supporting document uploads, verification statuses, and audit logs.",
     technology_stack: [
-      react,
-      node,
-      express,
-      mongodb,
-
+      { icon: react, name: "React" },
+      { icon: node, name: "Node.js" },
+      { icon: express, name: "Express" },
+      { icon: mongodb, name: "MongoDB" },
     ],
     key_features: [
       "Customer document upload and storage",
@@ -222,14 +219,13 @@ const productsData = [
     description: "Smart and efficient billing system to manage invoices, payments, and reports.",
     overview: "Smart and efficient billing system to manage invoices, payments, taxes and reports with multi-currency and customizable invoice templates.",
     technology_stack: [
-      html,
-      css,
-      Bootstrap,
-      php,
-      mysql
-    
+      { icon: html,name: "HTML" },
+      { icon: css, name: "CSS" },
+      { icon: Bootstrap, name: "Bootstrap" },
+      { icon: php, name: "PHP" },
+      { icon: mysql, name: "MySQL" },
     ],
-    key_features: [
+    key_features:[
       "Invoice creation and recurring invoices",
       "Payment tracking and receipts",
       "Tax configurations and multi-currency support",
@@ -266,11 +262,10 @@ const productsData = [
     description: "A smart car rental solution offering hassle-free booking, flexible options, and doorstep delivery.",
     overview: "A modern car rental management solution for booking, fleet management, flexible pricing, and door-step delivery.",
     technology_stack: [
-      Flutter,
-      node,
-      express,
-      mongodb,
-
+      { icon: Flutter, name: "Flutter" },
+      { icon: node, name: "Node.js" },
+      { icon: express, name: "Express" },
+      { icon: mongodb, name: "MongoDB" },
     ],
     key_features: [
       "Car listing with images and pricing",
@@ -312,7 +307,7 @@ const productsData = [
     description: "Easily book and track your gas cylinder anytime, anywhere with just a tap.",
     overview: "A user-friendly app to book and track gas cylinder deliveries with scheduling, tracking, and order history.",
     technology_stack: [
-      react,
+      { icon: react, name: "React" },
     ],
     key_features: [
       "Book gas cylinders with preferred delivery slots",
@@ -351,10 +346,10 @@ const productsData = [
     description: "This Learning Management System allows students to conveniently enroll in courses and learn online.",
     overview: "An Online Learning Management System (LMS) built with React.js + Tailwind CSS, Node.js (Express), and MySQL (Workbench). Visitors can explore all courses, while logged-in users can enroll by paying online. After enrollment, learners can study via Recording, Live, or Offline sessions with progress tracking.On completion, certificates are auto-generated for download, and Super Admin can manage users/promote Admins with email alerts",
     technology_stack: [
-      react,
-      node,
-      Tailwind,
-      mysql,
+      { icon: react, name: "React" },
+      { icon: node, name: "Node.js" },
+      { icon: Tailwind, name: "Tailwind CSS" },
+      { icon: mysql, name: "MySQL" },
     ],
     key_features: [
        "Public course browsing without login (UI accessible for all visitors)",
@@ -415,10 +410,10 @@ const productsData = [
     description: "Delicious meals delivered hot and fast to your doorstep.",
     overview: "Zestaurant is a full‑stack online food ordering and restaurant management system built using React.js, Node.js/Express, and MySQL. It allows users to browse restaurants, order food, track delivery, and download invoices. Admins manage menus, orders, offers, and restaurants, while super-admins approve restaurants and oversee platform operations.",
     technology_stack: [
-      react,
-      node,
-      express,
-      mysql,
+      { icon: react, name: "React" },
+      { icon: node, name: "Node.js" },
+      { icon: express, name: "Express" },
+      { icon: mysql, name: "MySQL" },
     ],
      key_features: [
       "User registration, login, and secure JWT authentication",
@@ -466,12 +461,11 @@ const productsData = [
   description: "A beauty parlour booking system with service browsing, easy appointments, reminders, and full admin control.",
   overview: "A modern Beauty Parlour Web Application built using React.js, Tailwind CSS, Node.js (Express), and MySQL. The system allows customers to browse all makeup and beauty services category-wise, view pricing, select packages, and book appointments. Automatic reminder emails are sent one day before the appointment, and users receive instant email confirmation after booking. Admin has a powerful dashboard to manage services, packages, bookings, notifications, and customer details.",
     technology_stack: [
-      react,
-      Tailwind,
-      node,
-      express,
-      mysql,
-    
+      { icon: react, name: "React" },
+      { icon: Tailwind, name: "Tailwind CSS" },
+      { icon: node, name: "Node.js" },
+      { icon: express, name: "Express" },
+      { icon: mysql, name: "MySQL" },
     ],
     key_features: [
        "View all beauty services without login",
@@ -531,10 +525,9 @@ const productsData = [
     description: "Your personal tailor in your pocket – stitch, style, and track orders effortlessly.",
     overview: "A tailoring & alterations app to place stitch orders, store measurements, track orders and manage tailors with pickup/delivery options.",
     technology_stack: [
-      react,
-      php,
-      mysql,
-     
+      { icon: react, name: "React" },
+      { icon: php, name: "PHP" },
+      { icon: mysql, name: "MySQL" },
     ],
     key_features: [
       "Order creation with measurement uploads",
