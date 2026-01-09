@@ -27,6 +27,47 @@
   font-display: swap;
 }
 
+.product-main-heading {
+font-family: "WF Visual Sans";
+    font-size: 50px;
+    font-weight: 500;
+    color: rgb(26, 26, 46);
+    line-height: 64px;
+    max-width: 900px;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: -30px;
+}
+
+
+@media (max-width: 768px) {
+  .product-main-heading {
+    font-size: 34px;
+    line-height: 44px;
+    margin-top: -10px;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-main-heading {
+    font-size: 28px;
+    line-height: 38px;
+  margin-top:-10px;
+  }
+  .product-page-container {
+    padding-top: -40px;
+}
+
+}
+
+/* optional – highlight word effect venumna */
+.product-main-heading span {
+  background: linear-gradient(90deg, #6a00ff, #ff2d55);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
 
 
 .product-page {
@@ -233,12 +274,13 @@
     padding: 8px 16px;
     font-size: 14px;
   }
+ 
 }
 
 /* Mobile M (375px - 424px) */
 @media (max-width: 424px) {
   .product-page-container {
-    padding: 80px 16px;
+    padding: 0px 16px;
   }
 
   .product-page-image {
@@ -273,7 +315,7 @@
 /* Mobile S (320px - 374px) */
 @media (max-width: 374px) {
   .product-page-container {
-    padding: 70px 12px;
+    padding: 0px 12px;
   }
 
   .product-page-image {
