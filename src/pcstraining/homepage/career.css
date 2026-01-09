@@ -173,12 +173,6 @@
   width: 100%;
 }
 
-
-/* ===========================
-   RESPONSIVE BREAKPOINTS
-   =========================== */
-
-/* Tablet - Large (768px to 1024px) */
 @media (max-width: 1024px) {
   .products-section {
     padding: 60px 50px;

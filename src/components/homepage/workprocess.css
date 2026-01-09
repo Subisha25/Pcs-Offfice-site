@@ -172,13 +172,6 @@
 
 /* ================= TABLET (769px - 1024px) ================= */
 @media (max-width: 1024px) and (min-width: 769px) {
-  /* .workprocess {
-    padding: 50px 20px;
-  } */
-
-  /* .workprocess-section {
-    padding: 40px 20px;
-  } */
 
   .animated-text {
     font-size: 36px;
@@ -224,13 +217,6 @@
 
 /* ================= MOBILE (up to 768px) ================= */
 @media (max-width: 768px) {
-  /* .workprocess {
-    padding: 40px 16px;
-  }
-
-  .workprocess-section {
-    padding: 30px 16px;
-  } */
 
   .animated-text {
     font-size: 28px;

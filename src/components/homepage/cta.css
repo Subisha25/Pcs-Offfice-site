@@ -184,29 +184,6 @@
     padding-bottom: 40px;
   }
 }
-/* @media (max-width: 320px) {
- 
-  .cta_title_line1 {
-    font-size: 14px;
-    line-height: 32px;
-  }
- 
-  .cta_title_line2 {
-    font-size: 14px;
-    line-height: 0px;
-    margin-top: -20px;
-  }
-   .cta_highlight {
-    font-size: 14px;
-  }
-   .cta_section_wrapper{
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-} */
-
-
 @media (max-width: 425px) {
   .cta_title_line1,
   .cta_title_line2 {
