@@ -166,7 +166,7 @@ const Products = () => {
              <div className="product-page-tech-stack">
   {product.technology_stack?.map((icon, index) => (
     <div key={index} className="product-page-tech-icon">
-      <img src={icon} alt="tech-icon" />
+      <img src={icon} alt="tech-icon"/>
     </div>
   ))}
 </div>
