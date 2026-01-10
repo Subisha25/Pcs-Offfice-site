@@ -6,7 +6,8 @@ import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 
 import Mockup from "../assets/servicebanner.png";
 import Team from "../assets/service1.png";
-import CicdImg from "../assets/cicd/cicd.jpeg";
+// import CicdImg from "../assets/cicd/cicd.jpeg";
+import CicdImg from "../assets/cicd/cicd.png";
 
 import CTASection from "../homepage/cta";
 import CommonTopTag from "../common/toptag";
@@ -270,28 +271,20 @@ export default function Webdesign() {
         </div>
 
         {/* STEP 3: CI/CD Section (uses .sw-offer-section for consistent layout) */}
-    <div className="sw-cicd-section">
-  {/* LEFT CONTENT */}
-  <div
-    className="sw-cide-content"
-    data-animate="fade-left"
-    style={{ "--delay": "0s" }}
-  >
-    <h2 className="sw-cide-title">CI/CD & Deployment</h2>
+    <div className="cicd-flow-section">
+  <h2 className="cicd-title">CI/CD & Deployment</h2>
 
-    <p className="sw-cicd-text">
-      Continuous integration and delivery streamline releases, reduce
-      manual errors, and keep your site up-to-date with fast, reliable
-      deployments. We automate testing and delivery so updates reach
-      users safely and quickly.
-    </p>
-  </div>
+  <p className="cicd-desc">
+    Continuous integration and delivery streamline releases, reduce manual
+    errors, and keep your site up-to-date with fast, reliable deployments.
+    We automate testing and delivery so updates reach users safely and quickly.
+  </p>
 
-  {/* RIGHT IMAGES */}
-  <div className="sw-cicd-images">
-    <img src={CicdImg} alt="CI/CD 1" />
+  <div className="cicd-flow-image">
+    <img src={CicdImg} alt="CI/CD Flow Diagram" />
   </div>
 </div>
+
 
       </div>
 <TechLogoStrip />
