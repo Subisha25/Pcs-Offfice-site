@@ -330,7 +330,6 @@ const CourseDetails = () => {
 
 
 
-   {/* PREREQUISITES SECTION */}
 {/* PREREQUISITES SECTION */}
 <section className="course-section prereq-section gray-bg">
   <div className="prereq-content">

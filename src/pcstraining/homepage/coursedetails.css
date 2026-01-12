@@ -1664,11 +1664,21 @@ font-weight: 300;
 /* Grid for Cards */
 .prereq-grid {
   display: grid;
-  /* 220px width maintain pannum */
-  grid-template-columns: repeat(3, 220px); 
+  grid-template-columns: repeat(3, 220px);
   gap: 30px;
   justify-content: center;
 }
+
+/* 🔥 When ONLY 2 cards */
+.prereq-grid:has(.prereq-card-new:nth-child(2)):not(:has(.prereq-card-new:nth-child(3))) {
+  grid-template-columns: 220px 220px;
+}
+
+/* 🔥 When ONLY 1 card */
+.prereq-grid:has(.prereq-card-new:nth-child(1)):not(:has(.prereq-card-new:nth-child(2))) {
+  grid-template-columns: 220px;
+}
+
 
 /* Square Card Design */
 .prereq-card-new {
