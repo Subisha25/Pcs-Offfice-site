@@ -6,6 +6,7 @@ import CommonButton from "../../components/common/button";
 import React, { useState } from "react";
 import homeicon from "../../components/assets/prerequisites/home.png"
 import { FiTarget } from "react-icons/fi";
+import prereqIcon from "../../components/assets/teach/prereq.png";
 
 const CourseDetails = () => {
   const { id } = useParams();
@@ -347,8 +348,9 @@ const CourseDetails = () => {
       {course.prerequisites.map((prereq, i) => (
         <div key={i} className="prereq-card-new">
           <div className="prereq-icon">
-            <FiTarget />
-          </div>
+  <img src={prereqIcon} alt="Prerequisite icon" />
+</div>
+
           <p className="prereq-text">
             {typeof prereq === "string" ? prereq : prereq.text}
           </p>
