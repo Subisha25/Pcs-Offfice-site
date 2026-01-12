@@ -79,7 +79,7 @@ function Footer() {
             <div className="footer-menu-col">
               <a href="/aboutbanner">About</a>
               <a href="/servicespage">Services</a>
-              <a href="#">Blog</a>
+              <a href="/blog">Blog</a>
 
               <a href="/products">Products</a>
             </div>
