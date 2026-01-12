@@ -5,7 +5,7 @@ import "./coursedetails.css";
 import CommonButton from "../../components/common/button";
 import React, { useState } from "react";
 import homeicon from "../../components/assets/prerequisites/home.png"
-
+import { FiTarget } from "react-icons/fi";
 
 const CourseDetails = () => {
   const { id } = useParams();
@@ -127,16 +127,19 @@ const CourseDetails = () => {
 
       {/* HIGHLIGHTS BANNER */}
       <section className="highlights-banner">
-        <div className="highlights-container">
-          {course.highlights.map((highlight, i) => (
-            <div key={i} className="highlight-card">
-              {/* <div className="highlight-icon">
-                <FiCheck />
-              </div> */}
-              <p>{highlight}</p>
-            </div>
-          ))}
-        </div>
+       <div className="highlights-container">
+  {course.highlights.map((highlight, i) => (
+   
+<div className="highlight-card-new">
+  <div className="highlight-icon">
+    <FiTarget />
+  </div>
+  <p className="highlight-text">{highlight}</p>
+</div>
+  ))}
+</div>
+
+
       </section>
 
       {/* WHAT YOU'LL LEARN */}
@@ -327,57 +330,38 @@ const CourseDetails = () => {
 
 
 
-      {/* PREREQUISITES */}
-      <section className="course-section prereq-section gray-bg">
-        <div className="prereq-split">
+   {/* PREREQUISITES SECTION */}
+{/* PREREQUISITES SECTION */}
+<section className="course-section prereq-section gray-bg">
+  <div className="prereq-content">
+    
+    {/* Header Part - Fully Centered */}
+    <div className="section-header align-center">
+      <h2>Prerequisites</h2>
+      <p className="section-subtitle">
+        What you need to get started
+      </p>
+    </div>
 
-          {/* LEFT : CONTENT */}
-          <div className="prereq-content">
-            <div className="section-header align-left">
-              <h2>Prerequisites</h2>
-              <p className="section-subtitle">
-                What you need to get started
-              </p>
-            </div>
-
-            <div className="who-grid prereq-grid">
-              {course.prerequisites.map((prereq, i) => (
-                <div
-                  key={i}
-                  className="who-card prereq-card"
-                  onMouseEnter={() =>
-                    typeof prereq === "object" &&
-                    setActivePrereqImage(prereq.image)
-                  }
-                >
-                  <div className="who-icon">
-                    <FiInfo />
-                  </div>
-                  <p>{typeof prereq === "string" ? prereq : prereq.text}</p>
-                </div>
-              ))}
-            </div>
+    {/* Cards Grid */}
+    <div className="prereq-grid">
+      {course.prerequisites.map((prereq, i) => (
+        <div key={i} className="prereq-card-new">
+          <div className="prereq-icon">
+            <FiTarget />
           </div>
-
-          {/* RIGHT : IMAGE */}
-          <div className="prereq-image">
-            <div className="prereq-image-inner">
-              <img
-                src={course.prerequisitesImages || course.image}
-                alt="Prerequisites"
-              />
-            </div>
-          </div>
-
+          <p className="prereq-text">
+            {typeof prereq === "string" ? prereq : prereq.text}
+          </p>
         </div>
-      </section>
+      ))}
+    </div>
+
+  </div>
+</section>
 
 
-
-
-
-
-      {/* CTA SECTION */}
+{/* CTA SECTION */}
       {/* <section className="course-cta">
         <div className="cta-content">
           <h2>Ready to Start Your Learning Journey?</h2>

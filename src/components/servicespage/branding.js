@@ -19,24 +19,37 @@ import CommonTopTag from "../common/toptag";
 /* ==================== PURPOSE SECTION (SCROLL PIN) ==================== */
 
 function PurposeSection() {
-  const cardsRef = useRef(null);
+   const cardsRef = useRef(null);
+
   const [animate, setAnimate] = useState(false);
-  /* ================= CARD FLOWER EFFECT ================= */
+  const [hasAnimated, setHasAnimated] = useState(
+    sessionStorage.getItem("brandingPurposeAnimated") === "true"
+  );
+
   useEffect(() => {
+    if (hasAnimated) {
+      setAnimate(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setAnimate(true), 400);
-        } else {
-          setAnimate(false);
+          setTimeout(() => {
+            setAnimate(true);
+            setHasAnimated(true);
+            sessionStorage.setItem("brandingPurposeAnimated", "true");
+          }, 400);
         }
       },
       { threshold: 0.4 }
     );
 
     if (cardsRef.current) observer.observe(cardsRef.current);
+
     return () => observer.disconnect();
-  }, []);
+  }, [hasAnimated]);
+ 
   return (
     <div className="purpose-container">
     

@@ -11,7 +11,11 @@ export default function TrainingSimple() {
   const sectionRef = useRef(null);
 
   const [filledWords, setFilledWords] = useState(0);
-  const [animate, setAnimate] = useState(false);
+ const [animate, setAnimate] = useState(false);
+const [hasAnimated, setHasAnimated] = useState(
+  sessionStorage.getItem("trainingSimpleAnimated") === "true"
+);
+
 
   const paragraph = [
     "Learning made",
@@ -59,21 +63,30 @@ export default function TrainingSimple() {
   }, [filledWords, maxWords]);
 
   /* ================= CARD FLOWER EFFECT ================= */
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setAnimate(true), 400);
-        } else {
-          setAnimate(false);
-        }
-      },
-      { threshold: 0.4 }
-    );
+useEffect(() => {
+  if (hasAnimated) {
+    setAnimate(true); // already once animation nadandhuduchu
+    return;
+  }
 
-    if (cardsRef.current) observer.observe(cardsRef.current);
-    return () => observer.disconnect();
-  }, []);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          setAnimate(true);
+          setHasAnimated(true);
+          sessionStorage.setItem("trainingSimpleAnimated", "true");
+        }, 400);
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  if (cardsRef.current) observer.observe(cardsRef.current);
+
+  return () => observer.disconnect();
+}, [hasAnimated]);
+
 
   return (
     <div className="workprocess">

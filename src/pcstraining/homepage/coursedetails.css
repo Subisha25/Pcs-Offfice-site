@@ -1582,3 +1582,156 @@ font-weight: 300;
 }
 
 
+/* ===== HIGHLIGHTS CARD (ICON + TEXT) ===== */
+
+.highlight-card-new {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.highlight-icon {
+  background: #ff006e; /* pink */
+}
+
+
+/* ICON CIRCLE */
+.highlight-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  /* background: #03045e;   dark blue */
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* TEXT */
+.highlight-text {
+  font-family: "WF Visual Sans";
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+
+/* Section Container Centering */
+.prereq-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  width: 100%;
+}
+
+.prereq-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+/* Header Styling */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* Grid for Cards */
+.prereq-grid {
+  display: grid;
+  /* 220px width maintain pannum */
+  grid-template-columns: repeat(3, 220px); 
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Square Card Design */
+.prereq-card-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;      /* 🔥 Card-ah square-ah mathum */
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 24px;      /* Soft rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.02); /* Very light border for definition */
+}
+
+.prereq-card-new:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon Style */
+.prereq-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ff006e, #ff5c8a);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(255, 0, 110, 0.2);
+}
+
+/* Text Style - FULL VIEW (No Dots) */
+.prereq-text {
+  font-family: "WF Visual Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.5;
+  text-align: center;       /* Center aligned */
+  width: 100%;
+  
+  /* 🔥 Entha restriction-um illama full text-um view aagum */
+  display: block;           
+  overflow: visible;        
+  white-space: normal;      /* Auto-va next line-ku pogum, dot varathu */
+  word-wrap: break-word;    /* Periya vaarthai iruntha break aagum */
+}
+
+/* Responsive View */
+@media (max-width: 768px) {
+  .prereq-grid {
+    grid-template-columns: repeat(2, 210px);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prereq-grid {
+    grid-template-columns: 210px;
+  }
+}

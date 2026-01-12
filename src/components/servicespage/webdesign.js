@@ -17,23 +17,35 @@ import Grow from "../assets/grow.png";
 import TechLogoStrip from "./teachstrip";
 function PurposeSection() {
   const cardsRef = useRef(null);
-  const [animate, setAnimate] = useState(false);
-  /* ================= CARD FLOWER EFFECT ================= */
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setAnimate(true), 400);
-        } else {
-          setAnimate(false);
-        }
-      },
-      { threshold: 0.4 }
-    );
+const [animate, setAnimate] = useState(false);
+const [hasAnimated, setHasAnimated] = useState(
+  sessionStorage.getItem("webdesignPurposeAnimated") === "true"
+);
 
-    if (cardsRef.current) observer.observe(cardsRef.current);
-    return () => observer.disconnect();
-  }, []);
+useEffect(() => {
+  if (hasAnimated) {
+    setAnimate(true);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          setAnimate(true);
+          setHasAnimated(true);
+          sessionStorage.setItem("webdesignPurposeAnimated", "true");
+        }, 400);
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  if (cardsRef.current) observer.observe(cardsRef.current);
+
+  return () => observer.disconnect();
+}, [hasAnimated]);
+
   return (
     <div className="purpose-container">
     

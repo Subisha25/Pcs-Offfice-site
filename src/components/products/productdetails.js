@@ -1,187 +1,110 @@
-import React, { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import "../products/productdetails.css";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import productsData from "../products/productsData";
-import CommonButton from "../common/button";
-import { useEffect } from "react";
-
-export default function ProductDetails() {
+import "./productdetails.css";
+import featureIcon from "../../components/assets/teach/icon.png";
+import benifit from "../../components/assets/teach/benifit.png";
+const ProductDetails = () => {
   const { id } = useParams();
-  const productId = Number(id);
-  const navigate = useNavigate();
+  const product = productsData.find((p) => p.id === parseInt(id));
 
-  const product =
-    productsData.find((p) => p.id === productId) || productsData[0];
+  // 1. Hooks must be placed HERE (before any returns)
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
-  const [activeShot, setActiveShot] = useState(0);
+  useEffect(() => {
+    if (product?.screenshots?.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImgIndex((prev) => (prev + 1) % product.screenshots.length);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [product]);
 
-  const hasScreens =
-    product.screenshots && product.screenshots.length > 0;
-
-  const handlePrev = () => {
-    setActiveShot((prev) =>
-      prev === 0 ? product.screenshots.length - 1 : prev - 1
-    );
-  };
-
-  const handleNext = () => {
-    setActiveShot((prev) =>
-      prev === product.screenshots.length - 1 ? 0 : prev + 1
-    );
-  };
-
-useEffect(() => {
-  if (!hasScreens) return;
-
-  const intervalId = setInterval(() => {
-    setActiveShot((prev) =>
-      prev === product.screenshots.length - 1 ? 0 : prev + 1
-    );
-  }, 3500);
-
-  return () => clearInterval(intervalId);
-}, [hasScreens, product.screenshots.length]);
-
+  // 2. Check if product exists AFTER the hooks
+  if (!product) {
+    return <div style={{ textAlign: "center", padding: "80px" }}>Product Not Found</div>;
+  }
 
   return (
-    <div className="pd-page">
-      <div className="pd-container">
-        {/* HERO */}
-        <section className="pd-hero">
-          <div className="pd-hero-content">
-            <h1 className="pd-title">{product.title}</h1>
-            <p className="pd-short">{product.description}</p>
-            {product.overview && (
-              <p className="pd-sub">{product.overview}</p>
-            )}
-         <div className="productdetail-page-tech-stack">
-  {product.technology_stack?.map((tech, index) => (
-    <div key={index} className="productdetail-page-tech-icon">
-      <img src={tech.icon} alt={tech.name} />
-      <p className="productdetail-page-tech-name">{tech.name}</p>
+    <div className="product-page">
+      {/* ===== HERO SECTION ===== */}
+      <section className="container hero">
+        <div>
+          <img src={product.image} alt={product.title} />
+        </div>
+
+        <div className="hero-content">
+          <h1>
+            {product.title} <span>store</span>
+          </h1>
+          <p className="desc">{product.description}</p>
+          <p className="overview">{product.overview}</p>
+
+          <div className="tech">
+            {product.technology_stack.map((tech, index) => (
+              <div key={index} className="tech-item">
+                <img src={tech.icon} alt={tech.name} />
+                <span>{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FEATURES SECTION WITH SLIDER ===== */}
+      <section className="features">
+        <div className="container hero">
+          <div className="features-text-content">
+            <h2 className="main-heading">Key Features</h2>
+            <p className="sub-title">Everything you need to run this solution end-to-end.</p>
+
+       <div className="feature-list-wrapper">
+  {product.key_features.map((feature, index) => (
+    <div key={index} className="feature-item">
+      <div className="feature-icon-container">
+        {/* Your icon image will now show without any background circle */}
+        <img src={featureIcon} alt="icon" />
+      </div>
+      <p className="feature-list-text">{feature.text || feature}</p>
     </div>
   ))}
 </div>
-            <div className="pd-actions">
-              <Link
-  to="/contact"
-  state={{ mode: "work" }}
->
-              <CommonButton onClick={() => navigate("/contact")} />
-                </Link>
-            </div>
           </div>
-        </section>
 
-        {/* SCREENSHOTS (LEFT) + BENEFITS (RIGHT) */}
-        <section className="pd-section pd-screenshots-benefits-grid">
-          {/* Left: Screenshots */}
-          {hasScreens && (
-            <div className="pd-screenshots-container">
-              <div className="pd-section-header">
-                {/* <h3 className="pd-section-title">Screenshots</h3> */}
-                <p className="pd-section-subtitle">
-                  Preview how users experience this product across different screens.
-                </p>
-              </div>
-
-              <div className="pd-carousel">
-                <button
-                  className="pd-carousel-arrow"
-                  onClick={handlePrev}
-                  aria-label="Previous screenshot"
-                >
-                  ‹
-                </button>
-
-               <div
-  className="pd-carousel-main"
- 
->
+          <div className="feature-image">
+            <div className="slider-container">
   <img
-    src={product.screenshots[activeShot]}
-    alt={`Screenshot ${activeShot + 1}`}
-    onError={(e) => {
-      e.target.style.opacity = 0.04;
-    }}
+    key={currentImgIndex}
+    src={product.screenshots[currentImgIndex]}
+    alt="screenshot"
+    className="fade-in" 
   />
 </div>
-
-
-                <button
-                  className="pd-carousel-arrow"
-                  onClick={handleNext}
-                  aria-label="Next screenshot"
-                >
-                  ›
-                </button>
-              </div>
-
-              <div className="pd-carousel-dots">
-                {product.screenshots.map((_, idx) => (
-                  <button
-                    key={idx}
-                    className={`pd-dot ${idx === activeShot ? "active" : ""}`}
-                    onClick={() => setActiveShot(idx)}
-                    aria-label={`Go to screenshot ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Right: Business Benefits */}
-          <div className="pd-kb-block">
-            <h3 className="pd-section-title">Business Benefits</h3>
-            <p className="pd-kb-sub">
-              Designed to be adopted by real-world businesses.
-            </p>
-            <ul className="pd-benefit-list">
-              {product.benefits?.map((b, idx) => (
-                <li key={idx}>{b}</li>
-              ))}
-            </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* KEY FEATURES - Separate Row */}
-        <section className="pd-section">
-          <div className="pd-kb-block">
-            <h3 className="pd-section-title">Key Features</h3>
-            <p className="pd-kb-sub">
-              Everything you need to run this solution end-to-end.
-            </p>
-            <div className="pd-feature-list">
-              {product.key_features?.map((f, idx) => (
-                <div className="pd-feature" key={idx}>
-                  <div className="pd-feature-icon">
-                    <span>✓</span>
-                  </div>
-                  <div>
-                    <p>{f}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+     {/* ===== BUSINESS BENEFITS ===== */}
+<section className="benefits">
 
-   <section className="pd-section">
-  <div className="pd-faq-minimal">
-    <h3 className="pd-section-title">FAQ</h3>
+   <h2 className="benifit-main-heading">Business Benefits</h2>
+            <p className="benifit-sub-title">Designed to be adopted by real-world businesses.</p>
+ 
 
-    <div className="pd-faq-list">
-      {product.faq?.map((item, idx) => (
-        <details className="pd-faq-row" key={idx}>
-          <summary>{item.q}</summary>
-          <p>{item.a}</p>
-        </details>
-      ))}
-    </div>
+  <div className="container benefit-grid">
+    {product.benefits.map((benefit, index) => (
+      <div key={index} className="product-benefit-card">
+        {/* Use the actual image icon here */}
+        <div className="benefit-icon-wrapper">
+          <img src={benifit} alt="benefit icon" className="benefit-img-icon" />
+        </div>
+        <p className="benefit-text">{benefit}</p>
+      </div>
+    ))}
   </div>
 </section>
-
-      </div>
     </div>
   );
-}
+};
+
+export default ProductDetails;

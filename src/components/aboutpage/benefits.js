@@ -20,6 +20,7 @@
 
     const [filledWords, setFilledWords] = useState(0);
     const [animate, setAnimate] = useState(false);
+const [hasAnimated, setHasAnimated] = useState(false);
 
     const paragraph = [
       "See why partnering with us is",
@@ -66,22 +67,36 @@
       return () => window.removeEventListener("scroll", onScroll);
     }, [filledWords, maxWords]);
 
-    /* ================= CARD FLOWER EFFECT ================= */
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => setAnimate(true), 400);
-          } else {
-            setAnimate(false);
-          }
-        },
-        { threshold: 0.4 }
-      );
+  useEffect(() => {
+  const alreadyAnimated = sessionStorage.getItem("workprocessAnimated");
 
-      if (cardsRef.current) observer.observe(cardsRef.current);
-      return () => observer.disconnect();
-    }, []);
+  if (alreadyAnimated) {
+    setAnimate(true);        // cards already open
+    setHasAnimated(true);   // animation skip
+  }
+}, []);
+
+useEffect(() => {
+  if (hasAnimated) return; // already animated na skip
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          setAnimate(true);
+          setHasAnimated(true);
+          sessionStorage.setItem("workprocessAnimated", "true");
+        }, 400);
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  if (cardsRef.current) observer.observe(cardsRef.current);
+
+  return () => observer.disconnect();
+}, [hasAnimated]);
+
 
     return (
       <div className="benefits-container">

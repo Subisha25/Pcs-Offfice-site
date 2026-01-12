@@ -1,972 +1,517 @@
-:root {
-  --main-bg: #f4f7fb;
-  --main-text: #222222;
-  --primary-color: #007bff;
-  --secondary-color: #555555;
-  --button-primary: #101166;
-  --button-secondary: #D9D9D9;
-  --playfair-fonts: "Playfair Display", serif;
-  --heading-font-size: 32px;
-  --subheading-font-size: 24px;
-  --title-font-size: 20px;
-  --description-font-size: 16px;
-  --small-text-font-size: 14px;
+/* ===== GLOBAL ===== */
+.product-page {
+  /* background: #f9fafb; */
+  min-height: 100vh;
+  padding-top: 6rem;
+  font-family: "WF Visual Sans", sans-serif;
 }
 
-@font-face {
-  font-family: "WF Visual Sans";
-  src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ===== HERO SECTION ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start; /* Changed from center to start to keep everything at the top line */
+  padding: 48px 0;
 }
 
-
-.productdetail-page-tech-stack {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: center;   /* 🔥 MAIN FIX */
-  width: 100%;
-  padding-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-
-.productdetail-page-tech-icon {
+.hero-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start; /* Forces all children to the left */
+  text-align: left;
+}
+
+.hero h1, 
+.hero .desc, 
+.hero .overview, 
+.tech {
+  margin-left: 0;
+  padding-left: 0;
+  width: 100%; /* Ensures they take full width of the container */
+}
+
+/* Ensure the tech icons container also starts at the left */
+.tech {
+  display: flex;
+  justify-content: flex-start; 
+  gap: 24px;
+}
+
+
+/* ===== HERO SECTION ===== */
+.hero h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+  font-family: "WF Visual Sans";
+  line-height: 1.2; 
+}
+
+.hero h1 span {
+  font-style: italic;
+  color: #FF006E;
+  font-size: 38px;
+  font-weight: 600;
+  font-family: "Playfair Display";
+
+  line-height: 1.1;
+}
+
+.hero .desc {
+  color: #101166;
+  font-weight: 600;
+  margin-bottom: 14px;
+  font-family: "WF Visual Sans";
+  font-size: 16px;
+}
+
+.hero .overview {
+  /* color: #475569; */
+  margin-bottom: 32px;
+  text-align: justify;
+  font-size: 16px;
+  font-family: "WF Visual Sans";
+  font-weight: 600;
+
+}
+
+/* ===== TECH STACK ===== */
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.tech-item {
+  text-align: center;
+}
+
+.tech-item img {
+  height: 40px;
   transition: transform 0.3s ease;
 }
 
-.productdetail-page-tech-icon img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: #f5f5f5;
-  padding: 5px;
-}
-
-.productdetail-page-tech-name {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-  font-size: 12px;
-  font-weight: 600;
-  color: #555555;
-  text-align: center;
-  max-width: 70px;
-  word-wrap: break-word;
-}
-
-.productdetail-page-tech-icon:hover {
-  transform: translateY(-3px);
-}
-
-.productdetail-page-tech-icon:hover img {
+.tech-item img:hover {
   transform: scale(1.1);
 }
 
-
-.productdetail-page-tech-badge:hover {
-  transform: translateY(-2px);
-}
-.pd-page {
-  min-height: 100vh;
-  padding: 130px 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen",
-    "Ubuntu", "Cantarell", sans-serif;
-  background: #ffffff;
+.tech-item span {
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b7280;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.pd-container {
-  max-width: 1100px;
+/* Container Flexbox */
+.features .container.hero {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: space-between;
+  gap: 60px; /* Space between text column and image */
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 60px 20px;
 }
 
-/* HERO SECTION */
-.pd-hero {
+.features-text-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Ellamae left-la start aagum */
+}
+
+/* Heading - Gap remove panna margin-bottom kammi panniyachu */
+.main-heading {
+  font-family: "wf visual sans", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0; /* Only 8px gap below heading */
+  text-align: left;
+}
+
+/* Sub-heading */
+.sub-title {
+  font-family: "wf visual sans", sans-serif;
+  font-size: 18px;
+  color: #64748b;
+  margin: 0 0 40px 0; /* Space before the list starts */
+  text-align: left;
+}
+
+/* List Item Container */
+
+/* Container for the Right Side */
+.feature-image {
+  flex: 1;
+  /* background: #eff6ff; Light blue background like your screenshot */
+  padding: 40px;
+  border-radius: 28px;
+  display: flex;
   justify-content: center;
-  text-align: center;
-  margin-bottom: 80px;
-  animation: fadeInUp 0.8s ease-out;
+  align-items: center;
+  min-height: 400px;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.slider-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background: white;
 }
 
-.pd-hero-content {
-  max-width: 720px;
+.slider-container img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Smooth Fade Animation */
+.fade-in {
+  animation: fadeInEffect 1s;
+}
+
+@keyframes fadeInEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Key Features Text Padding as you requested before */
+
+
+/* List Item Container */
+.feature-item {
+  display: flex;
+  align-items: flex-start; /* Keeps the icon at the top while text moves down */
+  gap: 20px;
+  margin-bottom: 20px; 
   width: 100%;
 }
 
-.pd-title {
-font-family: "WF Visual Sans";
-  font-weight: 800;
+/* Feature Text - This is what you need to change */
 
-  font-size: 48px;
-  color: #070707;
-  margin: 0 0 14px 0;
-  line-height: 1.2;
-}
 
-.pd-short {
-    font-family: "WF Visual Sans";
-  font-weight: 600;
-  color: rgba(105, 105, 105, 0.9);
-  font-size: 16px;
-  padding: 12px 0;
-}
+/* Ensure the icon container doesn't have extra bottom space */
 
-.pd-sub {
-    font-family: "WF Visual Sans";
-  font-weight: 600;
-  color: #7d7d7d;
-  font-size: 16px;
-  padding: 20px 0;
-}
 
-.pd-tech {
-
+.feature-image {
+  flex: 1;
+  /* background: #eff6ff; Light blue container */
+  padding: 40px;
+  border-radius: 28px;
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 46px;
   justify-content: center;
+  align-items: center;
 }
 
-.pd-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
+.slider-container {
+  width: 100%;
+  background: white; /* Inner "frame" */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
-.pd-badge {
-    font-family: "WF Visual Sans";
-  font-weight: 500;
-  backdrop-filter: blur(10px);
-  color: #070707;
-  padding: 8px 18px;
-  border-radius: 30px;
-  font-size: 13px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  transition: all 0.25s ease;
-}
-
-.pd-badge:hover {
-  background: #D9D9D9;
-  transform: translateY(-2px);
-}
-
-/* GENERIC SECTION */
-.pd-section {
-  margin: 60px 0;
-  animation: fadeIn 1s ease-out;
+.fade-in {
+  width: 100%;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.pd-section-title {
-    font-family: "WF Visual Sans";
-  font-weight: 800;
-  font-size: 32px;
-  /* font-weight: 700; */
-  color: #1a1a1a;
-  margin: 0 0 12px 0;
-}
-
-.pd-section-subtitle {
-    font-family: "WF Visual Sans";
-  font-weight: 400;
-  color: rgba(135, 136, 137, 0.85);
-  font-size: 16px;
-  max-width: 520px;
-}
-
-/* NEW GRID LAYOUTS */
-
-/* Screenshots (Left) + Benefits (Right) */
-.pd-screenshots-benefits-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: start;
-  margin-bottom: 60px;
-}
-
-/* Features (Left) + FAQ (Right) */
-.pd-features-faq-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-/* SCREENSHOT SECTION */
-.pd-screenshots-container {
-  width: 100%;
-}
-
-.pd-section-header {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 30px;
-}
-
-.pd-carousel {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.pd-carousel-main {
-  border-radius: 16px;
-  padding: 20px;
-  height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.pd-carousel-main:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.pd-carousel-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.5s ease;
-}
-
-.pd-carousel-main:hover img {
-  transform: scale(1.02);
-}
-
-/* 🔥 CAROUSEL ARROWS – ICON ONLY (NO CIRCLE) */
-.pd-carousel-arrow {
-  background: transparent;        
-  border: none;
-  color: #0f2a44;                
-  font-size: 34px;               
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-  box-shadow: none;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-/* hover effect */
-.pd-carousel-arrow:hover {
-  color: #123d6b;                 /* darker blue */
-  transform: scale(1.15);
-}
-
-/* click */
-.pd-carousel-arrow:active {
-  transform: scale(0.95);
+  from { opacity: 0.5; }
+  to { opacity: 1; }
 }
 
 
-.pd-carousel-dots {
+
+
+/* Container for the Right Side */
+.feature-image {
+  flex: 1;
+  /* background: #eff6ff; */
+  padding: 40px;
+  border-radius: 28px;
   display: flex;
   justify-content: center;
-  gap: 8px;
-}
-
-.pd-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  background: #d1d5db;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.pd-dot:hover {
-  background: #9ca3af;
-  transform: scale(1.2);
-}
-
-.pd-dot.active {
-  width: 28px;
-  background: #1a1a1a;
-  border-radius: 5px;
-}
-
-/* SHARED CARD STYLES */
-.pd-kb-block {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 32px;
-  border: 1px solid #e5e7eb;
-  height: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
-}
-
-.pd-kb-block:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
-}
-
-.pd-kb-sub {
-    font-family: "WF Visual Sans";
-  font-weight: 600;
-  color: rgba(107, 114, 128, 0.9);
-  font-size: 16px;
-  margin-bottom: 24px;
-  line-height: 1.6;
-}
-
-/* FEATURE LIST - Matching Image 1 style with checkmarks */
-.pd-feature-list {
-
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.pd-feature {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 16px;
   align-items: center;
-  padding: 18px 20px;
+  /* Fixed height for the blue background area ensures stability */
+  min-height: 500px; 
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 500px; /* Limits width so it doesn't get too big on large screens */
+  background: white;
   border-radius: 12px;
-  background: #f9fafb;
-  border: 1px solid #f3f4f6;
-  transition: all 0.3s ease;
-  animation: slideInLeft 0.5s ease-out backwards;
-}
-
-.pd-feature:nth-child(1) { animation-delay: 0.1s; }
-.pd-feature:nth-child(2) { animation-delay: 0.2s; }
-.pd-feature:nth-child(3) { animation-delay: 0.3s; }
-.pd-feature:nth-child(4) { animation-delay: 0.4s; }
-.pd-feature:nth-child(5) { animation-delay: 0.5s; }
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.pd-feature:hover {
-  background: #ffffff;
-  border-color: #e5e7eb;
-  transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.pd-feature-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  
+  /* FORCE THE RATIO: 16/9 is standard, or use 4/3 */
+  aspect-ratio: 16 / 9; 
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1f2937;
-  color: #ffffff;
-  font-size: 18px;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
 }
 
-.pd-feature:hover .pd-feature-icon {
-  background: #111827;
-  transform: rotate(360deg);
+.fade-in {
+  width: 100%;
+  height: 100%; /* Important: Fill the container */
+  
+  /* THIS IS THE MAGIC LINE */
+  /* 'cover' crops slightly to fill the box. Use 'contain' if you want to see the whole img with bars */
+  object-fit: cover; 
+  
+  display: block;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-.pd-feature h4 {
-    font-family: "WF Visual Sans";
-  font-weight: 800;
-  margin: 0 0 4px 0;
-  font-size: 16px;
-  color: #101010;
+@keyframes fadeIn {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
 }
 
-.pd-feature p {
-    font-family: "WF Visual Sans";
-    letter-spacing: 1px;
-  font-weight: 300;
-  margin: 0;
-  color: #374151;
-  font-size: 15px;
-  line-height: 1.6;
-}
 
-/* BENEFITS LIST - Matching Image 1 style with bullet points */
-.pd-benefit-list {
-  list-style: none;
-  padding: 0;
-  margin: 8px 0 0;
+/* List Item Container */
+.feature-item {
   display: flex;
-  flex-direction: column;
+  align-items: center; /* This keeps the icon perfectly centered with the text line */
   gap: 20px;
-}
-
-.pd-benefit-list li {
-    font-family: "WF Visual Sans";
-  font-weight: 400;
-  position: relative;
-  padding-left: 32px;
-  color: #374151;
-  font-size: 14px;
-  /* line-height: 1.7; */
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.5s ease-out backwards;
-}
-
-.pd-benefit-list li:nth-child(1) { animation-delay: 0.1s; }
-.pd-benefit-list li:nth-child(2) { animation-delay: 0.2s; }
-.pd-benefit-list li:nth-child(3) { animation-delay: 0.3s; }
-.pd-benefit-list li:nth-child(4) { animation-delay: 0.4s; }
-
-.pd-benefit-list li:hover {
-  color: #1f2937;
-  transform: translateX(4px);
-}
-
-.pd-benefit-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  /* background:linear-gradient(100deg, #03045E, #FF006E); */
-  background: #6b7280;
-  transition: all 0.3s ease;
-}
-
-.pd-benefit-list li:hover::before {
-  background: #1f2937;
-  transform: scale(1.2);
-}
-
-/* FAQ - Matching Image 2 clean style */
-/* FAQ WRAPPER */
-.pd-faq-minimal {
-  max-width: 820px;
-  margin: 0 auto;
-}
-
-/* FAQ ROW */
-.pd-faq-row {
-  border-bottom: 1px solid #e5e7eb;
-  padding: 22px 0;
-}
-
-/* QUESTION */
-.pd-faq-row summary {
-  font-family: "WF Visual Sans";
-  font-size: 16px;
-  font-weight: 600;
-  color: #111827;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* REMOVE DEFAULT ARROW */
-.pd-faq-row summary::-webkit-details-marker {
-  display: none;
-}
-
-/* PLUS ICON */
-.pd-faq-row summary::after {
-  content: "+";
-  font-size: 22px;
-  color: #6b7280;
-  transition: transform 0.3s ease;
-}
-
-/* OPEN STATE */
-.pd-faq-row[open] summary::after {
-  content: "–";
-  color: #111827;
-}
-
-/* ANSWER */
-.pd-faq-row p {
-  font-family: "WF Visual Sans";
-  font-size: 14px;
-  color: #7d7d7d;
-  margin-top: 12px;
-  /* line-height: 1.8; */
-  max-width: 720px;
-  font-weight: 400;
-}
-
-/* KEY FEATURES - ICON GRID WITH BLUE & WHITE + ENHANCEMENTS */
-.pd-feature-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px 32px;
-  margin-top: 40px;
-  position: relative;
-}
-
-.pd-feature {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding: 28px 24px;
-  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Top accent bar */
-.pd-feature::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #03045E, #0353A4);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.pd-feature:hover::before {
-  transform: scaleX(1);
-}
-
-/* Bottom underline */
-.pd-feature::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #03045E, #0353A4);
-  transition: width 0.4s ease;
-}
-
-.pd-feature:hover::after {
+  margin-bottom: 24px; 
   width: 100%;
 }
 
-.pd-feature:hover {
-  transform: translateY(-8px);
-  border-color: #03045E;
-  background: #ffffff;
-  box-shadow: 0 12px 32px rgba(3, 4, 94, 0.15);
-}
-
-.pd-feature-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+/* Remove all background, borders, and circles from the icon container */
+.feature-icon-container {
+  flex-shrink: 0;
+  width: 44px; /* Matches your icon size */
+  height: 44px;
+  background: transparent; /* Forces background to be invisible */
+  border: none;            /* Removes any borders */
+  border-radius: 0;        /* Removes the roundness */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
-  color: #03045E;
-  font-size: 28px;
-  border: 3px solid #03045E;
-  transition: all 0.4s ease;
-  align-self: flex-start;
-  box-shadow: 0 4px 12px rgba(3, 4, 94, 0.15);
-  position: relative;
-  z-index: 1;
 }
 
-/* Pulse ring effect */
-.pd-feature-icon::before {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border: 2px solid #03045E;
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.4s ease;
-}
+/* Ensure the image inside doesn't have extra styling */
 
-.pd-feature:hover .pd-feature-icon {
-  background: #03045E;
-  color: #ffffff;
-  border-color: #03045E;
-  transform: scale(1.1) rotate(360deg);
-  box-shadow: 0 8px 24px rgba(3, 4, 94, 0.3);
-}
 
-.pd-feature:hover .pd-feature-icon::before {
-  opacity: 0.3;
-  inset: -12px;
-}
-
-.pd-feature > div:last-child {
-  padding: 0;
-  background: transparent;
-  position: relative;
-  z-index: 1;
-}
-
-.pd-feature p {
-  font-family: "WF Visual Sans";
-  font-weight: 300;
-  margin: 0;
-  color: #4b5563;
-  font-size: 15px;
-  line-height: 1.8;
-  transition: all 0.3s ease;
-}
-
-.pd-feature:hover p {
-  color: #03045E;
-  font-weight: 400;
-}
-
-/* FAQ - CLEAN MINIMAL ACCORDION */
-.pd-faq-list {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.pd-faq-item {
-  padding: 0;
-  border: none;
-  background: transparent;
-  border-bottom: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
-}
-
-.pd-faq-item:hover {
-  border-bottom-color: #d1d5db;
-}
-
-.pd-faq-item[open] {
-  border-bottom-color: #1f2937;
-}
-
-.pd-faq-item summary {
-  font-family: "WF Visual Sans";
-  font-weight: 500;
-  color: #1f2937;
-  padding: 32px 48px 32px 0;
-  font-size: 17px;
-  list-style: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.3s ease;
-  background: transparent;
-  position: relative;
-}
-
-.pd-faq-item:hover summary {
-  color: #111827;
-  padding-left: 12px;
-}
-
-.pd-faq-item[open] summary {
-  padding-bottom: 24px;
-  color: #111827;
+/* Updated text padding to look better since we removed the circle */
+.feature-list-text {
+  font-family: "wf visual sans", sans-serif;
+  font-size: 16px;
   font-weight: 600;
+  color: #334155;
+  margin: 0; 
+  text-align: left;
+  flex: 1;
+  /* Adjusting padding to align with the raw icon */
+  padding-top: 0; 
+}
+/* ===== BUSINESS BENEFITS SECTION ===== */
+.benefits {
+  text-align: center;
+  margin-top:-80px ;
 }
 
-.pd-faq-item summary::-webkit-details-marker {
-  display: none;
+.benefit-grid {
+  display: grid;
+  /* Adjusting minmax to 350px so cards have enough width for 2-line text */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
 }
 
-/* Simple line indicator */
-.pd-faq-item summary::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 24px;
-  height: 2px;
-  background: #9ca3af;
+.product-benefit-card {
+  background: #ffffff;
+  padding: 30px 24px;
+  border-radius: 16px;
+  display: flex;
+  
+  /* THIS CENTERS THE ICON VERTICALLY EVEN WITH 2+ LINES */
+  align-items: center; 
+  
+  gap: 20px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  min-height: 120px; /* Ensures all cards have a consistent minimum height */
 }
 
-.pd-faq-item summary::before {
-  content: "";
-  position: absolute;
-  right: 11px;
-  top: 50%;
-  width: 2px;
-  height: 24px;
-  background: #9ca3af;
-  transition: all 0.3s ease;
+
+
+/* The actual Image Icon */
+.benefit-img-icon {
+  width: 28px; /* Adjust size as per your image */
+  height: 28px;
+  object-fit: contain;
 }
 
-.pd-faq-item:hover summary::after,
-.pd-faq-item:hover summary::before {
-  background: #1f2937;
-}
-
-.pd-faq-item[open] summary::before {
-  opacity: 0;
-  transform: rotate(90deg);
-}
-
-.pd-faq-item[open] summary::after {
-  background: #1f2937;
-}
-
-.pd-faq-item p {
-  font-family: "WF Visual Sans";
-  font-weight: 300;
-  color: #6b7280;
-  padding: 0 48px 32px 0;
+.benefit-text {
   margin: 0;
-  font-size: 15.5px;
-  line-height: 1.8;
-  background: transparent;
-  animation: smoothReveal 0.3s ease-out;
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  flex: 1;
+  font-family: "wf visual sans";
 }
 
-@keyframes smoothReveal {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
+.benifit-main-heading {
+  font-family: "wf visual sans", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0; /* Only 8px gap below heading */
+  text-align: center;
+}
+
+/* Sub-heading */
+.benifit-sub-title {
+  font-family: "wf visual sans", sans-serif;
+  font-size: 18px;
+  color: #64748b;
+  margin: 0 0 40px 0; /* Space before the list starts */
+  text-align: center;
+}
+
+
+
+@media (max-width: 1024px) {
+  .features .container.hero {
+    flex-direction: column;
+    gap: 40px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .features-text-content,
+  .feature-image {
+    width: 100%;
+  }
+
+  .feature-image {
+    padding: 24px;
+    min-height: auto;
+  }
+
+  .slider-container {
+    max-width: 100%;
   }
 }
 
-/* Section title enhancement */
-.pd-section-title {
-  position: relative;
-  display: inline-block;
-}
-
-.pd-section-title::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 48px;
-  height: 2px;
-  background: #1f2937;
-}
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
-  .pd-feature-list {
+  .hero {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .pd-feature {
-    padding: 24px 20px;
+  .features .container.hero {
+    padding: 40px 16px;
   }
 
-  .pd-feature-icon {
-    width: 56px;
-    height: 56px;
-    font-size: 26px;
+  .features-text-content {
+    align-items: flex-start;
   }
 
-  .pd-feature p {
-    font-size: 14.5px;
+  .main-heading {
+    font-size: 28px;
   }
 
-  .pd-faq-item summary {
-    padding: 28px 40px 28px 0;
+  .sub-title {
     font-size: 16px;
   }
 
-  .pd-faq-item:hover summary {
-    padding-left: 8px;
+  .feature-item {
+    gap: 16px;
   }
 
-  .pd-faq-item[open] summary {
-    padding-bottom: 20px;
+  .feature-list-text {
+    font-size: 15px;
   }
 
-  .pd-faq-item p {
-    padding: 0 40px 28px 0;
-    font-size: 14.5px;
+  .feature-image {
+    padding: 16px;
+  }
+
+  .slider-container {
+    aspect-ratio: 16 / 9;
   }
 }
 
+
 @media (max-width: 480px) {
-  .pd-feature-list {
-    gap: 28px;
-  }
-
-  .pd-feature {
-    padding: 22px 18px;
-  }
-
-  .pd-feature-icon {
-    width: 52px;
-    height: 52px;
+  .main-heading,
+  .benifit-main-heading {
     font-size: 24px;
   }
 
-  .pd-feature p {
-    font-size: 14px;
-  }
-
-  .pd-faq-item summary {
-    padding: 24px 36px 24px 0;
+  .sub-title,
+  .benifit-sub-title {
     font-size: 15px;
   }
 
-  .pd-faq-item p {
-    padding: 0 36px 24px 0;
-    font-size: 14px;
-  }
-}
-
-.pd-faq-item[open] summary::after {
-  transform: rotate(-135deg); /* 👆 inverted V */
-}
-.pd-faq-item p {
-    font-family: "WF Visual Sans";
-  font-weight: 300;
-  color: #6b7280;
-  padding: 12px 0 0;
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.7; 
-  animation: fadeIn 0.3s ease-out;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .pd-screenshots-benefits-grid,
-  .pd-features-faq-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .pd-title {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .pd-page {
-    padding: 60px 16px;
-  }
-
-  .pd-title {
-    font-size: 32px;
-  }
-
-  .pd-short {
-    font-size: 15px;
-  }
-
-  .pd-hero {
-    margin-bottom: 50px;
-  }
-
-  .pd-carousel {
-    grid-template-columns: 1fr;
-  }
-
-  .pd-carousel-arrow {
-    display: none;
-  }
-
-  .pd-carousel-main {
-    height: 280px;
-  }
-
-  .pd-kb-block {
-    padding: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pd-title {
-    font-size: 28px;
-    margin-top: 20px;
-  }
-
-  .pd-kb-block {
+  .product-benefit-card {
     padding: 20px;
-  }
-
-  .pd-feature {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .pd-feature-icon {
-    margin: 0 auto 8px;
+    min-height: auto;
   }
 }
 
 
-.pd-carousel-main img {
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
+@media (max-width: 460px) {
 
-.pd-carousel-main img {
-  animation: fadeSlide 0.6s ease;
-}
 
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
+   .container {
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-bottom:40px;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .hero h1 span {
+    font-size: 30px;
+  }
+
+  .hero .desc,
+  .hero .overview {
+    font-size: 14px;
+  }
+
+  .benefits {
+    padding: 0 12px 40px;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr; /* FORCE single column */
+    gap: 16px;
+  }
+
+  .product-benefit-card {
+    padding: 16px;
+    gap: 12px;
+    min-height: unset; /* IMPORTANT */
+    border-radius: 12px;
+  }
+
+  .benefit-img-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .benefit-text {
+    font-size: 14px;
+    line-height: 1.4;
   }
 }

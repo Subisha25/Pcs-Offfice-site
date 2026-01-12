@@ -15,6 +15,9 @@ export default function WorkProcess() {
 
   const [filledWords, setFilledWords] = useState(0);
   const [animate, setAnimate] = useState(false);
+const [hasAnimated, setHasAnimated] = useState(
+  sessionStorage.getItem("workprocessAnimated") === "true"
+);
 
   const paragraph = [
     "From idea to impact, our process makes it",
@@ -62,21 +65,49 @@ const fillWindow = viewportH * 0.35;
   }, [filledWords, maxWords]);
 
   /* ================= CARD FLOWER EFFECT ================= */
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setAnimate(true), 400);
-        } else {
-          setAnimate(false);
-        }
-      },
-      { threshold: 0.4 }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setTimeout(() => setAnimate(true), 400);
+  //       } else {
+  //         setAnimate(false);
+  //       }
+  //     },
+  //     { threshold: 0.4 }
+  //   );
 
-    if (cardsRef.current) observer.observe(cardsRef.current);
-    return () => observer.disconnect();
-  }, []);
+  //   if (cardsRef.current) observer.observe(cardsRef.current);
+  //   return () => observer.disconnect();
+  // }, []);
+
+
+
+
+
+useEffect(() => {
+  if (hasAnimated) {
+    setAnimate(true); // already animated na open state
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          setAnimate(true);
+          setHasAnimated(true);
+          sessionStorage.setItem("workprocessAnimated", "true");
+        }, 400);
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  if (cardsRef.current) observer.observe(cardsRef.current);
+
+  return () => observer.disconnect();
+}, [hasAnimated]);
 
   return (
     <div className="workprocess">

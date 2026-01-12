@@ -93,6 +93,7 @@ min-height: calc(
 /* completed dot */
 .ps-dot.done {
   border-color: #1e40af;
+  background: #1e40af;
 }
 
 /* Equal space line */
