@@ -11,7 +11,7 @@ import Discover from "../assets/discovers.png";
 import Deliver from "../assets/deliver.png";
 import Create from "../assets/create.png";
 import Grow from "../assets/grow.png";
-import CicdImg from "../assets/cicd/cicd.jpeg";
+import CicdImg from "../assets/cicd/cicd.png";
 
 import CTASection from "../homepage/cta";
 import CommonTopTag from "../common/toptag";
@@ -305,9 +305,20 @@ export default function Branding() {
   </div>
 
   {/* RIGHT IMAGES */}
-  <div className="sw-cicd-images">
-    <img src={CicdImg} alt="CI/CD 1" />
+  <div className="cicd-flow-section">
+  <h2 className="cicd-title">CI/CD & Deployment</h2>
+
+  <p className="cicd-desc">
+    Continuous integration and delivery streamline releases, reduce manual
+    errors, and keep your site up-to-date with fast, reliable deployments.
+    We automate testing and delivery so updates reach users safely and quickly.
+  </p>
+
+  <div className="cicd-flow-image">
+    <img src={CicdImg} alt="CI/CD Flow Diagram" />
   </div>
+</div>
+
 </div>
       </div>
 

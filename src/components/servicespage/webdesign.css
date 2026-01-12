@@ -492,6 +492,61 @@ font-family: "Playfair Display", serif;
 [data-animate] {
   transition-delay: var(--delay, 0s);
 }
+/* ===== CI/CD FLOW DESIGN (IMAGE 1 STYLE) ===== */
+
+.cicd-flow-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.cicd-title {
+  font-family: "WF Visual Sans";
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.cicd-desc {
+  font-family: "WF Visual Sans";
+  max-width: 760px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #7D7D7D;
+  font-weight: 500;
+}
+
+.cicd-flow-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cicd-flow-image img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .cicd-title {
+    font-size: 24px;
+  }
+
+  .cicd-desc {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .cicd-flow-image img {
+    max-width: 100%;
+  }
+}
 
 /* ================== RESPONSIVE BREAKPOINTS (SERVICE) ================== */
 
