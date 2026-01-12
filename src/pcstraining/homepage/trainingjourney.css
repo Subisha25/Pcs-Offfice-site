@@ -105,12 +105,10 @@
 /* Description */
 .trainingjourney-description {
     font-family: "WF Visual Sans";
-letter-spacing: 1px;
   font-size: 16px;
   color: #666;
-  line-height: 1.6;
   margin: 0 0 36px 0;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 /* Button */

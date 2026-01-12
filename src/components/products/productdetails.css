@@ -73,14 +73,14 @@
   font-size: 16px;
 }
 
+/* ===== HERO SECTION ===== */
 .hero .overview {
-  /* color: #475569; */
   margin-bottom: 32px;
-  text-align: justify;
-  font-size: 16px;
+  text-align: left;        /* 🔥 Magic fix: justification gaps-ah remove pannum */
+  font-size: 14px;         /* 20px konjam perusa iruntha 18px try pannunga */
   font-family: "WF Visual Sans";
-  font-weight: 600;
-
+  font-weight: 400;
+  color: #475569;          /* Readable grey color */
 }
 
 /* ===== TECH STACK ===== */
@@ -295,8 +295,8 @@
 /* Remove all background, borders, and circles from the icon container */
 .feature-icon-container {
   flex-shrink: 0;
-  width: 44px; /* Matches your icon size */
-  height: 44px;
+  width: 35px; /* Matches your icon size */
+  height: 35px;
   background: transparent; /* Forces background to be invisible */
   border: none;            /* Removes any borders */
   border-radius: 0;        /* Removes the roundness */
@@ -321,9 +321,11 @@
   padding-top: 0; 
 }
 /* ===== BUSINESS BENEFITS SECTION ===== */
-.benefits {
+.product-benefits {
   text-align: center;
   margin-top:-80px ;
+  background-color: #F5F5F5;
+  padding: 80px;
 }
 
 .benefit-grid {
@@ -489,7 +491,7 @@
     font-size: 14px;
   }
 
-  .benefits {
+  .product-benefits {
     padding: 0 12px 40px;
   }
 

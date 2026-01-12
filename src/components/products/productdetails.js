@@ -4,6 +4,8 @@ import productsData from "../products/productsData";
 import "./productdetails.css";
 import featureIcon from "../../components/assets/teach/icon.png";
 import benifit from "../../components/assets/teach/benifit.png";
+import TrainingJourney from '../../pcstraining/homepage/trainingjourney';
+
 const ProductDetails = () => {
   const { id } = useParams();
   const product = productsData.find((p) => p.id === parseInt(id));
@@ -85,7 +87,7 @@ const ProductDetails = () => {
       </section>
 
      {/* ===== BUSINESS BENEFITS ===== */}
-<section className="benefits">
+<section className="product-benefits">
 
    <h2 className="benifit-main-heading">Business Benefits</h2>
             <p className="benifit-sub-title">Designed to be adopted by real-world businesses.</p>
@@ -103,6 +105,7 @@ const ProductDetails = () => {
     ))}
   </div>
 </section>
+<TrainingJourney />
     </div>
   );
 };
