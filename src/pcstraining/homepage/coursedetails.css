@@ -1664,11 +1664,21 @@ font-weight: 300;
 /* Grid for Cards */
 .prereq-grid {
   display: grid;
-  /* 220px width maintain pannum */
-  grid-template-columns: repeat(3, 220px); 
+  grid-template-columns: repeat(3, 220px);
   gap: 30px;
   justify-content: center;
 }
+
+/* 🔥 When ONLY 2 cards */
+.prereq-grid:has(.prereq-card-new:nth-child(2)):not(:has(.prereq-card-new:nth-child(3))) {
+  grid-template-columns: 220px 220px;
+}
+
+/* 🔥 When ONLY 1 card */
+.prereq-grid:has(.prereq-card-new:nth-child(1)):not(:has(.prereq-card-new:nth-child(2))) {
+  grid-template-columns: 220px;
+}
+
 
 /* Square Card Design */
 .prereq-card-new {
@@ -1691,19 +1701,17 @@ font-weight: 300;
 
 /* Icon Style */
 .prereq-icon {
-  width: 56px;
-  height: 56px;
+  width: 186px;
+  height: 126px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #ff006e, #ff5c8a);
-  color: #ffffff;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:center;
   font-size: 26px;
-  margin-bottom: 20px;
   flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(255, 0, 110, 0.2);
 }
+
+
 
 /* Text Style - FULL VIEW (No Dots) */
 .prereq-text {
