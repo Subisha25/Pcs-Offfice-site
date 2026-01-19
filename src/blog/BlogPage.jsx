@@ -1,5 +1,6 @@
 import React from "react";
 import "./blog.css";
+import { Link } from "react-router-dom";
 
 
 const BlogPage = () => {
@@ -52,25 +53,27 @@ const BlogPage = () => {
   <section className="blog-section">
       <div className="blog-container">
         <div className="blog-row">
-          {blogs.map((blog, index) => (
-            <div className="blog-card" key={index}>
-              <div className="blog-image">
-                <img src={blog.image} alt={blog.title} />
-              </div>
+         {blogs.map((blog, index) => (
+  <Link to={`/blog/${index}`} className="blog-link" key={index}>
+    <div className="blog-card">
+      <div className="blog-image">
+        <img src={blog.image} alt={blog.title} />
+      </div>
 
-              <div className="blog-meta">
-                <span>{blog.date}</span>
-                <span>•</span>
-                <span>{blog.category}</span>
-                <span>•</span>
-                <span>{blog.readTime}</span>
-              </div>
+      <div className="blog-meta">
+        <span>{blog.date}</span>
+        <span>•</span>
+        <span>{blog.category}</span>
+        <span>•</span>
+        <span>{blog.readTime}</span>
+      </div>
 
-              <h3 className="blog-title">{blog.title}</h3>
+      <h3 className="blog-title">{blog.title}</h3>
+      <p className="blog-description">{blog.description}</p>
+    </div>
+  </Link>
+))}
 
-              <p className="blog-description">{blog.description}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>

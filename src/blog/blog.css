@@ -115,7 +115,13 @@
   color: #4b5563;
 }
 
-/* ===== RESPONSIVE ===== */
+
+.blog-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*===== RESPONSIVE =====*/
 @media (max-width: 1024px) {
   .blog-row {
     grid-template-columns: repeat(2, 1fr);
