@@ -495,29 +495,23 @@ font-family: "Playfair Display", serif;
 /* ===== CI/CD FLOW DESIGN (IMAGE 1 STYLE) ===== */
 
 .cicd-flow-section {
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 20px;
   text-align: center;
+  padding: 80px 0;
+  background: #ffffff;
 }
-
 .cicd-title {
-  font-family: "WF Visual Sans";
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
 }
 
 .cicd-desc {
-  font-family: "WF Visual Sans";
-  max-width: 760px;
-  margin: 0 auto 40px;
-  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  color: #555;
   line-height: 1.6;
-  color: #7D7D7D;
-  font-weight: 500;
 }
-
 .cicd-flow-image {
   width: 100%;
   display: flex;
@@ -531,7 +525,15 @@ font-family: "Playfair Display", serif;
   object-fit: contain;
   border-radius: 16px;
 }
+.cicd-wrapper {
+  -webkit-overflow-scrolling: touch;
+}
 
+/* Custom animation to make the arrows look active */
+@keyframes loopRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .cicd-title {

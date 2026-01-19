@@ -94,494 +94,190 @@ function Card({ img, title, sub, text }) {
   );
 }
 
-/* ==================== CI/CD INTERACTIVE DIAGRAM ==================== */
+/* ==================== UPDATED CI/CD INFINITY DIAGRAM ==================== */
 function CICDFlowDiagram() {
-  const [hoveredNode, setHoveredNode] = useState(null);
-
-  const CircleNode = ({ node, isHovered, onHover }) => {
-    const Icon = node.icon;
-
-    return (
-      <div
-        onMouseEnter={() => onHover(node.id)}
-        onMouseLeave={() => onHover(null)}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '10px',
-          cursor: 'pointer',
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-          transform: isHovered ? 'scale(1.1)' : 'scale(1)',
-          zIndex: isHovered ? 100 : 1
-        }}
-      >
-        <div style={{
-          width: '70px',
-          height: '70px',
-          borderRadius: '50%',
-          background: isHovered
-            ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-            : '#0a1f44',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transition: 'all 0.3s ease',
-          boxShadow: isHovered
-            ? '0 10px 25px rgba(102, 126, 234, 0.5)'
-            : '0 4px 12px rgba(10, 31, 68, 0.3)',
-          position: 'relative'
-        }}>
-          <Icon
-            size={30}
-            color="white"
-            strokeWidth={2.5}
-            style={{
-              transition: 'transform 0.3s ease',
-              transform: isHovered ? 'scale(1.15)' : 'scale(1)'
-            }}
-          />
-
-          {isHovered && (
-            <>
-              <div style={{
-                position: 'absolute',
-                inset: '-5px',
-                borderRadius: '50%',
-                border: '2px solid #667eea',
-                animation: 'cicdPulse 1.5s ease-in-out infinite'
-              }} />
-              <div style={{
-                position: 'absolute',
-                inset: '-10px',
-                borderRadius: '50%',
-                border: '2px solid rgba(102, 126, 234, 0.4)',
-                animation: 'cicdPulse 1.5s ease-in-out infinite 0.2s'
-              }} />
-            </>
-          )}
-        </div>
-
-        <span style={{
-          fontSize: '14px',
-          fontWeight: '500',
-          color: '#1a1a1a',
-          transition: 'all 0.3s ease',
-          textAlign: 'center',
-          whiteSpace: 'nowrap',
-          fontFamily: '"WF Visual Sans", sans-serif'
-        }}>
-          {node.label}
-        </span>
-      </div>
-    );
-  };
+  const steps = ["Plan", "Code", "Build", "Test", "Release", "Deploy", "Operate"];
 
   return (
-    <div style={{
-      width: '100%',
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '40px 20px',
-      position: 'relative'
+    <div className="cicd-wrapper" style={{ 
+      padding: "60px 20px", 
+      background: "#fff", 
+      fontFamily: "sans-serif",
+      overflowX: "auto" 
     }}>
-      <style>{`
-        @keyframes cicdPulse {
-          0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.3;
-            transform: scale(1.1);
-          }
-        }
-        
-        @media (max-width: 1100px) {
-          .cicd-desktop-layout {
-            display: none !important;
-          }
-          .cicd-mobile-layout {
-            display: flex !important;
-          }
-        }
-        
-        @media (min-width: 1101px) {
-          .cicd-desktop-layout {
-            display: block !important;
-          }
-          .cicd-mobile-layout {
-            display: none !important;
-          }
-        }
-      `}</style>
-
-      {/* Desktop Layout */}
-      <div className="cicd-desktop-layout" style={{ display: 'none' }}>
-        {/* Headers */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '280px',
-          marginBottom: '40px'
-        }}>
-          <h3 style={{
-            fontSize: '20px',
-            fontWeight: '600',
-            color: '#1a1a1a',
-            margin: 0,
-            fontFamily: '"WF Visual Sans", sans-serif'
-          }}>
-            Continous Integration
-          </h3>
-
-          <h3 style={{
-            fontSize: '20px',
-            fontWeight: '600',
-            color: '#1a1a1a',
-            margin: 0,
-            fontFamily: '"WF Visual Sans", sans-serif'
-          }}>
-            Continous Deployment
-          </h3>
-        </div>
-
-        {/* Main Flow */}
-        <div style={{
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-          minHeight: '380px',
-          paddingTop: '40px'
-        }}>
-          {/* Left Column - Code, Commit, Related */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '0',
-            position: 'relative'
-          }}>
-            {/* Code & Commit Box */}
-            <div style={{
-              border: '2px dashed #999',
-              borderRadius: '16px',
-              padding: '20px 25px',
-              background: 'transparent',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0'
-            }}>
-              <CircleNode
-                node={{ id: 'code', icon: GitBranch, label: 'Code' }}
-                isHovered={hoveredNode === 'code'}
-                onHover={setHoveredNode}
-              />
-
-              {/* Arrow right */}
-              <svg width="40" height="2" style={{ margin: '0 8px' }}>
-                <line x1="0" y1="1" x2="40" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-              </svg>
-
-              <CircleNode
-                node={{ id: 'commit', icon: GitCommit, label: 'Commit' }}
-                isHovered={hoveredNode === 'commit'}
-                onHover={setHoveredNode}
-              />
-            </div>
-
-            {/* Arrow down to Related */}
-            <svg width="2" height="40" style={{ margin: '8px 0' }}>
-              <line x1="1" y1="0" x2="1" y2="40" stroke="#1a1a1a" strokeWidth="2" />
-            </svg>
-
-            {/* Related to Code */}
-            <CircleNode
-              node={{ id: 'related', icon: Terminal, label: 'Related to Code' }}
-              isHovered={hoveredNode === 'related'}
-              onHover={setHoveredNode}
-            />
-          </div>
-
-          {/* Arrow from Commit to Build */}
-          <svg width="50" height="2" style={{ margin: '0 15px' }}>
-            <line x1="0" y1="1" x2="50" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-            <polygon points="50,1 44,4 44,-2" fill="#1a1a1a" />
-          </svg>
-
-          {/* CI Box - Build, Unit Tests, Integration Tests */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0',
-            padding: '28px 32px',
-            background: 'rgba(255, 200, 200, 0.2)',
-            borderRadius: '20px',
-            border: '2px dashed #ff6b6b'
-          }}>
-            <CircleNode
-              node={{ id: 'build', icon: Package, label: 'Build' }}
-              isHovered={hoveredNode === 'build'}
-              onHover={setHoveredNode}
-            />
-
-            <svg width="40" height="2" style={{ margin: '0 8px' }}>
-              <line x1="0" y1="1" x2="40" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-            </svg>
-
-            <CircleNode
-              node={{ id: 'unit', icon: TestTube, label: 'Unit Tests' }}
-              isHovered={hoveredNode === 'unit'}
-              onHover={setHoveredNode}
-            />
-
-            <svg width="40" height="2" style={{ margin: '0 8px' }}>
-              <line x1="0" y1="1" x2="40" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-            </svg>
-
-            <CircleNode
-              node={{ id: 'integration', icon: Network, label: 'Integration Tests' }}
-              isHovered={hoveredNode === 'integration'}
-              onHover={setHoveredNode}
-            />
-          </div>
-
-          {/* Arrow between CI and CD */}
-          <svg width="50" height="2" style={{ margin: '0 15px' }}>
-            <line x1="0" y1="1" x2="50" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-            <polygon points="50,1 44,4 44,-2" fill="#1a1a1a" />
-          </svg>
-
-          {/* CD Box - Review, Staging, Production */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '0'
-          }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0',
-              padding: '28px 32px',
-              background: 'rgba(100, 220, 200, 0.2)',
-              borderRadius: '20px',
-              border: '2px dashed #06d6a0'
-            }}>
-              <CircleNode
-                node={{ id: 'review', icon: Eye, label: 'Review' }}
-                isHovered={hoveredNode === 'review'}
-                onHover={setHoveredNode}
-              />
-
-              <svg width="40" height="2" style={{ margin: '0 8px' }}>
-                <line x1="0" y1="1" x2="40" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-              </svg>
-
-              <CircleNode
-                node={{ id: 'staging', icon: Layers, label: 'Staging' }}
-                isHovered={hoveredNode === 'staging'}
-                onHover={setHoveredNode}
-              />
-
-              <svg width="40" height="2" style={{ margin: '0 8px' }}>
-                <line x1="0" y1="1" x2="40" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-              </svg>
-
-              <CircleNode
-                node={{ id: 'production', icon: Box, label: 'Production' }}
-                isHovered={hoveredNode === 'production'}
-                onHover={setHoveredNode}
-              />
-            </div>
-
-            {/* Arrow down from Staging to Monitor */}
-            <svg width="2" height="40" style={{ margin: '8px 0', marginLeft: '80' }}>
-              <line x1="1" y1="0" x2="1" y2="40" stroke="#1a1a1a" strokeWidth="2" />
-            </svg>
-
-            {/* Monitor below Staging */}
-            <div style={{ marginLeft: '80' }}>
-              <CircleNode
-                node={{ id: 'monitor', icon: Monitor, label: 'Monitor' }}
-                isHovered={hoveredNode === 'monitor'}
-                onHover={setHoveredNode}
-              />
-            </div>
-          </div>
-
-          {/* SVG Connecting Lines */}
-          <svg style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            pointerEvents: 'none',
-            zIndex: 0
-          }}>
-            <defs>
-              <marker
-                id="arrow"
-                markerWidth="10"
-                markerHeight="10"
-                refX="8"
-                refY="3"
-                orient="auto"
-              >
-                <polygon points="0 0, 10 3, 0 6" fill="#1a1a1a" />
-              </marker>
-            </defs>
-
-            {/* Related back up to Code */}
-            <path
-              d="M 118 280 L 118 240 L 80 240 L 80 110"
-              stroke="#1a1a1a"
-              strokeWidth="2"
-              fill="none"
-              markerEnd="url(#arrow)"
-              strokeDasharray="5,5"
-            />
-
-            {/* Monitor feedback loop back to Build */}
-            <path
-              d="M 970 280 L 970 320 L 300 320 L 300 110"
-              stroke="#1a1a1a"
-              strokeWidth="2"
-              fill="none"
-              markerEnd="url(#arrow)"
-              strokeDasharray="5,5"
-            />
-          </svg>
-        </div>
-      </div>
-
-      {/* Mobile Layout */}
-      <div className="cicd-mobile-layout" style={{
-        display: 'none',
-        flexDirection: 'column',
-        gap: '35px',
-        alignItems: 'center'
+      <div style={{ 
+        position: "relative", 
+        display: "flex", 
+        alignItems: "center", 
+        justifyContent: "center",
+        minWidth: "900px",
+        margin: "0 auto",
+        height: "300px"
       }}>
-        <div style={{ width: '100%', textAlign: 'center' }}>
-          <h3 style={{
-            fontSize: '22px',
-            fontWeight: '600',
-            marginBottom: '25px',
-            fontFamily: '"WF Visual Sans", sans-serif'
-          }}>
-            Continous Integration
-          </h3>
-
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '15px',
-            alignItems: 'center',
-            padding: '25px',
-            background: 'rgba(255, 200, 200, 0.2)',
-            borderRadius: '18px',
-            border: '2px dashed #ff6b6b',
-            maxWidth: '350px',
-            margin: '0 auto'
-          }}>
-            <CircleNode
-              node={{ id: 'code-m', icon: GitBranch, label: 'Code' }}
-              isHovered={hoveredNode === 'code-m'}
-              onHover={setHoveredNode}
-            />
-            <svg width="2" height="25"><line x1="1" y1="0" x2="1" y2="25" stroke="#1a1a1a" strokeWidth="2" /></svg>
-            <CircleNode
-              node={{ id: 'commit-m', icon: GitCommit, label: 'Commit' }}
-              isHovered={hoveredNode === 'commit-m'}
-              onHover={setHoveredNode}
-            />
-            <svg width="2" height="25"><line x1="1" y1="0" x2="1" y2="25" stroke="#1a1a1a" strokeWidth="2" /></svg>
-            <CircleNode
-              node={{ id: 'build-m', icon: Package, label: 'Build' }}
-              isHovered={hoveredNode === 'build-m'}
-              onHover={setHoveredNode}
-            />
-            <svg width="2" height="25"><line x1="1" y1="0" x2="1" y2="25" stroke="#1a1a1a" strokeWidth="2" /></svg>
-            <CircleNode
-              node={{ id: 'unit-m', icon: TestTube, label: 'Unit Tests' }}
-              isHovered={hoveredNode === 'unit-m'}
-              onHover={setHoveredNode}
-            />
-            <svg width="2" height="25"><line x1="1" y1="0" x2="1" y2="25" stroke="#1a1a1a" strokeWidth="2" /></svg>
-            <CircleNode
-              node={{ id: 'integration-m', icon: Network, label: 'Integration Tests' }}
-              isHovered={hoveredNode === 'integration-m'}
-              onHover={setHoveredNode}
-            />
-          </div>
+        
+        {/* THE MAIN CHEVRON TRACK */}
+        <div style={{ display: "flex", alignItems: "center", zIndex: 2 }}>
+          {steps.map((step, index) => (
+            <div key={step} style={{ position: "relative", display: "flex", alignItems: "center" }}>
+              <div style={{
+                background: "#eeeeee",
+                padding: "15px 40px",
+                fontSize: "22px",
+                fontWeight: "600",
+                color: "#000",
+                clipPath: "polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%, 15% 50%)",
+                marginRight: "-15px",
+                minWidth: "140px",
+                textAlign: "center"
+              }}>
+                {step}
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div style={{ width: '100%', textAlign: 'center' }}>
-          <h3 style={{
-            fontSize: '22px',
-            fontWeight: '600',
-            marginBottom: '25px',
-            fontFamily: '"WF Visual Sans", sans-serif'
-          }}>
-            Continous Deployment
-          </h3>
-
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '15px',
-            alignItems: 'center',
-            padding: '25px',
-            background: 'rgba(100, 220, 200, 0.2)',
-            borderRadius: '18px',
-            border: '2px dashed #06d6a0',
-            maxWidth: '350px',
-            margin: '0 auto'
-          }}>
-            <CircleNode
-              node={{ id: 'review-m', icon: Eye, label: 'Review' }}
-              isHovered={hoveredNode === 'review-m'}
-              onHover={setHoveredNode}
-            />
-            <svg width="2" height="25"><line x1="1" y1="0" x2="1" y2="25" stroke="#1a1a1a" strokeWidth="2" /></svg>
-            <CircleNode
-              node={{ id: 'staging-m', icon: Layers, label: 'Staging' }}
-              isHovered={hoveredNode === 'staging-m'}
-              onHover={setHoveredNode}
-            />
-            <svg width="2" height="25"><line x1="1" y1="0" x2="1" y2="25" stroke="#1a1a1a" strokeWidth="2" /></svg>
-            <CircleNode
-              node={{ id: 'production-m', icon: Box, label: 'Production' }}
-              isHovered={hoveredNode === 'production-m'}
-              onHover={setHoveredNode}
-            />
-            <svg width="2" height="25"><line x1="1" y1="0" x2="1" y2="25" stroke="#1a1a1a" strokeWidth="2" /></svg>
-            <CircleNode
-              node={{ id: 'monitor-m', icon: Monitor, label: 'Monitor' }}
-              isHovered={hoveredNode === 'monitor-m'}
-              onHover={setHoveredNode}
-            />
-          </div>
-        </div>
-
-        <div style={{
-          padding: '20px',
-          border: '2px dashed #999',
-          borderRadius: '16px'
+        {/* LEFT LOOP (Continuous Integration) */}
+        <div className="loop-container left-loop" style={{
+          position: "absolute",
+          left: "145px", /* Positioned between Code and Build */
+          top: "50%",
+          transform: "translateY(-50%)",
+          width: "310px",
+          height: "220px",
+          pointerEvents: "none"
         }}>
-          <CircleNode
-            node={{ id: 'related-m', icon: Terminal, label: 'Related to Code' }}
-            isHovered={hoveredNode === 'related-m'}
-            onHover={setHoveredNode}
-          />
+          {/* Top Arrow */}
+          <div style={{
+            position: "absolute",
+            top: 0,
+            width: "100%",
+            height: "100%",
+            border: "22px solid #2d417a",
+            borderRadius: "50%",
+            clipPath: "inset(0 0 55% 0)"
+          }} />
+          <div style={{
+            position: "absolute",
+            top: "-5px",
+            right: "128px",
+            width: 0, height: 0,
+            borderLeft: "20px solid transparent",
+            borderRight: "20px solid transparent",
+            borderBottom: "30px solid #2d417a",
+            transform: "rotate(90deg)"
+          }} />
+
+          {/* Bottom Arrow */}
+          <div style={{
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            height: "100%",
+            border: "22px solid #2d417a",
+            borderRadius: "50%",
+            clipPath: "inset(55% 0 0 0)"
+          }} />
+          <div style={{
+            position: "absolute",
+            bottom: "-5px",
+            left: "128px",
+            width: 0, height: 0,
+            borderLeft: "20px solid transparent",
+            borderRight: "20px solid transparent",
+            borderBottom: "30px solid #2d417a",
+            transform: "rotate(-90deg)"
+          }} />
+          
+          {/* Label */}
+          <div style={{
+            position: "absolute",
+            bottom: "-50px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "#92d8f4",
+            padding: "8px 25px",
+            fontWeight: "bold",
+            fontSize: "18px",
+            color: "#000",
+            whiteSpace: "nowrap"
+          }}>
+            Continuous Integration
+          </div>
         </div>
+
+        {/* RIGHT LOOP (Continuous Delivery) */}
+        <div className="loop-container right-loop" style={{
+          position: "absolute",
+          right: "145px", /* Positioned between Release and Deploy */
+          top: "50%",
+          transform: "translateY(-50%)",
+          width: "310px",
+          height: "220px",
+          pointerEvents: "none"
+        }}>
+          {/* Top Arrow */}
+          <div style={{
+            position: "absolute",
+            top: 0,
+            width: "100%",
+            height: "100%",
+            border: "22px solid #2d417a",
+            borderRadius: "50%",
+            clipPath: "inset(0 0 55% 0)"
+          }} />
+          <div style={{
+            position: "absolute",
+            top: "-5px",
+            right: "128px",
+            width: 0, height: 0,
+            borderLeft: "20px solid transparent",
+            borderRight: "20px solid transparent",
+            borderBottom: "30px solid #2d417a",
+            transform: "rotate(90deg)"
+          }} />
+
+          {/* Bottom Arrow */}
+          <div style={{
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            height: "100%",
+            border: "22px solid #2d417a",
+            borderRadius: "50%",
+            clipPath: "inset(55% 0 0 0)"
+          }} />
+          <div style={{
+            position: "absolute",
+            bottom: "-5px",
+            left: "128px",
+            width: 0, height: 0,
+            borderLeft: "20px solid transparent",
+            borderRight: "20px solid transparent",
+            borderBottom: "30px solid #2d417a",
+            transform: "rotate(-90deg)"
+          }} />
+
+          {/* Label */}
+          <div style={{
+            position: "absolute",
+            bottom: "-50px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "#92d8f4",
+            padding: "8px 25px",
+            fontWeight: "bold",
+            fontSize: "18px",
+            color: "#000",
+            whiteSpace: "nowrap"
+          }}>
+            Continuous Deployment
+          </div>
+        </div>
+
       </div>
     </div>
   );
 }
-
 /* ==================== MAIN WEB DESIGN PAGE ==================== */
 
 export default function Webdesign() {
