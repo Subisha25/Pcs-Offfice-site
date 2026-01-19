@@ -3,6 +3,7 @@ import "./blog.css";
 import CommonButton from "../components/common/button";
 import Arrow from "../components/assets/arrow.png"; // adjust path if needed
 import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const blogs = [
   {
@@ -22,9 +23,15 @@ const blogs = [
     title: "Tech Talks: Latest Trends in Web Development",
     desc: "From React to modern frameworks, web development is evolving faster than ever.",
     image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+    title: "Tech Talks: Latest Trends in Web Development",
+    desc: "From React to modern frameworks, web development is evolving faster than ever.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
   },
   {
     date: "OCT, 2025",
+    title: "Company Updates: Inside Our Development Process",
+    desc: "A behind-the-scenes look at how our team plans, builds, and delivers software solutions.",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c"
     title: "Company Updates: Inside Our Development Process",
     desc: "A behind-the-scenes look at how our team plans, builds, and delivers software solutions.",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c"
@@ -34,9 +41,15 @@ const blogs = [
     title: "Innovation Stories: Turning Ideas into Products",
     desc: "Every successful product starts with a simple idea. Here’s how innovation drives our work.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978"
+    title: "Innovation Stories: Turning Ideas into Products",
+    desc: "Every successful product starts with a simple idea. Here’s how innovation drives our work.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978"
   },
   {
     date: "AUG, 2025",
+    title: "Digital Diaries: A Day in a Software Company",
+    desc: "From morning standups to deployments, this is what a typical day looks like in our office.",
+    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
     title: "Digital Diaries: A Day in a Software Company",
     desc: "From morning standups to deployments, this is what a typical day looks like in our office.",
     image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
@@ -46,9 +59,15 @@ const blogs = [
     title: "Our Tech Journey: Growing with Technology",
     desc: "Technology evolves, and so do we. A look at our growth journey over the years.",
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+    title: "Our Tech Journey: Growing with Technology",
+    desc: "Technology evolves, and so do we. A look at our growth journey over the years.",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
   },
   {
     date: "JUN, 2025",
+    title: "Smart Solutions Blog: Solving Real Business Problems",
+    desc: "We design software solutions that address real-world challenges faced by businesses.",
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0"
     title: "Smart Solutions Blog: Solving Real Business Problems",
     desc: "We design software solutions that address real-world challenges faced by businesses.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0"
@@ -58,9 +77,15 @@ const blogs = [
     title: "Insights & Ideas: Shaping the Future of Software",
     desc: "Our thoughts on how innovation and technology will define the future.",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4"
+    title: "Insights & Ideas: Shaping the Future of Software",
+    desc: "Our thoughts on how innovation and technology will define the future.",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4"
   },
   {
     date: "APR, 2025",
+    title: "Future Ready: Preparing for Next-Gen Technology",
+    desc: "AI, automation, and cloud computing are shaping the next generation of software.",
+    image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769"
     title: "Future Ready: Preparing for Next-Gen Technology",
     desc: "AI, automation, and cloud computing are shaping the next generation of software.",
     image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769"
@@ -68,7 +93,10 @@ const blogs = [
 ];
 
 
+
 function BlogPage() {
+  const navigate = useNavigate();
+
   const navigate = useNavigate();
 
   return (
@@ -91,6 +119,15 @@ function BlogPage() {
               <h2>{blog.title}</h2>
               <p>{blog.desc}</p>
 
+
+<div
+  className="blog-custom-btn"
+  onClick={() => navigate(`/blog/${index}`)}
+>
+  <span className="blog-btn-icon">➜</span>
+  <span className="blog-btn-text">Discover</span>
+</div>
+</div>
 
 <div
   className="blog-custom-btn"
