@@ -7,7 +7,6 @@ import CourseImg5 from "../assets/popular2.png";
 import CourseImgAI from "../assets/AI image.jpg";
 import CourseImgDM from "../assets/digital marketing.jpg";
 import CourseImgJava from "../assets/java.jpg";
-
 import htmlIcon from "../../components/assets/teach/html.svg";
 import cssIcon from "../../components/assets/teach/css.svg";
 import jsIcon from "../../components/assets/teach/js.svg";
@@ -274,7 +273,8 @@ careerImages: [
 
     prerequisites: [
       "Basic understanding of HTML/CSS helpful",
-      "Eagerness to learn modern web development"
+      // "Eagerness to learn modern web development"
+      "Interest in Web Development"
     ],
     prerequisitesImages: [
  WhyBasicComputer,
@@ -1110,7 +1110,8 @@ tools: [
 prerequisites: [
 
      "Basic computer knowledge",
-     "Logical thinking & problem-solving interest",
+    //  "Logical thinking & problem-solving interest",
+    "Problem-Solving Interest",
       "No prior Java experience required",
 
 ],

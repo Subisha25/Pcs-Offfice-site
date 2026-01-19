@@ -1628,6 +1628,48 @@ font-weight: 300;
 
 
 /* Section Container Centering */
+
+
+.prereq-card-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* 🔥 equal spacing */
+  aspect-ratio: 1 / 1;
+  width: 220px;                  /* 🔥 fix width */
+  padding: 24px;
+
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.prereq-icon {
+  height: 120px;                 /* 🔥 fixed icon space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prereq-icon img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.prereq-text {
+  font-family: "WF Visual Sans";
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
+  line-height: 1.5;
+
+  max-height: 70px;              /* 🔥 text space fixed */
+  overflow: hidden;              /* 🔥 card size break aagathu */
+}
+/* .... */
 .prereq-section {
   display: flex;
   justify-content: center;
@@ -1681,54 +1723,17 @@ font-weight: 300;
 
 
 /* Square Card Design */
-.prereq-card-new {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1 / 1;      /* 🔥 Card-ah square-ah mathum */
-  padding: 24px;
-  background: #ffffff;
-  border-radius: 24px;      /* Soft rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.02); /* Very light border for definition */
-}
+
 
 .prereq-card-new:hover {
   transform: translateY(-8px);
 }
 
 /* Icon Style */
-.prereq-icon {
-  width: 186px;
-  height: 126px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  font-size: 26px;
-  flex-shrink: 0;
-}
+/*  */
 
 
 
-/* Text Style - FULL VIEW (No Dots) */
-.prereq-text {
-  font-family: "WF Visual Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: #111827;
-  line-height: 1.5;
-  text-align: center;       /* Center aligned */
-  width: 100%;
-  
-  /* 🔥 Entha restriction-um illama full text-um view aagum */
-  display: block;           
-  overflow: visible;        
-  white-space: normal;      /* Auto-va next line-ku pogum, dot varathu */
-  word-wrap: break-word;    /* Periya vaarthai iruntha break aagum */
-}
 
 /* Responsive View */
 @media (max-width: 768px) {

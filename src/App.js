@@ -30,6 +30,7 @@ import AllCourses from "./pcstraining/homepage/allcourses";
 import CourseDetails from "./pcstraining/homepage/coursedetails";
 import TechLogoStrip from "./components/servicespage/teachstrip";
 import BlogPage from "./blog/BlogPage";
+import BlogDetails from "./blog/blogdetailsh";
 
 
 function App() {
@@ -70,7 +71,7 @@ function App() {
         <Route path="/coursedetails/:id" element={<CourseDetails/>} />
 
         <Route path="/blog" element={<BlogPage/>} />
-
+        <Route path="/blog/:index" element={<BlogDetails />} />
 
 
 

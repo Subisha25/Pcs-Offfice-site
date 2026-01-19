@@ -397,12 +397,12 @@ function CICDFlowDiagram() {
             </div>
 
             {/* Arrow down from Staging to Monitor */}
-            <svg width="2" height="40" style={{ margin: '8px 0', marginLeft: '-140px' }}>
+            <svg width="2" height="40" style={{ margin: '8px 0', marginLeft: '80' }}>
               <line x1="1" y1="0" x2="1" y2="40" stroke="#1a1a1a" strokeWidth="2" />
             </svg>
 
             {/* Monitor below Staging */}
-            <div style={{ marginLeft: '-140px' }}>
+            <div style={{ marginLeft: '80' }}>
               <CircleNode
                 node={{ id: 'monitor', icon: Monitor, label: 'Monitor' }}
                 isHovered={hoveredNode === 'monitor'}
