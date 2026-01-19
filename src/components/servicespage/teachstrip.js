@@ -129,15 +129,26 @@ export default function TechLogoScroll() {
 
       <style>{`
         /* ===== DESKTOP DEFAULT ===== */
+
+        
         .tech-scroll {
-          padding: 0px 20px 0px;
+          padding: 20px 20px 0px;
           text-align: center;
+          background-color: #ffffff !important;
         }
 
-        .scroll-wrapper {
-          overflow: hidden;
-          margin-top: 50px;
-        }
+     .scroll-wrapper {
+  overflow: hidden;
+  margin-top: 50px;
+}
+.tech-scroll {
+  background-color: #ffffff !important;
+}
+
+.scroll-wrapper {
+  background-color: #ffffff !important;
+}
+
 
         .scroll-track {
           display: flex;
@@ -240,6 +251,8 @@ export default function TechLogoScroll() {
           .tech-card span {
             font-size: 10px;
           }
+
+          
         }
       `}</style>
     </section>
