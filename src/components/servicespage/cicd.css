@@ -1,0 +1,244 @@
+.cicd-final {
+  padding: 100px 50px 200px ;
+  background: #fafafa;
+  text-align: center;
+  font-family: Inter, sans-serif;
+}
+
+.pipeline-wrap {
+  margin-top: 90px;
+  position: relative;
+}
+
+/* Background boxes */
+.ci-bg {
+  position: absolute;
+  top: 10px;
+  left: 22%;
+  width: 40%;
+  height: 130px;
+  border: 2px dashed #ff6b6b;
+  border-radius: 18px;
+  background: #fff1f1;
+  
+}
+
+.cd-bg {
+  position: absolute;
+  top: 10px;
+  left: 64%; 
+  width: 32%;
+  height: 130px;
+  border: 2px dashed #20c997;
+  border-radius: 18px;
+  background: #e6fcf5;
+}
+
+
+.bg-title {
+  position: absolute;
+  top: -28px;
+  width: 100%;
+  font-weight: 600;
+}
+
+/* Main line */
+.main-line {
+  position: absolute;
+  top: 75px;            /* 👈 SAME as steps top */
+  left: 5%;
+  right: 9%;
+  height: 3px;
+  background: #1e1b4b;
+  z-index: 1;
+}
+
+
+/* Steps */
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3%;
+  position: relative;
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.circle {
+  width: 52px;
+  height: 52px;
+  background: #1e1b4b;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Left loop */
+.left-loop {
+  position: absolute;
+  left: 3%;
+  top: 165px;
+  display: flex;
+  flex-direction: column;   /* 👈 IMPORTANT */
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #1e1b4b;
+}
+
+.related-text {
+  font-weight: 500;
+}
+
+
+.related-icon {
+  width: 46px;
+  height: 46px;
+  background: #1e1b4b;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+
+
+/* Monitor */
+.monitor {
+  position: absolute;
+  left: 80%;
+  top: 165px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;   /* 👈 IMPORTANT */
+  align-items: center;
+  gap: 6px;
+  color: #1e1b4b;
+}
+
+
+.monitor svg {
+  width: 46px;
+  height: 46px;
+  background: #1e1b4b;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5%;
+  position: relative;
+  top: 49px;   /* 👈 icons-a line center ku kondu varum */
+}
+
+
+.ci-title,
+.cd-title {
+  position: absolute;
+  top: -48px;                 /* 👈 box mela */
+  font-size: 16px;
+  font-weight: 600;
+  background: #fafafa;
+  padding: 4px 14px;
+  border-radius: 14px;
+  z-index: 5;
+  white-space: nowrap;
+  font-family: "WF Visual Sans";
+}
+
+.ci-title {
+  left: 42%;
+  transform: translateX(-50%);
+}
+.cd-title {
+  left: 78%;
+  transform: translateX(-50%);
+}
+
+.monitor-code-line {
+  position: absolute;
+  bottom: -180px;        /* pipeline keela */
+  left: 1%;             /* code side */
+  width: 77%;           /* monitor varaikum */
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.related-commit-line {
+  position: absolute;
+  left: 8%;          /* related icon pakkam */
+  top: 125px;        /* related icon keela */
+  width: 140px;      /* commit varaikum */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.monitor-production-line {
+  position: absolute;
+  right: 6%;          /* production pakkam align */
+  top: 135px;         /* monitor icon height ku match */
+  width: 160px;       /* figma size ku adjust pannalaam */
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+
+.tooltip-wrap {
+  position: relative;
+}
+
+.tooltip-text {
+  position: absolute;
+  top: -38px;
+  background: #1e1b4b;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.tooltip-wrap:hover .tooltip-text {
+  opacity: 1;
+}
+
+
+.hover-icon-wrap {
+  position: relative;
+}
+
+.hover-icon-img {
+  position: absolute;
+  top: -52px;              /* icon mela */
+  width: 34px;
+  height: 34px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: 0.25s ease;
+  pointer-events: none;
+}
+
+.hover-icon-wrap:hover .hover-icon-img {
+  opacity: 1;
+  transform: translateY(0);
+}

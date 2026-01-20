@@ -291,9 +291,9 @@ function CICDFlowDiagram() {
             </div>
 
             {/* Arrow down to Related */}
-            <svg width="2" height="40" style={{ margin: '8px 0' }}>
+            {/* <svg width="2" height="40" style={{ margin: '8px 0' }}>
               <line x1="1" y1="0" x2="1" y2="40" stroke="#1a1a1a" strokeWidth="2" />
-            </svg>
+            </svg> */}
 
             {/* Related to Code */}
             <CircleNode
@@ -396,9 +396,9 @@ function CICDFlowDiagram() {
             </div>
 
             {/* Arrow down from Staging to Monitor */}
-            <svg width="2" height="40" style={{ margin: '8px 0', marginLeft: '80' }}>
+            {/* <svg width="2" height="40" style={{ margin: '8px 0', marginLeft: '80' }}>
               <line x1="1" y1="0" x2="1" y2="40" stroke="#1a1a1a" strokeWidth="2" />
-            </svg>
+            </svg> */}
 
             {/* Monitor below Staging */}
             <div style={{ marginLeft: '80' }}>
@@ -434,24 +434,33 @@ function CICDFlowDiagram() {
             </defs>
 
             {/* Related back up to Code */}
-            <path
+            {/* <path
               d="M 118 280 L 118 240 L 80 240 L 80 110"
               stroke="#1a1a1a"
               strokeWidth="2"
               fill="none"
               markerEnd="url(#arrow)"
               strokeDasharray="5,5"
-            />
+            /> */}
 
-            {/* Monitor feedback loop back to Build */}
-            <path
-              d="M 970 280 L 970 320 L 300 320 L 300 110"
+         
+            {/* Production feedback loop back to Code */}
+         {/* Monitor feedback loop back to Code */}
+             {/* Monitor feedback loop back to Code */}
+            {/* <path
+              d="M 1005 280 
+                C 1005 310, 1005 320, 970 320 
+                L 30 320 
+                C 10 320, 0 310, 0 290 
+                L 0 85 
+                C 0 70, 10 60, 25 60 
+                L 80 60"
               stroke="#1a1a1a"
               strokeWidth="2"
               fill="none"
               markerEnd="url(#arrow)"
               strokeDasharray="5,5"
-            />
+            /> */}
           </svg>
         </div>
       </div>
