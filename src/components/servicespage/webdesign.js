@@ -148,60 +148,26 @@ function CICDFlowDiagram() {
         }}>
           {/* Top Arrow */}
           <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '0',
-            position: 'relative'
-          }}>
-            {/* Code & Commit Box */}
-            <div style={{
-              border: '2px dashed #999',
-              borderRadius: '16px',
-              padding: '20px 25px',
-              background: 'transparent',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0'
-            }}>
-              <CircleNode
-                node={{ id: 'code', icon: GitBranch, label: 'Code' }}
-                isHovered={hoveredNode === 'code'}
-                onHover={setHoveredNode}
-              />
+            position: "absolute",
+            top: 0,
+            width: "100%",
+            height: "100%",
+            border: "22px solid #2d417a",
+            borderRadius: "50%",
+            clipPath: "inset(0 0 55% 0)"
+          }} />
+          <div style={{
+            position: "absolute",
+            top: "-5px",
+            right: "128px",
+            width: 0, height: 0,
+            borderLeft: "20px solid transparent",
+            borderRight: "20px solid transparent",
+            borderBottom: "30px solid #2d417a",
+            transform: "rotate(90deg)"
+          }} />
 
-              {/* Arrow right */}
-              <svg width="40" height="2" style={{ margin: '0 8px' }}>
-                <line x1="0" y1="1" x2="40" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-              </svg>
-
-              <CircleNode
-                node={{ id: 'commit', icon: GitCommit, label: 'Commit' }}
-                isHovered={hoveredNode === 'commit'}
-                onHover={setHoveredNode}
-              />
-            </div>
-
-            {/* Arrow down to Related */}
-            {/* <svg width="2" height="40" style={{ margin: '8px 0' }}>
-              <line x1="1" y1="0" x2="1" y2="40" stroke="#1a1a1a" strokeWidth="2" />
-            </svg> */}
-
-            {/* Related to Code */}
-            <CircleNode
-              node={{ id: 'related', icon: Terminal, label: 'Related to Code' }}
-              isHovered={hoveredNode === 'related'}
-              onHover={setHoveredNode}
-            />
-          </div>
-
-          {/* Arrow from Commit to Build */}
-          <svg width="50" height="2" style={{ margin: '0 15px' }}>
-            <line x1="0" y1="1" x2="50" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-            <polygon points="50,1 44,4 44,-2" fill="#1a1a1a" />
-          </svg>
-
-          {/* CI Box - Build, Unit Tests, Integration Tests */}
+          {/* Bottom Arrow */}
           <div style={{
             position: "absolute",
             bottom: 0,
@@ -212,134 +178,17 @@ function CICDFlowDiagram() {
             clipPath: "inset(55% 0 0 0)"
           }} />
           <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '0'
-          }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0',
-              padding: '28px 32px',
-              background: 'rgba(100, 220, 200, 0.2)',
-              borderRadius: '20px',
-              border: '2px dashed #06d6a0'
-            }}>
-              <CircleNode
-                node={{ id: 'review', icon: Eye, label: 'Review' }}
-                isHovered={hoveredNode === 'review'}
-                onHover={setHoveredNode}
-              />
-
-              <svg width="40" height="2" style={{ margin: '0 8px' }}>
-                <line x1="0" y1="1" x2="40" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-              </svg>
-
-              <CircleNode
-                node={{ id: 'staging', icon: Layers, label: 'Staging' }}
-                isHovered={hoveredNode === 'staging'}
-                onHover={setHoveredNode}
-              />
-
-              <svg width="40" height="2" style={{ margin: '0 8px' }}>
-                <line x1="0" y1="1" x2="40" y2="1" stroke="#1a1a1a" strokeWidth="2" />
-              </svg>
-
-              <CircleNode
-                node={{ id: 'production', icon: Box, label: 'Production' }}
-                isHovered={hoveredNode === 'production'}
-                onHover={setHoveredNode}
-              />
-            </div>
-
-            {/* Arrow down from Staging to Monitor */}
-            {/* <svg width="2" height="40" style={{ margin: '8px 0', marginLeft: '80' }}>
-              <line x1="1" y1="0" x2="1" y2="40" stroke="#1a1a1a" strokeWidth="2" />
-            </svg> */}
-
-            {/* Monitor below Staging */}
-            <div style={{ marginLeft: '80' }}>
-              <CircleNode
-                node={{ id: 'monitor', icon: Monitor, label: 'Monitor' }}
-                isHovered={hoveredNode === 'monitor'}
-                onHover={setHoveredNode}
-              />
-            </div>
-          </div>
-
-          {/* SVG Connecting Lines */}
-          <svg style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            pointerEvents: 'none',
-            zIndex: 0
-          }}>
-            <defs>
-              <marker
-                id="arrow"
-                markerWidth="10"
-                markerHeight="10"
-                refX="8"
-                refY="3"
-                orient="auto"
-              >
-                <polygon points="0 0, 10 3, 0 6" fill="#1a1a1a" />
-              </marker>
-            </defs>
-
-            {/* Related back up to Code */}
-            {/* <path
-              d="M 118 280 L 118 240 L 80 240 L 80 110"
-              stroke="#1a1a1a"
-              strokeWidth="2"
-              fill="none"
-              markerEnd="url(#arrow)"
-              strokeDasharray="5,5"
-            /> */}
-
-         
-            {/* Production feedback loop back to Code */}
-         {/* Monitor feedback loop back to Code */}
-             {/* Monitor feedback loop back to Code */}
-            {/* <path
-              d="M 1005 280 
-                C 1005 310, 1005 320, 970 320 
-                L 30 320 
-                C 10 320, 0 310, 0 290 
-                L 0 85 
-                C 0 70, 10 60, 25 60 
-                L 80 60"
-              stroke="#1a1a1a"
-              strokeWidth="2"
-              fill="none"
-              markerEnd="url(#arrow)"
-              strokeDasharray="5,5"
-            /> */}
-          </svg>
-        </div>
-      </div>
-
-      {/* Mobile Layout */}
-      <div className="cicd-mobile-layout" style={{
-        display: 'none',
-        flexDirection: 'column',
-        gap: '35px',
-        alignItems: 'center'
-      }}>
-        <div style={{ width: '100%', textAlign: 'center' }}>
-          <h3 style={{
-            fontSize: '22px',
-            fontWeight: '600',
-            marginBottom: '25px',
-            fontFamily: '"WF Visual Sans", sans-serif'
-          }}>
-            Continous Integration
-          </h3>
-
+            position: "absolute",
+            bottom: "-5px",
+            left: "128px",
+            width: 0, height: 0,
+            borderLeft: "20px solid transparent",
+            borderRight: "20px solid transparent",
+            borderBottom: "30px solid #2d417a",
+            transform: "rotate(-90deg)"
+          }} />
+          
+          {/* Label */}
           <div style={{
             position: "absolute",
             bottom: "-50px",
