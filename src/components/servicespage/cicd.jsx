@@ -14,13 +14,27 @@ import flowLine from "../../components/assets/line.png";
 import relatedCommitLine from "../../components/assets/commit.png";
 import monitorProductionLine from "../../components/assets/manitor.png";
 import vscodeIcon from "../../components/assets/teach/vscode.svg";
-
+import github from "../../components/assets/teach/git.svg"
+import npm from "../../components/assets/teach/node.svg"
+import postman from "../../components/assets/teach/postman.svg"
+import AWS from "../../components/assets/teach/aws.svg"
+import jest from "../../components/assets/teach/jest-svgrepo-com .svg"
+import AWSPRO from "../../components/assets/teach/awspro.svg"
 export default function CICDFlowFinal() {
   return (
     <section className="cicd-final">
 
-      <h2>CI/CD & Deployment</h2>
-      <p>Continuous integration and delivery process overview</p>
+<div className="cicd-heading">
+  <h2>CI/CD & Deployment</h2>
+  <p className="sub-text">
+    Continuous integration and delivery streamline releases,
+    reduce manual errors, and keep your site up-to-date with
+    fast, reliable deployments. We automate testing and delivery
+    so updates reach users safely and quickly.
+  </p>
+</div>
+
+
         
 
       <div className="pipeline-wrap">
@@ -39,17 +53,14 @@ export default function CICDFlowFinal() {
 
         {/* Steps */}
        <div className="steps">
- <Node
-    icon={<FaCode />}
-    label="Code"
-    hoverIcon={vscodeIcon}
-  />  <Node icon={<FaCodeBranch />} label="Commit" tooltip="Git Commit" />
-  <Node icon={<FaCogs />} label="Build" tooltip="Build Process" />
-  <Node icon={<FaVial />} label="Unit Tests" tooltip="Unit Testing" />
-  <Node icon={<FaProjectDiagram />} label="Integration Tests" tooltip="Integration Tests" />
-  <Node icon={<FaEye />} label="Review" tooltip="Code Review" />
-  <Node icon={<FaServer />} label="Staging" tooltip="Staging Server" />
-  <Node icon={<FaCube />} label="Production" tooltip="Production Release" />
+ <Node icon={<FaCode />} label="Code" hoverIcon={vscodeIcon} /> 
+   <Node icon={<FaCodeBranch />} label="Commit"  hoverIcon={github} />
+  <Node icon={<FaCogs />} label="Build" hoverIcon={npm} />
+  <Node icon={<FaVial />} label="Unit Tests" hoverIcon={jest} />
+  <Node icon={<FaProjectDiagram />} label="Integration Tests" hoverIcon={postman}  />
+  <Node icon={<FaEye />} label="Review" hoverIcon={github}  />
+  <Node icon={<FaServer />} label="Staging" hoverIcon={AWS}  />
+  <Node icon={<FaCube />} label="Production" hoverIcon={AWSPRO}  />
 </div>
 
 

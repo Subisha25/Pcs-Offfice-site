@@ -16,25 +16,38 @@ import Deliver from "../assets/deliver.png";
 import Create from "../assets/create.png";
 import Grow from "../assets/grow.png";
 import TechLogoStrip from "./teachstrip";
+import CICDFlowFinal from "./cicd";
 
 function PurposeSection() {
-  const cardsRef = useRef(null);
-  const [animate, setAnimate] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setAnimate(true), 400);
-        } else {
-          setAnimate(false);
-        }
-      },
-      { threshold: 0.4 }
-    );
+ const cardsRef = useRef(null);
+const [animate, setAnimate] = useState(false);
+const [hasAnimated, setHasAnimated] = useState(
+  sessionStorage.getItem("webdesignPurposeAnimated") === "true"
+);
 
-    if (cardsRef.current) observer.observe(cardsRef.current);
-    return () => observer.disconnect();
-  }, []);
+useEffect(() => {
+  if (hasAnimated) {
+    setAnimate(true);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          setAnimate(true);
+          setHasAnimated(true);
+          sessionStorage.setItem("webdesignPurposeAnimated", "true");
+        }, 400);
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  if (cardsRef.current) observer.observe(cardsRef.current);
+
+  return () => observer.disconnect();
+}, [hasAnimated]);
   return (
     <div className="purpose-container">
       <div className="">
@@ -458,19 +471,9 @@ export default function Webdesign() {
           </div>
         </div>
 
-        <div className="cicd-flow-section">
-          <h2 className="cicd-title">CI/CD & Deployment</h2>
-
-          <p className="cicd-desc">
-            Continuous integration and delivery streamline releases, reduce
-            manual errors, and keep your site up-to-date with fast, reliable
-            deployments. We automate testing and delivery so updates reach users
-            safely and quickly.
-          </p>
-
-          <CICDFlowDiagram />
-        </div>
+       
       </div>
+      <CICDFlowFinal/>
       <TechLogoStrip />
       <PurposeSection />
       <CTASection />
