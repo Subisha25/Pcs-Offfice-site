@@ -13,7 +13,7 @@ import django from "../../components/assets/teach/django.svg";
 import flask from "../../components/assets/teach/flask-svgrepo-com.svg";
 import android from "../../components/assets/teach/android-svgrepo-com.svg";
 import ios from "../../components/assets/teach/ios-svgrepo-com.svg";
-import mysql from "../../components/assets/teach/mysql-svgrepo-com.svg";
+import mysql from "../../components/assets/teach/Group (2).png";
 import mongodb from "../../components/assets/teach/mongodb-svgrepo-com.svg";
 import seo from "../../components/assets/teach/seo-tag-search-engine-optimization-svgrepo-com.svg";
 import ads from "../../components/assets/teach/megaphone-advertising-svgrepo-com.svg";
