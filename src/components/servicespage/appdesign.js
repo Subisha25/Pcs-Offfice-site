@@ -15,6 +15,7 @@ import CicdImg from "../assets/cicd/cicd.png";
 
 import CTASection from "../homepage/cta";
 import CommonTopTag from "../common/toptag";
+import CICDFlow from "./cicd";
 
 /* ==================== PURPOSE SECTION (SCROLL PIN) ==================== */
 
@@ -323,7 +324,7 @@ The results of our app development approach demonstrate how technology can deepl
             <img src={Result} alt="Results" className="sw-result-img" />
           </div>
         </div> */}
-        <div className="cicd-flow-section">
+        {/* <div className="cicd-flow-section">
   <h2 className="cicd-title">CI/CD & Deployment</h2>
 
   <p className="cicd-desc">
@@ -335,11 +336,12 @@ The results of our app development approach demonstrate how technology can deepl
   <div className="cicd-flow-image">
     <img src={CicdImg} alt="CI/CD Flow Diagram" />
   </div>
-</div>
+</div> */}
 
       </div>
 
       {/* PURPOSE SCROLL SECTION + CTA */}
+      <CICDFlow/>
       <PurposeSection />
       <CTASection />
     </>
