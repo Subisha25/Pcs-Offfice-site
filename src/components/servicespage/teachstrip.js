@@ -129,26 +129,15 @@ export default function TechLogoScroll() {
 
       <style>{`
         /* ===== DESKTOP DEFAULT ===== */
-
-        
         .tech-scroll {
-          padding: 20px 20px 0px;
+          padding: 0px 20px 0px;
           text-align: center;
-          background-color: #ffffff !important;
         }
 
-     .scroll-wrapper {
-  overflow: hidden;
-  margin-top: 50px;
-}
-.tech-scroll {
-  background-color: #ffffff !important;
-}
-
-.scroll-wrapper {
-  background-color: #ffffff !important;
-}
-
+        .scroll-wrapper {
+          overflow: hidden;
+          margin-top: 50px;
+        }
 
         .scroll-track {
           display: flex;
@@ -172,7 +161,7 @@ export default function TechLogoScroll() {
           margin-bottom: 12px;
         }
 
-         .tech-card span{
+        .tech-card span {
           font-size: 14px;
           font-weight: 500;
           color: #22282b;
@@ -186,9 +175,10 @@ export default function TechLogoScroll() {
         /* ===== MOBILE 425px ===== */
         @media (max-width: 425px) {
           .tech-scroll {
-        padding: 1px 10px 30px;        
+        padding: 0px 10px 30px;        
           }
-        .scroll-track {
+
+          .scroll-track {
             gap: 16px;
             /* disable CSS animation on small screens and use JS auto-scroll */
             animation: none;
@@ -250,8 +240,6 @@ export default function TechLogoScroll() {
           .tech-card span {
             font-size: 10px;
           }
-
-          
         }
       `}</style>
     </section>

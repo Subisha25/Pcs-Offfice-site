@@ -216,7 +216,9 @@ const ServicesSection = () => {
   </span>
 
   <span className="heading-normal">
-    {" "}we’ve got you covered
+    {" "}we’ve got you
+    <br />
+    covered
   </span>
 </h1>
 

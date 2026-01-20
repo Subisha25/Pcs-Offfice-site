@@ -71,7 +71,8 @@ function App() {
         <Route path="/coursedetails/:id" element={<CourseDetails/>} />
 
         <Route path="/blog" element={<BlogPage/>} />
-<Route path="/blog/:id" element={<BlogDetails/>} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
+
 
 
 
