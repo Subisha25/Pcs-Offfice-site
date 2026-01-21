@@ -175,7 +175,8 @@ export default function TechLogoScroll() {
         /* ===== MOBILE 425px ===== */
         @media (max-width: 425px) {
           .tech-scroll {
-        padding: 0px 10px 30px;        
+        padding: 2px 10px 30px;
+        backround-color:white;      
           }
 
           .scroll-track {

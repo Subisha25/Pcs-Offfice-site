@@ -30,7 +30,7 @@ const testimonials = [
   },
   {
     name: "Rama lakshmi M",
-    role: "Mobile Application Developer",
+    role: "Full Stack Web Developer",
     text: "PCS training boosted my confidence as a developer. The live projects and continuous guidance prepared me well for real-time development and interviews.",
     initial: "R",
   },
