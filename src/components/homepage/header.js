@@ -128,7 +128,7 @@
 //             <a href="/aboutbanner" onClick={handleLinkClick}>About</a>
 //             <a href="/servicespage" onClick={handleLinkClick}>Services</a>
 //             <a href="/products" onClick={handleLinkClick}>Products</a>
-//             <a href="/pcstrainingsite" onClick={handleLinkClick}>Training</a>
+//             <a href="/training" onClick={handleLinkClick}>Training</a>
 //           </nav>
 //         )}
 
@@ -138,7 +138,7 @@
 //             <a href="/aboutbanner" onClick={handleLinkClick}>About</a>
 //             <a href="/servicespage" onClick={handleLinkClick}>Services</a>
 //             <a href="/products" onClick={handleLinkClick}>Products</a>
-//             <a href="/pcstrainingsite" onClick={handleLinkClick}>Training</a>
+//             <a href="/training" onClick={handleLinkClick}>Training</a>
 //             <button className="header-btn" onClick={() => { closeMenu(); navigate("/contact"); }}>
 //               Let's Discuss
 //             </button>
@@ -352,7 +352,7 @@ function Header() {
             <a href="/aboutbanner" onClick={handleLinkClick}>About</a>
             <a href="/servicespage" onClick={handleLinkClick}>Services</a>
             <a href="/products" onClick={handleLinkClick}>Products</a>
-            <a href="/pcstrainingsite" onClick={handleLinkClick}>Training</a>
+            <a href="/training" onClick={handleLinkClick}>Training</a>
           </nav>
         )}
 
@@ -362,7 +362,7 @@ function Header() {
             <a href="/aboutbanner" onClick={handleLinkClick}>About</a>
             <a href="/servicespage" onClick={handleLinkClick}>Services</a>
             <a href="/products" onClick={handleLinkClick}>Products</a>
-            <a href="/pcstrainingsite" onClick={handleLinkClick}>Training</a>
+            <a href="/training" onClick={handleLinkClick}>Training</a>
             <button
               className="header-btn"
               onClick={() => {
