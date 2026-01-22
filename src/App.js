@@ -31,23 +31,24 @@ import CourseDetails from "./pcstraining/homepage/coursedetails";
 import TechLogoStrip from "./components/servicespage/teachstrip";
 import BlogPage from "./blog/BlogPage";
 import BlogDetails from "./blog/blogdetailsh";
+import CreateBlog from "./blog/createblog";
 
 
 function App() {
   return (
     <Router>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Header />
-  
+
       <Routes>
         <Route path="/" element={<Banner />} />
         <Route path="/aboutbanner" element={<AboutBanner />} />
 
-       <Route path="/servicespage" element={<Services/>} />
-       <Route path="/webdesign" element={<Webdesign/>} />
-       <Route path="/appdesign" element={<Appdesign/>} />
-       <Route path="/digitalmarketing" element={<DigitalMarketing/>} />
-       <Route path="/branding" element={<Branding/>} />
+        <Route path="/servicespage" element={<Services />} />
+        <Route path="/webdesign" element={<Webdesign />} />
+        <Route path="/appdesign" element={<Appdesign />} />
+        <Route path="/digitalmarketing" element={<DigitalMarketing />} />
+        <Route path="/branding" element={<Branding />} />
 
         <Route path="/portfoliobanner" element={<Portfoliobanner />} />
         <Route path="/lhome" element={<Lhome />} />
@@ -55,29 +56,25 @@ function App() {
         <Route path="/collah" element={<Collah />} />
         <Route path="/bjmm" element={<Bjmm />} />
         <Route path="/wts" element={<Wts />} />
-        <Route path="/officechat" element={<Officechat/>} />
-        <Route path="/msloan" element={<Mslone/>} />
-        <Route path="/gracecabs" element={<GraceBanner/>} />
-        <Route path="/training" element={<TrainingHomeBanner/>} />
-        <Route path="/products" element={<Products/>} />
-                <Route path="/productdetails/:id" element={<ProductDetails/>} />
+        <Route path="/officechat" element={<Officechat />} />
+        <Route path="/msloan" element={<Mslone />} />
+        <Route path="/gracecabs" element={<GraceBanner />} />
+        <Route path="/pcstrainingsite" element={<TrainingHomeBanner />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/productdetails/:id" element={<ProductDetails />} />
 
-        <Route path="/learningJourneyPage" element={<LearningJourneyPage/>} />
+        <Route path="/learningJourneyPage" element={<LearningJourneyPage />} />
 
         <Route path="/teachstrip" element={<TechLogoStrip />} />
-        <Route path="/works" element={<Works/>} />
-        <Route path="/contact" element={<ContactSection/>} />
-        <Route path="/allcourses" element={<AllCourses/>} />
-        <Route path="/coursedetails/:id" element={<CourseDetails/>} />
+        <Route path="/works" element={<Works />} />
+        <Route path="/contact" element={<ContactSection />} />
+        <Route path="/allcourses" element={<AllCourses />} />
+        <Route path="/coursedetails/:id" element={<CourseDetails />} />
 
-        <Route path="/blog" element={<BlogPage/>} />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
+        <Route path="/createblog" element={<CreateBlog />} />
 
-
-
-
-
-       
       </Routes>
 
       <Footer />

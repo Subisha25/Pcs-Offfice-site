@@ -671,7 +671,7 @@ font-family: "Playfair Display", serif;
   }
 
   .sw-offer-section {
-    margin: 100px auto 0;
+    margin: 100px auto 80px;
     gap: 60px;
   }
 
@@ -1061,3 +1061,27 @@ font-family: "Playfair Display", serif;
   }
 }
 
+.workprocess-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* default: 4 per row on desktop */
+  gap: 30px;
+}
+
+/* Tablet view: 2 cards per row */
+@media (min-width: 768px) and (max-width: 991px) {
+  .workprocess-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+      .workprocess-card-title {
+        font-family: "WF Visual Sans";
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
+
+/* Mobile view: 1 card per row */
+@media (max-width: 767px) {
+  .workprocess-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

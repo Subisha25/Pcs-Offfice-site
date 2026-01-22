@@ -1,0 +1,186 @@
+/* ===== BLOG SECTION ===== */
+.blog-section {
+  background: #ffffff;
+  padding: 72px 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+}
+
+/* ===== CONTAINER ===== */
+.blog-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== BANNER ===== */
+.about-banner {
+  width: 100%;
+  height: 60vh;
+  background-image: url("../components/assets/Mask\ group\ \(2\).png ");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Title - Spaced Letters */
+.about-title {
+  padding-top: 80px;
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: 10px;
+  color: #000;
+    font-family: "WF Visual Sans" !important;
+
+}
+
+/* ===== FORM ===== */
+.blog-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.blog-form h3 {
+  margin: 30px 0 15px;
+  font-size: 22px;
+  color: #222;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #000;
+}
+
+/* ===== FILE INPUT ===== */
+.form-group input[type="file"] {
+  padding: 8px;
+}
+
+/* ===== SECTIONS ===== */
+.blog-form section {
+  margin-bottom: 20px;
+}
+
+/* Section container */
+.blog-form > div > div {
+  background: #fafafa;
+  border-radius: 6px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 12px; /* space between inputs */
+}
+
+/* Inputs and textarea styling */
+.blog-form input,
+.blog-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 10px;
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 12px; /* add vertical spacing */
+}
+
+/* Remove margin for last element inside container */
+.blog-form textarea:last-child {
+  margin-bottom: 0;
+}
+/* Remove border if you want them completely “flat” */
+.blog-form input.no-border,
+.blog-form textarea.no-border {
+  border: none;
+  background: #f9f9f9; /* subtle background to see input area */
+}
+
+/* Space between multiple sections */
+.blog-form > div {
+  margin-bottom: 20px;
+}
+
+
+/* ===== BUTTONS ===== */
+.blog-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Submit */
+.blog-form button[type="submit"] {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.blog-form button[type="submit"]:hover {
+  background: #222;
+}
+
+/* Add Section */
+.blog-form button[type="button"] {
+  background: #eee;
+  color: #000;
+  margin-top: 8px;
+}
+
+.blog-form button[type="button"]:hover {
+  background: #ddd;
+}
+
+/* Remove Section */
+.blog-form button[style*="red"] {
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+/* ===== ERROR ===== */
+.blog-form p {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .blog-form {
+    padding: 25px;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+}

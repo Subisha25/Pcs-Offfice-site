@@ -102,7 +102,7 @@ export default function CICDFlowFinal() {
         {/* Monitor */}
 <div className="monitor node">
   <div className="circle">
-    <img src={monitorImg} alt="Monitor" className="circle-img" />
+    <img src={monitorImg} alt="Monitor" className="cicd-circle-img" />
   </div>
   <span>Monitor</span>
 </div>
@@ -134,7 +134,7 @@ function Node({ icon, label,image,  hoverIcon }) {
       )}
 
       <div className="circle">
-        <img src={image} alt={label} className="circle-img" />
+        <img src={image} alt={label} className="cicd-circle-img" />
       </div>
 
       <span>{label}</span>
