@@ -39,7 +39,6 @@
   padding-top: 80px;
   font-size: 70px;
   font-weight: 500;
-  letter-spacing: 10px;
   color: #000;
     font-family: "WF Visual Sans" !important;
 
@@ -103,9 +102,10 @@
 .blog-title {
   font-size: 22px;
   font-weight: 700;
-  line-height: 1.35;
   color: #111827;
   margin-bottom: 12px;
+  font-family: "WF visual sans";
+  letter-spacing: 0.5px;
 }
 
 /* ===== DESCRIPTION ===== */
@@ -152,7 +152,7 @@
 
   .blog-title {
     font-size: 19px;
-    line-height: 1.4;
+    font-family: "WF visual sans";
   }
 
   .blog-description {
