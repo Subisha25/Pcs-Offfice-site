@@ -184,6 +184,12 @@ const testimonials = [
     text: "PCS training boosted my confidence as a developer. The live projects and continuous guidance prepared me well for real-time development and interviews.",
     initial: "R",
   },
+    {
+    name: "Ruso K",
+    role: "Full Stack Developer",
+    text: "The Full Stack Development training at PCS gave me strong hands-on experience and confidence through real-time projects.",
+    initial: "R",
+  },
 ];
 
 const TraningLearn = () => {
