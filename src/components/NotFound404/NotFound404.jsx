@@ -7,7 +7,7 @@ const NotFound404 = () => {
   return (
     <div className="notfound-wrapper">
       <div className="notfound-left">
-        <img src={PcsLogoimg} alt="logo" className="errorlogo-img" />
+        <img src={PcsLogoimg} alt="PCS Logo" className="errorlogo-img" />
 
         <div className="text-section">
           <h1 className="error-code">404</h1>
@@ -21,7 +21,7 @@ const NotFound404 = () => {
       </div>
 
       <div className="notfound-right">
-        <img src={robotImg} alt="robot" className="robot-img" />
+        <img src={robotImg} alt="404 illustration" className="robot-img" />
       </div>
     </div>
   );

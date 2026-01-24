@@ -3,16 +3,19 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 80px; /* 🔥 idhu dha main gap control */
   padding: 0 60px;
   box-sizing: border-box;
   background-color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* LEFT SIDE */
 .notfound-left {
   display: flex;
   flex-direction: column;
+  max-width: 420px;
 }
 
 .errorlogo-img {
@@ -21,11 +24,11 @@
 }
 
 .text-section {
-  max-width: 420px;
+  width: 100%;
 }
 
 .error-code {
-  font-size: 25px;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
   color: #202124;
@@ -43,11 +46,11 @@
   line-height: 1.6;
 }
 
+/* RIGHT SIDE */
 .notfound-right {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: -40px;
 }
 
 .robot-img {
@@ -56,10 +59,10 @@
 
 /* ---------------- MOBILE RESPONSIVE ---------------- */
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   .notfound-wrapper {
     flex-direction: column;
-    justify-content: center;
+    gap: 40px;
     padding: 24px;
     text-align: center;
   }
@@ -68,57 +71,27 @@
     align-items: center;
   }
 
-  .errorlogo-img {
-    width: 110px;
-    margin-bottom: 20px;
+  .robot-img {
+    width: 280px;
   }
+}
 
-  .text-section {
-    max-width: 100%;
+@media (max-width: 425px) {
+  .robot-img {
+    width: 240px;
   }
 
   .error-code {
     font-size: 32px;
   }
 
-  .error-text {
-    font-size: 15px;
-  }
-
   .error-subtext {
     font-size: 13px;
-  }
-
-  .notfound-right {
-    margin-left: 0;
-    margin-top: 32px;
-  }
-
-  .robot-img {
-    width: 260px;
-  }
-}
-
-@media (max-width: 375px) {
-  .robot-img {
-    width: 230px;
-  }
-
-  .error-code {
-    font-size: 30px;
   }
 }
 
 @media (max-width: 320px) {
   .robot-img {
     width: 200px;
-  }
-
-  .error-code {
-    font-size: 28px;
-  }
-
-  .error-subtext {
-    font-size: 12px;
   }
 }
