@@ -10,11 +10,24 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-/* suggested title */
+.blog-featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
+.blog-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
 .suggested-title {
+    font-family: "WF Visual Sans";
+    font-weight: 600;
+    font-size: 28px;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: -130px;
 }
 
 .suggested-title::after {
@@ -28,18 +41,6 @@
   border-radius: 2px;
 }
 
-.blog-featured-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.blog-article {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px 40px;
-}
-
 .article-header {
   margin-bottom: 50px;
   border-bottom: 2px solid #f0f0f0;
@@ -48,11 +49,11 @@
 
 .article-title {
   font-size: 42px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.3;
   margin-bottom: 20px;
   color: #1a1a1a;
-  font-family: "WF visual sans";
+  font-family: "WF Visual Sans";
 }
 
 .details-meta {
@@ -72,10 +73,10 @@
 
 .intro-paragraph {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 40px;
   color: #1a1a1a;
-  font-family: "WF visual sans";
+  font-family: "WF Visual Sans";
 }
 
 .content-section {
@@ -84,11 +85,12 @@
 
 .section-title {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 18px;
   color: #1a1a1a;
   position: relative;
   padding-bottom: 12px;
+  
 }
 
 .section-title::after {
@@ -107,6 +109,8 @@
   line-height: 1.8;
   color: #555;
   margin-bottom: 20px;
+ font-family: "WF Visual Sans";
+ font-weight: 400;
 }
 
 .section-list {
@@ -145,18 +149,18 @@
 
   .article-title {
     font-size: 32px;
-      font-family: "WF visual sans";
-
+    font-family: "WF Visual Sans";
   }
 
   .section-title {
     font-size: 24px;
+    font-family: "WF Visual Sans";
   }
 
   .intro-paragraph {
     font-size: 18px;
-    font-weight: 500;
-    font-family: "WF visual sans";
+      font-family: "WF Visual Sans";
+
   }
 
   .article-content {
@@ -176,8 +180,7 @@
   .article-title {
     font-size: 26px;
     margin-bottom: 16px;
-      font-family: "WF visual sans";
-
+    font-family: "WF Visual Sans";
   }
 
   .details-meta {
@@ -188,11 +191,14 @@
   .section-title {
     font-size: 20px;
     margin-bottom: 14px;
+    font-family: "WF Visual Sans";
   }
 
   .intro-paragraph {
     font-size: 16px;
     margin-bottom: 30px;
+      font-family: "WF Visual Sans";
+
   }
 
   .section-list li {
@@ -243,8 +249,7 @@
 
   .article-title {
     font-size: 32px;
-      font-family: "WF visual sans";
-
+    font-family: "WF Visual Sans";
   }
 
   .article-content {
@@ -254,10 +259,14 @@
   .intro-paragraph {
     font-size: 18px;
     margin-bottom: 32px;
+      font-family: "WF Visual Sans";
+      margin-top: -30px;
+
   }
 
   .section-title {
     font-size: 24px;
+    font-family: "WF Visual Sans";
   }
 
   .section-text,
@@ -266,7 +275,9 @@
   }
 
   .blog-image-wrapper {
-    margin-top: 120px;
+    margin-top: 100px;
+    padding: 0px 10px 10px;
+    margin-bottom: -20px;
   }
 
   .blog-centered-image {
@@ -284,8 +295,7 @@
   .article-title {
     font-size: 26px;
     line-height: 1.35;
-      font-family: "WF visual sans";
-
+    font-family: "WF Visual Sans";
   }
 
   .details-meta {
@@ -294,10 +304,14 @@
 
   .intro-paragraph {
     font-size: 16px;
+      font-family: "WF Visual Sans";
+      margin-top: -30px;
+
   }
 
   .section-title {
     font-size: 21px;
+    font-family: "WF Visual Sans";
   }
 
   .section-text,
@@ -314,16 +328,20 @@
 @media (max-width: 375px) {
   .article-title {
     font-size: 24px;
-      font-family: "WF visual sans";
-
+    font-family: "WF Visual Sans";
   }
 
   .intro-paragraph {
     font-size: 15.5px;
+      font-family: "WF Visual Sans";
+    margin-top: -20px;
+
+
   }
 
   .section-title {
     font-size: 20px;
+    font-family: "WF Visual Sans";
   }
 
   .section-list li {
@@ -341,8 +359,7 @@
 @media (max-width: 320px) {
   .article-title {
     font-size: 22px;
-      font-family: "WF visual sans";
-
+    font-family: "WF Visual Sans";
   }
 
   .article-content {
@@ -351,10 +368,14 @@
 
   .intro-paragraph {
     font-size: 15px;
+      font-family: "WF Visual Sans";
+      margin-top: -20px;
+
   }
 
   .section-title {
     font-size: 18px;
+    font-family: "WF Visual Sans";
   }
 
   .section-text,
@@ -364,5 +385,6 @@
 
   .blog-centered-image {
     height: 190px;
+  
   }
 }

@@ -382,7 +382,12 @@ font-family: "Playfair Display", serif;
   .sw-cicd-images {
     grid-template-columns: 1fr 1fr;
   }
+   .sw-banner {
+    top: 70px;   /* slightly less sticky pull */
+  }
+  
 }
+
 
 @media (max-width: 480px) {
   .sw-cicd-images {
@@ -1017,11 +1022,7 @@ font-family: "Playfair Display", serif;
 
 
 /* TABLET & SMALL LAPTOP SAFETY */
-@media (max-width: 1024px) {
-  .sw-banner {
-    top: 70px;   /* slightly less sticky pull */
-  }
-}
+
 
 @media (max-width: 991px) {
   .sw-banner-wrapper {

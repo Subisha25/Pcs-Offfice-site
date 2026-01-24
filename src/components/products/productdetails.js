@@ -60,52 +60,52 @@ const ProductDetails = () => {
             <h2 className="main-heading">Key Features</h2>
             <p className="sub-title">Everything you need to run this solution end-to-end.</p>
 
-       <div className="feature-list-wrapper">
-  {product.key_features.map((feature, index) => (
-    <div key={index} className="feature-item">
-      <div className="feature-icon-container">
-        {/* Your icon image will now show without any background circle */}
-        <img src={featureIcon} alt="icon" />
-      </div>
-      <p className="feature-list-text">{feature.text || feature}</p>
-    </div>
-  ))}
-</div>
+            <div className="feature-list-wrapper">
+              {product.key_features.map((feature, index) => (
+                <div key={index} className="feature-item">
+                  <div className="feature-icon-container">
+                    {/* Your icon image will now show without any background circle */}
+                    <img src={featureIcon} alt="icon" />
+                  </div>
+                  <p className="feature-list-text">{feature.text || feature}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="feature-image">
             <div className="slider-container">
-  <img
-    key={currentImgIndex}
-    src={product.screenshots[currentImgIndex]}
-    alt="screenshot"
-    className="fade-in" 
-  />
-</div>
+              <img
+                key={currentImgIndex}
+                src={product.screenshots[currentImgIndex]}
+                alt="screenshot"
+                className="fade-in"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-     {/* ===== BUSINESS BENEFITS ===== */}
-<section className="product-benefits">
+      {/* ===== BUSINESS BENEFITS ===== */}
+      <section className="product-benefits">
 
-   <h2 className="benifit-main-heading">Business Benefits</h2>
-            <p className="benifit-sub-title">Designed to be adopted by real-world businesses.</p>
- 
+        <h2 className="benifit-main-heading">Business Benefits</h2>
+        <p className="benifit-sub-title">Designed to be adopted by real-world businesses.</p>
 
-  <div className="container benefit-grid">
-    {product.benefits.map((benefit, index) => (
-      <div key={index} className="product-benefit-card">
-        {/* Use the actual image icon here */}
-        <div className="benefit-icon-wrapper">
-          <img src={benifit} alt="benefit icon" className="benefit-img-icon" />
+
+        <div className="container benefit-grid">
+          {product.benefits.map((benefit, index) => (
+            <div key={index} className="product-benefit-card">
+              {/* Use the actual image icon here */}
+              <div className="benefit-icon-wrapper">
+                <img src={benifit} alt="benefit icon" className="benefit-img-icon" />
+              </div>
+              <p className="benefit-text">{benefit}</p>
+            </div>
+          ))}
         </div>
-        <p className="benefit-text">{benefit}</p>
-      </div>
-    ))}
-  </div>
-</section>
-<TrainingJourney />
+      </section>
+      <TrainingJourney />
     </div>
   );
 };
