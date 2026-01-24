@@ -86,8 +86,7 @@ function Footer() {
             <div className="footer-menu-col">
               {/* <a href="#">Blog</a> */}
               <a href="/contact">Contact</a>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
+      
             </div>
           </div>
 
