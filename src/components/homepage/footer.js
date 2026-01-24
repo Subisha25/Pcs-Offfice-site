@@ -103,7 +103,8 @@ function Footer() {
               <span>CALL</span>
             </div>
             <p className="footer-call">
-              <a href="tel:+918754768231">+91 87547  68231</a><br />
+              <a href="tel:+919363375657">+91 93633 75657</a><br />
+              <a href="tel:+918754768231">+91 87547 68231</a><br />
               <a href="tel:+914633211620">04633 211620</a>
             </p>
 
