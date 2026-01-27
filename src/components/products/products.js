@@ -22,10 +22,13 @@ const Products = () => {
 </div>
 
         {productsData.map((product) => (
-          <div key={product.id} className="product-page-card">
-            <div className="product-page-image">
-              <img src={product.image} alt={product.title} />
-            </div>
+          <div key={product.id} className="product-page-card"   onClick={() => handleViewDetails(product.id)}>
+          <div
+  className="product-page-image"
+  onClick={() => handleViewDetails(product.id)}
+>
+  <img src={product.image} alt={product.title} />
+</div>
 
             <div className="product-page-content">
               <h2 className="product-page-title">{product.title}</h2>
