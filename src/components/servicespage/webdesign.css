@@ -1086,3 +1086,115 @@ font-family: "Playfair Display", serif;
     grid-template-columns: 1fr;
   }
 }
+
+
+@media (min-width: 992px) and (max-width: 1024px) {
+
+  /* 🔥 STOP flower animation layout */
+  .workprocess-scroll-area {
+    overflow: visible;
+  }
+
+  .workprocess-cards-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* 🔥 CARD RESET (absolute → normal) */
+  .workprocess-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none !important;
+
+    width: 100%;
+    height: auto;
+    min-height: 210px;
+
+    padding: 14px 12px;
+    border-radius: 14px;
+  }
+
+  /* 🔥 ICON SMALL */
+  .workprocess-icon-wrapper {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .workprocess-icon-wrapper img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 🔥 TITLE SMALL */
+  .workprocess-card-title {
+    font-size: 15px;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  /* 🔥 TEXT SMALL */
+  .workprocess-card-description {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  /* 🔥 DISABLE nth-child transforms */
+  .workprocess-card:nth-child(1),
+  .workprocess-card:nth-child(2),
+  .workprocess-card:nth-child(3),
+  .workprocess-card:nth-child(4) {
+    transform: none !important;
+  }
+}
+/* 🔧 FIX TITLE OVERLAP + CARD POSITION (1024px VIEW) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* title keezha space */
+  .workprocess-section {
+    padding-bottom: 120px;   /* 🔥 title clear-aa theriyum */
+  }
+
+  /* cards section keezha move */
+  .divider-card-container {
+    margin-top: 0 !important;
+  }
+
+  .workprocess-scroll-area {
+    margin-top: 60px;        /* 🔥 cards konjam keezha */
+    height: 360px;           /* 🔥 overlap avoid */
+  }
+
+  /* card size reduce */
+  .workprocess-card {
+    width: 220px;            /* 🔥 width kammi */
+    height: 250px;           /* 🔥 height kammi */
+    padding: 20px;
+  }
+
+  /* title size reduce */
+  .workprocess-card-title {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  /* description size reduce */
+  .workprocess-card-description {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  /* icon size reduce */
+  .workprocess-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 16px;
+  }
+}
+
+
