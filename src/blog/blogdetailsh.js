@@ -6,26 +6,45 @@ import api, { IMG_BASE_URL } from "../utils/api";
 
 const BlogDetails = () => {
   const { id } = useParams();
+
   const [blog, setBlog] = useState(null);
+  const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
+
+    // Fetch single blog
     api
       .get(`/blog/get_one.php?id=${id}`)
       .then((res) => {
         if (res.data.ok) {
           setBlog(res.data.data);
+        } else {
+          setBlog(null);
         }
-        setLoading(false);
       })
       .catch((err) => {
         console.log("Blog detail error", err);
-        setLoading(false);
-      });
+        setBlog(null);
+      })
+      .finally(() => setLoading(false));
+
+    // Fetch suggested blogs
+    api.get("/blog/list.php").then((res) => {
+      if (res.data.ok) {
+        setBlogs(res.data.data);
+      }
+    });
   }, [id]);
 
-  if (loading) return <p style={{ padding: "40px" }}>Loading...</p>;
-  if (!blog) return <h2>Blog not found</h2>;
+  if (loading) {
+    return <p style={{ padding: "40px" }}>Loading...</p>;
+  }
+
+  if (!blog) {
+    return <h2 style={{ padding: "40px" }}>Blog not found</h2>;
+  }
 
   return (
     <>
@@ -55,7 +74,7 @@ const BlogDetails = () => {
           <div className="article-content">
             <p className="intro-paragraph">{blog.description}</p>
 
-            {blog.sections.map((section) => (
+            {blog.sections?.map((section) => (
               <section key={section.id} className="content-section">
                 <h2 className="section-title">
                   {section.section_title}
@@ -69,10 +88,46 @@ const BlogDetails = () => {
         </article>
       </div>
 
-      {/* ===== BACK TO BLOG ===== */}
-      <div style={{ padding: "40px", textAlign: "center" }}>
-        <Link to="/blog">← Back to Blogs</Link>
-      </div>
+      {/* ===== SUGGESTED BLOGS ===== */}
+      <section className="blog-section">
+        <div className="blog-container">
+<h2 className="suggested-title">Suggested Blogs</h2>
+
+          <div className="blog-row">
+            {blogs
+              .filter((b) => b.id !== blog.id)
+              .slice(0, 3)
+              .map((b) => (
+                <Link
+                  to={`/blog/${b.id}`}
+                  className="blog-link"
+                  key={b.id}
+                >
+                  <div className="blog-card">
+                    <div className="blog-image">
+                      <img
+                        src={`${IMG_BASE_URL}${b.image}`}
+                        alt={b.title}
+                      />
+                    </div>
+
+                    <div className="blog-meta">
+                      <span>
+                        {new Date(b.created_at).toDateString()}
+                      </span>
+                      <span>•</span>
+                      <span>Blog</span>
+                      <span>•</span>
+                      <span>3 min read</span>
+                    </div>
+
+                    <h3 className="blog-title">{b.title}</h3>
+                  </div>
+                </Link>
+              ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css';
+import "./App.css";
+
 import Banner from "./components/homepage/banner";
 import Portfoliobanner from "./components/portfolio/portfoliobanner";
 import Header from "./components/homepage/header";
@@ -32,52 +33,126 @@ import TechLogoStrip from "./components/servicespage/teachstrip";
 import BlogPage from "./blog/BlogPage";
 import BlogDetails from "./blog/blogdetailsh";
 import CreateBlog from "./blog/createblog";
+import NotFound404 from "./components/NotFound404/NotFound404";
 
+/* 🔥 Layout WITH Header & Footer */
+const MainLayout = ({ children }) => {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Header />
 
       <Routes>
-        <Route path="/" element={<Banner />} />
-        <Route path="/aboutbanner" element={<AboutBanner />} />
+        {/* ✅ ALL NORMAL PAGES */}
+        <Route
+          path="/"
+          element={
+            <MainLayout>
+              <Banner />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/servicespage" element={<Services />} />
-        <Route path="/webdesign" element={<Webdesign />} />
-        <Route path="/appdesign" element={<Appdesign />} />
-        <Route path="/digitalmarketing" element={<DigitalMarketing />} />
-        <Route path="/branding" element={<Branding />} />
+        <Route
+          path="/aboutbanner"
+          element={
+            <MainLayout>
+              <AboutBanner />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/portfoliobanner" element={<Portfoliobanner />} />
-        <Route path="/lhome" element={<Lhome />} />
-        <Route path="/lecat" element={<Lecat />} />
-        <Route path="/collah" element={<Collah />} />
-        <Route path="/bjmm" element={<Bjmm />} />
-        <Route path="/wts" element={<Wts />} />
-        <Route path="/officechat" element={<Officechat />} />
-        <Route path="/msloan" element={<Mslone />} />
-        <Route path="/gracecabs" element={<GraceBanner />} />
-        <Route path="/pcstrainingsite" element={<TrainingHomeBanner />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/productdetails/:id" element={<ProductDetails />} />
+        <Route
+          path="/servicespage"
+          element={
+            <MainLayout>
+              <Services />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/learningJourneyPage" element={<LearningJourneyPage />} />
+        <Route
+          path="/webdesign"
+          element={
+            <MainLayout>
+              <Webdesign />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/teachstrip" element={<TechLogoStrip />} />
-        <Route path="/works" element={<Works />} />
-        <Route path="/contact" element={<ContactSection />} />
-        <Route path="/allcourses" element={<AllCourses />} />
-        <Route path="/coursedetails/:id" element={<CourseDetails />} />
+        <Route
+          path="/appdesign"
+          element={
+            <MainLayout>
+              <Appdesign />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/:id" element={<BlogDetails />} />
-        <Route path="/createblog" element={<CreateBlog />} />
+        <Route
+          path="/digitalmarketing"
+          element={
+            <MainLayout>
+              <DigitalMarketing />
+            </MainLayout>
+          }
+        />
 
+        <Route
+          path="/branding"
+          element={
+            <MainLayout>
+              <Branding />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/portfoliobanner"
+          element={
+            <MainLayout>
+              <Portfoliobanner />
+            </MainLayout>
+          }
+        />
+
+        <Route path="/lhome" element={<MainLayout><Lhome /></MainLayout>} />
+        <Route path="/lecat" element={<MainLayout><Lecat /></MainLayout>} />
+        <Route path="/collah" element={<MainLayout><Collah /></MainLayout>} />
+        <Route path="/bjmm" element={<MainLayout><Bjmm /></MainLayout>} />
+        <Route path="/wts" element={<MainLayout><Wts /></MainLayout>} />
+        <Route path="/officechat" element={<MainLayout><Officechat /></MainLayout>} />
+        <Route path="/msloan" element={<MainLayout><Mslone /></MainLayout>} />
+        <Route path="/gracecabs" element={<MainLayout><GraceBanner /></MainLayout>} />
+
+        <Route path="/training" element={<MainLayout><TrainingHomeBanner /></MainLayout>} />
+        <Route path="/products" element={<MainLayout><Products /></MainLayout>} />
+        <Route path="/productdetails/:id" element={<MainLayout><ProductDetails /></MainLayout>} />
+
+        <Route path="/learningJourneyPage" element={<MainLayout><LearningJourneyPage /></MainLayout>} />
+        <Route path="/teachstrip" element={<MainLayout><TechLogoStrip /></MainLayout>} />
+        <Route path="/works" element={<MainLayout><Works /></MainLayout>} />
+        <Route path="/contact" element={<MainLayout><ContactSection /></MainLayout>} />
+
+        <Route path="/allcourses" element={<MainLayout><AllCourses /></MainLayout>} />
+        <Route path="/coursedetails/:id" element={<MainLayout><CourseDetails /></MainLayout>} />
+
+        <Route path="/blog" element={<MainLayout><BlogPage /></MainLayout>} />
+        <Route path="/blog/:id" element={<MainLayout><BlogDetails /></MainLayout>} />
+        <Route path="/createblog" element={<MainLayout><CreateBlog /></MainLayout>} />
+
+        {/* ❌ WRONG URL – ONLY 404 PAGE */}
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
-
-      <Footer />
     </Router>
   );
 }

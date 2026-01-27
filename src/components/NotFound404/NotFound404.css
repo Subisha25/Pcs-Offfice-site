@@ -1,0 +1,97 @@
+.notfound-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px; /* 🔥 idhu dha main gap control */
+  padding: 0 60px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* LEFT SIDE */
+.notfound-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+}
+
+.errorlogo-img {
+  width: 140px;
+  margin-bottom: 32px;
+}
+
+.text-section {
+  width: 100%;
+}
+
+.error-code {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  color: #202124;
+}
+
+.error-text {
+  font-size: 16px;
+  margin: 12px 0 8px 0;
+  color: #202124;
+}
+
+.error-subtext {
+  font-size: 14px;
+  color: #5f6368;
+  line-height: 1.6;
+}
+
+/* RIGHT SIDE */
+.notfound-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.robot-img {
+  width: 360px;
+}
+
+/* ---------------- MOBILE RESPONSIVE ---------------- */
+
+@media (max-width: 768px) {
+  .notfound-wrapper {
+    flex-direction: column;
+    gap: 40px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .notfound-left {
+    align-items: center;
+  }
+
+  .robot-img {
+    width: 280px;
+  }
+}
+
+@media (max-width: 425px) {
+  .robot-img {
+    width: 240px;
+  }
+
+  .error-code {
+    font-size: 32px;
+  }
+
+  .error-subtext {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  .robot-img {
+    width: 200px;
+  }
+}

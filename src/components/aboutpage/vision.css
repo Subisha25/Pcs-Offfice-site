@@ -26,7 +26,7 @@
 
 .abt-sec-container {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 50%, #e0e7ff 100%);
   padding: 30px 16px;
   box-sizing: border-box;

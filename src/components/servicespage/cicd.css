@@ -1,26 +1,10 @@
 .cicd-final {
-  padding: 0px 50px 250px ;
-  background:white;
+  padding: 60px 50px 70px; /* 👈 bottom gap kammi */
+  background: white;
   text-align: center;
   font-family: Inter, sans-serif;
 }
-.hover-icon-wrap:hover .circle {
-  transform: scale(1.05);
-  transition: 0.2s ease;
-}
 
-.pipeline-wrap {
-  margin-top: 90px;
-  position: relative;
-}
-
-.cicd-subtext {
-  margin: 18px auto 60px;
-  font-size: 16px;
-  color: #6b7280; /* soft grey */
-  font-family: "WF Visual Sans";
-  font-weight: 600;
-}
 .cicd-heading {
   max-width: 720px;
   margin: 0 auto 60px;
@@ -38,316 +22,50 @@
 .cicd-heading .sub-text {
   font-size: 16px;
   line-height: 1.6;
-  color: #6b7280; /* light grey */
+  color: #6b7280;
   font-family: "WF Visual Sans";
   font-weight: 600;
 }
 
-/* Background boxes */
-.ci-bg {
-  position: absolute;
-  top: 10px;
-  left: 22%;
-  width: 40%;
-  height: 130px;
-  border: 2px dashed #ff6b6b;
-  border-radius: 18px;
-  background: #fff1f1;
-  
-}
-
-.cd-bg {
-  position: absolute;
-  top: 10px;
-  left: 64%; 
-  width: 32%;
-  height: 130px;
-  border: 2px dashed #20c997;
-  border-radius: 18px;
-  background: #e6fcf5;
-}
-
-
-.bg-title {
-  position: absolute;
-  top: -28px;
+.cicd-image-wrap {
   width: 100%;
-  font-weight: 600;
-}
-
-/* Main line */
-.main-line {
-  position: absolute;
-  top: 75px;            /* 👈 SAME as steps top */
-  left: 5%;
-  right: 9%;
-  height: 3px;
-  background: #1e1b4b;
-  z-index: 1;
-}
-
-
-/* Steps */
-.steps {
   display: flex;
-  justify-content: space-between;
-  margin: 0 3%;
-  position: relative;
-}
-
-.node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-}
-
-.circle {
-  width: 52px;
-  height: 52px;
-  background: #1e1b4b;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 2;
-}
-.circle svg {
-  width: 24px;
-  height: 24px;
-  color: #fff;
 }
 
-/* Left loop */
-.left-loop {
-  position: absolute;
-  left: 3%;
-  top: 165px;
-  display: flex;
-  flex-direction: column;   /* 👈 IMPORTANT */
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: #1e1b4b;
-  cursor: pointer;
-}
-
-.related-text {
-  font-weight: 500;
-}
-
-.related-icon {
-  width: 46px;
-  height: 46px;
-  background: #1e1b4b;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-}
-
-
-
-/* Monitor */
-.monitor {
-  position: absolute;
-  left: 80%;
-  top: 165px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;   /* 👈 IMPORTANT */
-  align-items: center;
-  gap: 6px;
-  color: #1e1b4b;
-  cursor: pointer;
-}
-
-
-.monitor svg {
-  width: 46px;
-  height: 46px;
-  background: #1e1b4b;
-  color: #fff;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.cicd-circle-img {
-  width: 26px;
-  height: 26px;
+.cicd-image {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
   object-fit: contain;
+  display: block; /* 👈 image keela inline gap fix */
 }
 
-.related-img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
-.steps {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 5%;
-  position: relative;
-  top: 49px;   /* 👈 icons-a line center ku kondu varum */
-}
-
-
-.ci-title,
-.cd-title {
-  position: absolute;
-  top: -48px;                 /* 👈 box mela */
-  font-size: 16px;
-  font-weight: 600;
-  background: #fafafa;
-  padding: 4px 14px;
-  border-radius: 14px;
-  z-index: 5;
-  white-space: nowrap;
-  font-family: "WF Visual Sans";
-}
-
-.ci-title {
-  left: 42%;
-  transform: translateX(-50%);
-}
-.cd-title {
-  left: 78%;
-  transform: translateX(-50%);
-}
-
-.monitor-code-line {
-  position: absolute;
-  bottom: -180px;        /* pipeline keela */
-  left: 1%;             /* code side */
-  width: 77%;           /* monitor varaikum */
-  pointer-events: none;
-  z-index: 0;
-}
-
-
-.related-commit-line {
-  position: absolute;
-  left: 8%;          /* related icon pakkam */
-  top: 125px;        /* related icon keela */
-  width: 140px;      /* commit varaikum */
-  pointer-events: none;
-  z-index: 1;
-}
-
-.monitor-production-line {
-  position: absolute;
-  right: 6%;          /* production pakkam align */
-  top: 135px;         /* monitor icon height ku match */
-  width: 160px;       /* figma size ku adjust pannalaam */
-  pointer-events: none;
-  z-index: 2;
-}
-
-
-
-.tooltip-wrap {
-  position: relative;
-}
-
-.tooltip-text {
-  position: absolute;
-  top: -38px;
-  background: #1e1b4b;
-  color: #fff;
-  padding: 4px 10px;
-  font-size: 12px;
-  border-radius: 6px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.2s ease;
-}
-
-.tooltip-wrap:hover .tooltip-text {
-  opacity: 1;
-}
-
-
-.hover-icon-wrap {
-  position: relative;
-  cursor:pointer;
-}
-
-.hover-icon-img {
-  position: absolute;
-  top: -52px;              /* icon mela */
-  width: 34px;
-  height: 34px;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: 0.25s ease;
-  pointer-events: none;
-}
-
-.hover-icon-wrap:hover .hover-icon-img {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-
-/* 📱 Mobile view CI/CD flow */
-@media (max-width: 768px) {
-
-  .pipeline-wrap {
-    margin-top: 40px;
+/* ---------- Mobile Views ---------- */
+@media (max-width: 425px) {
+  .cicd-final {
+    padding: 0px 16px 60px;
   }
 
-  .main-line {
-    display: none; /* mobile-la horizontal line venam */
+  .cicd-heading h2 {
+    font-size: 28px;
   }
 
-  .steps {
-    flex-direction: column;   /* 👈 keela keela varum */
-    align-items: center;
-    gap: 28px;
-    top: 0;
-    margin: 0;
+  .cicd-image {
+    max-width: 100%;
   }
+}
 
-  .node {
-    width: 100%;
+/* ---------- Tablet (768px) ---------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cicd-image {
+    max-width: 900px;
   }
+}
 
-  .circle {
-    width: 56px;
-    height: 56px;
+/* ---------- Laptop (1024px+) ---------- */
+@media (min-width: 1024px) {
+  .cicd-image {
+    max-width: 950px; /* 👈 laptop view la mattum konjam kammi */
   }
-
-  .circle svg {
-    font-size: 24px;
-  }
-
-  /* CI / CD boxes hide (optional) */
-  .ci-bg,
-  .cd-bg,
-  .ci-title,
-  .cd-title {
-    display: none;
-  }
-
-  /* left loop & monitor mobile-la keela move pannalaam */
-  .left-loop,
-  .monitor {
-    position: static;
-    margin-top: 30px;
-  }
-
-  /* connecting lines mobile-la hide */
-  .monitor-code-line,
-  .monitor-production-line,
-  .related-commit-line {
-    display: none;
-  }
-
 }

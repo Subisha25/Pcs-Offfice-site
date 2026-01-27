@@ -79,11 +79,8 @@
 /* Background wrapper */
 .contact-wrapper {
     background-color: #ffffff;
-
     width: 100%;
-
     padding: 100px 0 0px 0;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,15 +101,15 @@
 
 /* Main container (The Card) */
 .contact-container {
-    width: 90;
-    max-width: 1200px;
-
+    width: 90%;
+    max-width: 1440px;
     display: flex;
     background: var(--light-text);
     border-radius: 30px;
     overflow: hidden;
     padding: 0;
     margin-top: 35px;
+    margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -531,36 +528,53 @@
     }
 
     .contact-container {
-        width: 95%;
+        width: 90%;
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 25px;
+        display: flex;
+        flex-direction: row;
     }
 
     .left-section,
     .right-section {
         padding: 40px;
+        flex: 1;
+        width: auto;
+        height: auto;
+    }
+
+    .left-section {
+        width: auto;
+        height: auto;
     }
 
     .left-section .title {
-        font-size: 34px;
-        margin-bottom: 40px;
+        font-size: 32px;
+        margin-bottom: 35px;
     }
 
     .left-section .title .highlight {
-        font-size: 40px;
+        font-size: 38px;
     }
 
     .icon-box {
-        width: 70px;
-        height: 70px;
-        min-width: 70px;
+        width: 65px;
+        height: 65px;
+        min-width: 65px;
     }
 
     .benefit-card h4 {
-        font-size: 18px;
+        font-size: 17px;
+    }
+
+    .benefit-card p {
+        font-size: 13px;
     }
 
     .connect-title {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .nav-links a {
@@ -661,6 +675,14 @@
     .toggle-btn {
         font-size: 14px;
         padding: 11px;
+    }
+
+    .right-section {
+        order: 1;   /* ✅ FIRST */
+    }
+
+    .left-section {
+        order: 2;   /* ✅ SECOND */
     }
 }
 
@@ -1321,10 +1343,79 @@ font-weight: 300;
   }
 }
 /* ============================= */
-/* MOBILE + TABLET ORDER FIX     */
+/* 1024px LAYOUT - MAINTAIN SIDE BY SIDE */
 /* ============================= */
 
-@media (max-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1024px) {
+  .contact-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .left-section {
+    flex: 1;
+    width: auto;
+    height: auto;
+    padding: 40px 35px;
+  }
+
+  .right-section {
+    flex: 1;
+    width: auto;
+    padding: 40px 35px;
+  }
+
+  .left-section .title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .left-section .title .highlight {
+    font-size: 32px;
+  }
+
+  .benefit-card {
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+
+  .icon-box {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .benefit-card h4 {
+    font-size: 16px;
+  }
+
+  .benefit-card p {
+    font-size: 12px;
+  }
+
+  .connect-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .form-input,
+  .phone-number {
+    padding: 12px 14px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .phone-select {
+    padding: 12px;
+    font-size: 13px;
+  }
+}
+
+/* ============================= */
+/* MOBILE + TABLET ORDER FIX (Below 768px)   */
+/* ============================= */
+
+@media (max-width: 767px) {
   .contact-container {
     display: flex;
     flex-direction: column;
