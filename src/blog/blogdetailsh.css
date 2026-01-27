@@ -1,57 +1,56 @@
+/* =========================
+   BLOG DETAILS BASE
+========================= */
 .blog-details {
   background-color: #ffffff;
   min-height: 100vh;
+  width: 100%;
 }
 
-.blog-hero {
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/* =========================
+   BLOG IMAGE
+========================= */
+.blog-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 140px;
+  margin-bottom: 60px;
 }
 
-.blog-featured-image {
+.blog-centered-image {
   width: 100%;
-  height: 100%;
+  max-width: 1200px;
+  height: 420px;
   object-fit: cover;
+  border-radius: 24px;
 }
 
+/* =========================
+   ARTICLE LAYOUT (KEY FIX)
+========================= */
 .blog-article {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px 40px;
-}
-.suggested-title {
-    font-family: "WF Visual Sans";
-    font-weight: 600;
-    font-size: 28px;
-  position: relative;
-  margin-bottom: 30px;
-  margin-top: -130px;
+  width: 100%;
+  max-width: 1200px;      /* Wider for laptop */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 40px 80px;
 }
 
-.suggested-title::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, #FF006E, #764ba2);
-  border-radius: 2px;
-}
-
+/* =========================
+   ARTICLE HEADER
+========================= */
 .article-header {
   margin-bottom: 50px;
   border-bottom: 2px solid #f0f0f0;
   padding-bottom: 30px;
+  text-align: left;
 }
 
 .article-title {
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 20px;
+  line-height: 1.25;
+  margin-bottom: 18px;
   color: #1a1a1a;
   font-family: "WF Visual Sans";
 }
@@ -65,36 +64,49 @@
   align-items: center;
 }
 
+/* =========================
+   ARTICLE CONTENT (IMPORTANT)
+========================= */
 .article-content {
+  width: 100%;
+  max-width: 100%;
   font-size: 18px;
-  line-height: 1.8;
+  line-height: 1.9;
   color: #333;
+  text-align: left;
 }
 
+/* Intro paragraph full width */
 .intro-paragraph {
   font-size: 20px;
-  font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   color: #1a1a1a;
   font-family: "WF Visual Sans";
+  text-align: left;
+  max-width: 100%;
 }
 
+/* =========================
+   SECTIONS
+========================= */
 .content-section {
-  margin-bottom: 45px;
+  margin-bottom: 55px;
+  width: 100%;
 }
 
 .section-title {
   font-size: 28px;
   font-weight: 600;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   color: #1a1a1a;
+  font-family: "WF Visual Sans";
+  text-align: left;
   position: relative;
   padding-bottom: 12px;
-  
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -105,36 +117,37 @@
 }
 
 .section-text {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 20px;
- font-family: "WF Visual Sans";
- font-weight: 400;
+  font-size: 17px;
+  line-height: 1.85;
+  color: #444;
+  font-family: "WF Visual Sans";
+  font-weight: 400;
+  text-align: left;
+  max-width: 100%;
 }
 
-.section-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.section-list li {
-  padding-left: 30px;
-  margin-bottom: 16px;
+/* =========================
+   SUGGESTED BLOG TITLE ALIGN
+========================= */
+.suggested-title {
+  font-family: "WF Visual Sans";
+  font-weight: 600;
+  font-size: 28px;
   position: relative;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #555;
+  margin-bottom: 30px;
+  margin-top: -100px;
+  text-align: left;
 }
 
-.section-list li::before {
-  content: '✓';
+.suggested-title::after {
+  content: "";
   position: absolute;
+  bottom: -6px;
   left: 0;
-  color: #FF006E;
-  font-weight: bold;
-  font-size: 18px;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #FF006E, #764ba2);
+  border-radius: 2px;
 }
 
 /* Responsive */
