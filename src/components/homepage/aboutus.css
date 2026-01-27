@@ -324,4 +324,19 @@ min-height: 0px;
   .stats-container {
     flex-direction: column;
   }
+  
+}
+/* MOBILE: short & neat text */
+@media (max-width: 425px) {
+  .animated-text2 {
+    max-width: 280px;   /* 🔥 controls line count */
+    margin: 0 auto 16px;
+    text-align: center;
+  }
+
+  .animated-text2 .word {
+    font-size: 20px;    /* 🔥 smaller for compact look */
+    line-height: 1.2;  /* 🔥 tight spacing */
+    font-weight: 600;
+  }
 }

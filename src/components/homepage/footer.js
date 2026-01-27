@@ -42,9 +42,13 @@ function Footer() {
 
           {/* CENTER BLOCK → LOGO + ICONS */}
           <div className="footer-center">
-            <div className="footer-center-logo">
+            <div
+              className="footer-center-logo cursor-pointer"
+              onClick={() => navigate("/")}
+            >
               <img src={logoPcs} className="pcs-logo" alt="PCS" />
             </div>
+
 
             <div className="social-row">
               <a
@@ -92,7 +96,7 @@ function Footer() {
           </div>
 
         </div>
-        
+
         <div className="footer-divider" />
 
         {/* CONTACT BLOCKS */}
@@ -163,7 +167,7 @@ function Footer() {
           Copyright PCS Technology © {currentYear}.
           <span className="rights">All Rights Reserved</span>
         </p>
-        
+
       </div>
     </div>
   );

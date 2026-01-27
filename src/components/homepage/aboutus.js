@@ -127,19 +127,23 @@ export default function About() {
 
         <CommonTopTag />
 
-        <p className="animated-text2">
-          {paragraph.map((word, index) => (
-            <span
-              key={index}
-              className={`word 
-                  ${index < filledWords ? "filled" : ""} 
-                  ${word === "passionate" || word === "creatives" ? "gradient-word" : ""}
-                `}
-            >
-              {word + " "}
-            </span>
-          ))}
-        </p>
+<p className="animated-text2">
+  {paragraph.map((word, index) => (
+    <React.Fragment key={index}>
+      <span
+        className={`word 
+          ${index < filledWords ? "filled" : ""} 
+          ${word === "passionate" || word === "creatives" ? "gradient-word" : ""}
+        `}
+      >
+        {word + " "}
+      </span>
+
+     
+    </React.Fragment>
+  ))}
+</p>
+
 
         {/* COUNTER */}
         <div className="stats-container" ref={statsRef}>
