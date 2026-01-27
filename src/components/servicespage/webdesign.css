@@ -1167,7 +1167,6 @@ font-family: "Playfair Display", serif;
 
   .workprocess-scroll-area {
     margin-top: 60px;        /* 🔥 cards konjam keezha */
-    height: 360px;           /* 🔥 overlap avoid */
   }
 
   /* card size reduce */
