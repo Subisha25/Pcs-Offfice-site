@@ -168,35 +168,7 @@
   color: #666;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .workprocess {
-    padding: 50px 20px;
-  }
 
-  .workprocess-section {
-    padding: 40px 20px;
-  }
-
-  .animated-text {
-    font-size: 36px;
-    max-width: 700px;
-  }
-
-  .ourwork-main-heading {
-    font-size: 32px;
-  }
-
-
-  .workprocess-card-title {
-     font-family: "WF Visual Sans";
-  font-weight: 500;
-    font-size: 38px;
-  }
-
-  .workprocess-card-description {
-    font-size: 14px;
-  }
-}
 
 /* ================= MOBILE (up to 768px) ================= */
 @media (max-width: 767px) {
@@ -437,3 +409,101 @@
     margin-bottom: 16px;
   }
 }
+
+/* ================= TAB VIEW – FORCE ONE SCREEN (2x2) ================= */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* 🔥 WHOLE SECTION HEIGHT FIX */
+
+
+  /* 🔥 HEADING SECTION – NO SHAPE / GAP */
+  .workprocess-section {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .animated-text2 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 12px !important;
+  }
+
+  /* 🔥 NEGATIVE MARGIN KILL */
+  .divider-card-container {
+    margin: 0 !important;
+  }
+
+  /* 🔥 CARD AREA HEIGHT CONTROL */
+  .workprocess-scroll-area {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: calc(100vh - 120px);   /* 🔥 heading ku apram mattum */
+  }
+
+  /* 🔥 GRID – STRICT 2x2 */
+  .workprocess-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+
+    height: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* 🔥 CARD – IMAGE STYLE + FIXED */
+  .workprocess-card {
+    position: relative !important;
+    inset: 0 !important;
+    transform: none !important;
+
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+
+    border-radius: 14px;
+    background: #fcfcfd;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* ICON */
+  .workprocess-icon-wrapper {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 6px;
+  }
+
+  /* TITLE */
+  .workprocess-card-title {
+    font-size: 14px;
+    line-height: 1.15;
+    margin-bottom: 4px;
+  }
+
+  /* TEXT – HARD CUT */
+  .workprocess-card-description {
+    font-size: 12px;
+    line-height: 1.3;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* 🔥 FLOWER / TRANSFORM 100% OFF */
+  .workprocess-card:nth-child(1),
+  .workprocess-card:nth-child(2),
+  .workprocess-card:nth-child(3),
+  .workprocess-card:nth-child(4) {
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+  }
+}
+
+
