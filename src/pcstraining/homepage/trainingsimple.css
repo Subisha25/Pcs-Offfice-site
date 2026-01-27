@@ -507,3 +507,21 @@
 }
 
 
+@media (max-width: 425px) {
+  .animated-text2 {
+    max-width: 320px;     /* 🔥 idhu thaan main key */
+    margin: 0 auto;
+    text-align: center;
+
+    font-size: 22px;
+    line-height: 1.25;
+
+    white-space: normal;
+    word-break: normal;
+  }
+
+  .animated-text2 .word {
+    display: inline;
+  }
+}
+
