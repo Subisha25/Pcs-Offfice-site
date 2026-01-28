@@ -42,9 +42,13 @@ function Footer() {
 
           {/* CENTER BLOCK → LOGO + ICONS */}
           <div className="footer-center">
-            <div className="footer-center-logo">
+            <div
+              className="footer-center-logo cursor-pointer"
+              onClick={() => navigate("/")}
+            >
               <img src={logoPcs} className="pcs-logo" alt="PCS" />
             </div>
+
 
             <div className="social-row">
               <a
