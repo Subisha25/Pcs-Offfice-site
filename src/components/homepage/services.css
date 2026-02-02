@@ -63,11 +63,11 @@
 .strip-track {
   display: inline-flex;
   align-items: center;
-  gap: 35px;
+  gap: 5px;
   font-size: 18px;
   font-weight: 400;
   color: #000;
-  animation: scroll-left 18s linear infinite;
+  animation: scroll-left 22s linear infinite;
 }
 
 @keyframes scroll-left {
