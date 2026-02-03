@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import first from "../assets/services/1.png";
-import Second from "../assets/services/2.png";
-import Third from "../assets/services/3.png";
-import Four from "../assets/services/4.png";
+import first from "../assets/services/1.webp";
+import Second from "../assets/services/2.webp";
+import Third from "../assets/services/3.webp";
+import Four from "../assets/services/4.webp";
 import BackgroundImg from "../assets/services/backgroundImgae.webp";
-import ArrowImg from "../assets/services/arrow.png";
-import ServiceBtnImg from "../assets/allheadingicon/servicesicon.png";
+import ArrowImg from "../assets/services/arrow .webp";
+import ServiceBtnImg from "../assets/allheadingicon/servicesicon.webp";
 import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
 // import "./workprocess.css";

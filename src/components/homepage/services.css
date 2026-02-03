@@ -139,10 +139,12 @@
     animation: scroll-left 18s linear infinite;
   }
 
+  
+
   .services-strip .dot {
-    font-size: 20px;
-    margin: 0 6px;
-  }
+    font-size: 25px;
+    padding-left: 20px;
+}
 }
 
 /* Mobile Styles (576px and below) */
@@ -170,10 +172,7 @@
     animation: scroll-left 16s linear infinite;
   }
 
-  .services-strip .dot {
-    font-size: 18px;
-    margin: 0 5px;
-  }
+  
 }
 
 /* Extra Small Mobile (380px and below) */
@@ -194,10 +193,7 @@
     font-size: 11px;
   }
 
-  .services-strip .dot {
-    font-size: 16px;
-    margin: 0 4px;
-  }
+  
 }
 
 /* Small phones (320px - 425px) */
@@ -215,10 +211,7 @@
     -webkit-transform: translate3d(0,0,0);
     animation-play-state: running !important;
   }
-  .services-strip .dot {
-    font-size: 17px !important;
-    margin: 0 5px !important;
-  }
+
   /* Pause on touch (mobile friendly) */
   .services-strip.touching .strip-track {
     animation-play-state: paused !important;
@@ -247,10 +240,7 @@
     -webkit-transform: translate3d(0,0,0);
     animation-play-state: running !important;
   }
-  .services-strip .dot {
-    font-size: 17px;
-    margin: 0 5px;
-  }
+  
 }
 
 /* Respect reduced motion */

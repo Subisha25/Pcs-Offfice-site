@@ -1,9 +1,7 @@
 import React from "react";
 import "./cta.css";
 
-import enrollBg from "../assets/footer/enroll-bg.png";       // button bg
-import arrowIcon from "../assets/footer/arrow.png";          // arrow
-import enrollCircle from "../assets/cta/ctaCircle.png"; // circle
+
 import CommonButton from "../common/button";
 import { Link, useNavigate } from "react-router-dom";
 

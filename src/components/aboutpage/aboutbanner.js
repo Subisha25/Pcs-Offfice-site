@@ -10,7 +10,7 @@ import CTASection from "../homepage/cta";
 const Aboutbanner = () => {
   return (
     <>
-      <div className="about-banner">
+      <div className="about-banner-banner">
         <h1 className="about-title">
           A B O U T&nbsp;&nbsp; U S
         </h1>

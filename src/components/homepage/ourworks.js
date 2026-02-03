@@ -3,8 +3,7 @@
 
 
 import React, { useEffect, useRef, useState } from "react";
-import tagicon from "../assets/allheadingicon/ourWorkicon.png";
-import Arrow from "../assets/arrow.png";
+import tagicon from "../assets/allheadingicon/ourWorkicon.webp";
 import CommonTopTag from "../common/toptag";
 import "./aboutus.css";
 import "./ourworks.css";
