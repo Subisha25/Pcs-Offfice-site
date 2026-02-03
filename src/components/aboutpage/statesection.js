@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./statesection.css";
-import stateImg from "../assets/Rectangle 3.png";
+import stateImg from "../assets/Rectangle 3.webp";
 
 const StatsSection = () => {
   const [counts, setCounts] = useState({
@@ -80,7 +80,7 @@ const StatsSection = () => {
     <div className="stats-section" ref={sectionRef}>
 
       <div className="banner-wrapper">
-        <img src={stateImg} alt="Banner" className="banner-img" />
+        <img src={stateImg} alt="Banner" className="banner-img" loading="lazy" />
       </div>
 
       <div className="stats-heading">

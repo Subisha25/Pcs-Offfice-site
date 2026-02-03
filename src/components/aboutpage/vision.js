@@ -1,9 +1,9 @@
 
 import React, { useState } from "react";
 import "./vision.css";
-import Arrow from "../assets/arrow.png";
-import tagicon from "../assets/allheadingicon/servicesicon.png";
-import Image from "../assets/aboutimg.jpeg";
+import Arrow from "../assets/arrow.webp";
+import tagicon from "../assets/allheadingicon/servicesicon.webp";
+import Image from "../assets/aboutimg.webp";
 import CommonTopTag from "../common/toptag";
 import CommonButton from "../common/button";
 import { Link, useNavigate } from "react-router-dom";
