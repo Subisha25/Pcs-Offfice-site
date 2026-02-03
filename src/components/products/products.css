@@ -366,3 +366,23 @@ font-family: "WF Visual Sans";
     font-size: 14px;
   }
 }
+
+@media (max-width: 425px) {
+
+  .product-page-heading h1 {
+    font-size: clamp(26px, 7vw, 28px) !important;
+    line-height: 1.25 !important;
+    margin-top: 40px !important;
+    text-align: center;
+  }
+
+  .product-page-heading h1 .heading-normal {
+    font-size: inherit !important;
+  }
+
+  /* execution word */
+  .product-page-heading h1 span[style*="Playfair"] {
+    font-size: clamp(28px, 7.5vw, 30px) !important;
+    line-height: 1.25 !important;
+  }
+}
