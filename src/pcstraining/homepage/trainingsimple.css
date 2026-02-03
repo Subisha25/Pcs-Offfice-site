@@ -214,8 +214,8 @@
   }
 
   .workprocess-icon-wrapper {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-bottom: 20px;
   }
 
@@ -252,7 +252,7 @@
   .workprocess-card-title {
       font-family: "WF Visual Sans";
   font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .workprocess-card-description {

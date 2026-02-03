@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import "./workprocess.css";
 import "./aboutus.css";
 
-import Globe from "../assets/workprocess/Group 1.png";
-import Server from "../assets/workprocess/Group 2.png";
-import BookOpen from "../assets/workprocess/Group 3.png";
-import TrendingUp from "../assets/workprocess/Group 4.png";
-import tagicon from "../assets/allheadingicon/ourWorkicon.png";
+import Globe from "../assets/workprocess/Group1.webp";
+import Server from "../assets/workprocess/Group2.webp";
+import BookOpen from "../assets/workprocess/Group3.webp";
+import TrendingUp from "../assets/workprocess/Group4.webp";
+import tagicon from "../assets/allheadingicon/ourWorkicon.webp";
 import CommonTopTag from "../common/toptag";
 
 export default function WorkProcess() {

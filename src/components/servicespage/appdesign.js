@@ -1,17 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
-import tagicon from "../assets/allheadingicon/ourWorkicon.png";
+import tagicon from "../assets/allheadingicon/ourWorkicon.webp";
 
 import Mockup from "../assets/appdevelop.jpg";
 import Team from "../assets/mobileapp.webp";
-import Result from "../assets/mobile-app.png";
 
-import Whychoose from "../assets/whychoose.png";
 import Discover from "../assets/discovers.png";
 import Deliver from "../assets/deliver.png";
 import Create from "../assets/create.png";
 import Grow from "../assets/grow.png";
-import CicdImg from "../assets/cicd/cicd.png";
 
 import CTASection from "../homepage/cta";
 import CommonTopTag from "../common/toptag";

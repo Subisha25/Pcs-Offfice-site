@@ -1,8 +1,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import "./aboutus.css";
-import tagicon from "../assets/Union.png";
-import Arrow from "../assets/arrow.png";
+import Arrow from "../assets/arrow.webp";
 import CommonTopTag from "../common/toptag";
 import { useNavigate } from "react-router-dom";
 

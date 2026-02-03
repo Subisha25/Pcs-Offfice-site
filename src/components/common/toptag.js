@@ -1,5 +1,5 @@
 import React from "react";
-import tagicon from "../assets/allheadingicon/abouticon.png"; // adjust path if needed
+import tagicon from "../assets/allheadingicon/abouticon.webp"; // adjust path if needed
 import '../homepage/aboutus.css';
 export default function CommonTopTag({ text = "About", icon }) {
   return (
