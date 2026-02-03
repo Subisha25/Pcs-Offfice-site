@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./purpose.css";
 import tagicon from "../assets/allheadingicon/ourWorkicon.png";
 
-import Whychoose from '../assets/whychoose.png';
 import Discover from '../assets/discovers.png';
 import Deliver from '../assets/deliver.png';
 import Create from '../assets/create.png';

@@ -70,9 +70,7 @@
   align-items: flex-start; /* left */
   gap: 16px;
 }
-.animated-text2 {
-  margin-top: -40px;
-}
+
 .benefits-cards-section {
    margin-top: -50px !important;
 }
