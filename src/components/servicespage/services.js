@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import first from "../assets/services/1.png";
-import Second from "../assets/services/2.png";
-import Third from "../assets/services/3.png";
-import Four from "../assets/services/4.png";
+import first from "../assets/services/1.webp";
+import Second from "../assets/services/2.webp";
+import Third from "../assets/services/3.webp";
+import Four from "../assets/services/4.webp";
 import BackgroundImg from "../assets/services/backgroundImgae.webp";
-import ArrowImg from "../assets/services/arrow.png";
+import ArrowImg from "../assets/services/arrow.webp";
 import ServiceBtnImg from "../assets/services/tool.png";
 import CommonTopTag from '../common/toptag';
 import { useNavigate } from "react-router-dom";
@@ -129,51 +129,6 @@ const ServicesSection = () => {
       backgroundAttachment: 'scroll'
     }}>
 
-
-      {/* <div className="services-header" style={{
-        textAlign: 'center',
-        marginBottom: '60px',
-        position: 'relative',
-        zIndex: 1
-      }}>
-        <CommonTopTag text='Services' icon={ServiceBtnImg} />
-
-        <h1
-          className="services-title"
-          style={{
-            fontFamily: "WF Visual Sans",
-            fontSize: '48px',
-            fontWeight: '500',
-            fontStyle: 'Medium',
-            color: '#1a1a2e',
-            lineHeight: '60px',
-            letterSpacing: "1%",
-            maxWidth: '900px',
-            margin: '0 auto',
-            textAlign: "center"
-          }}
-        >
-          From idea to{" "}
-          <span
-            style={{
-              fontFamily: "Playfair Display",
-              fontWeight: '600',
-              fontStyle: 'italic',
-              fontSize: '54px',
-              lineHeight: '60px',
-              letterSpacing: "1%",
-              background: "linear-gradient(90deg, #03045E 0%, #FF006E 100%)",
-              WebkitBackgroundClip: "text",
-              color: "transparent"
-            }}
-          >
-            execution
-          </span>{" "}
-          we've
-          <br />
-          got you covered
-        </h1>
-      </div> */}
     <div className="workprocess-section" style={{ padding: '20px 20px 60px 20px' }}>
 <div
   className="container"
