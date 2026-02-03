@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect, useRef } from "react";
 import "./header.css";
 import logo from "../assets/logo.png";
