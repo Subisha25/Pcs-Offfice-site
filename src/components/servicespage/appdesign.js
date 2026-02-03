@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
 import tagicon from "../assets/allheadingicon/ourWorkicon.webp";
 
-import Mockup from "../assets/appdevelop.jpg";
+import Mockup from "../assets/appdevelop.webp";
 import Team from "../assets/mobileapp.webp";
 
 import Discover from "../assets/discovers.png";

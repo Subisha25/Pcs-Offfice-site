@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Banner from "./components/homepage/banner";
-import Portfoliobanner from "./components/portfolio/portfoliobanner";
 import Header from "./components/homepage/header";
 import AboutBanner from "./components/aboutpage/aboutbanner";
 import Footer from "./components/homepage/footer";
@@ -17,14 +16,6 @@ import Products from "./components/products/products";
 import LearningJourneyPage from "./components/contact/banner";
 import ProductDetails from "./components/products/productdetails";
 import Works from "./components/works/work";
-import GraceBanner from "./components/portfolio/gracecabs";
-import Mslone from "./components/portfolio/msloan";
-import Officechat from "./components/portfolio/officechat";
-import Wts from "./components/portfolio/wts";
-import Bjmm from "./components/portfolio/bjmm";
-import Collah from "./components/portfolio/collah";
-import Lecat from "./components/portfolio/lecat";
-import Lhome from "./components/portfolio/lhome";
 import ContactSection from "./components/contact/banner";
 import ScrollToTop from "./components/scrolltotop";
 import AllCourses from "./pcstraining/homepage/allcourses";
@@ -116,23 +107,9 @@ function App() {
           }
         />
 
-        <Route
-          path="/portfoliobanner"
-          element={
-            <MainLayout>
-              <Portfoliobanner />
-            </MainLayout>
-          }
-        />
 
-        <Route path="/lhome" element={<MainLayout><Lhome /></MainLayout>} />
-        <Route path="/lecat" element={<MainLayout><Lecat /></MainLayout>} />
-        <Route path="/collah" element={<MainLayout><Collah /></MainLayout>} />
-        <Route path="/bjmm" element={<MainLayout><Bjmm /></MainLayout>} />
-        <Route path="/wts" element={<MainLayout><Wts /></MainLayout>} />
-        <Route path="/officechat" element={<MainLayout><Officechat /></MainLayout>} />
-        <Route path="/msloan" element={<MainLayout><Mslone /></MainLayout>} />
-        <Route path="/gracecabs" element={<MainLayout><GraceBanner /></MainLayout>} />
+
+
 
         <Route path="/training" element={<MainLayout><TrainingHomeBanner /></MainLayout>} />
         <Route path="/products" element={<MainLayout><Products /></MainLayout>} />
