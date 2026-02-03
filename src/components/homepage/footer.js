@@ -1,18 +1,18 @@
 import React from "react";
 import "./footer.css";
 
-import bgFooter from "../assets/footer/footer-bg.png";
-import logoPcs from "../assets/footer/logo.png";
-import iconFacebook from "../assets/footer/fb.png";
-import iconLinkedin from "../assets/footer/linkedin.png";
-import iconInstagram from "../assets/footer/insta.png";
-import iconCall from "../assets/footer/call-red.png";
-import iconMail from "../assets/footer/mail-red.png";
-import iconLocation from "../assets/footer/pin-red.png";
-import iconPin from "../assets/footer/learn-icon.png";
-import enrollBg from "../assets/footer/enroll-bg.png";       // big button shape
-import arrowIcon from "../assets/footer/arrow.png";          // arrow
-import enrollCircle from "../assets/footer/enroll-circle.png"; // if circle is an image
+import bgFooter from "../assets/footer/footer-bg.webp";
+import logoPcs from "../assets/footer/logo.webp";
+import iconFacebook from "../assets/footer/fb.webp";
+import iconLinkedin from "../assets/footer/linkedin.webp";
+import iconInstagram from "../assets/footer/insta.webp";
+import iconCall from "../assets/footer/call-red.webp";
+import iconMail from "../assets/footer/mail-red.webp";
+import iconLocation from "../assets/footer/pin-red.webp";
+import iconPin from "../assets/footer/learn-icon.webp";
+import enrollBg from "../assets/footer/enroll-bg.webp";       // big button shape
+import arrowIcon from "../assets/footer/arrow (1).webp";          // arrow
+import enrollCircle from "../assets/footer/enroll-circle.webp"; // if circle is an image
 import { useNavigate } from "react-router-dom";
 
 function Footer() {

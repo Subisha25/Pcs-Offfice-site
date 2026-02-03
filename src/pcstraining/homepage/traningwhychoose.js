@@ -1,11 +1,11 @@
 import React from "react";
 import "./traningwhychoose.css";
-import journey1 from '../assets/journey1.png';
-import journey2 from '../assets/journey2.png';
-import journey3 from '../assets/journey3.png';
-import journey4 from '../assets/journey4.png';
+import journey1 from '../assets/journey1.webp';
+import journey2 from '../assets/journey2.webp';
+import journey3 from '../assets/journey3.webp';
+import journey4 from '../assets/journey4.webp';
 // Change this import to your actual image path
-import LearnImg from "../assets/journey.png";
+import LearnImg from "../assets/journey.webp";
 
 const features = [
   {

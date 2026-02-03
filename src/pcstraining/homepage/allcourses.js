@@ -3,9 +3,9 @@ import "./traningpopular.css";
 import coursedata from "./coursedata";
 
 // Change these image imports to your actual paths
-import CourseImg1 from "../assets/popular1.png";
-import CourseImg2 from "../assets/popular2.png";
-import CourseImg3 from "../assets/popular3.png";
+import CourseImg1 from "../assets/popular1.webp";
+import CourseImg2 from "../assets/popular2.webp";
+import CourseImg3 from "../assets/popular3.webp";
 import CommonButton from "../../components/common/button";
 import { Link, useNavigate } from "react-router-dom";
 

@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./banner.css";
-import Header from "./header";
-import Arrow from "../assets/arrow.png";
+
 import About from "./aboutus";
 import Products from "./products";
 import ServicesSection from "./services";
 import OurWorkExplore from "./ourworks";
-import Portfoliobanner from "../portfolio/portfoliobanner";
 import WorkProcess from "./workprocess";
 import CTASection from "./cta";
-import Footer from "./footer";
 import WordAnimation from "./ProjectSlider";
-import Benefits from "../aboutpage/benefits";
 import CommonButton from "../common/button";
 import { Navigate, useNavigate } from "react-router-dom";
 import WhiteBg from "../assets/bannerwhite bg.png";

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import ourWorksBg from "../assets/journey.png";
+import ourWorksBg from "../assets/journey.webp";
 import "./trainingsimple.css";
-import Globe from "../assets/simple1.png";
-import Server from "../assets/simple2.png";
-import BookOpen from "../assets/simple3.png";
-import TrendingUp from "../assets/simple4.png";
+import Globe from "../assets/simple1.webp";
+import Server from "../assets/simple2.webp";
+import BookOpen from "../assets/simple3.webp";
+import TrendingUp from "../assets/simple4.webp";
 
 export default function TrainingSimple() {
   const cardsRef = useRef(null);

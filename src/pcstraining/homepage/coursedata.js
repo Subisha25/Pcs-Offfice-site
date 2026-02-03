@@ -1,18 +1,18 @@
 
-import CourseImg1 from "../assets/popular1.png";
-import CourseImg2 from "../assets/popular2.png";
-import CourseImg3 from "../assets/popular3.png";
-import CourseImg4 from "../assets/popular2.png";
-import CourseImg5 from "../assets/popular2.png";
-import CourseImgAI from "../assets/AI image.jpg";
-import CourseImgDM from "../assets/digital marketing.jpg";
-import CourseImgJava from "../assets/java.jpg";
+import CourseImg1 from "../assets/popular1.webp";
+import CourseImg2 from "../assets/popular2.webp";
+import CourseImg3 from "../assets/popular3.webp";
+import CourseImg4 from "../assets/popular2.webp";
+import CourseImg5 from "../assets/popular2.webp";
+import CourseImgAI from "../assets/AI image.webp";
+import CourseImgDM from "../assets/digital marketing.webp";
+import CourseImgJava from "../assets/java.webp";
 import htmlIcon from "../../components/assets/teach/html.svg";
 import cssIcon from "../../components/assets/teach/css.svg";
 import jsIcon from "../../components/assets/teach/js.svg";
 import reactIcon from "../../components/assets/teach/react.svg";
 import nodeIcon from "../../components/assets/teach/node.svg";
-import expressIcon from "../../components/assets/teach/expressjs.png";
+import expressIcon from "../../components/assets/teach/expressjs.webp";
 import mongoIcon from "../../components/assets/teach/mongodb-svgrepo-com.svg";
 import gitIcon from "../../components/assets/teach/git.svg";
 import vscodeIcon from "../../components/assets/teach/vscode.svg";
@@ -31,8 +31,8 @@ import xcode from "../../components/assets/teach/xcode.svg";
 import firebase from "../../components/assets/teach/firebase.svg";
 import numpy from "../../components/assets/teach/numpy.svg";
 import pandas from "../../components/assets/teach/pandas.svg";
-import Matplotlib from "../../components/assets/teach/Matplotlib.png";
-import scikitlearn from "../../components/assets/teach/scikitlearn.png";
+import Matplotlib from "../../components/assets/teach/Matplotlib.webp";
+import scikitlearn from "../../components/assets/teach/scikitlearn.webp";
 import keras from "../../components/assets/teach/keras.svg";
 import jupyter from "../../components/assets/teach/jupyter.svg";
 import googleanalytics from "../../components/assets/teach/googleanalytics.svg";
@@ -41,17 +41,17 @@ import googlesearchcons from "../../components/assets/teach/googlesearchcons.svg
 import facebookads from "../../components/assets/teach/facebook.svg";
 import canva from "../../components/assets/teach/canva.svg";
 import mailchimp from "../../components/assets/teach/mailchimp.svg";
-import semrush from "../../components/assets/teach/semrush.png";
+import semrush from "../../components/assets/teach/semrush.webp";
 import ahrefs from "../../components/assets/teach/ahrefs.webp";
 import java from "../../components/assets/teach/java.svg";
-import springboot1 from "../../components/assets/teach/springboot1.png";
+import springboot1 from "../../components/assets/teach/springboot1.webp";
 import hibernate from "../../components/assets/teach/hibernate.svg";
 import Mysql from "../../components/assets/teach/mysql-svgrepo-com.svg";
 import maven from "../../components/assets/teach/maven-svgrepo-com.svg";
 import IntelliJ from "../../components/assets/teach/intellij-idea-svgrepo-com.svg";
-import developer from "../../components/assets/prerequisites/career.png";
-import WhyBasicComputer from "../../components/assets/prerequisites/pre.png"
-import students from "../../components/assets/prerequisites/whocanjion.png"
+import developer from "../../components/assets/prerequisites/career.webp";
+import WhyBasicComputer from "../../components/assets/prerequisites/pre.webp"
+import students from "../../components/assets/prerequisites/whocanjion.webp"
 const coursedata = [
 
   {
