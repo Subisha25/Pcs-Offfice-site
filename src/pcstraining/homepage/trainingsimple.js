@@ -93,9 +93,7 @@ useEffect(() => {
       {/* ===== ABOUT ===== */}
       <div className="workprocess-section" ref={sectionRef}>
         <div className="container">
-
-
-          {/* <p className="animated-text">
+         {/* <p className="animated-text">
             {paragraph.map((word, index) => (
               <span
                 key={index}

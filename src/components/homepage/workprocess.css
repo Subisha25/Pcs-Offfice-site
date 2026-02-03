@@ -322,21 +322,9 @@
   }
 }
 
-
-@media (max-width: 425px) {
-  .animated-text2 {
-    max-width: 300px;     /* 🔥 KEY POINT */
-    margin: 0 auto;
-    text-align: center;
-
-    font-size: 22px;
-    line-height: 1.25;
-
-    white-space: normal;
-    word-break: normal;
-  }
-
-  .animated-text2 .word {
-    display: inline;      /* 🔥 inline-block vendam */
+@media (max-width: 768px) {
+  .workprocess-cards-grid {
+    margin: 0;   /* 🔥 idhu romba important */
   }
 }
+
