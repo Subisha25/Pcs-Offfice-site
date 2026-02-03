@@ -42,7 +42,7 @@ import facebookads from "../../components/assets/teach/facebook.svg";
 import canva from "../../components/assets/teach/canva.svg";
 import mailchimp from "../../components/assets/teach/mailchimp.svg";
 import semrush from "../../components/assets/teach/semrush.png";
-import ahrefs from "../../components/assets/teach/ahref.png";
+import ahrefs from "../../components/assets/teach/ahrefs.webp";
 import java from "../../components/assets/teach/java.svg";
 import springboot1 from "../../components/assets/teach/springboot1.png";
 import hibernate from "../../components/assets/teach/hibernate.svg";

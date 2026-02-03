@@ -6,7 +6,7 @@ import CommonButton from "../../components/common/button";
 import React, { useState } from "react";
 import homeicon from "../../components/assets/prerequisites/home.png"
 import { FiTarget } from "react-icons/fi";
-import prereqIcon from "../../components/assets/teach/prereq.png";
+import prereqIcon from "../../components/assets/teach/prereq.webp";
 
 const CourseDetails = () => {
   const { id } = useParams();
