@@ -3,10 +3,10 @@ import "./products.css";
 import tagicon from "../assets/Group 15.svg";
 import arrow from "../assets/Vector.svg";
 // Add images for each product
-import billingImage from "../assets/Rectangle 47.png";
-import lmsImage from "../assets/lms.jpg";
-import ecommerceImage from "../assets/ecommerce.jpg";
-import tailoringImage from "../assets/tailoring.jpg";
+import billingImage from "../assets/Rectangle 47.webp";
+import lmsImage from "../assets/lms.webp";
+import ecommerceImage from "../assets/ecommerce.webp";
+import tailoringImage from "../assets/tailoring.webp";
 import FeedbackSection from "./feedback.js";
 import CommonTopTag from "../common/toptag.js";
 import { useNavigate } from "react-router-dom";

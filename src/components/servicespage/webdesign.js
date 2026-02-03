@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { GitBranch, GitCommit, Package, TestTube, Network, Eye, Layers, Box, Monitor, Terminal } from 'lucide-react';
 
 import "./webdesign.css";
 import "../homepage/workprocess.css";
 
-import tagicon from "../assets/allheadingicon/ourWorkicon.png";
+import tagicon from "../assets/allheadingicon/ourWorkicon.webp";
 
 import Mockup from "../assets/servicebanner.png";
 import Team from "../assets/service1.png";

@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./ProjectSlider.css";
 
-import img1 from "../assets/explore/PCS-PROJECT-IMG-TS1.jpg";
-import img2 from "../assets/explore/PCS-PROJECT-IMG-GC2.jpg";
-import img3 from "../assets/explore/PCS-PROJECT-IMG-LH3.jpg";
-import img4 from "../assets/explore/PCS-PROJECT-IMG-NI4.jpg";
+import img1 from "../assets/explore/PCS-PROJECT-IMG-TS1.webp";
+import img2 from "../assets/explore/PCS-PROJECT-IMG-GC2.webp";
+import img3 from "../assets/explore/PCS-PROJECT-IMG-LH3.webp";
+import img4 from "../assets/explore/PCS-PROJECT-IMG-NI4.webp";
 import CommonButton from "../common/button";
 
 const projects = [
