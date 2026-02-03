@@ -167,7 +167,7 @@ export default function About() {
 
           <div className="stat-item">
             <div className="stat-number">
-              {countValue >= 50 ? "50+" : `${countValue}+`}
+              {countValue >= 20 ? "20+" : `${countValue}+`}
             </div>
             <div className="stat-label">Successful Projects</div>
 

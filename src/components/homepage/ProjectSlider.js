@@ -11,7 +11,7 @@ const projects = [
   { id: 1, title: "World Tamil Siragam", image: img1, url: "https://worldtamilsiragam.com/" },
   { id: 2, title: "Grace Cabs", image: img2, url: "https://gracecabs.com/" },
   { id: 3, title: "Lhome", image: img3, url: "https://lhome.co.in/" },
-  { id: 4, title: "Nibras", image: img4, url: "https://www.nibrasconsulting.com/" },
+  { id: 4, title: "Nibras", image: img4, url: "https://www.nibrasconsulting.com/"},
 ];
 
 
@@ -196,7 +196,13 @@ rafRef.current = requestAnimationFrame(() => {
 
             return (
               <div className={`ps-slide ${cls}`} key={proj.id}>
-                <img className="ps-img" src={proj.image} alt={proj.title} />
+<img
+  className="ps-img"
+  src={proj.image}
+  alt={proj.title}
+  loading="lazy"
+  decoding="async"
+/>
                 <div className="ps-overlay" />
 
                 <div className="ps-text">

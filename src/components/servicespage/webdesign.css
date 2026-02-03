@@ -592,7 +592,7 @@ font-family: "Playfair Display", serif;
 
 
   .sw-offer-section {
-    margin: 160px auto 0;
+    margin: 160px auto 20;
     gap: 140px;
   }
 
@@ -638,7 +638,7 @@ font-family: "Playfair Display", serif;
 
   .sw-offer-section {
     gap: 80px;
-    margin: 120px auto 0;
+    margin: 120px auto 80px;
   }
 
   .sw-result {

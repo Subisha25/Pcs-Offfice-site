@@ -31,9 +31,9 @@ const features = [
 ];
 
 const stats = [
-  { number: "2K+", label: "Happy Learners" },
+  { number: "1K+", label: "Happy Learners" },
   { number: "99%", label: "Success Rate" },
-  { number: "100+", label: "Projects Delivered" },
+  { number: "50+", label: "Collage Projects" },
   { number: "6+", label: "Experience" },
 ];
 

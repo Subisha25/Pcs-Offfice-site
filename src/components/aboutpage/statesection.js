@@ -36,7 +36,7 @@ const StatsSection = () => {
         if (entries[0].isIntersecting) {
           const targets = {
             projects: 10,
-            growth: 70,
+            growth: 95,
             clients: 10,
           };
 
@@ -107,7 +107,7 @@ const StatsSection = () => {
           </div>
           {/* description section */}
           <p className="desc">
-            We’ve successfully completed over 50 projects—and we’re just getting started!
+            We’ve successfully completed over 10+ projects—and we’re just getting started!
           </p>
         </div>
 
@@ -117,7 +117,7 @@ const StatsSection = () => {
             <p className="title">Business Growth</p>
           </div>
           <p className="desc">
-            Our strategies have helped clients achieve up to 70% revenue growth in just one year.
+            Our strategies have helped clients achieve up to 95% revenue growth in just one year.
           </p>
         </div>
 
@@ -127,7 +127,7 @@ const StatsSection = () => {
             <p className="title">Happy Clients</p>
           </div>
           <p className="desc">
-            More than 52 satisfied clients trust us to bring their ideas to life.
+            More than 10+ satisfied clients trust us to bring their ideas to life.
           </p>
         </div>
       </div>

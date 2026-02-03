@@ -63,7 +63,7 @@
 .strip-track {
   display: inline-flex;
   align-items: center;
-  gap: 35px;
+  gap: 5px;
   font-size: 18px;
   font-weight: 400;
   color: #000;
@@ -82,7 +82,7 @@
 /* Dots style */
 .services-strip .dot {
   font-size: 25px;
-  margin: 0 10px;
+  padding-left: 80px;
 }
 
 /* Hover Stop Scroll */
@@ -110,10 +110,7 @@
     animation: scroll-left 20s linear infinite;
   }
 
-  .services-strip .dot {
-    font-size: 22px;
-    margin: 0 8px;
-  }
+
 }
 
 /* Tablet - Small (768px and below) */
@@ -140,8 +137,9 @@
   }
 
   .services-strip .dot {
-    font-size: 20px;
-    margin: 0 6px;
+    font-size: 16px;
+    margin: 0 4px;
+    padding-left: 20px;
   }
 }
 
@@ -197,6 +195,7 @@
   .services-strip .dot {
     font-size: 16px;
     margin: 0 4px;
+    padding-left: 20px;
   }
 }
 
@@ -215,5 +214,10 @@
     width: 100%;
     height: 0.5px;
     background: #7D7D7D; /* same border color */
+  }
+   .services-strip .dot {
+    font-size: 16px;
+    margin: 0 4px;
+    padding-left: 20px;
   }
 }

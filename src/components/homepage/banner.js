@@ -90,7 +90,7 @@ const Navigate = useNavigate();
                 </div>
                 Let’s Discuss
               </button> */}
-              <button className="btn-link"  onClick={() => Navigate("/pcstrainingsite")}>Learn Something</button>
+              <button className="btn-link"  onClick={() => Navigate("/training")}>Learn Something</button>
             </div>
           </div>
         </div>
