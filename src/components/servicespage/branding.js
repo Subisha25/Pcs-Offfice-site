@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import "./webdesign.css";
 import tagicon from "../assets/allheadingicon/ourWorkicon.webp";
 
-import Mockup from "../assets/brand.jpg";
-import Team from "../assets/brand3.avif";
+import Mockup from "../assets/brand.webp";
+import Team from "../assets/brand3.webp";
 
 import Discover from "../assets/discovers.png";
 import Deliver from "../assets/deliver.png";

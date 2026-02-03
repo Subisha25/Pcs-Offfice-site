@@ -1,5 +1,5 @@
 import "./cicd.css";
-import cicdImg from "../assets/cicd/cicd.png";
+import cicdImg from "../assets/cicd/cicd.webp";
 
 export default function CICDFlowFinal() {
   return (
