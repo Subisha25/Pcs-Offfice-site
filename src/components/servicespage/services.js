@@ -129,57 +129,57 @@ const ServicesSection = () => {
       backgroundAttachment: 'scroll'
     }}>
 
-    <div className="workprocess-section" style={{ padding: '20px 20px 60px 20px' }}>
-<div
-  className="container"
-  style={{
-    marginTop: '60px',   // 🔥 heading keela move aagum
-    position: 'relative',
-    zIndex: '10'
-  }}
->
+      <div className="workprocess-section" style={{ padding: '20px 20px 60px 20px' }}>
+        <div
+          className="container"
+          style={{
+            marginTop: '60px',   // 🔥 heading keela move aagum
+            position: 'relative',
+            zIndex: '10'
+          }}
+        >
 
-<h1
-  style={{
-    fontFamily: "WF Visual Sans",
-    fontSize: '54px',          // 🔼 MAIN SIZE (others)
-    fontWeight: '500',
-    color: '#1a1a2e',
-    lineHeight: '64px',
-    letterSpacing: '1%',
-    maxWidth: '900px',
-    margin: '0 auto',
-    textAlign: 'center'
-  }}
->
-  <span className="heading-normal">
-    From idea to{" "}
-  </span>
+          <h1
+            style={{
+              fontFamily: "WF Visual Sans",
+              fontSize: '54px',          // 🔼 MAIN SIZE (others)
+              fontWeight: '500',
+              color: '#1a1a2e',
+              lineHeight: '64px',
+              letterSpacing: '1%',
+              maxWidth: '900px',
+              margin: '0 auto',
+              textAlign: 'center'
+            }}
+          >
+            <span className="heading-normal">
+              From idea to{" "}
+            </span>
 
-  <span
-    style={{
-      fontFamily: "Playfair Display",
-      fontWeight: '600',
-      fontStyle: 'italic',
-      fontSize: '56px',       // ❌ execution size SAME
-      background: 'linear-gradient(90deg, #03045E 0%, #FF006E 100%)',
-      WebkitBackgroundClip: 'text',
-      color: 'transparent'
-    }}
-  >
-    execution
-  </span>
+            <span
+              style={{
+                fontFamily: "Playfair Display",
+                fontWeight: '600',
+                fontStyle: 'italic',
+                fontSize: '56px',       // ❌ execution size SAME
+                background: 'linear-gradient(90deg, #03045E 0%, #FF006E 100%)',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent'
+              }}
+            >
+              execution
+            </span>
 
-  <span className="heading-normal">
-    {" "}we’ve got you
-    <br />
-    covered
-  </span>
-</h1>
+            <span className="heading-normal">
+              {" "}we’ve got you
+              <br />
+              covered
+            </span>
+          </h1>
 
 
-  </div>
-</div>
+        </div>
+      </div>
 
       <div className="services-grid" style={{
         display: 'grid',
@@ -200,12 +200,12 @@ const ServicesSection = () => {
           const descriptionColor = isHovered ? '#ffffff' : '#7D7D7D';
 
           return (
-        <div
-  key={index}
-  className={`service-card ${isHovered ? 'active' : ''}`}
-  onClick={() => navigate(service.route)}   // 👈 FULL CARD CLICK
-  onMouseEnter={() => !isMobile && setActiveCard(index)}
-  onMouseLeave={() => !isMobile && setActiveCard(null)}
+            <div
+              key={index}
+              className={`service-card ${isHovered ? 'active' : ''}`}
+              onClick={() => navigate(service.route)}   // 👈 FULL CARD CLICK
+              onMouseEnter={() => !isMobile && setActiveCard(index)}
+              onMouseLeave={() => !isMobile && setActiveCard(null)}
 
 
 
@@ -297,7 +297,7 @@ const ServicesSection = () => {
               {/* Image section */}
               <div
                 className="card-image"
-                
+
                 style={{
                   position: 'absolute',
                   borderRadius: '25px',
@@ -392,7 +392,7 @@ const ServicesSection = () => {
       </div>
 
       {/* Media Queries - unchanged */}
-         <style jsx>{`
+      <style jsx>{`
 
 
 .card-title,
@@ -652,7 +652,7 @@ const ServicesSection = () => {
 
     
       `}</style>
-          <TechLogoStrip />
+      <TechLogoStrip />
 
     </div>
   );
