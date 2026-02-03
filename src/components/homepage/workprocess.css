@@ -6,7 +6,7 @@
 
 .workprocess-section {
   font-family: "WF Visual Sans" !important;
-  padding: 80px 40px;   
+  padding: 60px 40px;   
   display: flex;
   justify-content: center;
   text-align: center;
@@ -327,4 +327,6 @@
     margin: 0;   /* 🔥 idhu romba important */
   }
 }
+
+
 

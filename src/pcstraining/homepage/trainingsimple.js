@@ -128,14 +128,34 @@ useEffect(() => {
             ref={cardsRef}
             className={`workprocess-cards-grid ${animate ? "cards-open" : ""}`}
           >
-            <Card img={Globe} title="Certified" sub="Course"
-              text="listening and learning—diving deep into your brand, audience, and goals to uncover insights that shape every decision." />
-            <Card img={Server} title="Internship" sub="Program"
-              text="we craft bold ideas and transform them into designs, stories, and experiences that resonate." />
-            <Card img={BookOpen} title="Inplant" sub="Training"
-              text="we ensure every detail is polished, impactful, and aligned with your vision for lasting results." />
-            <Card img={TrendingUp} title="Student" sub="Projects"
-              text="We don’t stop at the launch. We analyze performance, gather feedback, and fine-tune to ensure your brand keeps evolving and thriving in the digital landscape." />
+            <Card
+  img={Globe}
+  title="Certified"
+  sub="Course"
+  text="Job-ready skills with strong fundamentals."
+/>
+
+<Card
+  img={Server}
+  title="Internship"
+  sub="Program"
+  text="Real industry exposure with hands-on work."
+/>
+
+<Card
+  img={BookOpen}
+  title="Inplant"
+  sub="Training"
+  text="Practical learning inside real companies."
+/>
+
+<Card
+  img={TrendingUp}
+  title="Student"
+  sub="Projects"
+  text="Projects that boost skills and confidence."
+/>
+
           </div>
         </div>
       </div>
