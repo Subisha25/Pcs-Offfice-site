@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./banner.css";
 import { User, Activity, Briefcase, Award, Users, Target, Clock, CheckCircle, Sparkles, X } from "lucide-react";
-import bgBanner from "../assets/contact/cantactbanner.png";
+import bgBanner from "../assets/contact/cantactbanner.webp";
 import StateSection from "./statesection";
 import { useLocation } from "react-router-dom";
 import CommonButton from "../common/button";
