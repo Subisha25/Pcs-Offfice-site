@@ -24,9 +24,10 @@
 
 .workprocess-card-description {
   font-family: "WF Visual Sans";
-  font-size: 14px;          /* optional */
+  font-size: 14px;
+  /* optional */
   font-weight: 400;
-  color:#555;
+  color: #555;
 }
 
 .purpose-container {
@@ -37,6 +38,7 @@
       #02468126 45%,
       #03045e1a 100%);
 }
+
 .webdesign-p {
   font-family: "WF Visual Sans";
   font-weight: 550;
@@ -45,6 +47,7 @@
   letter-spacing: 1%;
   text-align: center;
 }
+
 .highlight-result {
   /* color: #00008B;
  font-family: Playfair Display;
@@ -56,7 +59,7 @@ line-height: 60px;
 letter-spacing: 1%;
 text-align: center; */
 
-font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
   font-style: italic;
   font-weight: 600;
   background: linear-gradient(90deg, #03045E 100%, #FF006E 100%);
@@ -125,11 +128,13 @@ font-family: "Playfair Display", serif;
 .sw-banner-wrapper {
   position: relative;
   margin-top: -140px;
-  height: auto !important;   /* 🔥 THIS FIXES ALL VIEWS */
+  height: auto !important;
+  /* 🔥 THIS FIXES ALL VIEWS */
 }
 
 .sw-header {
-  padding-bottom: clamp(260px, 35vw, 420px);  /* 🔥 KEY FIX */
+  padding-bottom: clamp(260px, 35vw, 420px);
+  /* 🔥 KEY FIX */
 }
 
 
@@ -161,9 +166,10 @@ font-family: "Playfair Display", serif;
   padding: 0 20px;
   font-size: 16px;
 
-    position: relative;
+  position: relative;
   margin-top: clamp(40px, 12vw, 0px);
-    text-align: center;     /* 🔥 CENTER */
+  text-align: center;
+  /* 🔥 CENTER */
   margin-left: auto;
   margin-right: auto;
 }
@@ -195,7 +201,7 @@ font-family: "Playfair Display", serif;
   gap: 120px;
   align-items: center;
   flex-wrap: wrap;
-  
+
 }
 
 
@@ -237,12 +243,12 @@ font-family: "Playfair Display", serif;
 .sw-offer-list li {
   font-family: "WF Visual Sans";
   margin-bottom: 10px;
- font-size: 16px;
+  font-size: 16px;
   font-weight: 600;
   color: #7d7d7d;
   line-height: 1.5;
-    position: relative;
-  padding-left: 18px;  
+  position: relative;
+  padding-left: 18px;
 }
 
 
@@ -250,10 +256,12 @@ font-family: "Playfair Display", serif;
   content: "";
   position: absolute;
   left: 0;
-  top: 8px;                  /* 🔥 vertical align */
+  top: 8px;
+  /* 🔥 vertical align */
   width: 6px;
   height: 6px;
-  background-color: #ff006e; /* 🔥 pink dot */
+  background-color: #ff006e;
+  /* 🔥 pink dot */
   border-radius: 50%;
 }
 
@@ -265,7 +273,7 @@ font-family: "Playfair Display", serif;
 .sw-cicd-section {
   max-width: 1150px;
   margin: 60px auto;
-  padding:  0px 20px;
+  padding: 0px 20px;
 
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -292,8 +300,10 @@ font-family: "Playfair Display", serif;
 /* IMAGE GRID */
 .sw-cicd-images img {
   width: 100%;
-  aspect-ratio: 16 / 9;      /* 🔥 BIG & RESPONSIVE */
-  object-fit: contain;         /* 🔥 full card fill */
+  aspect-ratio: 16 / 9;
+  /* 🔥 BIG & RESPONSIVE */
+  object-fit: contain;
+  /* 🔥 full card fill */
   object-position: center;
 
   border-radius: 14px;
@@ -310,6 +320,7 @@ font-family: "Playfair Display", serif;
 
 /* 🔥 FINAL MOBILE SPACE FIX ABOVE CI/CD IMAGE */
 @media (max-width: 480px) {
+
   /* reduce gap from previous section */
   .sw-offer-section {
     margin-bottom: 0 !important;
@@ -327,7 +338,7 @@ font-family: "Playfair Display", serif;
     margin-top: 0 !important;
   }
 
-    /* remove section gap */
+  /* remove section gap */
   .sw-cicd-section {
     margin-top: 0 !important;
     padding-top: 0 !important;
@@ -335,7 +346,8 @@ font-family: "Playfair Display", serif;
 
   /* pull image upward */
   .sw-cicd-images {
-    margin-top: -20px;   /* 🔥 THIS IS THE KEY */
+    margin-top: -20px;
+    /* 🔥 THIS IS THE KEY */
   }
 
   /* fix image sizing conflict */
@@ -345,33 +357,62 @@ font-family: "Playfair Display", serif;
     display: block;
     margin-top: -90px;
   }
+
   .sw-offer-content {
-  font-family: "WF Visual Sans";
-  text-align: left;
+    font-family: "WF Visual Sans";
+    text-align: left;
+  }
 }
+
+/* Mobile-only tighter spacing for the offer section.
+   Added as a new helper class so existing classes remain unchanged. */
+@media (max-width: 480px) {
+  .sw-offer-section.sw-mobile-tight {
+    margin: 24px auto !important;
+    gap: 18px !important;
+  }
+
+  .sw-offer-section.sw-mobile-tight .sw-offer-img-box {
+    flex-basis: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .sw-offer-section.sw-mobile-tight .sw-offer-content {
+    flex-basis: 100% !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .sw-offer-section.sw-mobile-tight .sw-offer-img {
+    margin-top: 0 !important;
+  }
 }
 
 /* ✅ CI/CD MOBILE ORDER FIX */
 @media (max-width: 768px) {
   .sw-cicd-section {
-    display: flex;          /* 🔥 grid → flex */
+    display: flex;
+    /* 🔥 grid → flex */
     flex-direction: column;
-    
+
   }
- /* 🔥 REMOVE SPACE ABOVE CI/CD IMAGE (MOBILE ONLY) */
-@media (max-width: 768px) {
-  .sw-cicd-section {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+
+  /* 🔥 REMOVE SPACE ABOVE CI/CD IMAGE (MOBILE ONLY) */
+  @media (max-width: 768px) {
+    .sw-cicd-section {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
   }
-}
 
   .sw-cicd-images {
-    order: 1;               /* 👈 IMAGE FIRST */
+    order: 1;
+    /* 👈 IMAGE FIRST */
   }
 
   .sw-cide-content {
-    order: 2;               /* 👈 CONTENT NEXT */
+    order: 2;
+    /* 👈 CONTENT NEXT */
   }
 }
 
@@ -386,16 +427,19 @@ font-family: "Playfair Display", serif;
   .sw-cicd-images {
     grid-template-columns: 1fr 1fr;
   }
-   .sw-banner {
-    top: 70px;   /* slightly less sticky pull */
+
+  .sw-banner {
+    top: 70px;
+    /* slightly less sticky pull */
   }
-  
+
 }
 
 
 @media (max-width: 480px) {
   .sw-cicd-images {
-    grid-template-columns: 1fr; /* mobile-la one image per row */
+    grid-template-columns: 1fr;
+    /* mobile-la one image per row */
   }
 
   .sw-cicd-images img {
@@ -504,6 +548,7 @@ font-family: "Playfair Display", serif;
 [data-animate] {
   transition-delay: var(--delay, 0s);
 }
+
 /* ===== CI/CD FLOW DESIGN (IMAGE 1 STYLE) ===== */
 
 .cicd-flow-section {
@@ -511,6 +556,7 @@ font-family: "Playfair Display", serif;
   padding: 80px 0;
   background: #ffffff;
 }
+
 .cicd-title {
   font-size: 36px;
   font-weight: 700;
@@ -524,6 +570,7 @@ font-family: "Playfair Display", serif;
   color: #555;
   line-height: 1.6;
 }
+
 .cicd-flow-image {
   width: 100%;
   display: flex;
@@ -537,15 +584,22 @@ font-family: "Playfair Display", serif;
   object-fit: contain;
   border-radius: 16px;
 }
+
 .cicd-wrapper {
   -webkit-overflow-scrolling: touch;
 }
 
 /* Custom animation to make the arrows look active */
 @keyframes loopRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
+
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .cicd-title {
@@ -582,6 +636,7 @@ font-family: "Playfair Display", serif;
     font-size: 16px;
     max-width: 700px;
   }
+
   /* .sw-description {
   font-family: "WF Visual Sans";
   max-width: 645px;
@@ -829,9 +884,11 @@ font-family: "Playfair Display", serif;
   .sw-result-title {
     font-size: 20px;
   }
-.purpose-container {
- padding: 0px 0px 70px;
-}
+
+  .purpose-container {
+    padding: 0px 0px 70px;
+  }
+
   .sw-offer-list li,
   .sw-result-text li {
     font-size: 14px;
@@ -854,8 +911,10 @@ font-family: "Playfair Display", serif;
     max-height: 300px;
   }
 }
+
 @media (max-width: 425px) {
-/* SCROLL / DATA ANIMATIONS */
+
+  /* SCROLL / DATA ANIMATIONS */
   [data-animate],
   [data-animate="fade-right"],
   [data-animate="fade-left"],
@@ -863,6 +922,7 @@ font-family: "Playfair Display", serif;
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+
   }
 
   /* WORD / TEXT ANIMATIONS */
@@ -876,7 +936,7 @@ font-family: "Playfair Display", serif;
   .sw-banner-img {
     display: none;
   }
-  
+
 
   /* GLOBAL SAFETY (just in case) */
   * {
@@ -884,6 +944,7 @@ font-family: "Playfair Display", serif;
     transition-duration: 0s !important;
     scroll-behavior: auto !important;
   }
+
   /* GLOBAL SPACING */
   .purpose-container {
     padding: clamp(30px, 6vw, 70px) 0;
@@ -904,13 +965,13 @@ font-family: "Playfair Display", serif;
   }
 
   /* BANNER */
-.sw-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .sw-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 
   .sw-banner-wrapper {
@@ -926,14 +987,15 @@ font-family: "Playfair Display", serif;
     margin-top: 50px;
   }
 
- 
 
-    .sw-description {
-        font-size: clamp(13px, 3.5vw, 15px);
-        padding: 0 14 20px;
-        margin-top: 28px;
-        line-height: 1.7;
-        margin-top: 120px;}
+
+  .sw-description {
+    font-size: clamp(13px, 3.5vw, 15px);
+    padding: 0 14 20px;
+    margin-top: 28px;
+    line-height: 1.7;
+    margin-top: 120px;
+  }
 
   /* OFFER SECTION */
   .sw-offer-section {
@@ -946,6 +1008,7 @@ font-family: "Playfair Display", serif;
 
   .sw-offer-title {
     font-size: clamp(18px, 5vw, 22px);
+
   }
 
   .sw-offer-list li {
@@ -959,7 +1022,7 @@ font-family: "Playfair Display", serif;
     margin-top: clamp(40px, 10vw, 70px);
     padding: 0 28px;
     text-align: center;
-    
+
   }
 
   .sw-result-title {
@@ -974,22 +1037,24 @@ font-family: "Playfair Display", serif;
     max-height: clamp(220px, 60vw, 320px);
     margin-top: 20px;
   }
-  .webdesign-p {
-  font-family: "WF Visual Sans";
-  font-weight: 550;
-  font-size: 28px;
-  margin-top: -20px;
-}
-.highlight-result {
 
-font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-weight: 600;
-  background: linear-gradient(90deg, #03045E 100%, #FF006E 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+  .webdesign-p {
+    font-family: "WF Visual Sans";
+    font-weight: 550;
+    font-size: 28px;
+    margin-top: -20px;
+  }
+
+  .highlight-result {
+
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 600;
+    background: linear-gradient(90deg, #03045E 100%, #FF006E 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 
@@ -1009,7 +1074,8 @@ font-family: "Playfair Display", serif;
   }
 
   .sw-result-img-box {
-    order: 2; /* 👈 image keezha */
+    order: 2;
+    /* 👈 image keezha */
   }
 
   .sw-result-img {
@@ -1019,6 +1085,7 @@ font-family: "Playfair Display", serif;
     display: block;
   }
 }
+
 /* ================= MOBILE (320px–425px) NO ANIMATION ================= */
 
 
@@ -1032,8 +1099,8 @@ font-family: "Playfair Display", serif;
     margin-top: -100px;
   }
 
- 
-   .sw-banner-img {
+
+  .sw-banner-img {
     max-width: 80%;
     border-radius: 14px;
     transform: scale(1);
@@ -1051,7 +1118,7 @@ font-family: "Playfair Display", serif;
 }
 
 
-.result-box{
+.result-box {
   padding-bottom: 80px;
 }
 
@@ -1065,7 +1132,8 @@ font-family: "Playfair Display", serif;
 
 .workprocess-cards-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* default: 4 per row on desktop */
+  grid-template-columns: repeat(4, 1fr);
+  /* default: 4 per row on desktop */
   gap: 30px;
 }
 
@@ -1074,11 +1142,12 @@ font-family: "Playfair Display", serif;
   .workprocess-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-      .workprocess-card-title {
-        font-family: "WF Visual Sans";
-        font-weight: 500;
-        font-size: 18px;
-    }
+
+  .workprocess-card-title {
+    font-family: "WF Visual Sans";
+    font-weight: 500;
+    font-size: 18px;
+  }
 }
 
 /* Mobile view: 1 card per row */
@@ -1153,12 +1222,14 @@ font-family: "Playfair Display", serif;
     transform: none !important;
   }
 }
+
 /* 🔧 FIX TITLE OVERLAP + CARD POSITION (1024px VIEW) */
 @media (min-width: 768px) and (max-width: 1024px) {
 
   /* title keezha space */
   .workprocess-section {
-    padding-bottom: 120px;   /* 🔥 title clear-aa theriyum */
+    padding-bottom: 120px;
+    /* 🔥 title clear-aa theriyum */
   }
 
   /* cards section keezha move */
@@ -1167,13 +1238,16 @@ font-family: "Playfair Display", serif;
   }
 
   .workprocess-scroll-area {
-    margin-top: 60px;        /* 🔥 cards konjam keezha */
+    margin-top: 60px;
+    /* 🔥 cards konjam keezha */
   }
 
   /* card size reduce */
   .workprocess-card {
-    width: 220px;            /* 🔥 width kammi */
-    height: 250px;           /* 🔥 height kammi */
+    width: 220px;
+    /* 🔥 width kammi */
+    height: 250px;
+    /* 🔥 height kammi */
     padding: 20px;
   }
 
@@ -1194,6 +1268,23 @@ font-family: "Playfair Display", serif;
     width: 36px;
     height: 36px;
     margin-bottom: 16px;
+  }
+}
+
+
+/* 🔥 MOBILE – KILL GAP BELOW WHAT WE OFFER (REAL FIX) */
+@media (max-width: 480px) {
+
+  /* OFFER SECTION bottom FULL CUT */
+  .sw-offer-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* CICD SECTION TOP FULL CUT */
+  .cicd-flow-section {
+    padding-top: 0px !important;
+    margin-top: -20px !important;
   }
 }
 
