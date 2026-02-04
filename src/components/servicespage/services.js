@@ -128,7 +128,7 @@ const ServicesSection = () => {
       padding: '60px 40px',
       backgroundAttachment: 'scroll'
     }}>
-
+       {/* header section */}
       <div className="workprocess-section" style={{ padding: '20px 20px 60px 20px' }}>
         <div
           className="container"
@@ -140,6 +140,7 @@ const ServicesSection = () => {
         >
 
           <h1
+          className="mobile-hero-heading"
             style={{
               fontFamily: "WF Visual Sans",
               fontSize: '54px',          // 🔼 MAIN SIZE (others)
@@ -152,7 +153,7 @@ const ServicesSection = () => {
               textAlign: 'center'
             }}
           >
-            <span className="heading-normal">
+            <span className="heading-normal line">
               From idea to{" "}
             </span>
 
@@ -171,9 +172,9 @@ const ServicesSection = () => {
             </span>
 
             <span className="heading-normal">
-              {" "}we’ve got you
-              <br />
-              covered
+              {" "}we’ve got you covered
+              {/* <br /> */}
+              
             </span>
           </h1>
 
