@@ -364,6 +364,30 @@ text-align: center; */
   }
 }
 
+/* Mobile-only tighter spacing for the offer section.
+   Added as a new helper class so existing classes remain unchanged. */
+@media (max-width: 480px) {
+  .sw-offer-section.sw-mobile-tight {
+    margin: 24px auto !important;
+    gap: 18px !important;
+  }
+
+  .sw-offer-section.sw-mobile-tight .sw-offer-img-box {
+    flex-basis: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .sw-offer-section.sw-mobile-tight .sw-offer-content {
+    flex-basis: 100% !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .sw-offer-section.sw-mobile-tight .sw-offer-img {
+    margin-top: 0 !important;
+  }
+}
+
 /* ✅ CI/CD MOBILE ORDER FIX */
 @media (max-width: 768px) {
   .sw-cicd-section {
@@ -1246,3 +1270,22 @@ text-align: center; */
     margin-bottom: 16px;
   }
 }
+
+
+/* 🔥 MOBILE – KILL GAP BELOW WHAT WE OFFER (REAL FIX) */
+@media (max-width: 480px) {
+
+  /* OFFER SECTION bottom FULL CUT */
+  .sw-offer-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* CICD SECTION TOP FULL CUT */
+  .cicd-flow-section {
+    padding-top: 0px !important;
+    margin-top: -20px !important;
+  }
+}
+
+

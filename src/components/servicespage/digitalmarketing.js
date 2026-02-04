@@ -274,7 +274,7 @@ Our goal is to build websites that truly represent your brand and drive results.
           Effective digital marketing is more than campaigns—it’s about creating meaningful connections with your audience. We craft strategies that combine creativity, analytics, and smart technology, ensuring every touchpoint drives engagement, builds trust, and converts visitors into loyal customers. From social media to search engine campaigns, we design experiences that inspire action and deliver measurable results.        </p>
 
         {/* STEP 2: What We Offer Section */}
-        <div className="sw-offer-section">
+        <div className="sw-offer-section sw-mobile-tight">
           <div
             className="sw-offer-img-box"
             data-animate="fade-right"

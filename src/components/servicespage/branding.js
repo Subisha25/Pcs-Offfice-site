@@ -269,7 +269,7 @@ export default function Branding() {
           A strong brand is more than a logo—it’s an experience your audience remembers. We deliver branding and creative services that combine strategy with creativity, ensuring every touchpoint feels memorable, engaging, and purposeful. From visual identity to storytelling, we craft experiences that inspire trust, build loyalty, and set your brand apart.        </p>
 
         {/* STEP 2: What We Offer Section */}
-        <div className="sw-offer-section">
+        <div className="sw-offer-section sw-mobile-tight">
           <div
             className="sw-offer-img-box"
             data-animate="fade-right"
