@@ -239,3 +239,13 @@
     transition: none;
   }
 }
+
+/* 🔥 FINAL MOBILE HEADING UP FIX */
+@media (max-width: 767px) {
+  .heading-mobile-fix {
+    margin-top: -60px !important;
+    padding-top: 0 !important;
+  }
+}
+
+

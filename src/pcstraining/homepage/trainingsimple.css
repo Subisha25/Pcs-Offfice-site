@@ -4,7 +4,9 @@
 .learning-heading {
   text-align: center;
 }
-
+.training-heading-wrapper{
+    margin-top: -90px;
+  }
 .learning-heading .line1 {
   display: block;
   font-size: 40px;
@@ -254,6 +256,10 @@
   .workprocess-card-description {
     font-size: 13px;
   }
+
+   .training-heading-wrapper{
+    margin-top: -40px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1024px) {
@@ -458,6 +464,15 @@
 }
 
 
+/* 🔥 MOBILE ONLY – TITLE TOP SPACE REMOVE */
+@media (max-width: 767px) {
+  .mobile-tight {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 
-
-
+  .mobile-tight .animated-text2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}

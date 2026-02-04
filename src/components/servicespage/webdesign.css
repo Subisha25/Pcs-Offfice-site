@@ -345,6 +345,10 @@ font-family: "Playfair Display", serif;
     display: block;
     margin-top: -90px;
   }
+  .sw-offer-content {
+  font-family: "WF Visual Sans";
+  text-align: left;
+}
 }
 
 /* ✅ CI/CD MOBILE ORDER FIX */
@@ -870,9 +874,7 @@ font-family: "Playfair Display", serif;
 
   /* BANNER IMAGE ANIMATION */
   .sw-banner-img {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
+    display: none;
   }
   
 
@@ -924,13 +926,14 @@ font-family: "Playfair Display", serif;
     margin-top: 50px;
   }
 
-  /* DESCRIPTION */
-  .sw-description {
-    font-size: clamp(13px, 3.5vw, 15px);
-    padding: 0 14px;
-    margin-top: 28px;
-    line-height: 1.7;
-  }
+ 
+
+    .sw-description {
+        font-size: clamp(13px, 3.5vw, 15px);
+        padding: 0 14 20px;
+        margin-top: 28px;
+        line-height: 1.7;
+        margin-top: 120px;}
 
   /* OFFER SECTION */
   .sw-offer-section {
@@ -1029,9 +1032,7 @@ font-family: "Playfair Display", serif;
     margin-top: -100px;
   }
 
-  .sw-description {
-    margin-top: 20px;
-  }
+ 
    .sw-banner-img {
     max-width: 80%;
     border-radius: 14px;

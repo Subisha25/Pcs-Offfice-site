@@ -105,19 +105,28 @@ useEffect(() => {
               </span>
             ))}
           </p> */}
-          <p className="animated-text2">
-            {paragraph.map((word, index) => (
-              <span
-                key={index}
-                className={`word 
-                  ${index < filledWords ? "filled" : ""} 
-                  ${word === "simple," ? "gradient-word" : ""}
-                `}
-              >
-                {word + " "}
-              </span>
-            ))}
-          </p>
+       <div className="workprocess-section">
+  <div className="container">
+
+<div className="training-heading-wrapper heading-mobile-fix" ref={sectionRef}>
+      <p className="animated-text2">
+        {paragraph.map((word, index) => (
+          <span
+            key={index}
+            className={`word 
+              ${index < filledWords ? "filled" : ""} 
+              ${word === "simple," ? "gradient-word" : ""}
+            `}
+          >
+            {word + " "}
+          </span>
+        ))}
+      </p>
+    </div>
+
+  </div>
+</div>
+
 
         </div>
       </div>
