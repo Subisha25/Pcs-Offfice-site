@@ -295,8 +295,8 @@
 /* Remove all background, borders, and circles from the icon container */
 .feature-icon-container {
   flex-shrink: 0;
-  width: 35px; /* Matches your icon size */
-  height: 35px;
+  width: 30px; /* Matches your icon size */
+  height: 30px;
   background: transparent; /* Forces background to be invisible */
   border: none;            /* Removes any borders */
   border-radius: 0;        /* Removes the roundness */
