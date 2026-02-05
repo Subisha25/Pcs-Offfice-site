@@ -1,13 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import "./webdesign.css";
 import "../homepage/workprocess.css";
-
 import tagicon from "../assets/allheadingicon/ourWorkicon.webp";
-
 import Mockup from "../assets/servicebanner.webp";
 import Team from "../assets/service1.webp";
-
 import CTASection from "../homepage/cta";
 import CommonTopTag from "../common/toptag";
 import Discover from "../assets/discovers.webp";
