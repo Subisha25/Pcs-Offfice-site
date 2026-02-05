@@ -101,7 +101,7 @@ useEffect(() => {
     return (
       <div className="benefits-container">
         {/* ===== ABOUT ===== */}
-        <div className="benefits-top-section" ref={sectionRef}>
+<div className="benefits-top-section benefits-mobile-heading-fix" ref={sectionRef}>
           <CommonTopTag text="Benefits" icon={tagicon} />
 
           <div>

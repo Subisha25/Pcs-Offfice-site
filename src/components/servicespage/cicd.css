@@ -44,7 +44,7 @@
 /* ---------- Mobile Views ---------- */
 @media (max-width: 425px) {
   .cicd-final {
-    padding: 0px 16px 60px;
+    padding: 0px 16px 20px;
   }
 
   .cicd-heading h2 {

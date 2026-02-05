@@ -171,7 +171,7 @@ const ServicesSection = () => {
           got you covered
         </h1>
       </div> */}
-        <div className="workprocess-section" ref={sectionRef} style={{ padding: '20px 20px 60px 20px' }}> {/* Section padding-ah koraichuten */}
+        <div className="workprocess-section mobile-heading-fix" ref={sectionRef} style={{ padding: '0px 20px 0px 20px' }}> {/* Section padding-ah koraichuten */}
           <div className="container" style={{ marginTop: '-40px', position: 'relative', zIndex: '10' }}> {/* Negative margin mela thallum */}
 
             <CommonTopTag text="Services" icon={ServiceBtnImg} />
@@ -649,6 +649,26 @@ const ServicesSection = () => {
   .service-card {
     padding: 28px !important;
   }
+
+  @media (max-width: 768px) {
+
+  .mobile-heading-fix {
+    padding-top: 5px !important;
+    padding-bottom: 15px !important;
+  }
+
+  .mobile-heading-fix .container {
+    margin-top: -20px !important;
+  }
+
+  .mobile-heading-fix .animated-text2 {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    line-height: 1.2 !important;
+  }
+
+}
+
 }
 
 

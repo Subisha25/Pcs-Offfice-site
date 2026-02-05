@@ -1289,3 +1289,11 @@ text-align: center; */
 }
 
 
+@media (max-width:425px){
+
+.sw-header{
+  padding-top: 50px !important;
+}
+
+}
+

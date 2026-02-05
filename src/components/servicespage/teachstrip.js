@@ -115,7 +115,7 @@ export default function TechLogoScroll() {
   }, []);
 
   return (
-    <section className="tech-scroll">
+<section className="tech-scroll mobile-white-bg-wrapper">
       <div className="scroll-wrapper" ref={wrapperRef}>
         <div className="scroll-track" ref={trackRef}>
           {[...techs, ...techs].map((tech, i) => (
@@ -175,7 +175,7 @@ export default function TechLogoScroll() {
         /* ===== MOBILE 425px ===== */
         @media (max-width: 425px) {
           .tech-scroll {
-        padding: 0px 10px 30px;        
+        padding: 2px 10px 30px;        
           }
 
           .scroll-track {
@@ -240,6 +240,21 @@ export default function TechLogoScroll() {
           .tech-card span {
             font-size: 10px;
           }
+}
+@media (max-width:768px){
+
+.mobile-white-bg-wrapper{
+  background:#ffffff !important;
+}
+
+.tech-scroll,
+.tech-scroll .scroll-wrapper,
+.tech-scroll .scroll-track{
+  background:#ffffff !important;
+}
+
+}
+
         }
       `}</style>
     </section>

@@ -468,6 +468,16 @@
   .profile {
     padding-left: 0;
   }
+  /* 🔥 Name mela irukura gap reduce */
+.profile-line{
+  margin-top: 0px !important;
+}
+
+/* 🔥 Review text keela irukura extra gap remove */
+.review{
+  margin-bottom: 5px !important;
+}
+
 }
 
 /* Large Mobile (480px - 600px) */
