@@ -309,9 +309,9 @@ section.next-section {
 
 @media (max-width: 480px) {
 
-  /* hero wrapper gap remove */
+  /* hero wrapper should match banner height for proper scroll spacing */
   .hero-wrapper {
-    min-height: auto;
+    min-height: 45vh;
   }
 
   /* buttons */
@@ -338,48 +338,49 @@ section.next-section {
     font-size: 0.82rem;
   }
 
-  /* banner full container */
+  /* ✅ BANNER 45% HEIGHT ON MOBILE */
   .banner {
-    position: relative;
-    height: 45vh;   /* banner size fix */
-
+    position: fixed;
+    height: 45vh;
+    padding-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 0;
+    z-index: 0;
   }
 
-  /* video */
+  /* video 45% height */
   .bg-video {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 45vh;
     object-fit: cover;
+    z-index: 0;
   }
 
   .white-overlay {
     height: 45vh;
+    z-index: 1;
   }
 
- .banner-content {
-  height: 50vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  padding-top: 30px;   /* 🔥 idhu thaan shift pannum */
-}
-
+  .banner-content {
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px;
+    /* padding-bottom: 30px; */
+    z-index: 2;
+  }
 
   /* title */
   .homebanner-title {
     font-size: 28px;
     line-height: 1.2;
   }
-
 }
+
 
