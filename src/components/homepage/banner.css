@@ -68,9 +68,8 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
- filter: brightness(1.35) saturate(2.1);
-
 }
+
 
 /* Text content above video (inside banner) */
 .banner-content {
@@ -277,6 +276,7 @@ section.next-section {
     gap: 24px;
   }
 
+ 
 }
 
 /* Laptops / small desktops (≥ 1024px) */
@@ -307,32 +307,79 @@ section.next-section {
   }
 }
 
-/* Large desktops / big screens (≥ 1440px) */
-@media (min-width: 1440px) {
+@media (max-width: 480px) {
+
+  /* hero wrapper gap remove */
+  .hero-wrapper {
+    min-height: auto;
+  }
+
+  /* buttons */
+  .banner-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-primaryhome {
+    font-size: 0.82rem;
+    padding: 4px 14px 4px 4px;
+  }
+
+  .icon-circle {
+    width: 26px;
+    height: 26px;
+  }
+
+  .btn-link {
+    font-size: 0.82rem;
+  }
+
+  /* banner full container */
   .banner {
-    padding-top: 110px;
+    position: relative;
+    height: 45vh;   /* banner size fix */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
   }
 
-  .banner-content {
-    max-width: 1100px;
+  /* video */
+  .bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 45vh;
+    object-fit: cover;
   }
 
-  .homebanner-title {
-    font-size:74px;
+  .white-overlay {
+    height: 45vh;
   }
 
-  .banner-subtitle {
-    font-size: 1.1rem;
-  }
+ .banner-content {
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding-top: 30px;   /* 🔥 idhu thaan shift pannum */
 }
 
-/* Ultra-wide monitors (≥ 1800px) */
-@media (min-width: 1800px) {
-  .banner-content {
-    max-width: 1200px;
+
+  /* title */
+  .homebanner-title {
+    font-size: 28px;
+    line-height: 1.2;
   }
 
-  .homebanner-title {
-    font-size: 74px;
-  }
 }
+
