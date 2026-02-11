@@ -243,9 +243,9 @@
   }
 
   /* Stack cards vertically on mobile */
-  .workprocess-scroll-area {
-    padding: 0 16px;
-  }
+     .workprocess-scroll-area {
+        padding: 0px 16px 45px;
+    }
 
   .workprocess-cards-grid {
     position: static;
@@ -286,9 +286,9 @@
 /* ================= SMALL MOBILE (up to 480px) ================= */
 @media (max-width: 480px) {
 
-  .workprocess-scroll-area {
-    padding: 0 16px;
-  }
+    .workprocess-scroll-area {
+        padding: 0px 16px 45px;
+    }
 
   .workprocess-cards-grid {
     position: static;
@@ -329,3 +329,42 @@
 }
 
 
+/* ==============================
+   WORK PROCESS – MOBILE 4 LINES
+============================== */
+
+@media (max-width: 768px) {
+
+  .work-process-section1 {
+    padding: 0 10px 3px!important;   /* 🔥 side space kammi */
+  }
+
+  .workprocess-mobile-heading {
+    max-width: 260px !important;   /* 🔥 4 line control */
+    margin: 0 auto 20px auto !important;
+    padding: 0 !important;
+  }
+
+  .workprocess-mobile-heading .word {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+  }
+
+}
+
+/* 🔥 WORK PROCESS – MOBILE SIDE GAP REMOVE */
+@media (max-width: 480px) {
+
+  .work-process-section1 .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .work-process-section1 .workprocess-mobile-heading {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto 25px auto !important; /* 👈 heading keela konjam space */
+  }
+
+}

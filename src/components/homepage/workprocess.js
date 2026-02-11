@@ -117,7 +117,7 @@ useEffect(() => {
 
         <CommonTopTag text="Our Works Process" icon={tagicon} />
         
-             <p className="animated-text2">
+             <p className="animated-text2 workprocess-mobile-heading">
             {paragraph.map((word, index) => (
               <span
                 key={index}

@@ -108,7 +108,7 @@ export default function Purpose() {
 
         {/* Main Heading with Typewriter */}
         <h2
-          className="purpose-title"
+          className="purpose-title purpose-mobile-spacing"
           ref={titleRef}
           style={{
             transform: `translateY(${titleTranslateY}px) scale(${titleScale})`,

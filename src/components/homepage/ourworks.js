@@ -126,8 +126,8 @@ export default function OurWorkExplore() {
         {/* TOP TAG */}
         <CommonTopTag text="Our Works" icon={tagicon} />
 
-        <p className="animated-text2">
-          {paragraph.map((word, index) => (
+        <p className="animated-text2 ourwork-mobile-heading">
+          {paragraph.map((word,index) => (
             <span
               key={index}
               className={`word 

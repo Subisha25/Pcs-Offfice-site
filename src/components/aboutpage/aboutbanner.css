@@ -232,3 +232,31 @@
     padding-left: 20px;
   }
 }
+
+@media (max-width: 576px) {
+  .strip-track {
+    animation: scroll-left 16s linear infinite;
+  }
+}
+
+.services-strip {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.strip-track {
+  display: inline-flex;
+  width: max-content;
+  animation: scroll-left 22s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+

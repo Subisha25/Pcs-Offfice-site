@@ -19,10 +19,10 @@
   display: block;
   font-size: 40px;
   font-weight: 500;
-  color: #000;
+  color:#000;
 }
 
-.gradient-italic {
+.gradient-italic{
   font-family: "Playfair Display", serif;
   font-style: italic;
   font-weight: 500;
@@ -156,11 +156,11 @@
   margin-bottom: 24px;
 }
 
-.workprocess-card-title {
-       font-family: "WF Visual Sans";
+.workprocess-card-title{
+  font-family: "WF Visual Sans";
   font-weight: 500;
   font-size: 22px;
-  margin-bottom: 12px;
+  margin-bottom:12px;
 }
 
 .workprocess-card-description {
@@ -169,8 +169,6 @@
   font-size: 14px;
   color: #666;
 }
-
-
 
 /* ================= MOBILE (up to 768px) ================= */
 @media (max-width: 767px) {
@@ -181,18 +179,13 @@
   padding: 60px 20px 10px;
   background: #ffffff;
 }
-
-  .workprocess-section {
+.workprocess-section {
     padding: 30px 16px;
   }
-
-  
-
-  .ourwork-main-heading {
+.ourwork-main-heading {
     font-size: 28px;
   }
-
-  .our-works-bg-image {
+.our-works-bg-image {
     height: 32px;
   }
 
@@ -207,10 +200,12 @@
   }
 
   /* Stack cards vertically on mobile */
-  .workprocess-scroll-area {
-    padding: 0px 16px 10px;
-  }
+ 
 
+
+    .workprocess-scroll-area {
+        padding: 0px 16px 45px;
+    }
   .workprocess-icon-wrapper {
     width: 30px;
     height: 30px;
@@ -231,9 +226,12 @@
 /* ================= SMALL MOBILE (up to 480px) ================= */
 @media (max-width: 480px) {
   .workprocess {
-    padding: 20px;
+    padding: 45px 0px 0px;
   }
+.mobile-training-workprocess{
+      padding: 10px 0px 0px;
 
+}
   .animated-text {
     font-size: 24px;
   }
@@ -243,10 +241,12 @@
   }
 
 .workprocess-card {
-  height: 230px;
-  width: 280px;
+   height: 230px;
+        width: 280px;
+        margin-top: -20px;
 
 }
+
   .workprocess-card-title {
       font-family: "WF Visual Sans";
   font-weight: 500;
@@ -476,3 +476,84 @@
     padding-top: 0 !important;
   }
 }
+
+/* =================================
+   MOBILE – REMOVE SIDE PADDING FULL
+================================= */
+
+@media (max-width: 768px) {
+
+  .mobile-title-full {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .mobile-title-full .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .mobile-title-full .animated-text2 {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .mobile-title-full .word {
+    font-size: 32px !important;   /* 🔥 2 line ku push pannum */
+    line-height: 1.15 !important;
+  }
+
+}/* ===============================
+   TRAINING MOBILE HARD FIX
+================================ */
+
+@media (max-width: 768px) {
+
+  .mobile-container-full {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .mobile-container-full .animated-text2 {
+    max-width: 100% !important;
+    width: 100%;
+  }
+
+  .mobile-container-full .word {
+    font-size: 34px !important;   /* 🔥 3 lines ku force pannum */
+    line-height: 1.15 !important;
+  }
+
+}
+
+/* ==================================
+   TRAINING TITLE – MOBILE ONLY FIX
+   (Isolated – No Common CSS Affected)
+=================================== */
+
+@media (max-width: 768px) {
+
+  .training-title-mobile-fix {
+    margin-left: -16px;   /* container side gap cancel */
+    margin-right: -16px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .training-title-mobile-fix .training-mobile-lines {
+    max-width: 280px;   /* 🔥 3 line control */
+    margin: 0 auto;
+  }
+
+  .training-title-mobile-fix .word {
+    font-size: 30px !important;
+    line-height: 1.15;
+  }
+
+}
+
+

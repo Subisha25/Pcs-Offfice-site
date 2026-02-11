@@ -49,7 +49,7 @@ useEffect(() => {
         <CommonTopTag text="Why Choose Us" icon={tagicon} />
       </div>
       <p className="webdesign-p">Design with purpose,</p>
-      <p className="webdesign-p">
+      <p className="webdesign-p webdesign-highlight-result">
         {" "}
         built with <span className="highlight-result">results</span>
       </p>
@@ -226,11 +226,12 @@ export default function Webdesign() {
             style={{ "--delay": "0s" }}
           >
             <p className="sw-small-title">Website Design &amp; Development</p>
-            <h1 className="sw-main-title">
-              Launch a seamless,
-              <br />
-              conversion-focused website
-            </h1>
+          <h1 className="sw-main-title">
+  Launch a seamless,
+  <br />
+  conversion-focused <span className="highlight-website">website</span>
+</h1>
+
           </div>
 
           <div className="sw-banner-wrapper">
@@ -277,7 +278,7 @@ export default function Webdesign() {
               <li>Responsive Web Development</li>
               <li>E-Commerce & CMS</li>
               <li>SEO-optimized structure</li>
-              <li>Performance Optimization</li>
+              {/* <li>Performance Optimization</li> */}
               <li>UI/UX Strategy</li>
             </ul>
           </div>

@@ -107,7 +107,7 @@ useEffect(() => {
           <div>
 
 
-            <p className="animated-text2">
+            <p className="animated-text2 benefits-heading-25">
               {paragraph.map((word, index) => (
                 <span
                   key={index}

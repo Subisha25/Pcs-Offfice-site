@@ -187,7 +187,7 @@ const ServicesSection = () => {
               </span>
             ))}
           </p> */}
-            <p className="animated-text2">
+            <p className="animated-text2  service-mobile-heading">
               {paragraph.map((word, index) => {
                 // Remove punctuation and convert to lowercase for matching
                 const cleanWord = word.replace(/[^a-zA-Z]/g, "").toLowerCase();
@@ -501,7 +501,7 @@ const ServicesSection = () => {
 
 @media (max-width: 1024px) {
    .services-container {
-            padding:65px 12px 45px 12px !important;
+            padding:85px 12px 45px 12px !important;
           }
 
       }
@@ -515,7 +515,7 @@ const ServicesSection = () => {
     margin-bottom: 4px !important;
   }
      .services-container {
-            padding:65px 12px 45px 12px !important;
+            padding:85px 12px 45px 12px !important;
           }
   .card-description {
   font-size:14px;
@@ -527,7 +527,7 @@ const ServicesSection = () => {
 
         @media (max-width: 480px) {
           .services-container {
-            padding:65px 12px 45px 12px !important;
+            padding:85px 12px 45px 12px !important;
           }
           .services-title {
             font-size: 20px !important;

@@ -198,8 +198,9 @@ background-color: white;
   }
 
   .ourwork-section{
-    padding: 30px 20px 0px 20px;
+        padding: 50px 20px 0px 20px;
   }
+ 
   .ourwork-main-heading {
     font-size: 2rem;
   }
@@ -252,3 +253,29 @@ background-color: white;
   border-radius: 2px;
   overflow: hidden;
 }
+
+
+
+@media (max-width: 425px) {
+
+  .ourwork-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .ourwork-section .container {
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .ourwork-mobile-heading {
+    max-width: 340px !important;  /* width increase */
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+.ourwork-section .animated-text2 {
+    margin-bottom: 25px !important;   /* 🔥 heading keela space */
+  }
+}
+ 
+

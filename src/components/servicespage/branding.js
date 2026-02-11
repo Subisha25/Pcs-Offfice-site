@@ -57,7 +57,7 @@ function PurposeSection() {
         <p className="webdesign-p">
           Design with purpose,
         </p>
-        <p className="webdesign-p"> built with{" "}
+        <p className="webdesign-p webdesign-highlight-result"> built with{" "}
           <span className="highlight-result">results</span>
         </p>
          <div className="workprocess-scroll-area">
@@ -242,11 +242,11 @@ export default function Branding() {
             style={{ "--delay": "0s" }}
           >
             <p className="sw-small-title">Branding &amp; Identity Design</p>
-            <h1 className="sw-main-title">
-              Build a brand
-              <br />
-              that people remember
-            </h1>
+           <h1 className="sw-main-title">
+          Build a brand,
+         <br />
+         that people <span className="highlight-website">remember</span>
+         </h1>
           </div>
 
           {/* Banner Image sticky + scroll zoom */}

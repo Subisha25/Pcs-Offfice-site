@@ -59,7 +59,7 @@ function PurposeSection() {
         <p className="webdesign-p">
           Design with purpose,
         </p>
-        <p className="webdesign-p"> built with{" "}
+        <p className="webdesign-p webdesign-highlight-result"> built with{" "}
           <span className="highlight-result">results</span>
         </p>
          <div className="workprocess-scroll-area">
@@ -244,10 +244,10 @@ export default function DigitalMarketing() {
           >
             <p className="sw-small-title">Digital Marketing </p>
             <h1 className="sw-main-title">
-              Drive traffic, boost conversions &
-              <br />
-              grow your brand online
-            </h1>
+          Drive traffic, boost conversions &
+         <br />
+         grow your brand <span className="highlight-website">online </span>
+         </h1>
           </div>
 
           {/* Banner Image sticky + scroll zoom */}

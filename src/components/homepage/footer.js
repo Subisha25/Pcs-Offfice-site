@@ -31,8 +31,9 @@ function Footer() {
           {/* LEFT BLOCK */}
           <div className="footer-left">
             <h2 className="footer-title">
-              Let&apos;s Scale <br /> Your Business.
-            </h2>
+  Let&apos;s <span className="scale-word">Scale</span> <br /> Your Business.
+</h2>
+
 
             <p className="footer-sub">
               Feel free to reach our if you want to <br />

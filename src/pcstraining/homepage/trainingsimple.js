@@ -89,7 +89,7 @@ useEffect(() => {
 
 
   return (
-    <div className="workprocess">
+    <div className="workprocess mobile-training-workprocess">
       {/* ===== ABOUT ===== */}
       <div className="workprocess-section" ref={sectionRef}>
         <div className="container">
@@ -105,11 +105,11 @@ useEffect(() => {
               </span>
             ))}
           </p> */}
-       <div className="workprocess-section">
-  <div className="container">
+       <div className="workprocess-section mobile-title-full">
+  <div className="container mobile-container-full">
 
-<div className="training-heading-wrapper heading-mobile-fix" ref={sectionRef}>
-      <p className="animated-text2">
+<div className="training-heading-wrapper training-title-mobile-fix" ref={sectionRef}>
+      <p className="animated-text2 training-mobile-lines">
         {paragraph.map((word, index) => (
           <span
             key={index}

@@ -58,7 +58,7 @@ useEffect(() => {
         <p className="webdesign-p">
           Design with purpose,
         </p>
-        <p className="webdesign-p"> built with{" "}
+        <p className="webdesign-p webdesign-highlight-result"> built with{" "}
           <span className="highlight-result">results</span>
         </p>
          <div className="workprocess-scroll-area">
@@ -244,11 +244,13 @@ export default function Appdesign() {
             style={{ "--delay": "0s" }}
           >
             <p className="sw-small-title">App Design &amp; Development</p>
-            <h1 className="sw-main-title">
-              Launch a seamless,
-              <br />
-              conversion-focused mobile app
-            </h1>
+                              <h1 className="sw-main-title">
+  Launch a seamless,
+  <br />
+  conversion-focused <span className="highlight-website">mobile app</span>
+</h1>
+
+ 
           </div>
 
           {/* Banner Image sticky + scroll zoom */}
@@ -291,7 +293,8 @@ export default function Appdesign() {
 
             <ul className="sw-offer-list">
               <li>Custom App Design</li>
-              <li>Cross-Platform Development (iOS & Android)</li>
+              {/* <li>Cross-Platform Development (iOS & Android)</li> */}
+                <li>iOS & Android Apps</li>
               <li>eCommerce & Enterprise Apps</li>
               <li>UI/UX Strategy</li>
               <li>Performance Optimization</li>

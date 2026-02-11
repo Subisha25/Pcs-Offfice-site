@@ -6,7 +6,6 @@
 }
 
 /* ---------- BASE (DESKTOP) ---------- */
-
 .footer-wrapper {
   position: relative;
   width: 100%;
@@ -830,3 +829,21 @@ font-weight: 400;
     justify-content: center;
   }
 }
+
+
+.scale-word {
+  background: linear-gradient(90deg, #0A1B8F, #1E3CFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.scale-word {
+     background: linear-gradient(90deg, #8f1f75 0%, #ff006e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+}
+

@@ -254,7 +254,7 @@ font-family: "WF Visual Sans";
 /* Mobile L (425px - 767px) */
 @media (max-width: 767px) {
   .product-page-container {
-    padding: 90px 20px;
+    padding: 20px 20px;
     gap: 30px;
   }
 
@@ -277,7 +277,7 @@ font-family: "WF Visual Sans";
   }
 
   .product-page-title {
-    font-size: 24px;
+    font-size:30px;
   }
 
   .product-page-description {
@@ -313,7 +313,7 @@ font-family: "WF Visual Sans";
   }
 
   .product-page-title {
-    font-size: 22px;
+    font-size:30px;
   }
 
   .product-page-description {
@@ -348,7 +348,7 @@ font-family: "WF Visual Sans";
   }
 
   .product-page-title {
-    font-size: 20px;
+    font-size:30px;
   }
 
   .product-page-description {
@@ -370,19 +370,39 @@ font-family: "WF Visual Sans";
 @media (max-width: 425px) {
 
   .product-page-heading h1 {
-    font-size: clamp(26px, 7vw, 28px) !important;
+    font-size: clamp(30px, 7vw, 28px) !important;
     line-height: 1.25 !important;
     margin-top: 40px !important;
     text-align: center;
   }
 
-  .product-page-heading h1 .heading-normal {
-    font-size: inherit !important;
-  }
+ 
 
   /* execution word */
   .product-page-heading h1 span[style*="Playfair"] {
-    font-size: clamp(28px, 7.5vw, 30px) !important;
+    font-size: clamp(30px, 7.5vw, 30px) !important;
     line-height: 1.25 !important;
   }
+}
+
+
+/* ==============================
+   PRODUCT PAGE – MOBILE TITLE 30PX
+============================== */
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .product-hero-heading {
+    font-size: 30px !important;
+    line-height: 38px !important;
+  }
+
+  .product-hero-heading .heading-normal {
+    font-size: 30px !important;
+  }
+
+  .product-hero-heading span[style*="Playfair"] {
+    font-size: 30px !important;
+  }
+
 }

@@ -225,6 +225,7 @@ padding-top: 140px;
   
   .purpose-title {
     font-size: 26px;
+    padding-bottom: 100px;
   }
 
   .purpose-cards {
@@ -240,4 +241,13 @@ padding-top: 140px;
   .purpose-icon {
     margin: 0 auto 15px;
   }
+}
+
+
+@media (max-width: 480px) {
+
+  .purpose-mobile-spacing {
+    margin-bottom: 40px;   /* 🔥 space keela varum */
+  }
+
 }

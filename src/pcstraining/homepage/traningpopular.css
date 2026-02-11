@@ -160,18 +160,18 @@ padding: 140px 24px 72px;  /* 👈 top mattum increase */
 
 @media (max-width: 480px) {
   .traningpopular-title-highlight {
-    font-size: 28px;   /* popular word mobile size */
+    font-size: 32px;   /* popular word mobile size */
     line-height: 1.1;
   }
 
   .traningpopular-title-gradient {
-    font-size: 28px;   /* ar same size */
+    font-size: 32px;   /* ar same size */
   }
 }
 @media (max-width: 360px) {
   .traningpopular-title-highlight,
   .traningpopular-title-gradient {
-    font-size: 24px;
+    font-size: 32px;
   }
 }
 
@@ -376,7 +376,7 @@ font-size: 16px;
   }
 
   .traningpopular-title, .traningpopular-eyebrow {
-    font-size: 24px;
+    font-size: 32px;
   }
 .traningpopular-card-btn-secondary, .traningpopular-card-btn-primary{
   font-size: 14px;

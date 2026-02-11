@@ -54,7 +54,6 @@
   max-width: 900px;
   margin: 0 auto 20px auto;
   line-height: 1.4;
-  padding-top: 10px;
 }
 
 /* WORDS GREY BEFORE FILL */
@@ -213,7 +212,7 @@
 }
 
 .link {
-  color: #000;
+  color: #101166;
   text-decoration: underline;
   font-size: 16px;
   font-weight: 500;
@@ -286,12 +285,13 @@ padding:80px;
 
 @media (max-width: 478px) {
   .about-section {
-padding:40px 20px;
+/* padding:40px 20px; */
+padding: 42px 0px 8px;
 min-height: 0px;
 }
 
 .top-center1{
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .commontag {
   font-family: "WF Visual Sans" !important;
@@ -314,7 +314,7 @@ min-height: 0px;
   }
 
   .animated-text2 .word {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .stat-number {
@@ -322,7 +322,7 @@ min-height: 0px;
   }
 
   .stat-label {
-    font-size: 10px;
+    font-size: 12px;
     margin-top: -12px;
   }
 
@@ -352,7 +352,7 @@ min-height: 0px;
     font-size: 12px;
     white-space: nowrap;
   }
-
+/* 
   .btn-primaryhome {
     font-size: 0.8rem;
     padding: 5px 12px 5px 5px;
@@ -362,7 +362,7 @@ min-height: 0px;
   .icon-circle {
     width: 24px;
     height: 24px;
-  }
+  } */
   
 }
 /* MOBILE: short & neat text */
@@ -374,9 +374,9 @@ min-height: 0px;
   }
 
   .animated-text2 .word {
-    font-size: 20px;    /* 🔥 smaller for compact look */
     line-height: 1.2;  /* 🔥 tight spacing */
     font-weight: 600;
+    /* font-size: 24px; */
   }
 
   .stat-number {
@@ -384,7 +384,7 @@ min-height: 0px;
   }
 
   .stat-label {
-    font-size: 9px;
+    font-size: 12px;
     margin-top: -25px;
   }
 
@@ -397,11 +397,11 @@ min-height: 0px;
   }
 
   .link {
-    font-size: 11px;
+    font-size: 14px;
     white-space: nowrap;
   }
 
-  .btn-primaryhome {
+  /* .btn-primaryhome {
     font-size: 0.7rem;
     padding: 4px 10px 4px 4px;
   }
@@ -414,5 +414,148 @@ min-height: 0px;
   .icon-circle img {
     width: 10px;
     height: 10px;
+  } */
+}
+
+
+/* 🔥 Mobile Only */
+@media (max-width: 425px) {
+  .btn-primaryhome.mobile-btn {
+    font-size: 12px;        /* font size kammi */
+    padding: 8px 14px;      /* button size kammi */
+    gap: 8px;               /* icon spacing kammi */
+  }
+
+  .btn-primaryhome.mobile-btn .icon-circle {
+    width: 26px;
+    height: 26px;
+  }
+
+  .btn-primaryhome.mobile-btn .icon-circle img {
+    width: 12px;
+    height: 12px;
   }
 }
+@media (max-width: 375px) {
+
+  .btn-primaryhome.mobile-btn {
+    font-size: 10px;        /* innum kammi */
+    padding: 6px 10px;      /* height + width kammi */
+    gap: 6px;
+    border-radius: 40px;
+  }
+
+  .btn-primaryhome.mobile-btn .icon-circle {
+    width: 22px;
+    height: 22px;
+  }
+
+  .btn-primaryhome.mobile-btn .icon-circle img {
+    width: 10px;
+    height: 10px;
+  }
+
+}
+
+
+
+/* ===============================
+   SERVICES PAGE – MOBILE HEADING
+================================ */
+
+@media (max-width: 768px) {
+
+  .service-mobile-heading {
+    margin: 0 0px 10px 0px;
+    text-align: center;
+  }
+
+  .service-mobile-heading .word {
+    font-size: 30px !important;   /* 🔥 font size 30 */
+    line-height: 1.2 !important;
+    display: inline;
+  }
+
+}
+
+
+
+
+/* ===================================
+   OUR WORK PAGE – FORCE 4 LINES
+=================================== */
+
+@media (max-width: 768px) {
+
+  .ourwork-section .container {
+    padding: 0 18px !important;
+    text-align: left !important;
+  }
+
+  .ourwork-mobile-heading {
+    max-width: 285px;   /* 🔥 4 line control */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ourwork-mobile-heading .word {
+    font-size: 30px !important;
+    line-height: 1.18 !important;
+    /* font-weight: 500 !important; */
+  }
+
+}
+
+
+
+
+/* ==============================
+   WORK PROCESS – MOBILE TITLE
+============================== */
+
+@media (max-width: 768px) {
+
+  .workprocess-mobile-heading .word {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+
+}
+
+/* ==============================
+   BENEFITS PAGE – MOBILE HEADING
+============================== */
+
+@media (max-width: 768px) {
+
+  .benefits-heading-25 .word {
+    font-size: 25px !important;
+    line-height: 1.2 !important;
+  }
+
+}
+
+/* ==============================
+   TRAINING PAGE – MOBILE 3 LINE TITLE
+============================== */
+
+@media (max-width: 768px) {
+
+  .training-mobile-lines {
+    max-width: 260px !important;
+    margin: 0 auto !important;
+    text-align: center;
+  }
+
+  .training-mobile-lines .word {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+  }
+
+}
+
+
+
+
+

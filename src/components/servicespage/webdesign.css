@@ -945,23 +945,21 @@ text-align: center; */
     scroll-behavior: auto !important;
   }
 
-  /* GLOBAL SPACING */
-  .purpose-container {
-    padding: clamp(30px, 6vw, 70px) 0;
-  }
-
+ 
   /* HEADER */
   .sw-header {
-    padding: clamp(40px, 8vw, 70px) 14px clamp(90px, 18vw, 130px);
+    padding: clamp(40px, 8vw, 70px) 14px clamp(0px, 18vw, 40px);
   }
 
   .sw-small-title {
-    font-size: clamp(10px, 2.5vw, 12px);
+    /* font-size: clamp(10px, 2.5vw, 12px); */
+    font-size: 12px;
   }
 
   .sw-main-title {
-    font-size: clamp(20px, 5.5vw, 24px);
-    line-height: 1.4;
+    /* font-size: clamp(20px, 5.5vw, 24px); */
+    /* line-height: 1.4; */
+    font-size: 30px;
   }
 
   /* BANNER */
@@ -1007,8 +1005,8 @@ text-align: center; */
   }
 
   .sw-offer-title {
-    font-size: clamp(18px, 5vw, 22px);
-
+    /* font-size: clamp(18px, 5vw, 22px); */
+    font-size: 30px;
   }
 
   .sw-offer-list li {
@@ -1041,7 +1039,7 @@ text-align: center; */
   .webdesign-p {
     font-family: "WF Visual Sans";
     font-weight: 550;
-    font-size: 28px;
+    font-size: 30px;
     margin-top: -20px;
   }
 
@@ -1159,8 +1157,7 @@ text-align: center; */
 
 
 @media (min-width: 992px) and (max-width: 1024px) {
-
-  /* 🔥 STOP flower animation layout */
+   /* 🔥 STOP flower animation layout */
   .workprocess-scroll-area {
     overflow: visible;
   }
@@ -1294,6 +1291,21 @@ text-align: center; */
 .sw-header{
   padding-top: 50px !important;
 }
-
+.webdesign-highlight-result{
+  padding-bottom: 30px;
 }
+}
+
+
+.highlight-website {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #03045E 0%, #FF006E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 

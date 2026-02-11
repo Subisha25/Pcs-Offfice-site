@@ -156,7 +156,7 @@ export default function About() {
 
           <div className="cta-section">
             <a href="#" className="link" onClick={() => Navigate("/aboutbanner")}>Know More About Us</a>
-            <button className="btn-primaryhome" onClick={() => Navigate("/contact")}>
+            <button className="btn-primaryhome mobile-btn" onClick={() => Navigate("/contact")}>
               <div className="icon-circle">
                 <img alt="arrow" src={Arrow} />
               </div>

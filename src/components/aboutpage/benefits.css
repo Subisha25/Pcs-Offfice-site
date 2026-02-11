@@ -178,10 +178,7 @@
   transition: transform 0.7s ease, opacity 0.7s ease, box-shadow 0.3s ease;
 }
 
-/* optional hover – no transform override to keep layout */
-.benefits-card:hover {
-  /* box-shadow: 0 20px 60px rgba(124, 58, 237, 0.2); */
-}
+
 
 /* step-0: fanned stack like the screenshot */
 .benefits-cards-grid.step-0 .benefits-card:nth-child(1) {
@@ -334,6 +331,10 @@
   .benefits-card-description {
     font-size: 14px;
   }
+  .benefits-container {
+  padding: 50px 20px 0px;
+  background: #ffffff;
+}
 }
 
 
@@ -342,14 +343,14 @@
 /* 🔥 Remove top extra gap */
 .benefits-top-section{
   margin-top: 0px !important;
-  margin-bottom: 0px !important; /* heading & cards gap */
+  margin-bottom: 30px !important; /* heading & cards gap */
   align-items: center !important;
   text-align: center !important;
 }
 
 /* 🔥 Heading full visible */
 .benefits-top-section .animated-text2{
-        margin-top: -44px !important;
+        margin-top: -20px !important;
           line-height: 1.3 !important;
 }
 

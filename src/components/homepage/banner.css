@@ -24,7 +24,7 @@
 @font-face {
   font-family: "WF Visual Sans";
   src: url("/public/fonts/V0.3/V0.3/VF/WFVisualSansVF.woff2") format("woff2");
-  /* font-weight: 100 900; */
+  /* font-weight: 100 900;*/
   font-style: normal;
   font-display: swap;
 }
@@ -215,11 +215,11 @@ font-weight: 500;
   font-size: 0.95rem;
   text-decoration: underline;
   cursor: pointer;
-  color: #000;
+  /* color: #000; */
   padding: 0;
-  font-weight: 300;
+  font-weight: 500;
   font-family: "WF Visual Sans" !important;
-
+color: #101166;
 }
 
 /* ✅ Next sections – appear ABOVE the fixed hero */
@@ -309,7 +309,10 @@ section.next-section {
 
 @media (max-width: 480px) {
 
-  /* hero wrapper should match banner height for proper scroll spacing */
+
+
+
+/* hero wrapper should match banner height for proper scroll spacing */
   .hero-wrapper {
     min-height: 45vh;
   }
@@ -324,10 +327,10 @@ section.next-section {
     justify-content: center;
   }
 
-  .btn-primaryhome {
-    font-size: 0.82rem;
-    padding: 4px 14px 4px 4px;
-  }
+     .btn-primaryhome {
+        font-size: 1rem;
+        padding: 12px 16px 12px 16px;
+    }
 
   .icon-circle {
     width: 26px;
@@ -335,7 +338,7 @@ section.next-section {
   }
 
   .btn-link {
-    font-size: 0.82rem;
+    font-size:15px;
   }
 
   /* ✅ BANNER 45% HEIGHT ON MOBILE */
@@ -384,3 +387,18 @@ section.next-section {
 }
 
 
+@media (max-width: 480px) {
+
+  .banner-buttons {
+    display: flex;
+    flex-direction: column !important;   /* vertical stack */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .btn-link {
+    order: -1;   /* 🔥 link first */
+  }
+
+}

@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 import TechLogoStrip from "./serviceteach";
 // import "./workprocess.css";
 
-
 const ServicesSection = () => {
   const [activeCard, setActiveCard] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -129,7 +128,7 @@ const ServicesSection = () => {
       backgroundAttachment: 'scroll'
     }}>
        {/* header section */}
-      <div className="workprocess-section" style={{ padding: '20px 20px 60px 20px' }}>
+      <div className="workprocess-section" style={{ padding: '10px 20px 30px 20px' }}>
         <div
           className="container"
           style={{
@@ -501,7 +500,7 @@ const ServicesSection = () => {
 
         @media (max-width: 480px) {
           .services-container {
-            padding:65px 12px 45px 12px !important;
+            padding:65px 12px 0px 12px !important;
           }
           .services-title {
             font-size: 20px !important;
@@ -640,7 +639,7 @@ const ServicesSection = () => {
   }
 
   .workprocess-section h1 .heading-normal {
-    font-size: inherit !important;
+    font-size: 28px !important;
   }
 
   /* execution word */
