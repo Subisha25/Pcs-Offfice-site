@@ -60,7 +60,7 @@
 .train-home-ban-container {
   width: 100%;
   max-width: 1440px;
-  min-height: 680px;
+  min-height: 60px;
   margin: 0 auto;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   position: relative;
