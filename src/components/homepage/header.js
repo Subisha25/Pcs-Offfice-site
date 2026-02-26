@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);      // manual open/close
-  const [menuReveal, setMenuReveal] = useState(false);  // stagger reveal
+  const [menuOpen, setMenuOpen] = useState(false);// manual open/close
+  const [menuReveal, setMenuReveal] = useState(false);// stagger reveal
   const [isMobile, setIsMobile] = useState(false);
 
   // ✅ NEW: top-scroll animation helper
@@ -16,7 +16,6 @@ function Header() {
 
   const openTimer = useRef(null);
   const closeTimer = useRef(null);
-
   const navigate = useNavigate();
 
   const clearTimers = () => {
@@ -190,11 +189,27 @@ function Header() {
 
         {/* Right side */}
         <div className="header-right">
-          {!isMobile && (!isScrolled || menuOpen) && (
-            <button className="header-btn" onClick={() => navigate("/contact")}>
-              Let's Discuss
-            </button>
-          )}
+
+  {!isMobile && (
+    <button
+      className={`header-btn ${
+        isScrolled && !menuOpen ? "btn-collapse" : "btn-expand"
+      }`}
+      onClick={() => navigate("/contact")}
+    >
+      Let's Discuss
+    </button>
+  )}
+
+  {(isMobile || (isScrolled && !menuOpen)) && (
+    <button
+      className="menu-toggle-btn"
+      onClick={handleMenuClick}
+    >
+      Menu
+    </button>
+  )}
+
 
           {(isMobile || (isScrolled && !menuOpen)) && (
             <button
@@ -205,7 +220,7 @@ function Header() {
                 <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
                   <path d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 11-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" />
                 </svg>
-              ) : (
+              ) :(
                 <svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
                   <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
@@ -213,11 +228,11 @@ function Header() {
             </button>
           )}
 
-          {isScrolled && !menuOpen && !isMobile && (
+          {/* {isScrolled && !menuOpen && !isMobile && (
             <button className="menu-toggle-btn" onClick={handleMenuClick}>
               Menu
             </button>
-          )}
+          )} */}
         </div>
       </div>
     </header>

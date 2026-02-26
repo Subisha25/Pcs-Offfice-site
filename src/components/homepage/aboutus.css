@@ -25,7 +25,7 @@
 /*  TOP CENTER */
 .top-center1 {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .commontag {
@@ -121,7 +121,7 @@
   background-color: white;
   /* background: linear-gradient(to bottom, #03045E80, #FFFFFF00); */
   min-height: 100vh;
-  padding: 50px 0px 50px;
+  padding: 60px 0px 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -457,8 +457,6 @@ min-height: 0px;
 
 }
 
-
-
 /* ===============================
    SERVICES PAGE – MOBILE HEADING
 ================================ */
@@ -557,5 +555,10 @@ min-height: 0px;
 
 
 
-
-
+/* @media (min-width: 1400px) {
+  .about-section {
+    min-height: auto;
+    padding: 80px 0 60px;
+    align-items: flex-start;
+  }
+} */

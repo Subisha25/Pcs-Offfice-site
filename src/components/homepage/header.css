@@ -195,7 +195,7 @@ transition:
 }
 /* MENU TOGGLE BUTTON */
 .menu-toggle-btn {
-  background: black;
+  background: #101166;
   color: white;
   border: none;
   font-size: 14px;
@@ -210,7 +210,7 @@ transition:
 
 .menu-toggleclose-btn {
   display: none;
-  background: black;
+  background: #101166;
   color: white;
   border: none;
   font-size: 14px;
@@ -222,12 +222,12 @@ transition:
   transition: all 0.2s;
   white-space: nowrap;
 }
-.menu-toggle-btn:hover {
+/* .menu-toggle-btn:hover {
   background: #333;
 }
 .menu-toggleclose-btn:hover {
   background: #333;
-}
+} */
 /* SMALL/COMPACT MODE WHEN SCROLLED */
 .header.small .header-container {
   width: 240px !important;  /* Width-ah kammi panniyachu */
@@ -329,7 +329,7 @@ transition:
 
   .menu-toggleclose-btn {
   display: block;
-  background: black;
+  background: #101166;
   color: white;
   border: none;
   padding: 7px 14px;
@@ -521,4 +521,66 @@ transition:
     padding: 12px 36px;
     font-size: 16px;
   }
+}
+
+
+
+/* =============================================
+   FIX: Let's Discuss button smooth expansion
+   ============================================= */
+
+/* Default state - button hidden (when scrolled, not open) */
+.header-right .header-btn {
+  max-width: 0;
+  opacity: 0;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition:
+    max-width 0.55s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.35s ease 0.2s,
+    padding 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Visible state - not scrolled OR menu open */
+.header:not(.scrolled) .header-right .header-btn,
+.header.menu-open .header-right .header-btn {
+  max-width: 220px;        /* enough room for the button text */
+  opacity: 1;
+  padding-left: 32px;
+  padding-right: 32px;
+  pointer-events: auto;
+  transition:
+    max-width 0.55s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.3s ease 0.15s,
+    padding 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Override the existing stagger-reveal rule so it also uses max-width */
+.header.menu-open.menu-reveal .header-right .header-btn {
+  max-width: 220px;
+  opacity: 0;              /* animation will take over */
+  padding-left: 32px;
+  padding-right: 32px;
+  pointer-events: auto;
+  animation: menuItemIn 0.35s ease forwards;
+  animation-delay: 0.42s;
+}
+
+/* Container — make sure right side doesn't clip the button mid-flight */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+  overflow: hidden;        /* ← clips the button while it slides in */
+}
+
+/* Keep container transition in sync */
+.header-container {
+  transition:
+    width 0.7s cubic-bezier(0.65, 0, 0.35, 1),
+    background 0.5s ease,
+    padding 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 }

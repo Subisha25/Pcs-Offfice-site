@@ -121,7 +121,7 @@ const ServicesSection = () => {
         backgroundRepeat: 'no-repeat',
         position: 'relative',
         minHeight: '100vh',
-        padding: '70px 0px 70px',
+        padding: '100px 0px 70px',
         // padding: ' 40px 20px',
         backgroundAttachment: 'scroll'
       }}>
@@ -171,7 +171,7 @@ const ServicesSection = () => {
           got you covered
         </h1>
       </div> */}
-        <div className="workprocess-section mobile-heading-fix" ref={sectionRef} style={{ padding: '0px 20px 0px 20px' }}> {/* Section padding-ah koraichuten */}
+        <div className="workprocess-section mobile-heading-fix reduce-top-space" ref={sectionRef} style={{ padding: '0px 20px 0px 20px' }}> {/* Section padding-ah koraichuten */}
           <div className="container" style={{ marginTop: '-40px', position: 'relative', zIndex: '10' }}> {/* Negative margin mela thallum */}
 
             <CommonTopTag text="Services" icon={ServiceBtnImg} />
@@ -421,6 +421,8 @@ const ServicesSection = () => {
 
         {/* Media Queries - unchanged */}
         <style jsx>{`
+
+
 .card-title,
 .card-subtitle {
   line-height: 1.05;   /* 🔥 tight & clean */

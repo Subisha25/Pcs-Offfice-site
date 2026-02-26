@@ -163,7 +163,7 @@
 
 @media (min-width: 1200px) {
   .traninglearn {
-    padding: 80px 24px 92px;
+    padding: 80px 24px 80px;
   }
 }
 
@@ -231,10 +231,9 @@
   .successtraninglearn-title{
     font-size: 28px;
     margin-left: 10px;
-
-  }
+}
   .successtraninglearn-title-highlight {
-    margin-left: 20px;
+    margin-left:20px;
 
   }
 }
@@ -267,8 +266,6 @@
   }
 
 }
-
-
 @media (max-width: 480px) {
   .training-title {
     font-size: 32px;
@@ -277,3 +274,15 @@
 }
 
 
+@media (max-width: 768px) {
+ 
+  .traninglearn-carousel-viewport{
+    padding: 0 !important;   
+  }
+
+  .traninglearn-card{
+    flex: 0 0 100% !important;  
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
