@@ -86,8 +86,16 @@
   z-index: 9999;
   padding: 0 15px ;
   box-sizing: border-box;
+  will-change: transform, width; 
+  pointer-events: auto;
 }
-
+.header-container {
+  /* Transition-ah light-ah fast panna smoothness lag theriyathu */
+  transition: 
+    width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), 
+    background 0.3s ease, 
+    padding 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
 /* MAIN CONTAINER */
 
 .header-container {

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -25,7 +26,8 @@ import BlogPage from "./blog/BlogPage";
 import BlogDetails from "./blog/blogdetailsh";
 import CreateBlog from "./blog/createblog";
 import NotFound404 from "./components/NotFound404/NotFound404";
-
+import Lenis from "@studio-freight/lenis";
+const words = ["build", "learn"]; // 🔁 cycle panna words
 /* 🔥 Layout WITH Header & Footer */
 const MainLayout = ({ children }) => {
   return (
@@ -38,6 +40,28 @@ const MainLayout = ({ children }) => {
 };
 
 function App() {
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.7,
+      lerp: 0.1,
+      wheelMultiplier: 0.4,
+      smoothWheel: true,
+      smoothTouch: true,
+      touchMultiplier: 1,
+      syncTouch: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
