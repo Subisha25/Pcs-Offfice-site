@@ -23,7 +23,6 @@ const openProject = (url) => {
 
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
-const HOLD_SCREENS = 0.12;
 
 export default function ProjectSlider() {
   const wrapRef = useRef(null);
@@ -36,7 +35,10 @@ export default function ProjectSlider() {
 
   const [p, setP] = useState(0); // overall progress 0..1
 const HOLD_SCREENS = 0.5;
-const HOLD_END = 0.7;    // 🔥 last image hold (new)
+// no extra sticky after the final picture – let the page continue on the very
+// first wheel/scroll movement once the last slide is shown.
+const HOLD_END = 0;    // 🔥 0 means immediate transition to next section
+
 
 
 
@@ -73,10 +75,10 @@ rafRef.current = requestAnimationFrame(() => {
   const start = window.scrollY + rect.top;
 
   const holdStartPx = HOLD_SCREENS * vh;
-  const holdEndPx = HOLD_END * vh;
+  const holdEndPx = HOLD_END * vh; // usually zero now
 
   const travel = segments * vh;
-  const total = holdStartPx + travel + holdEndPx;
+  // const total = holdStartPx + travel + holdEndPx; // unused but handy for future tweaks
 
   const y = window.scrollY - start;
 
@@ -86,7 +88,9 @@ rafRef.current = requestAnimationFrame(() => {
     return;
   }
 
-  // 🛑 Last image fixed (IMPORTANT)
+  // 🛑 Last image fixed – we consider the scroll area where slides move.
+  // with HOLD_END === 0 the moment y exceeds the travel zone the section
+  // releases and the next scroll will take the user to whatever follows.
   if (y >= holdStartPx + travel) {
     setP(1);
     return;
@@ -135,11 +139,30 @@ rafRef.current = requestAnimationFrame(() => {
     return fills; // [0..1, 0..1, 0..1]
   }, [p, segments, slides]);
 
+  // when we're fully through the slides, a single additional wheel
+  // movement should snap the viewport to whatever comes after this section.
+  useEffect(() => {
+    const onWheel = (e) => {
+      if (!wrapRef.current) return;
+      if (p >= 1 && e.deltaY > 0) {
+        const next = wrapRef.current.nextElementSibling;
+        if (next) {
+          // prevent the normal scrolling so we don't have to drag through
+          // leftover blank space inside the wrapper
+          e.preventDefault();
+          next.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+    window.addEventListener("wheel", onWheel, { passive: false });
+    return () => window.removeEventListener("wheel", onWheel);
+  }, [p]);
+
   return (
    <section
   className="ps-wrap"
   ref={wrapRef}
-  style={{ "--slides": slides, "--hold": HOLD_SCREENS }}
+  style={{ "--slides": slides, "--hold-start": HOLD_SCREENS, "--hold-end": HOLD_END }}
   aria-label="Project slider"
 >
 

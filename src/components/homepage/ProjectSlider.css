@@ -1,8 +1,8 @@
 /* ========= WRAP ========= */
 .ps-wrap {
-min-height: calc(
-    (var(--slides) + 1.2 + 0.7) * 100vh
-  );  background: #fff;
+  /* height = number of slides + hold start + hold end + a tiny buffer */
+  min-height: calc((var(--slides) + var(--hold-start,0) + var(--hold-end,0) + 0.1) * 100vh);
+  background: #fff;
   position: relative;
 }
 
