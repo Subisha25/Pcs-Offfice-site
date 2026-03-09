@@ -41,26 +41,21 @@ const MainLayout = ({ children }) => {
 
 function App() {
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.7,
-      lerp: 0.1,
-      wheelMultiplier: 0.4,
-      smoothWheel: true,
-      smoothTouch: true,
-      touchMultiplier: 1,
-      syncTouch: true,
-    });
+useEffect(() => {
+  const lenis = new Lenis({
+    duration: 1.2,
+    lerp: 0.08
+  });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
+  function raf(time) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
+  }
 
-    return () => lenis.destroy();
-  }, []);
+  requestAnimationFrame(raf);
+
+  return () => lenis.destroy();
+}, []);
 
   return (
     <Router>
