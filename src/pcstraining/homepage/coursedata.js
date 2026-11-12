@@ -52,7 +52,7 @@ import IntelliJ from "../../components/assets/teach/intellij-idea-svgrepo-com.sv
 import developer from "../../components/assets/prerequisites/career.webp";
 import WhyBasicComputer from "../../components/assets/prerequisites/pre.webp"
 import students from "../../components/assets/prerequisites/whocanjion.webp"
-import AIEngineeringImg from "../assets/ai-engineering.jpg";
+import AIEngineeringImg from "../assets/ai-engineering.png";
 import pytorchIcon from "../../components/assets/teach/pytorch.svg";
 import huggingfaceIcon from "../../components/assets/teach/huggingface.svg";
 import langchainIcon from "../../components/assets/teach/langchain.svg";

@@ -39,7 +39,14 @@ const courses = [
 
 const  TraningPopular = () => {
   const navigate = useNavigate(); 
-  
+
+  // Show the AI course first; the remaining courses keep their original order.
+  const orderedCourses = [...coursedata].sort((a, b) => {
+    if (a.id === "ai-engineering") return -1;
+    if (b.id === "ai-engineering") return 1;
+    return 0;
+  });
+
   return (
     <section className="traningpopular">
       <div className="traningpopular-inner">
@@ -64,7 +71,7 @@ const  TraningPopular = () => {
 
         {/* Cards */}
         <div className="traningpopular-grid">
-{coursedata.slice(0, 3).map((course) => (
+{orderedCourses.slice(0, 3).map((course) => (
   <article className="traningpopular-card" key={course.id}>
 <Link to={`/coursedetails/${course.id}`}>
   <img
