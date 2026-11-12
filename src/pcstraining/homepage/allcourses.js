@@ -41,6 +41,13 @@ const courses = [
 const AllCourses = () => {
   const navigate = useNavigate(); 
 
+  // Keep "AI & Data Science" (AI Engineering with Generative AI) first,
+  // remaining courses stay in their original order.
+  const orderedCourses = [...coursedata].sort((a, b) => {
+    if (a.id === "ai-engineering") return -1;
+    if (b.id === "ai-engineering") return 1;
+    return 0;
+  });
 
   return (
     <section className="allcourse">
@@ -49,7 +56,7 @@ const AllCourses = () => {
 
         {/* Cards */}
         <div className="traningpopular-grid">
-       {coursedata.map((course) => (
+       {orderedCourses.map((course) => (
   <article className="traningpopular-card" key={course.id}>
 <Link to={`/coursedetails/${course.id}`}>
   <img
