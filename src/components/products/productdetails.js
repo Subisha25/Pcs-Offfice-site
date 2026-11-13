@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import productsData from "../products/productsData";
 import "./productdetails.css";
 import featureIcon from "../../components/assets/teach/icon.png";
@@ -8,6 +8,7 @@ import TrainingJourney from '../../pcstraining/homepage/trainingjourney';
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const product = productsData.find((p) => p.id === parseInt(id));
 
   // 1. Hooks must be placed HERE (before any returns)
@@ -50,6 +51,31 @@ const ProductDetails = () => {
               </div>
             ))}
           </div>
+
+          {product.id === 4 && (
+            <div style={{ marginTop: "24px" }}>
+              <button
+                type="button"
+                onClick={() => navigate("/billing-software-demo")}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  padding: "12px 24px",
+                  background: "linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)",
+                  color: "#ffffff",
+                  borderRadius: "30px",
+                  border: "none",
+                  fontWeight: "600",
+                  cursor: "pointer",
+                  boxShadow: "0 4px 15px rgba(99, 102, 241, 0.4)",
+                  fontSize: "14px"
+                }}
+              >
+                🎬 Watch AI Video Demo
+              </button>
+            </div>
+          )}
         </div>
       </section>
 

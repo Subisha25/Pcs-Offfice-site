@@ -14,6 +14,7 @@ import Appdesign from "./components/servicespage/appdesign";
 import DigitalMarketing from "./components/servicespage/digitalmarketing";
 import Branding from "./components/servicespage/branding";
 import Products from "./components/products/products";
+import BillingDemoPage from "./components/products/BillingDemoPage";
 import LearningJourneyPage from "./components/contact/banner";
 import ProductDetails from "./components/products/productdetails";
 import Works from "./components/works/work";
@@ -132,6 +133,8 @@ useEffect(() => {
 
         <Route path="/training" element={<MainLayout><TrainingHomeBanner /></MainLayout>} />
         <Route path="/products" element={<MainLayout><Products /></MainLayout>} />
+        <Route path="/billing-software-demo" element={<MainLayout><BillingDemoPage /></MainLayout>} />
+        <Route path="/billing-demo" element={<MainLayout><BillingDemoPage /></MainLayout>} />
         <Route path="/productdetails/:id" element={<MainLayout><ProductDetails /></MainLayout>} />
 
         <Route path="/learningJourneyPage" element={<MainLayout><LearningJourneyPage /></MainLayout>} />
