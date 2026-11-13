@@ -17,6 +17,7 @@ import DOC3 from "./images/doc/doc3.webp";
 import DOC4 from "./images/doc/doc4.webp";
 import DOC5 from "./images/doc/doc5.webp";
 import Billing from "./images/doc/billing.webp";
+import BillingBannerImg from "./images/doc/cashio_billing_banner.png";
 import FOOD from "./images/food/food.webp";
 import FOOD1 from "./images/food/food1.webp";
 import FOOD2 from "./images/food/food2.webp";
@@ -210,49 +211,6 @@ const productsData = [
       Kyc3,
       Kyc4,
       Kyc5
-    ]
-  },
-  {
-    id: 4,
-    title: "Billing Software",
-    image: Billing,
-    description: "Smart and efficient billing system to manage invoices, payments, and reports.",
-    overview: "Smart and efficient billing system to manage invoices, payments, taxes and reports with multi-currency and customizable invoice templates.",
-    technology_stack: [
-      { icon: html,name: "HTML" },
-      { icon: css, name: "CSS" },
-      { icon: Bootstrap, name: "Bootstrap" },
-      { icon: php, name: "PHP" },
-      { icon: mysql, name: "MySQL" },
-    ],
-    key_features:[
-      "Invoice creation and recurring invoices",
-      "Payment tracking and receipts",
-      "Tax configurations and multi-currency support",
-      "Client management and payment history",
-      "Exportable reports and accounting integrations"
-    ],
-    benefits: [
-      "Automates invoicing and reduces manual errors",
-      "Improves cash flow with recurring billing",
-      "Provides accurate financial reporting"
-    ],
-    faq: [
-      {
-        q: "Does it support recurring invoices?",
-        a: "Yes, schedule recurring invoices with configurable intervals."
-      },
-      {
-        q: "Can invoices be exported to accounting software?",
-        a: "Yes, supports CSV export and integrations with major accounting tools."
-      },
-      {
-        q: "Is multi-currency supported?",
-        a: "Yes, configure multiple currencies and tax rules."
-      }
-    ],
-    screenshots: [
-     Billing,
     ]
   },
   {

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../products/products.css";
 import CommonButton from "../common/button";
 import productsData from "../products/productsData";
+import BillingBanner from "./BillingBanner";
 
 const Products = () => {
   const navigate = useNavigate();
@@ -108,6 +109,10 @@ const Products = () => {
 
           </div>
         </div>
+
+        {/* Featured Billing Software Banner */}
+        <BillingBanner />
+
         {productsData.map((product) => (
           <div key={product.id} className="product-page-card" onClick={() => handleViewDetails(product.id)}>
             <div
