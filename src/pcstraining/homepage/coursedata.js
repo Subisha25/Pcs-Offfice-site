@@ -66,7 +66,7 @@ const coursedata = [
     id: "fullstack-web",
     title: "Full Stack Web Development",
     shortTitle: "HTML, CSS, JS, React & Node",
-    category: " Full Stack Development",
+    category: " Full Stack Web Development",
     image: CourseImg1,
     duration: "3 Months",
     level: "Beginner to Advanced",
@@ -580,7 +580,7 @@ tools: [
 
   {
     id: "react-native",
-    title: "React Native App Development",
+    title: "Mobile App Development",
     shortTitle: "React Native / Flutter",
     category: "Mobile App Development",
     image: "https://i.pinimg.com/736x/75/08/e3/7508e3990857d8ab2c6b83d89bf7eda1.jpg",
@@ -703,7 +703,7 @@ careerImages: [
   },
   {
   id: "artificial-intelligence",
-  title: "Artificial Intelligence & Machine Learning",
+  title: "Machine Learning",
   shortTitle: "Python, ML, DL & AI",
   category: "ML & Datascience",
   image: CourseImgAI,
@@ -1165,7 +1165,7 @@ careerImages: [
 },
 {
   id: "ai-engineering",
-  title: "AI Engineering with Generative AI",
+  title: "Artificial Intelligence",
   shortTitle: "Python, Deep Learning, LLMs & GenAI",
   category: "Artificial Intelligence",
   image: AIEngineeringImg,
