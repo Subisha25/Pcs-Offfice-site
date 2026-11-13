@@ -52,6 +52,14 @@ import IntelliJ from "../../components/assets/teach/intellij-idea-svgrepo-com.sv
 import developer from "../../components/assets/prerequisites/career.webp";
 import WhyBasicComputer from "../../components/assets/prerequisites/pre.webp"
 import students from "../../components/assets/prerequisites/whocanjion.webp"
+import AIEngineeringImg from "../assets/ai-engineering.png";
+import pytorchIcon from "../../components/assets/teach/pytorch.svg";
+import huggingfaceIcon from "../../components/assets/teach/huggingface.svg";
+import langchainIcon from "../../components/assets/teach/langchain.svg";
+import fastapiIcon from "../../components/assets/teach/fastapi.svg";
+import dockerIcon from "../../components/assets/teach/docker.svg";
+import mlflowIcon from "../../components/assets/teach/mlflow.svg";
+import streamlitIcon from "../../components/assets/teach/streamlit.svg";
 const coursedata = [
 
   {
@@ -1153,6 +1161,167 @@ careerImages: [
     experience: "9+ years",
     companies: ["TCS", "Infosys", "Product-based Company"],
     students: 5800
+  }
+},
+{
+  id: "ai-engineering",
+  title: "AI Engineering with Generative AI",
+  shortTitle: "Python, Deep Learning, LLMs & GenAI",
+  category: "AI & Data Science",
+  image: AIEngineeringImg,
+  duration: "6 Months",
+  level: "Beginner to Advanced",
+  mode: "Online / Offline",
+  lessons: 36,
+  students: 760,
+  rating: 4.9,
+  reviews: 320,
+  price: 21999,
+  language: "English & Tamil",
+  certificate: true,
+  liveProjects: 5,
+
+  overview:
+    "Master AI and machine learning by building real-world intelligent applications using modern technologies. This comprehensive program covers everything from Python basics to deploying production-ready AI applications.",
+
+  learn: [
+    "Python programming with NumPy, Pandas & data visualization",
+    "Statistics, probability & math foundations for AI",
+    "Machine Learning with Scikit-learn, model evaluation & testing",
+    "Deep Learning with PyTorch (CNN, RNN & LSTM)",
+    "NLP, Transformers & Hugging Face models",
+    "Generative AI, Prompt Engineering & LLM APIs",
+    "RAG, Vector Databases & AI Agents with LangChain",
+    "FastAPI, REST APIs & model deployment with Docker",
+    "Git, GitHub, MLOps & Cloud Deployment (AWS, Streamlit, Hugging Face Spaces)"
+  ],
+
+  curriculum: [
+    {
+      module: "Python for AI",
+      desc: "Introduces Python programming from scratch, covering core syntax, OOP and the development environment used in AI work.",
+      duration: "3 weeks",
+      topics: ["Python Basics", "OOP", "File Handling", "Jupyter Notebook"]
+    },
+    {
+      module: "Data Analysis Mastery",
+      desc: "Learn to clean, analyze and visualize real datasets using Python's data libraries.",
+      duration: "3 weeks",
+      topics: ["NumPy", "Pandas", "Matplotlib & Seaborn", "EDA"]
+    },
+    {
+      module: "Math & Machine Learning",
+      desc: "Understand the core algorithms behind AI and how to train and evaluate models on real data. Industry project: House Price / Customer Churn Prediction.",
+      duration: "4 weeks",
+      topics: [
+        "Statistics & Probability",
+        "Regression & Classification",
+        "Scikit-learn",
+        "Model Evaluation"
+      ]
+    },
+    {
+      module: "Deep Learning with PyTorch",
+      desc: "Build neural networks from scratch and work with images and sequences. Industry project: Image Classifier using CNN.",
+      duration: "4 weeks",
+      topics: ["Neural Networks", "CNN", "RNN & LSTM", "Transfer Learning"]
+    },
+    {
+      module: "NLP & Transformers",
+      desc: "Learn how machines understand language, and fine-tune modern transformer models. Industry project: Tamil & English Sentiment Analyzer.",
+      duration: "3 weeks",
+      topics: ["Tokenization & Embeddings", "Transformers", "Hugging Face", "Fine-tuning"]
+    },
+    {
+      module: "Generative AI & LLM Applications",
+      desc: "Build intelligent applications powered by large language models, including chatbots and autonomous agents. Industry project: Chat with Your PDF using RAG.",
+      duration: "4 weeks",
+      topics: ["Prompt Engineering", "LLM APIs", "RAG & Vector DB", "AI Agents"]
+    },
+    {
+      module: "Backend for AI Apps",
+      desc: "Turn your models into usable products by exposing them as secure APIs.",
+      duration: "2 weeks",
+      topics: ["FastAPI", "REST APIs", "SQL & MongoDB", "Authentication"]
+    },
+    {
+      module: "MLOps & Deployment",
+      desc: "Package, deploy and monitor AI applications on the cloud.",
+      duration: "2 weeks",
+      topics: ["Docker", "CI/CD with GitHub Actions", "Cloud Deployment", "MLflow"]
+    },
+    {
+      module: "Capstone Project & Career Prep",
+      desc: "Build an end-to-end AI product and get job-ready. Industry project: AI Resume Analyzer / Customer Support Agent.",
+      duration: "2 weeks",
+      topics: [
+        "Capstone Project",
+        "GitHub Portfolio",
+        "Resume Building",
+        "Mock Interviews"
+      ]
+    }
+  ],
+
+  tools: [
+    { name: "Python", icon: python },
+    { name: "NumPy", icon: numpy },
+    { name: "Pandas", icon: pandas },
+    { name: "Scikit-learn", icon: scikitlearn },
+    { name: "PyTorch", icon: pytorchIcon },
+    { name: "Hugging Face", icon: huggingfaceIcon },
+    { name: "LangChain", icon: langchainIcon },
+    { name: "FastAPI", icon: fastapiIcon },
+    { name: "Docker", icon: dockerIcon },
+    { name: "Git", icon: gitIcon },
+    { name: "VS Code", icon: vscodeIcon },
+    { name: "Jupyter", icon: jupyter },
+    { name: "Postman", icon: postmanIcon },
+    { name: "MLflow", icon: mlflowIcon },
+    { name: "Streamlit", icon: streamlitIcon }
+  ],
+
+  prerequisites: [
+    "Basic computer knowledge",
+    "Passion to learn AI & coding",
+    "No prior programming experience needed"
+  ],
+  prerequisitesImages: [
+    WhyBasicComputer,
+  ],
+  whoCanJoin: [
+    "Students & College Freshers looking to start a career in AI",
+    "Career Switchers wanting to enter AI and data science",
+    "Working Professionals & Developers upskilling with AI",
+    "Entrepreneurs building their own AI products"
+  ],
+  whoCanJoinImages: [
+    students,
+  ],
+  careerOpportunities: [
+    "AI Engineer",
+    "Machine Learning Engineer",
+    "Generative AI Developer",
+    "NLP Engineer",
+    "LLM Application Developer"
+  ],
+  careerImages: [
+    developer,
+  ],
+  highlights: [
+    "5 Industry-level AI Projects",
+    "1-on-1 Mentorship Sessions",
+    "Job Placement Assistance",
+    "Lifetime Course Access",
+    "Interview Preparation",
+    "Certificate of Completion"
+  ],
+
+  instructor: {
+    name: "Dr. Karthik Raja",
+    experience: "12+ years",
+    companies: ["Google", "Microsoft", "AI Research Labs"],
+    students: 7100
   }
 }
 ];
