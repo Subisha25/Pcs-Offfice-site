@@ -12,19 +12,19 @@ const BillingBanner = () => {
     navigate("/billing-software-demo");
   };
 
-  const handleViewDetails = (e) => {
+  const handleLearnMore = (e) => {
     e.stopPropagation();
     navigate("/productdetails/4");
   };
 
   return (
     <div className="billing-banner-wrapper">
-      <div className="billing-banner-card-image-layout" onClick={handleWatchDemo}>
+      <div className="billing-banner-card-image-layout" onClick={handleLearnMore}>
         {/* Full Cashio Banner Graphic */}
         <div className="billing-banner-img-container">
           <img
             src={CashioBanner}
-            alt="Cashio Billing Software Banner"
+            alt="Billing Software Banner"
             className="billing-full-banner-img"
           />
 
@@ -42,27 +42,19 @@ const BillingBanner = () => {
               onClick={handleWatchDemo}
             >
               <div className="billing-btn-play-circle">
-                <Play size={16} fill="white" />
+                <Play size={15} fill="white" />
               </div>
               <span>Watch AI Demo</span>
             </button>
 
             <button
               type="button"
-              className="billing-float-btn-details"
-              onClick={handleViewDetails}
+              className="billing-float-btn-learn"
+              onClick={handleLearnMore}
             >
-              <span>View Details</span>
+              <span>Learn More</span>
               <ArrowRight size={16} />
             </button>
-          </div>
-
-          {/* Center Play Overlay on Hover */}
-          <div className="billing-banner-center-play">
-            <div className="center-play-circle">
-              <Play size={26} fill="currentColor" />
-            </div>
-            <span className="center-play-text">Click to Watch Demo Tour</span>
           </div>
         </div>
       </div>

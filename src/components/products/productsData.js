@@ -18,6 +18,7 @@ import DOC4 from "./images/doc/doc4.webp";
 import DOC5 from "./images/doc/doc5.webp";
 import Billing from "./images/doc/billing.webp";
 import BillingBannerImg from "./images/doc/cashio_billing_banner.png";
+import BillingDashboardMockup from "./images/doc/billing_banner.jpg";
 import FOOD from "./images/food/food.webp";
 import FOOD1 from "./images/food/food1.webp";
 import FOOD2 from "./images/food/food2.webp";
@@ -69,6 +70,59 @@ import Flutter from "../../components/assets/teach/flutter-svgrepo-com.svg";
 
 // src/products/productsData.js
 const productsData = [
+  {
+    id: 4,
+    title: "Billing Software",
+    image: BillingBannerImg,
+    description: "A Powerful and Easy-to-Use Billing Solution for Your Business. Manage Sales, Track Stock and Grow Your Business Effortlessly.",
+    overview: "A modern, enterprise-grade billing and invoicing platform engineered to streamline retail POS counters, inventory tracking, GST tax compliance, and customer credit management. Built with fast barcode scanning, automated CGST/SGST/IGST tax splits, multi-currency support, supplier purchase logs, and automated WhatsApp invoice dispatch.",
+    technology_stack: [
+      { icon: react, name: "React" },
+      { icon: Tailwind, name: "Tailwind CSS" },
+      { icon: node, name: "Node.js" },
+      { icon: php, name: "PHP" },
+      { icon: mysql, name: "MySQL" },
+    ],
+    key_features: [
+      "High-speed POS counter billing with barcode scanning & thermal printer support",
+      "Automated GST tax split (CGST, SGST, IGST) and tax-compliant invoice generation",
+      "Customer credit ledger with custom credit limits, due terms & balance alerts",
+      "Purchase bill inward recording, vendor payment-out logs & debit note processing",
+      "Real-time stock inventory management with low-stock safety buffer alerts",
+      "Cashier & staff role permissions with multi-level counter access security",
+      "Comprehensive sales analytics, daily gross profit, tax summaries & CSV/PDF exports",
+      "Instant automated WhatsApp & SMS bill notifications and payment reminders"
+    ],
+    benefits: [
+      "Accelerates POS checkout speed by 3x with fast barcode scanning",
+      "Eliminates tax calculation errors with automated GST compliance",
+      "Improves cash flow with credit customer balance tracking and automated alerts",
+      "Provides centralized inventory and daily financial reporting across counters"
+    ],
+    faq: [
+      {
+        q: "Does it support thermal receipt printers?",
+        a: "Yes, it supports both 2-inch and 3-inch thermal POS receipt printers as well as standard A4 laser printers."
+      },
+      {
+        q: "Can we configure state-wise GST tax rates?",
+        a: "Yes, the system automatically detects state codes to split CGST/SGST or apply IGST seamlessly."
+      },
+      {
+        q: "Can customer invoices be shared via WhatsApp?",
+        a: "Yes, it includes one-click WhatsApp integration to send PDF invoices and payment receipts instantly."
+      },
+      {
+        q: "Does it support multiple cashier users?",
+        a: "Yes, create role-based cashier accounts with shift assignments, cash drawer limits, and audit logs."
+      }
+    ],
+    screenshots: [
+      BillingBannerImg,
+      BillingDashboardMockup,
+      Billing
+    ]
+  },
   {
     id: 1,
     title: "Doctors Appointment Booking Website",

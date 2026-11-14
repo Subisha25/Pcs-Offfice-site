@@ -1,72 +1,82 @@
 /* ==========================================================================
    BILLING BANNER COMPONENT STYLES (CASHIO BANNER)
+   Matches standard .product-page-card dimensions: 400px height & full width
    ========================================================================== */
 
 .billing-banner-wrapper {
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 
 .billing-banner-card-image-layout {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06),
-              0 1px 3px rgba(0, 0, 0, 0.04);
+  background: #FCFCFD;
+  border: 1px solid rgb(225, 224, 224);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   cursor: pointer;
+  height: 400px;
+  min-height: 400px;
+  max-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .billing-banner-card-image-layout:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 45px rgba(3, 4, 94, 0.12),
-              0 0 0 2px rgba(99, 102, 241, 0.3);
-  border-color: #c7d2fe;
+  box-shadow: 0 16px 36px rgba(3, 4, 94, 0.09);
+  border-color: #cbd5e1;
 }
 
 .billing-banner-img-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #f8fafc;
+  height: 100%;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 10px 24px;
 }
 
 .billing-full-banner-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Shows entire banner cleanly with no zoom or cropping */
+  object-position: center;
   display: block;
-  transition: transform 0.45s ease;
+  transition: transform 0.4s ease;
 }
 
 .billing-banner-card-image-layout:hover .billing-full-banner-img {
-  transform: scale(1.02);
+  transform: scale(1.015);
 }
 
 /* Top-Right AI Demo Badge */
 .billing-banner-top-badge {
   position: absolute;
   top: 16px;
-  right: 16px;
+  right: 20px;
   z-index: 3;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 7px 16px;
   border-radius: 50px;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.88);
   backdrop-filter: blur(8px);
   color: #ffffff;
+  font-family: "WF Visual Sans", sans-serif;
   font-size: 13px;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .live-dot-pulse {
@@ -83,10 +93,10 @@
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 
-/* Floating Actions Bar (Bottom Left/Right) */
+/* Floating Actions Bar (Bottom Right) */
 .billing-banner-floating-actions {
   position: absolute;
-  bottom: 20px;
+  bottom: 18px;
   right: 20px;
   z-index: 3;
   display: flex;
@@ -98,28 +108,29 @@
 .billing-float-btn-demo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
+  gap: 9px;
+  padding: 10px 20px;
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   color: #ffffff;
+  font-family: "WF Visual Sans", sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.45);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
   transition: all 0.25s ease;
 }
 
 .billing-float-btn-demo:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
-  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.6);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.5);
 }
 
 .billing-btn-play-circle {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.25);
   display: flex;
@@ -128,97 +139,78 @@
   padding-left: 2px;
 }
 
-.billing-float-btn-details {
+.billing-float-btn-learn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 12px 20px;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
+  gap: 8px;
+  padding: 10px 20px;
+  background: #101166;
   color: #ffffff;
+  font-family: "WF Visual Sans", sans-serif;
   font-size: 14px;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
   cursor: pointer;
+  box-shadow: 0 6px 18px rgba(16, 17, 102, 0.3);
   transition: all 0.25s ease;
 }
 
-.billing-float-btn-details:hover {
-  background: rgba(15, 23, 42, 0.95);
-  transform: translateX(3px);
-}
-
-/* Center Play Overlay */
-.billing-banner-center-play {
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.25);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 2;
-}
-
-.billing-banner-card-image-layout:hover .billing-banner-center-play {
-  opacity: 1;
-}
-
-.center-play-circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 3px;
-  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.5);
-  transform: scale(0.9);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.billing-banner-card-image-layout:hover .center-play-circle {
-  transform: scale(1.1);
-}
-
-.center-play-text {
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 5px 14px;
-  border-radius: 30px;
-  backdrop-filter: blur(4px);
+.billing-float-btn-learn:hover {
+  background: #0a0b45;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(16, 17, 102, 0.45);
 }
 
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 
+@media (max-width: 1023px) {
+  .billing-banner-card-image-layout {
+    height: 340px;
+    min-height: 340px;
+    max-height: 340px;
+  }
+}
+
 @media (max-width: 768px) {
+  .billing-banner-card-image-layout {
+    height: auto;
+    min-height: unset;
+    max-height: unset;
+    flex-direction: column;
+  }
+
+  .billing-banner-img-container {
+    height: 220px;
+    padding: 12px;
+  }
+
   .billing-banner-top-badge {
     top: 10px;
     right: 10px;
     font-size: 11px;
     padding: 5px 12px;
   }
+
   .billing-banner-floating-actions {
-    bottom: 12px;
-    right: 12px;
-    left: 12px;
-    justify-content: space-between;
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    justify-content: center;
+    gap: 10px;
   }
-  .billing-float-btn-demo, .billing-float-btn-details {
-    padding: 10px 16px;
-    font-size: 12px;
+
+  .billing-float-btn-demo,
+  .billing-float-btn-learn {
     flex: 1;
     justify-content: center;
+    padding: 9px 14px;
+    font-size: 13px;
   }
 }

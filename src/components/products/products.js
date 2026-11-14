@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../products/products.css";
 import CommonButton from "../common/button";
 import productsData from "../products/productsData";
-import BillingBanner from "./BillingBanner";
+import { Play } from "lucide-react";
 
 const Products = () => {
   const navigate = useNavigate();
@@ -110,9 +110,6 @@ const Products = () => {
           </div>
         </div>
 
-        {/* Featured Billing Software Banner */}
-        <BillingBanner />
-
         {productsData.map((product) => (
           <div key={product.id} className="product-page-card" onClick={() => handleViewDetails(product.id)}>
             <div
@@ -129,10 +126,40 @@ const Products = () => {
                 {product.description}
               </p>
 
-              <CommonButton
-                text="Learn More"
-                onClick={() => handleViewDetails(product.id)}
-              />
+              <div
+                className="product-page-actions"
+                style={{
+                  display: "flex",
+                  gap: "14px",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  marginBottom: "8px"
+                }}
+              >
+                <CommonButton
+                  text="Learn More"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleViewDetails(product.id);
+                  }}
+                />
+
+                {product.id === 4 && (
+                  <button
+                    type="button"
+                    className="product-page-demo-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate("/billing-software-demo");
+                    }}
+                  >
+                    <div className="product-page-demo-icon">
+                      <Play size={13} fill="white" />
+                    </div>
+                    <span>Watch AI Demo</span>
+                  </button>
+                )}
+              </div>
 
               <div className="product-page-tech-stack">
                 {product.technology_stack?.map((tech, index) => (

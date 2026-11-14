@@ -38,7 +38,15 @@ const ProductDetails = () => {
 
         <div className="hero-content">
           <h1>
-            {product.title} <span>store</span>
+            {product.id === 4 ? (
+              <>
+                Billing <span>Software</span>
+              </>
+            ) : (
+              <>
+                {product.title} <span>store</span>
+              </>
+            )}
           </h1>
           <p className="desc">{product.description}</p>
           <p className="overview">{product.overview}</p>
@@ -61,18 +69,19 @@ const ProductDetails = () => {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  padding: "12px 24px",
+                  padding: "12px 26px",
                   background: "linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)",
                   color: "#ffffff",
                   borderRadius: "30px",
                   border: "none",
                   fontWeight: "600",
                   cursor: "pointer",
-                  boxShadow: "0 4px 15px rgba(99, 102, 241, 0.4)",
-                  fontSize: "14px"
+                  boxShadow: "0 6px 20px rgba(99, 102, 241, 0.4)",
+                  fontSize: "14px",
+                  fontFamily: "WF Visual Sans, sans-serif"
                 }}
               >
-                🎬 Watch AI Video Demo
+                🎬 Watch AI Video Demo Tour
               </button>
             </div>
           )}

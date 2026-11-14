@@ -116,7 +116,7 @@ font-family: "WF Visual Sans";
 .product-page-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Changed from cover to contain */
+  object-fit: contain;
   transition: transform 0.5s ease;
 }
 
@@ -145,6 +145,47 @@ font-family: "WF Visual Sans";
   font-weight: 500;
   font-size: 32px;
   margin-bottom: 10px;
+}
+
+.product-page-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.product-page-demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #ffffff;
+  font-family: "WF Visual Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+.product-page-demo-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.5);
+}
+
+.product-page-demo-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2px;
 }
 
 .product-page-learn-btn {
