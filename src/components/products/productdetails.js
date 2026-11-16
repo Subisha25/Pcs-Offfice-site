@@ -81,7 +81,7 @@ const ProductDetails = () => {
                   fontFamily: "WF Visual Sans, sans-serif"
                 }}
               >
-                🎬 Watch AI Video Demo Tour
+                 Watch AI Video Demo Tour
               </button>
             </div>
           )}

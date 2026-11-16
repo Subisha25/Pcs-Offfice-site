@@ -16,9 +16,8 @@ import DOC2 from "./images/doc/doc2.webp";
 import DOC3 from "./images/doc/doc3.webp";
 import DOC4 from "./images/doc/doc4.webp";
 import DOC5 from "./images/doc/doc5.webp";
-import Billing from "./images/doc/billing.webp";
 import BillingBannerImg from "./images/doc/cashio_billing_banner.png";
-import BillingDashboardMockup from "./images/doc/billing_banner.jpg";
+import BillingLoginImg from "./images/doc/billing_login.png";
 import FOOD from "./images/food/food.webp";
 import FOOD1 from "./images/food/food1.webp";
 import FOOD2 from "./images/food/food2.webp";
@@ -119,8 +118,7 @@ const productsData = [
     ],
     screenshots: [
       BillingBannerImg,
-      BillingDashboardMockup,
-      Billing
+      BillingLoginImg
     ]
   },
   {
