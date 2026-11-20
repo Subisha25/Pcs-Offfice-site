@@ -18,6 +18,7 @@ import DOC4 from "./images/doc/doc4.webp";
 import DOC5 from "./images/doc/doc5.webp";
 import BillingBannerImg from "./images/doc/cashio_billing_banner.png";
 import BillingLoginImg from "./images/doc/billing_login.png";
+import CabsBannerImg from "./images/cabs/cabs_banner.png";
 import FOOD from "./images/food/food.webp";
 import FOOD1 from "./images/food/food1.webp";
 import FOOD2 from "./images/food/food2.webp";
@@ -73,6 +74,7 @@ const productsData = [
     id: 4,
     title: "Billing Software",
     image: BillingBannerImg,
+    demoRoute: "/billing-software-demo",
     description: "A Powerful and Easy-to-Use Billing Solution for Your Business. Manage Sales, Track Stock and Grow Your Business Effortlessly.",
     overview: "A modern, enterprise-grade billing and invoicing platform engineered to streamline retail POS counters, inventory tracking, GST tax compliance, and customer credit management. Built with fast barcode scanning, automated CGST/SGST/IGST tax splits, multi-currency support, supplier purchase logs, and automated WhatsApp invoice dispatch.",
     technology_stack: [
@@ -119,6 +121,60 @@ const productsData = [
     screenshots: [
       BillingBannerImg,
       BillingLoginImg
+    ]
+  },
+  {
+    id: 11,
+    title: "CABS Management",
+    image: CabsBannerImg,
+    demoRoute: "/cabs-management-demo",
+    demoVideoUrl: "https://res.cloudinary.com/bwdzdpcn/video/upload/v1795165986/CABZ_z5uxxd.mp4",
+    description: "Smart Fleet & Cab Booking Management Solution with Real-Time GPS Tracking, Driver Dispatch, and Corporate Billing.",
+    overview: "A modern, enterprise-grade Cabs & Fleet Management platform engineered for taxi operators, cab aggregators, and corporate transport services. Features real-time GPS tracking, automated driver assignment, corporate billing ledgers, multi-fleet dispatch, and live passenger ride updates.",
+    technology_stack: [
+      { icon: Flutter, name: "Flutter" },
+      { icon: react, name: "React" },
+      { icon: node, name: "Node.js" },
+      { icon: express, name: "Express" },
+      { icon: mongodb, name: "MongoDB" },
+    ],
+    key_features: [
+      "Real-Time GPS fleet tracking with live map navigation & route tracking",
+      "Instant & scheduled cab booking system with automated driver assignment",
+      "Driver management module: onboarding, shift tracking, KYC & trip payouts",
+      "Corporate billing ledger with automated monthly GST invoicing & credit terms",
+      "Multi-fleet support for hatchbacks, sedans, SUVs, and luxury vehicles",
+      "Dedicated 24/7 customer hotline, emergency SOS alerts & ride sharing"
+    ],
+    benefits: [
+      "Optimizes fleet utilization and eliminates empty cab idle time",
+      "Accelerates booking dispatch with real-time GPS automated matching",
+      "Provides transparent corporate invoicing and automated GST compliance",
+      "Enhances passenger safety with verified drivers and live trip tracking"
+    ],
+    faq: [
+      {
+        q: "Does the system support live GPS vehicle tracking?",
+        a: "Yes, it provides real-time turn-by-turn vehicle tracking on Google Maps with route history."
+      },
+      {
+        q: "Can corporate clients maintain credit billing accounts?",
+        a: "Yes, corporate organizations can book rides under monthly consolidated invoices and credit terms."
+      },
+      {
+        q: "Is there a dedicated driver app and passenger app?",
+        a: "Yes, native mobile apps for both drivers and passengers along with a central web dispatcher console."
+      },
+      {
+        q: "Does it support multiple taxi fleet categories?",
+        a: "Yes, manage Hatchbacks, Sedans, SUVs, and Luxury vehicles with independent fare tariffs."
+      }
+    ],
+    screenshots: [
+      CabsBannerImg,
+      Car1,
+      Car2,
+      Car3
     ]
   },
   {

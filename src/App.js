@@ -15,6 +15,7 @@ import DigitalMarketing from "./components/servicespage/digitalmarketing";
 import Branding from "./components/servicespage/branding";
 import Products from "./components/products/products";
 import BillingDemoPage from "./components/products/BillingDemoPage";
+import CabsDemoPage from "./components/products/CabsDemoPage";
 import LearningJourneyPage from "./components/contact/banner";
 import ProductDetails from "./components/products/productdetails";
 import Works from "./components/works/work";
@@ -135,6 +136,8 @@ useEffect(() => {
         <Route path="/products" element={<MainLayout><Products /></MainLayout>} />
         <Route path="/billing-software-demo" element={<MainLayout><BillingDemoPage /></MainLayout>} />
         <Route path="/billing-demo" element={<MainLayout><BillingDemoPage /></MainLayout>} />
+        <Route path="/cabs-management-demo" element={<MainLayout><CabsDemoPage /></MainLayout>} />
+        <Route path="/cabs-demo" element={<MainLayout><CabsDemoPage /></MainLayout>} />
         <Route path="/productdetails/:id" element={<MainLayout><ProductDetails /></MainLayout>} />
 
         <Route path="/learningJourneyPage" element={<MainLayout><LearningJourneyPage /></MainLayout>} />

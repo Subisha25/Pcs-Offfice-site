@@ -144,13 +144,13 @@ const Products = () => {
                   }}
                 />
 
-                {product.id === 4 && (
+                {(product.id === 4 || product.demoRoute) && (
                   <button
                     type="button"
                     className="product-page-demo-btn"
                     onClick={(e) => {
                       e.stopPropagation();
-                      navigate("/billing-software-demo");
+                      navigate(product.demoRoute || "/billing-software-demo");
                     }}
                   >
                     <div className="product-page-demo-icon">

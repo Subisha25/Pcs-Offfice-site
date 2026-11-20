@@ -42,6 +42,10 @@ const ProductDetails = () => {
               <>
                 Billing <span>Software</span>
               </>
+            ) : product.id === 11 ? (
+              <>
+                CABS <span>Management</span>
+              </>
             ) : (
               <>
                 {product.title} <span>store</span>
@@ -60,11 +64,11 @@ const ProductDetails = () => {
             ))}
           </div>
 
-          {product.id === 4 && (
+          {(product.id === 4 || product.demoRoute) && (
             <div style={{ marginTop: "24px" }}>
               <button
                 type="button"
-                onClick={() => navigate("/billing-software-demo")}
+                onClick={() => navigate(product.demoRoute || "/billing-software-demo")}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -81,7 +85,7 @@ const ProductDetails = () => {
                   fontFamily: "WF Visual Sans, sans-serif"
                 }}
               >
-                 Watch AI Video Demo Tour
+                 🎬 Watch AI Video Demo Tour
               </button>
             </div>
           )}
