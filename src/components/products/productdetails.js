@@ -44,7 +44,11 @@ const ProductDetails = () => {
               </>
             ) : product.id === 11 ? (
               <>
-                CABS <span>Management</span>
+                CABZ <span>Management</span>
+              </>
+            ) : product.id === 12 ? (
+              <>
+                Boutique & Billing <span>Management Software</span>
               </>
             ) : (
               <>

@@ -14,10 +14,10 @@ import {
   Headphones,
   ArrowRight
 } from "lucide-react";
-import CabsBannerImg from "./images/cabs/cabs_banner.png";
+import CabzBannerImg from "./images/cabs/cabz_banner.png";
 import "./CabsDemoPage.css";
 
-const CABS_VIDEO_URL = "https://res.cloudinary.com/bwdzdpcn/video/upload/v1795165986/CABZ_z5uxxd.mp4";
+const CABZ_VIDEO_URL = "https://res.cloudinary.com/bwdzdpcn/video/upload/v1795165986/CABZ_z5uxxd.mp4";
 
 const CabsDemoPage = () => {
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ const CabsDemoPage = () => {
     {
       icon: <Layers size={22} className="cab-feat-icon" />,
       title: "Multi-Fleet Support",
-      desc: "Hatchback, Sedan, SUV, and Luxury cabs categorization with customized tariff rates."
+      desc: "Hatchback, Sedan, SUV, and Luxury CABZ categorization with customized tariff rates."
     },
     {
       icon: <Headphones size={22} className="cab-feat-icon" />,
@@ -91,7 +91,7 @@ const CabsDemoPage = () => {
 
           <div className="cabs-topbar-badge">
             <Sparkles size={14} className="cabs-sparkle-icon" />
-            <span>CABS Management • AI Video Demonstration</span>
+            <span>CABZ Management • AI Video Demonstration</span>
           </div>
 
           <button
@@ -106,10 +106,10 @@ const CabsDemoPage = () => {
         {/* Hero Header */}
         <div className="cabs-demo-header">
           <h1 className="cabs-demo-title">
-            CABS Management <span className="title-gradient">AI Video Demo Tour</span>
+            CABZ Management <span className="title-gradient">AI Video Demo Tour</span>
           </h1>
           <p className="cabs-demo-subtitle">
-            Smart Fleet. Better Bookings. Watch how our enterprise CABS Management platform streamlines fleet tracking, driver dispatch, and corporate billing.
+            Smart Fleet. Better Bookings. Watch how our enterprise CABZ Management platform streamlines fleet tracking, driver dispatch, and corporate billing.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ const CabsDemoPage = () => {
             <div className="cabs-theater-topbar">
               <div className="cabs-theater-meta">
                 <span className="cabs-theater-step-badge">Live Demo</span>
-                <span className="cabs-theater-title-text">CABS Management Platform Overview</span>
+                <span className="cabs-theater-title-text">CABZ Management Platform Overview</span>
                 <span className="cabs-theater-category-pill">Fleet & Dispatch</span>
               </div>
               <div className="cabs-theater-live-status">
@@ -137,7 +137,7 @@ const CabsDemoPage = () => {
                   <h3>Video Stream Loading</h3>
                   <p>Direct video link is accessible via Cloudinary:</p>
                   <a
-                    href={CABS_VIDEO_URL}
+                    href={CABZ_VIDEO_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cabs-direct-video-link"
@@ -152,13 +152,13 @@ const CabsDemoPage = () => {
                   playsInline
                   autoPlay
                   preload="metadata"
-                  poster={CabsBannerImg}
+                  poster={CabzBannerImg}
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
                   onError={() => setVideoError(true)}
                   className="cabs-main-theater-video"
                 >
-                  <source src={CABS_VIDEO_URL} type="video/mp4" />
+                  <source src={CABZ_VIDEO_URL} type="video/mp4" />
                   Your browser does not support HTML5 video.
                 </video>
               )}
@@ -178,7 +178,7 @@ const CabsDemoPage = () => {
                 </button>
 
                 <a
-                  href={CABS_VIDEO_URL}
+                  href={CABZ_VIDEO_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cabs-btn-control cabs-btn-direct"
@@ -214,7 +214,7 @@ const CabsDemoPage = () => {
         <div className="cabs-features-section">
           <div className="cabs-features-header">
             <h2>Key Capabilities Built for Modern Fleets</h2>
-            <p>Your complete end-to-end cab dispatch and fleet booking software solution</p>
+            <p>Your complete end-to-end CABZ dispatch and fleet booking software solution</p>
           </div>
 
           <div className="cabs-features-grid">

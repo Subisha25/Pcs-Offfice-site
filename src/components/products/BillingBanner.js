@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Play, ArrowRight } from "lucide-react";
-import CashioBanner from "./images/doc/cashio_billing_banner.png";
+import CashioBanner from "./images/doc/billing_software_banner.png";
 import "./BillingBanner.css";
 
 const BillingBanner = () => {

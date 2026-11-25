@@ -16,9 +16,11 @@ import DOC2 from "./images/doc/doc2.webp";
 import DOC3 from "./images/doc/doc3.webp";
 import DOC4 from "./images/doc/doc4.webp";
 import DOC5 from "./images/doc/doc5.webp";
-import BillingBannerImg from "./images/doc/cashio_billing_banner.png";
+import BillingBannerImg from "./images/doc/billing_software_banner.png";
 import BillingLoginImg from "./images/doc/billing_login.png";
-import CabsBannerImg from "./images/cabs/cabs_banner.png";
+import CabzBannerImg from "./images/cabs/cabz_banner.png";
+import BoutiqueBillingBanner from "./images/boutique/boutique_billing_banner.jpg";
+import PadmavathuBoutiqueLehenga from "./images/boutique/padmavathu_boutique_lehenga.jpg";
 import FOOD from "./images/food/food.webp";
 import FOOD1 from "./images/food/food1.webp";
 import FOOD2 from "./images/food/food2.webp";
@@ -124,57 +126,62 @@ const productsData = [
     ]
   },
   {
-    id: 11,
-    title: "CABS Management",
-    image: CabsBannerImg,
-    demoRoute: "/cabs-management-demo",
-    demoVideoUrl: "https://res.cloudinary.com/bwdzdpcn/video/upload/v1795165986/CABZ_z5uxxd.mp4",
-    description: "Smart Fleet & Cab Booking Management Solution with Real-Time GPS Tracking, Driver Dispatch, and Corporate Billing.",
-    overview: "A modern, enterprise-grade Cabs & Fleet Management platform engineered for taxi operators, cab aggregators, and corporate transport services. Features real-time GPS tracking, automated driver assignment, corporate billing ledgers, multi-fleet dispatch, and live passenger ride updates.",
+    id: 12,
+    title: "Boutique & Billing Management Software",
+    image: BoutiqueBillingBanner,
+    demoRoute: "/padmavathu-boutique-demo",
+    demoVideoUrl: "",
+    description: "All-in-One Bridal Boutique Management & Smart POS Billing Solution. Integrated with Super Admin, Store Admin, and Cashier Roles, Fast POS Barcode Billing, GST Invoicing, Tailor Tracking, and Custom Bridal Sizing.",
+    overview: "Boutique & Billing Management Software is an enterprise-grade bridal studio management and retail billing software solution engineered for luxury designer boutiques and couture houses. It seamlessly bridges front-end bridal catalog showcases with a powerful back-office POS billing counter, multi-role security (Super Admin, Store Admin, Cashier, and Master Tailor), automated GST tax compliance, advance booking token receipts, custom body measurement profiling, stock inventory, and instant WhatsApp invoice dispatch.",
     technology_stack: [
-      { icon: Flutter, name: "Flutter" },
       { icon: react, name: "React" },
+      { icon: Tailwind, name: "Tailwind CSS" },
       { icon: node, name: "Node.js" },
       { icon: express, name: "Express" },
-      { icon: mongodb, name: "MongoDB" },
+      { icon: mysql, name: "MySQL" },
     ],
     key_features: [
-      "Real-Time GPS fleet tracking with live map navigation & route tracking",
-      "Instant & scheduled cab booking system with automated driver assignment",
-      "Driver management module: onboarding, shift tracking, KYC & trip payouts",
-      "Corporate billing ledger with automated monthly GST invoicing & credit terms",
-      "Multi-fleet support for hatchbacks, sedans, SUVs, and luxury vehicles",
-      "Dedicated 24/7 customer hotline, emergency SOS alerts & ride sharing"
+      "Multi-Role RBAC: Super Admin (multi-branch & profit analytics), Store Admin (inventory & tailor jobs), and Cashier (POS counter billing & cash drawer)",
+      "High-Speed POS Counter Billing with barcode scanning, custom discounts, and split payments (Cash / UPI / Card)",
+      "Automated GST Tax Invoicing (CGST, SGST, IGST) with 2-inch & 3-inch thermal printer and A4 invoice support",
+      "Bridal Advance Booking & Token Ledger with automated due date reminders and balance settlement on trial/delivery",
+      "Customer Measurement Profiling & Master Tailor Tracking: store blouse/lehenga cut specs, alterations, and trial schedules",
+      "Exclusive Bridal Showcase: high-definition trendy lehenga showcase with authentic zari, embroidery details & zoom preview",
+      "Real-Time Inventory & Fabric Stock Control with safety buffer alerts for bridal sets, fabrics, and accessories",
+      "1-Click WhatsApp & SMS Dispatch for PDF tax invoices, advance booking vouchers, and trial date notifications"
     ],
     benefits: [
-      "Optimizes fleet utilization and eliminates empty cab idle time",
-      "Accelerates booking dispatch with real-time GPS automated matching",
-      "Provides transparent corporate invoicing and automated GST compliance",
-      "Enhances passenger safety with verified drivers and live trip tracking"
+      "Accelerates boutique POS checkout speed by 3x with fast barcode scanning and thermal receipt printing",
+      "Enforces strict role permissions: cashiers cannot alter prices or view confidential profit data without admin approval",
+      "Eliminates custom bridal tailoring errors with centralized digital customer measurement charts",
+      "Secures boutique cash flow with advance deposit tracking and automated balance collection alerts",
+      "Provides complete end-to-end visibility from customer bridal browsing to counter checkout and GST filing"
     ],
     faq: [
       {
-        q: "Does the system support live GPS vehicle tracking?",
-        a: "Yes, it provides real-time turn-by-turn vehicle tracking on Google Maps with route history."
+        q: "Does it include separate role portals for Super Admin, Admin, and Cashier?",
+        a: "Yes. Super Admin has complete financial and multi-branch control; Store Admin manages inventory, tailors, and appointments; Cashiers operate POS billing counters with restricted financial access."
       },
       {
-        q: "Can corporate clients maintain credit billing accounts?",
-        a: "Yes, corporate organizations can book rides under monthly consolidated invoices and credit terms."
+        q: "Can we collect advance booking deposits for bridal lehengas?",
+        a: "Yes, you can collect advance booking tokens, print thermal deposit receipts, send WhatsApp vouchers, and easily settle the pending balance during final trials."
       },
       {
-        q: "Is there a dedicated driver app and passenger app?",
-        a: "Yes, native mobile apps for both drivers and passengers along with a central web dispatcher console."
+        q: "Does it support thermal receipt printers and barcode scanners?",
+        a: "Yes, it fully supports 2-inch and 3-inch thermal POS receipt printers as well as standard A4 laser tax invoices, along with USB and wireless barcode scanners."
       },
       {
-        q: "Does it support multiple taxi fleet categories?",
-        a: "Yes, manage Hatchbacks, Sedans, SUVs, and Luxury vehicles with independent fare tariffs."
+        q: "How does tailor and measurement management work?",
+        a: "Stylists can input customer body measurements directly into the system, link them to the invoice, and assign jobs to master tailors with trial deadline alerts."
+      },
+      {
+        q: "Can invoices and reminders be sent via WhatsApp?",
+        a: "Yes, automated GST invoices, booking confirmation slips, and trial date reminders are dispatched directly to the client's WhatsApp in PDF format."
       }
     ],
     screenshots: [
-      CabsBannerImg,
-      Car1,
-      Car2,
-      Car3
+      BoutiqueBillingBanner,
+      PadmavathuBoutiqueLehenga
     ]
   },
   {
@@ -274,6 +281,60 @@ const productsData = [
       Ecommerce2,
       Ecommerce3,
       Ecommerce4
+    ]
+  },
+  {
+    id: 11,
+    title: "CABZ Management",
+    image: CabzBannerImg,
+    demoRoute: "/cabz-management-demo",
+    demoVideoUrl: "https://res.cloudinary.com/bwdzdpcn/video/upload/v1795165986/CABZ_z5uxxd.mp4",
+    description: "Smart Fleet & Cab Booking Management Solution with Real-Time GPS Tracking, Driver Dispatch, and Corporate Billing.",
+    overview: "A modern, enterprise-grade CABZ & Fleet Management platform engineered for taxi operators, cab aggregators, and corporate transport services. Features real-time GPS tracking, automated driver assignment, corporate billing ledgers, multi-fleet dispatch, and live passenger ride updates.",
+    technology_stack: [
+      { icon: Flutter, name: "Flutter" },
+      { icon: react, name: "React" },
+      { icon: node, name: "Node.js" },
+      { icon: express, name: "Express" },
+      { icon: mongodb, name: "MongoDB" },
+    ],
+    key_features: [
+      "Real-Time GPS fleet tracking with live map navigation & route tracking",
+      "Instant & scheduled cab booking system with automated driver assignment",
+      "Driver management module: onboarding, shift tracking, KYC & trip payouts",
+      "Corporate billing ledger with automated monthly GST invoicing & credit terms",
+      "Multi-fleet support for hatchbacks, sedans, SUVs, and luxury vehicles",
+      "Dedicated 24/7 customer hotline, emergency SOS alerts & ride sharing"
+    ],
+    benefits: [
+      "Optimizes fleet utilization and eliminates empty cab idle time",
+      "Accelerates booking dispatch with real-time GPS automated matching",
+      "Provides transparent corporate invoicing and automated GST compliance",
+      "Enhances passenger safety with verified drivers and live trip tracking"
+    ],
+    faq: [
+      {
+        q: "Does the system support live GPS vehicle tracking?",
+        a: "Yes, it provides real-time turn-by-turn vehicle tracking on Google Maps with route history."
+      },
+      {
+        q: "Can corporate clients maintain credit billing accounts?",
+        a: "Yes, corporate organizations can book rides under monthly consolidated invoices and credit terms."
+      },
+      {
+        q: "Is there a dedicated driver app and passenger app?",
+        a: "Yes, native mobile apps for both drivers and passengers along with a central web dispatcher console."
+      },
+      {
+        q: "Does it support multiple taxi fleet categories?",
+        a: "Yes, manage Hatchbacks, Sedans, SUVs, and Luxury vehicles with independent fare tariffs."
+      }
+    ],
+    screenshots: [
+      CabzBannerImg,
+      Car1,
+      Car2,
+      Car3
     ]
   },
   {

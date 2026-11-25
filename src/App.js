@@ -16,6 +16,7 @@ import Branding from "./components/servicespage/branding";
 import Products from "./components/products/products";
 import BillingDemoPage from "./components/products/BillingDemoPage";
 import CabsDemoPage from "./components/products/CabsDemoPage";
+import BoutiqueDemoPage from "./components/products/BoutiqueDemoPage";
 import LearningJourneyPage from "./components/contact/banner";
 import ProductDetails from "./components/products/productdetails";
 import Works from "./components/works/work";
@@ -138,6 +139,12 @@ useEffect(() => {
         <Route path="/billing-demo" element={<MainLayout><BillingDemoPage /></MainLayout>} />
         <Route path="/cabs-management-demo" element={<MainLayout><CabsDemoPage /></MainLayout>} />
         <Route path="/cabs-demo" element={<MainLayout><CabsDemoPage /></MainLayout>} />
+        <Route path="/cabz-management-demo" element={<MainLayout><CabsDemoPage /></MainLayout>} />
+        <Route path="/cabz-demo" element={<MainLayout><CabsDemoPage /></MainLayout>} />
+        <Route path="/boutique-billing-management-software-demo" element={<MainLayout><BoutiqueDemoPage /></MainLayout>} />
+        <Route path="/padmavathu-boutique-demo" element={<MainLayout><BoutiqueDemoPage /></MainLayout>} />
+        <Route path="/boutique-demo" element={<MainLayout><BoutiqueDemoPage /></MainLayout>} />
+        <Route path="/boutique-collection-demo" element={<MainLayout><BoutiqueDemoPage /></MainLayout>} />
         <Route path="/productdetails/:id" element={<MainLayout><ProductDetails /></MainLayout>} />
 
         <Route path="/learningJourneyPage" element={<MainLayout><LearningJourneyPage /></MainLayout>} />
