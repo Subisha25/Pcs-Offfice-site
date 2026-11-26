@@ -130,7 +130,7 @@ const productsData = [
     title: "Boutique & Billing Management Software",
     image: BoutiqueBillingBanner,
     demoRoute: "/padmavathu-boutique-demo",
-    demoVideoUrl: "",
+    demoVideoUrl: "https://res.cloudinary.com/bwdzdpcn/video/upload/w_1920,h_1080,c_scale,q_auto:best,vc_h264:high/v1795689233/boutique_video_tyhgpb.mp4",
     description: "All-in-One Bridal Boutique Management & Smart POS Billing Solution. Integrated with Super Admin, Store Admin, and Cashier Roles, Fast POS Barcode Billing, GST Invoicing, Tailor Tracking, and Custom Bridal Sizing.",
     overview: "Boutique & Billing Management Software is an enterprise-grade bridal studio management and retail billing software solution engineered for luxury designer boutiques and couture houses. It seamlessly bridges front-end bridal catalog showcases with a powerful back-office POS billing counter, multi-role security (Super Admin, Store Admin, Cashier, and Master Tailor), automated GST tax compliance, advance booking token receipts, custom body measurement profiling, stock inventory, and instant WhatsApp invoice dispatch.",
     technology_stack: [

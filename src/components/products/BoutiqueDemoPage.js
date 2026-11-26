@@ -16,9 +16,8 @@ import {
 import BoutiqueBillingBanner from "./images/boutique/boutique_billing_banner.jpg";
 import "./BoutiqueDemoPage.css";
 
-// 🎬 PASTE YOUR CLOUDINARY OR HOSTED AI VIDEO URL HERE ONCE READY:
-// Example: const BOUTIQUE_VIDEO_URL = "https://res.cloudinary.com/your-cloud/video/upload/v12345/boutique_demo.mp4";
-const BOUTIQUE_VIDEO_URL = "";
+// 🎬 CLOUDINARY HOSTED AI VIDEO URL (1080p Full HD Enhanced Stream):
+const BOUTIQUE_VIDEO_URL = "https://res.cloudinary.com/bwdzdpcn/video/upload/w_1920,h_1080,c_scale,q_auto:best,vc_h264:high/v1795689233/boutique_video_tyhgpb.mp4";
 
 const BoutiqueDemoPage = () => {
   const navigate = useNavigate();

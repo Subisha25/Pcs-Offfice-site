@@ -233,6 +233,7 @@
   max-height: 650px;
   display: block;
   background: #000;
+  object-fit: contain;
 }
 
 /* Coming Soon / Preparation Mode */
