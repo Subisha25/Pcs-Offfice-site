@@ -185,6 +185,60 @@ const productsData = [
     ]
   },
   {
+    id: 11,
+    title: "CABZ Management",
+    image: CabzBannerImg,
+    demoRoute: "/cabz-management-demo",
+    demoVideoUrl: "https://res.cloudinary.com/bwdzdpcn/video/upload/v1795165986/CABZ_z5uxxd.mp4",
+    description: "Smart Fleet & Cab Booking Management Solution with Real-Time GPS Tracking, Driver Dispatch, and Corporate Billing.",
+    overview: "A modern, enterprise-grade CABZ & Fleet Management platform engineered for taxi operators, cab aggregators, and corporate transport services. Features real-time GPS tracking, automated driver assignment, corporate billing ledgers, multi-fleet dispatch, and live passenger ride updates.",
+    technology_stack: [
+      { icon: Flutter, name: "Flutter" },
+      { icon: react, name: "React" },
+      { icon: node, name: "Node.js" },
+      { icon: express, name: "Express" },
+      { icon: mongodb, name: "MongoDB" },
+    ],
+    key_features: [
+      "Real-Time GPS fleet tracking with live map navigation & route tracking",
+      "Instant & scheduled cab booking system with automated driver assignment",
+      "Driver management module: onboarding, shift tracking, KYC & trip payouts",
+      "Corporate billing ledger with automated monthly GST invoicing & credit terms",
+      "Multi-fleet support for hatchbacks, sedans, SUVs, and luxury vehicles",
+      "Dedicated 24/7 customer hotline, emergency SOS alerts & ride sharing"
+    ],
+    benefits: [
+      "Optimizes fleet utilization and eliminates empty cab idle time",
+      "Accelerates booking dispatch with real-time GPS automated matching",
+      "Provides transparent corporate invoicing and automated GST compliance",
+      "Enhances passenger safety with verified drivers and live trip tracking"
+    ],
+    faq: [
+      {
+        q: "Does the system support live GPS vehicle tracking?",
+        a: "Yes, it provides real-time turn-by-turn vehicle tracking on Google Maps with route history."
+      },
+      {
+        q: "Can corporate clients maintain credit billing accounts?",
+        a: "Yes, corporate organizations can book rides under monthly consolidated invoices and credit terms."
+      },
+      {
+        q: "Is there a dedicated driver app and passenger app?",
+        a: "Yes, native mobile apps for both drivers and passengers along with a central web dispatcher console."
+      },
+      {
+        q: "Does it support multiple taxi fleet categories?",
+        a: "Yes, manage Hatchbacks, Sedans, SUVs, and Luxury vehicles with independent fare tariffs."
+      }
+    ],
+    screenshots: [
+      CabzBannerImg,
+      Car1,
+      Car2,
+      Car3
+    ]
+  },
+  {
     id: 1,
     title: "Doctors Appointment Booking Website",
     image: DOC2,
@@ -283,60 +337,8 @@ const productsData = [
       Ecommerce4
     ]
   },
-  {
-    id: 11,
-    title: "CABZ Management",
-    image: CabzBannerImg,
-    demoRoute: "/cabz-management-demo",
-    demoVideoUrl: "https://res.cloudinary.com/bwdzdpcn/video/upload/v1795165986/CABZ_z5uxxd.mp4",
-    description: "Smart Fleet & Cab Booking Management Solution with Real-Time GPS Tracking, Driver Dispatch, and Corporate Billing.",
-    overview: "A modern, enterprise-grade CABZ & Fleet Management platform engineered for taxi operators, cab aggregators, and corporate transport services. Features real-time GPS tracking, automated driver assignment, corporate billing ledgers, multi-fleet dispatch, and live passenger ride updates.",
-    technology_stack: [
-      { icon: Flutter, name: "Flutter" },
-      { icon: react, name: "React" },
-      { icon: node, name: "Node.js" },
-      { icon: express, name: "Express" },
-      { icon: mongodb, name: "MongoDB" },
-    ],
-    key_features: [
-      "Real-Time GPS fleet tracking with live map navigation & route tracking",
-      "Instant & scheduled cab booking system with automated driver assignment",
-      "Driver management module: onboarding, shift tracking, KYC & trip payouts",
-      "Corporate billing ledger with automated monthly GST invoicing & credit terms",
-      "Multi-fleet support for hatchbacks, sedans, SUVs, and luxury vehicles",
-      "Dedicated 24/7 customer hotline, emergency SOS alerts & ride sharing"
-    ],
-    benefits: [
-      "Optimizes fleet utilization and eliminates empty cab idle time",
-      "Accelerates booking dispatch with real-time GPS automated matching",
-      "Provides transparent corporate invoicing and automated GST compliance",
-      "Enhances passenger safety with verified drivers and live trip tracking"
-    ],
-    faq: [
-      {
-        q: "Does the system support live GPS vehicle tracking?",
-        a: "Yes, it provides real-time turn-by-turn vehicle tracking on Google Maps with route history."
-      },
-      {
-        q: "Can corporate clients maintain credit billing accounts?",
-        a: "Yes, corporate organizations can book rides under monthly consolidated invoices and credit terms."
-      },
-      {
-        q: "Is there a dedicated driver app and passenger app?",
-        a: "Yes, native mobile apps for both drivers and passengers along with a central web dispatcher console."
-      },
-      {
-        q: "Does it support multiple taxi fleet categories?",
-        a: "Yes, manage Hatchbacks, Sedans, SUVs, and Luxury vehicles with independent fare tariffs."
-      }
-    ],
-    screenshots: [
-      CabzBannerImg,
-      Car1,
-      Car2,
-      Car3
-    ]
-  },
+  /* 
+  // 🔒 KYC SYSTEM - Code preserved without deleting, hidden from output:
   {
     id: 3,
     title: "KYC System",
@@ -382,6 +384,7 @@ const productsData = [
       Kyc5
     ]
   },
+  */
   {
     id: 5,
     title: "Car Rental App",

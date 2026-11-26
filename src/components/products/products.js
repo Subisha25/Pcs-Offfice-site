@@ -110,7 +110,9 @@ const Products = () => {
           </div>
         </div>
 
-        {productsData.map((product) => (
+        {productsData
+          .filter((product) => product.id !== 3 && product.title !== "KYC System")
+          .map((product) => (
           <div key={product.id} className="product-page-card" onClick={() => handleViewDetails(product.id)}>
             <div
               className="product-page-image"
